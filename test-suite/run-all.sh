@@ -13,13 +13,17 @@ export JDK21="${JDK21:-/usr/lib/jvm/java-21-openjdk-amd64}"
 if [[ ! -x "$JDK21/bin/java" ]]; then
   echo "warning: no JDK at JDK21=$JDK21; the pilot-java suite needs JDK 21" >&2
 fi
-SUITES=(opensysml-py opensysml-go sysml-toolkit-rs pilot-java)
+SUITES=(opensysml-py opensysml-go sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java)
 
 run_suite() {
   case "$1" in
     opensysml-py)     cd test-opensysml-py && .venv/bin/python -m pytest -q ;;
     opensysml-go)     cd test-opensysml-go && go test -v ./... ;;
-    sysml-toolkit-rs) cd test-sysml-toolkit-rs && cargo test --release -- --nocapture ;;
+    sysml-toolkit-rs) cd test-sysml-toolkit-rs &&
+                      SYSML_TOOLKIT_READER=compatibility cargo test --release -- --nocapture ;;
+    sysml-toolkit-rs-checked)
+                      cd test-sysml-toolkit-rs &&
+                      SYSML_TOOLKIT_READER=checked cargo test --release -- --nocapture ;;
     pilot-java)       cd test-sysml-v2-pilot-implementation-java &&
                       JAVA_HOME=$JDK21 PATH=$JDK21/bin:$PATH mvn -B test ;;
   esac

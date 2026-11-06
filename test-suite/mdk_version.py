@@ -77,7 +77,14 @@ SUITES = {
         toolchain=lambda: sh("go", "version")),
     "sysml-toolkit-rs": dict(
         mdk="sysml-toolkit", dir="sysml-toolkit",
-        api="Rust crate sysmlv2-parser, ResolvedModel (element_properties, derived)",
+        api="Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, "
+            "derived), closure policy with implied heritage",
+        library=toolkit_library,
+        toolchain=lambda: sh("rustc", "--version", cwd=HERE / "test-sysml-toolkit-rs")),
+    "sysml-toolkit-rs-checked": dict(
+        mdk="sysml-toolkit", dir="sysml-toolkit",
+        api="Rust crate sysmlv2-parser, ResolvedModel checked reader (property), "
+            "closure policy with implied heritage",
         library=toolkit_library,
         toolchain=lambda: sh("rustc", "--version", cwd=HERE / "test-sysml-toolkit-rs")),
     "pilot-java": dict(

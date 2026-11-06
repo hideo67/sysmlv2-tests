@@ -1,10 +1,18 @@
 //! Every matrix in data/cases/*.json against sysml-toolkit's semantic model API,
-//! `ResolvedModel`: owned properties through `element_properties`, derived
-//! properties through `derived(element, "<spec name>")` (DISCUSSIONS.md, Step 3).
+//! `ResolvedModel`, in one of two reader modes, chosen by SYSML_TOOLKIT_READER:
+//!   compatibility (default; suite sysml-toolkit-rs): owned properties through
+//!     `element_properties`, derived properties through `derived(element, "<spec name>")`
+//!     (DISCUSSIONS.md, Step 3), which answers values whose derivation is incomplete;
+//!   checked (suite sysml-toolkit-rs-checked): every property through `property(element,
+//!     "<spec name>")`, the checked reader, which refuses rather than answer such a value.
+//! Both run under the closure policy with the implied library heritage
+//! (`ClosurePolicy::Closure { include_implied: true }`), so inherited, imported and
+//! implied-library members count as the specification defines them; the toolkit's default
+//! (passthrough) covers the owned side only.
 use serde_json::{json, Value};
 use std::fs;
 use std::path::PathBuf;
-use sysmlv2_parser::json::{metaclass_conforms, Derived, DerivedValue, ElementRef, Reference, ResolvedModel};
+use sysmlv2_parser::json::{metaclass_conforms, ClosurePolicy, Derived, DerivedValue, ElementRef, PropertyError, Reference, ResolvedModel};
 use sysmlv2_parser::model::Model;
 
 enum Outcome {
@@ -17,8 +25,31 @@ fn root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
 }
 
+#[derive(Clone, Copy, PartialEq)]
+enum Reader {
+    Compatibility,
+    Checked,
+}
+
+impl Reader {
+    fn from_env() -> Reader {
+        match std::env::var("SYSML_TOOLKIT_READER").as_deref() {
+            Err(_) | Ok("") | Ok("compatibility") => Reader::Compatibility,
+            Ok("checked") => Reader::Checked,
+            Ok(other) => panic!("SYSML_TOOLKIT_READER={other}: expected compatibility or checked"),
+        }
+    }
+    fn suite(self) -> &'static str {
+        match self {
+            Reader::Compatibility => "sysml-toolkit-rs",
+            Reader::Checked => "sysml-toolkit-rs-checked",
+        }
+    }
+}
+
 struct Api {
     rm: ResolvedModel,
+    reader: Reader,
 }
 
 impl Api {
@@ -28,8 +59,16 @@ impl Api {
     fn find(&mut self, qn: &str) -> Option<ElementRef> {
         self.rm.resolve_qualified(qn)
     }
-    /// A property by spec name: owned if the element carries it, else derived.
+    /// A property by spec name. Compatibility: owned if the element carries it, else derived.
+    /// Checked: `property`, whose values are spelled as owned ones are; a refusal is an error.
     fn prop(&mut self, e: ElementRef, name: &str) -> Result<DerivedOrOwned, String> {
+        if self.reader == Reader::Checked {
+            return match self.rm.property(e, name) {
+                Ok(v) => Ok(DerivedOrOwned::Owned(v)),
+                Err(PropertyError::NotDeclared) => Ok(DerivedOrOwned::Owned(Value::Null)),
+                Err(err) => Err(format!("{name} refused by the checked reader: {err}")),
+            };
+        }
         if let Some(v) = self.rm.element_properties(e).get(name) {
             return Ok(DerivedOrOwned::Owned(v.clone()));
         }
@@ -728,7 +767,10 @@ fn matrices() {
             rejected.insert(unit.name.clone(), format!("model rejected: {}", errors.join("; ")));
         }
     }
-    let mut api = Api { rm: ResolvedModel::build(&model) };
+    let reader = Reader::from_env();
+    let mut rm = ResolvedModel::build(&model);
+    rm.set_closure_policy(ClosurePolicy::Closure { include_implied: true });
+    let mut api = Api { rm, reader };
 
     let mut rows: Vec<[String; 5]> = vec![];
     let mut failed = vec![];
@@ -757,14 +799,14 @@ fn matrices() {
             if outcome == "fail" || outcome == "error" {
                 failed.push(id.to_string());
             }
-            rows.push(["sysml-toolkit-rs".into(), matrix.into(), id.into(), outcome.into(), detail]);
+            rows.push([reader.suite().into(), matrix.into(), id.into(), outcome.into(), detail]);
         }
     }
-    write_csv(&rows);
+    write_csv(reader.suite(), &rows);
     assert!(failed.is_empty(), "failed: {failed:?}");
 }
 
-fn write_csv(rows: &[[String; 5]]) {
+fn write_csv(suite: &str, rows: &[[String; 5]]) {
     let dir = std::env::var("RESULTS_DIR").map(PathBuf::from).unwrap_or_else(|_| root().join("../results"));
     fs::create_dir_all(&dir).unwrap();
     let q = |s: &str| format!("\"{}\"", s.replace('"', "\"\"").replace('\n', " "));
@@ -773,5 +815,5 @@ fn write_csv(rows: &[[String; 5]]) {
         out.push_str(&r.iter().map(|c| q(c)).collect::<Vec<_>>().join(","));
         out.push('\n');
     }
-    fs::write(dir.join("sysml-toolkit-rs.csv"), out).unwrap();
+    fs::write(dir.join(format!("{suite}.csv")), out).unwrap();
 }

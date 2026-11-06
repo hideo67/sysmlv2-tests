@@ -119,8 +119,16 @@ first run (Go modules, crates.io, Maven Central).
 cd test-suite
 ./run-all.sh                    # every suite
 ./run-all.sh opensysml-go       # one suite (or several, separated by spaces)
-./run-all.sh --list             # suite names: opensysml-py opensysml-go sysml-toolkit-rs pilot-java
+./run-all.sh --list             # suite names: opensysml-py opensysml-go sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
 ```
+
+sysml-toolkit is run twice, from the same test-sysml-toolkit-rs crate:
+`sysml-toolkit-rs` uses its compatibility reader (`derived`), which answers
+values whose derivation it cannot prove complete; `sysml-toolkit-rs-checked`
+uses its checked reader (`property`), which refuses them. The environment
+variable `SYSML_TOOLKIT_READER` (`compatibility` or `checked`) selects the
+reader. Both runs set the toolkit's closure policy with the implied library
+heritage.
 
 A suite that finds failing test cases exits non-zero. That is the normal
 outcome while the MDKs have defects, and the script carries on with the next

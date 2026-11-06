@@ -809,6 +809,58 @@ Findings:
   (#1959), so ownerPath is unsupported.
 - Pilot and sysml-toolkit: unsupported (no runtime).
 
+## Step 7: sysml-toolkit reader modes and closure policy
+
+Prompted by a report from another environment (sysml-toolkit v0.11.3, closure
+policy with implied heritage): `PortUsage.portDefinition` and `type` refused on
+all 269 ports tested ("incomplete derivation"), while the compatibility value,
+effective port features and direction reads worked. The suite had not seen it
+because the adapter reads derived properties through `derived`.
+
+### Two readers
+sysml-toolkit offers two readers over `ResolvedModel`:
+- compatibility, `derived(element, name)`: answers a value even when its
+  derivation is incomplete (for many properties, the owned side only);
+- checked, `property(element, name)`: answers only a value it can certify,
+  and refuses otherwise. The toolkit's strict export uses it.
+
+Both are main APIs, so both are run, as two suites from the same crate:
+`sysml-toolkit-rs` (compatibility, as before) and `sysml-toolkit-rs-checked`.
+A refusal by the checked reader is recorded as `error`, as a `NotComputed`
+answer of the compatibility reader already was.
+
+### Closure policy
+`ResolvedModel` defaults to the passthrough closure policy: inherited, imported
+and implied-library members are left out of the inheritance-aware properties.
+The specification includes them, and the other MDKs have no such switch, so
+both suites now set `ClosurePolicy::Closure { include_implied: true }`. The
+checked reader also refuses most type-dependent reads without it.
+
+Effect on the compatibility suite: 43 cases changed from fail to pass and none
+changed the other way (A02-031..040, the members inherited from the implied
+`Parts::Part`; A50-018/036/054; B10-092/094/096/098; 26 C01 cases). The
+earlier failures came from the adapter's setting, not the toolkit.
+
+### Findings (checked reader)
+1071 pass, 437 error (all refusals), 50 unsupported, no fail: every value the
+checked reader gives is right.
+- A30: `type` (A30-009..016) and so `typeIsConjugated` (A30-017..024) refused
+  on every port usage, with or without conjugation. `type` on attribute, part
+  and other usages answers. This reproduces the report above.
+- B10, B11, B12 (connectors, all cases): `connectorEnd`, `sourceFeature`,
+  `targetFeature` and `relatedFeature` refused.
+- B20 (60 of 75): flow `payloadType`, `sourceOutputFeature`,
+  `targetInputFeature` and the ends.
+- C01 (36 of 96), C10, C20, C30, D10: `directedFeature`, `result`,
+  `argument`, `subjectParameter`, `endFeature`, `metadataDefinition`,
+  `referent`, `payloadParameter`.
+- 20 cases pass under the checked reader and not under the compatibility one:
+  18 A03 `isIndividual` cases between A03-065 and A03-088 (definitions that
+  do not write `individual`: the checked reader fills the declared default
+  `false`, the compatibility reader answers null), and A30-027/028 (the directions read
+  through `CmdPort::'~CmdPort'`, whose features the compatibility reader does
+  not list).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
