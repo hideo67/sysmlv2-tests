@@ -1,16 +1,16 @@
 # SysML v2 MDK test results
 
-Test suite commit: `593f6d3711e5`
+Test suite commit: `429bae3c25cc`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-06 10:38:30|
-|opensysml-py|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-06 10:38:28|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-06 10:38:43|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 10:38:31|
-|sysml-toolkit-rs|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 10:38:29|
+|opensysml-go|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-06 10:59:58|
+|opensysml-py|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-06 10:59:56|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-06 11:00:13|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 11:00:02|
+|sysml-toolkit-rs|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 11:00:00|
 
 Local changes at run time (tracked files only):
 
@@ -36,12 +36,13 @@ Local changes at run time (tracked files only):
 |C01|96|51 / 13 / 32 / 0|54 / 10 / 32 / 0|96 / 0 / 0 / 0|60 / 0 / 0 / 36|96 / 0 / 0 / 0|
 |C10|116|27 / 9 / 80 / 0|27 / 9 / 80 / 0|96 / 0 / 20 / 0|88 / 0 / 20 / 8|96 / 0 / 20 / 0|
 |C20|120|0 / 24 / 96 / 0|0 / 24 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
+|C21|72|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|24 / 0 / 0 / 48|48 / 24 / 0 / 0|
 |C30|78|2 / 4 / 63 / 9|2 / 4 / 63 / 9|78 / 0 / 0 / 0|75 / 0 / 0 / 3|78 / 0 / 0 / 0|
 |D10|45|0 / 30 / 15 / 0|0 / 30 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|24 / 0 / 6 / 0|24 / 0 / 6 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1558|504 / 364 / 681 / 9|505 / 363 / 681 / 9|1508 / 0 / 50 / 0|1071 / 0 / 50 / 437|1479 / 29 / 50 / 0|
+|**all**|1630|504 / 364 / 753 / 9|505 / 363 / 753 / 9|1580 / 0 / 50 / 0|1095 / 0 / 50 / 485|1527 / 53 / 50 / 0|
 
 ## Results
 
@@ -1356,6 +1357,78 @@ Local changes at run time (tracked files only):
 |C20-118|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-119|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-120|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-001|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-002|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-003|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-004|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-005|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-006|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-007|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-008|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-009|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-010|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-011|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-012|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-013|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-014|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-015|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-016|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-017|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-018|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-019|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-020|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-021|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-022|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-023|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-024|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-025|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-026|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-027|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-028|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-029|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-030|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-031|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-032|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-033|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-034|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-035|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-036|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-037|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-038|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-039|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-040|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-041|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-042|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-043|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-044|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-045|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-046|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-047|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-048|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C21-049|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-050|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-051|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-052|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-053|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-054|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-055|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-056|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-057|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-058|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-059|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-060|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-061|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-062|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-063|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-064|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-065|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-066|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-067|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-068|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-069|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-070|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-071|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-072|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C30-001|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-002|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-003|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -3873,6 +3946,222 @@ Local changes at run time (tracked files only):
 - C20-119 [opensysml-py] unsupported: the Symbol API reports no arguments of an action
 - C20-120 [opensysml-go] unsupported: the Symbol API reports no arguments of an action
 - C20-120 [opensysml-py] unsupported: the Symbol API reports no arguments of an action
+- C21-001 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-001 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-002 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-002 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-003 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-003 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-004 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-004 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-005 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-005 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-006 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-006 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-007 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-007 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-008 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-008 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-009 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-009 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-010 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-010 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-011 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-011 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-012 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-012 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-013 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-013 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-014 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-014 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-015 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-015 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-016 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-016 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-017 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-017 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-018 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-018 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-019 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-019 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-020 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-020 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-021 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-021 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-022 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-022 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-023 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-023 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-024 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-024 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-025 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-025 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-025 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-026 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-026 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-026 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-027 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-027 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-027 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-028 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-028 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-028 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-029 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-029 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-029 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-030 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-030 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-030 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-031 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-031 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-031 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-032 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-032 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-032 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-033 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-033 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-033 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-034 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-034 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-034 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-035 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-035 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-035 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-036 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-036 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-036 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-037 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-037 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-037 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-038 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-038 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-038 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-039 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-039 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-039 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-040 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-040 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-040 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-041 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-041 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-041 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-042 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-042 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-042 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-043 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-043 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-043 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-044 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-044 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-044 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-045 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-045 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-045 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-046 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-046 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-046 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-047 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-047 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-047 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-048 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-048 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-048 [sysml-toolkit-rs-checked] error: argument refused by the checked reader: Invocation arguments are incomplete: UnsupportedConfiguration
+- C21-049 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-049 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-049 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-049 [sysml-toolkit-rs] fail: hasResult C21::Emit::sendNone: got false, want true
+- C21-050 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-050 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-050 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-050 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sendNone: got false, want true
+- C21-051 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-051 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-051 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-051 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sendNone: got false, want true
+- C21-052 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-052 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-052 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-052 [sysml-toolkit-rs] fail: hasResult C21::Emit::sendRef: got false, want true
+- C21-053 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-053 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-053 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-053 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sendRef: got false, want true
+- C21-054 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-054 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-054 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-054 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sendRef: got false, want true
+- C21-055 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-055 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-055 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-055 [sysml-toolkit-rs] fail: hasResult C21::Emit::sendChain: got false, want true
+- C21-056 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-056 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-056 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-056 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sendChain: got false, want true
+- C21-057 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-057 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-057 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-057 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sendChain: got false, want true
+- C21-058 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-058 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-058 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-058 [sysml-toolkit-rs] fail: hasResult C21::Emit::sigValue: got false, want true
+- C21-059 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-059 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-059 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-059 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sigValue: got false, want true
+- C21-060 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-060 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-060 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-060 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sigValue: got false, want true
+- C21-061 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-061 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-061 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-061 [sysml-toolkit-rs] fail: resultType C21::Emit::sendNone: got null, want "C21::Sig"
+- C21-062 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-062 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-062 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-062 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendNone: got null, want "C21::Sig"
+- C21-063 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-063 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-063 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-063 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendNone: got null, want "C21::Sig"
+- C21-064 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-064 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-064 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-064 [sysml-toolkit-rs] fail: resultType C21::Emit::sendRef: got null, want "C21::Sig"
+- C21-065 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-065 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-065 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-065 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendRef: got null, want "C21::Sig"
+- C21-066 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-066 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-066 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-066 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendRef: got null, want "C21::Sig"
+- C21-067 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-067 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-067 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-067 [sysml-toolkit-rs] fail: resultType C21::Emit::sendChain: got null, want "C21::Sig"
+- C21-068 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-068 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-068 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-068 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendChain: got null, want "C21::Sig"
+- C21-069 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-069 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-069 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-069 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendChain: got null, want "C21::Sig"
+- C21-070 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-070 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-070 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-070 [sysml-toolkit-rs] fail: resultType C21::Emit::sigValue: got null, want "C21::Sig"
+- C21-071 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-071 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-071 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-071 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sigValue: got null, want "C21::Sig"
+- C21-072 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-072 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-072 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
+- C21-072 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sigValue: got null, want "C21::Sig"
 - C30-001 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-001 [opensysml-py] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-002 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
