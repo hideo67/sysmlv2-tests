@@ -5,10 +5,14 @@
 #   ./run-all.sh --list          list suite names
 # Results: results/<suite>.csv (one row per test case); raw output: results/logs/<suite>.log.
 # results/ is git-ignored. A table of all results is written to results/report-all.md.
-# Prerequisites: OpenSysML `make build-grpc`; Pilot Implementation `mvn -DskipTests package` (JDK 21).
+# Prerequisites: see "Building and running" in ../README.md.
+# Set JDK21 to a JDK 21 home if it is not at the default path below.
 cd "$(dirname "$0")" || exit 2
 export RESULTS_DIR="$PWD/results"
-JDK21=/usr/lib/jvm/java-21-openjdk-amd64
+export JDK21="${JDK21:-/usr/lib/jvm/java-21-openjdk-amd64}"
+if [[ ! -x "$JDK21/bin/java" ]]; then
+  echo "warning: no JDK at JDK21=$JDK21; the pilot-java suite needs JDK 21" >&2
+fi
 SUITES=(opensysml-py opensysml-go sysml-toolkit-rs pilot-java)
 
 run_suite() {
@@ -31,8 +35,10 @@ mkdir -p results/logs
 rc=0
 for s in "${selected[@]}"; do
   echo "== $s"
-  rm -f "results/$s.csv"
+  rm -f "results/$s.csv" "results/$s.version.json"
   ( run_suite "$s" ) > "results/logs/$s.log" 2>&1 || { rc=1; echo "   (test failures; see results/logs/$s.log)"; }
+  # record the MDK version this run exercised, next to its results
+  ./mdk_version.py "$s" > "results/$s.version.json" || echo "   (could not record the MDK version)"
   [[ -f results/$s.csv ]] && echo "   $(python3 -c 'import csv,sys; print(sum(1 for _ in csv.DictReader(open(sys.argv[1]))))' "results/$s.csv") cases recorded" ||
     { echo "   NO RESULTS WRITTEN (build or setup problem; see log)"; rc=1; }
 done

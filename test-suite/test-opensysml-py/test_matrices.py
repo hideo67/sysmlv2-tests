@@ -104,7 +104,7 @@ def do_check(model, check, element, through=None, unnamed=None):
         except opensysml.errors.InvalidRequestError as e:
             raise Unsupported(f"query API: {e}".split(";")[0])
         raise AssertionError(f"query accepted {check}; extend the adapter: {rows}")
-    if check == "endNames" or (check == "endCount" and not unnamed and _sym(model, element).kind.endswith("Def")):
+    if check in ("endNames", "endCount") and not unnamed and _sym(model, element).kind.endswith("Def"):
         raise Unsupported("the Symbol API does not mark the end features of a definition")
     if check == "annotatedElement":
         raise Unsupported("neither the Symbol nor the query API reports what a metadata usage annotates")
@@ -153,10 +153,12 @@ def do_check(model, check, element, through=None, unnamed=None):
         return s.metadata.get("direction")
     if check == "multiplicity":
         return _multiplicity(s.multiplicity)
-    if check in ("endCount", "endReferences"):
+    if check in ("endCount", "endNames", "endReferences"):
         ends = [c for c in s.children() if c.kind == "connectorEnd"]
         if check == "endCount":
             return len(ends)
+        if check == "endNames":
+            return [e.name for e in ends]
         # an end's reference is reported, if at all, as a subsets/references specialization
         return [[sp.target_id for sp in e.specializations if sp.kind in ("subsets", "references")] for e in ends]
     if check == "value":

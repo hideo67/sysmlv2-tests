@@ -282,7 +282,8 @@ class MatricesTest {
             case "endCount":
                 return (e instanceof Connector k ? k.getConnectorEnd() : ((Type) e).getEndFeature()).size();
             case "endNames":
-                return ((Type) e).getEndFeature().stream().map(Element::getName).toList();
+                return (e instanceof Connector k ? k.getConnectorEnd() : ((Type) e).getEndFeature())
+                    .stream().map(Element::getName).toList();
             case "endReferences":
                 return ((Connector) e).getConnectorEnd().stream().map(end -> {
                     ReferenceSubsetting rs = end.getOwnedReferenceSubsetting();

@@ -356,5 +356,34 @@ Findings:
 - Pilot and sysml-toolkit: all 45 pass.
 
 ### First group: status
-A20, A30, B10, B11, C10, C20 and D10 are done (649 cases including A10). B12
-(named connector ends) is planned but not yet written.
+A20, A30, B10, B11, C10, C20 and D10 are done (649 cases including A10).
+
+### B12 named connector ends
+108 cases: B10 with every end named (`connect supplier ::> x.p to consumer ::>
+y.p`, the form in the model of #1956). B10's 5 reads plus endNames x 2 kinds x 3
+end depths x 3 locations (L2, L3, L6).
+
+Findings:
+- OpenSysML (Python, Go): named ends are listed, unlike unnamed ones (B10). So
+  endCount and endNames pass when the connector is read in its part def. Each
+  end's reference is missing: no subsets/references specialization is reported
+  (#1956), at every end depth. relatedFeature, sourceFeature and targetFeature
+  are unsupported. Connectors are not listed through typing usages or chains.
+- Pilot and sysml-toolkit: all 108 pass.
+
+With B12 the suite has 757 cases in 9 matrices.
+
+### Versions in the report
+`run-all.sh` records the version each suite ran against
+(`results/<suite>.version.json`, written by `test-suite/mdk_version.py` right
+after the suite runs). `report-all.md` starts with a "Versions tested" table:
+MDK commit and `git describe`, commit date, standard library, the API exercised,
+toolchain, run time, and the test suite's own commit. Tracked files that differ
+from the MDK commit are listed. The Pilot's Maven build rewrites two committed
+jars (`org.omg.sysml.{logic,model}.bundle/lib/*.jar`), so the Pilot checkout
+always shows as modified after a build.
+
+The standard libraries differ between the MDKs: OpenSysML embeds
+SysML-v2-Release 2026-09, sysml-toolkit's submodule is at 2026-05, and the Pilot
+uses its own 0.64.0-SNAPSHOT library. A02 (library-inherited members) has to
+take this into account.

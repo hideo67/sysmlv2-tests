@@ -177,8 +177,6 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			return nil, unsupported("%v", err)
 		}
 		return nil, errors.New("query accepted the property; extend the adapter")
-	case "endNames":
-		return nil, unsupported("the Symbol API does not mark the end features of a definition")
 	case "annotatedElement":
 		return nil, unsupported("neither the Symbol nor the query API reports what a metadata usage annotates")
 	case "payloadArgument", "senderArgument", "receiverArgument", "assignedFeature":
@@ -328,16 +326,18 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			return d, nil
 		}
 		return nil, nil
-	case "endCount", "endReferences":
+	case "endCount", "endNames", "endReferences":
 		if strings.HasSuffix(strings.ToLower(sym.Kind), "def") || strings.HasSuffix(sym.Kind, "Definition") {
 			return nil, unsupported("the Symbol API does not mark the end features of a definition")
 		}
 		var refs [][]string
+		names := []string{}
 		for _, id := range sym.ChildIDs {
 			end, err := cl.LookupSymbol(ctx, m, id)
 			if err != nil || !strings.EqualFold(end.Kind, "connectorEnd") {
 				continue
 			}
+			names = append(names, end.Name)
 			// an end's reference is reported, if at all, as a subsets/references specialization
 			r := []string{}
 			for _, sp := range end.Specializations {
@@ -349,6 +349,9 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		}
 		if c.Check == "endCount" {
 			return len(refs), nil
+		}
+		if c.Check == "endNames" {
+			return names, nil
 		}
 		if refs == nil {
 			return []any{}, nil

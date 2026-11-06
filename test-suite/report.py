@@ -1,17 +1,53 @@
 #!/usr/bin/env python3
 """Gather results/*.csv into a table: one row per test case ID, one column per suite.
 
-  ./report.py            markdown table plus per-suite totals
+  ./report.py            versions tested, per-matrix summary, and the full results table
+                         (versions come from results/<suite>.version.json, written by run-all.sh)
   ./report.py --details  also list the detail text of every non-pass
   ./report.py --csv      emit the merged table as CSV instead
 """
 import argparse
 import csv
+import json
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 SYMBOL = {"pass": "PASS", "fail": "FAIL", "unsupported": "UNSUP", "error": "ERROR", "skip": "SKIP"}
+
+
+def print_versions(suites, versions):
+    """The MDK versions each suite ran against (results/<suite>.version.json)."""
+    print("# SysML v2 MDK test results")
+    print()
+    commits = {v.get("test_suite_commit", "") for v in versions.values()}
+    if len(commits) == 1 and "" not in commits:
+        dirty = any(v.get("test_suite_local_changes") for v in versions.values())
+        print(f"Test suite commit: `{commits.pop()[:12]}`" + (" (with uncommitted changes)" if dirty else ""))
+        print()
+    print("## Versions tested")
+    print()
+    print("|suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|")
+    print("|--|--|--|--|--|--|--|--|--|")
+    notes = []
+    for s in suites:
+        v = versions.get(s)
+        if not v:
+            print(f"|{s}|not recorded|||||||")
+            continue
+        short = v["commit"][:10]
+        commit = f"[`{short}`]({v['repo'].removesuffix('.git')}/commit/{v['commit']})" if "github.com" in v["repo"] else f"`{short}`"
+        print(f"|{s}|{v['mdk']}|`{v['describe']}` ({v['branch']})|{commit}|{v['commit_date'][:10]}|"
+              f"{v['library']}|{v['api']}|{v['toolchain']}|{v['run_at'].replace('T', ' ').rstrip('Z')}|")
+        if v.get("local_changes"):
+            notes.append(f"- {s}: the {v['mdk']} checkout differs from its commit in "
+                         + ", ".join(f"`{p}`" for p in v["local_changes"]))
+    if notes:
+        print()
+        print("Local changes at run time (tracked files only):")
+        print()
+        print("\n".join(notes))
+    print()
 
 
 def main():
@@ -36,6 +72,11 @@ def main():
                 cell[(r["id"], r["suite"])] = r["outcome"]
                 detail[(r["id"], r["suite"])] = r["detail"]
     ids = sorted(ids)
+    versions = {}
+    for s in suites:
+        vf = Path(a.dir) / f"{s}.version.json"
+        if vf.exists():
+            versions[s] = json.loads(vf.read_text())
 
     if a.csv:
         w = csv.writer(sys.stdout)
@@ -50,6 +91,8 @@ def main():
             if (i, s) in cell:
                 n[cell[(i, s)]] += 1
         return n
+
+    print_versions(suites, versions)
 
     # summary per matrix: pass/fail/unsupported/error for each suite
     matrices = sorted({i.split("-")[0] for i in ids})
