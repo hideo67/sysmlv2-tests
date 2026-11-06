@@ -34,6 +34,10 @@ data holds the matrix definitions and the test data.
 test-* directories contains the test suites.
 siblings of the test-suite are cloned project repositories of the MDKs to be tested.
 
+# Test result snapshot
+
+- [Test result snapshot](test-suite/report-all-SNAPSHOT.md)
+
 # Building and running
 
 The MDKs are cloned next to `test-suite` and built from source. The test
