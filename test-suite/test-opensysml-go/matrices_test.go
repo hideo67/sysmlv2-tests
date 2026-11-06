@@ -9,6 +9,7 @@
 package suite
 
 import (
+	"bytes"
 	"context"
 	"encoding/csv"
 	"encoding/json"
@@ -227,9 +228,9 @@ func normalize(v any) any {
 }
 
 func compact(raw json.RawMessage) string {
-	var b strings.Builder
-	for _, f := range strings.Fields(string(raw)) {
-		b.WriteString(f)
+	var b bytes.Buffer
+	if err := json.Compact(&b, raw); err != nil {
+		return string(raw)
 	}
 	return b.String()
 }
@@ -267,6 +268,17 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		prop := map[string]string{"payloadTypes": "payloadType", "sourceOutput": "sourceOutputFeature",
 			"targetInput": "targetInputFeature"}[c.Check]
 		return nil, noSymbolField(ctx, cl, m, c.Element, prop, "the flow's "+prop)
+	case "shortName", "owner", "isIndividual", "result", "subject":
+		// reads the Symbol API has no field for: unsupported, before the element is even
+		// looked up (unsupported takes precedence over not being visible)
+		nf := map[string][2]string{"shortName": {"shortName", "the short name"}, "owner": {"owner", "the owner"},
+			"isIndividual": {"isIndividual", "isIndividual"}, "result": {"result", "the result parameter"},
+			"subject": {"subjectParameter", "the subject parameter"}}[c.Check]
+		return nil, noSymbolField(ctx, cl, m, norm(c.Element), nf[0], nf[1])
+	case "documentation", "comments", "textualRepresentation":
+		prop := map[string]string{"documentation": "documentation", "comments": "comment",
+			"textualRepresentation": "textualRepresentation"}[c.Check]
+		return nil, noSymbolField(ctx, cl, m, norm(c.Element), prop, c.Check)
 	case "isComposite", "isReference":
 		return nil, noSymbolField(ctx, cl, m, c.Element, c.Check, c.Check)
 	case "sourceFeature", "targetFeature", "relatedFeature":
@@ -395,8 +407,6 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			return []string{}, nil
 		}
 		return []string{sym.Type.ResolvedID}, nil
-	case "owner":
-		return nil, noSymbolField(ctx, cl, m, sym.ID, "owner", "the owner")
 	case "idRoundTrip":
 		again, err := cl.LookupSymbol(ctx, m, sym.ID)
 		return err == nil && again.ID == sym.ID, nil
@@ -485,8 +495,6 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return out, nil
 	case "kind":
 		return metaclassOf(sym.Kind), nil
-	case "shortName":
-		return nil, noSymbolField(ctx, cl, m, sym.ID, "shortName", "the short name")
 	case "isAbstract":
 		// Symbol metadata carries `abstract: true` for an abstract element, nothing otherwise
 		return sym.Metadata["abstract"] == "true", nil
@@ -505,10 +513,6 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			}
 		}
 		return nil, nil
-	case "result":
-		return nil, noSymbolField(ctx, cl, m, sym.ID, "result", "the result parameter")
-	case "subject":
-		return nil, noSymbolField(ctx, cl, m, sym.ID, "subjectParameter", "the subject parameter")
 	case "parameters":
 		// children the Symbol lists that carry a direction in their metadata
 		out := [][]string{}
@@ -520,8 +524,6 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		}
 		slices.SortFunc(out, func(a, b []string) int { return strings.Compare(a[0]+" "+a[1], b[0]+" "+b[1]) })
 		return out, nil
-	case "isIndividual":
-		return nil, noSymbolField(ctx, cl, m, sym.ID, "isIndividual", "isIndividual")
 	case "variants":
 		// variant usages carry `variant: true` in their metadata
 		out := []string{}

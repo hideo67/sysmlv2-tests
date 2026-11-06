@@ -282,6 +282,20 @@ class MatricesTest {
             }
             case "isComposite": return ((Feature) e).isComposite();
             case "kind": return e.eClass().getName();
+            case "documentation":
+                return e.getDocumentation().stream().map(d -> d.getBody().trim()).sorted().toList();
+            case "comments": {
+                // Comments (not Documentation) whose annotatedElement includes e, wherever owned
+                List<String> out = new ArrayList<>();
+                for (var it = resource.getAllContents(); it.hasNext();) {
+                    if (it.next() instanceof Comment cm && !(cm instanceof Documentation) && cm.getAnnotatedElement().contains(e))
+                        out.add(cm.getBody().trim());
+                }
+                return out.stream().sorted().toList();
+            }
+            case "textualRepresentation":
+                return e.getTextualRepresentation().stream().map(r -> List.of(r.getLanguage(), r.getBody().trim()))
+                    .sorted(Comparator.comparing(Object::toString)).toList();
             case "entryKind": { ActionUsage a = ((StateUsage) e).getEntryAction(); return a == null ? null : a.eClass().getName(); }
             case "doKind": { ActionUsage a = ((StateUsage) e).getDoAction(); return a == null ? null : a.eClass().getName(); }
             case "exitKind": { ActionUsage a = ((StateUsage) e).getExitAction(); return a == null ? null : a.eClass().getName(); }

@@ -138,6 +138,17 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
     if check in ('entryKind', 'doKind', 'exitKind', 'isParallel', 'source', 'target', 'triggerPayload', 'guardKind', 'effectKind'):
         prop = {'entryKind': 'entryAction', 'doKind': 'doAction', 'exitKind': 'exitAction', 'isParallel': 'isParallel', 'source': 'source', 'target': 'target', 'triggerPayload': 'triggerAction', 'guardKind': 'guardExpression', 'effectKind': 'effectAction'}[check]
         raise no_symbol_field(model, element, prop, prop)
+    # reads the Symbol API has no field for: unsupported, before the element is even looked up
+    # (unsupported takes precedence over not being visible)
+    NO_FIELD = {"shortName": ("shortName", "the short name"), "owner": ("owner", "the owner"),
+                "isIndividual": ("isIndividual", "isIndividual"), "result": ("result", "the result parameter"),
+                "subject": ("subjectParameter", "the subject parameter")}
+    if check in NO_FIELD:
+        raise no_symbol_field(model, element, *NO_FIELD[check])
+    if check in ("documentation", "comments", "textualRepresentation"):
+        prop = {"documentation": "documentation", "comments": "comment",
+                "textualRepresentation": "textualRepresentation"}[check]
+        raise no_symbol_field(model, element, prop, check)
     if check == "substates":
         s, _ = _resolve(model, element, through)
         if isinstance(s, str):
@@ -196,8 +207,6 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
             raise Unsupported("no type_facts")
         # TypeFacts reports one resolved type
         return [s.type_facts.resolved_id] if s.type_facts.resolved_id else []
-    if check == "owner":
-        raise no_symbol_field(model, s.id, "owner", "the owner")
     if check == "idRoundTrip":
         again = model.get(s.id)
         return again is not None and again.id == s.id
@@ -221,8 +230,6 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
         return facts.get("severity")
     if check == "kind":
         return metaclass_of(s.kind)
-    if check == "shortName":
-        raise no_symbol_field(model, s.id, "shortName", "the short name")
     if check in ("isAbstract", "isVariation"):
         # Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
         return s.metadata.get("abstract" if check == "isAbstract" else "variation") == "true"
@@ -231,15 +238,9 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
             return s.type_facts.resolved_id if s.type_facts else None
         targets = [sp.target_id for sp in s.specializations if sp.kind == "subsets"]
         return targets[0] if targets else None
-    if check == "result":
-        raise no_symbol_field(model, s.id, "result", "the result parameter")
-    if check == "subject":
-        raise no_symbol_field(model, s.id, "subjectParameter", "the subject parameter")
     if check == "parameters":
         # members the Symbol lists that carry a direction in their metadata
         return sorted([c.metadata["direction"], c.name] for c in _visible(s).values() if "direction" in c.metadata)
-    if check == "isIndividual":
-        raise no_symbol_field(model, s.id, "isIndividual", "isIndividual")
     if check == "variants":
         # variant usages carry `variant: true` in their metadata
         return sorted(c.name for c in s.children() if c.metadata.get("variant") == "true")

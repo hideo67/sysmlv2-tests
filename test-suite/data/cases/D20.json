@@ -1,0 +1,378 @@
+{
+ "matrix": "D20",
+ "model": "models/D20.sysml",
+ "notes": {
+  "reads": "bodies compared with surrounding whitespace trimmed):\n  documentation          sorted bodies of Element::documentation\n  comments               sorted bodies of the Comments (not Documentation) whose annotatedElement\n                         includes the element, wherever they are owned (a body comment annotates\n                         its owning element)\n  textualRepresentation  sorted [language, body] of Element::textualRepresentation",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "D20-001",
+   "check": "documentation",
+   "element": "D20::PDoc",
+   "expect": [
+    "package doc"
+   ]
+  },
+  {
+   "id": "D20-002",
+   "check": "documentation",
+   "element": "D20::DefDoc",
+   "expect": [
+    "def doc"
+   ]
+  },
+  {
+   "id": "D20-003",
+   "check": "documentation",
+   "element": "D20::Holder::uDoc",
+   "expect": [
+    "usage doc"
+   ]
+  },
+  {
+   "id": "D20-004",
+   "check": "documentation",
+   "element": "D20::Holder::uDoc",
+   "expect": [
+    "usage doc"
+   ],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-005",
+   "check": "documentation",
+   "element": "D20::PCom",
+   "expect": []
+  },
+  {
+   "id": "D20-006",
+   "check": "documentation",
+   "element": "D20::DefCom",
+   "expect": []
+  },
+  {
+   "id": "D20-007",
+   "check": "documentation",
+   "element": "D20::Holder::uCom",
+   "expect": []
+  },
+  {
+   "id": "D20-008",
+   "check": "documentation",
+   "element": "D20::Holder::uCom",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-009",
+   "check": "documentation",
+   "element": "D20::PAbout",
+   "expect": []
+  },
+  {
+   "id": "D20-010",
+   "check": "documentation",
+   "element": "D20::DefAbout",
+   "expect": []
+  },
+  {
+   "id": "D20-011",
+   "check": "documentation",
+   "element": "D20::Holder::uAbout",
+   "expect": []
+  },
+  {
+   "id": "D20-012",
+   "check": "documentation",
+   "element": "D20::Holder::uAbout",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-013",
+   "check": "documentation",
+   "element": "D20::PRep",
+   "expect": []
+  },
+  {
+   "id": "D20-014",
+   "check": "documentation",
+   "element": "D20::DefRep",
+   "expect": []
+  },
+  {
+   "id": "D20-015",
+   "check": "documentation",
+   "element": "D20::Holder::uRep",
+   "expect": []
+  },
+  {
+   "id": "D20-016",
+   "check": "documentation",
+   "element": "D20::Holder::uRep",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-017",
+   "check": "comments",
+   "element": "D20::PDoc",
+   "expect": []
+  },
+  {
+   "id": "D20-018",
+   "check": "comments",
+   "element": "D20::DefDoc",
+   "expect": []
+  },
+  {
+   "id": "D20-019",
+   "check": "comments",
+   "element": "D20::Holder::uDoc",
+   "expect": []
+  },
+  {
+   "id": "D20-020",
+   "check": "comments",
+   "element": "D20::Holder::uDoc",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-021",
+   "check": "comments",
+   "element": "D20::PCom",
+   "expect": [
+    "package comment"
+   ]
+  },
+  {
+   "id": "D20-022",
+   "check": "comments",
+   "element": "D20::DefCom",
+   "expect": [
+    "def comment"
+   ]
+  },
+  {
+   "id": "D20-023",
+   "check": "comments",
+   "element": "D20::Holder::uCom",
+   "expect": [
+    "usage comment"
+   ]
+  },
+  {
+   "id": "D20-024",
+   "check": "comments",
+   "element": "D20::Holder::uCom",
+   "expect": [
+    "usage comment"
+   ],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-025",
+   "check": "comments",
+   "element": "D20::PAbout",
+   "expect": [
+    "package about"
+   ]
+  },
+  {
+   "id": "D20-026",
+   "check": "comments",
+   "element": "D20::DefAbout",
+   "expect": [
+    "def about"
+   ]
+  },
+  {
+   "id": "D20-027",
+   "check": "comments",
+   "element": "D20::Holder::uAbout",
+   "expect": [
+    "usage about"
+   ]
+  },
+  {
+   "id": "D20-028",
+   "check": "comments",
+   "element": "D20::Holder::uAbout",
+   "expect": [
+    "usage about"
+   ],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-029",
+   "check": "comments",
+   "element": "D20::PRep",
+   "expect": []
+  },
+  {
+   "id": "D20-030",
+   "check": "comments",
+   "element": "D20::DefRep",
+   "expect": []
+  },
+  {
+   "id": "D20-031",
+   "check": "comments",
+   "element": "D20::Holder::uRep",
+   "expect": []
+  },
+  {
+   "id": "D20-032",
+   "check": "comments",
+   "element": "D20::Holder::uRep",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-033",
+   "check": "textualRepresentation",
+   "element": "D20::PDoc",
+   "expect": []
+  },
+  {
+   "id": "D20-034",
+   "check": "textualRepresentation",
+   "element": "D20::DefDoc",
+   "expect": []
+  },
+  {
+   "id": "D20-035",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uDoc",
+   "expect": []
+  },
+  {
+   "id": "D20-036",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uDoc",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-037",
+   "check": "textualRepresentation",
+   "element": "D20::PCom",
+   "expect": []
+  },
+  {
+   "id": "D20-038",
+   "check": "textualRepresentation",
+   "element": "D20::DefCom",
+   "expect": []
+  },
+  {
+   "id": "D20-039",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uCom",
+   "expect": []
+  },
+  {
+   "id": "D20-040",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uCom",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-041",
+   "check": "textualRepresentation",
+   "element": "D20::PAbout",
+   "expect": []
+  },
+  {
+   "id": "D20-042",
+   "check": "textualRepresentation",
+   "element": "D20::DefAbout",
+   "expect": []
+  },
+  {
+   "id": "D20-043",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uAbout",
+   "expect": []
+  },
+  {
+   "id": "D20-044",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uAbout",
+   "expect": [],
+   "through": [
+    "D20::holder"
+   ]
+  },
+  {
+   "id": "D20-045",
+   "check": "textualRepresentation",
+   "element": "D20::PRep",
+   "expect": [
+    [
+     "text",
+     "package rep"
+    ]
+   ]
+  },
+  {
+   "id": "D20-046",
+   "check": "textualRepresentation",
+   "element": "D20::DefRep",
+   "expect": [
+    [
+     "text",
+     "def rep"
+    ]
+   ]
+  },
+  {
+   "id": "D20-047",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uRep",
+   "expect": [
+    [
+     "text",
+     "usage rep"
+    ]
+   ]
+  },
+  {
+   "id": "D20-048",
+   "check": "textualRepresentation",
+   "element": "D20::Holder::uRep",
+   "expect": [
+    [
+     "text",
+     "usage rep"
+    ]
+   ],
+   "through": [
+    "D20::holder"
+   ]
+  }
+ ]
+}

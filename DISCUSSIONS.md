@@ -731,3 +731,25 @@ Findings:
   do and exit actions, isParallel and all transition reads are unsupported (no
   Symbol field; the query API does not offer them either).
 - Pilot and sysml-toolkit: all 78 pass.
+
+### D20 documentation, comments and textual representations
+48 cases: 3 reads (documentation bodies, the bodies of comments annotating the
+element wherever they are owned, textual representations as [language, body])
+x 4 forms (`doc /* */`, body `comment /* */`, `comment c about X /* */` owned
+elsewhere, `rep language "text" /* */`) x 4 sites (package, part def, part usage,
+part usage through a typing usage). Bodies are compared with surrounding
+whitespace trimmed.
+
+Findings:
+- OpenSysML (Python, Go): all 48 unsupported. The Symbol API has no
+  documentation, comment or textual-representation field. The query API offers
+  `documentation` and `textualRepresentation`, and the details say so.
+- Pilot and sysml-toolkit: all 48 pass.
+
+Adapter fix found on the way (OpenSysML adapters): some reads with no Symbol
+field (shortName, owner, isIndividual, result, subject, and D20's reads) were
+decided after the element was looked up. A read through an invisible path then
+became "fail: not visible" instead of "unsupported", against the rule that
+unsupported takes precedence. They are now decided first. Only A50 changed: its
+18 `owner` cases on unnamed members went from fail to unsupported. The Go
+adapter's failure details also no longer drop spaces inside strings.

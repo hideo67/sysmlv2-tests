@@ -144,6 +144,10 @@ impl Api {
         }
         Ok(out)
     }
+    /// A comment's body, trimmed.
+    fn body(&mut self, c: ElementRef) -> Result<String, String> {
+        Ok(self.scalar(c, "body")?.as_str().unwrap_or("").trim().to_string())
+    }
     fn metaclass(&self, e: ElementRef) -> &'static str {
         self.rm.element_type(e)
     }
@@ -293,6 +297,35 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         "isComposite" => api.scalar(e, "isComposite")?,
         "kind" => json!(api.metaclass(e)),
+        "documentation" => {
+            let mut out = vec![];
+            for d in api.elements(e, "documentation")? {
+                out.push(api.body(d)?);
+            }
+            out.sort();
+            json!(out)
+        }
+        "comments" => {
+            // Comments (not Documentation) whose annotatedElement includes e, wherever owned
+            let candidates: Vec<ElementRef> = api.rm.user_elements().filter(|x| api.rm.element_type(*x) == "Comment").collect();
+            let mut out = vec![];
+            for c in candidates {
+                if api.elements(c, "annotatedElement")?.contains(&e) {
+                    out.push(api.body(c)?);
+                }
+            }
+            out.sort();
+            json!(out)
+        }
+        "textualRepresentation" => {
+            let mut out = vec![];
+            for r in api.elements(e, "textualRepresentation")? {
+                let lang = api.scalar(r, "language")?;
+                out.push(json!([lang, api.body(r)?]));
+            }
+            out.sort_by_key(|v| v.to_string());
+            json!(out)
+        }
         "entryKind" | "doKind" | "exitKind" | "guardKind" | "effectKind" => {
             let prop = match check {
                 "entryKind" => "entryAction", "doKind" => "doAction", "exitKind" => "exitAction",
