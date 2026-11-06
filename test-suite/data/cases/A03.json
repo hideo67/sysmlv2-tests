@@ -1,0 +1,801 @@
+{
+ "matrix": "A03",
+ "model": "models/A03.sysml",
+ "notes": {
+  "reads": "isAbstract    Type::isAbstract; a variation definition is abstract (SysML: a variation\n                must be abstract), so `variation` gives true as well\n  isVariation   Definition::isVariation\n  isIndividual  OccurrenceDefinition::isIndividual\n  variants      sorted names of Definition::variant ([] for a definition that is not a variation)"
+ },
+ "cases": [
+  {
+   "id": "A03-001",
+   "check": "isAbstract",
+   "element": "A03::PartPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-002",
+   "check": "isAbstract",
+   "element": "A03::Holder::PartPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-003",
+   "check": "isAbstract",
+   "element": "A03::ItemPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-004",
+   "check": "isAbstract",
+   "element": "A03::Holder::ItemPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-005",
+   "check": "isAbstract",
+   "element": "A03::OccPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-006",
+   "check": "isAbstract",
+   "element": "A03::Holder::OccPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-007",
+   "check": "isAbstract",
+   "element": "A03::ActPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-008",
+   "check": "isAbstract",
+   "element": "A03::Holder::ActPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-009",
+   "check": "isAbstract",
+   "element": "A03::PartAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-010",
+   "check": "isAbstract",
+   "element": "A03::Holder::PartAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-011",
+   "check": "isAbstract",
+   "element": "A03::ItemAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-012",
+   "check": "isAbstract",
+   "element": "A03::Holder::ItemAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-013",
+   "check": "isAbstract",
+   "element": "A03::OccAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-014",
+   "check": "isAbstract",
+   "element": "A03::Holder::OccAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-015",
+   "check": "isAbstract",
+   "element": "A03::ActAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-016",
+   "check": "isAbstract",
+   "element": "A03::Holder::ActAbs",
+   "expect": true
+  },
+  {
+   "id": "A03-017",
+   "check": "isAbstract",
+   "element": "A03::PartVar",
+   "expect": true
+  },
+  {
+   "id": "A03-018",
+   "check": "isAbstract",
+   "element": "A03::Holder::PartVar",
+   "expect": true
+  },
+  {
+   "id": "A03-019",
+   "check": "isAbstract",
+   "element": "A03::ItemVar",
+   "expect": true
+  },
+  {
+   "id": "A03-020",
+   "check": "isAbstract",
+   "element": "A03::Holder::ItemVar",
+   "expect": true
+  },
+  {
+   "id": "A03-021",
+   "check": "isAbstract",
+   "element": "A03::OccVar",
+   "expect": true
+  },
+  {
+   "id": "A03-022",
+   "check": "isAbstract",
+   "element": "A03::Holder::OccVar",
+   "expect": true
+  },
+  {
+   "id": "A03-023",
+   "check": "isAbstract",
+   "element": "A03::ActVar",
+   "expect": true
+  },
+  {
+   "id": "A03-024",
+   "check": "isAbstract",
+   "element": "A03::Holder::ActVar",
+   "expect": true
+  },
+  {
+   "id": "A03-025",
+   "check": "isAbstract",
+   "element": "A03::PartInd",
+   "expect": false
+  },
+  {
+   "id": "A03-026",
+   "check": "isAbstract",
+   "element": "A03::Holder::PartInd",
+   "expect": false
+  },
+  {
+   "id": "A03-027",
+   "check": "isAbstract",
+   "element": "A03::ItemInd",
+   "expect": false
+  },
+  {
+   "id": "A03-028",
+   "check": "isAbstract",
+   "element": "A03::Holder::ItemInd",
+   "expect": false
+  },
+  {
+   "id": "A03-029",
+   "check": "isAbstract",
+   "element": "A03::OccInd",
+   "expect": false
+  },
+  {
+   "id": "A03-030",
+   "check": "isAbstract",
+   "element": "A03::Holder::OccInd",
+   "expect": false
+  },
+  {
+   "id": "A03-031",
+   "check": "isAbstract",
+   "element": "A03::ActInd",
+   "expect": false
+  },
+  {
+   "id": "A03-032",
+   "check": "isAbstract",
+   "element": "A03::Holder::ActInd",
+   "expect": false
+  },
+  {
+   "id": "A03-033",
+   "check": "isVariation",
+   "element": "A03::PartPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-034",
+   "check": "isVariation",
+   "element": "A03::Holder::PartPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-035",
+   "check": "isVariation",
+   "element": "A03::ItemPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-036",
+   "check": "isVariation",
+   "element": "A03::Holder::ItemPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-037",
+   "check": "isVariation",
+   "element": "A03::OccPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-038",
+   "check": "isVariation",
+   "element": "A03::Holder::OccPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-039",
+   "check": "isVariation",
+   "element": "A03::ActPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-040",
+   "check": "isVariation",
+   "element": "A03::Holder::ActPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-041",
+   "check": "isVariation",
+   "element": "A03::PartAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-042",
+   "check": "isVariation",
+   "element": "A03::Holder::PartAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-043",
+   "check": "isVariation",
+   "element": "A03::ItemAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-044",
+   "check": "isVariation",
+   "element": "A03::Holder::ItemAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-045",
+   "check": "isVariation",
+   "element": "A03::OccAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-046",
+   "check": "isVariation",
+   "element": "A03::Holder::OccAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-047",
+   "check": "isVariation",
+   "element": "A03::ActAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-048",
+   "check": "isVariation",
+   "element": "A03::Holder::ActAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-049",
+   "check": "isVariation",
+   "element": "A03::PartVar",
+   "expect": true
+  },
+  {
+   "id": "A03-050",
+   "check": "isVariation",
+   "element": "A03::Holder::PartVar",
+   "expect": true
+  },
+  {
+   "id": "A03-051",
+   "check": "isVariation",
+   "element": "A03::ItemVar",
+   "expect": true
+  },
+  {
+   "id": "A03-052",
+   "check": "isVariation",
+   "element": "A03::Holder::ItemVar",
+   "expect": true
+  },
+  {
+   "id": "A03-053",
+   "check": "isVariation",
+   "element": "A03::OccVar",
+   "expect": true
+  },
+  {
+   "id": "A03-054",
+   "check": "isVariation",
+   "element": "A03::Holder::OccVar",
+   "expect": true
+  },
+  {
+   "id": "A03-055",
+   "check": "isVariation",
+   "element": "A03::ActVar",
+   "expect": true
+  },
+  {
+   "id": "A03-056",
+   "check": "isVariation",
+   "element": "A03::Holder::ActVar",
+   "expect": true
+  },
+  {
+   "id": "A03-057",
+   "check": "isVariation",
+   "element": "A03::PartInd",
+   "expect": false
+  },
+  {
+   "id": "A03-058",
+   "check": "isVariation",
+   "element": "A03::Holder::PartInd",
+   "expect": false
+  },
+  {
+   "id": "A03-059",
+   "check": "isVariation",
+   "element": "A03::ItemInd",
+   "expect": false
+  },
+  {
+   "id": "A03-060",
+   "check": "isVariation",
+   "element": "A03::Holder::ItemInd",
+   "expect": false
+  },
+  {
+   "id": "A03-061",
+   "check": "isVariation",
+   "element": "A03::OccInd",
+   "expect": false
+  },
+  {
+   "id": "A03-062",
+   "check": "isVariation",
+   "element": "A03::Holder::OccInd",
+   "expect": false
+  },
+  {
+   "id": "A03-063",
+   "check": "isVariation",
+   "element": "A03::ActInd",
+   "expect": false
+  },
+  {
+   "id": "A03-064",
+   "check": "isVariation",
+   "element": "A03::Holder::ActInd",
+   "expect": false
+  },
+  {
+   "id": "A03-065",
+   "check": "isIndividual",
+   "element": "A03::PartPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-066",
+   "check": "isIndividual",
+   "element": "A03::Holder::PartPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-067",
+   "check": "isIndividual",
+   "element": "A03::ItemPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-068",
+   "check": "isIndividual",
+   "element": "A03::Holder::ItemPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-069",
+   "check": "isIndividual",
+   "element": "A03::OccPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-070",
+   "check": "isIndividual",
+   "element": "A03::Holder::OccPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-071",
+   "check": "isIndividual",
+   "element": "A03::ActPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-072",
+   "check": "isIndividual",
+   "element": "A03::Holder::ActPlain",
+   "expect": false
+  },
+  {
+   "id": "A03-073",
+   "check": "isIndividual",
+   "element": "A03::PartAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-074",
+   "check": "isIndividual",
+   "element": "A03::Holder::PartAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-075",
+   "check": "isIndividual",
+   "element": "A03::ItemAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-076",
+   "check": "isIndividual",
+   "element": "A03::Holder::ItemAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-077",
+   "check": "isIndividual",
+   "element": "A03::OccAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-078",
+   "check": "isIndividual",
+   "element": "A03::Holder::OccAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-079",
+   "check": "isIndividual",
+   "element": "A03::ActAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-080",
+   "check": "isIndividual",
+   "element": "A03::Holder::ActAbs",
+   "expect": false
+  },
+  {
+   "id": "A03-081",
+   "check": "isIndividual",
+   "element": "A03::PartVar",
+   "expect": false
+  },
+  {
+   "id": "A03-082",
+   "check": "isIndividual",
+   "element": "A03::Holder::PartVar",
+   "expect": false
+  },
+  {
+   "id": "A03-083",
+   "check": "isIndividual",
+   "element": "A03::ItemVar",
+   "expect": false
+  },
+  {
+   "id": "A03-084",
+   "check": "isIndividual",
+   "element": "A03::Holder::ItemVar",
+   "expect": false
+  },
+  {
+   "id": "A03-085",
+   "check": "isIndividual",
+   "element": "A03::OccVar",
+   "expect": false
+  },
+  {
+   "id": "A03-086",
+   "check": "isIndividual",
+   "element": "A03::Holder::OccVar",
+   "expect": false
+  },
+  {
+   "id": "A03-087",
+   "check": "isIndividual",
+   "element": "A03::ActVar",
+   "expect": false
+  },
+  {
+   "id": "A03-088",
+   "check": "isIndividual",
+   "element": "A03::Holder::ActVar",
+   "expect": false
+  },
+  {
+   "id": "A03-089",
+   "check": "isIndividual",
+   "element": "A03::PartInd",
+   "expect": true
+  },
+  {
+   "id": "A03-090",
+   "check": "isIndividual",
+   "element": "A03::Holder::PartInd",
+   "expect": true
+  },
+  {
+   "id": "A03-091",
+   "check": "isIndividual",
+   "element": "A03::ItemInd",
+   "expect": true
+  },
+  {
+   "id": "A03-092",
+   "check": "isIndividual",
+   "element": "A03::Holder::ItemInd",
+   "expect": true
+  },
+  {
+   "id": "A03-093",
+   "check": "isIndividual",
+   "element": "A03::OccInd",
+   "expect": true
+  },
+  {
+   "id": "A03-094",
+   "check": "isIndividual",
+   "element": "A03::Holder::OccInd",
+   "expect": true
+  },
+  {
+   "id": "A03-095",
+   "check": "isIndividual",
+   "element": "A03::ActInd",
+   "expect": true
+  },
+  {
+   "id": "A03-096",
+   "check": "isIndividual",
+   "element": "A03::Holder::ActInd",
+   "expect": true
+  },
+  {
+   "id": "A03-097",
+   "check": "variants",
+   "element": "A03::PartPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-098",
+   "check": "variants",
+   "element": "A03::Holder::PartPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-099",
+   "check": "variants",
+   "element": "A03::ItemPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-100",
+   "check": "variants",
+   "element": "A03::Holder::ItemPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-101",
+   "check": "variants",
+   "element": "A03::OccPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-102",
+   "check": "variants",
+   "element": "A03::Holder::OccPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-103",
+   "check": "variants",
+   "element": "A03::ActPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-104",
+   "check": "variants",
+   "element": "A03::Holder::ActPlain",
+   "expect": []
+  },
+  {
+   "id": "A03-105",
+   "check": "variants",
+   "element": "A03::PartAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-106",
+   "check": "variants",
+   "element": "A03::Holder::PartAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-107",
+   "check": "variants",
+   "element": "A03::ItemAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-108",
+   "check": "variants",
+   "element": "A03::Holder::ItemAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-109",
+   "check": "variants",
+   "element": "A03::OccAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-110",
+   "check": "variants",
+   "element": "A03::Holder::OccAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-111",
+   "check": "variants",
+   "element": "A03::ActAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-112",
+   "check": "variants",
+   "element": "A03::Holder::ActAbs",
+   "expect": []
+  },
+  {
+   "id": "A03-113",
+   "check": "variants",
+   "element": "A03::PartVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-114",
+   "check": "variants",
+   "element": "A03::Holder::PartVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-115",
+   "check": "variants",
+   "element": "A03::ItemVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-116",
+   "check": "variants",
+   "element": "A03::Holder::ItemVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-117",
+   "check": "variants",
+   "element": "A03::OccVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-118",
+   "check": "variants",
+   "element": "A03::Holder::OccVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-119",
+   "check": "variants",
+   "element": "A03::ActVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-120",
+   "check": "variants",
+   "element": "A03::Holder::ActVar",
+   "expect": [
+    "v1",
+    "v2"
+   ]
+  },
+  {
+   "id": "A03-121",
+   "check": "variants",
+   "element": "A03::PartInd",
+   "expect": []
+  },
+  {
+   "id": "A03-122",
+   "check": "variants",
+   "element": "A03::Holder::PartInd",
+   "expect": []
+  },
+  {
+   "id": "A03-123",
+   "check": "variants",
+   "element": "A03::ItemInd",
+   "expect": []
+  },
+  {
+   "id": "A03-124",
+   "check": "variants",
+   "element": "A03::Holder::ItemInd",
+   "expect": []
+  },
+  {
+   "id": "A03-125",
+   "check": "variants",
+   "element": "A03::OccInd",
+   "expect": []
+  },
+  {
+   "id": "A03-126",
+   "check": "variants",
+   "element": "A03::Holder::OccInd",
+   "expect": []
+  },
+  {
+   "id": "A03-127",
+   "check": "variants",
+   "element": "A03::ActInd",
+   "expect": []
+  },
+  {
+   "id": "A03-128",
+   "check": "variants",
+   "element": "A03::Holder::ActInd",
+   "expect": []
+  }
+ ]
+}

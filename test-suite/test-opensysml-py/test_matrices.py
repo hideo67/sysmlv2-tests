@@ -83,11 +83,20 @@ def _resolve(model, element, through, unnamed=None):
     return cur, owner
 
 
+# Symbol kinds whose words are abbreviated (internal/semantic/symbols/symbol.go): `calc`,
+# `enum`, and a binding, which is a BindingConnectorAsUsage.
+KIND_WORDS = {"calc": "calculation", "enum": "enumeration"}
+KIND_WHOLE = {"bindingUsage": "BindingConnectorAsUsage"}
+
+
 def metaclass_of(kind):
     """The Symbol kind spelled as the spec metaclass: lower camel case, with `Def` for
-    `Definition` and `enum` for `Enumeration` (`partDef` -> `PartDefinition`)."""
-    if kind.startswith("enum"):
-        kind = "enumeration" + kind[len("enum"):]
+    `Definition` and the abbreviations of KIND_WORDS expanded (`calcDef` -> `CalculationDefinition`)."""
+    if kind in KIND_WHOLE:
+        return KIND_WHOLE[kind]
+    for short, full in KIND_WORDS.items():
+        if kind.startswith(short) and kind[len(short):len(short) + 1].isupper():
+            kind = full + kind[len(short):]
     if kind.endswith("Def"):
         kind += "inition"
     return kind[:1].upper() + kind[1:]
@@ -192,9 +201,21 @@ def do_check(model, check, element, through=None, unnamed=None):
         return metaclass_of(s.kind)
     if check == "shortName":
         raise no_symbol_field(model, s.id, "shortName", "the short name")
-    if check == "isAbstract":
-        # Symbol metadata carries `abstract: true` for an abstract element, nothing otherwise
-        return s.metadata.get("abstract") == "true"
+    if check in ("isAbstract", "isVariation"):
+        # Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
+        return s.metadata.get("abstract" if check == "isAbstract" else "variation") == "true"
+    if check == "result":
+        raise no_symbol_field(model, s.id, "result", "the result parameter")
+    if check == "subject":
+        raise no_symbol_field(model, s.id, "subjectParameter", "the subject parameter")
+    if check == "parameters":
+        # members the Symbol lists that carry a direction in their metadata
+        return sorted([c.metadata["direction"], c.name] for c in _visible(s).values() if "direction" in c.metadata)
+    if check == "isIndividual":
+        raise no_symbol_field(model, s.id, "isIndividual", "isIndividual")
+    if check == "variants":
+        # variant usages carry `variant: true` in their metadata
+        return sorted(c.name for c in s.children() if c.metadata.get("variant") == "true")
     if check == "typeIsConjugated":
         if s.type_facts is None or not s.type_facts.resolved_id:
             return None

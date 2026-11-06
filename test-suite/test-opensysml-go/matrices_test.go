@@ -85,14 +85,24 @@ func noSymbolField(ctx context.Context, cl opensysml.Client, m *opensysml.Model,
 	return unsupported("no Symbol field for %s; %s", what, note)
 }
 
+// Symbol kinds whose words are abbreviated (internal/semantic/symbols/symbol.go): `calc`,
+// `enum`, and a binding, which is a BindingConnectorAsUsage.
+var kindWords = map[string]string{"calc": "calculation", "enum": "enumeration"}
+var kindWhole = map[string]string{"bindingUsage": "BindingConnectorAsUsage"}
+
 // metaclassOf spells a Symbol kind as the spec metaclass: lower camel case, with `Def`
-// for `Definition` and `enum` for `Enumeration` (`partDef` -> `PartDefinition`).
+// for `Definition` and the abbreviations of kindWords expanded (`calcDef` -> `CalculationDefinition`).
 func metaclassOf(kind string) string {
 	if kind == "" {
 		return ""
 	}
-	if strings.HasPrefix(kind, "enum") {
-		kind = "enumeration" + strings.TrimPrefix(kind, "enum")
+	if whole, ok := kindWhole[kind]; ok {
+		return whole
+	}
+	for short, full := range kindWords {
+		if rest := strings.TrimPrefix(kind, short); rest != kind && rest != "" && rest[0] >= 'A' && rest[0] <= 'Z' {
+			kind = full + rest
+		}
 	}
 	if strings.HasSuffix(kind, "Def") {
 		kind += "inition"
@@ -413,6 +423,36 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	case "isAbstract":
 		// Symbol metadata carries `abstract: true` for an abstract element, nothing otherwise
 		return sym.Metadata["abstract"] == "true", nil
+	case "isVariation":
+		return sym.Metadata["variation"] == "true", nil
+	case "result":
+		return nil, noSymbolField(ctx, cl, m, sym.ID, "result", "the result parameter")
+	case "subject":
+		return nil, noSymbolField(ctx, cl, m, sym.ID, "subjectParameter", "the subject parameter")
+	case "parameters":
+		// children the Symbol lists that carry a direction in their metadata
+		out := [][]string{}
+		for _, cid := range sym.ChildIDs {
+			ch, err := cl.LookupSymbol(ctx, m, cid)
+			if err == nil && ch.Metadata["direction"] != "" {
+				out = append(out, []string{ch.Metadata["direction"], ch.Name})
+			}
+		}
+		slices.SortFunc(out, func(a, b []string) int { return strings.Compare(a[0]+" "+a[1], b[0]+" "+b[1]) })
+		return out, nil
+	case "isIndividual":
+		return nil, noSymbolField(ctx, cl, m, sym.ID, "isIndividual", "isIndividual")
+	case "variants":
+		// variant usages carry `variant: true` in their metadata
+		out := []string{}
+		for _, cid := range sym.ChildIDs {
+			ch, err := cl.LookupSymbol(ctx, m, cid)
+			if err == nil && ch.Metadata["variant"] == "true" {
+				out = append(out, ch.Name)
+			}
+		}
+		slices.Sort(out)
+		return out, nil
 	case "typeIsConjugated":
 		if sym.Type == nil || sym.Type.ResolvedID == "" {
 			return nil, nil

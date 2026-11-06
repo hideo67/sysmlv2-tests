@@ -354,6 +354,34 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         }
         "shortName" => api.scalar(e, "shortName")?,
         "isAbstract" => api.scalar(e, "isAbstract")?,
+        "isVariation" => api.scalar(e, "isVariation")?,
+        "parameters" => {
+            let mut out = vec![];
+            for f in api.elements(e, "directedFeature")? {
+                let r = api.rm.invoke_operation(e, "Core-Types-Type-directionOf_Feature",
+                    &[DerivedValue::Reference(Reference::Element(f))]).map_err(|err| format!("directionOf: {err:?}"))?;
+                let dir = match r.value {
+                    DerivedValue::Literal(s) | DerivedValue::Str(s) => json!(s),
+                    _ => Value::Null,
+                };
+                out.push(json!([dir, api.scalar(f, "name")?.as_str().unwrap_or("")]));
+            }
+            out.sort_by_key(|v| v.to_string());
+            json!(out)
+        }
+        "result" | "subject" => match api.element(e, if check == "result" { "result" } else { "subjectParameter" })? {
+            Some(p) => api.scalar(p, "name")?,
+            None => Value::Null,
+        },
+        "isIndividual" => api.scalar(e, "isIndividual")?,
+        "variants" => {
+            let mut out = vec![];
+            for v in api.elements(e, "variant")? {
+                out.push(api.scalar(v, "name")?.as_str().unwrap_or("").to_string());
+            }
+            out.sort();
+            json!(out)
+        }
         "metadataDefs" => {
             let mut defs = vec![];
             for mu in api.annotations(e)? {

@@ -64,6 +64,9 @@ def main():
     detail = {}              # (id, suite) -> text
     suites, ids = [], set()
     for f in files:
+        # a suite keeps its column even when it recorded nothing (its cells then show "-")
+        if f.stem not in suites:
+            suites.append(f.stem)
         with open(f, newline="") as fh:
             for r in csv.DictReader(fh):
                 if r["suite"] not in suites:
@@ -108,6 +111,12 @@ def main():
             cells.append(f"{n['pass']} / {n['fail']} / {n['unsupported']} / {n['error']}" if n else "-")
         print(f"|{'**all**' if mx == 'all' else mx}|{len(subset)}|" + "|".join(cells) + "|")
     print()
+    for s in suites:
+        recorded = sum(1 for i in ids if (i, s) in cell)
+        if recorded < len(ids):
+            print(f"**Warning:** {s} recorded {recorded} of {len(ids)} cases; the missing ones show as `-` "
+                  f"(see results/logs/{s}.log).")
+            print()
 
     print("## Results")
     print()

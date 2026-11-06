@@ -1,0 +1,745 @@
+{
+ "matrix": "C01",
+ "model": "models/C01.sysml",
+ "notes": {
+  "reads": "name        Element::name\n  kind        the metaclass\n  isAbstract  Type::isAbstract\n  parameters  sorted [direction, name] of Type::directedFeature (owned and inherited, from the\n              standard library too; an unnamed feature has name \"\")\n  result      name of the result parameter (Function::result: calc, constraint, requirement,\n              use case, analysis and verification definitions are functions); null otherwise\n  subject     name of the subject parameter (RequirementDefinition/CaseDefinition::\n              subjectParameter); null otherwise\nCases marked `libraryDependent` expect members inherited from the standard library; that part\nwas taken from the Pilot Implementation (library 0.64.0) and checked against the library source."
+ },
+ "cases": [
+  {
+   "id": "C01-001",
+   "check": "name",
+   "element": "C01::Act",
+   "expect": "Act"
+  },
+  {
+   "id": "C01-002",
+   "check": "name",
+   "element": "C01::SubAct",
+   "expect": "SubAct"
+  },
+  {
+   "id": "C01-003",
+   "check": "name",
+   "element": "C01::St",
+   "expect": "St"
+  },
+  {
+   "id": "C01-004",
+   "check": "name",
+   "element": "C01::SubSt",
+   "expect": "SubSt"
+  },
+  {
+   "id": "C01-005",
+   "check": "name",
+   "element": "C01::Calc",
+   "expect": "Calc"
+  },
+  {
+   "id": "C01-006",
+   "check": "name",
+   "element": "C01::SubCalc",
+   "expect": "SubCalc"
+  },
+  {
+   "id": "C01-007",
+   "check": "name",
+   "element": "C01::Cons",
+   "expect": "Cons"
+  },
+  {
+   "id": "C01-008",
+   "check": "name",
+   "element": "C01::SubCons",
+   "expect": "SubCons"
+  },
+  {
+   "id": "C01-009",
+   "check": "name",
+   "element": "C01::Req",
+   "expect": "Req"
+  },
+  {
+   "id": "C01-010",
+   "check": "name",
+   "element": "C01::SubReq",
+   "expect": "SubReq"
+  },
+  {
+   "id": "C01-011",
+   "check": "name",
+   "element": "C01::UC",
+   "expect": "UC"
+  },
+  {
+   "id": "C01-012",
+   "check": "name",
+   "element": "C01::SubUC",
+   "expect": "SubUC"
+  },
+  {
+   "id": "C01-013",
+   "check": "name",
+   "element": "C01::An",
+   "expect": "An"
+  },
+  {
+   "id": "C01-014",
+   "check": "name",
+   "element": "C01::SubAn",
+   "expect": "SubAn"
+  },
+  {
+   "id": "C01-015",
+   "check": "name",
+   "element": "C01::Ver",
+   "expect": "Ver"
+  },
+  {
+   "id": "C01-016",
+   "check": "name",
+   "element": "C01::SubVer",
+   "expect": "SubVer"
+  },
+  {
+   "id": "C01-017",
+   "check": "kind",
+   "element": "C01::Act",
+   "expect": "ActionDefinition"
+  },
+  {
+   "id": "C01-018",
+   "check": "kind",
+   "element": "C01::SubAct",
+   "expect": "ActionDefinition"
+  },
+  {
+   "id": "C01-019",
+   "check": "kind",
+   "element": "C01::St",
+   "expect": "StateDefinition"
+  },
+  {
+   "id": "C01-020",
+   "check": "kind",
+   "element": "C01::SubSt",
+   "expect": "StateDefinition"
+  },
+  {
+   "id": "C01-021",
+   "check": "kind",
+   "element": "C01::Calc",
+   "expect": "CalculationDefinition"
+  },
+  {
+   "id": "C01-022",
+   "check": "kind",
+   "element": "C01::SubCalc",
+   "expect": "CalculationDefinition"
+  },
+  {
+   "id": "C01-023",
+   "check": "kind",
+   "element": "C01::Cons",
+   "expect": "ConstraintDefinition"
+  },
+  {
+   "id": "C01-024",
+   "check": "kind",
+   "element": "C01::SubCons",
+   "expect": "ConstraintDefinition"
+  },
+  {
+   "id": "C01-025",
+   "check": "kind",
+   "element": "C01::Req",
+   "expect": "RequirementDefinition"
+  },
+  {
+   "id": "C01-026",
+   "check": "kind",
+   "element": "C01::SubReq",
+   "expect": "RequirementDefinition"
+  },
+  {
+   "id": "C01-027",
+   "check": "kind",
+   "element": "C01::UC",
+   "expect": "UseCaseDefinition"
+  },
+  {
+   "id": "C01-028",
+   "check": "kind",
+   "element": "C01::SubUC",
+   "expect": "UseCaseDefinition"
+  },
+  {
+   "id": "C01-029",
+   "check": "kind",
+   "element": "C01::An",
+   "expect": "AnalysisCaseDefinition"
+  },
+  {
+   "id": "C01-030",
+   "check": "kind",
+   "element": "C01::SubAn",
+   "expect": "AnalysisCaseDefinition"
+  },
+  {
+   "id": "C01-031",
+   "check": "kind",
+   "element": "C01::Ver",
+   "expect": "VerificationCaseDefinition"
+  },
+  {
+   "id": "C01-032",
+   "check": "kind",
+   "element": "C01::SubVer",
+   "expect": "VerificationCaseDefinition"
+  },
+  {
+   "id": "C01-033",
+   "check": "isAbstract",
+   "element": "C01::Act",
+   "expect": false
+  },
+  {
+   "id": "C01-034",
+   "check": "isAbstract",
+   "element": "C01::SubAct",
+   "expect": false
+  },
+  {
+   "id": "C01-035",
+   "check": "isAbstract",
+   "element": "C01::St",
+   "expect": false
+  },
+  {
+   "id": "C01-036",
+   "check": "isAbstract",
+   "element": "C01::SubSt",
+   "expect": false
+  },
+  {
+   "id": "C01-037",
+   "check": "isAbstract",
+   "element": "C01::Calc",
+   "expect": false
+  },
+  {
+   "id": "C01-038",
+   "check": "isAbstract",
+   "element": "C01::SubCalc",
+   "expect": false
+  },
+  {
+   "id": "C01-039",
+   "check": "isAbstract",
+   "element": "C01::Cons",
+   "expect": false
+  },
+  {
+   "id": "C01-040",
+   "check": "isAbstract",
+   "element": "C01::SubCons",
+   "expect": false
+  },
+  {
+   "id": "C01-041",
+   "check": "isAbstract",
+   "element": "C01::Req",
+   "expect": false
+  },
+  {
+   "id": "C01-042",
+   "check": "isAbstract",
+   "element": "C01::SubReq",
+   "expect": false
+  },
+  {
+   "id": "C01-043",
+   "check": "isAbstract",
+   "element": "C01::UC",
+   "expect": false
+  },
+  {
+   "id": "C01-044",
+   "check": "isAbstract",
+   "element": "C01::SubUC",
+   "expect": false
+  },
+  {
+   "id": "C01-045",
+   "check": "isAbstract",
+   "element": "C01::An",
+   "expect": false
+  },
+  {
+   "id": "C01-046",
+   "check": "isAbstract",
+   "element": "C01::SubAn",
+   "expect": false
+  },
+  {
+   "id": "C01-047",
+   "check": "isAbstract",
+   "element": "C01::Ver",
+   "expect": false
+  },
+  {
+   "id": "C01-048",
+   "check": "isAbstract",
+   "element": "C01::SubVer",
+   "expect": false
+  },
+  {
+   "id": "C01-049",
+   "check": "parameters",
+   "element": "C01::Act",
+   "expect": [
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "y"
+    ]
+   ]
+  },
+  {
+   "id": "C01-050",
+   "check": "parameters",
+   "element": "C01::SubAct",
+   "expect": [
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "y"
+    ]
+   ]
+  },
+  {
+   "id": "C01-051",
+   "check": "parameters",
+   "element": "C01::St",
+   "expect": [
+    [
+     "in",
+     "x"
+    ]
+   ]
+  },
+  {
+   "id": "C01-052",
+   "check": "parameters",
+   "element": "C01::SubSt",
+   "expect": [
+    [
+     "in",
+     "x"
+    ]
+   ]
+  },
+  {
+   "id": "C01-053",
+   "check": "parameters",
+   "element": "C01::Calc",
+   "expect": [
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "r"
+    ]
+   ]
+  },
+  {
+   "id": "C01-054",
+   "check": "parameters",
+   "element": "C01::SubCalc",
+   "expect": [
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "r"
+    ]
+   ]
+  },
+  {
+   "id": "C01-055",
+   "check": "parameters",
+   "element": "C01::Cons",
+   "expect": [
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-056",
+   "check": "parameters",
+   "element": "C01::SubCons",
+   "expect": [
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-057",
+   "check": "parameters",
+   "element": "C01::Req",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-058",
+   "check": "parameters",
+   "element": "C01::SubReq",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "in",
+     "x"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-059",
+   "check": "parameters",
+   "element": "C01::UC",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-060",
+   "check": "parameters",
+   "element": "C01::SubUC",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-061",
+   "check": "parameters",
+   "element": "C01::An",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "r"
+    ]
+   ]
+  },
+  {
+   "id": "C01-062",
+   "check": "parameters",
+   "element": "C01::SubAn",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "r"
+    ]
+   ]
+  },
+  {
+   "id": "C01-063",
+   "check": "parameters",
+   "element": "C01::Ver",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "verdict"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-064",
+   "check": "parameters",
+   "element": "C01::SubVer",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "verdict"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-065",
+   "check": "result",
+   "element": "C01::Act",
+   "expect": null
+  },
+  {
+   "id": "C01-066",
+   "check": "result",
+   "element": "C01::SubAct",
+   "expect": null
+  },
+  {
+   "id": "C01-067",
+   "check": "result",
+   "element": "C01::St",
+   "expect": null
+  },
+  {
+   "id": "C01-068",
+   "check": "result",
+   "element": "C01::SubSt",
+   "expect": null
+  },
+  {
+   "id": "C01-069",
+   "check": "result",
+   "element": "C01::Calc",
+   "expect": "r"
+  },
+  {
+   "id": "C01-070",
+   "check": "result",
+   "element": "C01::SubCalc",
+   "expect": "r"
+  },
+  {
+   "id": "C01-071",
+   "check": "result",
+   "element": "C01::Cons",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-072",
+   "check": "result",
+   "element": "C01::SubCons",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-073",
+   "check": "result",
+   "element": "C01::Req",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-074",
+   "check": "result",
+   "element": "C01::SubReq",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-075",
+   "check": "result",
+   "element": "C01::UC",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-076",
+   "check": "result",
+   "element": "C01::SubUC",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-077",
+   "check": "result",
+   "element": "C01::An",
+   "expect": "r"
+  },
+  {
+   "id": "C01-078",
+   "check": "result",
+   "element": "C01::SubAn",
+   "expect": "r"
+  },
+  {
+   "id": "C01-079",
+   "check": "result",
+   "element": "C01::Ver",
+   "expect": "verdict",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-080",
+   "check": "result",
+   "element": "C01::SubVer",
+   "expect": "verdict",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-081",
+   "check": "subject",
+   "element": "C01::Act",
+   "expect": null
+  },
+  {
+   "id": "C01-082",
+   "check": "subject",
+   "element": "C01::SubAct",
+   "expect": null
+  },
+  {
+   "id": "C01-083",
+   "check": "subject",
+   "element": "C01::St",
+   "expect": null
+  },
+  {
+   "id": "C01-084",
+   "check": "subject",
+   "element": "C01::SubSt",
+   "expect": null
+  },
+  {
+   "id": "C01-085",
+   "check": "subject",
+   "element": "C01::Calc",
+   "expect": null
+  },
+  {
+   "id": "C01-086",
+   "check": "subject",
+   "element": "C01::SubCalc",
+   "expect": null
+  },
+  {
+   "id": "C01-087",
+   "check": "subject",
+   "element": "C01::Cons",
+   "expect": null
+  },
+  {
+   "id": "C01-088",
+   "check": "subject",
+   "element": "C01::SubCons",
+   "expect": null
+  },
+  {
+   "id": "C01-089",
+   "check": "subject",
+   "element": "C01::Req",
+   "expect": "s"
+  },
+  {
+   "id": "C01-090",
+   "check": "subject",
+   "element": "C01::SubReq",
+   "expect": "s"
+  },
+  {
+   "id": "C01-091",
+   "check": "subject",
+   "element": "C01::UC",
+   "expect": "s"
+  },
+  {
+   "id": "C01-092",
+   "check": "subject",
+   "element": "C01::SubUC",
+   "expect": "s"
+  },
+  {
+   "id": "C01-093",
+   "check": "subject",
+   "element": "C01::An",
+   "expect": "s"
+  },
+  {
+   "id": "C01-094",
+   "check": "subject",
+   "element": "C01::SubAn",
+   "expect": "s"
+  },
+  {
+   "id": "C01-095",
+   "check": "subject",
+   "element": "C01::Ver",
+   "expect": "s"
+  },
+  {
+   "id": "C01-096",
+   "check": "subject",
+   "element": "C01::SubVer",
+   "expect": "s"
+  }
+ ]
+}

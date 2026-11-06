@@ -545,3 +545,71 @@ Results that changed (OpenSysML, Python and Go alike):
   anyway.
 - Unsupported details for isComposite, isReference, sourceFeature, targetFeature
   and relatedFeature now say that the query API does not offer them either.
+
+### A03 definition modifiers
+128 cases: 4 reads (isAbstract, isVariation, isIndividual, variants) x 4
+modifiers (none, `abstract`, `variation` with two variants, `individual`) x 4
+kinds (part, item, occurrence, action) x 2 locations (package, nested in a part
+def). A variation def is expected abstract (SysML: a variation must be abstract).
+
+Decisions:
+- The kinds are definitions whose grammar rule takes OccurrenceDefinitionPrefix,
+  so they accept every modifier. A port def (DefinitionPrefix) cannot be
+  `individual`; the Pilot gives a syntax error. sysml-toolkit's `check` and
+  OpenSysML both accepted `individual port def` (observation). A variation
+  connection def cannot be valid either: its ends would be non-variant usages,
+  and a connection def needs ends.
+
+Tooling fix found on the way: the Pilot rejected the first model, wrote an empty
+CSV, and `run-all.sh` printed "0 cases recorded" without flagging it; the report
+then dropped the Pilot's column. Now `run-all.sh` fails a suite that records no
+cases or fewer than all matrices define, and the report keeps an empty suite's
+column (`-`) and prints a warning.
+
+Findings:
+- OpenSysML (Python, Go): isAbstract, isVariation and variants pass, from the
+  Symbol metadata (`abstract`, `variation`, `variant`). isIndividual is
+  unsupported: no Symbol field or metadata key, although the query API offers
+  isIndividual.
+- sysml-toolkit: isIndividual is null rather than false for part, item and
+  occurrence defs without `individual` (action defs give false). isIndividual is
+  an ordinary attribute with default false. Everything else passes.
+- Pilot: all 128 pass.
+
+### C01 behavioral definitions
+96 cases: 6 reads (name, kind, isAbstract, parameters as sorted [direction,
+name] of `Type::directedFeature`, result parameter name, subject parameter
+name) x 8 kinds (action, state, calc, constraint, requirement, use case,
+analysis, verification) x 2 locations (the definition, a specializing
+definition `SubX :> X`).
+
+Library-inherited parts (the Pilot's answer, checked against the source):
+constraint, requirement and use case defs inherit `out result` (`return result`
+in Performances.kerml, Requirements.sysml); a verification def inherits
+`out verdict` (`return verdict ... :>> result`, VerificationCases.sysml). A calc
+or analysis def's own `return r` redefines `result`. Those cases carry
+`libraryDependent: true`.
+
+Kind translation for OpenSysML, made complete: its kind vocabulary
+(`internal/semantic/symbols/symbol.go`) abbreviates three names: `calc`
+(Calculation), `enum` (Enumeration), and `bindingUsage`
+(BindingConnectorAsUsage). These are expanded as a fixed table; everything else
+maps by rule (`useCaseDef` -> `UseCaseDefinition`). No earlier result changed.
+
+Findings:
+- OpenSysML (Python, Go): name, kind and isAbstract pass. Result and subject are
+  unsupported (no Symbol field; the query API does not offer them either). A
+  `subject` parameter has no direction in the Symbol metadata, and inherited
+  results (`result`, `verdict`) are not listed. Python and Go differ for the
+  first time (54 / 51 passes): the Python client's `attributes()` returns full
+  Symbols for inherited attributes, with their direction, while Go's
+  `Attributes` carry no direction. So Python sees parameters a specializing
+  definition inherits, and Go does not.
+- sysml-toolkit: own parameters, results and subjects pass. Everything
+  inherited is missing, whether from a definition in the model (`SubAct :> Act`)
+  or from the library (`result`, `verdict`): directedFeature, result and
+  subjectParameter all leave inherited members out.
+- Pilot: all 96 pass.
+
+### Status
+A03 and C01 are done: 1247 cases in 15 matrices.

@@ -33,14 +33,22 @@ done
 
 mkdir -p results/logs
 rc=0
+total=$(python3 -c 'import json,glob; print(sum(len(json.load(open(f))["cases"]) for f in glob.glob("data/cases/*.json")))')
 for s in "${selected[@]}"; do
   echo "== $s"
   rm -f "results/$s.csv" "results/$s.version.json"
   ( run_suite "$s" ) > "results/logs/$s.log" 2>&1 || { rc=1; echo "   (test failures; see results/logs/$s.log)"; }
   # record the MDK version this run exercised, next to its results
   ./mdk_version.py "$s" > "results/$s.version.json" || echo "   (could not record the MDK version)"
-  [[ -f results/$s.csv ]] && echo "   $(python3 -c 'import csv,sys; print(sum(1 for _ in csv.DictReader(open(sys.argv[1]))))' "results/$s.csv") cases recorded" ||
-    { echo "   NO RESULTS WRITTEN (build or setup problem; see log)"; rc=1; }
+  # every case of every matrix must be recorded; fewer means a build, setup or model-loading problem
+  n=0; [[ -f results/$s.csv ]] && n=$(python3 -c 'import csv,sys; print(sum(1 for _ in csv.DictReader(open(sys.argv[1]))))' "results/$s.csv")
+  if (( n == 0 )); then
+    echo "   NO RESULTS RECORDED (build, setup or model-loading problem; see results/logs/$s.log)"; rc=1
+  elif (( n < total )); then
+    echo "   ONLY $n OF $total CASES RECORDED (see results/logs/$s.log)"; rc=1
+  else
+    echo "   $n cases recorded"
+  fi
 done
 
 # Tabulate every CSV in results/ (including suites not run this time).

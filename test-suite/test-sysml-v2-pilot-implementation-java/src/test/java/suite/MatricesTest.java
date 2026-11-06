@@ -291,6 +291,25 @@ class MatricesTest {
             }
             case "shortName": return e.getShortName();
             case "isAbstract": return ((Type) e).isAbstract();
+            case "isVariation": return ((Definition) e).isVariation();
+            case "parameters": {
+                Type t = (Type) e;
+                return t.getDirectedFeature().stream()
+                    .map(f -> List.of(String.valueOf(t.directionOf(f)), f.getName() == null ? "" : f.getName()))
+                    .sorted(Comparator.comparing(Object::toString)).toList();
+            }
+            case "result": {
+                Feature r = e instanceof Function f ? f.getResult() : null;
+                return r == null ? null : r.getName();
+            }
+            case "subject": {
+                Usage s = e instanceof RequirementDefinition r ? r.getSubjectParameter()
+                    : e instanceof CaseDefinition cd ? cd.getSubjectParameter() : null;
+                return s == null ? null : s.getName();
+            }
+            case "isIndividual": return ((OccurrenceDefinition) e).isIndividual();
+            case "variants":
+                return ((Definition) e).getVariant().stream().map(v -> v.getName() == null ? "" : v.getName()).sorted().toList();
             case "metadataDefs":
                 return annotations(resource, e).stream().map(mu -> mu.getMetadataDefinition())
                     .map(d -> d == null ? null : d.getQualifiedName()).sorted().toList();
