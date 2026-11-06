@@ -32,6 +32,7 @@ type caseSpec struct {
 	Expect  json.RawMessage   `json:"expect"`
 	Accept  []json.RawMessage `json:"accept"`
 	Via     string            `json:"via"`
+	Model   string            `json:"model"`
 	Unnamed *struct {
 		Metaclass string `json:"metaclass"`
 		Index     int    `json:"index"`
@@ -145,11 +146,50 @@ func TestMatrices(t *testing.T) {
 			rows = append(rows, []string{"opensysml-go", spec.Matrix, id, outcome, detail})
 		}
 		t.Run(spec.Matrix, func(t *testing.T) {
-			model, err := client.ParseFile(ctx, filepath.Join(dataDir, spec.Model))
-			if err != nil {
-				t.Fatal(err)
+			// each model is parsed once; a model the MDK reports errors for makes every
+			// case that uses it an error
+			models := map[string]*opensysml.Model{}
+			rejectedBy := map[string]string{}
+			load := func(file string) (*opensysml.Model, string) {
+				if why, ok := rejectedBy[file]; ok {
+					return nil, why
+				}
+				if mod, ok := models[file]; ok {
+					return mod, ""
+				}
+				mod, err := client.ParseFile(ctx, filepath.Join(dataDir, file))
+				if err != nil {
+					rejectedBy[file] = "model not parsed: " + err.Error()
+					return nil, rejectedBy[file]
+				}
+				var errs []string
+				for _, d := range mod.Diagnostics {
+					if d.Severity == opensysml.SeverityError && len(errs) < 2 {
+						line := 0
+						if d.Span != nil {
+							line = d.Span.StartLine
+						}
+						errs = append(errs, fmt.Sprintf("line %d: %s", line, d.Message))
+					}
+				}
+				if len(errs) > 0 {
+					rejectedBy[file] = "model rejected: " + strings.Join(errs, "; ")
+					return nil, rejectedBy[file]
+				}
+				models[file] = mod
+				return mod, ""
 			}
 			for _, c := range spec.Cases {
+				file := spec.Model
+				if c.Model != "" {
+					file = c.Model
+				}
+				model, why := load(file)
+				if why != "" {
+					record(c.ID, "error", why)
+					t.Run(c.ID, func(t *testing.T) { t.Error(why) })
+					continue
+				}
 				t.Run(c.ID, func(t *testing.T) {
 					actual, err := doCheck(ctx, client, model, c)
 					if errors.Is(err, errUnsupported) {
@@ -220,6 +260,9 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			}
 		}
 		return s.ID, nil
+	case "entryKind", "doKind", "exitKind", "isParallel", "source", "target", "triggerPayload", "guardKind", "effectKind":
+		prop := map[string]string{"entryKind": "entryAction", "doKind": "doAction", "exitKind": "exitAction", "isParallel": "isParallel", "source": "source", "target": "target", "triggerPayload": "triggerAction", "guardKind": "guardExpression", "effectKind": "effectAction"}[c.Check]
+		return nil, noSymbolField(ctx, cl, m, c.Element, prop, prop)
 	case "payloadTypes", "sourceOutput", "targetInput":
 		prop := map[string]string{"payloadTypes": "payloadType", "sourceOutput": "sourceOutputFeature",
 			"targetInput": "targetInputFeature"}[c.Check]
@@ -357,6 +400,16 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	case "idRoundTrip":
 		again, err := cl.LookupSymbol(ctx, m, sym.ID)
 		return err == nil && again.ID == sym.ID, nil
+	case "substates":
+		out := []string{}
+		for _, cid := range sym.ChildIDs {
+			ch, err := cl.LookupSymbol(ctx, m, cid)
+			if err == nil && strings.EqualFold(ch.Kind, "stateUsage") {
+				out = append(out, ch.Name)
+			}
+		}
+		slices.Sort(out)
+		return out, nil
 	case "directGenerals":
 		out := []string{}
 		for _, sp := range sym.Specializations {

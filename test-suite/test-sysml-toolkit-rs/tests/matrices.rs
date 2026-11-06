@@ -293,6 +293,42 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         "isComposite" => api.scalar(e, "isComposite")?,
         "kind" => json!(api.metaclass(e)),
+        "entryKind" | "doKind" | "exitKind" | "guardKind" | "effectKind" => {
+            let prop = match check {
+                "entryKind" => "entryAction", "doKind" => "doAction", "exitKind" => "exitAction",
+                "guardKind" => "guardExpression", _ => "effectAction",
+            };
+            match api.element(e, prop)? {
+                Some(a) => json!(api.metaclass(a)),
+                None => Value::Null,
+            }
+        }
+        "substates" => {
+            let mut out = vec![];
+            for f in api.elements(e, "ownedFeature")? {
+                if api.metaclass(f) == "StateUsage" {
+                    out.push(api.scalar(f, "name")?.as_str().unwrap_or("").to_string());
+                }
+            }
+            out.sort();
+            json!(out)
+        }
+        "isParallel" => api.scalar(e, "isParallel")?,
+        "source" | "target" => match api.element(e, check)? {
+            Some(s) => json!(api.qn(s)),
+            None => Value::Null,
+        },
+        "triggerPayload" => {
+            let mut v = Value::Null;
+            if let Some(acc) = api.element(e, "triggerAction")? {
+                if let Some(p) = api.element(acc, "payloadParameter")? {
+                    if let Some(t) = api.element(p, "type")? {
+                        v = json!(api.qn(t));
+                    }
+                }
+            }
+            v
+        }
         "payloadTypes" => {
             let mut out: Vec<_> = api.elements(e, "payloadType")?.into_iter().map(|t| api.qn(t)).collect();
             out.sort();
@@ -592,20 +628,48 @@ fn matrices() {
     let mut model = Model::new();
     model.load_library_dir(&root().join("../../sysml-toolkit/spec-refs/SysML-v2-Release/sysml.library"))
         .expect("standard library (initialise the sysml-toolkit submodule spec-refs/SysML-v2-Release)");
+    // every matrix's model, and any model a case names for itself
+    let mut files: Vec<String> = vec![];
     for s in &specs {
-        let file = s["model"].as_str().unwrap();
-        model.add_source(file, &fs::read_to_string(root().join("../data").join(file)).unwrap());
+        let own = std::iter::once(s["model"].as_str().unwrap().to_string());
+        let per_case = s["cases"].as_array().unwrap().iter().filter_map(|c| c["model"].as_str().map(String::from));
+        for f in own.chain(per_case) {
+            if !files.contains(&f) {
+                files.push(f);
+            }
+        }
     }
-    assert!(!model.has_errors(), "models do not parse cleanly");
+    for file in &files {
+        model.add_source(file.as_str(), &fs::read_to_string(root().join("../data").join(file)).unwrap());
+    }
+    // a model the MDK reports errors for: every case of that matrix is an error
+    let mut rejected = std::collections::HashMap::new();
+    for i in 0..model.unit_count() {
+        if model.is_library_unit(i) {
+            continue;
+        }
+        let unit = &model.units()[i];
+        let errors: Vec<String> = unit.diagnostics.iter()
+            .filter(|d| matches!(d.severity, sysmlv2_parser::diag::Severity::Error))
+            .take(2).map(|d| d.message.clone()).collect();
+        if !errors.is_empty() {
+            rejected.insert(unit.name.clone(), format!("model rejected: {}", errors.join("; ")));
+        }
+    }
     let mut api = Api { rm: ResolvedModel::build(&model) };
 
     let mut rows: Vec<[String; 5]> = vec![];
     let mut failed = vec![];
     for s in &specs {
         let matrix = s["matrix"].as_str().unwrap();
+        let model_file = s["model"].as_str().unwrap();
         for c in s["cases"].as_array().unwrap() {
             let id = c["id"].as_str().unwrap();
-            let (outcome, detail) = match check(&mut api, c) {
+            let result = match rejected.get(c["model"].as_str().unwrap_or(model_file)) {
+                Some(why) => Err(why.clone()),
+                None => check(&mut api, c),
+            };
+            let (outcome, detail) = match result {
                 Err(e) => ("error", e),
                 Ok(Unsupported(why)) => ("unsupported", why),
                 Ok(Value(v)) => {

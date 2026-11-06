@@ -1,0 +1,688 @@
+{
+ "matrix": "C30",
+ "model": "models/C30.sysml",
+ "notes": {
+  "reads": "entryKind / doKind / exitKind  metaclass of StateUsage::entryAction / doAction / exitAction\n  substates       sorted names of the owned features that are StateUsages\n  isParallel      StateUsage::isParallel\n  source, target  TransitionUsage::source / target (qualified names)\n  triggerPayload  type of the payload parameter of TransitionUsage::triggerAction; null without one\n  guardKind       metaclass of TransitionUsage::guardExpression; null without one\n  effectKind      metaclass of TransitionUsage::effectAction; null without one",
+  "model": "a case may name its own model; it overrides the matrix's model for that case",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "C30-001",
+   "check": "entryKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C30-002",
+   "check": "entryKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-003",
+   "check": "entryKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-004",
+   "check": "entryKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-005",
+   "check": "entryKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C30Accept::Device::ex"
+   ],
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-006",
+   "check": "entryKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C30Accept::device",
+    "C30Accept::Device::ex"
+   ],
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-007",
+   "check": "entryKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage"
+  },
+  {
+   "id": "C30-008",
+   "check": "entryKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-009",
+   "check": "entryKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-010",
+   "check": "entryKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage"
+  },
+  {
+   "id": "C30-011",
+   "check": "entryKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-012",
+   "check": "entryKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-013",
+   "check": "doKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C30-014",
+   "check": "doKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-015",
+   "check": "doKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-016",
+   "check": "doKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-017",
+   "check": "doKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C30Accept::Device::ex"
+   ],
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-018",
+   "check": "doKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C30Accept::device",
+    "C30Accept::Device::ex"
+   ],
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-019",
+   "check": "doKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage"
+  },
+  {
+   "id": "C30-020",
+   "check": "doKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-021",
+   "check": "doKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-022",
+   "check": "doKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage"
+  },
+  {
+   "id": "C30-023",
+   "check": "doKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-024",
+   "check": "doKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-025",
+   "check": "exitKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C30-026",
+   "check": "exitKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-027",
+   "check": "exitKind",
+   "element": "C30::Ctl::sSend",
+   "expect": "SendActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-028",
+   "check": "exitKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-029",
+   "check": "exitKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C30Accept::Device::ex"
+   ],
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-030",
+   "check": "exitKind",
+   "element": "C30Accept::Ctl::sAccept",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C30Accept::device",
+    "C30Accept::Device::ex"
+   ],
+   "model": "models/C30-accept.sysml"
+  },
+  {
+   "id": "C30-031",
+   "check": "exitKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage"
+  },
+  {
+   "id": "C30-032",
+   "check": "exitKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-033",
+   "check": "exitKind",
+   "element": "C30::Ctl::sAssign",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-034",
+   "check": "exitKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage"
+  },
+  {
+   "id": "C30-035",
+   "check": "exitKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-036",
+   "check": "exitKind",
+   "element": "C30::Ctl::sPerform",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-037",
+   "check": "substates",
+   "element": "C30::Ctl::seq",
+   "expect": [
+    "s1",
+    "s2"
+   ]
+  },
+  {
+   "id": "C30-038",
+   "check": "substates",
+   "element": "C30::Ctl::seq",
+   "expect": [
+    "s1",
+    "s2"
+   ],
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-039",
+   "check": "substates",
+   "element": "C30::Ctl::seq",
+   "expect": [
+    "s1",
+    "s2"
+   ],
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-040",
+   "check": "substates",
+   "element": "C30::Ctl::par",
+   "expect": [
+    "r1",
+    "r2"
+   ]
+  },
+  {
+   "id": "C30-041",
+   "check": "substates",
+   "element": "C30::Ctl::par",
+   "expect": [
+    "r1",
+    "r2"
+   ],
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-042",
+   "check": "substates",
+   "element": "C30::Ctl::par",
+   "expect": [
+    "r1",
+    "r2"
+   ],
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-043",
+   "check": "isParallel",
+   "element": "C30::Ctl::seq",
+   "expect": false
+  },
+  {
+   "id": "C30-044",
+   "check": "isParallel",
+   "element": "C30::Ctl::seq",
+   "expect": false,
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-045",
+   "check": "isParallel",
+   "element": "C30::Ctl::seq",
+   "expect": false,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-046",
+   "check": "isParallel",
+   "element": "C30::Ctl::par",
+   "expect": true
+  },
+  {
+   "id": "C30-047",
+   "check": "isParallel",
+   "element": "C30::Ctl::par",
+   "expect": true,
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-048",
+   "check": "isParallel",
+   "element": "C30::Ctl::par",
+   "expect": true,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-049",
+   "check": "source",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Ctl::sSend"
+  },
+  {
+   "id": "C30-050",
+   "check": "source",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Ctl::sSend",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-051",
+   "check": "source",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Ctl::sSend",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-052",
+   "check": "source",
+   "element": "C30::Ctl::t2",
+   "expect": "C30::Ctl::sAssign"
+  },
+  {
+   "id": "C30-053",
+   "check": "source",
+   "element": "C30::Ctl::t2",
+   "expect": "C30::Ctl::sAssign",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-054",
+   "check": "source",
+   "element": "C30::Ctl::t2",
+   "expect": "C30::Ctl::sAssign",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-055",
+   "check": "target",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Ctl::sAssign"
+  },
+  {
+   "id": "C30-056",
+   "check": "target",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Ctl::sAssign",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-057",
+   "check": "target",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Ctl::sAssign",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-058",
+   "check": "target",
+   "element": "C30::Ctl::t2",
+   "expect": "C30::Ctl::sPerform"
+  },
+  {
+   "id": "C30-059",
+   "check": "target",
+   "element": "C30::Ctl::t2",
+   "expect": "C30::Ctl::sPerform",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-060",
+   "check": "target",
+   "element": "C30::Ctl::t2",
+   "expect": "C30::Ctl::sPerform",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-061",
+   "check": "triggerPayload",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Sig"
+  },
+  {
+   "id": "C30-062",
+   "check": "triggerPayload",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Sig",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-063",
+   "check": "triggerPayload",
+   "element": "C30::Ctl::t1",
+   "expect": "C30::Sig",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-064",
+   "check": "triggerPayload",
+   "element": "C30::Ctl::t2",
+   "expect": null
+  },
+  {
+   "id": "C30-065",
+   "check": "triggerPayload",
+   "element": "C30::Ctl::t2",
+   "expect": null,
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-066",
+   "check": "triggerPayload",
+   "element": "C30::Ctl::t2",
+   "expect": null,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-067",
+   "check": "guardKind",
+   "element": "C30::Ctl::t1",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C30-068",
+   "check": "guardKind",
+   "element": "C30::Ctl::t1",
+   "expect": "OperatorExpression",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-069",
+   "check": "guardKind",
+   "element": "C30::Ctl::t1",
+   "expect": "OperatorExpression",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-070",
+   "check": "guardKind",
+   "element": "C30::Ctl::t2",
+   "expect": null
+  },
+  {
+   "id": "C30-071",
+   "check": "guardKind",
+   "element": "C30::Ctl::t2",
+   "expect": null,
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-072",
+   "check": "guardKind",
+   "element": "C30::Ctl::t2",
+   "expect": null,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-073",
+   "check": "effectKind",
+   "element": "C30::Ctl::t1",
+   "expect": "AssignmentActionUsage"
+  },
+  {
+   "id": "C30-074",
+   "check": "effectKind",
+   "element": "C30::Ctl::t1",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-075",
+   "check": "effectKind",
+   "element": "C30::Ctl::t1",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-076",
+   "check": "effectKind",
+   "element": "C30::Ctl::t2",
+   "expect": null
+  },
+  {
+   "id": "C30-077",
+   "check": "effectKind",
+   "element": "C30::Ctl::t2",
+   "expect": null,
+   "through": [
+    "C30::Device::ex"
+   ]
+  },
+  {
+   "id": "C30-078",
+   "check": "effectKind",
+   "element": "C30::Ctl::t2",
+   "expect": null,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ]
+  }
+ ]
+}

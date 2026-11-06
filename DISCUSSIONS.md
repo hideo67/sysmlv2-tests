@@ -686,3 +686,48 @@ Findings:
   message events as flow features, where the grammar makes them event-occurrence
   parameters.
 - Pilot: all 75 pass.
+
+### C30 states and transitions
+78 cases in three blocks, each x 3 locations (in the state def, through an
+`exhibit state ex : Ctl` of a part def, through a typing usage of that part):
+- entryKind, doKind, exitKind x the action kind in all three slots (send,
+  accept, assign, perform) = 36. These are the state entry actions deferred from
+  C20.
+- substates, isParallel x a sequential and a parallel state = 12.
+- source, target, triggerPayload, guardKind, effectKind x a transition with
+  trigger, guard and effect, and a bare `first a then b` = 30.
+
+Model notes, from the grammar:
+- Inside entry/do/exit a performed action is written without `perform`
+  (`entry onEntry;`): StateActionUsage takes PerformActionUsageDeclaration
+  without the keyword.
+- `entry raiseAlarm; do raiseAlarm; exit raiseAlarm;` (the same action
+  performed three times) is rejected by sysml-toolkit as an ambiguous reference:
+  each performed action takes the effective name `raiseAlarm`. Not checked in
+  the Pilot (observation). The model uses three distinct actions instead.
+
+New rule: a model the MDK rejects. OpenSysML reports a syntax error at
+`entry accept a1 : Sig via p;`, but the grammar allows an accept action there
+(StateActionUsage -> PerformedActionUsage -> AcceptNodeDeclaration), and the
+Pilot and sysml-toolkit accept it. The suites handled such a model
+inconsistently: Python recorded every case as fail, Go carried on with a partly
+parsed model, and the Pilot and sysml-toolkit would have aborted the whole suite.
+Now every suite records every case of a matrix whose model the MDK reports
+errors for as **error**, with the first diagnostics as detail ("model rejected:
+line 23: ..."). The other matrices run normally.
+
+Split (agreed): so that one rejected construct does not hide the rest of C30,
+the accept-action state moved to its own model, `models/C30-accept.sysml`
+(package C30Accept, the same structure). Its 9 cases name that model in the new
+case field `model`, which overrides the matrix's model for that case. Every
+suite now loads models per file and applies the rejection rule per model file.
+The case IDs and reads of C30 did not change (transition t1 now targets
+`sAssign`, as `sAccept` left the main model).
+
+Findings:
+- OpenSysML (Python, Go): the accept-action model is rejected (9 cases error).
+  Of the rest, substates pass when the state is read in its state def, but the
+  states are not listed through an exhibited state or a typing usage. The entry,
+  do and exit actions, isParallel and all transition reads are unsupported (no
+  Symbol field; the query API does not offer them either).
+- Pilot and sysml-toolkit: all 78 pass.

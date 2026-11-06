@@ -20,17 +20,23 @@ os.environ.setdefault("OPENSYSML_BINARY", str(
     Path(__file__).resolve().parents[2] / "OpenSysML" / "bin" / "sysml-grpc"))
 
 SPECS = [json.loads(p.read_text()) for p in sorted((DATA / "cases").glob("*.json"))]
-CASES = [(spec["model"], case) for spec in SPECS for case in spec["cases"]]
+CASES = [(case.get("model", spec["model"]), case) for spec in SPECS for case in spec["cases"]]
 
 
 class Unsupported(Exception):
     """The API offers no way to obtain this information."""
 
 
+class ModelRejected(Exception):
+    """The MDK reported errors loading the matrix's model: every case of it is an error."""
+
+
 @lru_cache(maxsize=None)
 def load(model_file):
     m = opensysml.loads((DATA / model_file).read_text())
-    assert m.ok, m.diagnostics
+    if not m.ok:
+        errors = [f"line {d.start_line}: {d.message}" for d in m.diagnostics if d.severity == "error"]
+        raise ModelRejected("model rejected: " + "; ".join(errors[:2]))
     return m
 
 
@@ -129,6 +135,14 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
         return s.id if s else None
     if check in ("isComposite", "isReference"):
         raise no_symbol_field(model, element, check, check)
+    if check in ('entryKind', 'doKind', 'exitKind', 'isParallel', 'source', 'target', 'triggerPayload', 'guardKind', 'effectKind'):
+        prop = {'entryKind': 'entryAction', 'doKind': 'doAction', 'exitKind': 'exitAction', 'isParallel': 'isParallel', 'source': 'source', 'target': 'target', 'triggerPayload': 'triggerAction', 'guardKind': 'guardExpression', 'effectKind': 'effectAction'}[check]
+        raise no_symbol_field(model, element, prop, prop)
+    if check == "substates":
+        s, _ = _resolve(model, element, through)
+        if isinstance(s, str):
+            return s
+        return sorted(c.name for c in s.children() if c.kind == "stateUsage")
     if check in ("payloadTypes", "sourceOutput", "targetInput"):
         prop = {"payloadTypes": "payloadType", "sourceOutput": "sourceOutputFeature",
                 "targetInput": "targetInputFeature"}[check]

@@ -25,7 +25,8 @@ def pytest_runtest_logreport(report):
             outcome, detail = "skip", reason
     else:
         outcome = "fail" if report.when == "call" and "AssertionError" in str(report.longrepr) else "error"
-        errs = [l[1:].strip() for l in str(report.longreprtext).splitlines() if l.startswith("E ")]
+        errs = [l[1:].strip().removeprefix("test_matrices.ModelRejected: ").removeprefix("ModelRejected: ")
+                for l in str(report.longreprtext).splitlines() if l.startswith("E ")]
         detail = errs[0].removeprefix("AssertionError: ") if errs else (str(report.longreprtext).strip().splitlines() or [""])[-1]
     _rows.append([SUITE, matrix, callspec, outcome, detail])
 

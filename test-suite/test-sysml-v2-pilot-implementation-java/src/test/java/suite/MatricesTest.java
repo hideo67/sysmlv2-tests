@@ -23,6 +23,8 @@ class MatricesTest {
     static final List<JsonObject> specs = new ArrayList<>();
     static final Map<String, Resource> resources = new HashMap<>();
     static final List<String[]> rows = new ArrayList<>();
+    /** Model files the Pilot reported errors for: every case using them is an error. */
+    static final Map<String, String> rejected = new HashMap<>();
 
     @BeforeAll
     static void load() throws Exception {
@@ -33,12 +35,22 @@ class MatricesTest {
         try (Stream<Path> files = Files.list(data.resolve("cases"))) {
             for (Path f : files.filter(p -> p.toString().endsWith(".json")).sorted().toList()) {
                 JsonObject spec = JsonParser.parseString(Files.readString(f)).getAsJsonObject();
-                String model = spec.get("model").getAsString();
-                interactive.setResource(Path.of(model).getFileName().toString());
-                interactive.parse(Files.readString(data.resolve(model)));
-                assertTrue(interactive.validate().isEmpty(), model + " has issues: " + interactive.validate());
-                ElementUtil.transformAll(interactive.getResource(), true);
-                resources.put(spec.get("matrix").getAsString(), interactive.getResource());
+                // the matrix's model, and any model a case names for itself
+                LinkedHashSet<String> models = new LinkedHashSet<>(List.of(spec.get("model").getAsString()));
+                spec.getAsJsonArray("cases").forEach(c -> {
+                    if (c.getAsJsonObject().has("model")) models.add(c.getAsJsonObject().get("model").getAsString());
+                });
+                for (String model : models) {
+                    if (resources.containsKey(model)) continue;
+                    interactive.setResource(Path.of(model).getFileName().toString());
+                    interactive.parse(Files.readString(data.resolve(model)));
+                    List<String> errors = interactive.validate().stream()
+                        .filter(i -> i.getSeverity() == org.eclipse.xtext.diagnostics.Severity.ERROR)
+                        .map(i -> "line " + i.getLineNumber() + ": " + i.getMessage()).limit(2).toList();
+                    if (!errors.isEmpty()) rejected.put(model, "model rejected: " + String.join("; ", errors));
+                    ElementUtil.transformAll(interactive.getResource(), true);
+                    resources.put(model, interactive.getResource());
+                }
                 specs.add(spec);
             }
         }
@@ -48,16 +60,23 @@ class MatricesTest {
     Stream<DynamicContainer> matrices() {
         return specs.stream().map(spec -> {
             String matrix = spec.get("matrix").getAsString();
-            Resource resource = resources.get(matrix);
             return DynamicContainer.dynamicContainer(matrix,
                 StreamSupport.stream(spec.getAsJsonArray("cases").spliterator(), false)
                     .map(JsonElement::getAsJsonObject)
-                    .map(c -> DynamicTest.dynamicTest(c.get("id").getAsString(), () -> recorded(matrix, resource, c))));
+                    .map(c -> {
+                        String model = c.has("model") ? c.get("model").getAsString() : spec.get("model").getAsString();
+                        return DynamicTest.dynamicTest(c.get("id").getAsString(),
+                            () -> recorded(matrix, model, resources.get(model), c));
+                    }));
         });
     }
 
-    static void recorded(String matrix, Resource resource, JsonObject c) {
+    static void recorded(String matrix, String model, Resource resource, JsonObject c) {
         String id = c.get("id").getAsString();
+        if (rejected.containsKey(model)) {
+            rows.add(new String[] {"pilot-java", matrix, id, "error", rejected.get(model)});
+            fail(rejected.get(model));
+        }
         try {
             Object actual = check(resource, c);
             JsonElement got = new Gson().toJsonTree(actual);
@@ -263,6 +282,29 @@ class MatricesTest {
             }
             case "isComposite": return ((Feature) e).isComposite();
             case "kind": return e.eClass().getName();
+            case "entryKind": { ActionUsage a = ((StateUsage) e).getEntryAction(); return a == null ? null : a.eClass().getName(); }
+            case "doKind": { ActionUsage a = ((StateUsage) e).getDoAction(); return a == null ? null : a.eClass().getName(); }
+            case "exitKind": { ActionUsage a = ((StateUsage) e).getExitAction(); return a == null ? null : a.eClass().getName(); }
+            case "substates":
+                return ((Type) e).getOwnedFeature().stream().filter(f -> f instanceof StateUsage)
+                    .map(f -> f.getName() == null ? "" : f.getName()).sorted().toList();
+            case "isParallel": return ((StateUsage) e).isParallel();
+            case "source": { Feature s = ((TransitionUsage) e).getSource(); return s == null ? null : s.getQualifiedName(); }
+            case "target": { Feature s = ((TransitionUsage) e).getTarget(); return s == null ? null : s.getQualifiedName(); }
+            case "triggerPayload": {
+                List<AcceptActionUsage> t = ((TransitionUsage) e).getTriggerAction();
+                if (t.isEmpty() || t.get(0).getPayloadParameter() == null) return null;
+                List<Type> types = t.get(0).getPayloadParameter().getType();
+                return types.isEmpty() ? null : types.get(0).getQualifiedName();
+            }
+            case "guardKind": {
+                List<Expression> g = ((TransitionUsage) e).getGuardExpression();
+                return g.isEmpty() ? null : g.get(0).eClass().getName();
+            }
+            case "effectKind": {
+                List<ActionUsage> a = ((TransitionUsage) e).getEffectAction();
+                return a.isEmpty() ? null : a.get(0).eClass().getName();
+            }
             case "payloadTypes":
                 return ((Flow) e).getPayloadType().stream().map(Element::getQualifiedName).sorted().toList();
             case "sourceOutput":
