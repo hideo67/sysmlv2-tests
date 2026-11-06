@@ -21,9 +21,9 @@ The project has the following directory structure:
   - test-sysml-v2-pilot-implementation-java
   - test-opensysml-go
   - test-opensysml-py
+  - test-opensysml-rs
   - test-opensysml-ts (planned)
   - test-opensysml-java (planned)
-  - test-opensysml-rs (planned)
   - test-sysml-toolkit-rs
   - results (created by a test run, not tracked by git)
 - SysMLv2-Pilot-Implementation
@@ -53,7 +53,7 @@ used on Linux (Ubuntu under WSL2).
 | [uv](https://docs.astral.sh/uv/) | any recent | the Python suite's virtual environment |
 | Go | 1.26 or later (OpenSysML pins toolchain go1.27.3) | building OpenSysML, the OpenSysML Go suite |
 | make | GNU make | building OpenSysML |
-| Rust (rustup, cargo) | stable; sysml-toolkit pins 1.98.1 in its `rust-toolchain.toml` | the sysml-toolkit suite |
+| Rust (rustup, cargo) | stable; sysml-toolkit pins 1.98.1 in its `rust-toolchain.toml` | the sysml-toolkit suite, the OpenSysML Rust suite |
 | JDK | **21** | the Pilot Implementation and its suite. The Pilot does not build under JDK 25 ("Unsupported class file major version 69"). |
 | Maven | 3.9 | building the Pilot Implementation and its suite |
 
@@ -85,7 +85,7 @@ The three MDK directories are listed in `.gitignore`.
 ## 2. Build the MDKs
 
 ```sh
-# OpenSysML: builds bin/sysml-grpc (used by the Python suite) and generates the
+# OpenSysML: builds bin/sysml-grpc (used by the Python and Rust suites) and generates the
 # embedded standard library snapshot (needed to compile the Go suite)
 make -C OpenSysML build-grpc
 
@@ -94,8 +94,8 @@ make -C OpenSysML build-grpc
 (cd SysMLv2-Pilot-Implementation && JAVA_HOME=$JDK21 PATH=$JDK21/bin:$PATH mvn -B -DskipTests package)
 ```
 
-sysml-toolkit needs no separate step: the Rust suite compiles it as a path
-dependency.
+sysml-toolkit and the OpenSysML Rust client need no separate step: the Rust
+suites compile them as path dependencies.
 
 The Pilot's Maven build rewrites two committed jar files, so its checkout shows
 as modified afterwards. The test report lists them.
@@ -119,7 +119,7 @@ first run (Go modules, crates.io, Maven Central).
 cd test-suite
 ./run-all.sh                    # every suite
 ./run-all.sh opensysml-go       # one suite (or several, separated by spaces)
-./run-all.sh --list             # suite names: opensysml-py opensysml-go sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
+./run-all.sh --list             # suite names: opensysml-py opensysml-go opensysml-rs sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
 ```
 
 sysml-toolkit is run twice, from the same test-sysml-toolkit-rs crate:

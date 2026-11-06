@@ -651,6 +651,7 @@ Findings:
   followed, and private and protected members are returned regardless of
   visibility. Go and Python differ: Go's in-process lookup follows a public
   namespace import (`FacadeAll::Pump`), the Python client over gRPC does not.
+  (The cause is corrected in Step 8: it is the client, not the transport.)
 - Pilot and sysml-toolkit: all 32 pass.
 
 ### B20 flows
@@ -895,10 +896,56 @@ Findings:
   is refused with `IncompleteInvocationBindings(UnsupportedConfiguration)`
   and `result` with `Approximate` (48 error).
 
+## Step 8: OpenSysML Rust client
+The deferral of the other OpenSysML clients (Step 3) assumed they would only
+confirm the Python and Go results, since all of them wrap the same
+`SymbolInfo`. Python and Go had since come to differ (A60-007/008,
+C01-050/052/054), and the difference came from client code, not from the
+service. The Rust client (`client/rust`) has client-side logic of its own for
+inherited attributes, so it is now run as suite `opensysml-rs`.
+
+The adapter (`test-opensysml-rs`, a standalone crate like the sysml-toolkit
+suite) follows the same rules: Symbol API only, unsupported when there is no
+Symbol field, a rejected model makes every case of its matrix an error. The
+Rust client has the Python client's Symbol methods (`Model::get`,
+`Symbol::children`, `parts`, `attributes`, `attribute_facts`), so each read
+takes the same route as in the Python adapter. The client finds the service
+binary through `$OPENSYSML_GRPC_BINARY` (Python: `$OPENSYSML_BINARY`); the suite
+points it at the local `OpenSysML/bin/sysml-grpc`. Models are parsed from their
+text (`parse_content`), as Python's `loads` does.
+
+Findings:
+- Rust and Python give the same answer on all 1630 cases, failure details
+  included (505 pass, 363 fail, 753 unsupported, 9 error). Rust's
+  `attributes()` and `get` are ports of Python's.
+- Rust differs from Go in the same five cases as Python does.
+- Correction of the A60 finding: the service resolves `FacadeAll::Pump`
+  through the public namespace import over gRPC as well. The Rust client's
+  `Model::symbol(fqn)`, a plain `GetSymbol`, returns `A60::Lib::Pump`, as Go's
+  `LookupSymbol` does. Python's and Rust's `get` discard an answer whose id is
+  not the name asked for (their docstring: only the symbol that carries this id
+  is what an id lookup names). So `get` is a lookup by declared id, and the Go
+  difference is a client choice, not in-process versus gRPC. `Model::symbol`
+  still does not follow aliases, re-exports through a member import
+  (`Facade::Pump`) or visibility: it gives the alias itself, "symbol not
+  found", and private and protected members. `Model::find` (short names too)
+  answers as `get` does. The suite keeps `get`, the client's documented
+  qualified-name lookup, so the A60 results are unchanged.
+
+### The two Rust APIs
+`opensysml-rs` and `sysml-toolkit-rs` are both Rust, but are different kinds
+of API. The OpenSysML client is a blocking gRPC client over a service; what it
+can report is bounded by `SymbolInfo` (753 unsupported). sysml-toolkit's
+`ResolvedModel` is an in-process semantic model with properties under their
+spec names, so nearly every read has a route (50 unsupported, all F10, for
+which it has no runtime). Against the compatibility reader, OpenSysML is ahead
+only on F10 (instantiation, 24 pass) and level on E10 (evaluation). Against the
+checked reader it is also ahead on B12 (12 named connector ends pass, where the
+checked reader refuses all 108).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
 C30, D10, D20, E10, F10). Step 7 added C21: 22 matrices, 1630 cases.
-Deferred: the OpenSysML TS, Java and Rust clients.
-They wrap the same `SymbolInfo` as the Python and Go clients, so they would
-mostly confirm the same results.
+Step 8 added the OpenSysML Rust client as a suite.
+Deferred: the OpenSysML TS and Java clients.

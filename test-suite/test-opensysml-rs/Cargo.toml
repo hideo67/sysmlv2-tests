@@ -1,0 +1,14 @@
+[package]
+name = "test-opensysml-rs"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+# Standalone: not part of the OpenSysML client workspace.
+[workspace]
+
+[dependencies]
+
+[dev-dependencies]
+opensysml = { path = "../../OpenSysML/client/rust/opensysml" }
+serde_json = "1"
