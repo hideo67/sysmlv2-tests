@@ -1,7 +1,10 @@
 """Every matrix in data/cases/*.json against the OpenSysML Python client.
 
-Only the main APIs are used: the Symbol API and the query API (DISCUSSIONS.md,
-Step 3 decisions). An adapter maps one `check` to those APIs.
+Only the Symbol API is used: it is OpenSysML's element API, the counterpart of the
+Pilot's EMF model and sysml-toolkit's ResolvedModel (DISCUSSIONS.md, Step 5 decision).
+When the Symbol API has no field for a read, the result is unsupported, and the detail
+says whether the standard SysML v2 API & Services query API offers the property; the
+query API is consulted for that note only, never for a value.
 """
 import json
 import os
@@ -80,6 +83,16 @@ def _resolve(model, element, through, unnamed=None):
     return cur, owner
 
 
+def metaclass_of(kind):
+    """The Symbol kind spelled as the spec metaclass: lower camel case, with `Def` for
+    `Definition` and `enum` for `Enumeration` (`partDef` -> `PartDefinition`)."""
+    if kind.startswith("enum"):
+        kind = "enumeration" + kind[len("enum"):]
+    if kind.endswith("Def"):
+        kind += "inition"
+    return kind[:1].upper() + kind[1:]
+
+
 def _multiplicity(m):
     if m is None:
         return None
@@ -87,25 +100,30 @@ def _multiplicity(m):
     return f"{lower}..{m.upper}"
 
 
+def no_symbol_field(model, element, prop, what):
+    """Unsupported: the Symbol API has no field for `what`. The detail notes whether the
+    standard query API offers `prop` (consulted for this note only)."""
+    try:
+        rows = model.query(scope=[element], select=[prop])
+        offered = any(prop in r.properties for r in rows)
+    except (opensysml.errors.InvalidRequestError, opensysml.errors.OpenSysMLError):
+        offered = False
+    note = (f"available through the standard query API ({prop})" if offered
+            else "the standard query API does not offer it either")
+    return Unsupported(f"no Symbol field for {what}; {note}")
+
+
 def do_check(model, check, element, through=None, unnamed=None):
     if check in ("isComposite", "isReference"):
-        # Symbol has no such flag, and the query API does not know the property.
-        try:
-            model.query(scope=[element], select=[check])
-        except opensysml.errors.InvalidRequestError as e:
-            raise Unsupported(f"query API: {e}".split(";")[0])
-        raise AssertionError("query accepted the property; extend the adapter")
-    if check in ("sourceFeature", "targetFeature", "relatedFeature") and unnamed:
-        raise Unsupported("the Symbol API has no connector features, and the query API cannot address an unnamed element")
+        raise no_symbol_field(model, element, check, check)
     if check in ("sourceFeature", "targetFeature", "relatedFeature"):
-        # the Symbol API has no such field; try the query API
-        try:
-            rows = model.query(scope=[element], select=[check])
-        except opensysml.errors.InvalidRequestError as e:
-            raise Unsupported(f"query API: {e}".split(";")[0])
-        raise AssertionError(f"query accepted {check}; extend the adapter: {rows}")
+        if unnamed:
+            raise Unsupported(f"no Symbol field for {check}; the query API cannot address an unnamed element")
+        raise no_symbol_field(model, element, check, check)
     if check in ("endNames", "endCount") and not unnamed and _sym(model, element).kind.endswith("Def"):
         raise Unsupported("the Symbol API does not mark the end features of a definition")
+    if check == "allSupertypes":
+        raise Unsupported("neither the Symbol nor the query API gives the closure of supertypes")
     if check == "annotatedElement":
         raise Unsupported("neither the Symbol nor the query API reports what a metadata usage annotates")
     if check in ("payloadArgument", "senderArgument", "receiverArgument", "assignedFeature"):
@@ -115,9 +133,16 @@ def do_check(model, check, element, through=None, unnamed=None):
     if check == "isDefault":
         raise Unsupported("neither Symbol nor AttributeFacts tells a default from a bound value")
     if check == "unnamedPartCount":
-        rows = model.query(scope=[through or element])
-        return sum(1 for r in rows if r.type == "PartUsage"
-                   and r.properties.get("owner") == element and "name" not in r.properties)
+        # unnamed part usages declared in `element`, among the members the Symbol lists
+        if through:
+            cur, _ = _resolve(model, through[-1] if isinstance(through, list) else through,
+                              through[:-1] if isinstance(through, list) and len(through) > 1 else None)
+            if isinstance(cur, str):
+                return cur
+            listed = [c for c in _visible(cur).values() if norm(c.id).startswith(norm(element) + "::")]
+        else:
+            listed = _sym(model, element).children()
+        return sum(1 for c in listed if c.kind == "partUsage" and not c.name)
     s, owner = _resolve(model, element, through, unnamed)
     if isinstance(s, str):
         return s
@@ -127,22 +152,49 @@ def do_check(model, check, element, through=None, unnamed=None):
         if s.type_facts is None:
             raise Unsupported("no type_facts")
         return s.type_facts.resolved_id
+    if check in ("specializations", "subsettedFeatures"):
+        # OpenSysML's Specialization.kind spelled as the spec metaclass
+        kinds = {"typing": "FeatureTyping", "subsets": "Subsetting", "redefines": "Redefinition",
+                 "references": "ReferenceSubsetting", "specializes": "Subclassification"}
+        specs = [[kinds.get(sp.kind, sp.kind), sp.target_id] for sp in s.specializations]
+        if check == "specializations":
+            return sorted(specs)
+        return sorted(t for k, t in specs if k in ("Subsetting", "Redefinition", "ReferenceSubsetting"))
+    if check == "types":
+        if s.type_facts is None:
+            raise Unsupported("no type_facts")
+        # TypeFacts reports one resolved type
+        return [s.type_facts.resolved_id] if s.type_facts.resolved_id else []
+    if check == "owner":
+        raise no_symbol_field(model, s.id, "owner", "the owner")
+    if check == "idRoundTrip":
+        again = model.get(s.id)
+        return again is not None and again.id == s.id
+    if check == "directGenerals":
+        return sorted(sp.target_id for sp in s.specializations if sp.kind == "specializes")
+    if check == "ownedFeatureNames":
+        return sorted(c.name for c in s.children() if not c.kind.endswith("Def"))
+    if check == "inheritedFeatureNames":
+        # members the Symbol lists (children, parts, attributes) that it does not own
+        return sorted(c.name for c in _visible(s).values() if not norm(c.id).startswith(norm(s.id) + "::"))
+    if check == "redefinitions":
+        return sorted([c.id, sp.target_id] for c in s.children() for sp in c.specializations if sp.kind == "redefines")
     if check in ("metadataDefs", "metadataValue"):
-        # annotations an element lists: metadata-usage children (Symbol API), and
-        # MetadataUsage rows the query API reports as owned by the element
+        # annotations an element lists: its metadata-usage children
         symbols = [c for c in s.children() if c.kind == "metadataUsage"]
-        rows = [r for r in model.query(scope=[s.id]) if r.type == "MetadataUsage" and r.properties.get("owner") == s.id]
         if check == "metadataDefs":
-            types = {c.type_facts.resolved_id for c in symbols if c.type_facts}
-            types |= {r.properties["type"] for r in rows if "type" in r.properties}
-            return sorted(types)
+            return sorted({c.type_facts.resolved_id for c in symbols if c.type_facts})
         if not symbols:
             return f"<no annotation of {s.id} readable as a Symbol>"
         facts = {f.name: f.value for f in symbols[0].attribute_facts()}
         return facts.get("severity")
     if check == "kind":
-        # the Symbol kind is the metaclass name in lower camel case
-        return s.kind[:1].upper() + s.kind[1:]
+        return metaclass_of(s.kind)
+    if check == "shortName":
+        raise no_symbol_field(model, s.id, "shortName", "the short name")
+    if check == "isAbstract":
+        # Symbol metadata carries `abstract: true` for an abstract element, nothing otherwise
+        return s.metadata.get("abstract") == "true"
     if check == "typeIsConjugated":
         if s.type_facts is None or not s.type_facts.resolved_id:
             return None

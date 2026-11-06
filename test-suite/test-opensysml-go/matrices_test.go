@@ -1,7 +1,11 @@
 // Every matrix in data/cases/*.json against the OpenSysML Go API (in process).
 //
-// Only the main APIs are used: LookupSymbol (the Symbol API) and Query
-// (DISCUSSIONS.md, Step 3 decisions).
+// Only the Symbol API (LookupSymbol) is used: it is OpenSysML's element API, the
+// counterpart of the Pilot's EMF model and sysml-toolkit's ResolvedModel
+// (DISCUSSIONS.md, Step 5 decision). When the Symbol API has no field for a read, the
+// result is unsupported, and the detail says whether the standard SysML v2 API &
+// Services query API offers the property; Query is consulted for that note only,
+// never for a value.
 package suite
 
 import (
@@ -61,6 +65,40 @@ func (p *throughPath) UnmarshalJSON(b []byte) error {
 func norm(qn string) string { return strings.ReplaceAll(qn, "'", "") }
 
 var errUnsupported = errors.New("unsupported")
+
+// noSymbolField is the unsupported result for a read the Symbol API has no field for;
+// the detail notes whether the standard query API offers the property (consulted for
+// that note only).
+func noSymbolField(ctx context.Context, cl opensysml.Client, m *opensysml.Model, element, prop, what string) error {
+	offered := false
+	if rows, err := cl.Query(ctx, m, opensysml.Query{Scope: []string{element}, Select: []string{prop}}); err == nil {
+		for _, r := range rows {
+			if _, ok := r.Properties[prop]; ok {
+				offered = true
+			}
+		}
+	}
+	note := "the standard query API does not offer it either"
+	if offered {
+		note = "available through the standard query API (" + prop + ")"
+	}
+	return unsupported("no Symbol field for %s; %s", what, note)
+}
+
+// metaclassOf spells a Symbol kind as the spec metaclass: lower camel case, with `Def`
+// for `Definition` and `enum` for `Enumeration` (`partDef` -> `PartDefinition`).
+func metaclassOf(kind string) string {
+	if kind == "" {
+		return ""
+	}
+	if strings.HasPrefix(kind, "enum") {
+		kind = "enumeration" + strings.TrimPrefix(kind, "enum")
+	}
+	if strings.HasSuffix(kind, "Def") {
+		kind += "inition"
+	}
+	return strings.ToUpper(kind[:1]) + kind[1:]
+}
 
 func unsupported(format string, args ...any) error {
 	return fmt.Errorf("%w: "+format, append([]any{errUnsupported}, args...)...)
@@ -163,20 +201,14 @@ func parent(qn string) string {
 func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
 	switch c.Check {
 	case "isComposite", "isReference":
-		_, err := cl.Query(ctx, m, opensysml.Query{Scope: []string{c.Element}, Select: []string{c.Check}})
-		if err != nil {
-			return nil, unsupported("%v", err)
-		}
-		return nil, errors.New("query accepted the property; extend the adapter")
+		return nil, noSymbolField(ctx, cl, m, c.Element, c.Check, c.Check)
 	case "sourceFeature", "targetFeature", "relatedFeature":
 		if c.Unnamed != nil {
-			return nil, unsupported("the Symbol API has no connector features, and the query API cannot address an unnamed element")
+			return nil, unsupported("no Symbol field for %s; the query API cannot address an unnamed element", c.Check)
 		}
-		_, err := cl.Query(ctx, m, opensysml.Query{Scope: []string{c.Element}, Select: []string{c.Check}})
-		if err != nil {
-			return nil, unsupported("%v", err)
-		}
-		return nil, errors.New("query accepted the property; extend the adapter")
+		return nil, noSymbolField(ctx, cl, m, c.Element, c.Check, c.Check)
+	case "allSupertypes":
+		return nil, unsupported("neither the Symbol nor the query API gives the closure of supertypes")
 	case "annotatedElement":
 		return nil, unsupported("neither the Symbol nor the query API reports what a metadata usage annotates")
 	case "payloadArgument", "senderArgument", "receiverArgument", "assignedFeature":
@@ -186,17 +218,19 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	case "isDefault":
 		return nil, unsupported("neither Symbol nor Attribute tells a default from a bound value")
 	case "unnamedPartCount":
-		scope := c.Element
+		// unnamed part usages declared in c.Element, among the children the Symbol lists
+		scope := norm(c.Element)
 		if len(c.Through) > 0 {
-			scope = c.Through[0]
+			scope = norm(c.Through[len(c.Through)-1])
 		}
-		rows, err := cl.Query(ctx, m, opensysml.Query{Scope: []string{scope}})
+		o, err := cl.LookupSymbol(ctx, m, scope)
 		if err != nil {
 			return nil, err
 		}
 		n := 0
-		for _, r := range rows {
-			if _, named := r.Properties["name"]; r.Type == "PartUsage" && r.Properties["owner"] == c.Element && !named {
+		for _, cid := range o.ChildIDs {
+			ch, err := cl.LookupSymbol(ctx, m, cid)
+			if err == nil && ch.Name == "" && strings.EqualFold(ch.Kind, "partUsage") && strings.HasPrefix(cid, norm(c.Element)+"::") {
 				n++
 			}
 		}
@@ -263,9 +297,85 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			return nil, unsupported("no type info")
 		}
 		return sym.Type.ResolvedID, nil
+	case "specializations", "subsettedFeatures":
+		// OpenSysML's Specialization.Kind spelled as the spec metaclass
+		kinds := map[string]string{"typing": "FeatureTyping", "subsets": "Subsetting", "redefines": "Redefinition",
+			"references": "ReferenceSubsetting", "specializes": "Subclassification"}
+		specs := [][]string{}
+		subsetted := []string{}
+		for _, sp := range sym.Specializations {
+			k := sp.Kind
+			if v, ok := kinds[k]; ok {
+				k = v
+			}
+			specs = append(specs, []string{k, sp.TargetID})
+			if k == "Subsetting" || k == "Redefinition" || k == "ReferenceSubsetting" {
+				subsetted = append(subsetted, sp.TargetID)
+			}
+		}
+		if c.Check == "subsettedFeatures" {
+			slices.Sort(subsetted)
+			return subsetted, nil
+		}
+		slices.SortFunc(specs, func(a, b []string) int { return strings.Compare(a[0]+" "+a[1], b[0]+" "+b[1]) })
+		return specs, nil
+	case "types":
+		if sym.Type == nil {
+			return nil, unsupported("no type info")
+		}
+		// TypeInfo reports one resolved type
+		if sym.Type.ResolvedID == "" {
+			return []string{}, nil
+		}
+		return []string{sym.Type.ResolvedID}, nil
+	case "owner":
+		return nil, noSymbolField(ctx, cl, m, sym.ID, "owner", "the owner")
+	case "idRoundTrip":
+		again, err := cl.LookupSymbol(ctx, m, sym.ID)
+		return err == nil && again.ID == sym.ID, nil
+	case "directGenerals":
+		out := []string{}
+		for _, sp := range sym.Specializations {
+			if sp.Kind == "specializes" {
+				out = append(out, sp.TargetID)
+			}
+		}
+		slices.Sort(out)
+		return out, nil
+	case "ownedFeatureNames", "inheritedFeatureNames", "redefinitions":
+		owned := []string{}
+		redefs := [][]string{}
+		for _, cid := range sym.ChildIDs {
+			ch, err := cl.LookupSymbol(ctx, m, cid)
+			if err != nil || strings.HasSuffix(strings.ToLower(ch.Kind), "def") {
+				continue
+			}
+			owned = append(owned, ch.Name)
+			for _, sp := range ch.Specializations {
+				if sp.Kind == "redefines" {
+					redefs = append(redefs, []string{ch.ID, sp.TargetID})
+				}
+			}
+		}
+		switch c.Check {
+		case "ownedFeatureNames":
+			slices.Sort(owned)
+			return owned, nil
+		case "redefinitions":
+			slices.SortFunc(redefs, func(a, b []string) int { return strings.Compare(a[0]+a[1], b[0]+b[1]) })
+			return redefs, nil
+		}
+		// members the Symbol lists that it does not own: Attributes (own and inherited) not among the children
+		inherited := []string{}
+		for _, a := range sym.Attributes {
+			if !slices.Contains(owned, a.Name) {
+				inherited = append(inherited, a.Name)
+			}
+		}
+		slices.Sort(inherited)
+		return inherited, nil
 	case "metadataDefs", "metadataValue":
-		// annotations an element lists: metadata-usage children (Symbol API), and
-		// MetadataUsage rows the query API reports as owned by the element
+		// annotations an element lists: its metadata-usage children
 		var symbols []*opensysml.Symbol
 		for _, cid := range sym.ChildIDs {
 			ch, err := cl.LookupSymbol(ctx, m, cid)
@@ -290,15 +400,6 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 				types[s.Type.ResolvedID] = true
 			}
 		}
-		rows, err := cl.Query(ctx, m, opensysml.Query{Scope: []string{sym.ID}})
-		if err != nil {
-			return nil, err
-		}
-		for _, r := range rows {
-			if r.Type == "MetadataUsage" && r.Properties["owner"] == sym.ID && r.Properties["type"] != "" {
-				types[r.Properties["type"]] = true
-			}
-		}
 		out := []string{}
 		for k := range types {
 			out = append(out, k)
@@ -306,10 +407,12 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		slices.Sort(out)
 		return out, nil
 	case "kind":
-		if sym.Kind == "" {
-			return nil, nil
-		}
-		return strings.ToUpper(sym.Kind[:1]) + sym.Kind[1:], nil
+		return metaclassOf(sym.Kind), nil
+	case "shortName":
+		return nil, noSymbolField(ctx, cl, m, sym.ID, "shortName", "the short name")
+	case "isAbstract":
+		// Symbol metadata carries `abstract: true` for an abstract element, nothing otherwise
+		return sym.Metadata["abstract"] == "true", nil
 	case "typeIsConjugated":
 		if sym.Type == nil || sym.Type.ResolvedID == "" {
 			return nil, nil

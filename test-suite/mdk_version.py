@@ -67,12 +67,12 @@ def pilot_version():
 SUITES = {
     "opensysml-py": dict(
         mdk="OpenSysML", dir="OpenSysML",
-        api="Python client (client/python), Symbol and query APIs, over sysml-grpc built from this commit",
+        api="Python client (client/python), Symbol API, over sysml-grpc built from this commit",
         library=opensysml_library,
         toolchain=lambda: sh(str(HERE / "test-opensysml-py" / ".venv" / "bin" / "python"), "--version")),
     "opensysml-go": dict(
         mdk="OpenSysML", dir="OpenSysML",
-        api="Go API (client/opensysml) in process, Symbol and query APIs",
+        api="Go API (client/opensysml) in process, Symbol API",
         library=opensysml_library,
         toolchain=lambda: sh("go", "version")),
     "sysml-toolkit-rs": dict(

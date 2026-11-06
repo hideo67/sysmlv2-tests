@@ -1,0 +1,711 @@
+{
+ "matrix": "A01",
+ "model": "models/A01.sysml",
+ "notes": {
+  "reads": "name        Element::name\n  shortName   Element::shortName\n  kind        the metaclass (PartDefinition, ...)\n  isAbstract  Type::isAbstract\nReads through an import or alias (DL4) are left to A60; isVariation and isIndividual to A03."
+ },
+ "cases": [
+  {
+   "id": "A01-001",
+   "check": "name",
+   "element": "A01::PartD",
+   "expect": "PartD"
+  },
+  {
+   "id": "A01-002",
+   "check": "name",
+   "element": "A01::Holder::PartD",
+   "expect": "PartD"
+  },
+  {
+   "id": "A01-003",
+   "check": "name",
+   "element": "A01::Inner::PartD",
+   "expect": "PartD"
+  },
+  {
+   "id": "A01-004",
+   "check": "name",
+   "element": "A01::ItemD",
+   "expect": "ItemD"
+  },
+  {
+   "id": "A01-005",
+   "check": "name",
+   "element": "A01::Holder::ItemD",
+   "expect": "ItemD"
+  },
+  {
+   "id": "A01-006",
+   "check": "name",
+   "element": "A01::Inner::ItemD",
+   "expect": "ItemD"
+  },
+  {
+   "id": "A01-007",
+   "check": "name",
+   "element": "A01::AttrD",
+   "expect": "AttrD"
+  },
+  {
+   "id": "A01-008",
+   "check": "name",
+   "element": "A01::Holder::AttrD",
+   "expect": "AttrD"
+  },
+  {
+   "id": "A01-009",
+   "check": "name",
+   "element": "A01::Inner::AttrD",
+   "expect": "AttrD"
+  },
+  {
+   "id": "A01-010",
+   "check": "name",
+   "element": "A01::PortD",
+   "expect": "PortD"
+  },
+  {
+   "id": "A01-011",
+   "check": "name",
+   "element": "A01::Holder::PortD",
+   "expect": "PortD"
+  },
+  {
+   "id": "A01-012",
+   "check": "name",
+   "element": "A01::Inner::PortD",
+   "expect": "PortD"
+  },
+  {
+   "id": "A01-013",
+   "check": "name",
+   "element": "A01::ConnD",
+   "expect": "ConnD"
+  },
+  {
+   "id": "A01-014",
+   "check": "name",
+   "element": "A01::Holder::ConnD",
+   "expect": "ConnD"
+  },
+  {
+   "id": "A01-015",
+   "check": "name",
+   "element": "A01::Inner::ConnD",
+   "expect": "ConnD"
+  },
+  {
+   "id": "A01-016",
+   "check": "name",
+   "element": "A01::IfaceD",
+   "expect": "IfaceD"
+  },
+  {
+   "id": "A01-017",
+   "check": "name",
+   "element": "A01::Holder::IfaceD",
+   "expect": "IfaceD"
+  },
+  {
+   "id": "A01-018",
+   "check": "name",
+   "element": "A01::Inner::IfaceD",
+   "expect": "IfaceD"
+  },
+  {
+   "id": "A01-019",
+   "check": "name",
+   "element": "A01::AllocD",
+   "expect": "AllocD"
+  },
+  {
+   "id": "A01-020",
+   "check": "name",
+   "element": "A01::Holder::AllocD",
+   "expect": "AllocD"
+  },
+  {
+   "id": "A01-021",
+   "check": "name",
+   "element": "A01::Inner::AllocD",
+   "expect": "AllocD"
+  },
+  {
+   "id": "A01-022",
+   "check": "name",
+   "element": "A01::EnumD",
+   "expect": "EnumD"
+  },
+  {
+   "id": "A01-023",
+   "check": "name",
+   "element": "A01::Holder::EnumD",
+   "expect": "EnumD"
+  },
+  {
+   "id": "A01-024",
+   "check": "name",
+   "element": "A01::Inner::EnumD",
+   "expect": "EnumD"
+  },
+  {
+   "id": "A01-025",
+   "check": "name",
+   "element": "A01::OccD",
+   "expect": "OccD"
+  },
+  {
+   "id": "A01-026",
+   "check": "name",
+   "element": "A01::Holder::OccD",
+   "expect": "OccD"
+  },
+  {
+   "id": "A01-027",
+   "check": "name",
+   "element": "A01::Inner::OccD",
+   "expect": "OccD"
+  },
+  {
+   "id": "A01-028",
+   "check": "name",
+   "element": "A01::MetaD",
+   "expect": "MetaD"
+  },
+  {
+   "id": "A01-029",
+   "check": "name",
+   "element": "A01::Holder::MetaD",
+   "expect": "MetaD"
+  },
+  {
+   "id": "A01-030",
+   "check": "name",
+   "element": "A01::Inner::MetaD",
+   "expect": "MetaD"
+  },
+  {
+   "id": "A01-031",
+   "check": "shortName",
+   "element": "A01::PartD",
+   "expect": "PD"
+  },
+  {
+   "id": "A01-032",
+   "check": "shortName",
+   "element": "A01::Holder::PartD",
+   "expect": "PD"
+  },
+  {
+   "id": "A01-033",
+   "check": "shortName",
+   "element": "A01::Inner::PartD",
+   "expect": "PD"
+  },
+  {
+   "id": "A01-034",
+   "check": "shortName",
+   "element": "A01::ItemD",
+   "expect": "ID"
+  },
+  {
+   "id": "A01-035",
+   "check": "shortName",
+   "element": "A01::Holder::ItemD",
+   "expect": "ID"
+  },
+  {
+   "id": "A01-036",
+   "check": "shortName",
+   "element": "A01::Inner::ItemD",
+   "expect": "ID"
+  },
+  {
+   "id": "A01-037",
+   "check": "shortName",
+   "element": "A01::AttrD",
+   "expect": "AD"
+  },
+  {
+   "id": "A01-038",
+   "check": "shortName",
+   "element": "A01::Holder::AttrD",
+   "expect": "AD"
+  },
+  {
+   "id": "A01-039",
+   "check": "shortName",
+   "element": "A01::Inner::AttrD",
+   "expect": "AD"
+  },
+  {
+   "id": "A01-040",
+   "check": "shortName",
+   "element": "A01::PortD",
+   "expect": "POD"
+  },
+  {
+   "id": "A01-041",
+   "check": "shortName",
+   "element": "A01::Holder::PortD",
+   "expect": "POD"
+  },
+  {
+   "id": "A01-042",
+   "check": "shortName",
+   "element": "A01::Inner::PortD",
+   "expect": "POD"
+  },
+  {
+   "id": "A01-043",
+   "check": "shortName",
+   "element": "A01::ConnD",
+   "expect": "CD"
+  },
+  {
+   "id": "A01-044",
+   "check": "shortName",
+   "element": "A01::Holder::ConnD",
+   "expect": "CD"
+  },
+  {
+   "id": "A01-045",
+   "check": "shortName",
+   "element": "A01::Inner::ConnD",
+   "expect": "CD"
+  },
+  {
+   "id": "A01-046",
+   "check": "shortName",
+   "element": "A01::IfaceD",
+   "expect": "IFD"
+  },
+  {
+   "id": "A01-047",
+   "check": "shortName",
+   "element": "A01::Holder::IfaceD",
+   "expect": "IFD"
+  },
+  {
+   "id": "A01-048",
+   "check": "shortName",
+   "element": "A01::Inner::IfaceD",
+   "expect": "IFD"
+  },
+  {
+   "id": "A01-049",
+   "check": "shortName",
+   "element": "A01::AllocD",
+   "expect": "ALD"
+  },
+  {
+   "id": "A01-050",
+   "check": "shortName",
+   "element": "A01::Holder::AllocD",
+   "expect": "ALD"
+  },
+  {
+   "id": "A01-051",
+   "check": "shortName",
+   "element": "A01::Inner::AllocD",
+   "expect": "ALD"
+  },
+  {
+   "id": "A01-052",
+   "check": "shortName",
+   "element": "A01::EnumD",
+   "expect": "ED"
+  },
+  {
+   "id": "A01-053",
+   "check": "shortName",
+   "element": "A01::Holder::EnumD",
+   "expect": "ED"
+  },
+  {
+   "id": "A01-054",
+   "check": "shortName",
+   "element": "A01::Inner::EnumD",
+   "expect": "ED"
+  },
+  {
+   "id": "A01-055",
+   "check": "shortName",
+   "element": "A01::OccD",
+   "expect": "OD"
+  },
+  {
+   "id": "A01-056",
+   "check": "shortName",
+   "element": "A01::Holder::OccD",
+   "expect": "OD"
+  },
+  {
+   "id": "A01-057",
+   "check": "shortName",
+   "element": "A01::Inner::OccD",
+   "expect": "OD"
+  },
+  {
+   "id": "A01-058",
+   "check": "shortName",
+   "element": "A01::MetaD",
+   "expect": "MD"
+  },
+  {
+   "id": "A01-059",
+   "check": "shortName",
+   "element": "A01::Holder::MetaD",
+   "expect": "MD"
+  },
+  {
+   "id": "A01-060",
+   "check": "shortName",
+   "element": "A01::Inner::MetaD",
+   "expect": "MD"
+  },
+  {
+   "id": "A01-061",
+   "check": "kind",
+   "element": "A01::PartD",
+   "expect": "PartDefinition"
+  },
+  {
+   "id": "A01-062",
+   "check": "kind",
+   "element": "A01::Holder::PartD",
+   "expect": "PartDefinition"
+  },
+  {
+   "id": "A01-063",
+   "check": "kind",
+   "element": "A01::Inner::PartD",
+   "expect": "PartDefinition"
+  },
+  {
+   "id": "A01-064",
+   "check": "kind",
+   "element": "A01::ItemD",
+   "expect": "ItemDefinition"
+  },
+  {
+   "id": "A01-065",
+   "check": "kind",
+   "element": "A01::Holder::ItemD",
+   "expect": "ItemDefinition"
+  },
+  {
+   "id": "A01-066",
+   "check": "kind",
+   "element": "A01::Inner::ItemD",
+   "expect": "ItemDefinition"
+  },
+  {
+   "id": "A01-067",
+   "check": "kind",
+   "element": "A01::AttrD",
+   "expect": "AttributeDefinition"
+  },
+  {
+   "id": "A01-068",
+   "check": "kind",
+   "element": "A01::Holder::AttrD",
+   "expect": "AttributeDefinition"
+  },
+  {
+   "id": "A01-069",
+   "check": "kind",
+   "element": "A01::Inner::AttrD",
+   "expect": "AttributeDefinition"
+  },
+  {
+   "id": "A01-070",
+   "check": "kind",
+   "element": "A01::PortD",
+   "expect": "PortDefinition"
+  },
+  {
+   "id": "A01-071",
+   "check": "kind",
+   "element": "A01::Holder::PortD",
+   "expect": "PortDefinition"
+  },
+  {
+   "id": "A01-072",
+   "check": "kind",
+   "element": "A01::Inner::PortD",
+   "expect": "PortDefinition"
+  },
+  {
+   "id": "A01-073",
+   "check": "kind",
+   "element": "A01::ConnD",
+   "expect": "ConnectionDefinition"
+  },
+  {
+   "id": "A01-074",
+   "check": "kind",
+   "element": "A01::Holder::ConnD",
+   "expect": "ConnectionDefinition"
+  },
+  {
+   "id": "A01-075",
+   "check": "kind",
+   "element": "A01::Inner::ConnD",
+   "expect": "ConnectionDefinition"
+  },
+  {
+   "id": "A01-076",
+   "check": "kind",
+   "element": "A01::IfaceD",
+   "expect": "InterfaceDefinition"
+  },
+  {
+   "id": "A01-077",
+   "check": "kind",
+   "element": "A01::Holder::IfaceD",
+   "expect": "InterfaceDefinition"
+  },
+  {
+   "id": "A01-078",
+   "check": "kind",
+   "element": "A01::Inner::IfaceD",
+   "expect": "InterfaceDefinition"
+  },
+  {
+   "id": "A01-079",
+   "check": "kind",
+   "element": "A01::AllocD",
+   "expect": "AllocationDefinition"
+  },
+  {
+   "id": "A01-080",
+   "check": "kind",
+   "element": "A01::Holder::AllocD",
+   "expect": "AllocationDefinition"
+  },
+  {
+   "id": "A01-081",
+   "check": "kind",
+   "element": "A01::Inner::AllocD",
+   "expect": "AllocationDefinition"
+  },
+  {
+   "id": "A01-082",
+   "check": "kind",
+   "element": "A01::EnumD",
+   "expect": "EnumerationDefinition"
+  },
+  {
+   "id": "A01-083",
+   "check": "kind",
+   "element": "A01::Holder::EnumD",
+   "expect": "EnumerationDefinition"
+  },
+  {
+   "id": "A01-084",
+   "check": "kind",
+   "element": "A01::Inner::EnumD",
+   "expect": "EnumerationDefinition"
+  },
+  {
+   "id": "A01-085",
+   "check": "kind",
+   "element": "A01::OccD",
+   "expect": "OccurrenceDefinition"
+  },
+  {
+   "id": "A01-086",
+   "check": "kind",
+   "element": "A01::Holder::OccD",
+   "expect": "OccurrenceDefinition"
+  },
+  {
+   "id": "A01-087",
+   "check": "kind",
+   "element": "A01::Inner::OccD",
+   "expect": "OccurrenceDefinition"
+  },
+  {
+   "id": "A01-088",
+   "check": "kind",
+   "element": "A01::MetaD",
+   "expect": "MetadataDefinition"
+  },
+  {
+   "id": "A01-089",
+   "check": "kind",
+   "element": "A01::Holder::MetaD",
+   "expect": "MetadataDefinition"
+  },
+  {
+   "id": "A01-090",
+   "check": "kind",
+   "element": "A01::Inner::MetaD",
+   "expect": "MetadataDefinition"
+  },
+  {
+   "id": "A01-091",
+   "check": "name",
+   "element": "Parts::Part",
+   "expect": "Part"
+  },
+  {
+   "id": "A01-092",
+   "check": "name",
+   "element": "Items::Item",
+   "expect": "Item"
+  },
+  {
+   "id": "A01-093",
+   "check": "name",
+   "element": "Quantities::TensorQuantityValue",
+   "expect": "TensorQuantityValue"
+  },
+  {
+   "id": "A01-094",
+   "check": "name",
+   "element": "Ports::Port",
+   "expect": "Port"
+  },
+  {
+   "id": "A01-095",
+   "check": "name",
+   "element": "Connections::Connection",
+   "expect": "Connection"
+  },
+  {
+   "id": "A01-096",
+   "check": "name",
+   "element": "Interfaces::Interface",
+   "expect": "Interface"
+  },
+  {
+   "id": "A01-097",
+   "check": "name",
+   "element": "Allocations::Allocation",
+   "expect": "Allocation"
+  },
+  {
+   "id": "A01-098",
+   "check": "name",
+   "element": "VerificationCases::VerdictKind",
+   "expect": "VerdictKind"
+  },
+  {
+   "id": "A01-099",
+   "check": "name",
+   "element": "Metadata::MetadataItem",
+   "expect": "MetadataItem"
+  },
+  {
+   "id": "A01-100",
+   "check": "kind",
+   "element": "Parts::Part",
+   "expect": "PartDefinition"
+  },
+  {
+   "id": "A01-101",
+   "check": "kind",
+   "element": "Items::Item",
+   "expect": "ItemDefinition"
+  },
+  {
+   "id": "A01-102",
+   "check": "kind",
+   "element": "Quantities::TensorQuantityValue",
+   "expect": "AttributeDefinition"
+  },
+  {
+   "id": "A01-103",
+   "check": "kind",
+   "element": "Ports::Port",
+   "expect": "PortDefinition"
+  },
+  {
+   "id": "A01-104",
+   "check": "kind",
+   "element": "Connections::Connection",
+   "expect": "ConnectionDefinition"
+  },
+  {
+   "id": "A01-105",
+   "check": "kind",
+   "element": "Interfaces::Interface",
+   "expect": "InterfaceDefinition"
+  },
+  {
+   "id": "A01-106",
+   "check": "kind",
+   "element": "Allocations::Allocation",
+   "expect": "AllocationDefinition"
+  },
+  {
+   "id": "A01-107",
+   "check": "kind",
+   "element": "VerificationCases::VerdictKind",
+   "expect": "EnumerationDefinition"
+  },
+  {
+   "id": "A01-108",
+   "check": "kind",
+   "element": "Metadata::MetadataItem",
+   "expect": "MetadataDefinition"
+  },
+  {
+   "id": "A01-109",
+   "check": "isAbstract",
+   "element": "Parts::Part",
+   "expect": true
+  },
+  {
+   "id": "A01-110",
+   "check": "isAbstract",
+   "element": "Items::Item",
+   "expect": true
+  },
+  {
+   "id": "A01-111",
+   "check": "isAbstract",
+   "element": "Quantities::TensorQuantityValue",
+   "expect": true
+  },
+  {
+   "id": "A01-112",
+   "check": "isAbstract",
+   "element": "Ports::Port",
+   "expect": true
+  },
+  {
+   "id": "A01-113",
+   "check": "isAbstract",
+   "element": "Connections::Connection",
+   "expect": true
+  },
+  {
+   "id": "A01-114",
+   "check": "isAbstract",
+   "element": "Interfaces::Interface",
+   "expect": true
+  },
+  {
+   "id": "A01-115",
+   "check": "isAbstract",
+   "element": "Allocations::Allocation",
+   "expect": false
+  },
+  {
+   "id": "A01-116",
+   "check": "isAbstract",
+   "element": "VerificationCases::VerdictKind",
+   "expect": true
+  },
+  {
+   "id": "A01-117",
+   "check": "isAbstract",
+   "element": "Metadata::MetadataItem",
+   "expect": true
+  }
+ ]
+}

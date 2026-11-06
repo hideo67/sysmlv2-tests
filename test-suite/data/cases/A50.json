@@ -1,0 +1,604 @@
+{
+ "matrix": "A50",
+ "model": "models/A50.sysml",
+ "notes": {
+  "reads": "kind         the member's metaclass\n  owner        Element::owningNamespace\n  idRoundTrip  the identifier the API gives the member finds the same member again",
+  "unnamed": "locates an unnamed element: {metaclass, index} among the unnamed members of that metaclass declared in `element`, in declaration order"
+ },
+ "cases": [
+  {
+   "id": "A50-001",
+   "check": "kind",
+   "element": "A50",
+   "expect": "PartUsage",
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-002",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "PartUsage",
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-003",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "PartUsage",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-004",
+   "check": "kind",
+   "element": "A50",
+   "expect": "AttributeUsage",
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-005",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "AttributeUsage",
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-006",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "AttributeUsage",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-007",
+   "check": "kind",
+   "element": "A50",
+   "expect": "BindingConnectorAsUsage",
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-008",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "BindingConnectorAsUsage",
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-009",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "BindingConnectorAsUsage",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-010",
+   "check": "kind",
+   "element": "A50",
+   "expect": "ConnectionUsage",
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-011",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "ConnectionUsage",
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-012",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "ConnectionUsage",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-013",
+   "check": "kind",
+   "element": "A50",
+   "expect": "FlowUsage",
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-014",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "FlowUsage",
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-015",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "FlowUsage",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-016",
+   "check": "kind",
+   "element": "A50",
+   "expect": "MetadataUsage",
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-017",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "MetadataUsage",
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-018",
+   "check": "kind",
+   "element": "A50::Holder",
+   "expect": "MetadataUsage",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-019",
+   "check": "owner",
+   "element": "A50",
+   "expect": "A50",
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-020",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-021",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-022",
+   "check": "owner",
+   "element": "A50",
+   "expect": "A50",
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-023",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-024",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-025",
+   "check": "owner",
+   "element": "A50",
+   "expect": "A50",
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-026",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-027",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-028",
+   "check": "owner",
+   "element": "A50",
+   "expect": "A50",
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-029",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-030",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-031",
+   "check": "owner",
+   "element": "A50",
+   "expect": "A50",
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-032",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-033",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-034",
+   "check": "owner",
+   "element": "A50",
+   "expect": "A50",
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-035",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-036",
+   "check": "owner",
+   "element": "A50::Holder",
+   "expect": "A50::Holder",
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-037",
+   "check": "idRoundTrip",
+   "element": "A50",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-038",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-039",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "PartUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-040",
+   "check": "idRoundTrip",
+   "element": "A50",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-041",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-042",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "AttributeUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-043",
+   "check": "idRoundTrip",
+   "element": "A50",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-044",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-045",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-046",
+   "check": "idRoundTrip",
+   "element": "A50",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-047",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-048",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "ConnectionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-049",
+   "check": "idRoundTrip",
+   "element": "A50",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-050",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-051",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "Flow",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-052",
+   "check": "idRoundTrip",
+   "element": "A50",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-053",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "A50-054",
+   "check": "idRoundTrip",
+   "element": "A50::Holder",
+   "expect": true,
+   "through": [
+    "A50::holder"
+   ],
+   "unnamed": {
+    "metaclass": "MetadataUsage",
+    "index": 0
+   }
+  }
+ ]
+}

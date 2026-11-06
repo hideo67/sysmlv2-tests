@@ -91,6 +91,7 @@ expressions, F: runtime. Issue numbers are OpenSysML issues that motivated the m
 | ID | Subject | What is read | Locations | Variants | Issues |
 |---|---|---|---|---|---|
 | A01 | structural definitions | name, short name, metaclass kind, isAbstract, isVariation, isIndividual | DL1-DL5 | part, item, attribute, port, connection, interface, allocation, enum, occurrence, metadata def | - |
+| A03 | definition modifiers | isAbstract, isVariation, isIndividual | DL1, DL2 | plain, `abstract`, `variation`, `individual` x kinds that allow them | - |
 | A02 | definition specialization | direct generals, all generals (incl. implicit library ones), own members, inherited members (1 and 2 levels, multiple generals), redefined members, variants of a variation def | DL1-DL3 | `:>` single, multiple, chained; abstract general; redefinition in the specializing def | #1961 |
 | A10 | part usages | name, type, isComposite, isReference, unnamed listed | L1-L4 | owned, ref | #1961, #1986 (done) |
 | A20 | attribute usages | name, type, multiplicity, default/bound constant value, isDefault | L1-L5 | plain, with value, with default, redefined | #1961 |
@@ -136,6 +137,7 @@ expressions, F: runtime. Issue numbers are OpenSysML issues that motivated the m
   only by a workaround". The main API of each MDK:
   - OpenSysML (Python, Go): the Symbol API and the query API. Reflection
     (`eval` over metaobjects) and api-json / RDF export are not used.
+    (Superseded in Step 5: the Symbol API only.)
   - sysml-toolkit: `ResolvedModel`, its semantic model. Owned properties are
     read with `element_properties` and derived ones with
     `derived(element, "<spec name>")`. (Corrected in Step 4: an earlier version
@@ -387,3 +389,159 @@ The standard libraries differ between the MDKs: OpenSysML embeds
 SysML-v2-Release 2026-09, sysml-toolkit's submodule is at 2026-05, and the Pilot
 uses its own 0.64.0-SNAPSHOT library. A02 (library-inherited members) has to
 take this into account.
+
+## Step 5: second group of matrices
+
+### Library comparison (before A02)
+The library sources of OpenSysML (`internal/workspace/libs/stdlib`) and of the
+Pilot (`sysml.library` at the tested commit) are identical; only Eclipse
+project files differ. sysml-toolkit's submodule (SysML-v2-Release 2026-05)
+differs from them in 14 files, among them `Kernel Semantic Library/Objects.kerml`
+and `Systems Library/Actions.sysml`. A sysml-toolkit failure on a
+library-inherited member is checked against this diff before it is called a
+defect.
+
+### A01 structural definitions
+117 cases in two blocks:
+- name, shortName and kind x 10 definition kinds (part, item, attribute, port,
+  connection, interface, allocation, enum, occurrence, metadata) x 3 locations
+  (owned by a package, nested in a part def, in a nested package) = 90.
+- name, kind and isAbstract of the standard-library definition of each kind
+  (`Parts::Part`, `Items::Item`, ...; the library has no SysML occurrence def) = 27.
+
+Reads through an import or alias are left to A60. isVariation and isIndividual
+go to a new matrix A03, to keep A01 near 100 cases.
+
+Decisions:
+- A connection or interface def without ends is invalid. The Pilot and OpenSysML
+  both report "Must have at least two related elements"; sysml-toolkit's `check`
+  accepts it (observation, not a test case). The model gives them two ends.
+- An enumeration def is a variation, and a variation def is abstract, so
+  `VerificationCases::VerdictKind` is expected abstract. All three MDKs agreed
+  with this before the expected value was corrected.
+
+Adapter changes: the OpenSysML adapters read kind (the exact `@type`), shortName
+and isAbstract from the query API. The Symbol API has no short name, and its kind
+is an abbreviation (`partDef`). The Pilot adapter now also looks up elements in
+the library resources.
+
+Findings:
+- OpenSysML: the query API reports `VerdictKind` with isAbstract false, while
+  its Symbol metadata says `abstract: true`. Everything else passes.
+- Pilot and sysml-toolkit: all 117 pass.
+
+### A02 definition specialization
+50 cases: 5 reads (directGenerals, allSupertypes, ownedFeatureNames,
+inheritedFeatureNames, redefinitions) x 5 definitions (no explicit general;
+`Mid :> Base`; `Leaf :> Mid` with a redefinition; `Multi :> Base, Other`;
+`FromAbs :> abstract AbsBase`) x 2 locations (package, nested package).
+
+Decisions:
+- allSupertypes is `Type::allSupertypes()` =
+  `OrderedSet{self}->closure(supertypes(false))`. Whether an OCL closure
+  contains its source is read both ways: the Pilot (Eclipse OCL) leaves the type
+  out, and sysml-toolkit includes it. The Pilot's form is expected and the form
+  with the type is accepted.
+- inheritedFeatureNames counts library members (Step 3 decision). Their list is
+  the Pilot's answer (library 0.64.0: 71 named features and 18 unnamed ones
+  inherited through Parts::Part), and every name was checked to be declared in
+  Parts.sysml, Items.sysml, Objects.kerml, Occurrences.kerml or Base.kerml.
+  These cases carry `libraryDependent: true`.
+
+Findings:
+- OpenSysML (Python, Go): direct generals, owned features and redefinitions
+  pass. No supertype closure is available (unsupported). Inherited features
+  come only from `attributes()`, so inherited parts are missing (#1961), and
+  library members are withheld (`withheld_library_attributes`).
+- sysml-toolkit: everything passes except inheritedFeatureNames. It returns the
+  features inherited from definitions in the model, but none of the library's.
+  The toolkit's own library defines those features, so this is not a library
+  version difference. `inheritedFeature` follows only explicit specializations,
+  not the implied `Parts::Part`.
+- Pilot: all 50 pass.
+
+### A40 specialization relations of usages
+45 cases: 3 reads (specializations as [metaclass, general] pairs,
+subsettedFeatures, types) x 5 relations (typing `: T`, subsetting `:> q`,
+reference subsetting `::> q`, typing and subsetting `: V :> q`, redefinition
+`:>> q`) x 3 locations (L2, L3, L4). Implied relationships (every part usage
+subsets `Parts::parts`) are left out.
+
+Adapter fix: each kind of Specialization redefines `general`, and a
+Subsetting's `subsettedFeature`, under its own name (`type`, `redefinedFeature`,
+`referencedFeature`, `superclassifier`). sysml-toolkit answers only to that
+name, so the adapter reads the property that applies to the metaclass. Its first
+failures here were caused by the adapter, not the toolkit.
+
+Findings:
+- OpenSysML (Python, Go): reference subsetting `::> q` is not reported at all.
+  `type` is the declared type only: a feature typed through subsetting or
+  redefinition reports none, and `: V :> q` reports V without q's T. Usages are
+  not listed through typing usages or specializations (#1961). Typing,
+  subsetting and redefinition read in the part def pass.
+- Pilot and sysml-toolkit: all 45 pass.
+
+### A50 unnamed members
+54 cases: 3 reads (kind, owner, idRoundTrip) x 6 unnamed members (part,
+attribute, `bind`, `connect`, `flow`, body metadata `@M;`) x 3 locations
+(package, part def, through a typing usage of the part def). Each member is
+located with the `unnamed` locator, so finding it is part of every read.
+idRoundTrip uses the identifier each API hands out: a qualified name in
+OpenSysML, `elementId` in sysml-toolkit, and the EMF URI fragment in the Pilot.
+
+Change to "visible through a usage": a body annotation `@M;` is owned through
+an OwningMembership, not as a feature. KerML inheritance passes on all
+non-private memberships, and the Pilot lists the annotation as a member of
+`holder`. The Pilot and sysml-toolkit adapters now take everything visible in a
+type to be its features plus its members (`Namespace::member`, and in
+sysml-toolkit also the members of `inheritedMembership`). No earlier result
+changed.
+
+Findings:
+- OpenSysML (Python, Go): no unnamed member is listed by the Symbol API, at any
+  location (#1960). All 54 fail.
+- sysml-toolkit: everything passes except the body annotation read through
+  `holder`. Neither `member` nor `inheritedMembership` gives it, matching its
+  other gaps with inherited members.
+- Pilot: all 54 pass.
+
+### Second group: status
+A01, A02, A40 and A50 are done: 1023 cases in 13 matrices. A03 (definition
+modifiers: isAbstract, isVariation, isIndividual), split off from A01, is
+planned but not yet written.
+
+### Decision: OpenSysML is read through its Symbol API only
+This supersedes the Step 3 decision that counted both OpenSysML's Symbol API and
+its query API as its main API.
+
+Background: the Symbol API is OpenSysML's own. It is one gRPC message,
+`SymbolInfo` (`api/proto/sysml.proto`), and every language binding (Python, Go,
+Java, Rust, ...) wraps the same fields: id, name, kind, a `metadata` map, child
+ids, attributes, type facts, multiplicity and specializations. The query API
+implements the OMG SysML v2 API & Services Query standard. The Pilot and
+sysml-toolkit are read through their element APIs (EMF, `ResolvedModel`). The
+Symbol API is OpenSysML's equivalent, and OpenSysML is free to extend
+`SymbolInfo`. Taking values from the query API where the Symbol API has none
+would hide gaps that a user walking the model through Symbols would hit.
+
+Rule: every value comes from the Symbol API. When it has no field for a read, the
+result is unsupported, and the detail says whether the standard query API offers
+the property ("no Symbol field for the short name; available through the
+standard query API (shortName)"). The query API is consulted for that note only.
+Spelling translations of a Symbol field are allowed, as for Specialization
+kinds: the kind `partDef` is read as `PartDefinition` (`Def` -> `Definition`,
+`enum` -> `Enumeration`).
+
+Results that changed (OpenSysML, Python and Go alike):
+- A01 shortName (30 cases): pass -> unsupported (no Symbol field; the query API
+  has it). A01 kind still passes, from the Symbol kind.
+- A01-116 isAbstract of `VerdictKind`: fail -> pass. The Symbol metadata says
+  `abstract: true`; the query API said false.
+- A10-025..027 unnamedPartCount: pass -> fail. `children()` drops unnamed
+  members (#1960); before, the query API listed them.
+- A50 owner: no Symbol field, but these cases fail earlier, because the unnamed
+  member cannot be found.
+- D10 metadataDefs: the query fallback no longer applies; it had found nothing
+  anyway.
+- Unsupported details for isComposite, isReference, sourceFeature, targetFeature
+  and relatedFeature now say that the query API does not offer them either.

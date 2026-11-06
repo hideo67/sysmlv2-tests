@@ -94,7 +94,18 @@ class MatricesTest {
         return qn == null ? null : qn.replace("'", "");
     }
 
+    /** The element with that qualified name: in the matrix's own resource, else anywhere
+     *  in the resource set (the standard library). */
     static Element find(Resource resource, String qn) {
+        Element e = findIn(resource, qn);
+        if (e != null || resource.getResourceSet() == null) return e;
+        for (Resource r : resource.getResourceSet().getResources()) {
+            if (r != resource && (e = findIn(r, qn)) != null) return e;
+        }
+        return null;
+    }
+
+    static Element findIn(Resource resource, String qn) {
         for (var it = resource.getAllContents(); it.hasNext();) {
             EObject o = it.next();
             if (o instanceof Element e && norm(qn).equals(norm(e.getQualifiedName()))) return e;
@@ -117,6 +128,14 @@ class MatricesTest {
         LinkedHashSet<Feature> out = new LinkedHashSet<>(t.getFeature());
         out.addAll(t.getOwnedFeature());
         out.addAll(t.getInheritedFeature());
+        return new ArrayList<>(out);
+    }
+
+    /** Everything visible in a type: its features, and the members of all its memberships,
+     *  inherited ones included (Namespace::member), such as a body annotation `@M;`. */
+    static List<Element> visibleMembers(Type t) {
+        LinkedHashSet<Element> out = new LinkedHashSet<>(visibleFeatures(t));
+        out.addAll(t.getMember());
         return new ArrayList<>(out);
     }
 
@@ -203,7 +222,7 @@ class MatricesTest {
                     if (cur == null) return "<" + step + " not visible>";
                 }
                 owner = (Type) cur;
-                members = visibleFeatures((Type) cur);
+                members = visibleMembers((Type) cur);
             }
             List<Element> found = members.stream()
                 .filter(m -> (m.getName() == null || m.getName().isEmpty())
@@ -222,7 +241,7 @@ class MatricesTest {
             steps.add(qn);
             for (String step : steps) {
                 Type cur = (Type) e;
-                Feature next = visibleFeatures(cur).stream()
+                Element next = visibleMembers(cur).stream()
                     .filter(f -> norm(step).equals(norm(f.getQualifiedName()))).findFirst().orElse(null);
                 if (next == null) return "<" + step + " not visible through " + cur.getQualifiedName() + ">";
                 owner = cur;
@@ -237,6 +256,41 @@ class MatricesTest {
             }
             case "isComposite": return ((Feature) e).isComposite();
             case "kind": return e.eClass().getName();
+            case "specializations":
+                return ((Type) e).getOwnedSpecialization().stream().filter(r -> !r.isImplied())
+                    .map(r -> List.of(r.eClass().getName(), r.getGeneral().getQualifiedName()))
+                    .sorted(Comparator.comparing(Object::toString)).toList();
+            case "subsettedFeatures":
+                return ((Feature) e).getOwnedSubsetting().stream().filter(r -> !r.isImplied())
+                    .map(r -> r.getSubsettedFeature().getQualifiedName()).sorted().toList();
+            case "types":
+                return ((Feature) e).getType().stream().map(Element::getQualifiedName).sorted().toList();
+            case "owner":
+                return e.getOwningNamespace() == null ? null : e.getOwningNamespace().getQualifiedName();
+            case "idRoundTrip": {
+                // the EMF identifier of the element (its URI fragment) finds it again
+                Resource r = e.eResource();
+                return r != null && r.getEObject(r.getURIFragment(e)) == e;
+            }
+            case "directGenerals":
+                return ((Classifier) e).getOwnedSubclassification().stream().filter(r -> !r.isImplied())
+                    .map(r -> r.getSuperclassifier().getQualifiedName()).sorted().toList();
+            case "allSupertypes":
+                return ((Type) e).allSupertypes().stream().map(Element::getQualifiedName).sorted().toList();
+            case "ownedFeatureNames":
+                return ((Type) e).getOwnedFeature().stream().map(f -> f.getName() == null ? "" : f.getName()).sorted().toList();
+            case "inheritedFeatureNames":
+                return ((Type) e).getInheritedFeature().stream().map(f -> f.getName() == null ? "" : f.getName()).sorted().toList();
+            case "redefinitions": {
+                List<List<String>> out = new ArrayList<>();
+                for (Feature f : ((Type) e).getOwnedFeature())
+                    for (Redefinition r : f.getOwnedRedefinition())
+                        out.add(List.of(f.getQualifiedName(), r.getRedefinedFeature().getQualifiedName()));
+                out.sort(Comparator.comparing(Object::toString));
+                return out;
+            }
+            case "shortName": return e.getShortName();
+            case "isAbstract": return ((Type) e).isAbstract();
             case "metadataDefs":
                 return annotations(resource, e).stream().map(mu -> mu.getMetadataDefinition())
                     .map(d -> d == null ? null : d.getQualifiedName()).sorted().toList();

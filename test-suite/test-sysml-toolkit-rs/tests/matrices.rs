@@ -65,12 +65,21 @@ impl Api {
             DerivedOrOwned::Derived(other) => json!(format!("{other:?}")),
         })
     }
-    /// Features a type lists, own and inherited: the union of the spec's
-    /// `feature`, `ownedFeature` and `inheritedFeature`.
+    /// Everything visible in a type: the union of the spec's `feature`, `ownedFeature`,
+    /// `inheritedFeature` and `member`, and the members of its inherited memberships.
     fn visible_features(&mut self, t: ElementRef) -> Result<Vec<ElementRef>, String> {
         let mut out = vec![];
-        for p in ["feature", "ownedFeature", "inheritedFeature"] {
+        for p in ["feature", "ownedFeature", "inheritedFeature", "member"] {
             for f in self.elements(t, p)? {
+                if !out.contains(&f) {
+                    out.push(f);
+                }
+            }
+        }
+        // the members of inherited memberships (Namespace::member includes them), such as
+        // a body annotation `@M;` of a general type
+        for ms in self.elements(t, "inheritedMembership")? {
+            for f in self.elements(ms, "memberElement")? {
                 if !out.contains(&f) {
                     out.push(f);
                 }
@@ -263,6 +272,88 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         "isComposite" => api.scalar(e, "isComposite")?,
         "kind" => json!(api.metaclass(e)),
+        "specializations" | "subsettedFeatures" => {
+            let mut out = vec![];
+            let prop = if check == "specializations" { "ownedSpecialization" } else { "ownedSubsetting" };
+            for r in api.elements(e, prop)? {
+                if api.rm.element_properties(r).get("isImplied") == Some(&json!(true)) {
+                    continue;
+                }
+                // each kind of Specialization redefines `general` (and a Subsetting's
+                // `subsettedFeature`) under its own name, which is what the toolkit stores
+                let prop = match api.metaclass(r) {
+                    "FeatureTyping" | "ConjugatedPortTyping" => "type",
+                    "Subsetting" => "subsettedFeature",
+                    "Redefinition" => "redefinedFeature",
+                    "ReferenceSubsetting" => "referencedFeature",
+                    "Subclassification" => "superclassifier",
+                    _ => "general",
+                };
+                let general = api.element(r, prop)?.and_then(|g| api.qn(g));
+                if check == "specializations" {
+                    out.push(json!([api.metaclass(r), general]));
+                } else if general.is_some() {
+                    out.push(json!(general));
+                }
+            }
+            out.sort_by_key(|v| v.to_string());
+            json!(out)
+        }
+        "types" => {
+            let mut out: Vec<_> = api.elements(e, "type")?.into_iter().map(|t| api.qn(t)).collect();
+            out.sort();
+            json!(out)
+        }
+        "owner" => match api.element(e, "owningNamespace")? {
+            Some(o) => json!(api.qn(o)),
+            None => Value::Null,
+        },
+        "idRoundTrip" => {
+            let id = api.rm.element_id(e).to_string();
+            json!(api.rm.element_by_id(&id) == Some(e))
+        }
+        "directGenerals" => {
+            let mut out = vec![];
+            for r in api.elements(e, "ownedSubclassification")? {
+                if api.rm.element_properties(r).get("isImplied") == Some(&json!(true)) {
+                    continue;
+                }
+                if let Some(g) = api.element(r, "superclassifier")? {
+                    out.push(api.qn(g));
+                }
+            }
+            out.sort();
+            json!(out)
+        }
+        "allSupertypes" => {
+            let r = api.rm.invoke_operation(e, "Core-Types-Type-allSupertypes_", &[])
+                .map_err(|err| format!("allSupertypes: {err:?}"))?;
+            let mut out: Vec<_> = r.value.elements().into_iter().map(|t| api.qn(t)).collect();
+            out.sort();
+            json!(out)
+        }
+        "ownedFeatureNames" | "inheritedFeatureNames" => {
+            let mut out = vec![];
+            for f in api.elements(e, if check == "ownedFeatureNames" { "ownedFeature" } else { "inheritedFeature" })? {
+                out.push(api.scalar(f, "name")?.as_str().unwrap_or("").to_string());
+            }
+            out.sort();
+            json!(out)
+        }
+        "redefinitions" => {
+            let mut out = vec![];
+            for f in api.elements(e, "ownedFeature")? {
+                for r in api.elements(f, "ownedRedefinition")? {
+                    if let Some(rf) = api.element(r, "redefinedFeature")? {
+                        out.push(json!([api.qn(f), api.qn(rf)]));
+                    }
+                }
+            }
+            out.sort_by_key(|v| v.to_string());
+            json!(out)
+        }
+        "shortName" => api.scalar(e, "shortName")?,
+        "isAbstract" => api.scalar(e, "isAbstract")?,
         "metadataDefs" => {
             let mut defs = vec![];
             for mu in api.annotations(e)? {

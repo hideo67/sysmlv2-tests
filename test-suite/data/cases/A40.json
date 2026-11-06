@@ -1,0 +1,513 @@
+{
+ "matrix": "A40",
+ "model": "models/A40.sysml",
+ "notes": {
+  "reads": "sorted lists; implied relationships, such as the subsetting of Parts::parts that\nevery part usage gets, are left out):\n  specializations    [metaclass, general] of each explicit owned Specialization\n                     (FeatureTyping, Subsetting, ReferenceSubsetting, Redefinition)\n  subsettedFeatures  subsettedFeature of each explicit owned Subsetting (redefinitions and\n                     reference subsettings are subsettings too)\n  types              Feature::type"
+ },
+ "cases": [
+  {
+   "id": "A40-001",
+   "check": "specializations",
+   "element": "A40::Owner::pTyped",
+   "expect": [
+    [
+     "FeatureTyping",
+     "A40::T"
+    ]
+   ]
+  },
+  {
+   "id": "A40-002",
+   "check": "specializations",
+   "element": "A40::Owner::pTyped",
+   "expect": [
+    [
+     "FeatureTyping",
+     "A40::T"
+    ]
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-003",
+   "check": "specializations",
+   "element": "A40::Owner::pTyped",
+   "expect": [
+    [
+     "FeatureTyping",
+     "A40::T"
+    ]
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-004",
+   "check": "specializations",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    [
+     "Subsetting",
+     "A40::Owner::q"
+    ]
+   ]
+  },
+  {
+   "id": "A40-005",
+   "check": "specializations",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    [
+     "Subsetting",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-006",
+   "check": "specializations",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    [
+     "Subsetting",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-007",
+   "check": "specializations",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    [
+     "ReferenceSubsetting",
+     "A40::Owner::q"
+    ]
+   ]
+  },
+  {
+   "id": "A40-008",
+   "check": "specializations",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    [
+     "ReferenceSubsetting",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-009",
+   "check": "specializations",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    [
+     "ReferenceSubsetting",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-010",
+   "check": "specializations",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    [
+     "FeatureTyping",
+     "A40::V"
+    ],
+    [
+     "Subsetting",
+     "A40::Owner::q"
+    ]
+   ]
+  },
+  {
+   "id": "A40-011",
+   "check": "specializations",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    [
+     "FeatureTyping",
+     "A40::V"
+    ],
+    [
+     "Subsetting",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-012",
+   "check": "specializations",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    [
+     "FeatureTyping",
+     "A40::V"
+    ],
+    [
+     "Subsetting",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-013",
+   "check": "specializations",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    [
+     "Redefinition",
+     "A40::Owner::q"
+    ]
+   ]
+  },
+  {
+   "id": "A40-014",
+   "check": "specializations",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    [
+     "Redefinition",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-015",
+   "check": "specializations",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    [
+     "Redefinition",
+     "A40::Owner::q"
+    ]
+   ],
+   "through": [
+    "A40::subSub"
+   ]
+  },
+  {
+   "id": "A40-016",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pTyped",
+   "expect": []
+  },
+  {
+   "id": "A40-017",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pTyped",
+   "expect": [],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-018",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pTyped",
+   "expect": [],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-019",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    "A40::Owner::q"
+   ]
+  },
+  {
+   "id": "A40-020",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-021",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-022",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    "A40::Owner::q"
+   ]
+  },
+  {
+   "id": "A40-023",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-024",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-025",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    "A40::Owner::q"
+   ]
+  },
+  {
+   "id": "A40-026",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-027",
+   "check": "subsettedFeatures",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-028",
+   "check": "subsettedFeatures",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    "A40::Owner::q"
+   ]
+  },
+  {
+   "id": "A40-029",
+   "check": "subsettedFeatures",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-030",
+   "check": "subsettedFeatures",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    "A40::Owner::q"
+   ],
+   "through": [
+    "A40::subSub"
+   ]
+  },
+  {
+   "id": "A40-031",
+   "check": "types",
+   "element": "A40::Owner::pTyped",
+   "expect": [
+    "A40::T"
+   ]
+  },
+  {
+   "id": "A40-032",
+   "check": "types",
+   "element": "A40::Owner::pTyped",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-033",
+   "check": "types",
+   "element": "A40::Owner::pTyped",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-034",
+   "check": "types",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    "A40::T"
+   ]
+  },
+  {
+   "id": "A40-035",
+   "check": "types",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-036",
+   "check": "types",
+   "element": "A40::Owner::pSub",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-037",
+   "check": "types",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    "A40::T"
+   ]
+  },
+  {
+   "id": "A40-038",
+   "check": "types",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-039",
+   "check": "types",
+   "element": "A40::Owner::pRef",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-040",
+   "check": "types",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    "A40::T",
+    "A40::V"
+   ]
+  },
+  {
+   "id": "A40-041",
+   "check": "types",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    "A40::T",
+    "A40::V"
+   ],
+   "through": [
+    "A40::owner"
+   ]
+  },
+  {
+   "id": "A40-042",
+   "check": "types",
+   "element": "A40::Owner::pBoth",
+   "expect": [
+    "A40::T",
+    "A40::V"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-043",
+   "check": "types",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    "A40::T"
+   ]
+  },
+  {
+   "id": "A40-044",
+   "check": "types",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::subOwner"
+   ]
+  },
+  {
+   "id": "A40-045",
+   "check": "types",
+   "element": "A40::SubOwner::q",
+   "expect": [
+    "A40::T"
+   ],
+   "through": [
+    "A40::subSub"
+   ]
+  }
+ ]
+}
