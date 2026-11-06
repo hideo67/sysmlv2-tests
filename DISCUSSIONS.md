@@ -613,3 +613,42 @@ Findings:
 
 ### Status
 A03 and C01 are done: 1247 cases in 15 matrices.
+
+## Step 6: third group of matrices
+
+### A60 namespaces: imports, aliases and visibility
+32 cases: 2 reads (resolve, referenceTarget) x 8 access paths (own member,
+alias, membership import, namespace import, recursive import `::**`, private
+import, private member, protected member) x 2 element kinds (a part def, reached
+by a usage typed by it; an attribute, reached by an attribute subsetting it).
+
+- resolve: the element a qualified path resolves to, or null when the path is
+  not visible from outside. For the Pilot and sysml-toolkit this is KerML
+  `Namespace::resolve` of the rest of the path, called on the matrix's root
+  package. OpenSysML's Symbol API has one name lookup, `get(qualified name)`,
+  which is given the whole path.
+- referenceTarget: what a reference written through the path resolves to in the
+  model (the type of `part pAlias : Lib::PumpAlias;`, the subsetted feature of
+  `attribute aAlias :> Lib::rateAlias;`). References to private and protected
+  paths are written where they are visible.
+
+Observations on the way:
+- In the Pilot (through SysMLInteractive), `resolveGlobal` and `resolve` called
+  on the root namespace find no top-level package of the user's document, while
+  `A60.resolve("Lib::Pump")` works. sysml-toolkit resolves from the root as
+  well. It is unclear whether this is a Pilot defect or the interactive setup,
+  so the read resolves from the root package and this is recorded as an
+  observation only.
+- Adapter fix: an OwningMembership redefines `memberElement` as
+  `ownedMemberElement`. sysml-toolkit answers only to the redefining name (as in
+  A40).
+
+Findings:
+- OpenSysML (Python, Go): every referenceTarget passes, so references written
+  through aliases, imports and visibility rules resolve correctly in the model.
+  `get` is a lookup by declared qualified name, not name resolution: an alias
+  gives the alias itself instead of its target, re-exported imports are not
+  followed, and private and protected members are returned regardless of
+  visibility. Go and Python differ: Go's in-process lookup follows a public
+  namespace import (`FacadeAll::Pump`), the Python client over gRPC does not.
+- Pilot and sysml-toolkit: all 32 pass.

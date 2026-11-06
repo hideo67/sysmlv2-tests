@@ -122,7 +122,11 @@ def no_symbol_field(model, element, prop, what):
     return Unsupported(f"no Symbol field for {what}; {note}")
 
 
-def do_check(model, check, element, through=None, unnamed=None):
+def do_check(model, check, element, through=None, unnamed=None, via=None):
+    if check == "resolve":
+        # the Symbol API's one name lookup: get(qualified name)
+        s = model.get(element) or model.get(norm(element))
+        return s.id if s else None
     if check in ("isComposite", "isReference"):
         raise no_symbol_field(model, element, check, check)
     if check in ("sourceFeature", "targetFeature", "relatedFeature"):
@@ -204,6 +208,11 @@ def do_check(model, check, element, through=None, unnamed=None):
     if check in ("isAbstract", "isVariation"):
         # Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
         return s.metadata.get("abstract" if check == "isAbstract" else "variation") == "true"
+    if check == "referenceTarget":
+        if via == "type":
+            return s.type_facts.resolved_id if s.type_facts else None
+        targets = [sp.target_id for sp in s.specializations if sp.kind == "subsets"]
+        return targets[0] if targets else None
     if check == "result":
         raise no_symbol_field(model, s.id, "result", "the result parameter")
     if check == "subject":
@@ -247,7 +256,8 @@ def do_check(model, check, element, through=None, unnamed=None):
 @pytest.mark.parametrize("model_file,case", CASES, ids=[c["id"] for _, c in CASES])
 def test_case(model_file, case):
     try:
-        actual = do_check(load(model_file), case["check"], case["element"], case.get("through"), case.get("unnamed"))
+        actual = do_check(load(model_file), case["check"], case["element"], case.get("through"), case.get("unnamed"),
+                          case.get("via"))
     except Unsupported as e:
         pytest.skip(f"UNSUPPORTED: {e}")
     ok = actual == case["expect"] or actual in case.get("accept", [])

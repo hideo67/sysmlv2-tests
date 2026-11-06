@@ -189,6 +189,27 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
     let path = through_path(c);
     let through = path.first().map(String::as_str);
 
+    if check == "resolve" {
+        // KerML Namespace::resolve of the rest of the path, invoked on the matrix's root package
+        let (first, rest) = element.split_once("::").ok_or("path needs a package")?;
+        let package = api.find(first).ok_or("no root package")?;
+        let r = api.rm.invoke_operation(package, "Root-Namespaces-Namespace-resolve_String",
+            &[DerivedValue::Str(rest.to_string())]).map_err(|err| format!("resolve: {err:?}"))?;
+        return Ok(Value(match r.value.element() {
+            Some(membership) => {
+                // an OwningMembership redefines memberElement as ownedMemberElement
+                let mut target = api.element(membership, "memberElement")?;
+                if target.is_none() {
+                    target = api.element(membership, "ownedMemberElement")?;
+                }
+                match target {
+                    Some(t) => json!(api.qn(t)),
+                    None => Value::Null,
+                }
+            }
+            None => Value::Null,
+        }));
+    }
     if check == "unnamedPartCount" {
         let scope = api.find(through.unwrap_or(element)).ok_or("no scope element")?;
         let members = if through.is_some() { api.visible_features(scope)? } else { api.elements(scope, "ownedMember")? };
@@ -272,6 +293,26 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         "isComposite" => api.scalar(e, "isComposite")?,
         "kind" => json!(api.metaclass(e)),
+        "referenceTarget" => {
+            if c["via"] == "type" {
+                match api.element(e, "type")? {
+                    Some(t) => json!(api.qn(t)),
+                    None => Value::Null,
+                }
+            } else {
+                let mut target = Value::Null;
+                for r in api.elements(e, "ownedSubsetting")? {
+                    if api.rm.element_properties(r).get("isImplied") == Some(&json!(true)) {
+                        continue;
+                    }
+                    if let Some(f) = api.element(r, "subsettedFeature")? {
+                        target = json!(api.qn(f));
+                        break;
+                    }
+                }
+                target
+            }
+        }
         "specializations" | "subsettedFeatures" => {
             let mut out = vec![];
             let prop = if check == "specializations" { "ownedSpecialization" } else { "ownedSubsetting" };

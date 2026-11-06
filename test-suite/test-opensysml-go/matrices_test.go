@@ -31,6 +31,7 @@ type caseSpec struct {
 	Through throughPath       `json:"through"`
 	Expect  json.RawMessage   `json:"expect"`
 	Accept  []json.RawMessage `json:"accept"`
+	Via     string            `json:"via"`
 	Unnamed *struct {
 		Metaclass string `json:"metaclass"`
 		Index     int    `json:"index"`
@@ -210,6 +211,15 @@ func parent(qn string) string {
 
 func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
 	switch c.Check {
+	case "resolve":
+		// the Symbol API's one name lookup: LookupSymbol(qualified name)
+		s, err := cl.LookupSymbol(ctx, m, c.Element)
+		if err != nil {
+			if s, err = cl.LookupSymbol(ctx, m, norm(c.Element)); err != nil {
+				return nil, nil
+			}
+		}
+		return s.ID, nil
 	case "isComposite", "isReference":
 		return nil, noSymbolField(ctx, cl, m, c.Element, c.Check, c.Check)
 	case "sourceFeature", "targetFeature", "relatedFeature":
@@ -425,6 +435,19 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return sym.Metadata["abstract"] == "true", nil
 	case "isVariation":
 		return sym.Metadata["variation"] == "true", nil
+	case "referenceTarget":
+		if c.Via == "type" {
+			if sym.Type == nil || sym.Type.ResolvedID == "" {
+				return nil, nil
+			}
+			return sym.Type.ResolvedID, nil
+		}
+		for _, sp := range sym.Specializations {
+			if sp.Kind == "subsets" {
+				return sp.TargetID, nil
+			}
+		}
+		return nil, nil
 	case "result":
 		return nil, noSymbolField(ctx, cl, m, sym.ID, "result", "the result parameter")
 	case "subject":

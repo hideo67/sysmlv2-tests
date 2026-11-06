@@ -196,6 +196,13 @@ class MatricesTest {
         List<String> path = throughPath(c);
         String through = path.isEmpty() ? null : path.get(0);
 
+        if (check.equals("resolve")) {
+            // KerML Namespace::resolve of the rest of the path, invoked on the matrix's root
+            // package (resolution from the global namespace finds no user package in the Pilot)
+            String[] parts = qn.split("::", 2);
+            Membership mm = ((Namespace) find(resource, parts[0])).resolve(parts[1]);
+            return mm == null || mm.getMemberElement() == null ? null : mm.getMemberElement().getQualifiedName();
+        }
         if (check.equals("unnamedPartCount")) {
             Element scope = find(resource, through != null ? through : qn);
             Collection<? extends Element> members = through != null
@@ -256,6 +263,14 @@ class MatricesTest {
             }
             case "isComposite": return ((Feature) e).isComposite();
             case "kind": return e.eClass().getName();
+            case "referenceTarget": {
+                if (c.get("via").getAsString().equals("type")) {
+                    List<Type> types = ((Feature) e).getType();
+                    return types.isEmpty() ? null : types.get(0).getQualifiedName();
+                }
+                return ((Feature) e).getOwnedSubsetting().stream().filter(r -> !r.isImplied())
+                    .map(r -> r.getSubsettedFeature().getQualifiedName()).findFirst().orElse(null);
+            }
             case "specializations":
                 return ((Type) e).getOwnedSpecialization().stream().filter(r -> !r.isImplied())
                     .map(r -> List.of(r.eClass().getName(), r.getGeneral().getQualifiedName()))

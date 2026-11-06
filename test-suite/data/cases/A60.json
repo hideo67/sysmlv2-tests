@@ -1,0 +1,218 @@
+{
+ "matrix": "A60",
+ "model": "models/A60.sysml",
+ "notes": {
+  "reads": "resolve          the element the qualified path resolves to, as its declared qualified name:\n                   KerML Namespace::resolve of the rest of the path on the matrix's root package\n                   (A60.resolve(\"Lib::Pump\")), which respects visibility after the first segment;\n                   null when the path is not visible from outside (a private import, a private\n                   member, a protected member). OpenSysML's Symbol API has one lookup,\n                   get(qualified name), which is given the whole path.\n  referenceTarget  the element a reference written through the path resolves to: the type of\n                   the typed usage, or the subsetted feature of the subsetting attribute. The\n                   references to private and protected paths are written where those are visible.",
+  "via": "referenceTarget: `type` reads the first type of the element, `subsetting` the subsetted feature of its explicit owned subsetting"
+ },
+ "cases": [
+  {
+   "id": "A60-001",
+   "check": "resolve",
+   "element": "A60::Lib::Pump",
+   "expect": "A60::Lib::Pump"
+  },
+  {
+   "id": "A60-002",
+   "check": "resolve",
+   "element": "A60::Lib::rate",
+   "expect": "A60::Lib::rate"
+  },
+  {
+   "id": "A60-003",
+   "check": "resolve",
+   "element": "A60::Lib::PumpAlias",
+   "expect": "A60::Lib::Pump"
+  },
+  {
+   "id": "A60-004",
+   "check": "resolve",
+   "element": "A60::Lib::rateAlias",
+   "expect": "A60::Lib::rate"
+  },
+  {
+   "id": "A60-005",
+   "check": "resolve",
+   "element": "A60::Facade::Pump",
+   "expect": "A60::Lib::Pump"
+  },
+  {
+   "id": "A60-006",
+   "check": "resolve",
+   "element": "A60::Facade::rate",
+   "expect": "A60::Lib::rate"
+  },
+  {
+   "id": "A60-007",
+   "check": "resolve",
+   "element": "A60::FacadeAll::Pump",
+   "expect": "A60::Lib::Pump"
+  },
+  {
+   "id": "A60-008",
+   "check": "resolve",
+   "element": "A60::FacadeAll::rate",
+   "expect": "A60::Lib::rate"
+  },
+  {
+   "id": "A60-009",
+   "check": "resolve",
+   "element": "A60::FacadeDeep::Valve",
+   "expect": "A60::Lib::Sub::Valve"
+  },
+  {
+   "id": "A60-010",
+   "check": "resolve",
+   "element": "A60::FacadeDeep::volume",
+   "expect": "A60::Lib::Sub::volume"
+  },
+  {
+   "id": "A60-011",
+   "check": "resolve",
+   "element": "A60::Hidden::Pump",
+   "expect": null
+  },
+  {
+   "id": "A60-012",
+   "check": "resolve",
+   "element": "A60::Hidden::rate",
+   "expect": null
+  },
+  {
+   "id": "A60-013",
+   "check": "resolve",
+   "element": "A60::Lib::SecretDef",
+   "expect": null
+  },
+  {
+   "id": "A60-014",
+   "check": "resolve",
+   "element": "A60::Lib::secretRate",
+   "expect": null
+  },
+  {
+   "id": "A60-015",
+   "check": "resolve",
+   "element": "A60::Base::ProtDef",
+   "expect": null
+  },
+  {
+   "id": "A60-016",
+   "check": "resolve",
+   "element": "A60::Base::protRate",
+   "expect": null
+  },
+  {
+   "id": "A60-017",
+   "check": "referenceTarget",
+   "element": "A60::Client::pOwn",
+   "expect": "A60::Lib::Pump",
+   "via": "type"
+  },
+  {
+   "id": "A60-018",
+   "check": "referenceTarget",
+   "element": "A60::Client::aOwn",
+   "expect": "A60::Lib::rate",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-019",
+   "check": "referenceTarget",
+   "element": "A60::Client::pAlias",
+   "expect": "A60::Lib::Pump",
+   "via": "type"
+  },
+  {
+   "id": "A60-020",
+   "check": "referenceTarget",
+   "element": "A60::Client::aAlias",
+   "expect": "A60::Lib::rate",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-021",
+   "check": "referenceTarget",
+   "element": "A60::Client::pMem",
+   "expect": "A60::Lib::Pump",
+   "via": "type"
+  },
+  {
+   "id": "A60-022",
+   "check": "referenceTarget",
+   "element": "A60::Client::aMem",
+   "expect": "A60::Lib::rate",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-023",
+   "check": "referenceTarget",
+   "element": "A60::Client::pNs",
+   "expect": "A60::Lib::Pump",
+   "via": "type"
+  },
+  {
+   "id": "A60-024",
+   "check": "referenceTarget",
+   "element": "A60::Client::aNs",
+   "expect": "A60::Lib::rate",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-025",
+   "check": "referenceTarget",
+   "element": "A60::Client::pRec",
+   "expect": "A60::Lib::Sub::Valve",
+   "via": "type"
+  },
+  {
+   "id": "A60-026",
+   "check": "referenceTarget",
+   "element": "A60::Client::aRec",
+   "expect": "A60::Lib::Sub::volume",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-027",
+   "check": "referenceTarget",
+   "element": "A60::Hidden::pUse",
+   "expect": "A60::Lib::Pump",
+   "via": "type"
+  },
+  {
+   "id": "A60-028",
+   "check": "referenceTarget",
+   "element": "A60::Hidden::aUse",
+   "expect": "A60::Lib::rate",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-029",
+   "check": "referenceTarget",
+   "element": "A60::Lib::pSecret",
+   "expect": "A60::Lib::SecretDef",
+   "via": "type"
+  },
+  {
+   "id": "A60-030",
+   "check": "referenceTarget",
+   "element": "A60::Lib::aSecret",
+   "expect": "A60::Lib::secretRate",
+   "via": "subsetting"
+  },
+  {
+   "id": "A60-031",
+   "check": "referenceTarget",
+   "element": "A60::Derived::pUse",
+   "expect": "A60::Base::ProtDef",
+   "via": "type"
+  },
+  {
+   "id": "A60-032",
+   "check": "referenceTarget",
+   "element": "A60::Derived::aUse",
+   "expect": "A60::Base::protRate",
+   "via": "subsetting"
+  }
+ ]
+}
