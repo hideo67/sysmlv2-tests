@@ -627,6 +627,34 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
             Some(f) => api.chain_form(f)?,
             None => Value::Null,
         },
+        // C21: the constructor, the payload of a send action or the value expression of a feature
+        "exprKind" | "instantiatedType" | "argumentCount" | "argumentReferences" | "hasResult" | "resultType" => {
+            let x = if api.metaclass(e) == "SendActionUsage" { api.element(e, "payloadArgument")? } else { api.value_expr(e)? };
+            let Some(x) = x else { return Ok(Value(Value::Null)) };
+            match check {
+                "exprKind" => json!(api.metaclass(x)),
+                "instantiatedType" => match api.element(x, "instantiatedType")? {
+                    Some(t) => json!(api.qn(t)),
+                    None => Value::Null,
+                },
+                "argumentCount" => json!(api.elements(x, "argument")?.len()),
+                "argumentReferences" => {
+                    let mut out = vec![];
+                    for a in api.elements(x, "argument")? {
+                        out.extend(api.references(a)?);
+                    }
+                    json!(out)
+                }
+                "hasResult" => json!(api.element(x, "result")?.is_some()),
+                _ => match api.element(x, "result")? {
+                    Some(r) => match api.element(r, "type")? {
+                        Some(t) => json!(api.qn(t)),
+                        None => Value::Null,
+                    },
+                    None => Value::Null,
+                },
+            }
+        }
         "valueText" => return Ok(Unsupported("no accessor returns an expression's source text".into())),
         "valueKind" | "valueOperator" | "valueReferences" => match api.value_expr(e)? {
             None => Value::Null,

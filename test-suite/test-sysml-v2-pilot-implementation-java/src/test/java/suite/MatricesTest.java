@@ -205,6 +205,11 @@ class MatricesTest {
         return out;
     }
 
+    /** C21: the constructor, the payload of a send action or the value expression of a feature. */
+    static Expression constructorOf(Element e) {
+        return e instanceof SendActionUsage s ? s.getPayloadArgument() : valueExpr(e);
+    }
+
     /** MetadataUsages whose annotatedElement includes e, wherever they are owned. */
     static List<MetadataUsage> annotations(Resource resource, Element e) {
         List<MetadataUsage> out = new ArrayList<>();
@@ -481,6 +486,32 @@ class MatricesTest {
             case "valueReferences": {
                 Expression x = valueExpr(e);
                 return x == null ? null : references(x);
+            }
+            case "exprKind": {
+                Expression x = constructorOf(e);
+                return x == null ? null : x.eClass().getName();
+            }
+            case "instantiatedType": {
+                Type t = constructorOf(e) instanceof InstantiationExpression ie ? ie.getInstantiatedType() : null;
+                return t == null ? null : t.getQualifiedName();
+            }
+            case "argumentCount":
+                return constructorOf(e) instanceof InstantiationExpression ie ? ie.getArgument().size() : null;
+            case "argumentReferences": {
+                if (!(constructorOf(e) instanceof InstantiationExpression ie)) return null;
+                List<List<String>> out = new ArrayList<>();
+                for (Expression a : ie.getArgument()) out.addAll(references(a));
+                return out;
+            }
+            case "hasResult": {
+                Expression x = constructorOf(e);
+                return x == null ? null : x.getResult() != null;
+            }
+            case "resultType": {
+                Expression x = constructorOf(e);
+                if (x == null || x.getResult() == null) return null;
+                List<Type> types = x.getResult().getType();
+                return types.isEmpty() ? null : types.get(0).getQualifiedName();
             }
             case "endCount":
                 return (e instanceof Connector k ? k.getConnectorEnd() : ((Type) e).getEndFeature()).size();

@@ -229,6 +229,9 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
         raise Unsupported("the Symbol API reports no arguments of an action")
     if check in ("valueKind", "valueOperator", "valueReferences", "valueText"):
         raise Unsupported("the Symbol API reports a value only as a folded constant, with no expression structure or text")
+    if check in ("exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType"):
+        raise Unsupported("the Symbol API reports neither the arguments of an action nor expression structure, "
+                          "so no constructor expression is reachable")
     if check == "isDefault":
         raise Unsupported("neither Symbol nor AttributeFacts tells a default from a bound value")
     if check == "unnamedPartCount":

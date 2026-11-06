@@ -328,6 +328,9 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return nil, unsupported("the Symbol API reports no arguments of an action")
 	case "valueKind", "valueOperator", "valueReferences", "valueText":
 		return nil, unsupported("the Symbol API reports a value only as a folded constant, with no expression structure or text")
+	case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType":
+		return nil, unsupported("the Symbol API reports neither the arguments of an action nor expression structure, " +
+			"so no constructor expression is reachable")
 	case "isDefault":
 		return nil, unsupported("neither Symbol nor Attribute tells a default from a bound value")
 	case "unnamedPartCount":

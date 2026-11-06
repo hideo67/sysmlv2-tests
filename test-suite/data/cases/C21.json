@@ -1,0 +1,580 @@
+{
+ "matrix": "C21",
+ "model": "models/C21.sysml",
+ "notes": {
+  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "C21-001",
+   "check": "exprKind",
+   "element": "C21::Emit::sendNone",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-002",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-003",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "ConstructorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-004",
+   "check": "exprKind",
+   "element": "C21::Emit::sendRef",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-005",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-006",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "ConstructorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-007",
+   "check": "exprKind",
+   "element": "C21::Emit::sendChain",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-008",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-009",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "ConstructorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-010",
+   "check": "exprKind",
+   "element": "C21::Emit::sigValue",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-011",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "ConstructorExpression"
+  },
+  {
+   "id": "C21-012",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "ConstructorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-013",
+   "check": "instantiatedType",
+   "element": "C21::Emit::sendNone",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-014",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-015",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-016",
+   "check": "instantiatedType",
+   "element": "C21::Emit::sendRef",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-017",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-018",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-019",
+   "check": "instantiatedType",
+   "element": "C21::Emit::sendChain",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-020",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-021",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-022",
+   "check": "instantiatedType",
+   "element": "C21::Emit::sigValue",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-023",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-024",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-025",
+   "check": "argumentCount",
+   "element": "C21::Emit::sendNone",
+   "expect": 0
+  },
+  {
+   "id": "C21-026",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": 0
+  },
+  {
+   "id": "C21-027",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": 0,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-028",
+   "check": "argumentCount",
+   "element": "C21::Emit::sendRef",
+   "expect": 1
+  },
+  {
+   "id": "C21-029",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": 1
+  },
+  {
+   "id": "C21-030",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-031",
+   "check": "argumentCount",
+   "element": "C21::Emit::sendChain",
+   "expect": 1
+  },
+  {
+   "id": "C21-032",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": 1
+  },
+  {
+   "id": "C21-033",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-034",
+   "check": "argumentCount",
+   "element": "C21::Emit::sigValue",
+   "expect": 1
+  },
+  {
+   "id": "C21-035",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": 1
+  },
+  {
+   "id": "C21-036",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-037",
+   "check": "argumentReferences",
+   "element": "C21::Emit::sendNone",
+   "expect": []
+  },
+  {
+   "id": "C21-038",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": []
+  },
+  {
+   "id": "C21-039",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": [],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-040",
+   "check": "argumentReferences",
+   "element": "C21::Emit::sendRef",
+   "expect": [
+    [
+     "C21::Emit::gain"
+    ]
+   ]
+  },
+  {
+   "id": "C21-041",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": [
+    [
+     "C21::Emitter::gain"
+    ]
+   ]
+  },
+  {
+   "id": "C21-042",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": [
+    [
+     "C21::Emitter::gain"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-043",
+   "check": "argumentReferences",
+   "element": "C21::Emit::sendChain",
+   "expect": [
+    [
+     "C21::Emit::src",
+     "C21::Src::v"
+    ]
+   ]
+  },
+  {
+   "id": "C21-044",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ]
+   ]
+  },
+  {
+   "id": "C21-045",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-046",
+   "check": "argumentReferences",
+   "element": "C21::Emit::sigValue",
+   "expect": [
+    [
+     "C21::Emit::src",
+     "C21::Src::v"
+    ]
+   ]
+  },
+  {
+   "id": "C21-047",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ]
+   ]
+  },
+  {
+   "id": "C21-048",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-049",
+   "check": "hasResult",
+   "element": "C21::Emit::sendNone",
+   "expect": true
+  },
+  {
+   "id": "C21-050",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": true
+  },
+  {
+   "id": "C21-051",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-052",
+   "check": "hasResult",
+   "element": "C21::Emit::sendRef",
+   "expect": true
+  },
+  {
+   "id": "C21-053",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": true
+  },
+  {
+   "id": "C21-054",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-055",
+   "check": "hasResult",
+   "element": "C21::Emit::sendChain",
+   "expect": true
+  },
+  {
+   "id": "C21-056",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": true
+  },
+  {
+   "id": "C21-057",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-058",
+   "check": "hasResult",
+   "element": "C21::Emit::sigValue",
+   "expect": true
+  },
+  {
+   "id": "C21-059",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": true
+  },
+  {
+   "id": "C21-060",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-061",
+   "check": "resultType",
+   "element": "C21::Emit::sendNone",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-062",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-063",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-064",
+   "check": "resultType",
+   "element": "C21::Emit::sendRef",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-065",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-066",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-067",
+   "check": "resultType",
+   "element": "C21::Emit::sendChain",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-068",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-069",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-070",
+   "check": "resultType",
+   "element": "C21::Emit::sigValue",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-071",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "C21::Sig"
+  },
+  {
+   "id": "C21-072",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "C21::Sig",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  }
+ ]
+}

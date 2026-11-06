@@ -861,9 +861,44 @@ checked reader gives is right.
   through `CmdPort::'~CmdPort'`, whose features the compatibility reader does
   not list).
 
+### C21 constructor expressions
+Prompted by the same report: on a model with four constructors,
+`argument` and `result` refused through the checked reader, while the
+instantiated type and the send payload and sender reads worked. No matrix had
+a constructor (`new Sig(...)`); C20 sends only plain references.
+
+72 cases: 6 reads (exprKind, instantiatedType, argumentCount,
+argumentReferences, hasResult, resultType) x 4 variants (send payload with no
+argument, a reference argument, a chain argument; a feature value with a chain
+argument) x 3 locations (action def body, action usage in a part def, read
+through a typing usage), as in C20. A new matrix rather than more C20 kinds,
+since C20's IDs are generated read by read and new kinds would renumber them.
+
+The expected result follows KerML `Expression::result` (multiplicity 1); its
+type is the instantiated type. The Pilot answers exactly this.
+
+A first model named the reference argument `level`, the same name as `Sig`'s
+own feature. In `new Sig(level)` the Pilot resolved `level` to a feature with
+no qualified name, not to the action's `level`: name resolution inside a
+constructor's argument is a question of its own, left out of C21 by renaming
+the action's feature to `gain`.
+
+Findings:
+- Pilot: all 72 pass.
+- OpenSysML (Python, Go): all 72 unsupported. The Symbol API reports neither
+  the arguments of an action nor expression structure. The local build loads
+  the model without diagnostics.
+- sysml-toolkit, compatibility reader: kind, instantiated type and arguments
+  pass; `result` is empty on every constructor (24 fail: hasResult,
+  resultType).
+- sysml-toolkit, checked reader: kind and instantiated type pass; `argument`
+  is refused with `IncompleteInvocationBindings(UnsupportedConfiguration)`
+  and `result` with `Approximate` (48 error).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
-C30, D10, D20, E10, F10). Deferred: the OpenSysML TS, Java and Rust clients.
+C30, D10, D20, E10, F10). Step 7 added C21: 22 matrices, 1630 cases.
+Deferred: the OpenSysML TS, Java and Rust clients.
 They wrap the same `SymbolInfo` as the Python and Go clients, so they would
 mostly confirm the same results.
