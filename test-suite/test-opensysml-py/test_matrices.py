@@ -129,6 +129,10 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
         return s.id if s else None
     if check in ("isComposite", "isReference"):
         raise no_symbol_field(model, element, check, check)
+    if check in ("payloadTypes", "sourceOutput", "targetInput"):
+        prop = {"payloadTypes": "payloadType", "sourceOutput": "sourceOutputFeature",
+                "targetInput": "targetInputFeature"}[check]
+        raise no_symbol_field(model, element, prop, f"the flow's {prop}")
     if check in ("sourceFeature", "targetFeature", "relatedFeature"):
         if unnamed:
             raise Unsupported(f"no Symbol field for {check}; the query API cannot address an unnamed element")

@@ -263,6 +263,15 @@ class MatricesTest {
             }
             case "isComposite": return ((Feature) e).isComposite();
             case "kind": return e.eClass().getName();
+            case "payloadTypes":
+                return ((Flow) e).getPayloadType().stream().map(Element::getQualifiedName).sorted().toList();
+            case "sourceOutput":
+            case "targetInput": {
+                // the flow feature redefines the participant's feature it names
+                Feature f = check.equals("sourceOutput") ? ((Flow) e).getSourceOutputFeature() : ((Flow) e).getTargetInputFeature();
+                if (f == null || f.getOwnedRedefinition().isEmpty()) return null;
+                return f.getOwnedRedefinition().get(0).getRedefinedFeature().getQualifiedName();
+            }
             case "referenceTarget": {
                 if (c.get("via").getAsString().equals("type")) {
                     List<Type> types = ((Feature) e).getType();

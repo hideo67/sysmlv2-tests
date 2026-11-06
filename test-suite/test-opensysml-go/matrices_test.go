@@ -220,6 +220,10 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			}
 		}
 		return s.ID, nil
+	case "payloadTypes", "sourceOutput", "targetInput":
+		prop := map[string]string{"payloadTypes": "payloadType", "sourceOutput": "sourceOutputFeature",
+			"targetInput": "targetInputFeature"}[c.Check]
+		return nil, noSymbolField(ctx, cl, m, c.Element, prop, "the flow's "+prop)
 	case "isComposite", "isReference":
 		return nil, noSymbolField(ctx, cl, m, c.Element, c.Check, c.Check)
 	case "sourceFeature", "targetFeature", "relatedFeature":

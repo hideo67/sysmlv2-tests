@@ -293,6 +293,24 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         "isComposite" => api.scalar(e, "isComposite")?,
         "kind" => json!(api.metaclass(e)),
+        "payloadTypes" => {
+            let mut out: Vec<_> = api.elements(e, "payloadType")?.into_iter().map(|t| api.qn(t)).collect();
+            out.sort();
+            json!(out)
+        }
+        "sourceOutput" | "targetInput" => {
+            let prop = if check == "sourceOutput" { "sourceOutputFeature" } else { "targetInputFeature" };
+            let mut target = Value::Null;
+            if let Some(f) = api.element(e, prop)? {
+                // the flow feature redefines the participant's feature it names
+                for r in api.elements(f, "ownedRedefinition")? {
+                    if let Some(rf) = api.element(r, "redefinedFeature")? {
+                        target = json!(api.qn(rf));
+                    }
+                }
+            }
+            target
+        }
         "referenceTarget" => {
             if c["via"] == "type" {
                 match api.element(e, "type")? {

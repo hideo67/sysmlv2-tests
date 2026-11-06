@@ -652,3 +652,37 @@ Findings:
   visibility. Go and Python differ: Go's in-process lookup follows a public
   namespace import (`FacadeAll::Pump`), the Python client over gRPC does not.
 - Pilot and sysml-toolkit: all 32 pass.
+
+### B20 flows
+75 cases in two blocks:
+- 5 reads (kind, payloadTypes, endReferences, sourceOutput, targetInput) x 2
+  kinds (`flow`, `succession flow`) x 2 end depths (`tank.fuelOut`,
+  `m.tank.fuelOut`) x 3 locations (L2, L3, L6) = 60.
+- The 5 reads x a `message of Sig from tank to engine` x 3 locations = 15.
+
+Flow-end structure (KerML FlowEnd, the reason flows left B11): `from
+tank.fuelOut` gives an end whose ReferenceSubsetting references `tank` (the
+chain before the last name) and which owns a flow feature redefining `fuelOut`.
+sourceOutput and targetInput read the feature that `Flow::sourceOutputFeature` /
+`targetInputFeature` redefine.
+
+Decisions from the model and the grammar:
+- A flow end must name a participant with dot notation
+  (`validateFlowEndSubsetting`; sysml-toolkit reported it), so flows have no
+  end depth 0.
+- A message's `from tank to engine` are not connector ends.
+  `MessageEventMember` returns a ParameterMembership owning an
+  EventOccurrenceUsage that references `tank`/`engine`. So a message's ends
+  reference nothing and own no flow feature. The Pilot follows this; my first
+  expectation (ends referencing tank/engine) was wrong and was corrected.
+
+Findings:
+- OpenSysML (Python, Go): a succession flow is reported as a plain FlowUsage.
+  Payload type, source output and target input are unsupported (no Symbol
+  field; the query API does not offer them either). End references are missing,
+  and flows are not listed through typing usages or chains.
+- sysml-toolkit: flows pass, at both end depths. For a message it reports
+  source and target output features redefining `tank`/`engine`: it models the
+  message events as flow features, where the grammar makes them event-occurrence
+  parameters.
+- Pilot: all 75 pass.

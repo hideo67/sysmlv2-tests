@@ -1,0 +1,770 @@
+{
+ "matrix": "B20",
+ "model": "models/B20.sysml",
+ "notes": {
+  "reads": "kind           the metaclass (FlowUsage, SuccessionFlowUsage)\n  payloadTypes   sorted qualified names of Flow::payloadType\n  endReferences  for each connector end, its ReferenceSubsetting's referencedFeature in chain\n                 form (B10)\n  sourceOutput   the feature redefined by Flow::sourceOutputFeature (what the flow draws from);\n                 null when the flow has none (a message)\n  targetInput    the feature redefined by Flow::targetInputFeature",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "B20-001",
+   "check": "kind",
+   "element": "B20::Vehicle::f1",
+   "expect": "FlowUsage"
+  },
+  {
+   "id": "B20-002",
+   "check": "kind",
+   "element": "B20::Vehicle::f1",
+   "expect": "FlowUsage",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-003",
+   "check": "kind",
+   "element": "B20::Vehicle::f1",
+   "expect": "FlowUsage",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-004",
+   "check": "kind",
+   "element": "B20::Vehicle::f2",
+   "expect": "FlowUsage"
+  },
+  {
+   "id": "B20-005",
+   "check": "kind",
+   "element": "B20::Vehicle::f2",
+   "expect": "FlowUsage",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-006",
+   "check": "kind",
+   "element": "B20::Vehicle::f2",
+   "expect": "FlowUsage",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-007",
+   "check": "kind",
+   "element": "B20::Vehicle::s1",
+   "expect": "SuccessionFlowUsage"
+  },
+  {
+   "id": "B20-008",
+   "check": "kind",
+   "element": "B20::Vehicle::s1",
+   "expect": "SuccessionFlowUsage",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-009",
+   "check": "kind",
+   "element": "B20::Vehicle::s1",
+   "expect": "SuccessionFlowUsage",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-010",
+   "check": "kind",
+   "element": "B20::Vehicle::s2",
+   "expect": "SuccessionFlowUsage"
+  },
+  {
+   "id": "B20-011",
+   "check": "kind",
+   "element": "B20::Vehicle::s2",
+   "expect": "SuccessionFlowUsage",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-012",
+   "check": "kind",
+   "element": "B20::Vehicle::s2",
+   "expect": "SuccessionFlowUsage",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-013",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::f1",
+   "expect": [
+    "B20::Fuel"
+   ]
+  },
+  {
+   "id": "B20-014",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::f1",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-015",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::f1",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-016",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::f2",
+   "expect": [
+    "B20::Fuel"
+   ]
+  },
+  {
+   "id": "B20-017",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::f2",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-018",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::f2",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-019",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::s1",
+   "expect": [
+    "B20::Fuel"
+   ]
+  },
+  {
+   "id": "B20-020",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::s1",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-021",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::s1",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-022",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::s2",
+   "expect": [
+    "B20::Fuel"
+   ]
+  },
+  {
+   "id": "B20-023",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::s2",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-024",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::s2",
+   "expect": [
+    "B20::Fuel"
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-025",
+   "check": "endReferences",
+   "element": "B20::Vehicle::f1",
+   "expect": [
+    [
+     "B20::Vehicle::tank"
+    ],
+    [
+     "B20::Vehicle::engine"
+    ]
+   ]
+  },
+  {
+   "id": "B20-026",
+   "check": "endReferences",
+   "element": "B20::Vehicle::f1",
+   "expect": [
+    [
+     "B20::Vehicle::tank"
+    ],
+    [
+     "B20::Vehicle::engine"
+    ]
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-027",
+   "check": "endReferences",
+   "element": "B20::Vehicle::f1",
+   "expect": [
+    [
+     "B20::Vehicle::tank"
+    ],
+    [
+     "B20::Vehicle::engine"
+    ]
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-028",
+   "check": "endReferences",
+   "element": "B20::Vehicle::f2",
+   "expect": [
+    [
+     "B20::Vehicle::m",
+     "B20::Module::tank"
+    ],
+    [
+     "B20::Vehicle::n",
+     "B20::Module::engine"
+    ]
+   ]
+  },
+  {
+   "id": "B20-029",
+   "check": "endReferences",
+   "element": "B20::Vehicle::f2",
+   "expect": [
+    [
+     "B20::Vehicle::m",
+     "B20::Module::tank"
+    ],
+    [
+     "B20::Vehicle::n",
+     "B20::Module::engine"
+    ]
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-030",
+   "check": "endReferences",
+   "element": "B20::Vehicle::f2",
+   "expect": [
+    [
+     "B20::Vehicle::m",
+     "B20::Module::tank"
+    ],
+    [
+     "B20::Vehicle::n",
+     "B20::Module::engine"
+    ]
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-031",
+   "check": "endReferences",
+   "element": "B20::Vehicle::s1",
+   "expect": [
+    [
+     "B20::Vehicle::tank"
+    ],
+    [
+     "B20::Vehicle::engine"
+    ]
+   ]
+  },
+  {
+   "id": "B20-032",
+   "check": "endReferences",
+   "element": "B20::Vehicle::s1",
+   "expect": [
+    [
+     "B20::Vehicle::tank"
+    ],
+    [
+     "B20::Vehicle::engine"
+    ]
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-033",
+   "check": "endReferences",
+   "element": "B20::Vehicle::s1",
+   "expect": [
+    [
+     "B20::Vehicle::tank"
+    ],
+    [
+     "B20::Vehicle::engine"
+    ]
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-034",
+   "check": "endReferences",
+   "element": "B20::Vehicle::s2",
+   "expect": [
+    [
+     "B20::Vehicle::m",
+     "B20::Module::tank"
+    ],
+    [
+     "B20::Vehicle::n",
+     "B20::Module::engine"
+    ]
+   ]
+  },
+  {
+   "id": "B20-035",
+   "check": "endReferences",
+   "element": "B20::Vehicle::s2",
+   "expect": [
+    [
+     "B20::Vehicle::m",
+     "B20::Module::tank"
+    ],
+    [
+     "B20::Vehicle::n",
+     "B20::Module::engine"
+    ]
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-036",
+   "check": "endReferences",
+   "element": "B20::Vehicle::s2",
+   "expect": [
+    [
+     "B20::Vehicle::m",
+     "B20::Module::tank"
+    ],
+    [
+     "B20::Vehicle::n",
+     "B20::Module::engine"
+    ]
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-037",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::f1",
+   "expect": "B20::Tank::fuelOut"
+  },
+  {
+   "id": "B20-038",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::f1",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-039",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::f1",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-040",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::f2",
+   "expect": "B20::Tank::fuelOut"
+  },
+  {
+   "id": "B20-041",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::f2",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-042",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::f2",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-043",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::s1",
+   "expect": "B20::Tank::fuelOut"
+  },
+  {
+   "id": "B20-044",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::s1",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-045",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::s1",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-046",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::s2",
+   "expect": "B20::Tank::fuelOut"
+  },
+  {
+   "id": "B20-047",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::s2",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-048",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::s2",
+   "expect": "B20::Tank::fuelOut",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-049",
+   "check": "targetInput",
+   "element": "B20::Vehicle::f1",
+   "expect": "B20::Engine::fuelIn"
+  },
+  {
+   "id": "B20-050",
+   "check": "targetInput",
+   "element": "B20::Vehicle::f1",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-051",
+   "check": "targetInput",
+   "element": "B20::Vehicle::f1",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-052",
+   "check": "targetInput",
+   "element": "B20::Vehicle::f2",
+   "expect": "B20::Engine::fuelIn"
+  },
+  {
+   "id": "B20-053",
+   "check": "targetInput",
+   "element": "B20::Vehicle::f2",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-054",
+   "check": "targetInput",
+   "element": "B20::Vehicle::f2",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-055",
+   "check": "targetInput",
+   "element": "B20::Vehicle::s1",
+   "expect": "B20::Engine::fuelIn"
+  },
+  {
+   "id": "B20-056",
+   "check": "targetInput",
+   "element": "B20::Vehicle::s1",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-057",
+   "check": "targetInput",
+   "element": "B20::Vehicle::s1",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-058",
+   "check": "targetInput",
+   "element": "B20::Vehicle::s2",
+   "expect": "B20::Engine::fuelIn"
+  },
+  {
+   "id": "B20-059",
+   "check": "targetInput",
+   "element": "B20::Vehicle::s2",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-060",
+   "check": "targetInput",
+   "element": "B20::Vehicle::s2",
+   "expect": "B20::Engine::fuelIn",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-061",
+   "check": "kind",
+   "element": "B20::Vehicle::msg",
+   "expect": "FlowUsage"
+  },
+  {
+   "id": "B20-062",
+   "check": "kind",
+   "element": "B20::Vehicle::msg",
+   "expect": "FlowUsage",
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-063",
+   "check": "kind",
+   "element": "B20::Vehicle::msg",
+   "expect": "FlowUsage",
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-064",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::msg",
+   "expect": [
+    "B20::Sig"
+   ]
+  },
+  {
+   "id": "B20-065",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::msg",
+   "expect": [
+    "B20::Sig"
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-066",
+   "check": "payloadTypes",
+   "element": "B20::Vehicle::msg",
+   "expect": [
+    "B20::Sig"
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-067",
+   "check": "endReferences",
+   "element": "B20::Vehicle::msg",
+   "expect": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "B20-068",
+   "check": "endReferences",
+   "element": "B20::Vehicle::msg",
+   "expect": [
+    null,
+    null
+   ],
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-069",
+   "check": "endReferences",
+   "element": "B20::Vehicle::msg",
+   "expect": [
+    null,
+    null
+   ],
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-070",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::msg",
+   "expect": null
+  },
+  {
+   "id": "B20-071",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::msg",
+   "expect": null,
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-072",
+   "check": "sourceOutput",
+   "element": "B20::Vehicle::msg",
+   "expect": null,
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  },
+  {
+   "id": "B20-073",
+   "check": "targetInput",
+   "element": "B20::Vehicle::msg",
+   "expect": null
+  },
+  {
+   "id": "B20-074",
+   "check": "targetInput",
+   "element": "B20::Vehicle::msg",
+   "expect": null,
+   "through": [
+    "B20::vehicle"
+   ]
+  },
+  {
+   "id": "B20-075",
+   "check": "targetInput",
+   "element": "B20::Vehicle::msg",
+   "expect": null,
+   "through": [
+    "B20::fleet",
+    "B20::Fleet::v"
+   ]
+  }
+ ]
+}
