@@ -8,3 +8,6 @@ target/
 
 # test run output (CSV results and logs)
 test-suite/results/
+
+# drafts of issues for the MDK projects
+issue-drafts/
