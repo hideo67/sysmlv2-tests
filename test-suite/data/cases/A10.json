@@ -1,0 +1,244 @@
+{
+ "matrix": "A10",
+ "model": "models/A10.sysml",
+ "notes": {
+  "through": "the member is read as seen from this usage (an inherited member of its type, or of a general type of its type), not from its declaring element",
+  "unnamedPartCount": "number of unnamed part usages declared in `element` that are visible (through `through` when given)"
+ },
+ "cases": [
+  {
+   "id": "A10-001",
+   "check": "name",
+   "element": "A10::car",
+   "expect": "car"
+  },
+  {
+   "id": "A10-002",
+   "check": "name",
+   "element": "A10::owner",
+   "expect": "owner"
+  },
+  {
+   "id": "A10-003",
+   "check": "name",
+   "element": "A10::Car::engine",
+   "expect": "engine"
+  },
+  {
+   "id": "A10-004",
+   "check": "name",
+   "element": "A10::Car::driver",
+   "expect": "driver"
+  },
+  {
+   "id": "A10-005",
+   "check": "name",
+   "element": "A10::Car::engine",
+   "expect": "engine",
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-006",
+   "check": "name",
+   "element": "A10::Car::driver",
+   "expect": "driver",
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-007",
+   "check": "type",
+   "element": "A10::car",
+   "expect": "A10::Car"
+  },
+  {
+   "id": "A10-008",
+   "check": "type",
+   "element": "A10::owner",
+   "expect": "A10::Person"
+  },
+  {
+   "id": "A10-009",
+   "check": "type",
+   "element": "A10::Car::engine",
+   "expect": "A10::Engine"
+  },
+  {
+   "id": "A10-010",
+   "check": "type",
+   "element": "A10::Car::driver",
+   "expect": "A10::Person"
+  },
+  {
+   "id": "A10-011",
+   "check": "type",
+   "element": "A10::Car::engine",
+   "expect": "A10::Engine",
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-012",
+   "check": "type",
+   "element": "A10::Car::driver",
+   "expect": "A10::Person",
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-013",
+   "check": "isComposite",
+   "element": "A10::car",
+   "expect": false
+  },
+  {
+   "id": "A10-014",
+   "check": "isComposite",
+   "element": "A10::owner",
+   "expect": false
+  },
+  {
+   "id": "A10-015",
+   "check": "isComposite",
+   "element": "A10::Car::engine",
+   "expect": true
+  },
+  {
+   "id": "A10-016",
+   "check": "isComposite",
+   "element": "A10::Car::driver",
+   "expect": false
+  },
+  {
+   "id": "A10-017",
+   "check": "isComposite",
+   "element": "A10::Car::engine",
+   "expect": true,
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-018",
+   "check": "isComposite",
+   "element": "A10::Car::driver",
+   "expect": false,
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-019",
+   "check": "isReference",
+   "element": "A10::car",
+   "expect": true
+  },
+  {
+   "id": "A10-020",
+   "check": "isReference",
+   "element": "A10::owner",
+   "expect": true
+  },
+  {
+   "id": "A10-021",
+   "check": "isReference",
+   "element": "A10::Car::engine",
+   "expect": false
+  },
+  {
+   "id": "A10-022",
+   "check": "isReference",
+   "element": "A10::Car::driver",
+   "expect": true
+  },
+  {
+   "id": "A10-023",
+   "check": "isReference",
+   "element": "A10::Car::engine",
+   "expect": false,
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-024",
+   "check": "isReference",
+   "element": "A10::Car::driver",
+   "expect": true,
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-025",
+   "check": "unnamedPartCount",
+   "element": "A10",
+   "expect": 1
+  },
+  {
+   "id": "A10-026",
+   "check": "unnamedPartCount",
+   "element": "A10::Car",
+   "expect": 1
+  },
+  {
+   "id": "A10-027",
+   "check": "unnamedPartCount",
+   "element": "A10::Car",
+   "expect": 1,
+   "through": "A10::car"
+  },
+  {
+   "id": "A10-028",
+   "check": "name",
+   "element": "A10::Car::engine",
+   "expect": "engine",
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-029",
+   "check": "name",
+   "element": "A10::Car::driver",
+   "expect": "driver",
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-030",
+   "check": "type",
+   "element": "A10::Car::engine",
+   "expect": "A10::Engine",
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-031",
+   "check": "type",
+   "element": "A10::Car::driver",
+   "expect": "A10::Person",
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-032",
+   "check": "isComposite",
+   "element": "A10::Car::engine",
+   "expect": true,
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-033",
+   "check": "isComposite",
+   "element": "A10::Car::driver",
+   "expect": false,
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-034",
+   "check": "isReference",
+   "element": "A10::Car::engine",
+   "expect": false,
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-035",
+   "check": "isReference",
+   "element": "A10::Car::driver",
+   "expect": true,
+   "through": "A10::sportsCar"
+  },
+  {
+   "id": "A10-036",
+   "check": "unnamedPartCount",
+   "element": "A10::Car",
+   "expect": 1,
+   "through": "A10::sportsCar"
+  }
+ ]
+}

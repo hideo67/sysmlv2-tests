@@ -1,0 +1,10 @@
+SysMLv2-Pilot-Implementation/
+OpenSysML/
+sysml-toolkit/
+.venv/
+__pycache__/
+.pytest_cache/
+target/
+
+# test run output (CSV results and logs)
+test-suite/results/

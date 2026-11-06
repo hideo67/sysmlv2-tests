@@ -1,0 +1,7 @@
+pyproject.toml
+test_a10.py
+test_opensysml_py.egg-info/PKG-INFO
+test_opensysml_py.egg-info/SOURCES.txt
+test_opensysml_py.egg-info/dependency_links.txt
+test_opensysml_py.egg-info/requires.txt
+test_opensysml_py.egg-info/top_level.txt
