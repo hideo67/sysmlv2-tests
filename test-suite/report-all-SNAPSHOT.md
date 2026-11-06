@@ -1,19 +1,19 @@
 # SysML v2 MDK test results
 
-Test suite commit: `ee1c87bc9ba5`
+Test suite commit: `e8a2a14bb6f8`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-06 12:44:34|
-|opensysml-py|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-06 12:44:32|
-|opensysml-rs|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 12:44:35|
-|opensysml-ts-wasm|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-06 12:44:40|
-|opensysml-ts|OpenSysML|`nightly-153-g1a8e4927dc` (develop)|[`1a8e4927dc`](https://github.com/Open-MBEE/OpenSysML/commit/1a8e4927dc7b997564fb8c78b422236fc9a1bc84)|2026-11-05|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-06 12:44:37|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-06 12:44:56|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 12:44:43|
-|sysml-toolkit-rs|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 12:44:41|
+|opensysml-go|OpenSysML|`nightly-20261106-8077f297c1-25-gf0347a0076` (develop)|[`f0347a0076`](https://github.com/Open-MBEE/OpenSysML/commit/f0347a0076b463bea44447e65868001e0dd63c4c)|2026-11-06|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-06 13:43:19|
+|opensysml-py|OpenSysML|`nightly-20261106-8077f297c1-25-gf0347a0076` (develop)|[`f0347a0076`](https://github.com/Open-MBEE/OpenSysML/commit/f0347a0076b463bea44447e65868001e0dd63c4c)|2026-11-06|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-06 13:43:17|
+|opensysml-rs|OpenSysML|`nightly-20261106-8077f297c1-25-gf0347a0076` (develop)|[`f0347a0076`](https://github.com/Open-MBEE/OpenSysML/commit/f0347a0076b463bea44447e65868001e0dd63c4c)|2026-11-06|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 13:43:20|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261106-8077f297c1-25-gf0347a0076` (develop)|[`f0347a0076`](https://github.com/Open-MBEE/OpenSysML/commit/f0347a0076b463bea44447e65868001e0dd63c4c)|2026-11-06|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-06 13:43:24|
+|opensysml-ts|OpenSysML|`nightly-20261106-8077f297c1-25-gf0347a0076` (develop)|[`f0347a0076`](https://github.com/Open-MBEE/OpenSysML/commit/f0347a0076b463bea44447e65868001e0dd63c4c)|2026-11-06|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-06 13:43:22|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-06 13:43:39|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 13:43:27|
+|sysml-toolkit-rs|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-06 13:43:26|
 
 Local changes at run time (tracked files only):
 
@@ -26,26 +26,26 @@ Local changes at run time (tracked files only):
 |A01|117|87 / 0 / 30 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|117 / 0 / 0 / 0|117 / 0 / 0 / 0|117 / 0 / 0 / 0|
 |A02|50|30 / 10 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|50 / 0 / 0 / 0|50 / 0 / 0 / 0|50 / 0 / 0 / 0|
 |A03|128|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|128 / 0 / 0 / 0|110 / 18 / 0 / 0|
-|A10|36|8 / 12 / 16 / 0|8 / 12 / 16 / 0|8 / 12 / 16 / 0|8 / 12 / 16 / 0|8 / 12 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
+|A10|36|16 / 4 / 16 / 0|16 / 4 / 16 / 0|16 / 4 / 16 / 0|8 / 12 / 16 / 0|8 / 12 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
 |A20|100|77 / 3 / 20 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|
-|A30|44|8 / 36 / 0 / 0|8 / 36 / 0 / 0|8 / 36 / 0 / 0|8 / 36 / 0 / 0|8 / 36 / 0 / 0|44 / 0 / 0 / 0|28 / 0 / 0 / 16|42 / 2 / 0 / 0|
-|A40|45|9 / 36 / 0 / 0|9 / 36 / 0 / 0|9 / 36 / 0 / 0|9 / 36 / 0 / 0|9 / 36 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
+|A30|44|26 / 18 / 0 / 0|26 / 18 / 0 / 0|26 / 18 / 0 / 0|8 / 36 / 0 / 0|8 / 36 / 0 / 0|44 / 0 / 0 / 0|28 / 0 / 0 / 16|42 / 2 / 0 / 0|
+|A40|45|27 / 18 / 0 / 0|27 / 18 / 0 / 0|27 / 18 / 0 / 0|9 / 36 / 0 / 0|9 / 36 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
 |A50|54|0 / 36 / 18 / 0|0 / 36 / 18 / 0|0 / 36 / 18 / 0|0 / 36 / 18 / 0|0 / 36 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|22 / 10 / 0 / 0|20 / 12 / 0 / 0|20 / 12 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
 |B10|98|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|98 / 0 / 0 / 0|0 / 0 / 0 / 98|98 / 0 / 0 / 0|
 |B11|90|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|0 / 0 / 0 / 90|90 / 0 / 0 / 0|
-|B12|108|12 / 42 / 54 / 0|12 / 42 / 54 / 0|12 / 42 / 54 / 0|12 / 42 / 54 / 0|12 / 42 / 54 / 0|108 / 0 / 0 / 0|0 / 0 / 0 / 108|108 / 0 / 0 / 0|
-|B20|75|3 / 27 / 45 / 0|3 / 27 / 45 / 0|3 / 27 / 45 / 0|3 / 27 / 45 / 0|3 / 27 / 45 / 0|75 / 0 / 0 / 0|15 / 0 / 0 / 60|69 / 6 / 0 / 0|
-|C01|96|51 / 13 / 32 / 0|54 / 10 / 32 / 0|54 / 10 / 32 / 0|51 / 13 / 32 / 0|51 / 13 / 32 / 0|96 / 0 / 0 / 0|60 / 0 / 0 / 36|96 / 0 / 0 / 0|
-|C10|116|27 / 9 / 80 / 0|27 / 9 / 80 / 0|27 / 9 / 80 / 0|27 / 9 / 80 / 0|27 / 9 / 80 / 0|96 / 0 / 20 / 0|88 / 0 / 20 / 8|96 / 0 / 20 / 0|
+|B12|108|36 / 18 / 54 / 0|36 / 18 / 54 / 0|36 / 18 / 54 / 0|12 / 42 / 54 / 0|12 / 42 / 54 / 0|108 / 0 / 0 / 0|0 / 0 / 0 / 108|108 / 0 / 0 / 0|
+|B20|75|9 / 21 / 45 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|3 / 27 / 45 / 0|3 / 27 / 45 / 0|75 / 0 / 0 / 0|15 / 0 / 0 / 60|69 / 6 / 0 / 0|
+|C01|96|54 / 10 / 32 / 0|54 / 10 / 32 / 0|54 / 10 / 32 / 0|51 / 13 / 32 / 0|51 / 13 / 32 / 0|96 / 0 / 0 / 0|60 / 0 / 0 / 36|96 / 0 / 0 / 0|
+|C10|116|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|27 / 9 / 80 / 0|27 / 9 / 80 / 0|96 / 0 / 20 / 0|88 / 0 / 20 / 8|96 / 0 / 20 / 0|
 |C20|120|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|24 / 0 / 0 / 48|48 / 24 / 0 / 0|
-|C30|78|2 / 4 / 63 / 9|2 / 4 / 63 / 9|2 / 4 / 63 / 9|2 / 4 / 63 / 9|2 / 4 / 63 / 9|78 / 0 / 0 / 0|75 / 0 / 0 / 3|78 / 0 / 0 / 0|
+|C30|78|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|2 / 4 / 63 / 9|2 / 4 / 63 / 9|78 / 0 / 0 / 0|75 / 0 / 0 / 3|78 / 0 / 0 / 0|
 |D10|45|0 / 30 / 15 / 0|0 / 30 / 15 / 0|0 / 30 / 15 / 0|0 / 30 / 15 / 0|0 / 30 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|24 / 0 / 6 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1630|504 / 364 / 753 / 9|505 / 363 / 753 / 9|505 / 363 / 753 / 9|504 / 364 / 753 / 9|504 / 364 / 753 / 9|1580 / 0 / 50 / 0|1095 / 0 / 50 / 485|1527 / 53 / 50 / 0|
+|**all**|1630|594 / 274 / 753 / 9|592 / 276 / 753 / 9|592 / 276 / 753 / 9|504 / 364 / 753 / 9|504 / 364 / 753 / 9|1580 / 0 / 50 / 0|1095 / 0 / 50 / 485|1527 / 53 / 50 / 0|
 
 ## Results
 
@@ -350,14 +350,14 @@ Local changes at run time (tracked files only):
 |A10-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A10-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A10-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A10-005|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A10-006|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A10-005|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A10-006|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A10-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A10-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A10-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A10-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A10-011|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A10-012|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A10-011|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A10-012|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A10-013|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A10-014|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A10-015|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -373,10 +373,10 @@ Local changes at run time (tracked files only):
 |A10-025|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A10-026|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A10-027|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A10-028|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A10-029|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A10-030|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A10-031|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A10-028|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A10-029|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A10-030|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A10-031|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A10-032|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A10-033|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A10-034|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -484,27 +484,27 @@ Local changes at run time (tracked files only):
 |A20-100|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A30-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-003|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-004|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-005|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-006|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-007|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-008|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-003|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-004|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-005|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-006|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-007|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-008|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A30-009|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |A30-010|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|A30-011|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|A30-011|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-012|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|A30-013|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|A30-013|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-014|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|A30-015|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|A30-015|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-016|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-017|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |A30-018|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|A30-019|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|A30-019|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-020|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|A30-021|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|A30-021|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-022|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|A30-023|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|A30-023|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-024|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |A30-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -514,51 +514,51 @@ Local changes at run time (tracked files only):
 |A30-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-031|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-032|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-033|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-034|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-033|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-034|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A30-035|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-036|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-037|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-038|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-037|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-038|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A30-039|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-040|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-041|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-042|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-041|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A30-042|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A30-043|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-044|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-002|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-003|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-002|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-003|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-005|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-006|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-005|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-006|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-007|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-008|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-009|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-011|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-012|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-011|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-012|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-014|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-015|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-014|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-015|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-017|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-018|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-017|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-018|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-020|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-021|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-020|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-021|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-022|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-023|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-024|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-026|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-027|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-026|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-027|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-028|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-029|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-030|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-029|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-030|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-031|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-032|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-033|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-032|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-033|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-034|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-035|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-036|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -846,41 +846,41 @@ Local changes at run time (tracked files only):
 |B11-089|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B11-090|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B12-001|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-002|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-003|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-002|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-003|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-004|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-005|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-006|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-005|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-006|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-007|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-008|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-009|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-008|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-009|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-010|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-011|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-012|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-011|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-012|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-013|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-014|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-015|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-014|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-015|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-016|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-017|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-018|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-017|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-018|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-019|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-020|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-021|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-020|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-021|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-022|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-023|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-024|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-023|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-024|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-025|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-026|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-027|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-026|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-027|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-028|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-029|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-030|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-029|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-030|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-031|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-032|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-033|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-032|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-033|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-034|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|B12-035|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-036|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-035|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-036|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-037|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-038|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-039|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
@@ -954,11 +954,11 @@ Local changes at run time (tracked files only):
 |B12-107|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B12-108|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B20-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B20-002|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-003|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B20-002|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|B20-003|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |B20-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B20-005|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-006|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B20-005|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|B20-006|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |B20-007|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B20-008|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B20-009|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -1014,8 +1014,8 @@ Local changes at run time (tracked files only):
 |B20-059|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B20-060|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B20-061|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B20-062|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-063|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B20-062|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|B20-063|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |B20-064|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B20-065|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B20-066|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
@@ -1077,13 +1077,13 @@ Local changes at run time (tracked files only):
 |C01-047|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C01-048|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C01-049|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|C01-050|FAIL|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|C01-050|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-051|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|C01-052|FAIL|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-053|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|C01-054|FAIL|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-055|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-056|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|C01-052|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|C01-053|PASS|FAIL|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-054|PASS|FAIL|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|C01-055|FAIL|PASS|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|C01-056|FAIL|PASS|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-057|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-058|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-059|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
@@ -1207,39 +1207,39 @@ Local changes at run time (tracked files only):
 |C10-081|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-082|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-083|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-084|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-084|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-085|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-086|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-087|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-088|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-088|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-089|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-090|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-091|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-092|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-092|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-093|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-094|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-095|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-096|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-096|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-097|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-098|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-099|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-100|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-100|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-101|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-102|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-103|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-104|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-104|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-105|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-106|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-107|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-108|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-108|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-109|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-110|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-111|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-112|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-112|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C10-113|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-114|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-115|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-116|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C10-116|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C20-001|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |C20-002|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |C20-003|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -1469,11 +1469,11 @@ Local changes at run time (tracked files only):
 |C30-035|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-036|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C30-038|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C30-039|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C30-038|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|C30-039|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C30-040|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C30-041|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C30-042|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C30-041|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|C30-042|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |C30-043|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-044|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-045|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1885,53 +1885,53 @@ Local changes at run time (tracked files only):
 - A02-020 [opensysml-ts-wasm] unsupported: neither the Symbol nor the query API gives the closure of supertypes
 - A02-020 [opensysml-ts] unsupported: neither the Symbol nor the query API gives the closure of supertypes
 - A02-031 [opensysml-go] fail: inheritedFeatureNames A02::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-031 [opensysml-py] fail: inheritedFeatureNames A02::Base: got [], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
+- A02-031 [opensysml-py] fail: inheritedFeatureNames A02::Base: got ['boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
 - A02-031 [opensysml-rs] fail: inheritedFeatureNames A02::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-031 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-031 [opensysml-ts] fail: inheritedFeatureNames A02::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-032 [opensysml-go] fail: inheritedFeatureNames A02::Far::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-032 [opensysml-py] fail: inheritedFeatureNames A02::Far::Base: got [], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
+- A02-032 [opensysml-py] fail: inheritedFeatureNames A02::Far::Base: got ['boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
 - A02-032 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-032 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Far::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-032 [opensysml-ts] fail: inheritedFeatureNames A02::Far::Base: got [], want ["","","","","","","","","","","","","","","","","","","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-033 [opensysml-go] fail: inheritedFeatureNames A02::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-033 [opensysml-py] fail: inheritedFeatureNames A02::Mid: got ['x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
-- A02-033 [opensysml-rs] fail: inheritedFeatureNames A02::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-033 [opensysml-go] fail: inheritedFeatureNames A02::Mid: got ["a","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-033 [opensysml-py] fail: inheritedFeatureNames A02::Mid: got ['a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
+- A02-033 [opensysml-rs] fail: inheritedFeatureNames A02::Mid: got ["a","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-033 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-033 [opensysml-ts] fail: inheritedFeatureNames A02::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-034 [opensysml-go] fail: inheritedFeatureNames A02::Far::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-034 [opensysml-py] fail: inheritedFeatureNames A02::Far::Mid: got ['x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
-- A02-034 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-034 [opensysml-go] fail: inheritedFeatureNames A02::Far::Mid: got ["a","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-034 [opensysml-py] fail: inheritedFeatureNames A02::Far::Mid: got ['a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
+- A02-034 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Mid: got ["a","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-034 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Far::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-034 [opensysml-ts] fail: inheritedFeatureNames A02::Far::Mid: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-035 [opensysml-go] fail: inheritedFeatureNames A02::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-035 [opensysml-py] fail: inheritedFeatureNames A02::Leaf: got [], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'b', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
-- A02-035 [opensysml-rs] fail: inheritedFeatureNames A02::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-035 [opensysml-go] fail: inheritedFeatureNames A02::Leaf: got ["a","b"], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-035 [opensysml-py] fail: inheritedFeatureNames A02::Leaf: got ['a', 'b', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'b', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
+- A02-035 [opensysml-rs] fail: inheritedFeatureNames A02::Leaf: got ["a","b"], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-035 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-035 [opensysml-ts] fail: inheritedFeatureNames A02::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-036 [opensysml-go] fail: inheritedFeatureNames A02::Far::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-036 [opensysml-py] fail: inheritedFeatureNames A02::Far::Leaf: got [], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'b', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
-- A02-036 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-036 [opensysml-go] fail: inheritedFeatureNames A02::Far::Leaf: got ["a","b"], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-036 [opensysml-py] fail: inheritedFeatureNames A02::Far::Leaf: got ['a', 'b', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'b', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
+- A02-036 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Leaf: got ["a","b"], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-036 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Far::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-036 [opensysml-ts] fail: inheritedFeatureNames A02::Far::Leaf: got [], want ["","","","","","","","","","","","","","","","","","","a","b","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-037 [opensysml-go] fail: inheritedFeatureNames A02::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-037 [opensysml-py] fail: inheritedFeatureNames A02::Multi: got ['x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'o', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
-- A02-037 [opensysml-rs] fail: inheritedFeatureNames A02::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-037 [opensysml-go] fail: inheritedFeatureNames A02::Multi: got ["a","o","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-037 [opensysml-py] fail: inheritedFeatureNames A02::Multi: got ['a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'o', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'o', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
+- A02-037 [opensysml-rs] fail: inheritedFeatureNames A02::Multi: got ["a","o","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-037 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-037 [opensysml-ts] fail: inheritedFeatureNames A02::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-038 [opensysml-go] fail: inheritedFeatureNames A02::Far::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-038 [opensysml-py] fail: inheritedFeatureNames A02::Far::Multi: got ['x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'o', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
-- A02-038 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-038 [opensysml-go] fail: inheritedFeatureNames A02::Far::Multi: got ["a","o","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
+- A02-038 [opensysml-py] fail: inheritedFeatureNames A02::Far::Multi: got ['a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'o', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'a', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'o', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences', 'x']
+- A02-038 [opensysml-rs] fail: inheritedFeatureNames A02::Far::Multi: got ["a","o","x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-038 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Far::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
 - A02-038 [opensysml-ts] fail: inheritedFeatureNames A02::Far::Multi: got ["x"], want ["","","","","","","","","","","","","","","","","","","a","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","o","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences","x"]
-- A02-039 [opensysml-go] fail: inheritedFeatureNames A02::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-039 [opensysml-py] fail: inheritedFeatureNames A02::FromAbs: got [], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'ab', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
-- A02-039 [opensysml-rs] fail: inheritedFeatureNames A02::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-039 [opensysml-go] fail: inheritedFeatureNames A02::FromAbs: got ["ab"], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-039 [opensysml-py] fail: inheritedFeatureNames A02::FromAbs: got ['ab', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'ab', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
+- A02-039 [opensysml-rs] fail: inheritedFeatureNames A02::FromAbs: got ["ab"], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-039 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-039 [opensysml-ts] fail: inheritedFeatureNames A02::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-040 [opensysml-go] fail: inheritedFeatureNames A02::Far::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
-- A02-040 [opensysml-py] fail: inheritedFeatureNames A02::Far::FromAbs: got [], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'ab', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
-- A02-040 [opensysml-rs] fail: inheritedFeatureNames A02::Far::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-040 [opensysml-go] fail: inheritedFeatureNames A02::Far::FromAbs: got ["ab"], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
+- A02-040 [opensysml-py] fail: inheritedFeatureNames A02::Far::FromAbs: got ['ab', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences'], want ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'ab', 'boundingShapes', 'checkedConstraints', 'differencesOf', 'dispatchScope', 'done', 'enactedPerformances', 'envelopingShapes', 'exhibitedStates', 'immediatePredecessors', 'immediateSuccessors', 'incomingTransferSort', 'incomingTransfers', 'incomingTransfersToSelf', 'innerSpaceDimension', 'intersectionsOf', 'involvingPerformances', 'isClosed', 'isDispatch', 'isRunToCompletion', 'isSolid', 'justOutsideOfOccurrences', 'localClock', 'matingOccurrences', 'middleTimeSlice', 'outerSpaceDimension', 'outgoingTransfers', 'outgoingTransfersFromSelf', 'outsideOfOccurrences', 'ownedActions', 'ownedPerformances', 'ownedPorts', 'ownedStates', 'performedActions', 'portionOf', 'portionOfLife', 'portions', 'predecessors', 'runToCompletionScope', 'sameLifeOccurrences', 'self', 'shape', 'snapshotOf', 'snapshots', 'spaceBoundaryOf', 'spaceEnclosedOccurrences', 'spaceInterior', 'spaceInteriorOf', 'spaceShotOf', 'spaceShots', 'spaceSliceOf', 'spaceSlices', 'spaceTimeCoincidentOccurrences', 'spaceTimeEnclosedOccurrences', 'spaceTimeEnclosedPoints', 'start', 'structuredSpaceBoundary', 'subitems', 'subobjects', 'suboccurrences', 'subparts', 'successors', 'superoccurrence', 'surroundedByOccurrences', 'this', 'timeCoincidentOccurrences', 'timeEnclosedOccurrences', 'timeSliceOf', 'timeSlices', 'unionsOf', 'voids', 'withoutOccurrences']
+- A02-040 [opensysml-rs] fail: inheritedFeatureNames A02::Far::FromAbs: got ["ab"], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-040 [opensysml-ts-wasm] fail: inheritedFeatureNames A02::Far::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A02-040 [opensysml-ts] fail: inheritedFeatureNames A02::Far::FromAbs: got [], want ["","","","","","","","","","","","","","","","","","","ab","boundingShapes","checkedConstraints","differencesOf","dispatchScope","done","enactedPerformances","envelopingShapes","exhibitedStates","immediatePredecessors","immediateSuccessors","incomingTransferSort","incomingTransfers","incomingTransfersToSelf","innerSpaceDimension","intersectionsOf","involvingPerformances","isClosed","isDispatch","isRunToCompletion","isSolid","justOutsideOfOccurrences","localClock","matingOccurrences","middleTimeSlice","outerSpaceDimension","outgoingTransfers","outgoingTransfersFromSelf","outsideOfOccurrences","ownedActions","ownedPerformances","ownedPorts","ownedStates","performedActions","portionOf","portionOfLife","portions","predecessors","runToCompletionScope","sameLifeOccurrences","self","shape","snapshotOf","snapshots","spaceBoundaryOf","spaceEnclosedOccurrences","spaceInterior","spaceInteriorOf","spaceShotOf","spaceShots","spaceSliceOf","spaceSlices","spaceTimeCoincidentOccurrences","spaceTimeEnclosedOccurrences","spaceTimeEnclosedPoints","start","structuredSpaceBoundary","subitems","subobjects","suboccurrences","subparts","successors","superoccurrence","surroundedByOccurrences","this","timeCoincidentOccurrences","timeEnclosedOccurrences","timeSliceOf","timeSlices","unionsOf","voids","withoutOccurrences"]
 - A03-065 [opensysml-go] unsupported: no Symbol field for isIndividual; available through the standard query API (isIndividual)
@@ -2112,24 +2112,12 @@ Local changes at run time (tracked files only):
 - A03-096 [opensysml-rs] unsupported: no Symbol field for isIndividual; available through the standard query API (isIndividual)
 - A03-096 [opensysml-ts-wasm] unsupported: no Symbol field for isIndividual; the standard query API is not served by this backend (sysml-wasm has no Query)
 - A03-096 [opensysml-ts] unsupported: no Symbol field for isIndividual; available through the standard query API (isIndividual)
-- A10-005 [opensysml-go] fail: name A10::Car::engine: got "\u003cA10::Car::engine not visible through A10::car\u003e", want "engine"
-- A10-005 [opensysml-py] fail: name A10::Car::engine: got '<A10::Car::engine not visible through A10::car>', want 'engine'
-- A10-005 [opensysml-rs] fail: name A10::Car::engine: got "<A10::Car::engine not visible through A10::car>", want "engine"
 - A10-005 [opensysml-ts-wasm] fail: name A10::Car::engine: got "<A10::Car::engine not visible through A10::car>", want "engine"
 - A10-005 [opensysml-ts] fail: name A10::Car::engine: got "<A10::Car::engine not visible through A10::car>", want "engine"
-- A10-006 [opensysml-go] fail: name A10::Car::driver: got "\u003cA10::Car::driver not visible through A10::car\u003e", want "driver"
-- A10-006 [opensysml-py] fail: name A10::Car::driver: got '<A10::Car::driver not visible through A10::car>', want 'driver'
-- A10-006 [opensysml-rs] fail: name A10::Car::driver: got "<A10::Car::driver not visible through A10::car>", want "driver"
 - A10-006 [opensysml-ts-wasm] fail: name A10::Car::driver: got "<A10::Car::driver not visible through A10::car>", want "driver"
 - A10-006 [opensysml-ts] fail: name A10::Car::driver: got "<A10::Car::driver not visible through A10::car>", want "driver"
-- A10-011 [opensysml-go] fail: type A10::Car::engine: got "\u003cA10::Car::engine not visible through A10::car\u003e", want "A10::Engine"
-- A10-011 [opensysml-py] fail: type A10::Car::engine: got '<A10::Car::engine not visible through A10::car>', want 'A10::Engine'
-- A10-011 [opensysml-rs] fail: type A10::Car::engine: got "<A10::Car::engine not visible through A10::car>", want "A10::Engine"
 - A10-011 [opensysml-ts-wasm] fail: type A10::Car::engine: got "<A10::Car::engine not visible through A10::car>", want "A10::Engine"
 - A10-011 [opensysml-ts] fail: type A10::Car::engine: got "<A10::Car::engine not visible through A10::car>", want "A10::Engine"
-- A10-012 [opensysml-go] fail: type A10::Car::driver: got "\u003cA10::Car::driver not visible through A10::car\u003e", want "A10::Person"
-- A10-012 [opensysml-py] fail: type A10::Car::driver: got '<A10::Car::driver not visible through A10::car>', want 'A10::Person'
-- A10-012 [opensysml-rs] fail: type A10::Car::driver: got "<A10::Car::driver not visible through A10::car>", want "A10::Person"
 - A10-012 [opensysml-ts-wasm] fail: type A10::Car::driver: got "<A10::Car::driver not visible through A10::car>", want "A10::Person"
 - A10-012 [opensysml-ts] fail: type A10::Car::driver: got "<A10::Car::driver not visible through A10::car>", want "A10::Person"
 - A10-013 [opensysml-go] unsupported: no Symbol field for isComposite; the standard query API does not offer it either
@@ -2207,24 +2195,12 @@ Local changes at run time (tracked files only):
 - A10-027 [opensysml-rs] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-027 [opensysml-ts-wasm] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-027 [opensysml-ts] fail: unnamedPartCount A10::Car: got 0, want 1
-- A10-028 [opensysml-go] fail: name A10::Car::engine: got "\u003cA10::Car::engine not visible through A10::sportsCar\u003e", want "engine"
-- A10-028 [opensysml-py] fail: name A10::Car::engine: got '<A10::Car::engine not visible through A10::sportsCar>', want 'engine'
-- A10-028 [opensysml-rs] fail: name A10::Car::engine: got "<A10::Car::engine not visible through A10::sportsCar>", want "engine"
 - A10-028 [opensysml-ts-wasm] fail: name A10::Car::engine: got "<A10::Car::engine not visible through A10::sportsCar>", want "engine"
 - A10-028 [opensysml-ts] fail: name A10::Car::engine: got "<A10::Car::engine not visible through A10::sportsCar>", want "engine"
-- A10-029 [opensysml-go] fail: name A10::Car::driver: got "\u003cA10::Car::driver not visible through A10::sportsCar\u003e", want "driver"
-- A10-029 [opensysml-py] fail: name A10::Car::driver: got '<A10::Car::driver not visible through A10::sportsCar>', want 'driver'
-- A10-029 [opensysml-rs] fail: name A10::Car::driver: got "<A10::Car::driver not visible through A10::sportsCar>", want "driver"
 - A10-029 [opensysml-ts-wasm] fail: name A10::Car::driver: got "<A10::Car::driver not visible through A10::sportsCar>", want "driver"
 - A10-029 [opensysml-ts] fail: name A10::Car::driver: got "<A10::Car::driver not visible through A10::sportsCar>", want "driver"
-- A10-030 [opensysml-go] fail: type A10::Car::engine: got "\u003cA10::Car::engine not visible through A10::sportsCar\u003e", want "A10::Engine"
-- A10-030 [opensysml-py] fail: type A10::Car::engine: got '<A10::Car::engine not visible through A10::sportsCar>', want 'A10::Engine'
-- A10-030 [opensysml-rs] fail: type A10::Car::engine: got "<A10::Car::engine not visible through A10::sportsCar>", want "A10::Engine"
 - A10-030 [opensysml-ts-wasm] fail: type A10::Car::engine: got "<A10::Car::engine not visible through A10::sportsCar>", want "A10::Engine"
 - A10-030 [opensysml-ts] fail: type A10::Car::engine: got "<A10::Car::engine not visible through A10::sportsCar>", want "A10::Engine"
-- A10-031 [opensysml-go] fail: type A10::Car::driver: got "\u003cA10::Car::driver not visible through A10::sportsCar\u003e", want "A10::Person"
-- A10-031 [opensysml-py] fail: type A10::Car::driver: got '<A10::Car::driver not visible through A10::sportsCar>', want 'A10::Person'
-- A10-031 [opensysml-rs] fail: type A10::Car::driver: got "<A10::Car::driver not visible through A10::sportsCar>", want "A10::Person"
 - A10-031 [opensysml-ts-wasm] fail: type A10::Car::driver: got "<A10::Car::driver not visible through A10::sportsCar>", want "A10::Person"
 - A10-031 [opensysml-ts] fail: type A10::Car::driver: got "<A10::Car::driver not visible through A10::sportsCar>", want "A10::Person"
 - A10-032 [opensysml-go] unsupported: no Symbol field for isComposite; the standard query API does not offer it either
@@ -2367,34 +2343,16 @@ Local changes at run time (tracked files only):
 - A20-100 [opensysml-rs] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts-wasm] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
-- A30-003 [opensysml-go] fail: name A30::Device::pOut: got "\u003cA30::Device::pOut not visible through A30::device\u003e", want "pOut"
-- A30-003 [opensysml-py] fail: name A30::Device::pOut: got '<A30::Device::pOut not visible through A30::device>', want 'pOut'
-- A30-003 [opensysml-rs] fail: name A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want "pOut"
 - A30-003 [opensysml-ts-wasm] fail: name A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want "pOut"
 - A30-003 [opensysml-ts] fail: name A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want "pOut"
-- A30-004 [opensysml-go] fail: name A30::Device::pIn: got "\u003cA30::Device::pIn not visible through A30::device\u003e", want "pIn"
-- A30-004 [opensysml-py] fail: name A30::Device::pIn: got '<A30::Device::pIn not visible through A30::device>', want 'pIn'
-- A30-004 [opensysml-rs] fail: name A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want "pIn"
 - A30-004 [opensysml-ts-wasm] fail: name A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want "pIn"
 - A30-004 [opensysml-ts] fail: name A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want "pIn"
-- A30-005 [opensysml-go] fail: name A30::Device::pOut: got "\u003cA30::Device::pOut not visible through A30::sub\u003e", want "pOut"
-- A30-005 [opensysml-py] fail: name A30::Device::pOut: got '<A30::Device::pOut not visible through A30::sub>', want 'pOut'
-- A30-005 [opensysml-rs] fail: name A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want "pOut"
 - A30-005 [opensysml-ts-wasm] fail: name A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want "pOut"
 - A30-005 [opensysml-ts] fail: name A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want "pOut"
-- A30-006 [opensysml-go] fail: name A30::Device::pIn: got "\u003cA30::Device::pIn not visible through A30::sub\u003e", want "pIn"
-- A30-006 [opensysml-py] fail: name A30::Device::pIn: got '<A30::Device::pIn not visible through A30::sub>', want 'pIn'
-- A30-006 [opensysml-rs] fail: name A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want "pIn"
 - A30-006 [opensysml-ts-wasm] fail: name A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want "pIn"
 - A30-006 [opensysml-ts] fail: name A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want "pIn"
-- A30-007 [opensysml-go] fail: name A30::Device::pOut: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "pOut"
-- A30-007 [opensysml-py] fail: name A30::Device::pOut: got '<A30::Rack::slot not visible through A30::rack>', want 'pOut'
-- A30-007 [opensysml-rs] fail: name A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want "pOut"
 - A30-007 [opensysml-ts-wasm] fail: name A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want "pOut"
 - A30-007 [opensysml-ts] fail: name A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want "pOut"
-- A30-008 [opensysml-go] fail: name A30::Device::pIn: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "pIn"
-- A30-008 [opensysml-py] fail: name A30::Device::pIn: got '<A30::Rack::slot not visible through A30::rack>', want 'pIn'
-- A30-008 [opensysml-rs] fail: name A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want "pIn"
 - A30-008 [opensysml-ts-wasm] fail: name A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want "pIn"
 - A30-008 [opensysml-ts] fail: name A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want "pIn"
 - A30-009 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
@@ -2404,39 +2362,30 @@ Local changes at run time (tracked files only):
 - A30-010 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
 - A30-010 [opensysml-ts] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
 - A30-010 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-011 [opensysml-go] fail: type A30::Device::pOut: got "\u003cA30::Device::pOut not visible through A30::device\u003e", want "A30::CmdPort"
-- A30-011 [opensysml-py] fail: type A30::Device::pOut: got '<A30::Device::pOut not visible through A30::device>', want 'A30::CmdPort'
-- A30-011 [opensysml-rs] fail: type A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want "A30::CmdPort"
 - A30-011 [opensysml-ts-wasm] fail: type A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want "A30::CmdPort"
 - A30-011 [opensysml-ts] fail: type A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want "A30::CmdPort"
 - A30-011 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-012 [opensysml-go] fail: type A30::Device::pIn: got "\u003cA30::Device::pIn not visible through A30::device\u003e", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-py] fail: type A30::Device::pIn: got '<A30::Device::pIn not visible through A30::device>', want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-rs] fail: type A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want "A30::CmdPort::'~CmdPort'"
+- A30-012 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
+- A30-012 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
+- A30-012 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
 - A30-012 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want "A30::CmdPort::'~CmdPort'"
 - A30-012 [opensysml-ts] fail: type A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want "A30::CmdPort::'~CmdPort'"
 - A30-012 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-013 [opensysml-go] fail: type A30::Device::pOut: got "\u003cA30::Device::pOut not visible through A30::sub\u003e", want "A30::CmdPort"
-- A30-013 [opensysml-py] fail: type A30::Device::pOut: got '<A30::Device::pOut not visible through A30::sub>', want 'A30::CmdPort'
-- A30-013 [opensysml-rs] fail: type A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want "A30::CmdPort"
 - A30-013 [opensysml-ts-wasm] fail: type A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want "A30::CmdPort"
 - A30-013 [opensysml-ts] fail: type A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want "A30::CmdPort"
 - A30-013 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-014 [opensysml-go] fail: type A30::Device::pIn: got "\u003cA30::Device::pIn not visible through A30::sub\u003e", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-py] fail: type A30::Device::pIn: got '<A30::Device::pIn not visible through A30::sub>', want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-rs] fail: type A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want "A30::CmdPort::'~CmdPort'"
+- A30-014 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
+- A30-014 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
+- A30-014 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
 - A30-014 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want "A30::CmdPort::'~CmdPort'"
 - A30-014 [opensysml-ts] fail: type A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want "A30::CmdPort::'~CmdPort'"
 - A30-014 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-015 [opensysml-go] fail: type A30::Device::pOut: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "A30::CmdPort"
-- A30-015 [opensysml-py] fail: type A30::Device::pOut: got '<A30::Rack::slot not visible through A30::rack>', want 'A30::CmdPort'
-- A30-015 [opensysml-rs] fail: type A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want "A30::CmdPort"
 - A30-015 [opensysml-ts-wasm] fail: type A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want "A30::CmdPort"
 - A30-015 [opensysml-ts] fail: type A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want "A30::CmdPort"
 - A30-015 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-016 [opensysml-go] fail: type A30::Device::pIn: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-py] fail: type A30::Device::pIn: got '<A30::Rack::slot not visible through A30::rack>', want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-rs] fail: type A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want "A30::CmdPort::'~CmdPort'"
+- A30-016 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
+- A30-016 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
+- A30-016 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
 - A30-016 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want "A30::CmdPort::'~CmdPort'"
 - A30-016 [opensysml-ts] fail: type A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want "A30::CmdPort::'~CmdPort'"
 - A30-016 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
@@ -2447,39 +2396,30 @@ Local changes at run time (tracked files only):
 - A30-018 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got false, want true
 - A30-018 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got false, want true
 - A30-018 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-019 [opensysml-go] fail: typeIsConjugated A30::Device::pOut: got "\u003cA30::Device::pOut not visible through A30::device\u003e", want false
-- A30-019 [opensysml-py] fail: typeIsConjugated A30::Device::pOut: got '<A30::Device::pOut not visible through A30::device>', want False
-- A30-019 [opensysml-rs] fail: typeIsConjugated A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want false
 - A30-019 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want false
 - A30-019 [opensysml-ts] fail: typeIsConjugated A30::Device::pOut: got "<A30::Device::pOut not visible through A30::device>", want false
 - A30-019 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-020 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got "\u003cA30::Device::pIn not visible through A30::device\u003e", want true
-- A30-020 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got '<A30::Device::pIn not visible through A30::device>', want True
-- A30-020 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want true
+- A30-020 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
+- A30-020 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
+- A30-020 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
 - A30-020 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want true
 - A30-020 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got "<A30::Device::pIn not visible through A30::device>", want true
 - A30-020 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-021 [opensysml-go] fail: typeIsConjugated A30::Device::pOut: got "\u003cA30::Device::pOut not visible through A30::sub\u003e", want false
-- A30-021 [opensysml-py] fail: typeIsConjugated A30::Device::pOut: got '<A30::Device::pOut not visible through A30::sub>', want False
-- A30-021 [opensysml-rs] fail: typeIsConjugated A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want false
 - A30-021 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want false
 - A30-021 [opensysml-ts] fail: typeIsConjugated A30::Device::pOut: got "<A30::Device::pOut not visible through A30::sub>", want false
 - A30-021 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-022 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got "\u003cA30::Device::pIn not visible through A30::sub\u003e", want true
-- A30-022 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got '<A30::Device::pIn not visible through A30::sub>', want True
-- A30-022 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want true
+- A30-022 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
+- A30-022 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
+- A30-022 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
 - A30-022 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want true
 - A30-022 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got "<A30::Device::pIn not visible through A30::sub>", want true
 - A30-022 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-023 [opensysml-go] fail: typeIsConjugated A30::Device::pOut: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want false
-- A30-023 [opensysml-py] fail: typeIsConjugated A30::Device::pOut: got '<A30::Rack::slot not visible through A30::rack>', want False
-- A30-023 [opensysml-rs] fail: typeIsConjugated A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want false
 - A30-023 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want false
 - A30-023 [opensysml-ts] fail: typeIsConjugated A30::Device::pOut: got "<A30::Rack::slot not visible through A30::rack>", want false
 - A30-023 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
-- A30-024 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want true
-- A30-024 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got '<A30::Rack::slot not visible through A30::rack>', want True
-- A30-024 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want true
+- A30-024 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
+- A30-024 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
+- A30-024 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
 - A30-024 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want true
 - A30-024 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got "<A30::Rack::slot not visible through A30::rack>", want true
 - A30-024 [sysml-toolkit-rs-checked] error: type refused by the checked reader: property has an incomplete derivation
@@ -2505,84 +2445,54 @@ Local changes at run time (tracked files only):
 - A30-032 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-033 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::Device::pOut not visible through A30::device\u003e", want "out"
-- A30-033 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::Device::pOut not visible through A30::device>', want 'out'
-- A30-033 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::Device::pOut not visible through A30::device>", want "out"
 - A30-033 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::Device::pOut not visible through A30::device>", want "out"
 - A30-033 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::Device::pOut not visible through A30::device>", want "out"
-- A30-034 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::Device::pOut not visible through A30::device\u003e", want "in"
-- A30-034 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::Device::pOut not visible through A30::device>', want 'in'
-- A30-034 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::Device::pOut not visible through A30::device>", want "in"
 - A30-034 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::Device::pOut not visible through A30::device>", want "in"
 - A30-034 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::Device::pOut not visible through A30::device>", want "in"
-- A30-035 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::Device::pIn not visible through A30::device\u003e", want "in"
-- A30-035 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::Device::pIn not visible through A30::device>', want 'in'
-- A30-035 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::Device::pIn not visible through A30::device>", want "in"
+- A30-035 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
+- A30-035 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
+- A30-035 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::Device::pIn not visible through A30::device>", want "in"
 - A30-035 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::Device::pIn not visible through A30::device>", want "in"
-- A30-036 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::Device::pIn not visible through A30::device\u003e", want "out"
-- A30-036 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::Device::pIn not visible through A30::device>', want 'out'
-- A30-036 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::Device::pIn not visible through A30::device>", want "out"
+- A30-036 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
+- A30-036 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
+- A30-036 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::Device::pIn not visible through A30::device>", want "out"
 - A30-036 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::Device::pIn not visible through A30::device>", want "out"
-- A30-037 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::Device::pOut not visible through A30::sub\u003e", want "out"
-- A30-037 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::Device::pOut not visible through A30::sub>', want 'out'
-- A30-037 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::Device::pOut not visible through A30::sub>", want "out"
 - A30-037 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::Device::pOut not visible through A30::sub>", want "out"
 - A30-037 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::Device::pOut not visible through A30::sub>", want "out"
-- A30-038 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::Device::pOut not visible through A30::sub\u003e", want "in"
-- A30-038 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::Device::pOut not visible through A30::sub>', want 'in'
-- A30-038 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::Device::pOut not visible through A30::sub>", want "in"
 - A30-038 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::Device::pOut not visible through A30::sub>", want "in"
 - A30-038 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::Device::pOut not visible through A30::sub>", want "in"
-- A30-039 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::Device::pIn not visible through A30::sub\u003e", want "in"
-- A30-039 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::Device::pIn not visible through A30::sub>', want 'in'
-- A30-039 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::Device::pIn not visible through A30::sub>", want "in"
+- A30-039 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
+- A30-039 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
+- A30-039 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::Device::pIn not visible through A30::sub>", want "in"
 - A30-039 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::Device::pIn not visible through A30::sub>", want "in"
-- A30-040 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::Device::pIn not visible through A30::sub\u003e", want "out"
-- A30-040 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::Device::pIn not visible through A30::sub>', want 'out'
-- A30-040 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::Device::pIn not visible through A30::sub>", want "out"
+- A30-040 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
+- A30-040 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
+- A30-040 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::Device::pIn not visible through A30::sub>", want "out"
 - A30-040 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::Device::pIn not visible through A30::sub>", want "out"
-- A30-041 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "out"
-- A30-041 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::Rack::slot not visible through A30::rack>', want 'out'
-- A30-041 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::Rack::slot not visible through A30::rack>", want "out"
 - A30-041 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::Rack::slot not visible through A30::rack>", want "out"
 - A30-041 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::Rack::slot not visible through A30::rack>", want "out"
-- A30-042 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "in"
-- A30-042 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::Rack::slot not visible through A30::rack>', want 'in'
-- A30-042 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::Rack::slot not visible through A30::rack>", want "in"
 - A30-042 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::Rack::slot not visible through A30::rack>", want "in"
 - A30-042 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::Rack::slot not visible through A30::rack>", want "in"
-- A30-043 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "in"
-- A30-043 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::Rack::slot not visible through A30::rack>', want 'in'
-- A30-043 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::Rack::slot not visible through A30::rack>", want "in"
+- A30-043 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
+- A30-043 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
+- A30-043 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::Rack::slot not visible through A30::rack>", want "in"
 - A30-043 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::Rack::slot not visible through A30::rack>", want "in"
-- A30-044 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::Rack::slot not visible through A30::rack\u003e", want "out"
-- A30-044 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::Rack::slot not visible through A30::rack>', want 'out'
-- A30-044 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::Rack::slot not visible through A30::rack>", want "out"
+- A30-044 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
+- A30-044 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
+- A30-044 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-044 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::Rack::slot not visible through A30::rack>", want "out"
 - A30-044 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::Rack::slot not visible through A30::rack>", want "out"
-- A40-002 [opensysml-go] fail: specializations A40::Owner::pTyped: got "\u003cA40::Owner::pTyped not visible through A40::owner\u003e", want [["FeatureTyping","A40::T"]]
-- A40-002 [opensysml-py] fail: specializations A40::Owner::pTyped: got '<A40::Owner::pTyped not visible through A40::owner>', want [['FeatureTyping', 'A40::T']]
-- A40-002 [opensysml-rs] fail: specializations A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want [["FeatureTyping","A40::T"]]
 - A40-002 [opensysml-ts-wasm] fail: specializations A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want [["FeatureTyping","A40::T"]]
 - A40-002 [opensysml-ts] fail: specializations A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want [["FeatureTyping","A40::T"]]
-- A40-003 [opensysml-go] fail: specializations A40::Owner::pTyped: got "\u003cA40::Owner::pTyped not visible through A40::subOwner\u003e", want [["FeatureTyping","A40::T"]]
-- A40-003 [opensysml-py] fail: specializations A40::Owner::pTyped: got '<A40::Owner::pTyped not visible through A40::subOwner>', want [['FeatureTyping', 'A40::T']]
-- A40-003 [opensysml-rs] fail: specializations A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want [["FeatureTyping","A40::T"]]
 - A40-003 [opensysml-ts-wasm] fail: specializations A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want [["FeatureTyping","A40::T"]]
 - A40-003 [opensysml-ts] fail: specializations A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want [["FeatureTyping","A40::T"]]
-- A40-005 [opensysml-go] fail: specializations A40::Owner::pSub: got "\u003cA40::Owner::pSub not visible through A40::owner\u003e", want [["Subsetting","A40::Owner::q"]]
-- A40-005 [opensysml-py] fail: specializations A40::Owner::pSub: got '<A40::Owner::pSub not visible through A40::owner>', want [['Subsetting', 'A40::Owner::q']]
-- A40-005 [opensysml-rs] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want [["Subsetting","A40::Owner::q"]]
 - A40-005 [opensysml-ts-wasm] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want [["Subsetting","A40::Owner::q"]]
 - A40-005 [opensysml-ts] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want [["Subsetting","A40::Owner::q"]]
-- A40-006 [opensysml-go] fail: specializations A40::Owner::pSub: got "\u003cA40::Owner::pSub not visible through A40::subOwner\u003e", want [["Subsetting","A40::Owner::q"]]
-- A40-006 [opensysml-py] fail: specializations A40::Owner::pSub: got '<A40::Owner::pSub not visible through A40::subOwner>', want [['Subsetting', 'A40::Owner::q']]
-- A40-006 [opensysml-rs] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want [["Subsetting","A40::Owner::q"]]
 - A40-006 [opensysml-ts-wasm] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want [["Subsetting","A40::Owner::q"]]
 - A40-006 [opensysml-ts] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want [["Subsetting","A40::Owner::q"]]
 - A40-007 [opensysml-go] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
@@ -2590,54 +2500,30 @@ Local changes at run time (tracked files only):
 - A40-007 [opensysml-rs] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-007 [opensysml-ts-wasm] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-007 [opensysml-ts] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-008 [opensysml-go] fail: specializations A40::Owner::pRef: got "\u003cA40::Owner::pRef not visible through A40::owner\u003e", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-008 [opensysml-py] fail: specializations A40::Owner::pRef: got '<A40::Owner::pRef not visible through A40::owner>', want [['ReferenceSubsetting', 'A40::Owner::q']]
-- A40-008 [opensysml-rs] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want [["ReferenceSubsetting","A40::Owner::q"]]
+- A40-008 [opensysml-go] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
+- A40-008 [opensysml-py] fail: specializations A40::Owner::pRef: got [], want [['ReferenceSubsetting', 'A40::Owner::q']]
+- A40-008 [opensysml-rs] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-008 [opensysml-ts-wasm] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-008 [opensysml-ts] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-009 [opensysml-go] fail: specializations A40::Owner::pRef: got "\u003cA40::Owner::pRef not visible through A40::subOwner\u003e", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-009 [opensysml-py] fail: specializations A40::Owner::pRef: got '<A40::Owner::pRef not visible through A40::subOwner>', want [['ReferenceSubsetting', 'A40::Owner::q']]
-- A40-009 [opensysml-rs] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want [["ReferenceSubsetting","A40::Owner::q"]]
+- A40-009 [opensysml-go] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
+- A40-009 [opensysml-py] fail: specializations A40::Owner::pRef: got [], want [['ReferenceSubsetting', 'A40::Owner::q']]
+- A40-009 [opensysml-rs] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-009 [opensysml-ts-wasm] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-009 [opensysml-ts] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-011 [opensysml-go] fail: specializations A40::Owner::pBoth: got "\u003cA40::Owner::pBoth not visible through A40::owner\u003e", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
-- A40-011 [opensysml-py] fail: specializations A40::Owner::pBoth: got '<A40::Owner::pBoth not visible through A40::owner>', want [['FeatureTyping', 'A40::V'], ['Subsetting', 'A40::Owner::q']]
-- A40-011 [opensysml-rs] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
 - A40-011 [opensysml-ts-wasm] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
 - A40-011 [opensysml-ts] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
-- A40-012 [opensysml-go] fail: specializations A40::Owner::pBoth: got "\u003cA40::Owner::pBoth not visible through A40::subOwner\u003e", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
-- A40-012 [opensysml-py] fail: specializations A40::Owner::pBoth: got '<A40::Owner::pBoth not visible through A40::subOwner>', want [['FeatureTyping', 'A40::V'], ['Subsetting', 'A40::Owner::q']]
-- A40-012 [opensysml-rs] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
 - A40-012 [opensysml-ts-wasm] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
 - A40-012 [opensysml-ts] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
-- A40-014 [opensysml-go] fail: specializations A40::SubOwner::q: got "\u003cA40::SubOwner::q not visible through A40::subOwner\u003e", want [["Redefinition","A40::Owner::q"]]
-- A40-014 [opensysml-py] fail: specializations A40::SubOwner::q: got '<A40::SubOwner::q not visible through A40::subOwner>', want [['Redefinition', 'A40::Owner::q']]
-- A40-014 [opensysml-rs] fail: specializations A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want [["Redefinition","A40::Owner::q"]]
 - A40-014 [opensysml-ts-wasm] fail: specializations A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want [["Redefinition","A40::Owner::q"]]
 - A40-014 [opensysml-ts] fail: specializations A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want [["Redefinition","A40::Owner::q"]]
-- A40-015 [opensysml-go] fail: specializations A40::SubOwner::q: got "\u003cA40::SubOwner::q not visible through A40::subSub\u003e", want [["Redefinition","A40::Owner::q"]]
-- A40-015 [opensysml-py] fail: specializations A40::SubOwner::q: got '<A40::SubOwner::q not visible through A40::subSub>', want [['Redefinition', 'A40::Owner::q']]
-- A40-015 [opensysml-rs] fail: specializations A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want [["Redefinition","A40::Owner::q"]]
 - A40-015 [opensysml-ts-wasm] fail: specializations A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want [["Redefinition","A40::Owner::q"]]
 - A40-015 [opensysml-ts] fail: specializations A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want [["Redefinition","A40::Owner::q"]]
-- A40-017 [opensysml-go] fail: subsettedFeatures A40::Owner::pTyped: got "\u003cA40::Owner::pTyped not visible through A40::owner\u003e", want []
-- A40-017 [opensysml-py] fail: subsettedFeatures A40::Owner::pTyped: got '<A40::Owner::pTyped not visible through A40::owner>', want []
-- A40-017 [opensysml-rs] fail: subsettedFeatures A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want []
 - A40-017 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want []
 - A40-017 [opensysml-ts] fail: subsettedFeatures A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want []
-- A40-018 [opensysml-go] fail: subsettedFeatures A40::Owner::pTyped: got "\u003cA40::Owner::pTyped not visible through A40::subOwner\u003e", want []
-- A40-018 [opensysml-py] fail: subsettedFeatures A40::Owner::pTyped: got '<A40::Owner::pTyped not visible through A40::subOwner>', want []
-- A40-018 [opensysml-rs] fail: subsettedFeatures A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want []
 - A40-018 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want []
 - A40-018 [opensysml-ts] fail: subsettedFeatures A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want []
-- A40-020 [opensysml-go] fail: subsettedFeatures A40::Owner::pSub: got "\u003cA40::Owner::pSub not visible through A40::owner\u003e", want ["A40::Owner::q"]
-- A40-020 [opensysml-py] fail: subsettedFeatures A40::Owner::pSub: got '<A40::Owner::pSub not visible through A40::owner>', want ['A40::Owner::q']
-- A40-020 [opensysml-rs] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::Owner::q"]
 - A40-020 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::Owner::q"]
 - A40-020 [opensysml-ts] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::Owner::q"]
-- A40-021 [opensysml-go] fail: subsettedFeatures A40::Owner::pSub: got "\u003cA40::Owner::pSub not visible through A40::subOwner\u003e", want ["A40::Owner::q"]
-- A40-021 [opensysml-py] fail: subsettedFeatures A40::Owner::pSub: got '<A40::Owner::pSub not visible through A40::subOwner>', want ['A40::Owner::q']
-- A40-021 [opensysml-rs] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-021 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-021 [opensysml-ts] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-022 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
@@ -2645,44 +2531,26 @@ Local changes at run time (tracked files only):
 - A40-022 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-022 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-022 [opensysml-ts] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
-- A40-023 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got "\u003cA40::Owner::pRef not visible through A40::owner\u003e", want ["A40::Owner::q"]
-- A40-023 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got '<A40::Owner::pRef not visible through A40::owner>', want ['A40::Owner::q']
-- A40-023 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::Owner::q"]
+- A40-023 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
+- A40-023 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got [], want ['A40::Owner::q']
+- A40-023 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-023 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::Owner::q"]
 - A40-023 [opensysml-ts] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::Owner::q"]
-- A40-024 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got "\u003cA40::Owner::pRef not visible through A40::subOwner\u003e", want ["A40::Owner::q"]
-- A40-024 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got '<A40::Owner::pRef not visible through A40::subOwner>', want ['A40::Owner::q']
-- A40-024 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::Owner::q"]
+- A40-024 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
+- A40-024 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got [], want ['A40::Owner::q']
+- A40-024 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-024 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-024 [opensysml-ts] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::Owner::q"]
-- A40-026 [opensysml-go] fail: subsettedFeatures A40::Owner::pBoth: got "\u003cA40::Owner::pBoth not visible through A40::owner\u003e", want ["A40::Owner::q"]
-- A40-026 [opensysml-py] fail: subsettedFeatures A40::Owner::pBoth: got '<A40::Owner::pBoth not visible through A40::owner>', want ['A40::Owner::q']
-- A40-026 [opensysml-rs] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::Owner::q"]
 - A40-026 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::Owner::q"]
 - A40-026 [opensysml-ts] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::Owner::q"]
-- A40-027 [opensysml-go] fail: subsettedFeatures A40::Owner::pBoth: got "\u003cA40::Owner::pBoth not visible through A40::subOwner\u003e", want ["A40::Owner::q"]
-- A40-027 [opensysml-py] fail: subsettedFeatures A40::Owner::pBoth: got '<A40::Owner::pBoth not visible through A40::subOwner>', want ['A40::Owner::q']
-- A40-027 [opensysml-rs] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-027 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-027 [opensysml-ts] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::Owner::q"]
-- A40-029 [opensysml-go] fail: subsettedFeatures A40::SubOwner::q: got "\u003cA40::SubOwner::q not visible through A40::subOwner\u003e", want ["A40::Owner::q"]
-- A40-029 [opensysml-py] fail: subsettedFeatures A40::SubOwner::q: got '<A40::SubOwner::q not visible through A40::subOwner>', want ['A40::Owner::q']
-- A40-029 [opensysml-rs] fail: subsettedFeatures A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-029 [opensysml-ts-wasm] fail: subsettedFeatures A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-029 [opensysml-ts] fail: subsettedFeatures A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::Owner::q"]
-- A40-030 [opensysml-go] fail: subsettedFeatures A40::SubOwner::q: got "\u003cA40::SubOwner::q not visible through A40::subSub\u003e", want ["A40::Owner::q"]
-- A40-030 [opensysml-py] fail: subsettedFeatures A40::SubOwner::q: got '<A40::SubOwner::q not visible through A40::subSub>', want ['A40::Owner::q']
-- A40-030 [opensysml-rs] fail: subsettedFeatures A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::Owner::q"]
 - A40-030 [opensysml-ts-wasm] fail: subsettedFeatures A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::Owner::q"]
 - A40-030 [opensysml-ts] fail: subsettedFeatures A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::Owner::q"]
-- A40-032 [opensysml-go] fail: types A40::Owner::pTyped: got "\u003cA40::Owner::pTyped not visible through A40::owner\u003e", want ["A40::T"]
-- A40-032 [opensysml-py] fail: types A40::Owner::pTyped: got '<A40::Owner::pTyped not visible through A40::owner>', want ['A40::T']
-- A40-032 [opensysml-rs] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want ["A40::T"]
 - A40-032 [opensysml-ts-wasm] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want ["A40::T"]
 - A40-032 [opensysml-ts] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::owner>", want ["A40::T"]
-- A40-033 [opensysml-go] fail: types A40::Owner::pTyped: got "\u003cA40::Owner::pTyped not visible through A40::subOwner\u003e", want ["A40::T"]
-- A40-033 [opensysml-py] fail: types A40::Owner::pTyped: got '<A40::Owner::pTyped not visible through A40::subOwner>', want ['A40::T']
-- A40-033 [opensysml-rs] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want ["A40::T"]
 - A40-033 [opensysml-ts-wasm] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want ["A40::T"]
 - A40-033 [opensysml-ts] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want ["A40::T"]
 - A40-034 [opensysml-go] fail: types A40::Owner::pSub: got [], want ["A40::T"]
@@ -2690,14 +2558,14 @@ Local changes at run time (tracked files only):
 - A40-034 [opensysml-rs] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-034 [opensysml-ts-wasm] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-034 [opensysml-ts] fail: types A40::Owner::pSub: got [], want ["A40::T"]
-- A40-035 [opensysml-go] fail: types A40::Owner::pSub: got "\u003cA40::Owner::pSub not visible through A40::owner\u003e", want ["A40::T"]
-- A40-035 [opensysml-py] fail: types A40::Owner::pSub: got '<A40::Owner::pSub not visible through A40::owner>', want ['A40::T']
-- A40-035 [opensysml-rs] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::T"]
+- A40-035 [opensysml-go] fail: types A40::Owner::pSub: got [], want ["A40::T"]
+- A40-035 [opensysml-py] fail: types A40::Owner::pSub: got [], want ['A40::T']
+- A40-035 [opensysml-rs] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-035 [opensysml-ts-wasm] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::T"]
 - A40-035 [opensysml-ts] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::T"]
-- A40-036 [opensysml-go] fail: types A40::Owner::pSub: got "\u003cA40::Owner::pSub not visible through A40::subOwner\u003e", want ["A40::T"]
-- A40-036 [opensysml-py] fail: types A40::Owner::pSub: got '<A40::Owner::pSub not visible through A40::subOwner>', want ['A40::T']
-- A40-036 [opensysml-rs] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::T"]
+- A40-036 [opensysml-go] fail: types A40::Owner::pSub: got [], want ["A40::T"]
+- A40-036 [opensysml-py] fail: types A40::Owner::pSub: got [], want ['A40::T']
+- A40-036 [opensysml-rs] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-036 [opensysml-ts-wasm] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::T"]
 - A40-036 [opensysml-ts] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::T"]
 - A40-037 [opensysml-go] fail: types A40::Owner::pRef: got [], want ["A40::T"]
@@ -2705,14 +2573,14 @@ Local changes at run time (tracked files only):
 - A40-037 [opensysml-rs] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-037 [opensysml-ts-wasm] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-037 [opensysml-ts] fail: types A40::Owner::pRef: got [], want ["A40::T"]
-- A40-038 [opensysml-go] fail: types A40::Owner::pRef: got "\u003cA40::Owner::pRef not visible through A40::owner\u003e", want ["A40::T"]
-- A40-038 [opensysml-py] fail: types A40::Owner::pRef: got '<A40::Owner::pRef not visible through A40::owner>', want ['A40::T']
-- A40-038 [opensysml-rs] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::T"]
+- A40-038 [opensysml-go] fail: types A40::Owner::pRef: got [], want ["A40::T"]
+- A40-038 [opensysml-py] fail: types A40::Owner::pRef: got [], want ['A40::T']
+- A40-038 [opensysml-rs] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-038 [opensysml-ts-wasm] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::T"]
 - A40-038 [opensysml-ts] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::T"]
-- A40-039 [opensysml-go] fail: types A40::Owner::pRef: got "\u003cA40::Owner::pRef not visible through A40::subOwner\u003e", want ["A40::T"]
-- A40-039 [opensysml-py] fail: types A40::Owner::pRef: got '<A40::Owner::pRef not visible through A40::subOwner>', want ['A40::T']
-- A40-039 [opensysml-rs] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::T"]
+- A40-039 [opensysml-go] fail: types A40::Owner::pRef: got [], want ["A40::T"]
+- A40-039 [opensysml-py] fail: types A40::Owner::pRef: got [], want ['A40::T']
+- A40-039 [opensysml-rs] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-039 [opensysml-ts-wasm] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::T"]
 - A40-039 [opensysml-ts] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::T"]
 - A40-040 [opensysml-go] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
@@ -2720,14 +2588,14 @@ Local changes at run time (tracked files only):
 - A40-040 [opensysml-rs] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-040 [opensysml-ts-wasm] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-040 [opensysml-ts] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-041 [opensysml-go] fail: types A40::Owner::pBoth: got "\u003cA40::Owner::pBoth not visible through A40::owner\u003e", want ["A40::T","A40::V"]
-- A40-041 [opensysml-py] fail: types A40::Owner::pBoth: got '<A40::Owner::pBoth not visible through A40::owner>', want ['A40::T', 'A40::V']
-- A40-041 [opensysml-rs] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::T","A40::V"]
+- A40-041 [opensysml-go] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
+- A40-041 [opensysml-py] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
+- A40-041 [opensysml-rs] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-041 [opensysml-ts-wasm] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::T","A40::V"]
 - A40-041 [opensysml-ts] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::T","A40::V"]
-- A40-042 [opensysml-go] fail: types A40::Owner::pBoth: got "\u003cA40::Owner::pBoth not visible through A40::subOwner\u003e", want ["A40::T","A40::V"]
-- A40-042 [opensysml-py] fail: types A40::Owner::pBoth: got '<A40::Owner::pBoth not visible through A40::subOwner>', want ['A40::T', 'A40::V']
-- A40-042 [opensysml-rs] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::T","A40::V"]
+- A40-042 [opensysml-go] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
+- A40-042 [opensysml-py] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
+- A40-042 [opensysml-rs] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-042 [opensysml-ts-wasm] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::T","A40::V"]
 - A40-042 [opensysml-ts] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::T","A40::V"]
 - A40-043 [opensysml-go] fail: types A40::SubOwner::q: got [], want ["A40::T"]
@@ -2735,14 +2603,14 @@ Local changes at run time (tracked files only):
 - A40-043 [opensysml-rs] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-043 [opensysml-ts-wasm] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-043 [opensysml-ts] fail: types A40::SubOwner::q: got [], want ["A40::T"]
-- A40-044 [opensysml-go] fail: types A40::SubOwner::q: got "\u003cA40::SubOwner::q not visible through A40::subOwner\u003e", want ["A40::T"]
-- A40-044 [opensysml-py] fail: types A40::SubOwner::q: got '<A40::SubOwner::q not visible through A40::subOwner>', want ['A40::T']
-- A40-044 [opensysml-rs] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::T"]
+- A40-044 [opensysml-go] fail: types A40::SubOwner::q: got [], want ["A40::T"]
+- A40-044 [opensysml-py] fail: types A40::SubOwner::q: got [], want ['A40::T']
+- A40-044 [opensysml-rs] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-044 [opensysml-ts-wasm] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::T"]
 - A40-044 [opensysml-ts] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::T"]
-- A40-045 [opensysml-go] fail: types A40::SubOwner::q: got "\u003cA40::SubOwner::q not visible through A40::subSub\u003e", want ["A40::T"]
-- A40-045 [opensysml-py] fail: types A40::SubOwner::q: got '<A40::SubOwner::q not visible through A40::subSub>', want ['A40::T']
-- A40-045 [opensysml-rs] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::T"]
+- A40-045 [opensysml-go] fail: types A40::SubOwner::q: got [], want ["A40::T"]
+- A40-045 [opensysml-py] fail: types A40::SubOwner::q: got [], want ['A40::T']
+- A40-045 [opensysml-rs] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-045 [opensysml-ts-wasm] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::T"]
 - A40-045 [opensysml-ts] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::T"]
 - A50-001 [opensysml-go] fail: kind A50: got "\u003cunnamed PartUsage #0 of A50 not listed\u003e", want "PartUsage"
@@ -3075,15 +2943,15 @@ Local changes at run time (tracked files only):
 - B10-001 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c0: got 0, want 2
 - B10-001 [opensysml-ts] fail: endCount B10::Vehicle::c0: got 0, want 2
 - B10-001 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-002 [opensysml-go] fail: endCount B10::Vehicle::c0: got "\u003cB10::Vehicle::c0 not visible through B10::vehicle\u003e", want 2
-- B10-002 [opensysml-py] fail: endCount B10::Vehicle::c0: got '<B10::Vehicle::c0 not visible through B10::vehicle>', want 2
-- B10-002 [opensysml-rs] fail: endCount B10::Vehicle::c0: got "<B10::Vehicle::c0 not visible through B10::vehicle>", want 2
+- B10-002 [opensysml-go] fail: endCount B10::Vehicle::c0: got 0, want 2
+- B10-002 [opensysml-py] fail: endCount B10::Vehicle::c0: got 0, want 2
+- B10-002 [opensysml-rs] fail: endCount B10::Vehicle::c0: got 0, want 2
 - B10-002 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c0: got "<B10::Vehicle::c0 not visible through B10::vehicle>", want 2
 - B10-002 [opensysml-ts] fail: endCount B10::Vehicle::c0: got "<B10::Vehicle::c0 not visible through B10::vehicle>", want 2
 - B10-002 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-003 [opensysml-go] fail: endCount B10::Vehicle::c0: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want 2
-- B10-003 [opensysml-py] fail: endCount B10::Vehicle::c0: got '<B10::Fleet::v not visible through B10::fleet>', want 2
-- B10-003 [opensysml-rs] fail: endCount B10::Vehicle::c0: got "<B10::Fleet::v not visible through B10::fleet>", want 2
+- B10-003 [opensysml-go] fail: endCount B10::Vehicle::c0: got 0, want 2
+- B10-003 [opensysml-py] fail: endCount B10::Vehicle::c0: got 0, want 2
+- B10-003 [opensysml-rs] fail: endCount B10::Vehicle::c0: got 0, want 2
 - B10-003 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c0: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-003 [opensysml-ts] fail: endCount B10::Vehicle::c0: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-003 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3093,15 +2961,15 @@ Local changes at run time (tracked files only):
 - B10-004 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c1: got 0, want 2
 - B10-004 [opensysml-ts] fail: endCount B10::Vehicle::c1: got 0, want 2
 - B10-004 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-005 [opensysml-go] fail: endCount B10::Vehicle::c1: got "\u003cB10::Vehicle::c1 not visible through B10::vehicle\u003e", want 2
-- B10-005 [opensysml-py] fail: endCount B10::Vehicle::c1: got '<B10::Vehicle::c1 not visible through B10::vehicle>', want 2
-- B10-005 [opensysml-rs] fail: endCount B10::Vehicle::c1: got "<B10::Vehicle::c1 not visible through B10::vehicle>", want 2
+- B10-005 [opensysml-go] fail: endCount B10::Vehicle::c1: got 0, want 2
+- B10-005 [opensysml-py] fail: endCount B10::Vehicle::c1: got 0, want 2
+- B10-005 [opensysml-rs] fail: endCount B10::Vehicle::c1: got 0, want 2
 - B10-005 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c1: got "<B10::Vehicle::c1 not visible through B10::vehicle>", want 2
 - B10-005 [opensysml-ts] fail: endCount B10::Vehicle::c1: got "<B10::Vehicle::c1 not visible through B10::vehicle>", want 2
 - B10-005 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-006 [opensysml-go] fail: endCount B10::Vehicle::c1: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want 2
-- B10-006 [opensysml-py] fail: endCount B10::Vehicle::c1: got '<B10::Fleet::v not visible through B10::fleet>', want 2
-- B10-006 [opensysml-rs] fail: endCount B10::Vehicle::c1: got "<B10::Fleet::v not visible through B10::fleet>", want 2
+- B10-006 [opensysml-go] fail: endCount B10::Vehicle::c1: got 0, want 2
+- B10-006 [opensysml-py] fail: endCount B10::Vehicle::c1: got 0, want 2
+- B10-006 [opensysml-rs] fail: endCount B10::Vehicle::c1: got 0, want 2
 - B10-006 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c1: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-006 [opensysml-ts] fail: endCount B10::Vehicle::c1: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-006 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3111,15 +2979,15 @@ Local changes at run time (tracked files only):
 - B10-007 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c2: got 0, want 2
 - B10-007 [opensysml-ts] fail: endCount B10::Vehicle::c2: got 0, want 2
 - B10-007 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-008 [opensysml-go] fail: endCount B10::Vehicle::c2: got "\u003cB10::Vehicle::c2 not visible through B10::vehicle\u003e", want 2
-- B10-008 [opensysml-py] fail: endCount B10::Vehicle::c2: got '<B10::Vehicle::c2 not visible through B10::vehicle>', want 2
-- B10-008 [opensysml-rs] fail: endCount B10::Vehicle::c2: got "<B10::Vehicle::c2 not visible through B10::vehicle>", want 2
+- B10-008 [opensysml-go] fail: endCount B10::Vehicle::c2: got 0, want 2
+- B10-008 [opensysml-py] fail: endCount B10::Vehicle::c2: got 0, want 2
+- B10-008 [opensysml-rs] fail: endCount B10::Vehicle::c2: got 0, want 2
 - B10-008 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c2: got "<B10::Vehicle::c2 not visible through B10::vehicle>", want 2
 - B10-008 [opensysml-ts] fail: endCount B10::Vehicle::c2: got "<B10::Vehicle::c2 not visible through B10::vehicle>", want 2
 - B10-008 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-009 [opensysml-go] fail: endCount B10::Vehicle::c2: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want 2
-- B10-009 [opensysml-py] fail: endCount B10::Vehicle::c2: got '<B10::Fleet::v not visible through B10::fleet>', want 2
-- B10-009 [opensysml-rs] fail: endCount B10::Vehicle::c2: got "<B10::Fleet::v not visible through B10::fleet>", want 2
+- B10-009 [opensysml-go] fail: endCount B10::Vehicle::c2: got 0, want 2
+- B10-009 [opensysml-py] fail: endCount B10::Vehicle::c2: got 0, want 2
+- B10-009 [opensysml-rs] fail: endCount B10::Vehicle::c2: got 0, want 2
 - B10-009 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c2: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-009 [opensysml-ts] fail: endCount B10::Vehicle::c2: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-009 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3129,15 +2997,15 @@ Local changes at run time (tracked files only):
 - B10-010 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i0: got 0, want 2
 - B10-010 [opensysml-ts] fail: endCount B10::Vehicle::i0: got 0, want 2
 - B10-010 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-011 [opensysml-go] fail: endCount B10::Vehicle::i0: got "\u003cB10::Vehicle::i0 not visible through B10::vehicle\u003e", want 2
-- B10-011 [opensysml-py] fail: endCount B10::Vehicle::i0: got '<B10::Vehicle::i0 not visible through B10::vehicle>', want 2
-- B10-011 [opensysml-rs] fail: endCount B10::Vehicle::i0: got "<B10::Vehicle::i0 not visible through B10::vehicle>", want 2
+- B10-011 [opensysml-go] fail: endCount B10::Vehicle::i0: got 0, want 2
+- B10-011 [opensysml-py] fail: endCount B10::Vehicle::i0: got 0, want 2
+- B10-011 [opensysml-rs] fail: endCount B10::Vehicle::i0: got 0, want 2
 - B10-011 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i0: got "<B10::Vehicle::i0 not visible through B10::vehicle>", want 2
 - B10-011 [opensysml-ts] fail: endCount B10::Vehicle::i0: got "<B10::Vehicle::i0 not visible through B10::vehicle>", want 2
 - B10-011 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-012 [opensysml-go] fail: endCount B10::Vehicle::i0: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want 2
-- B10-012 [opensysml-py] fail: endCount B10::Vehicle::i0: got '<B10::Fleet::v not visible through B10::fleet>', want 2
-- B10-012 [opensysml-rs] fail: endCount B10::Vehicle::i0: got "<B10::Fleet::v not visible through B10::fleet>", want 2
+- B10-012 [opensysml-go] fail: endCount B10::Vehicle::i0: got 0, want 2
+- B10-012 [opensysml-py] fail: endCount B10::Vehicle::i0: got 0, want 2
+- B10-012 [opensysml-rs] fail: endCount B10::Vehicle::i0: got 0, want 2
 - B10-012 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i0: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-012 [opensysml-ts] fail: endCount B10::Vehicle::i0: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-012 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3147,15 +3015,15 @@ Local changes at run time (tracked files only):
 - B10-013 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i1: got 0, want 2
 - B10-013 [opensysml-ts] fail: endCount B10::Vehicle::i1: got 0, want 2
 - B10-013 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-014 [opensysml-go] fail: endCount B10::Vehicle::i1: got "\u003cB10::Vehicle::i1 not visible through B10::vehicle\u003e", want 2
-- B10-014 [opensysml-py] fail: endCount B10::Vehicle::i1: got '<B10::Vehicle::i1 not visible through B10::vehicle>', want 2
-- B10-014 [opensysml-rs] fail: endCount B10::Vehicle::i1: got "<B10::Vehicle::i1 not visible through B10::vehicle>", want 2
+- B10-014 [opensysml-go] fail: endCount B10::Vehicle::i1: got 0, want 2
+- B10-014 [opensysml-py] fail: endCount B10::Vehicle::i1: got 0, want 2
+- B10-014 [opensysml-rs] fail: endCount B10::Vehicle::i1: got 0, want 2
 - B10-014 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i1: got "<B10::Vehicle::i1 not visible through B10::vehicle>", want 2
 - B10-014 [opensysml-ts] fail: endCount B10::Vehicle::i1: got "<B10::Vehicle::i1 not visible through B10::vehicle>", want 2
 - B10-014 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-015 [opensysml-go] fail: endCount B10::Vehicle::i1: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want 2
-- B10-015 [opensysml-py] fail: endCount B10::Vehicle::i1: got '<B10::Fleet::v not visible through B10::fleet>', want 2
-- B10-015 [opensysml-rs] fail: endCount B10::Vehicle::i1: got "<B10::Fleet::v not visible through B10::fleet>", want 2
+- B10-015 [opensysml-go] fail: endCount B10::Vehicle::i1: got 0, want 2
+- B10-015 [opensysml-py] fail: endCount B10::Vehicle::i1: got 0, want 2
+- B10-015 [opensysml-rs] fail: endCount B10::Vehicle::i1: got 0, want 2
 - B10-015 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i1: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-015 [opensysml-ts] fail: endCount B10::Vehicle::i1: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-015 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3165,15 +3033,15 @@ Local changes at run time (tracked files only):
 - B10-016 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i2: got 0, want 2
 - B10-016 [opensysml-ts] fail: endCount B10::Vehicle::i2: got 0, want 2
 - B10-016 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-017 [opensysml-go] fail: endCount B10::Vehicle::i2: got "\u003cB10::Vehicle::i2 not visible through B10::vehicle\u003e", want 2
-- B10-017 [opensysml-py] fail: endCount B10::Vehicle::i2: got '<B10::Vehicle::i2 not visible through B10::vehicle>', want 2
-- B10-017 [opensysml-rs] fail: endCount B10::Vehicle::i2: got "<B10::Vehicle::i2 not visible through B10::vehicle>", want 2
+- B10-017 [opensysml-go] fail: endCount B10::Vehicle::i2: got 0, want 2
+- B10-017 [opensysml-py] fail: endCount B10::Vehicle::i2: got 0, want 2
+- B10-017 [opensysml-rs] fail: endCount B10::Vehicle::i2: got 0, want 2
 - B10-017 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i2: got "<B10::Vehicle::i2 not visible through B10::vehicle>", want 2
 - B10-017 [opensysml-ts] fail: endCount B10::Vehicle::i2: got "<B10::Vehicle::i2 not visible through B10::vehicle>", want 2
 - B10-017 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-018 [opensysml-go] fail: endCount B10::Vehicle::i2: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want 2
-- B10-018 [opensysml-py] fail: endCount B10::Vehicle::i2: got '<B10::Fleet::v not visible through B10::fleet>', want 2
-- B10-018 [opensysml-rs] fail: endCount B10::Vehicle::i2: got "<B10::Fleet::v not visible through B10::fleet>", want 2
+- B10-018 [opensysml-go] fail: endCount B10::Vehicle::i2: got 0, want 2
+- B10-018 [opensysml-py] fail: endCount B10::Vehicle::i2: got 0, want 2
+- B10-018 [opensysml-rs] fail: endCount B10::Vehicle::i2: got 0, want 2
 - B10-018 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i2: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-018 [opensysml-ts] fail: endCount B10::Vehicle::i2: got "<B10::Fleet::v not visible through B10::fleet>", want 2
 - B10-018 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3183,15 +3051,15 @@ Local changes at run time (tracked files only):
 - B10-019 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-019 [opensysml-ts] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-019 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-020 [opensysml-go] fail: endReferences B10::Vehicle::c0: got "\u003cB10::Vehicle::c0 not visible through B10::vehicle\u003e", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-020 [opensysml-py] fail: endReferences B10::Vehicle::c0: got '<B10::Vehicle::c0 not visible through B10::vehicle>', want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-020 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got "<B10::Vehicle::c0 not visible through B10::vehicle>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-020 [opensysml-go] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-020 [opensysml-py] fail: endReferences B10::Vehicle::c0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
+- B10-020 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-020 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c0: got "<B10::Vehicle::c0 not visible through B10::vehicle>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-020 [opensysml-ts] fail: endReferences B10::Vehicle::c0: got "<B10::Vehicle::c0 not visible through B10::vehicle>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-020 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-021 [opensysml-go] fail: endReferences B10::Vehicle::c0: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-021 [opensysml-py] fail: endReferences B10::Vehicle::c0: got '<B10::Fleet::v not visible through B10::fleet>', want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-021 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-021 [opensysml-go] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-021 [opensysml-py] fail: endReferences B10::Vehicle::c0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
+- B10-021 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-021 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c0: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-021 [opensysml-ts] fail: endReferences B10::Vehicle::c0: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-021 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3201,15 +3069,15 @@ Local changes at run time (tracked files only):
 - B10-022 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-022 [opensysml-ts] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-022 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-023 [opensysml-go] fail: endReferences B10::Vehicle::c1: got "\u003cB10::Vehicle::c1 not visible through B10::vehicle\u003e", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-023 [opensysml-py] fail: endReferences B10::Vehicle::c1: got '<B10::Vehicle::c1 not visible through B10::vehicle>', want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-023 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got "<B10::Vehicle::c1 not visible through B10::vehicle>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-023 [opensysml-go] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-023 [opensysml-py] fail: endReferences B10::Vehicle::c1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
+- B10-023 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-023 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c1: got "<B10::Vehicle::c1 not visible through B10::vehicle>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-023 [opensysml-ts] fail: endReferences B10::Vehicle::c1: got "<B10::Vehicle::c1 not visible through B10::vehicle>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-023 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-024 [opensysml-go] fail: endReferences B10::Vehicle::c1: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-024 [opensysml-py] fail: endReferences B10::Vehicle::c1: got '<B10::Fleet::v not visible through B10::fleet>', want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-024 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-024 [opensysml-go] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-024 [opensysml-py] fail: endReferences B10::Vehicle::c1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
+- B10-024 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-024 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c1: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-024 [opensysml-ts] fail: endReferences B10::Vehicle::c1: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-024 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3219,15 +3087,15 @@ Local changes at run time (tracked files only):
 - B10-025 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-025 [opensysml-ts] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-025 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-026 [opensysml-go] fail: endReferences B10::Vehicle::c2: got "\u003cB10::Vehicle::c2 not visible through B10::vehicle\u003e", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-026 [opensysml-py] fail: endReferences B10::Vehicle::c2: got '<B10::Vehicle::c2 not visible through B10::vehicle>', want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-026 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got "<B10::Vehicle::c2 not visible through B10::vehicle>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-026 [opensysml-go] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-026 [opensysml-py] fail: endReferences B10::Vehicle::c2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
+- B10-026 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-026 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c2: got "<B10::Vehicle::c2 not visible through B10::vehicle>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-026 [opensysml-ts] fail: endReferences B10::Vehicle::c2: got "<B10::Vehicle::c2 not visible through B10::vehicle>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-026 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-027 [opensysml-go] fail: endReferences B10::Vehicle::c2: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-027 [opensysml-py] fail: endReferences B10::Vehicle::c2: got '<B10::Fleet::v not visible through B10::fleet>', want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-027 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-027 [opensysml-go] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-027 [opensysml-py] fail: endReferences B10::Vehicle::c2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
+- B10-027 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-027 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c2: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-027 [opensysml-ts] fail: endReferences B10::Vehicle::c2: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-027 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3237,15 +3105,15 @@ Local changes at run time (tracked files only):
 - B10-028 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-028 [opensysml-ts] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-028 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-029 [opensysml-go] fail: endReferences B10::Vehicle::i0: got "\u003cB10::Vehicle::i0 not visible through B10::vehicle\u003e", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-029 [opensysml-py] fail: endReferences B10::Vehicle::i0: got '<B10::Vehicle::i0 not visible through B10::vehicle>', want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-029 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got "<B10::Vehicle::i0 not visible through B10::vehicle>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-029 [opensysml-go] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-029 [opensysml-py] fail: endReferences B10::Vehicle::i0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
+- B10-029 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-029 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i0: got "<B10::Vehicle::i0 not visible through B10::vehicle>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-029 [opensysml-ts] fail: endReferences B10::Vehicle::i0: got "<B10::Vehicle::i0 not visible through B10::vehicle>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-029 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-030 [opensysml-go] fail: endReferences B10::Vehicle::i0: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-030 [opensysml-py] fail: endReferences B10::Vehicle::i0: got '<B10::Fleet::v not visible through B10::fleet>', want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-030 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-030 [opensysml-go] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
+- B10-030 [opensysml-py] fail: endReferences B10::Vehicle::i0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
+- B10-030 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-030 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i0: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-030 [opensysml-ts] fail: endReferences B10::Vehicle::i0: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
 - B10-030 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3255,15 +3123,15 @@ Local changes at run time (tracked files only):
 - B10-031 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-031 [opensysml-ts] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-031 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-032 [opensysml-go] fail: endReferences B10::Vehicle::i1: got "\u003cB10::Vehicle::i1 not visible through B10::vehicle\u003e", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-032 [opensysml-py] fail: endReferences B10::Vehicle::i1: got '<B10::Vehicle::i1 not visible through B10::vehicle>', want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-032 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got "<B10::Vehicle::i1 not visible through B10::vehicle>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-032 [opensysml-go] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-032 [opensysml-py] fail: endReferences B10::Vehicle::i1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
+- B10-032 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-032 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i1: got "<B10::Vehicle::i1 not visible through B10::vehicle>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-032 [opensysml-ts] fail: endReferences B10::Vehicle::i1: got "<B10::Vehicle::i1 not visible through B10::vehicle>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-032 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-033 [opensysml-go] fail: endReferences B10::Vehicle::i1: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-033 [opensysml-py] fail: endReferences B10::Vehicle::i1: got '<B10::Fleet::v not visible through B10::fleet>', want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-033 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-033 [opensysml-go] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
+- B10-033 [opensysml-py] fail: endReferences B10::Vehicle::i1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
+- B10-033 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-033 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i1: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-033 [opensysml-ts] fail: endReferences B10::Vehicle::i1: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
 - B10-033 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3273,15 +3141,15 @@ Local changes at run time (tracked files only):
 - B10-034 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-034 [opensysml-ts] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-034 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-035 [opensysml-go] fail: endReferences B10::Vehicle::i2: got "\u003cB10::Vehicle::i2 not visible through B10::vehicle\u003e", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-035 [opensysml-py] fail: endReferences B10::Vehicle::i2: got '<B10::Vehicle::i2 not visible through B10::vehicle>', want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-035 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got "<B10::Vehicle::i2 not visible through B10::vehicle>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-035 [opensysml-go] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-035 [opensysml-py] fail: endReferences B10::Vehicle::i2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
+- B10-035 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-035 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i2: got "<B10::Vehicle::i2 not visible through B10::vehicle>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-035 [opensysml-ts] fail: endReferences B10::Vehicle::i2: got "<B10::Vehicle::i2 not visible through B10::vehicle>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-035 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B10-036 [opensysml-go] fail: endReferences B10::Vehicle::i2: got "\u003cB10::Fleet::v not visible through B10::fleet\u003e", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-036 [opensysml-py] fail: endReferences B10::Vehicle::i2: got '<B10::Fleet::v not visible through B10::fleet>', want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-036 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-036 [opensysml-go] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
+- B10-036 [opensysml-py] fail: endReferences B10::Vehicle::i2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
+- B10-036 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-036 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i2: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-036 [opensysml-ts] fail: endReferences B10::Vehicle::i2: got "<B10::Fleet::v not visible through B10::fleet>", want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-036 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3663,15 +3531,15 @@ Local changes at run time (tracked files only):
 - B11-001 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b0: got 0, want 2
 - B11-001 [opensysml-ts] fail: endCount B11::Vehicle::b0: got 0, want 2
 - B11-001 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-002 [opensysml-go] fail: endCount B11::Vehicle::b0: got "\u003cB11::Vehicle::b0 not visible through B11::vehicle\u003e", want 2
-- B11-002 [opensysml-py] fail: endCount B11::Vehicle::b0: got '<B11::Vehicle::b0 not visible through B11::vehicle>', want 2
-- B11-002 [opensysml-rs] fail: endCount B11::Vehicle::b0: got "<B11::Vehicle::b0 not visible through B11::vehicle>", want 2
+- B11-002 [opensysml-go] fail: endCount B11::Vehicle::b0: got 0, want 2
+- B11-002 [opensysml-py] fail: endCount B11::Vehicle::b0: got 0, want 2
+- B11-002 [opensysml-rs] fail: endCount B11::Vehicle::b0: got 0, want 2
 - B11-002 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b0: got "<B11::Vehicle::b0 not visible through B11::vehicle>", want 2
 - B11-002 [opensysml-ts] fail: endCount B11::Vehicle::b0: got "<B11::Vehicle::b0 not visible through B11::vehicle>", want 2
 - B11-002 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-003 [opensysml-go] fail: endCount B11::Vehicle::b0: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want 2
-- B11-003 [opensysml-py] fail: endCount B11::Vehicle::b0: got '<B11::Fleet::v not visible through B11::fleet>', want 2
-- B11-003 [opensysml-rs] fail: endCount B11::Vehicle::b0: got "<B11::Fleet::v not visible through B11::fleet>", want 2
+- B11-003 [opensysml-go] fail: endCount B11::Vehicle::b0: got 0, want 2
+- B11-003 [opensysml-py] fail: endCount B11::Vehicle::b0: got 0, want 2
+- B11-003 [opensysml-rs] fail: endCount B11::Vehicle::b0: got 0, want 2
 - B11-003 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b0: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-003 [opensysml-ts] fail: endCount B11::Vehicle::b0: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-003 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3681,15 +3549,15 @@ Local changes at run time (tracked files only):
 - B11-004 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b1: got 0, want 2
 - B11-004 [opensysml-ts] fail: endCount B11::Vehicle::b1: got 0, want 2
 - B11-004 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-005 [opensysml-go] fail: endCount B11::Vehicle::b1: got "\u003cB11::Vehicle::b1 not visible through B11::vehicle\u003e", want 2
-- B11-005 [opensysml-py] fail: endCount B11::Vehicle::b1: got '<B11::Vehicle::b1 not visible through B11::vehicle>', want 2
-- B11-005 [opensysml-rs] fail: endCount B11::Vehicle::b1: got "<B11::Vehicle::b1 not visible through B11::vehicle>", want 2
+- B11-005 [opensysml-go] fail: endCount B11::Vehicle::b1: got 0, want 2
+- B11-005 [opensysml-py] fail: endCount B11::Vehicle::b1: got 0, want 2
+- B11-005 [opensysml-rs] fail: endCount B11::Vehicle::b1: got 0, want 2
 - B11-005 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b1: got "<B11::Vehicle::b1 not visible through B11::vehicle>", want 2
 - B11-005 [opensysml-ts] fail: endCount B11::Vehicle::b1: got "<B11::Vehicle::b1 not visible through B11::vehicle>", want 2
 - B11-005 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-006 [opensysml-go] fail: endCount B11::Vehicle::b1: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want 2
-- B11-006 [opensysml-py] fail: endCount B11::Vehicle::b1: got '<B11::Fleet::v not visible through B11::fleet>', want 2
-- B11-006 [opensysml-rs] fail: endCount B11::Vehicle::b1: got "<B11::Fleet::v not visible through B11::fleet>", want 2
+- B11-006 [opensysml-go] fail: endCount B11::Vehicle::b1: got 0, want 2
+- B11-006 [opensysml-py] fail: endCount B11::Vehicle::b1: got 0, want 2
+- B11-006 [opensysml-rs] fail: endCount B11::Vehicle::b1: got 0, want 2
 - B11-006 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b1: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-006 [opensysml-ts] fail: endCount B11::Vehicle::b1: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-006 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3699,15 +3567,15 @@ Local changes at run time (tracked files only):
 - B11-007 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b2: got 0, want 2
 - B11-007 [opensysml-ts] fail: endCount B11::Vehicle::b2: got 0, want 2
 - B11-007 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-008 [opensysml-go] fail: endCount B11::Vehicle::b2: got "\u003cB11::Vehicle::b2 not visible through B11::vehicle\u003e", want 2
-- B11-008 [opensysml-py] fail: endCount B11::Vehicle::b2: got '<B11::Vehicle::b2 not visible through B11::vehicle>', want 2
-- B11-008 [opensysml-rs] fail: endCount B11::Vehicle::b2: got "<B11::Vehicle::b2 not visible through B11::vehicle>", want 2
+- B11-008 [opensysml-go] fail: endCount B11::Vehicle::b2: got 0, want 2
+- B11-008 [opensysml-py] fail: endCount B11::Vehicle::b2: got 0, want 2
+- B11-008 [opensysml-rs] fail: endCount B11::Vehicle::b2: got 0, want 2
 - B11-008 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b2: got "<B11::Vehicle::b2 not visible through B11::vehicle>", want 2
 - B11-008 [opensysml-ts] fail: endCount B11::Vehicle::b2: got "<B11::Vehicle::b2 not visible through B11::vehicle>", want 2
 - B11-008 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-009 [opensysml-go] fail: endCount B11::Vehicle::b2: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want 2
-- B11-009 [opensysml-py] fail: endCount B11::Vehicle::b2: got '<B11::Fleet::v not visible through B11::fleet>', want 2
-- B11-009 [opensysml-rs] fail: endCount B11::Vehicle::b2: got "<B11::Fleet::v not visible through B11::fleet>", want 2
+- B11-009 [opensysml-go] fail: endCount B11::Vehicle::b2: got 0, want 2
+- B11-009 [opensysml-py] fail: endCount B11::Vehicle::b2: got 0, want 2
+- B11-009 [opensysml-rs] fail: endCount B11::Vehicle::b2: got 0, want 2
 - B11-009 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b2: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-009 [opensysml-ts] fail: endCount B11::Vehicle::b2: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-009 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3723,9 +3591,9 @@ Local changes at run time (tracked files only):
 - B11-011 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #0 of B11::Vehicle not listed>", want 2
 - B11-011 [opensysml-ts] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #0 of B11::Vehicle not listed>", want 2
 - B11-011 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-012 [opensysml-go] fail: endCount B11::Vehicle: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want 2
-- B11-012 [opensysml-py] fail: endCount B11::Vehicle: got '<B11::Fleet::v not visible through B11::fleet>', want 2
-- B11-012 [opensysml-rs] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
+- B11-012 [opensysml-go] fail: endCount B11::Vehicle: got "\u003cunnamed BindingConnector #0 of B11::Vehicle not listed\u003e", want 2
+- B11-012 [opensysml-py] fail: endCount B11::Vehicle: got '<unnamed BindingConnector #0 of B11::Vehicle not listed>', want 2
+- B11-012 [opensysml-rs] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #0 of B11::Vehicle not listed>", want 2
 - B11-012 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-012 [opensysml-ts] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-012 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3741,9 +3609,9 @@ Local changes at run time (tracked files only):
 - B11-014 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #1 of B11::Vehicle not listed>", want 2
 - B11-014 [opensysml-ts] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #1 of B11::Vehicle not listed>", want 2
 - B11-014 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-015 [opensysml-go] fail: endCount B11::Vehicle: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want 2
-- B11-015 [opensysml-py] fail: endCount B11::Vehicle: got '<B11::Fleet::v not visible through B11::fleet>', want 2
-- B11-015 [opensysml-rs] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
+- B11-015 [opensysml-go] fail: endCount B11::Vehicle: got "\u003cunnamed BindingConnector #1 of B11::Vehicle not listed\u003e", want 2
+- B11-015 [opensysml-py] fail: endCount B11::Vehicle: got '<unnamed BindingConnector #1 of B11::Vehicle not listed>', want 2
+- B11-015 [opensysml-rs] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #1 of B11::Vehicle not listed>", want 2
 - B11-015 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-015 [opensysml-ts] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-015 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3759,9 +3627,9 @@ Local changes at run time (tracked files only):
 - B11-017 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #2 of B11::Vehicle not listed>", want 2
 - B11-017 [opensysml-ts] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #2 of B11::Vehicle not listed>", want 2
 - B11-017 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-018 [opensysml-go] fail: endCount B11::Vehicle: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want 2
-- B11-018 [opensysml-py] fail: endCount B11::Vehicle: got '<B11::Fleet::v not visible through B11::fleet>', want 2
-- B11-018 [opensysml-rs] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
+- B11-018 [opensysml-go] fail: endCount B11::Vehicle: got "\u003cunnamed BindingConnector #2 of B11::Vehicle not listed\u003e", want 2
+- B11-018 [opensysml-py] fail: endCount B11::Vehicle: got '<unnamed BindingConnector #2 of B11::Vehicle not listed>', want 2
+- B11-018 [opensysml-rs] fail: endCount B11::Vehicle: got "<unnamed BindingConnector #2 of B11::Vehicle not listed>", want 2
 - B11-018 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-018 [opensysml-ts] fail: endCount B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want 2
 - B11-018 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3771,15 +3639,15 @@ Local changes at run time (tracked files only):
 - B11-019 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-019 [opensysml-ts] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-019 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-020 [opensysml-go] fail: endReferences B11::Vehicle::b0: got "\u003cB11::Vehicle::b0 not visible through B11::vehicle\u003e", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-020 [opensysml-py] fail: endReferences B11::Vehicle::b0: got '<B11::Vehicle::b0 not visible through B11::vehicle>', want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-020 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got "<B11::Vehicle::b0 not visible through B11::vehicle>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
+- B11-020 [opensysml-go] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
+- B11-020 [opensysml-py] fail: endReferences B11::Vehicle::b0: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
+- B11-020 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-020 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b0: got "<B11::Vehicle::b0 not visible through B11::vehicle>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-020 [opensysml-ts] fail: endReferences B11::Vehicle::b0: got "<B11::Vehicle::b0 not visible through B11::vehicle>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-020 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-021 [opensysml-go] fail: endReferences B11::Vehicle::b0: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-021 [opensysml-py] fail: endReferences B11::Vehicle::b0: got '<B11::Fleet::v not visible through B11::fleet>', want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-021 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
+- B11-021 [opensysml-go] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
+- B11-021 [opensysml-py] fail: endReferences B11::Vehicle::b0: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
+- B11-021 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-021 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b0: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-021 [opensysml-ts] fail: endReferences B11::Vehicle::b0: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-021 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3789,15 +3657,15 @@ Local changes at run time (tracked files only):
 - B11-022 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-022 [opensysml-ts] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-022 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-023 [opensysml-go] fail: endReferences B11::Vehicle::b1: got "\u003cB11::Vehicle::b1 not visible through B11::vehicle\u003e", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-023 [opensysml-py] fail: endReferences B11::Vehicle::b1: got '<B11::Vehicle::b1 not visible through B11::vehicle>', want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-023 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got "<B11::Vehicle::b1 not visible through B11::vehicle>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
+- B11-023 [opensysml-go] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
+- B11-023 [opensysml-py] fail: endReferences B11::Vehicle::b1: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
+- B11-023 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-023 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b1: got "<B11::Vehicle::b1 not visible through B11::vehicle>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-023 [opensysml-ts] fail: endReferences B11::Vehicle::b1: got "<B11::Vehicle::b1 not visible through B11::vehicle>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-023 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-024 [opensysml-go] fail: endReferences B11::Vehicle::b1: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-024 [opensysml-py] fail: endReferences B11::Vehicle::b1: got '<B11::Fleet::v not visible through B11::fleet>', want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-024 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
+- B11-024 [opensysml-go] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
+- B11-024 [opensysml-py] fail: endReferences B11::Vehicle::b1: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
+- B11-024 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-024 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b1: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-024 [opensysml-ts] fail: endReferences B11::Vehicle::b1: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-024 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3807,15 +3675,15 @@ Local changes at run time (tracked files only):
 - B11-025 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-025 [opensysml-ts] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-025 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-026 [opensysml-go] fail: endReferences B11::Vehicle::b2: got "\u003cB11::Vehicle::b2 not visible through B11::vehicle\u003e", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-026 [opensysml-py] fail: endReferences B11::Vehicle::b2: got '<B11::Vehicle::b2 not visible through B11::vehicle>', want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-026 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got "<B11::Vehicle::b2 not visible through B11::vehicle>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
+- B11-026 [opensysml-go] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
+- B11-026 [opensysml-py] fail: endReferences B11::Vehicle::b2: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
+- B11-026 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-026 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b2: got "<B11::Vehicle::b2 not visible through B11::vehicle>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-026 [opensysml-ts] fail: endReferences B11::Vehicle::b2: got "<B11::Vehicle::b2 not visible through B11::vehicle>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-026 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-027 [opensysml-go] fail: endReferences B11::Vehicle::b2: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-027 [opensysml-py] fail: endReferences B11::Vehicle::b2: got '<B11::Fleet::v not visible through B11::fleet>', want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-027 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
+- B11-027 [opensysml-go] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
+- B11-027 [opensysml-py] fail: endReferences B11::Vehicle::b2: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
+- B11-027 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-027 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b2: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-027 [opensysml-ts] fail: endReferences B11::Vehicle::b2: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-027 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3831,9 +3699,9 @@ Local changes at run time (tracked files only):
 - B11-029 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #0 of B11::Vehicle not listed>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-029 [opensysml-ts] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #0 of B11::Vehicle not listed>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-029 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-030 [opensysml-go] fail: endReferences B11::Vehicle: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-030 [opensysml-py] fail: endReferences B11::Vehicle: got '<B11::Fleet::v not visible through B11::fleet>', want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-030 [opensysml-rs] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
+- B11-030 [opensysml-go] fail: endReferences B11::Vehicle: got "\u003cunnamed BindingConnector #0 of B11::Vehicle not listed\u003e", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
+- B11-030 [opensysml-py] fail: endReferences B11::Vehicle: got '<unnamed BindingConnector #0 of B11::Vehicle not listed>', want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
+- B11-030 [opensysml-rs] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #0 of B11::Vehicle not listed>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-030 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-030 [opensysml-ts] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
 - B11-030 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3849,9 +3717,9 @@ Local changes at run time (tracked files only):
 - B11-032 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #1 of B11::Vehicle not listed>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-032 [opensysml-ts] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #1 of B11::Vehicle not listed>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-032 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-033 [opensysml-go] fail: endReferences B11::Vehicle: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-033 [opensysml-py] fail: endReferences B11::Vehicle: got '<B11::Fleet::v not visible through B11::fleet>', want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-033 [opensysml-rs] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
+- B11-033 [opensysml-go] fail: endReferences B11::Vehicle: got "\u003cunnamed BindingConnector #1 of B11::Vehicle not listed\u003e", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
+- B11-033 [opensysml-py] fail: endReferences B11::Vehicle: got '<unnamed BindingConnector #1 of B11::Vehicle not listed>', want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
+- B11-033 [opensysml-rs] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #1 of B11::Vehicle not listed>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-033 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-033 [opensysml-ts] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
 - B11-033 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -3867,9 +3735,9 @@ Local changes at run time (tracked files only):
 - B11-035 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #2 of B11::Vehicle not listed>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-035 [opensysml-ts] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #2 of B11::Vehicle not listed>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-035 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B11-036 [opensysml-go] fail: endReferences B11::Vehicle: got "\u003cB11::Fleet::v not visible through B11::fleet\u003e", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-036 [opensysml-py] fail: endReferences B11::Vehicle: got '<B11::Fleet::v not visible through B11::fleet>', want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-036 [opensysml-rs] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
+- B11-036 [opensysml-go] fail: endReferences B11::Vehicle: got "\u003cunnamed BindingConnector #2 of B11::Vehicle not listed\u003e", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
+- B11-036 [opensysml-py] fail: endReferences B11::Vehicle: got '<unnamed BindingConnector #2 of B11::Vehicle not listed>', want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
+- B11-036 [opensysml-rs] fail: endReferences B11::Vehicle: got "<unnamed BindingConnector #2 of B11::Vehicle not listed>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-036 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-036 [opensysml-ts] fail: endReferences B11::Vehicle: got "<B11::Fleet::v not visible through B11::fleet>", want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-036 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4198,158 +4066,86 @@ Local changes at run time (tracked files only):
 - B11-090 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
 - B11-090 [sysml-toolkit-rs-checked] error: relatedFeature refused by the checked reader: property has an incomplete derivation
 - B12-001 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-002 [opensysml-go] fail: endCount B12::Vehicle::c0: got "\u003cB12::Vehicle::c0 not visible through B12::vehicle\u003e", want 2
-- B12-002 [opensysml-py] fail: endCount B12::Vehicle::c0: got '<B12::Vehicle::c0 not visible through B12::vehicle>', want 2
-- B12-002 [opensysml-rs] fail: endCount B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want 2
 - B12-002 [opensysml-ts-wasm] fail: endCount B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want 2
 - B12-002 [opensysml-ts] fail: endCount B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want 2
 - B12-002 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-003 [opensysml-go] fail: endCount B12::Vehicle::c0: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want 2
-- B12-003 [opensysml-py] fail: endCount B12::Vehicle::c0: got '<B12::Fleet::v not visible through B12::fleet>', want 2
-- B12-003 [opensysml-rs] fail: endCount B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-003 [opensysml-ts-wasm] fail: endCount B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-003 [opensysml-ts] fail: endCount B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-003 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-004 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-005 [opensysml-go] fail: endCount B12::Vehicle::c1: got "\u003cB12::Vehicle::c1 not visible through B12::vehicle\u003e", want 2
-- B12-005 [opensysml-py] fail: endCount B12::Vehicle::c1: got '<B12::Vehicle::c1 not visible through B12::vehicle>', want 2
-- B12-005 [opensysml-rs] fail: endCount B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want 2
 - B12-005 [opensysml-ts-wasm] fail: endCount B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want 2
 - B12-005 [opensysml-ts] fail: endCount B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want 2
 - B12-005 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-006 [opensysml-go] fail: endCount B12::Vehicle::c1: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want 2
-- B12-006 [opensysml-py] fail: endCount B12::Vehicle::c1: got '<B12::Fleet::v not visible through B12::fleet>', want 2
-- B12-006 [opensysml-rs] fail: endCount B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-006 [opensysml-ts-wasm] fail: endCount B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-006 [opensysml-ts] fail: endCount B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-006 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-007 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-008 [opensysml-go] fail: endCount B12::Vehicle::c2: got "\u003cB12::Vehicle::c2 not visible through B12::vehicle\u003e", want 2
-- B12-008 [opensysml-py] fail: endCount B12::Vehicle::c2: got '<B12::Vehicle::c2 not visible through B12::vehicle>', want 2
-- B12-008 [opensysml-rs] fail: endCount B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want 2
 - B12-008 [opensysml-ts-wasm] fail: endCount B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want 2
 - B12-008 [opensysml-ts] fail: endCount B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want 2
 - B12-008 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-009 [opensysml-go] fail: endCount B12::Vehicle::c2: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want 2
-- B12-009 [opensysml-py] fail: endCount B12::Vehicle::c2: got '<B12::Fleet::v not visible through B12::fleet>', want 2
-- B12-009 [opensysml-rs] fail: endCount B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-009 [opensysml-ts-wasm] fail: endCount B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-009 [opensysml-ts] fail: endCount B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-009 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-010 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-011 [opensysml-go] fail: endCount B12::Vehicle::i0: got "\u003cB12::Vehicle::i0 not visible through B12::vehicle\u003e", want 2
-- B12-011 [opensysml-py] fail: endCount B12::Vehicle::i0: got '<B12::Vehicle::i0 not visible through B12::vehicle>', want 2
-- B12-011 [opensysml-rs] fail: endCount B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want 2
 - B12-011 [opensysml-ts-wasm] fail: endCount B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want 2
 - B12-011 [opensysml-ts] fail: endCount B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want 2
 - B12-011 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-012 [opensysml-go] fail: endCount B12::Vehicle::i0: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want 2
-- B12-012 [opensysml-py] fail: endCount B12::Vehicle::i0: got '<B12::Fleet::v not visible through B12::fleet>', want 2
-- B12-012 [opensysml-rs] fail: endCount B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-012 [opensysml-ts-wasm] fail: endCount B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-012 [opensysml-ts] fail: endCount B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-012 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-013 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-014 [opensysml-go] fail: endCount B12::Vehicle::i1: got "\u003cB12::Vehicle::i1 not visible through B12::vehicle\u003e", want 2
-- B12-014 [opensysml-py] fail: endCount B12::Vehicle::i1: got '<B12::Vehicle::i1 not visible through B12::vehicle>', want 2
-- B12-014 [opensysml-rs] fail: endCount B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want 2
 - B12-014 [opensysml-ts-wasm] fail: endCount B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want 2
 - B12-014 [opensysml-ts] fail: endCount B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want 2
 - B12-014 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-015 [opensysml-go] fail: endCount B12::Vehicle::i1: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want 2
-- B12-015 [opensysml-py] fail: endCount B12::Vehicle::i1: got '<B12::Fleet::v not visible through B12::fleet>', want 2
-- B12-015 [opensysml-rs] fail: endCount B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-015 [opensysml-ts-wasm] fail: endCount B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-015 [opensysml-ts] fail: endCount B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-015 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-016 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-017 [opensysml-go] fail: endCount B12::Vehicle::i2: got "\u003cB12::Vehicle::i2 not visible through B12::vehicle\u003e", want 2
-- B12-017 [opensysml-py] fail: endCount B12::Vehicle::i2: got '<B12::Vehicle::i2 not visible through B12::vehicle>', want 2
-- B12-017 [opensysml-rs] fail: endCount B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want 2
 - B12-017 [opensysml-ts-wasm] fail: endCount B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want 2
 - B12-017 [opensysml-ts] fail: endCount B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want 2
 - B12-017 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-018 [opensysml-go] fail: endCount B12::Vehicle::i2: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want 2
-- B12-018 [opensysml-py] fail: endCount B12::Vehicle::i2: got '<B12::Fleet::v not visible through B12::fleet>', want 2
-- B12-018 [opensysml-rs] fail: endCount B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-018 [opensysml-ts-wasm] fail: endCount B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-018 [opensysml-ts] fail: endCount B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want 2
 - B12-018 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-019 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-020 [opensysml-go] fail: endNames B12::Vehicle::c0: got "\u003cB12::Vehicle::c0 not visible through B12::vehicle\u003e", want ["supplier","consumer"]
-- B12-020 [opensysml-py] fail: endNames B12::Vehicle::c0: got '<B12::Vehicle::c0 not visible through B12::vehicle>', want ['supplier', 'consumer']
-- B12-020 [opensysml-rs] fail: endNames B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-020 [opensysml-ts-wasm] fail: endNames B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-020 [opensysml-ts] fail: endNames B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-020 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-021 [opensysml-go] fail: endNames B12::Vehicle::c0: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want ["supplier","consumer"]
-- B12-021 [opensysml-py] fail: endNames B12::Vehicle::c0: got '<B12::Fleet::v not visible through B12::fleet>', want ['supplier', 'consumer']
-- B12-021 [opensysml-rs] fail: endNames B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-021 [opensysml-ts-wasm] fail: endNames B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-021 [opensysml-ts] fail: endNames B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-021 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-022 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-023 [opensysml-go] fail: endNames B12::Vehicle::c1: got "\u003cB12::Vehicle::c1 not visible through B12::vehicle\u003e", want ["supplier","consumer"]
-- B12-023 [opensysml-py] fail: endNames B12::Vehicle::c1: got '<B12::Vehicle::c1 not visible through B12::vehicle>', want ['supplier', 'consumer']
-- B12-023 [opensysml-rs] fail: endNames B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-023 [opensysml-ts-wasm] fail: endNames B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-023 [opensysml-ts] fail: endNames B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-023 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-024 [opensysml-go] fail: endNames B12::Vehicle::c1: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want ["supplier","consumer"]
-- B12-024 [opensysml-py] fail: endNames B12::Vehicle::c1: got '<B12::Fleet::v not visible through B12::fleet>', want ['supplier', 'consumer']
-- B12-024 [opensysml-rs] fail: endNames B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-024 [opensysml-ts-wasm] fail: endNames B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-024 [opensysml-ts] fail: endNames B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-024 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-025 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-026 [opensysml-go] fail: endNames B12::Vehicle::c2: got "\u003cB12::Vehicle::c2 not visible through B12::vehicle\u003e", want ["supplier","consumer"]
-- B12-026 [opensysml-py] fail: endNames B12::Vehicle::c2: got '<B12::Vehicle::c2 not visible through B12::vehicle>', want ['supplier', 'consumer']
-- B12-026 [opensysml-rs] fail: endNames B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-026 [opensysml-ts-wasm] fail: endNames B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-026 [opensysml-ts] fail: endNames B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-026 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-027 [opensysml-go] fail: endNames B12::Vehicle::c2: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want ["supplier","consumer"]
-- B12-027 [opensysml-py] fail: endNames B12::Vehicle::c2: got '<B12::Fleet::v not visible through B12::fleet>', want ['supplier', 'consumer']
-- B12-027 [opensysml-rs] fail: endNames B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-027 [opensysml-ts-wasm] fail: endNames B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-027 [opensysml-ts] fail: endNames B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-027 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-028 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-029 [opensysml-go] fail: endNames B12::Vehicle::i0: got "\u003cB12::Vehicle::i0 not visible through B12::vehicle\u003e", want ["supplier","consumer"]
-- B12-029 [opensysml-py] fail: endNames B12::Vehicle::i0: got '<B12::Vehicle::i0 not visible through B12::vehicle>', want ['supplier', 'consumer']
-- B12-029 [opensysml-rs] fail: endNames B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-029 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-029 [opensysml-ts] fail: endNames B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-029 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-030 [opensysml-go] fail: endNames B12::Vehicle::i0: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want ["supplier","consumer"]
-- B12-030 [opensysml-py] fail: endNames B12::Vehicle::i0: got '<B12::Fleet::v not visible through B12::fleet>', want ['supplier', 'consumer']
-- B12-030 [opensysml-rs] fail: endNames B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-030 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-030 [opensysml-ts] fail: endNames B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-030 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-031 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-032 [opensysml-go] fail: endNames B12::Vehicle::i1: got "\u003cB12::Vehicle::i1 not visible through B12::vehicle\u003e", want ["supplier","consumer"]
-- B12-032 [opensysml-py] fail: endNames B12::Vehicle::i1: got '<B12::Vehicle::i1 not visible through B12::vehicle>', want ['supplier', 'consumer']
-- B12-032 [opensysml-rs] fail: endNames B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-032 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-032 [opensysml-ts] fail: endNames B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-032 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-033 [opensysml-go] fail: endNames B12::Vehicle::i1: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want ["supplier","consumer"]
-- B12-033 [opensysml-py] fail: endNames B12::Vehicle::i1: got '<B12::Fleet::v not visible through B12::fleet>', want ['supplier', 'consumer']
-- B12-033 [opensysml-rs] fail: endNames B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-033 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-033 [opensysml-ts] fail: endNames B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-033 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
 - B12-034 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-035 [opensysml-go] fail: endNames B12::Vehicle::i2: got "\u003cB12::Vehicle::i2 not visible through B12::vehicle\u003e", want ["supplier","consumer"]
-- B12-035 [opensysml-py] fail: endNames B12::Vehicle::i2: got '<B12::Vehicle::i2 not visible through B12::vehicle>', want ['supplier', 'consumer']
-- B12-035 [opensysml-rs] fail: endNames B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-035 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-035 [opensysml-ts] fail: endNames B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want ["supplier","consumer"]
 - B12-035 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-036 [opensysml-go] fail: endNames B12::Vehicle::i2: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want ["supplier","consumer"]
-- B12-036 [opensysml-py] fail: endNames B12::Vehicle::i2: got '<B12::Fleet::v not visible through B12::fleet>', want ['supplier', 'consumer']
-- B12-036 [opensysml-rs] fail: endNames B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-036 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-036 [opensysml-ts] fail: endNames B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-036 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4359,15 +4155,15 @@ Local changes at run time (tracked files only):
 - B12-037 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-037 [opensysml-ts] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-037 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-038 [opensysml-go] fail: endReferences B12::Vehicle::c0: got "\u003cB12::Vehicle::c0 not visible through B12::vehicle\u003e", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-038 [opensysml-py] fail: endReferences B12::Vehicle::c0: got '<B12::Vehicle::c0 not visible through B12::vehicle>', want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-038 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-038 [opensysml-go] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-038 [opensysml-py] fail: endReferences B12::Vehicle::c0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
+- B12-038 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [opensysml-ts] fail: endReferences B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-039 [opensysml-go] fail: endReferences B12::Vehicle::c0: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-039 [opensysml-py] fail: endReferences B12::Vehicle::c0: got '<B12::Fleet::v not visible through B12::fleet>', want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-039 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-039 [opensysml-go] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-039 [opensysml-py] fail: endReferences B12::Vehicle::c0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
+- B12-039 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [opensysml-ts] fail: endReferences B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4377,15 +4173,15 @@ Local changes at run time (tracked files only):
 - B12-040 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-040 [opensysml-ts] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-040 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-041 [opensysml-go] fail: endReferences B12::Vehicle::c1: got "\u003cB12::Vehicle::c1 not visible through B12::vehicle\u003e", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-041 [opensysml-py] fail: endReferences B12::Vehicle::c1: got '<B12::Vehicle::c1 not visible through B12::vehicle>', want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-041 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-041 [opensysml-go] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-041 [opensysml-py] fail: endReferences B12::Vehicle::c1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
+- B12-041 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-041 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-041 [opensysml-ts] fail: endReferences B12::Vehicle::c1: got "<B12::Vehicle::c1 not visible through B12::vehicle>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-041 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-042 [opensysml-go] fail: endReferences B12::Vehicle::c1: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-042 [opensysml-py] fail: endReferences B12::Vehicle::c1: got '<B12::Fleet::v not visible through B12::fleet>', want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-042 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-042 [opensysml-go] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-042 [opensysml-py] fail: endReferences B12::Vehicle::c1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
+- B12-042 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-042 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-042 [opensysml-ts] fail: endReferences B12::Vehicle::c1: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-042 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4395,15 +4191,15 @@ Local changes at run time (tracked files only):
 - B12-043 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-043 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-043 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-044 [opensysml-go] fail: endReferences B12::Vehicle::c2: got "\u003cB12::Vehicle::c2 not visible through B12::vehicle\u003e", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-044 [opensysml-py] fail: endReferences B12::Vehicle::c2: got '<B12::Vehicle::c2 not visible through B12::vehicle>', want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-044 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-044 [opensysml-go] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-044 [opensysml-py] fail: endReferences B12::Vehicle::c2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
+- B12-044 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-044 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-044 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got "<B12::Vehicle::c2 not visible through B12::vehicle>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-044 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-045 [opensysml-go] fail: endReferences B12::Vehicle::c2: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-045 [opensysml-py] fail: endReferences B12::Vehicle::c2: got '<B12::Fleet::v not visible through B12::fleet>', want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-045 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-045 [opensysml-go] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-045 [opensysml-py] fail: endReferences B12::Vehicle::c2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
+- B12-045 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-045 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-045 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-045 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4413,15 +4209,15 @@ Local changes at run time (tracked files only):
 - B12-046 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-046 [opensysml-ts] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-046 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-047 [opensysml-go] fail: endReferences B12::Vehicle::i0: got "\u003cB12::Vehicle::i0 not visible through B12::vehicle\u003e", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-047 [opensysml-py] fail: endReferences B12::Vehicle::i0: got '<B12::Vehicle::i0 not visible through B12::vehicle>', want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-047 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-047 [opensysml-go] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-047 [opensysml-py] fail: endReferences B12::Vehicle::i0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
+- B12-047 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [opensysml-ts] fail: endReferences B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-048 [opensysml-go] fail: endReferences B12::Vehicle::i0: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-048 [opensysml-py] fail: endReferences B12::Vehicle::i0: got '<B12::Fleet::v not visible through B12::fleet>', want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-048 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-048 [opensysml-go] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
+- B12-048 [opensysml-py] fail: endReferences B12::Vehicle::i0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
+- B12-048 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [opensysml-ts] fail: endReferences B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4431,15 +4227,15 @@ Local changes at run time (tracked files only):
 - B12-049 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-049 [opensysml-ts] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-049 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-050 [opensysml-go] fail: endReferences B12::Vehicle::i1: got "\u003cB12::Vehicle::i1 not visible through B12::vehicle\u003e", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-050 [opensysml-py] fail: endReferences B12::Vehicle::i1: got '<B12::Vehicle::i1 not visible through B12::vehicle>', want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-050 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-050 [opensysml-go] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-050 [opensysml-py] fail: endReferences B12::Vehicle::i1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
+- B12-050 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-050 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-050 [opensysml-ts] fail: endReferences B12::Vehicle::i1: got "<B12::Vehicle::i1 not visible through B12::vehicle>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-050 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-051 [opensysml-go] fail: endReferences B12::Vehicle::i1: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-051 [opensysml-py] fail: endReferences B12::Vehicle::i1: got '<B12::Fleet::v not visible through B12::fleet>', want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-051 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-051 [opensysml-go] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
+- B12-051 [opensysml-py] fail: endReferences B12::Vehicle::i1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
+- B12-051 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-051 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-051 [opensysml-ts] fail: endReferences B12::Vehicle::i1: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
 - B12-051 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4449,15 +4245,15 @@ Local changes at run time (tracked files only):
 - B12-052 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-052 [opensysml-ts] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-052 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-053 [opensysml-go] fail: endReferences B12::Vehicle::i2: got "\u003cB12::Vehicle::i2 not visible through B12::vehicle\u003e", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-053 [opensysml-py] fail: endReferences B12::Vehicle::i2: got '<B12::Vehicle::i2 not visible through B12::vehicle>', want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-053 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-053 [opensysml-go] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-053 [opensysml-py] fail: endReferences B12::Vehicle::i2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
+- B12-053 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-053 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-053 [opensysml-ts] fail: endReferences B12::Vehicle::i2: got "<B12::Vehicle::i2 not visible through B12::vehicle>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-053 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-054 [opensysml-go] fail: endReferences B12::Vehicle::i2: got "\u003cB12::Fleet::v not visible through B12::fleet\u003e", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-054 [opensysml-py] fail: endReferences B12::Vehicle::i2: got '<B12::Fleet::v not visible through B12::fleet>', want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-054 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-054 [opensysml-go] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
+- B12-054 [opensysml-py] fail: endReferences B12::Vehicle::i2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
+- B12-054 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-054 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-054 [opensysml-ts] fail: endReferences B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-054 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4785,24 +4581,12 @@ Local changes at run time (tracked files only):
 - B12-108 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-108 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
 - B12-108 [sysml-toolkit-rs-checked] error: relatedFeature refused by the checked reader: property has an incomplete derivation
-- B20-002 [opensysml-go] fail: kind B20::Vehicle::f1: got "\u003cB20::Vehicle::f1 not visible through B20::vehicle\u003e", want "FlowUsage"
-- B20-002 [opensysml-py] fail: kind B20::Vehicle::f1: got '<B20::Vehicle::f1 not visible through B20::vehicle>', want 'FlowUsage'
-- B20-002 [opensysml-rs] fail: kind B20::Vehicle::f1: got "<B20::Vehicle::f1 not visible through B20::vehicle>", want "FlowUsage"
 - B20-002 [opensysml-ts-wasm] fail: kind B20::Vehicle::f1: got "<B20::Vehicle::f1 not visible through B20::vehicle>", want "FlowUsage"
 - B20-002 [opensysml-ts] fail: kind B20::Vehicle::f1: got "<B20::Vehicle::f1 not visible through B20::vehicle>", want "FlowUsage"
-- B20-003 [opensysml-go] fail: kind B20::Vehicle::f1: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want "FlowUsage"
-- B20-003 [opensysml-py] fail: kind B20::Vehicle::f1: got '<B20::Fleet::v not visible through B20::fleet>', want 'FlowUsage'
-- B20-003 [opensysml-rs] fail: kind B20::Vehicle::f1: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-003 [opensysml-ts-wasm] fail: kind B20::Vehicle::f1: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-003 [opensysml-ts] fail: kind B20::Vehicle::f1: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
-- B20-005 [opensysml-go] fail: kind B20::Vehicle::f2: got "\u003cB20::Vehicle::f2 not visible through B20::vehicle\u003e", want "FlowUsage"
-- B20-005 [opensysml-py] fail: kind B20::Vehicle::f2: got '<B20::Vehicle::f2 not visible through B20::vehicle>', want 'FlowUsage'
-- B20-005 [opensysml-rs] fail: kind B20::Vehicle::f2: got "<B20::Vehicle::f2 not visible through B20::vehicle>", want "FlowUsage"
 - B20-005 [opensysml-ts-wasm] fail: kind B20::Vehicle::f2: got "<B20::Vehicle::f2 not visible through B20::vehicle>", want "FlowUsage"
 - B20-005 [opensysml-ts] fail: kind B20::Vehicle::f2: got "<B20::Vehicle::f2 not visible through B20::vehicle>", want "FlowUsage"
-- B20-006 [opensysml-go] fail: kind B20::Vehicle::f2: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want "FlowUsage"
-- B20-006 [opensysml-py] fail: kind B20::Vehicle::f2: got '<B20::Fleet::v not visible through B20::fleet>', want 'FlowUsage'
-- B20-006 [opensysml-rs] fail: kind B20::Vehicle::f2: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-006 [opensysml-ts-wasm] fail: kind B20::Vehicle::f2: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-006 [opensysml-ts] fail: kind B20::Vehicle::f2: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-007 [opensysml-go] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
@@ -4810,14 +4594,14 @@ Local changes at run time (tracked files only):
 - B20-007 [opensysml-rs] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-007 [opensysml-ts-wasm] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-007 [opensysml-ts] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-go] fail: kind B20::Vehicle::s1: got "\u003cB20::Vehicle::s1 not visible through B20::vehicle\u003e", want "SuccessionFlowUsage"
-- B20-008 [opensysml-py] fail: kind B20::Vehicle::s1: got '<B20::Vehicle::s1 not visible through B20::vehicle>', want 'SuccessionFlowUsage'
-- B20-008 [opensysml-rs] fail: kind B20::Vehicle::s1: got "<B20::Vehicle::s1 not visible through B20::vehicle>", want "SuccessionFlowUsage"
+- B20-008 [opensysml-go] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
+- B20-008 [opensysml-py] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
+- B20-008 [opensysml-rs] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-008 [opensysml-ts-wasm] fail: kind B20::Vehicle::s1: got "<B20::Vehicle::s1 not visible through B20::vehicle>", want "SuccessionFlowUsage"
 - B20-008 [opensysml-ts] fail: kind B20::Vehicle::s1: got "<B20::Vehicle::s1 not visible through B20::vehicle>", want "SuccessionFlowUsage"
-- B20-009 [opensysml-go] fail: kind B20::Vehicle::s1: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want "SuccessionFlowUsage"
-- B20-009 [opensysml-py] fail: kind B20::Vehicle::s1: got '<B20::Fleet::v not visible through B20::fleet>', want 'SuccessionFlowUsage'
-- B20-009 [opensysml-rs] fail: kind B20::Vehicle::s1: got "<B20::Fleet::v not visible through B20::fleet>", want "SuccessionFlowUsage"
+- B20-009 [opensysml-go] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
+- B20-009 [opensysml-py] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
+- B20-009 [opensysml-rs] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-009 [opensysml-ts-wasm] fail: kind B20::Vehicle::s1: got "<B20::Fleet::v not visible through B20::fleet>", want "SuccessionFlowUsage"
 - B20-009 [opensysml-ts] fail: kind B20::Vehicle::s1: got "<B20::Fleet::v not visible through B20::fleet>", want "SuccessionFlowUsage"
 - B20-010 [opensysml-go] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
@@ -4825,14 +4609,14 @@ Local changes at run time (tracked files only):
 - B20-010 [opensysml-rs] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-010 [opensysml-ts-wasm] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-010 [opensysml-ts] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-go] fail: kind B20::Vehicle::s2: got "\u003cB20::Vehicle::s2 not visible through B20::vehicle\u003e", want "SuccessionFlowUsage"
-- B20-011 [opensysml-py] fail: kind B20::Vehicle::s2: got '<B20::Vehicle::s2 not visible through B20::vehicle>', want 'SuccessionFlowUsage'
-- B20-011 [opensysml-rs] fail: kind B20::Vehicle::s2: got "<B20::Vehicle::s2 not visible through B20::vehicle>", want "SuccessionFlowUsage"
+- B20-011 [opensysml-go] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
+- B20-011 [opensysml-py] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
+- B20-011 [opensysml-rs] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-011 [opensysml-ts-wasm] fail: kind B20::Vehicle::s2: got "<B20::Vehicle::s2 not visible through B20::vehicle>", want "SuccessionFlowUsage"
 - B20-011 [opensysml-ts] fail: kind B20::Vehicle::s2: got "<B20::Vehicle::s2 not visible through B20::vehicle>", want "SuccessionFlowUsage"
-- B20-012 [opensysml-go] fail: kind B20::Vehicle::s2: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want "SuccessionFlowUsage"
-- B20-012 [opensysml-py] fail: kind B20::Vehicle::s2: got '<B20::Fleet::v not visible through B20::fleet>', want 'SuccessionFlowUsage'
-- B20-012 [opensysml-rs] fail: kind B20::Vehicle::s2: got "<B20::Fleet::v not visible through B20::fleet>", want "SuccessionFlowUsage"
+- B20-012 [opensysml-go] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
+- B20-012 [opensysml-py] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
+- B20-012 [opensysml-rs] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-012 [opensysml-ts-wasm] fail: kind B20::Vehicle::s2: got "<B20::Fleet::v not visible through B20::fleet>", want "SuccessionFlowUsage"
 - B20-012 [opensysml-ts] fail: kind B20::Vehicle::s2: got "<B20::Fleet::v not visible through B20::fleet>", want "SuccessionFlowUsage"
 - B20-013 [opensysml-go] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
@@ -4913,15 +4697,15 @@ Local changes at run time (tracked files only):
 - B20-025 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-025 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-025 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-026 [opensysml-go] fail: endReferences B20::Vehicle::f1: got "\u003cB20::Vehicle::f1 not visible through B20::vehicle\u003e", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-026 [opensysml-py] fail: endReferences B20::Vehicle::f1: got '<B20::Vehicle::f1 not visible through B20::vehicle>', want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-026 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got "<B20::Vehicle::f1 not visible through B20::vehicle>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-026 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got "<B20::Vehicle::f1 not visible through B20::vehicle>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got "<B20::Vehicle::f1 not visible through B20::vehicle>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-027 [opensysml-go] fail: endReferences B20::Vehicle::f1: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-027 [opensysml-py] fail: endReferences B20::Vehicle::f1: got '<B20::Fleet::v not visible through B20::fleet>', want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-027 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-027 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-027 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-027 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4931,15 +4715,15 @@ Local changes at run time (tracked files only):
 - B20-028 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-028 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-028 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-029 [opensysml-go] fail: endReferences B20::Vehicle::f2: got "\u003cB20::Vehicle::f2 not visible through B20::vehicle\u003e", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-029 [opensysml-py] fail: endReferences B20::Vehicle::f2: got '<B20::Vehicle::f2 not visible through B20::vehicle>', want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-029 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got "<B20::Vehicle::f2 not visible through B20::vehicle>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-029 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got "<B20::Vehicle::f2 not visible through B20::vehicle>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got "<B20::Vehicle::f2 not visible through B20::vehicle>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-030 [opensysml-go] fail: endReferences B20::Vehicle::f2: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-030 [opensysml-py] fail: endReferences B20::Vehicle::f2: got '<B20::Fleet::v not visible through B20::fleet>', want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-030 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-030 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-030 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-030 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4949,15 +4733,15 @@ Local changes at run time (tracked files only):
 - B20-031 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-031 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-031 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-032 [opensysml-go] fail: endReferences B20::Vehicle::s1: got "\u003cB20::Vehicle::s1 not visible through B20::vehicle\u003e", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-032 [opensysml-py] fail: endReferences B20::Vehicle::s1: got '<B20::Vehicle::s1 not visible through B20::vehicle>', want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-032 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got "<B20::Vehicle::s1 not visible through B20::vehicle>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-032 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got "<B20::Vehicle::s1 not visible through B20::vehicle>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got "<B20::Vehicle::s1 not visible through B20::vehicle>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-033 [opensysml-go] fail: endReferences B20::Vehicle::s1: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-033 [opensysml-py] fail: endReferences B20::Vehicle::s1: got '<B20::Fleet::v not visible through B20::fleet>', want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-033 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-033 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-033 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-033 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4967,15 +4751,15 @@ Local changes at run time (tracked files only):
 - B20-034 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-034 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-034 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-035 [opensysml-go] fail: endReferences B20::Vehicle::s2: got "\u003cB20::Vehicle::s2 not visible through B20::vehicle\u003e", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-035 [opensysml-py] fail: endReferences B20::Vehicle::s2: got '<B20::Vehicle::s2 not visible through B20::vehicle>', want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-035 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got "<B20::Vehicle::s2 not visible through B20::vehicle>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-035 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got "<B20::Vehicle::s2 not visible through B20::vehicle>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got "<B20::Vehicle::s2 not visible through B20::vehicle>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-036 [opensysml-go] fail: endReferences B20::Vehicle::s2: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-036 [opensysml-py] fail: endReferences B20::Vehicle::s2: got '<B20::Fleet::v not visible through B20::fleet>', want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-036 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-036 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got "<B20::Fleet::v not visible through B20::fleet>", want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -5123,14 +4907,8 @@ Local changes at run time (tracked files only):
 - B20-060 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-060 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-060 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-062 [opensysml-go] fail: kind B20::Vehicle::msg: got "\u003cB20::Vehicle::msg not visible through B20::vehicle\u003e", want "FlowUsage"
-- B20-062 [opensysml-py] fail: kind B20::Vehicle::msg: got '<B20::Vehicle::msg not visible through B20::vehicle>', want 'FlowUsage'
-- B20-062 [opensysml-rs] fail: kind B20::Vehicle::msg: got "<B20::Vehicle::msg not visible through B20::vehicle>", want "FlowUsage"
 - B20-062 [opensysml-ts-wasm] fail: kind B20::Vehicle::msg: got "<B20::Vehicle::msg not visible through B20::vehicle>", want "FlowUsage"
 - B20-062 [opensysml-ts] fail: kind B20::Vehicle::msg: got "<B20::Vehicle::msg not visible through B20::vehicle>", want "FlowUsage"
-- B20-063 [opensysml-go] fail: kind B20::Vehicle::msg: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want "FlowUsage"
-- B20-063 [opensysml-py] fail: kind B20::Vehicle::msg: got '<B20::Fleet::v not visible through B20::fleet>', want 'FlowUsage'
-- B20-063 [opensysml-rs] fail: kind B20::Vehicle::msg: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-063 [opensysml-ts-wasm] fail: kind B20::Vehicle::msg: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-063 [opensysml-ts] fail: kind B20::Vehicle::msg: got "<B20::Fleet::v not visible through B20::fleet>", want "FlowUsage"
 - B20-064 [opensysml-go] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
@@ -5157,15 +4935,15 @@ Local changes at run time (tracked files only):
 - B20-067 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::msg: got [], want [null,null]
 - B20-067 [opensysml-ts] fail: endReferences B20::Vehicle::msg: got [], want [null,null]
 - B20-067 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-068 [opensysml-go] fail: endReferences B20::Vehicle::msg: got "\u003cB20::Vehicle::msg not visible through B20::vehicle\u003e", want [null,null]
-- B20-068 [opensysml-py] fail: endReferences B20::Vehicle::msg: got '<B20::Vehicle::msg not visible through B20::vehicle>', want [None, None]
-- B20-068 [opensysml-rs] fail: endReferences B20::Vehicle::msg: got "<B20::Vehicle::msg not visible through B20::vehicle>", want [null,null]
+- B20-068 [opensysml-go] fail: endReferences B20::Vehicle::msg: got [], want [null,null]
+- B20-068 [opensysml-py] fail: endReferences B20::Vehicle::msg: got [], want [None, None]
+- B20-068 [opensysml-rs] fail: endReferences B20::Vehicle::msg: got [], want [null,null]
 - B20-068 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::msg: got "<B20::Vehicle::msg not visible through B20::vehicle>", want [null,null]
 - B20-068 [opensysml-ts] fail: endReferences B20::Vehicle::msg: got "<B20::Vehicle::msg not visible through B20::vehicle>", want [null,null]
 - B20-068 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B20-069 [opensysml-go] fail: endReferences B20::Vehicle::msg: got "\u003cB20::Fleet::v not visible through B20::fleet\u003e", want [null,null]
-- B20-069 [opensysml-py] fail: endReferences B20::Vehicle::msg: got '<B20::Fleet::v not visible through B20::fleet>', want [None, None]
-- B20-069 [opensysml-rs] fail: endReferences B20::Vehicle::msg: got "<B20::Fleet::v not visible through B20::fleet>", want [null,null]
+- B20-069 [opensysml-go] fail: endReferences B20::Vehicle::msg: got [], want [null,null]
+- B20-069 [opensysml-py] fail: endReferences B20::Vehicle::msg: got [], want [None, None]
+- B20-069 [opensysml-rs] fail: endReferences B20::Vehicle::msg: got [], want [null,null]
 - B20-069 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::msg: got "<B20::Fleet::v not visible through B20::fleet>", want [null,null]
 - B20-069 [opensysml-ts] fail: endReferences B20::Vehicle::msg: got "<B20::Fleet::v not visible through B20::fleet>", want [null,null]
 - B20-069 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -5212,76 +4990,73 @@ Local changes at run time (tracked files only):
 - B20-075 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
 - B20-075 [sysml-toolkit-rs] fail: targetInput B20::Vehicle::msg: got "B20::Vehicle::engine", want null
 - C01-049 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-050 [opensysml-go] fail: parameters C01::SubAct: got [], want [["in","x"],["out","y"]]
 - C01-050 [opensysml-ts-wasm] fail: parameters C01::SubAct: got [], want [["in","x"],["out","y"]]
 - C01-050 [opensysml-ts] fail: parameters C01::SubAct: got [], want [["in","x"],["out","y"]]
 - C01-050 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-051 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-052 [opensysml-go] fail: parameters C01::SubSt: got [], want [["in","x"]]
 - C01-052 [opensysml-ts-wasm] fail: parameters C01::SubSt: got [], want [["in","x"]]
 - C01-052 [opensysml-ts] fail: parameters C01::SubSt: got [], want [["in","x"]]
 - C01-052 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
+- C01-053 [opensysml-py] fail: parameters C01::Calc: got [['in', 'x'], ['out', 'r'], ['out', 'result']], want [['in', 'x'], ['out', 'r']]
 - C01-053 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-054 [opensysml-go] fail: parameters C01::SubCalc: got [], want [["in","x"],["out","r"]]
+- C01-054 [opensysml-py] fail: parameters C01::SubCalc: got [['in', 'x'], ['out', 'r'], ['out', 'result']], want [['in', 'x'], ['out', 'r']]
 - C01-054 [opensysml-ts-wasm] fail: parameters C01::SubCalc: got [], want [["in","x"],["out","r"]]
 - C01-054 [opensysml-ts] fail: parameters C01::SubCalc: got [], want [["in","x"],["out","r"]]
 - C01-054 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-055 [opensysml-go] fail: parameters C01::Cons: got [["in","x"]], want [["in","x"],["out","result"]]
-- C01-055 [opensysml-py] fail: parameters C01::Cons: got [['in', 'x']], want [['in', 'x'], ['out', 'result']]
 - C01-055 [opensysml-rs] fail: parameters C01::Cons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-055 [opensysml-ts-wasm] fail: parameters C01::Cons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-055 [opensysml-ts] fail: parameters C01::Cons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-055 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-056 [opensysml-go] fail: parameters C01::SubCons: got [], want [["in","x"],["out","result"]]
-- C01-056 [opensysml-py] fail: parameters C01::SubCons: got [['in', 'x']], want [['in', 'x'], ['out', 'result']]
+- C01-056 [opensysml-go] fail: parameters C01::SubCons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-056 [opensysml-rs] fail: parameters C01::SubCons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-056 [opensysml-ts-wasm] fail: parameters C01::SubCons: got [], want [["in","x"],["out","result"]]
 - C01-056 [opensysml-ts] fail: parameters C01::SubCons: got [], want [["in","x"],["out","result"]]
 - C01-056 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-057 [opensysml-go] fail: parameters C01::Req: got [["in","x"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-057 [opensysml-py] fail: parameters C01::Req: got [['in', 'x']], want [['in', 's'], ['in', 'x'], ['out', 'result']]
+- C01-057 [opensysml-py] fail: parameters C01::Req: got [['in', 'x'], ['out', 'result']], want [['in', 's'], ['in', 'x'], ['out', 'result']]
 - C01-057 [opensysml-rs] fail: parameters C01::Req: got [["in","x"]], want [["in","s"],["in","x"],["out","result"]]
 - C01-057 [opensysml-ts-wasm] fail: parameters C01::Req: got [["in","x"]], want [["in","s"],["in","x"],["out","result"]]
 - C01-057 [opensysml-ts] fail: parameters C01::Req: got [["in","x"]], want [["in","s"],["in","x"],["out","result"]]
 - C01-057 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-058 [opensysml-go] fail: parameters C01::SubReq: got [], want [["in","s"],["in","x"],["out","result"]]
-- C01-058 [opensysml-py] fail: parameters C01::SubReq: got [['in', 'x']], want [['in', 's'], ['in', 'x'], ['out', 'result']]
+- C01-058 [opensysml-go] fail: parameters C01::SubReq: got [["in","x"]], want [["in","s"],["in","x"],["out","result"]]
+- C01-058 [opensysml-py] fail: parameters C01::SubReq: got [['in', 'x'], ['out', 'result']], want [['in', 's'], ['in', 'x'], ['out', 'result']]
 - C01-058 [opensysml-rs] fail: parameters C01::SubReq: got [["in","x"]], want [["in","s"],["in","x"],["out","result"]]
 - C01-058 [opensysml-ts-wasm] fail: parameters C01::SubReq: got [], want [["in","s"],["in","x"],["out","result"]]
 - C01-058 [opensysml-ts] fail: parameters C01::SubReq: got [], want [["in","s"],["in","x"],["out","result"]]
 - C01-058 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-059 [opensysml-go] fail: parameters C01::UC: got [], want [["in","s"],["out","result"]]
-- C01-059 [opensysml-py] fail: parameters C01::UC: got [], want [['in', 's'], ['out', 'result']]
+- C01-059 [opensysml-py] fail: parameters C01::UC: got [['out', 'result']], want [['in', 's'], ['out', 'result']]
 - C01-059 [opensysml-rs] fail: parameters C01::UC: got [], want [["in","s"],["out","result"]]
 - C01-059 [opensysml-ts-wasm] fail: parameters C01::UC: got [], want [["in","s"],["out","result"]]
 - C01-059 [opensysml-ts] fail: parameters C01::UC: got [], want [["in","s"],["out","result"]]
 - C01-059 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-060 [opensysml-go] fail: parameters C01::SubUC: got [], want [["in","s"],["out","result"]]
-- C01-060 [opensysml-py] fail: parameters C01::SubUC: got [], want [['in', 's'], ['out', 'result']]
+- C01-060 [opensysml-py] fail: parameters C01::SubUC: got [['out', 'result']], want [['in', 's'], ['out', 'result']]
 - C01-060 [opensysml-rs] fail: parameters C01::SubUC: got [], want [["in","s"],["out","result"]]
 - C01-060 [opensysml-ts-wasm] fail: parameters C01::SubUC: got [], want [["in","s"],["out","result"]]
 - C01-060 [opensysml-ts] fail: parameters C01::SubUC: got [], want [["in","s"],["out","result"]]
 - C01-060 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-061 [opensysml-go] fail: parameters C01::An: got [["out","r"]], want [["in","s"],["out","r"]]
-- C01-061 [opensysml-py] fail: parameters C01::An: got [['out', 'r']], want [['in', 's'], ['out', 'r']]
+- C01-061 [opensysml-py] fail: parameters C01::An: got [['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
 - C01-061 [opensysml-rs] fail: parameters C01::An: got [["out","r"]], want [["in","s"],["out","r"]]
 - C01-061 [opensysml-ts-wasm] fail: parameters C01::An: got [["out","r"]], want [["in","s"],["out","r"]]
 - C01-061 [opensysml-ts] fail: parameters C01::An: got [["out","r"]], want [["in","s"],["out","r"]]
 - C01-061 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-062 [opensysml-go] fail: parameters C01::SubAn: got [], want [["in","s"],["out","r"]]
-- C01-062 [opensysml-py] fail: parameters C01::SubAn: got [['out', 'r']], want [['in', 's'], ['out', 'r']]
+- C01-062 [opensysml-go] fail: parameters C01::SubAn: got [["out","r"]], want [["in","s"],["out","r"]]
+- C01-062 [opensysml-py] fail: parameters C01::SubAn: got [['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
 - C01-062 [opensysml-rs] fail: parameters C01::SubAn: got [["out","r"]], want [["in","s"],["out","r"]]
 - C01-062 [opensysml-ts-wasm] fail: parameters C01::SubAn: got [], want [["in","s"],["out","r"]]
 - C01-062 [opensysml-ts] fail: parameters C01::SubAn: got [], want [["in","s"],["out","r"]]
 - C01-062 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-063 [opensysml-go] fail: parameters C01::Ver: got [], want [["in","s"],["out","verdict"]]
-- C01-063 [opensysml-py] fail: parameters C01::Ver: got [], want [['in', 's'], ['out', 'verdict']]
+- C01-063 [opensysml-py] fail: parameters C01::Ver: got [['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
 - C01-063 [opensysml-rs] fail: parameters C01::Ver: got [], want [["in","s"],["out","verdict"]]
 - C01-063 [opensysml-ts-wasm] fail: parameters C01::Ver: got [], want [["in","s"],["out","verdict"]]
 - C01-063 [opensysml-ts] fail: parameters C01::Ver: got [], want [["in","s"],["out","verdict"]]
 - C01-063 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-064 [opensysml-go] fail: parameters C01::SubVer: got [], want [["in","s"],["out","verdict"]]
-- C01-064 [opensysml-py] fail: parameters C01::SubVer: got [], want [['in', 's'], ['out', 'verdict']]
+- C01-064 [opensysml-py] fail: parameters C01::SubVer: got [['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
 - C01-064 [opensysml-rs] fail: parameters C01::SubVer: got [], want [["in","s"],["out","verdict"]]
 - C01-064 [opensysml-ts-wasm] fail: parameters C01::SubVer: got [], want [["in","s"],["out","verdict"]]
 - C01-064 [opensysml-ts] fail: parameters C01::SubVer: got [], want [["in","s"],["out","verdict"]]
@@ -5934,49 +5709,22 @@ Local changes at run time (tracked files only):
 - C10-080 [pilot-java] unsupported: the EMF model has no source text of an expression
 - C10-080 [sysml-toolkit-rs-checked] unsupported: no accessor returns an expression's source text
 - C10-080 [sysml-toolkit-rs] unsupported: no accessor returns an expression's source text
-- C10-084 [opensysml-go] fail: name C10::Consume::pNone: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "pNone"
-- C10-084 [opensysml-py] fail: name C10::Consume::pNone: got '<C10::Motor::consume not visible through C10::motor>', want 'pNone'
-- C10-084 [opensysml-rs] fail: name C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "pNone"
 - C10-084 [opensysml-ts-wasm] fail: name C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "pNone"
 - C10-084 [opensysml-ts] fail: name C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "pNone"
-- C10-088 [opensysml-go] fail: name C10::Consume::heat: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "heat"
-- C10-088 [opensysml-py] fail: name C10::Consume::heat: got '<C10::Motor::consume not visible through C10::motor>', want 'heat'
-- C10-088 [opensysml-rs] fail: name C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "heat"
 - C10-088 [opensysml-ts-wasm] fail: name C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "heat"
 - C10-088 [opensysml-ts] fail: name C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "heat"
-- C10-092 [opensysml-go] fail: name C10::Consume::mode: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "mode"
-- C10-092 [opensysml-py] fail: name C10::Consume::mode: got '<C10::Motor::consume not visible through C10::motor>', want 'mode'
-- C10-092 [opensysml-rs] fail: name C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "mode"
 - C10-092 [opensysml-ts-wasm] fail: name C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "mode"
 - C10-092 [opensysml-ts] fail: name C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "mode"
-- C10-096 [opensysml-go] fail: direction C10::Consume::pNone: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "in"
-- C10-096 [opensysml-py] fail: direction C10::Consume::pNone: got '<C10::Motor::consume not visible through C10::motor>', want 'in'
-- C10-096 [opensysml-rs] fail: direction C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "in"
 - C10-096 [opensysml-ts-wasm] fail: direction C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "in"
 - C10-096 [opensysml-ts] fail: direction C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "in"
-- C10-100 [opensysml-go] fail: direction C10::Consume::heat: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "out"
-- C10-100 [opensysml-py] fail: direction C10::Consume::heat: got '<C10::Motor::consume not visible through C10::motor>', want 'out'
-- C10-100 [opensysml-rs] fail: direction C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "out"
 - C10-100 [opensysml-ts-wasm] fail: direction C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "out"
 - C10-100 [opensysml-ts] fail: direction C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "out"
-- C10-104 [opensysml-go] fail: direction C10::Consume::mode: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "inout"
-- C10-104 [opensysml-py] fail: direction C10::Consume::mode: got '<C10::Motor::consume not visible through C10::motor>', want 'inout'
-- C10-104 [opensysml-rs] fail: direction C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "inout"
 - C10-104 [opensysml-ts-wasm] fail: direction C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "inout"
 - C10-104 [opensysml-ts] fail: direction C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "inout"
-- C10-108 [opensysml-go] fail: type C10::Consume::pNone: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "ScalarValues::Real"
-- C10-108 [opensysml-py] fail: type C10::Consume::pNone: got '<C10::Motor::consume not visible through C10::motor>', want 'ScalarValues::Real'
-- C10-108 [opensysml-rs] fail: type C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C10-108 [opensysml-ts-wasm] fail: type C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C10-108 [opensysml-ts] fail: type C10::Consume::pNone: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
-- C10-112 [opensysml-go] fail: type C10::Consume::heat: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "ScalarValues::Real"
-- C10-112 [opensysml-py] fail: type C10::Consume::heat: got '<C10::Motor::consume not visible through C10::motor>', want 'ScalarValues::Real'
-- C10-112 [opensysml-rs] fail: type C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C10-112 [opensysml-ts-wasm] fail: type C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C10-112 [opensysml-ts] fail: type C10::Consume::heat: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
-- C10-116 [opensysml-go] fail: type C10::Consume::mode: got "\u003cC10::Motor::consume not visible through C10::motor\u003e", want "ScalarValues::Real"
-- C10-116 [opensysml-py] fail: type C10::Consume::mode: got '<C10::Motor::consume not visible through C10::motor>', want 'ScalarValues::Real'
-- C10-116 [opensysml-rs] fail: type C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C10-116 [opensysml-ts-wasm] fail: type C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C10-116 [opensysml-ts] fail: type C10::Consume::mode: got "<C10::Motor::consume not visible through C10::motor>", want "ScalarValues::Real"
 - C20-001 [opensysml-go] fail: kind C20::Supervise::sendVia: got "ActionUsage", want "SendActionUsage"
@@ -5989,9 +5737,9 @@ Local changes at run time (tracked files only):
 - C20-002 [opensysml-rs] fail: kind C20::Monitor::supervise::sendVia: got "ActionUsage", want "SendActionUsage"
 - C20-002 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::sendVia: got "ActionUsage", want "SendActionUsage"
 - C20-002 [opensysml-ts] fail: kind C20::Monitor::supervise::sendVia: got "ActionUsage", want "SendActionUsage"
-- C20-003 [opensysml-go] fail: kind C20::Monitor::supervise::sendVia: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "SendActionUsage"
-- C20-003 [opensysml-py] fail: kind C20::Monitor::supervise::sendVia: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'SendActionUsage'
-- C20-003 [opensysml-rs] fail: kind C20::Monitor::supervise::sendVia: got "<C20::Monitor::supervise not visible through C20::monitor>", want "SendActionUsage"
+- C20-003 [opensysml-go] fail: kind C20::Monitor::supervise::sendVia: got "ActionUsage", want "SendActionUsage"
+- C20-003 [opensysml-py] fail: kind C20::Monitor::supervise::sendVia: got 'ActionUsage', want 'SendActionUsage'
+- C20-003 [opensysml-rs] fail: kind C20::Monitor::supervise::sendVia: got "ActionUsage", want "SendActionUsage"
 - C20-003 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::sendVia: got "<C20::Monitor::supervise not visible through C20::monitor>", want "SendActionUsage"
 - C20-003 [opensysml-ts] fail: kind C20::Monitor::supervise::sendVia: got "<C20::Monitor::supervise not visible through C20::monitor>", want "SendActionUsage"
 - C20-004 [opensysml-go] fail: kind C20::Supervise::sendTo: got "ActionUsage", want "SendActionUsage"
@@ -6004,9 +5752,9 @@ Local changes at run time (tracked files only):
 - C20-005 [opensysml-rs] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
 - C20-005 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
 - C20-005 [opensysml-ts] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
-- C20-006 [opensysml-go] fail: kind C20::Monitor::supervise::sendTo: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "SendActionUsage"
-- C20-006 [opensysml-py] fail: kind C20::Monitor::supervise::sendTo: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'SendActionUsage'
-- C20-006 [opensysml-rs] fail: kind C20::Monitor::supervise::sendTo: got "<C20::Monitor::supervise not visible through C20::monitor>", want "SendActionUsage"
+- C20-006 [opensysml-go] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
+- C20-006 [opensysml-py] fail: kind C20::Monitor::supervise::sendTo: got 'ActionUsage', want 'SendActionUsage'
+- C20-006 [opensysml-rs] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
 - C20-006 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::sendTo: got "<C20::Monitor::supervise not visible through C20::monitor>", want "SendActionUsage"
 - C20-006 [opensysml-ts] fail: kind C20::Monitor::supervise::sendTo: got "<C20::Monitor::supervise not visible through C20::monitor>", want "SendActionUsage"
 - C20-007 [opensysml-go] fail: kind C20::Supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
@@ -6019,9 +5767,9 @@ Local changes at run time (tracked files only):
 - C20-008 [opensysml-rs] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
 - C20-008 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
 - C20-008 [opensysml-ts] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-009 [opensysml-go] fail: kind C20::Monitor::supervise::acceptVia: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "AcceptActionUsage"
-- C20-009 [opensysml-py] fail: kind C20::Monitor::supervise::acceptVia: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'AcceptActionUsage'
-- C20-009 [opensysml-rs] fail: kind C20::Monitor::supervise::acceptVia: got "<C20::Monitor::supervise not visible through C20::monitor>", want "AcceptActionUsage"
+- C20-009 [opensysml-go] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
+- C20-009 [opensysml-py] fail: kind C20::Monitor::supervise::acceptVia: got 'ActionUsage', want 'AcceptActionUsage'
+- C20-009 [opensysml-rs] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
 - C20-009 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::acceptVia: got "<C20::Monitor::supervise not visible through C20::monitor>", want "AcceptActionUsage"
 - C20-009 [opensysml-ts] fail: kind C20::Monitor::supervise::acceptVia: got "<C20::Monitor::supervise not visible through C20::monitor>", want "AcceptActionUsage"
 - C20-010 [opensysml-go] fail: kind C20::Supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
@@ -6034,9 +5782,9 @@ Local changes at run time (tracked files only):
 - C20-011 [opensysml-rs] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
 - C20-011 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
 - C20-011 [opensysml-ts] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-012 [opensysml-go] fail: kind C20::Monitor::supervise::assignCount: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "AssignmentActionUsage"
-- C20-012 [opensysml-py] fail: kind C20::Monitor::supervise::assignCount: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'AssignmentActionUsage'
-- C20-012 [opensysml-rs] fail: kind C20::Monitor::supervise::assignCount: got "<C20::Monitor::supervise not visible through C20::monitor>", want "AssignmentActionUsage"
+- C20-012 [opensysml-go] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
+- C20-012 [opensysml-py] fail: kind C20::Monitor::supervise::assignCount: got 'ActionUsage', want 'AssignmentActionUsage'
+- C20-012 [opensysml-rs] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
 - C20-012 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::assignCount: got "<C20::Monitor::supervise not visible through C20::monitor>", want "AssignmentActionUsage"
 - C20-012 [opensysml-ts] fail: kind C20::Monitor::supervise::assignCount: got "<C20::Monitor::supervise not visible through C20::monitor>", want "AssignmentActionUsage"
 - C20-013 [opensysml-go] fail: kind C20::Supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
@@ -6049,9 +5797,9 @@ Local changes at run time (tracked files only):
 - C20-014 [opensysml-rs] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
 - C20-014 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
 - C20-014 [opensysml-ts] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-015 [opensysml-go] fail: kind C20::Monitor::supervise::performNotify: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "PerformActionUsage"
-- C20-015 [opensysml-py] fail: kind C20::Monitor::supervise::performNotify: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'PerformActionUsage'
-- C20-015 [opensysml-rs] fail: kind C20::Monitor::supervise::performNotify: got "<C20::Monitor::supervise not visible through C20::monitor>", want "PerformActionUsage"
+- C20-015 [opensysml-go] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
+- C20-015 [opensysml-py] fail: kind C20::Monitor::supervise::performNotify: got 'ActionUsage', want 'PerformActionUsage'
+- C20-015 [opensysml-rs] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
 - C20-015 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::performNotify: got "<C20::Monitor::supervise not visible through C20::monitor>", want "PerformActionUsage"
 - C20-015 [opensysml-ts] fail: kind C20::Monitor::supervise::performNotify: got "<C20::Monitor::supervise not visible through C20::monitor>", want "PerformActionUsage"
 - C20-016 [opensysml-go] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
@@ -6064,9 +5812,9 @@ Local changes at run time (tracked files only):
 - C20-017 [opensysml-rs] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
 - C20-017 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
 - C20-017 [opensysml-ts] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-go] fail: kind C20::Monitor::supervise::ifAct: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "IfActionUsage"
-- C20-018 [opensysml-py] fail: kind C20::Monitor::supervise::ifAct: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'IfActionUsage'
-- C20-018 [opensysml-rs] fail: kind C20::Monitor::supervise::ifAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "IfActionUsage"
+- C20-018 [opensysml-go] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
+- C20-018 [opensysml-py] fail: kind C20::Monitor::supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
+- C20-018 [opensysml-rs] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
 - C20-018 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::ifAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "IfActionUsage"
 - C20-018 [opensysml-ts] fail: kind C20::Monitor::supervise::ifAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "IfActionUsage"
 - C20-019 [opensysml-go] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
@@ -6079,9 +5827,9 @@ Local changes at run time (tracked files only):
 - C20-020 [opensysml-rs] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
 - C20-020 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
 - C20-020 [opensysml-ts] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-go] fail: kind C20::Monitor::supervise::whileAct: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "WhileLoopActionUsage"
-- C20-021 [opensysml-py] fail: kind C20::Monitor::supervise::whileAct: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'WhileLoopActionUsage'
-- C20-021 [opensysml-rs] fail: kind C20::Monitor::supervise::whileAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "WhileLoopActionUsage"
+- C20-021 [opensysml-go] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
+- C20-021 [opensysml-py] fail: kind C20::Monitor::supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
+- C20-021 [opensysml-rs] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
 - C20-021 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::whileAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "WhileLoopActionUsage"
 - C20-021 [opensysml-ts] fail: kind C20::Monitor::supervise::whileAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "WhileLoopActionUsage"
 - C20-022 [opensysml-go] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
@@ -6094,9 +5842,9 @@ Local changes at run time (tracked files only):
 - C20-023 [opensysml-rs] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
 - C20-023 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
 - C20-023 [opensysml-ts] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-go] fail: kind C20::Monitor::supervise::forAct: got "\u003cC20::Monitor::supervise not visible through C20::monitor\u003e", want "ForLoopActionUsage"
-- C20-024 [opensysml-py] fail: kind C20::Monitor::supervise::forAct: got '<C20::Monitor::supervise not visible through C20::monitor>', want 'ForLoopActionUsage'
-- C20-024 [opensysml-rs] fail: kind C20::Monitor::supervise::forAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "ForLoopActionUsage"
+- C20-024 [opensysml-go] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
+- C20-024 [opensysml-py] fail: kind C20::Monitor::supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
+- C20-024 [opensysml-rs] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
 - C20-024 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::forAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "ForLoopActionUsage"
 - C20-024 [opensysml-ts] fail: kind C20::Monitor::supervise::forAct: got "<C20::Monitor::supervise not visible through C20::monitor>", want "ForLoopActionUsage"
 - C20-025 [opensysml-go] unsupported: the Symbol API reports no arguments of an action
@@ -7197,24 +6945,12 @@ Local changes at run time (tracked files only):
 - C30-036 [opensysml-rs] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
 - C30-036 [opensysml-ts-wasm] unsupported: no Symbol field for exitAction; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-036 [opensysml-ts] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
-- C30-038 [opensysml-go] fail: substates C30::Ctl::seq: got "\u003cC30::Ctl::seq not visible through C30::Device::ex\u003e", want ["s1","s2"]
-- C30-038 [opensysml-py] fail: substates C30::Ctl::seq: got '<C30::Ctl::seq not visible through C30::Device::ex>', want ['s1', 's2']
-- C30-038 [opensysml-rs] fail: substates C30::Ctl::seq: got "<C30::Ctl::seq not visible through C30::Device::ex>", want ["s1","s2"]
 - C30-038 [opensysml-ts-wasm] fail: substates C30::Ctl::seq: got "<C30::Ctl::seq not visible through C30::Device::ex>", want ["s1","s2"]
 - C30-038 [opensysml-ts] fail: substates C30::Ctl::seq: got "<C30::Ctl::seq not visible through C30::Device::ex>", want ["s1","s2"]
-- C30-039 [opensysml-go] fail: substates C30::Ctl::seq: got "\u003cC30::Device::ex not visible through C30::device\u003e", want ["s1","s2"]
-- C30-039 [opensysml-py] fail: substates C30::Ctl::seq: got '<C30::Device::ex not visible through C30::device>', want ['s1', 's2']
-- C30-039 [opensysml-rs] fail: substates C30::Ctl::seq: got "<C30::Device::ex not visible through C30::device>", want ["s1","s2"]
 - C30-039 [opensysml-ts-wasm] fail: substates C30::Ctl::seq: got "<C30::Device::ex not visible through C30::device>", want ["s1","s2"]
 - C30-039 [opensysml-ts] fail: substates C30::Ctl::seq: got "<C30::Device::ex not visible through C30::device>", want ["s1","s2"]
-- C30-041 [opensysml-go] fail: substates C30::Ctl::par: got "\u003cC30::Ctl::par not visible through C30::Device::ex\u003e", want ["r1","r2"]
-- C30-041 [opensysml-py] fail: substates C30::Ctl::par: got '<C30::Ctl::par not visible through C30::Device::ex>', want ['r1', 'r2']
-- C30-041 [opensysml-rs] fail: substates C30::Ctl::par: got "<C30::Ctl::par not visible through C30::Device::ex>", want ["r1","r2"]
 - C30-041 [opensysml-ts-wasm] fail: substates C30::Ctl::par: got "<C30::Ctl::par not visible through C30::Device::ex>", want ["r1","r2"]
 - C30-041 [opensysml-ts] fail: substates C30::Ctl::par: got "<C30::Ctl::par not visible through C30::Device::ex>", want ["r1","r2"]
-- C30-042 [opensysml-go] fail: substates C30::Ctl::par: got "\u003cC30::Device::ex not visible through C30::device\u003e", want ["r1","r2"]
-- C30-042 [opensysml-py] fail: substates C30::Ctl::par: got '<C30::Device::ex not visible through C30::device>', want ['r1', 'r2']
-- C30-042 [opensysml-rs] fail: substates C30::Ctl::par: got "<C30::Device::ex not visible through C30::device>", want ["r1","r2"]
 - C30-042 [opensysml-ts-wasm] fail: substates C30::Ctl::par: got "<C30::Device::ex not visible through C30::device>", want ["r1","r2"]
 - C30-042 [opensysml-ts] fail: substates C30::Ctl::par: got "<C30::Device::ex not visible through C30::device>", want ["r1","r2"]
 - C30-043 [opensysml-go] unsupported: no Symbol field for isParallel; the standard query API does not offer it either
@@ -7424,9 +7160,9 @@ Local changes at run time (tracked files only):
 - D10-004 [opensysml-ts-wasm] fail: metadataDefs D10::PumpFluid::pressureP: got [], want ["D10::FailureMode"]
 - D10-004 [opensysml-ts] fail: metadataDefs D10::PumpFluid::pressureP: got [], want ["D10::FailureMode"]
 - D10-004 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-005 [opensysml-go] fail: metadataDefs D10::Pump::motorP: got "\u003cD10::Pump::motorP not visible through D10::pump\u003e", want ["D10::FailureMode"]
-- D10-005 [opensysml-py] fail: metadataDefs D10::Pump::motorP: got '<D10::Pump::motorP not visible through D10::pump>', want ['D10::FailureMode']
-- D10-005 [opensysml-rs] fail: metadataDefs D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want ["D10::FailureMode"]
+- D10-005 [opensysml-go] fail: metadataDefs D10::Pump::motorP: got [], want ["D10::FailureMode"]
+- D10-005 [opensysml-py] fail: metadataDefs D10::Pump::motorP: got [], want ['D10::FailureMode']
+- D10-005 [opensysml-rs] fail: metadataDefs D10::Pump::motorP: got [], want ["D10::FailureMode"]
 - D10-005 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-005 [opensysml-ts] fail: metadataDefs D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-005 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
@@ -7454,9 +7190,9 @@ Local changes at run time (tracked files only):
 - D10-009 [opensysml-ts-wasm] fail: metadataDefs D10::PumpFluid::pressureB: got [], want ["D10::FailureMode"]
 - D10-009 [opensysml-ts] fail: metadataDefs D10::PumpFluid::pressureB: got [], want ["D10::FailureMode"]
 - D10-009 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-010 [opensysml-go] fail: metadataDefs D10::Pump::motorB: got "\u003cD10::Pump::motorB not visible through D10::pump\u003e", want ["D10::FailureMode"]
-- D10-010 [opensysml-py] fail: metadataDefs D10::Pump::motorB: got '<D10::Pump::motorB not visible through D10::pump>', want ['D10::FailureMode']
-- D10-010 [opensysml-rs] fail: metadataDefs D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want ["D10::FailureMode"]
+- D10-010 [opensysml-go] fail: metadataDefs D10::Pump::motorB: got [], want ["D10::FailureMode"]
+- D10-010 [opensysml-py] fail: metadataDefs D10::Pump::motorB: got [], want ['D10::FailureMode']
+- D10-010 [opensysml-rs] fail: metadataDefs D10::Pump::motorB: got [], want ["D10::FailureMode"]
 - D10-010 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-010 [opensysml-ts] fail: metadataDefs D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-010 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
@@ -7484,9 +7220,9 @@ Local changes at run time (tracked files only):
 - D10-014 [opensysml-ts-wasm] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
 - D10-014 [opensysml-ts] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
 - D10-014 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-015 [opensysml-go] fail: metadataDefs D10::Pump::motorA: got "\u003cD10::Pump::motorA not visible through D10::pump\u003e", want ["D10::FailureMode"]
-- D10-015 [opensysml-py] fail: metadataDefs D10::Pump::motorA: got '<D10::Pump::motorA not visible through D10::pump>', want ['D10::FailureMode']
-- D10-015 [opensysml-rs] fail: metadataDefs D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want ["D10::FailureMode"]
+- D10-015 [opensysml-go] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
+- D10-015 [opensysml-py] fail: metadataDefs D10::Pump::motorA: got [], want ['D10::FailureMode']
+- D10-015 [opensysml-rs] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
 - D10-015 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-015 [opensysml-ts] fail: metadataDefs D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-015 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
@@ -7510,9 +7246,9 @@ Local changes at run time (tracked files only):
 - D10-019 [opensysml-rs] fail: metadataValue D10::PumpFluid::pressureP: got "<no annotation of D10::PumpFluid::pressureP readable as a Symbol>", want null
 - D10-019 [opensysml-ts-wasm] fail: metadataValue D10::PumpFluid::pressureP: got "<no annotation of D10::PumpFluid::pressureP readable as a Symbol>", want null
 - D10-019 [opensysml-ts] fail: metadataValue D10::PumpFluid::pressureP: got "<no annotation of D10::PumpFluid::pressureP readable as a Symbol>", want null
-- D10-020 [opensysml-go] fail: metadataValue D10::Pump::motorP: got "\u003cD10::Pump::motorP not visible through D10::pump\u003e", want null
-- D10-020 [opensysml-py] fail: metadataValue D10::Pump::motorP: got '<D10::Pump::motorP not visible through D10::pump>', want None
-- D10-020 [opensysml-rs] fail: metadataValue D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want null
+- D10-020 [opensysml-go] fail: metadataValue D10::Pump::motorP: got "\u003cno annotation of D10::Pump::motorP readable as a Symbol\u003e", want null
+- D10-020 [opensysml-py] fail: metadataValue D10::Pump::motorP: got '<no annotation of D10::Pump::motorP readable as a Symbol>', want None
+- D10-020 [opensysml-rs] fail: metadataValue D10::Pump::motorP: got "<no annotation of D10::Pump::motorP readable as a Symbol>", want null
 - D10-020 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want null
 - D10-020 [opensysml-ts] fail: metadataValue D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want null
 - D10-021 [opensysml-go] fail: metadataValue D10::PumpB: got "\u003cno annotation of D10::PumpB readable as a Symbol\u003e", want 3
@@ -7535,9 +7271,9 @@ Local changes at run time (tracked files only):
 - D10-024 [opensysml-rs] fail: metadataValue D10::PumpFluid::pressureB: got "<no annotation of D10::PumpFluid::pressureB readable as a Symbol>", want 3
 - D10-024 [opensysml-ts-wasm] fail: metadataValue D10::PumpFluid::pressureB: got "<no annotation of D10::PumpFluid::pressureB readable as a Symbol>", want 3
 - D10-024 [opensysml-ts] fail: metadataValue D10::PumpFluid::pressureB: got "<no annotation of D10::PumpFluid::pressureB readable as a Symbol>", want 3
-- D10-025 [opensysml-go] fail: metadataValue D10::Pump::motorB: got "\u003cD10::Pump::motorB not visible through D10::pump\u003e", want 3
-- D10-025 [opensysml-py] fail: metadataValue D10::Pump::motorB: got '<D10::Pump::motorB not visible through D10::pump>', want 3
-- D10-025 [opensysml-rs] fail: metadataValue D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want 3
+- D10-025 [opensysml-go] fail: metadataValue D10::Pump::motorB: got "\u003cno annotation of D10::Pump::motorB readable as a Symbol\u003e", want 3
+- D10-025 [opensysml-py] fail: metadataValue D10::Pump::motorB: got '<no annotation of D10::Pump::motorB readable as a Symbol>', want 3
+- D10-025 [opensysml-rs] fail: metadataValue D10::Pump::motorB: got "<no annotation of D10::Pump::motorB readable as a Symbol>", want 3
 - D10-025 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want 3
 - D10-025 [opensysml-ts] fail: metadataValue D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want 3
 - D10-026 [opensysml-go] fail: metadataValue D10::PumpA: got "\u003cno annotation of D10::PumpA readable as a Symbol\u003e", want 2
@@ -7560,9 +7296,9 @@ Local changes at run time (tracked files only):
 - D10-029 [opensysml-rs] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
 - D10-029 [opensysml-ts-wasm] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
 - D10-029 [opensysml-ts] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
-- D10-030 [opensysml-go] fail: metadataValue D10::Pump::motorA: got "\u003cD10::Pump::motorA not visible through D10::pump\u003e", want 2
-- D10-030 [opensysml-py] fail: metadataValue D10::Pump::motorA: got '<D10::Pump::motorA not visible through D10::pump>', want 2
-- D10-030 [opensysml-rs] fail: metadataValue D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want 2
+- D10-030 [opensysml-go] fail: metadataValue D10::Pump::motorA: got "\u003cno annotation of D10::Pump::motorA readable as a Symbol\u003e", want 2
+- D10-030 [opensysml-py] fail: metadataValue D10::Pump::motorA: got '<no annotation of D10::Pump::motorA readable as a Symbol>', want 2
+- D10-030 [opensysml-rs] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
 - D10-030 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want 2
 - D10-030 [opensysml-ts] fail: metadataValue D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want 2
 - D10-031 [opensysml-go] unsupported: neither the Symbol nor the query API reports what a metadata usage annotates
