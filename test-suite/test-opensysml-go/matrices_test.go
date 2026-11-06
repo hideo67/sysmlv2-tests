@@ -35,6 +35,8 @@ type caseSpec struct {
 	Via     string            `json:"via"`
 	Model   string            `json:"model"`
 	Subject string            `json:"subject"`
+	Path    string            `json:"path"`
+	Path2   string            `json:"path2"`
 	Unnamed *struct {
 		Metaclass string `json:"metaclass"`
 		Index     int    `json:"index"`
@@ -253,6 +255,8 @@ func parent(qn string) string {
 
 func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
 	switch c.Check {
+	case "instanceType", "instanceValue", "instanceCount", "endIdentity", "ownerPath":
+		return instanceCheck(ctx, cl, m, c)
 	case "evaluatedValue", "evaluatedUnit":
 		// E10: the feature's value from the evaluation API, in its part def's scope or with
 		// the usage as subject
@@ -638,6 +642,78 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return fmt.Sprintf("<%s not in Attributes of %s>", sym.Name, owner), nil
 	}
 	return nil, errors.New("unknown check " + c.Check)
+}
+
+var instantiations = map[string]*opensysml.Instantiation{}
+
+// instanceCheck is F10: walk c.Path from the object Instantiate(c.Element) builds.
+func instanceCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
+	if c.Check == "ownerPath" {
+		return nil, unsupported("an Instance carries no owner or usage path (issue #1959)")
+	}
+	key := m.Hash + " " + c.Element
+	inst, ok := instantiations[key]
+	if !ok {
+		var err error
+		if inst, err = cl.Instantiate(ctx, m, c.Element); err != nil {
+			return fmt.Sprintf("<instantiation failed: %v>", err), nil
+		}
+		instantiations[key] = inst
+	}
+	// walk returns the object (*Instance), a scalar Value, or a list of values at the path
+	walk := func(path string) any {
+		var cur any = inst.Root
+		for _, name := range strings.Split(path, ".") {
+			obj, ok := cur.(*opensysml.Instance)
+			if !ok {
+				return fmt.Sprintf("<%s: not an object>", name)
+			}
+			fv, ok := obj.FeatureValues[name]
+			if !ok {
+				return fmt.Sprintf("<no feature %s>", name)
+			}
+			resolve := func(v opensysml.Value) any {
+				if id, ok := v.(opensysml.InstanceID); ok {
+					return inst.Instance(id)
+				}
+				return v
+			}
+			if fv.Values != nil {
+				list := []any{}
+				for _, v := range fv.Values {
+					list = append(list, resolve(v))
+				}
+				cur = list
+			} else {
+				cur = resolve(fv.Value)
+			}
+		}
+		return cur
+	}
+	target := walk(c.Path)
+	switch c.Check {
+	case "instanceType":
+		if obj, ok := target.(*opensysml.Instance); ok {
+			return obj.TypeSymbolID, nil
+		}
+		return fmt.Sprint(target), nil
+	case "instanceValue":
+		if v, ok := target.(opensysml.Value); ok {
+			return number(v), nil
+		}
+		return fmt.Sprint(target), nil
+	case "instanceCount":
+		if list, ok := target.([]any); ok {
+			return len(list), nil
+		}
+		if _, ok := target.(*opensysml.Instance); ok {
+			return 1, nil
+		}
+		return 0, nil
+	}
+	a, aok := target.(*opensysml.Instance)
+	b, bok := walk(c.Path2).(*opensysml.Instance)
+	return aok && bok && a.ID == b.ID, nil
 }
 
 func number(v opensysml.Value) any {

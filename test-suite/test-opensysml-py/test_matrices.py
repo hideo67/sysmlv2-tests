@@ -142,7 +142,48 @@ def evaluate(model, check, element, subject):
     return v.magnitude if is_quantity else v
 
 
-def do_check(model, check, element, through=None, unnamed=None, via=None, subject=None):
+_instances = {}
+
+
+def instance_check(model, check, root, path, path2):
+    """F10: walk `path` from the object instantiate(root) builds."""
+    if check == "ownerPath":
+        raise Unsupported("an Instance carries no owner or usage path (issue #1959)")
+    key = (model.hash, root)
+    if key not in _instances:
+        try:
+            _instances[key] = model.instantiate(root)
+        except opensysml.errors.OpenSysMLError as e:
+            _instances[key] = f"<instantiation failed: {e}>"
+    obj = _instances[key]
+    if isinstance(obj, str):
+        return obj
+
+    def walk(p):
+        cur = obj
+        for name in p.split("."):
+            if not hasattr(cur, "get"):
+                return f"<{name}: not an object>"
+            cur = cur.get(name)
+            if cur is None:
+                return f"<no feature {name}>"
+        return cur
+
+    target = walk(path)
+    if check == "instanceType":
+        return getattr(target, "type_symbol_id", target)
+    if check == "instanceValue":
+        return target
+    if check == "instanceCount":
+        return len(target) if isinstance(target, (list, tuple)) else (0 if isinstance(target, str) else 1)
+    other = walk(path2)
+    return getattr(target, "id", "a") == getattr(other, "id", "b")
+
+
+def do_check(model, check, element, through=None, unnamed=None, via=None, subject=None,
+             path=None, path2=None):
+    if check in ('instanceType', 'instanceValue', 'instanceCount', 'endIdentity', 'ownerPath'):
+        return instance_check(model, check, element, path, path2)
     if check in ("evaluatedValue", "evaluatedUnit"):
         return evaluate(model, check, element, subject)
     if check == "resolve":
@@ -292,7 +333,7 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
 def test_case(model_file, case):
     try:
         actual = do_check(load(model_file), case["check"], case["element"], case.get("through"), case.get("unnamed"),
-                          case.get("via"), case.get("subject"))
+                          case.get("via"), case.get("subject"), case.get("path"), case.get("path2"))
     except Unsupported as e:
         pytest.skip(f"UNSUPPORTED: {e}")
     ok = actual == case["expect"] or actual in case.get("accept", [])

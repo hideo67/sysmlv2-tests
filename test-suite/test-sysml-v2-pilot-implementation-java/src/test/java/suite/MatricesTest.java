@@ -220,6 +220,9 @@ class MatricesTest {
         List<String> path = throughPath(c);
         String through = path.isEmpty() ? null : path.get(0);
 
+        if (List.of("instanceType", "instanceValue", "instanceCount", "endIdentity", "ownerPath").contains(check)) {
+            abort("UNSUPPORTED: no API instantiates a part or usage (the Pilot evaluates expressions only)");
+        }
         if (check.equals("evaluatedValue") || check.equals("evaluatedUnit")) {
             // E10: the Pilot's evaluator (org.omg.sysml.execution ExpressionEvaluator, which the
             // %eval command uses). In a usage, the feature is read as `tuned.lit` in a calc that

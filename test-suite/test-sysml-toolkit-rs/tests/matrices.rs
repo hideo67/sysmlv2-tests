@@ -193,6 +193,10 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
     let path = through_path(c);
     let through = path.first().map(String::as_str);
 
+    if ["instanceType", "instanceValue", "instanceCount", "endIdentity", "ownerPath"].contains(&check) {
+        return Ok(Unsupported("no API instantiates a part or usage (evaluation yields instances only as \
+                               expression results)".into()));
+    }
     if check == "evaluatedValue" || check == "evaluatedUnit" {
         // E10: the feature's value from the evaluation API: evaluate (in its part def) or
         // evaluate_qualified("<usage>::<feature>") (the usage path sets the context)

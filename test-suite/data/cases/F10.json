@@ -1,0 +1,244 @@
+{
+ "matrix": "F10",
+ "model": "models/F10.sysml",
+ "notes": {
+  "reads": "instanceType   the type of the object at `path` (F10::Tank; the usage it was built from,\n                 such as F10::Vehicle::tank, is accepted too)\n  instanceValue  the value of `capacity` of the object at `path`\n  instanceCount  the number of objects `path`.valves holds (declared [2])\n  endIdentity    whether the object the connector end `path` holds is the same object as the\n                 one at `path2` (the port it references)\n  ownerPath      the usage path, from the root, of the object the connector end `path` holds\n                 (OpenSysML issue #1959)",
+  "path": "feature names walked from the root object, joined by dots"
+ },
+ "cases": [
+  {
+   "id": "F10-001",
+   "check": "instanceType",
+   "element": "F10::vehicle",
+   "expect": "F10::Tank",
+   "path": "tank",
+   "accept": [
+    "F10::Vehicle::tank"
+   ]
+  },
+  {
+   "id": "F10-002",
+   "check": "instanceType",
+   "element": "F10::Vehicle",
+   "expect": "F10::Tank",
+   "path": "tank",
+   "accept": [
+    "F10::Vehicle::tank"
+   ]
+  },
+  {
+   "id": "F10-003",
+   "check": "instanceType",
+   "element": "F10::vehicle",
+   "expect": "F10::Tank",
+   "path": "powertrain.tank",
+   "accept": [
+    "F10::Vehicle::powertrain::tank"
+   ]
+  },
+  {
+   "id": "F10-004",
+   "check": "instanceType",
+   "element": "F10::Vehicle",
+   "expect": "F10::Tank",
+   "path": "powertrain.tank",
+   "accept": [
+    "F10::Vehicle::powertrain::tank"
+   ]
+  },
+  {
+   "id": "F10-005",
+   "check": "instanceType",
+   "element": "F10::vehicle",
+   "expect": "F10::Tank",
+   "path": "drive.powertrain.tank",
+   "accept": [
+    "F10::Powertrain::tank"
+   ]
+  },
+  {
+   "id": "F10-006",
+   "check": "instanceType",
+   "element": "F10::Vehicle",
+   "expect": "F10::Tank",
+   "path": "drive.powertrain.tank",
+   "accept": [
+    "F10::Powertrain::tank"
+   ]
+  },
+  {
+   "id": "F10-007",
+   "check": "instanceValue",
+   "element": "F10::vehicle",
+   "expect": 50.0,
+   "path": "tank.capacity"
+  },
+  {
+   "id": "F10-008",
+   "check": "instanceValue",
+   "element": "F10::Vehicle",
+   "expect": 50.0,
+   "path": "tank.capacity"
+  },
+  {
+   "id": "F10-009",
+   "check": "instanceValue",
+   "element": "F10::vehicle",
+   "expect": 60.0,
+   "path": "powertrain.tank.capacity"
+  },
+  {
+   "id": "F10-010",
+   "check": "instanceValue",
+   "element": "F10::Vehicle",
+   "expect": 60.0,
+   "path": "powertrain.tank.capacity"
+  },
+  {
+   "id": "F10-011",
+   "check": "instanceValue",
+   "element": "F10::vehicle",
+   "expect": 50.0,
+   "path": "drive.powertrain.tank.capacity"
+  },
+  {
+   "id": "F10-012",
+   "check": "instanceValue",
+   "element": "F10::Vehicle",
+   "expect": 50.0,
+   "path": "drive.powertrain.tank.capacity"
+  },
+  {
+   "id": "F10-013",
+   "check": "instanceCount",
+   "element": "F10::vehicle",
+   "expect": 2,
+   "path": "tank.valves"
+  },
+  {
+   "id": "F10-014",
+   "check": "instanceCount",
+   "element": "F10::Vehicle",
+   "expect": 2,
+   "path": "tank.valves"
+  },
+  {
+   "id": "F10-015",
+   "check": "instanceCount",
+   "element": "F10::vehicle",
+   "expect": 2,
+   "path": "powertrain.tank.valves"
+  },
+  {
+   "id": "F10-016",
+   "check": "instanceCount",
+   "element": "F10::Vehicle",
+   "expect": 2,
+   "path": "powertrain.tank.valves"
+  },
+  {
+   "id": "F10-017",
+   "check": "instanceCount",
+   "element": "F10::vehicle",
+   "expect": 2,
+   "path": "drive.powertrain.tank.valves"
+  },
+  {
+   "id": "F10-018",
+   "check": "instanceCount",
+   "element": "F10::Vehicle",
+   "expect": 2,
+   "path": "drive.powertrain.tank.valves"
+  },
+  {
+   "id": "F10-019",
+   "check": "endIdentity",
+   "element": "F10::vehicle",
+   "expect": true,
+   "path": "c1.src",
+   "path2": "tank.fuelOut"
+  },
+  {
+   "id": "F10-020",
+   "check": "endIdentity",
+   "element": "F10::Vehicle",
+   "expect": true,
+   "path": "c1.src",
+   "path2": "tank.fuelOut"
+  },
+  {
+   "id": "F10-021",
+   "check": "endIdentity",
+   "element": "F10::vehicle",
+   "expect": true,
+   "path": "c2.src",
+   "path2": "powertrain.tank.fuelOut"
+  },
+  {
+   "id": "F10-022",
+   "check": "endIdentity",
+   "element": "F10::Vehicle",
+   "expect": true,
+   "path": "c2.src",
+   "path2": "powertrain.tank.fuelOut"
+  },
+  {
+   "id": "F10-023",
+   "check": "endIdentity",
+   "element": "F10::vehicle",
+   "expect": true,
+   "path": "c3.src",
+   "path2": "drive.powertrain.tank.fuelOut"
+  },
+  {
+   "id": "F10-024",
+   "check": "endIdentity",
+   "element": "F10::Vehicle",
+   "expect": true,
+   "path": "c3.src",
+   "path2": "drive.powertrain.tank.fuelOut"
+  },
+  {
+   "id": "F10-025",
+   "check": "ownerPath",
+   "element": "F10::vehicle",
+   "expect": "tank.fuelOut",
+   "path": "c1.src"
+  },
+  {
+   "id": "F10-026",
+   "check": "ownerPath",
+   "element": "F10::Vehicle",
+   "expect": "tank.fuelOut",
+   "path": "c1.src"
+  },
+  {
+   "id": "F10-027",
+   "check": "ownerPath",
+   "element": "F10::vehicle",
+   "expect": "powertrain.tank.fuelOut",
+   "path": "c2.src"
+  },
+  {
+   "id": "F10-028",
+   "check": "ownerPath",
+   "element": "F10::Vehicle",
+   "expect": "powertrain.tank.fuelOut",
+   "path": "c2.src"
+  },
+  {
+   "id": "F10-029",
+   "check": "ownerPath",
+   "element": "F10::vehicle",
+   "expect": "drive.powertrain.tank.fuelOut",
+   "path": "c3.src"
+  },
+  {
+   "id": "F10-030",
+   "check": "ownerPath",
+   "element": "F10::Vehicle",
+   "expect": "drive.powertrain.tank.fuelOut",
+   "path": "c3.src"
+  }
+ ]
+}

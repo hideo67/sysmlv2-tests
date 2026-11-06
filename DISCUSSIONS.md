@@ -788,3 +788,30 @@ Test-suite fixes found on the way:
 Findings: all four MDKs pass all 48. Context is respected everywhere: a
 redefinition in `tuned` changes `refd`, `chain`, `cond` and `flag` as expected,
 and quantities keep the unit written.
+
+### F10 runtime instances
+30 cases: 5 reads (instanceType, instanceValue, instanceCount, endIdentity,
+ownerPath) x 3 path depths (`tank`, `powertrain.tank` with a redefined
+capacity, `drive.powertrain.tank`) x 2 roots (the usage `vehicle`, the part def
+`Vehicle`). The root is instantiated with the MDK's instantiation API, and a
+usage path is walked through the objects' feature values.
+
+- OpenSysML: `instantiate` (Python) / `Instantiate` (Go) build the object tree.
+  Values that refer to objects carry instance IDs, which the walk resolves.
+- Pilot and sysml-toolkit: no API instantiates a part or usage (the Pilot
+  evaluates expressions only; sysml-toolkit yields instance values only as
+  expression results), so all 30 are unsupported.
+
+Findings:
+- OpenSysML (Python, Go): object types, values (60.0 where redefined along the
+  path), object counts (`valves[2]`), and connector end identity all pass at
+  every depth and from both roots. An object carries no owner or usage path
+  (#1959), so ownerPath is unsupported.
+- Pilot and sysml-toolkit: unsupported (no runtime).
+
+## Plan status
+All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
+A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
+C30, D10, D20, E10, F10). Deferred: the OpenSysML TS, Java and Rust clients.
+They wrap the same `SymbolInfo` as the Python and Go clients, so they would
+mostly confirm the same results.
