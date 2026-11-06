@@ -42,12 +42,17 @@ class MatricesTest {
                 });
                 for (String model : models) {
                     if (resources.containsKey(model)) continue;
-                    interactive.setResource(Path.of(model).getFileName().toString());
+                    // load as process() does: next() creates and registers the document, and a
+                    // document without errors is added to the global index below, so that global
+                    // name resolution (resolve, eval, resolveGlobal) sees it
+                    interactive.next(".sysml");
                     interactive.parse(Files.readString(data.resolve(model)));
                     List<String> errors = interactive.validate().stream()
                         .filter(i -> i.getSeverity() == org.eclipse.xtext.diagnostics.Severity.ERROR)
                         .map(i -> "line " + i.getLineNumber() + ": " + i.getMessage()).limit(2).toList();
                     if (!errors.isEmpty()) rejected.put(model, "model rejected: " + String.join("; ", errors));
+                    // as process() does for a document without errors: enter it in the global index
+                    else interactive.addResourceToIndex(interactive.getResource());
                     ElementUtil.transformAll(interactive.getResource(), true);
                     resources.put(model, interactive.getResource());
                 }
@@ -215,6 +220,48 @@ class MatricesTest {
         List<String> path = throughPath(c);
         String through = path.isEmpty() ? null : path.get(0);
 
+        if (check.equals("evaluatedValue") || check.equals("evaluatedUnit")) {
+            // E10: the Pilot's evaluator (org.omg.sysml.execution ExpressionEvaluator, which the
+            // %eval command uses). In a usage, the feature is read as `tuned.lit` in a calc that
+            // imports the root package, as %eval does; in the part def, the feature's value
+            // expression is evaluated with the def as target (SysML does not allow `Vehicle::lit`
+            // to be referenced from outside its featuring type).
+            String name = qn.substring(qn.lastIndexOf("::") + 2);
+            String pkg = qn.substring(0, qn.indexOf("::"));
+            List<Element> results;
+            try {
+                if (c.has("subject")) {
+                    String chain = c.get("subject").getAsString().substring(pkg.length() + 2) + "." + name;
+                    var r = interactive.process("calc{private import " + pkg + "::*;\n" + chain + "}", false);
+                    if (r.hasErrors()) return "<eval: " + r.toString().trim() + ">";
+                    Type calc = (Type) ((Namespace) r.getRootElement()).getOwnedMember().get(0);
+                    Expression x = (Expression) org.omg.sysml.util.TypeUtil.getFeatureByMembershipIn(calc, ResultExpressionMembership.class);
+                    results = org.omg.sysml.execution.expressions.ExpressionEvaluator.INSTANCE.evaluate(x, find(resource, pkg));
+                    interactive.removeResource();
+                } else {
+                    Element feature = find(resource, qn);
+                    Expression x = valueExpr(feature);
+                    if (x == null) return "<no value expression>";
+                    results = org.omg.sysml.execution.expressions.ExpressionEvaluator.INSTANCE.evaluate(x, feature.getOwningNamespace());
+                }
+            } catch (RuntimeException ex) {
+                return "<evaluation failed: " + ex + ">";
+            }
+            if (results == null || results.isEmpty()) return "<no result>";
+            Element r = results.get(0);
+            if (r instanceof OperatorExpression op && "[".equals(op.getOperator()) && op.getArgument().size() == 2) {
+                // a quantity value: magnitude [unit]
+                if (check.equals("evaluatedUnit")) {
+                    Expression u = op.getArgument().get(1);
+                    if (!(u instanceof FeatureReferenceExpression fr)) return "<" + u.eClass().getName() + ">";
+                    Feature unit = fr.getReferent();
+                    return unit.getShortName() != null ? unit.getShortName() : unit.getName();
+                }
+                return literal(op.getArgument().get(0));
+            }
+            if (check.equals("evaluatedUnit")) return null;
+            return r instanceof Expression ex ? literal(ex) : "<" + r.eClass().getName() + ">";
+        }
         if (check.equals("resolve")) {
             // KerML Namespace::resolve of the rest of the path, invoked on the matrix's root
             // package (resolution from the global namespace finds no user package in the Pilot)

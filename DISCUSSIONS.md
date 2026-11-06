@@ -633,12 +633,12 @@ by a usage typed by it; an attribute, reached by an attribute subsetting it).
   paths are written where they are visible.
 
 Observations on the way:
-- In the Pilot (through SysMLInteractive), `resolveGlobal` and `resolve` called
-  on the root namespace find no top-level package of the user's document, while
-  `A60.resolve("Lib::Pump")` works. sysml-toolkit resolves from the root as
-  well. It is unclear whether this is a Pilot defect or the interactive setup,
-  so the read resolves from the root package and this is recorded as an
-  observation only.
+- (Retracted in E10.) It first looked as if the Pilot's `resolveGlobal` and
+  root-level `resolve` found no top-level package of the user's document. The
+  cause was the test loader: it did not enter documents in the Pilot's global
+  index, as `process()` does. With that fixed, root-level resolution gives the
+  same answers as `A60.resolve(...)` for all 16 resolve cases. The read keeps
+  resolving from the root package.
 - Adapter fix: an OwningMembership redefines `memberElement` as
   `ownedMemberElement`. sysml-toolkit answers only to the redefining name (as in
   A40).
@@ -753,3 +753,38 @@ became "fail: not visible" instead of "unsupported", against the rule that
 unsupported takes precedence. They are now decided first. Only A50 changed: its
 18 `owner` cases on unnamed members went from fail to unsupported. The Go
 adapter's failure details also no longer drop spaces inside strings.
+
+### E10 static evaluation of feature values
+48 cases: 2 reads (evaluatedValue; evaluatedUnit, null except for a quantity) x
+8 expressions (literal, arithmetic, feature reference, feature chain,
+conditional, comparison, string, `1500.0 [kg]`) x 3 contexts (the part def; a
+typing usage `vehicle`; a usage `tuned` that redefines `lit` and `engine.power`,
+so the dependent features evaluate differently there).
+
+Each MDK is driven through its evaluation API, not its element API, since
+evaluation is not element navigation:
+- OpenSysML: Evaluate (`model.eval` / `client.Evaluate`), with the part def as
+  context symbol or the usage as subject.
+- sysml-toolkit: `evaluate` (part def) and `evaluate_qualified("E10::tuned::lit")`
+  (the usage path sets the context), read through its `render_value`.
+- Pilot: the execution ExpressionEvaluator that its `%eval` command uses. In a
+  usage, the feature is read as the chain `tuned.lit` in a calc importing the
+  root package, as `%eval` does. In the part def, the feature's value expression
+  is evaluated with the def as target, because SysML does not allow
+  `Vehicle::lit` to be referenced from outside its featuring type ("Must be an
+  accessible feature").
+
+Model note: `lit` and `power` are declared with `default`, since a bound value
+cannot be overridden (as in A20).
+
+Test-suite fixes found on the way:
+- The new reads were first called `value`/`unit`, which collided with A20's
+  `value` read in every adapter. They are now `evaluatedValue`/`evaluatedUnit`.
+- The Pilot loader now loads each document as `process()` does: `next()`, then
+  `addResourceToIndex` for a document without errors. Without the index, global
+  name resolution (`resolve`, `%eval`) did not see the test models. This also
+  explains the A60 observation, now retracted. No earlier result changed.
+
+Findings: all four MDKs pass all 48. Context is respected everywhere: a
+redefinition in `tuned` changes `refd`, `chain`, `cond` and `flag` as expected,
+and quantities keep the unit written.

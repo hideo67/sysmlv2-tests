@@ -128,7 +128,23 @@ def no_symbol_field(model, element, prop, what):
     return Unsupported(f"no Symbol field for {what}; {note}")
 
 
-def do_check(model, check, element, through=None, unnamed=None, via=None):
+def evaluate(model, check, element, subject):
+    """E10: the feature's value from the evaluation API (Evaluate), in its part def's scope
+    or with the usage as subject."""
+    owner, name = element.rsplit("::", 1)
+    try:
+        v = model.eval(name, subject=subject) if subject else model.eval(name, context_symbol_id=owner)
+    except opensysml.errors.OpenSysMLError as e:
+        return f"<evaluation failed: {e}>"
+    is_quantity = isinstance(v, opensysml.values.Quantity)
+    if check == "evaluatedUnit":
+        return v.unit.text if is_quantity else None
+    return v.magnitude if is_quantity else v
+
+
+def do_check(model, check, element, through=None, unnamed=None, via=None, subject=None):
+    if check in ("evaluatedValue", "evaluatedUnit"):
+        return evaluate(model, check, element, subject)
     if check == "resolve":
         # the Symbol API's one name lookup: get(qualified name)
         s = model.get(element) or model.get(norm(element))
@@ -276,7 +292,7 @@ def do_check(model, check, element, through=None, unnamed=None, via=None):
 def test_case(model_file, case):
     try:
         actual = do_check(load(model_file), case["check"], case["element"], case.get("through"), case.get("unnamed"),
-                          case.get("via"))
+                          case.get("via"), case.get("subject"))
     except Unsupported as e:
         pytest.skip(f"UNSUPPORTED: {e}")
     ok = actual == case["expect"] or actual in case.get("accept", [])

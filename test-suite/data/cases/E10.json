@@ -1,0 +1,330 @@
+{
+ "matrix": "E10",
+ "model": "models/E10.sysml",
+ "notes": {
+  "reads": "evaluatedValue  the evaluated value: a number, boolean or string; for a quantity, its\n                  magnitude in the unit written\n  evaluatedUnit   the unit of a quantity value as written (\"kg\"); null for a value that is not\n                  a quantity",
+  "subject": "the usage the feature is evaluated in; absent: evaluated in its part def"
+ },
+ "cases": [
+  {
+   "id": "E10-001",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::lit",
+   "expect": 2.5
+  },
+  {
+   "id": "E10-002",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::lit",
+   "expect": 2.5,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-003",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::lit",
+   "expect": 0.5,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-004",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::arith",
+   "expect": 6.5
+  },
+  {
+   "id": "E10-005",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::arith",
+   "expect": 6.5,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-006",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::arith",
+   "expect": 6.5,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-007",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::refd",
+   "expect": 2.5
+  },
+  {
+   "id": "E10-008",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::refd",
+   "expect": 2.5,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-009",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::refd",
+   "expect": 0.5,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-010",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::chain",
+   "expect": 100.0
+  },
+  {
+   "id": "E10-011",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::chain",
+   "expect": 100.0,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-012",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::chain",
+   "expect": 200.0,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-013",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::cond",
+   "expect": 1.0
+  },
+  {
+   "id": "E10-014",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::cond",
+   "expect": 1.0,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-015",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::cond",
+   "expect": 0.0,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-016",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::flag",
+   "expect": true
+  },
+  {
+   "id": "E10-017",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::flag",
+   "expect": true,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-018",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::flag",
+   "expect": false,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-019",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::label",
+   "expect": "pump"
+  },
+  {
+   "id": "E10-020",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::label",
+   "expect": "pump",
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-021",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::label",
+   "expect": "pump",
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-022",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::mass",
+   "expect": 1500.0
+  },
+  {
+   "id": "E10-023",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::mass",
+   "expect": 1500.0,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-024",
+   "check": "evaluatedValue",
+   "element": "E10::Vehicle::mass",
+   "expect": 1500.0,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-025",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::lit",
+   "expect": null
+  },
+  {
+   "id": "E10-026",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::lit",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-027",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::lit",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-028",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::arith",
+   "expect": null
+  },
+  {
+   "id": "E10-029",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::arith",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-030",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::arith",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-031",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::refd",
+   "expect": null
+  },
+  {
+   "id": "E10-032",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::refd",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-033",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::refd",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-034",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::chain",
+   "expect": null
+  },
+  {
+   "id": "E10-035",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::chain",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-036",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::chain",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-037",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::cond",
+   "expect": null
+  },
+  {
+   "id": "E10-038",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::cond",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-039",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::cond",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-040",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::flag",
+   "expect": null
+  },
+  {
+   "id": "E10-041",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::flag",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-042",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::flag",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-043",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::label",
+   "expect": null
+  },
+  {
+   "id": "E10-044",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::label",
+   "expect": null,
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-045",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::label",
+   "expect": null,
+   "subject": "E10::tuned"
+  },
+  {
+   "id": "E10-046",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::mass",
+   "expect": "kg"
+  },
+  {
+   "id": "E10-047",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::mass",
+   "expect": "kg",
+   "subject": "E10::vehicle"
+  },
+  {
+   "id": "E10-048",
+   "check": "evaluatedUnit",
+   "element": "E10::Vehicle::mass",
+   "expect": "kg",
+   "subject": "E10::tuned"
+  }
+ ]
+}

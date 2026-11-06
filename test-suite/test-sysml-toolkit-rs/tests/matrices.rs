@@ -193,6 +193,41 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
     let path = through_path(c);
     let through = path.first().map(String::as_str);
 
+    if check == "evaluatedValue" || check == "evaluatedUnit" {
+        // E10: the feature's value from the evaluation API: evaluate (in its part def) or
+        // evaluate_qualified("<usage>::<feature>") (the usage path sets the context)
+        let result = match c["subject"].as_str() {
+            Some(subject) => {
+                let name = element.rsplit("::").next().unwrap();
+                api.rm.evaluate_qualified(&format!("{subject}::{name}"))
+            }
+            None => {
+                let e = api.find(element).ok_or("no element")?;
+                api.rm.evaluate(e)
+            }
+        };
+        let v = match result {
+            Ok(v) => v,
+            Err(err) => return Ok(Value(json!(format!("<evaluation failed: {err:?}>")))),
+        };
+        // read through the toolkit's own rendering: "1500.0 [kg]", "6.5", "true", "\"pump\""
+        let text = api.rm.render_value(&v);
+        let (magnitude, unit) = match (text.find(" ["), text.ends_with(']')) {
+            (Some(i), true) => (text[..i].to_string(), Some(text[i + 2..text.len() - 1].to_string())),
+            _ => (text.clone(), None),
+        };
+        if check == "evaluatedUnit" {
+            return Ok(Value(json!(unit)));
+        }
+        let parsed = if let Ok(n) = magnitude.parse::<f64>() {
+            json!(n)
+        } else if magnitude == "true" || magnitude == "false" {
+            json!(magnitude == "true")
+        } else {
+            json!(magnitude.trim_matches('"'))
+        };
+        return Ok(Value(parsed));
+    }
     if check == "resolve" {
         // KerML Namespace::resolve of the rest of the path, invoked on the matrix's root package
         let (first, rest) = element.split_once("::").ok_or("path needs a package")?;

@@ -34,6 +34,7 @@ type caseSpec struct {
 	Accept  []json.RawMessage `json:"accept"`
 	Via     string            `json:"via"`
 	Model   string            `json:"model"`
+	Subject string            `json:"subject"`
 	Unnamed *struct {
 		Metaclass string `json:"metaclass"`
 		Index     int    `json:"index"`
@@ -252,6 +253,35 @@ func parent(qn string) string {
 
 func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
 	switch c.Check {
+	case "evaluatedValue", "evaluatedUnit":
+		// E10: the feature's value from the evaluation API, in its part def's scope or with
+		// the usage as subject
+		owner, name := parent(c.Element), c.Element[strings.LastIndex(c.Element, "::")+2:]
+		opt := opensysml.WithContextSymbol(owner)
+		if c.Subject != "" {
+			opt = opensysml.WithSubject(c.Subject)
+		}
+		v, err := cl.Evaluate(ctx, m, name, opt)
+		if err != nil {
+			return fmt.Sprintf("<evaluation failed: %v>", err), nil
+		}
+		q, isQuantity := v.(opensysml.Quantity)
+		if c.Check == "evaluatedUnit" {
+			if isQuantity {
+				return q.Unit, nil
+			}
+			return nil, nil
+		}
+		if isQuantity {
+			return number(q.Magnitude), nil
+		}
+		switch x := v.(type) {
+		case opensysml.Bool:
+			return bool(x), nil
+		case opensysml.String:
+			return string(x), nil
+		}
+		return number(v), nil
 	case "resolve":
 		// the Symbol API's one name lookup: LookupSymbol(qualified name)
 		s, err := cl.LookupSymbol(ctx, m, c.Element)
