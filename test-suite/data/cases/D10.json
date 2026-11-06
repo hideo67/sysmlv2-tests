@@ -1,0 +1,367 @@
+{
+ "matrix": "D10",
+ "model": "models/D10.sysml",
+ "notes": {
+  "reads": "the annotations of an element are the MetadataUsages whose annotatedElement\nincludes it, wherever they are owned):\n  metadataDefs      sorted qualified names of those MetadataUsages' metadataDefinition\n  metadataValue     literal value of the annotation's own feature redefining `severity`\n                    (null when the annotation does not redefine it, as with the prefix form)\n  annotatedElement  the annotation's annotatedElement (qualified names)",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "D10-001",
+   "check": "metadataDefs",
+   "element": "D10::PumpP",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-002",
+   "check": "metadataDefs",
+   "element": "D10::Pump::motorP",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-003",
+   "check": "metadataDefs",
+   "element": "D10::PumpStates::overheatedP",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-004",
+   "check": "metadataDefs",
+   "element": "D10::PumpFluid::pressureP",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-005",
+   "check": "metadataDefs",
+   "element": "D10::Pump::motorP",
+   "expect": [
+    "D10::FailureMode"
+   ],
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-006",
+   "check": "metadataDefs",
+   "element": "D10::PumpB",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-007",
+   "check": "metadataDefs",
+   "element": "D10::Pump::motorB",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-008",
+   "check": "metadataDefs",
+   "element": "D10::PumpStates::overheatedB",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-009",
+   "check": "metadataDefs",
+   "element": "D10::PumpFluid::pressureB",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-010",
+   "check": "metadataDefs",
+   "element": "D10::Pump::motorB",
+   "expect": [
+    "D10::FailureMode"
+   ],
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-011",
+   "check": "metadataDefs",
+   "element": "D10::PumpA",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-012",
+   "check": "metadataDefs",
+   "element": "D10::Pump::motorA",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-013",
+   "check": "metadataDefs",
+   "element": "D10::PumpStates::overheatedA",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-014",
+   "check": "metadataDefs",
+   "element": "D10::PumpFluid::pressureA",
+   "expect": [
+    "D10::FailureMode"
+   ]
+  },
+  {
+   "id": "D10-015",
+   "check": "metadataDefs",
+   "element": "D10::Pump::motorA",
+   "expect": [
+    "D10::FailureMode"
+   ],
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-016",
+   "check": "metadataValue",
+   "element": "D10::PumpP",
+   "expect": null
+  },
+  {
+   "id": "D10-017",
+   "check": "metadataValue",
+   "element": "D10::Pump::motorP",
+   "expect": null
+  },
+  {
+   "id": "D10-018",
+   "check": "metadataValue",
+   "element": "D10::PumpStates::overheatedP",
+   "expect": null
+  },
+  {
+   "id": "D10-019",
+   "check": "metadataValue",
+   "element": "D10::PumpFluid::pressureP",
+   "expect": null
+  },
+  {
+   "id": "D10-020",
+   "check": "metadataValue",
+   "element": "D10::Pump::motorP",
+   "expect": null,
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-021",
+   "check": "metadataValue",
+   "element": "D10::PumpB",
+   "expect": 3
+  },
+  {
+   "id": "D10-022",
+   "check": "metadataValue",
+   "element": "D10::Pump::motorB",
+   "expect": 3
+  },
+  {
+   "id": "D10-023",
+   "check": "metadataValue",
+   "element": "D10::PumpStates::overheatedB",
+   "expect": 3
+  },
+  {
+   "id": "D10-024",
+   "check": "metadataValue",
+   "element": "D10::PumpFluid::pressureB",
+   "expect": 3
+  },
+  {
+   "id": "D10-025",
+   "check": "metadataValue",
+   "element": "D10::Pump::motorB",
+   "expect": 3,
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-026",
+   "check": "metadataValue",
+   "element": "D10::PumpA",
+   "expect": 2
+  },
+  {
+   "id": "D10-027",
+   "check": "metadataValue",
+   "element": "D10::Pump::motorA",
+   "expect": 2
+  },
+  {
+   "id": "D10-028",
+   "check": "metadataValue",
+   "element": "D10::PumpStates::overheatedA",
+   "expect": 2
+  },
+  {
+   "id": "D10-029",
+   "check": "metadataValue",
+   "element": "D10::PumpFluid::pressureA",
+   "expect": 2
+  },
+  {
+   "id": "D10-030",
+   "check": "metadataValue",
+   "element": "D10::Pump::motorA",
+   "expect": 2,
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-031",
+   "check": "annotatedElement",
+   "element": "D10::PumpP",
+   "expect": [
+    "D10::PumpP"
+   ]
+  },
+  {
+   "id": "D10-032",
+   "check": "annotatedElement",
+   "element": "D10::Pump::motorP",
+   "expect": [
+    "D10::Pump::motorP"
+   ]
+  },
+  {
+   "id": "D10-033",
+   "check": "annotatedElement",
+   "element": "D10::PumpStates::overheatedP",
+   "expect": [
+    "D10::PumpStates::overheatedP"
+   ]
+  },
+  {
+   "id": "D10-034",
+   "check": "annotatedElement",
+   "element": "D10::PumpFluid::pressureP",
+   "expect": [
+    "D10::PumpFluid::pressureP"
+   ]
+  },
+  {
+   "id": "D10-035",
+   "check": "annotatedElement",
+   "element": "D10::Pump::motorP",
+   "expect": [
+    "D10::Pump::motorP"
+   ],
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-036",
+   "check": "annotatedElement",
+   "element": "D10::PumpB",
+   "expect": [
+    "D10::PumpB"
+   ]
+  },
+  {
+   "id": "D10-037",
+   "check": "annotatedElement",
+   "element": "D10::Pump::motorB",
+   "expect": [
+    "D10::Pump::motorB"
+   ]
+  },
+  {
+   "id": "D10-038",
+   "check": "annotatedElement",
+   "element": "D10::PumpStates::overheatedB",
+   "expect": [
+    "D10::PumpStates::overheatedB"
+   ]
+  },
+  {
+   "id": "D10-039",
+   "check": "annotatedElement",
+   "element": "D10::PumpFluid::pressureB",
+   "expect": [
+    "D10::PumpFluid::pressureB"
+   ]
+  },
+  {
+   "id": "D10-040",
+   "check": "annotatedElement",
+   "element": "D10::Pump::motorB",
+   "expect": [
+    "D10::Pump::motorB"
+   ],
+   "through": [
+    "D10::pump"
+   ]
+  },
+  {
+   "id": "D10-041",
+   "check": "annotatedElement",
+   "element": "D10::PumpA",
+   "expect": [
+    "D10::PumpA"
+   ]
+  },
+  {
+   "id": "D10-042",
+   "check": "annotatedElement",
+   "element": "D10::Pump::motorA",
+   "expect": [
+    "D10::Pump::motorA"
+   ]
+  },
+  {
+   "id": "D10-043",
+   "check": "annotatedElement",
+   "element": "D10::PumpStates::overheatedA",
+   "expect": [
+    "D10::PumpStates::overheatedA"
+   ]
+  },
+  {
+   "id": "D10-044",
+   "check": "annotatedElement",
+   "element": "D10::PumpFluid::pressureA",
+   "expect": [
+    "D10::PumpFluid::pressureA"
+   ]
+  },
+  {
+   "id": "D10-045",
+   "check": "annotatedElement",
+   "element": "D10::Pump::motorA",
+   "expect": [
+    "D10::Pump::motorA"
+   ],
+   "through": [
+    "D10::pump"
+   ]
+  }
+ ]
+}

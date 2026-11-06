@@ -1,0 +1,463 @@
+//! Every matrix in data/cases/*.json against sysml-toolkit's semantic model API,
+//! `ResolvedModel`: owned properties through `element_properties`, derived
+//! properties through `derived(element, "<spec name>")` (DISCUSSIONS.md, Step 3).
+use serde_json::{json, Value};
+use std::fs;
+use std::path::PathBuf;
+use sysmlv2_parser::json::{metaclass_conforms, Derived, DerivedValue, ElementRef, Reference, ResolvedModel};
+use sysmlv2_parser::model::Model;
+
+enum Outcome {
+    Value(Value),
+    Unsupported(String),
+}
+use Outcome::*;
+
+fn root() -> PathBuf {
+    PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+}
+
+struct Api {
+    rm: ResolvedModel,
+}
+
+impl Api {
+    fn qn(&mut self, e: ElementRef) -> Option<String> {
+        self.rm.element_qualified_name(e)
+    }
+    fn find(&mut self, qn: &str) -> Option<ElementRef> {
+        self.rm.resolve_qualified(qn)
+    }
+    /// A property by spec name: owned if the element carries it, else derived.
+    fn prop(&mut self, e: ElementRef, name: &str) -> Result<DerivedOrOwned, String> {
+        if let Some(v) = self.rm.element_properties(e).get(name) {
+            return Ok(DerivedOrOwned::Owned(v.clone()));
+        }
+        match self.rm.derived(e, name) {
+            Derived::Value(v) => Ok(DerivedOrOwned::Derived(v)),
+            Derived::NotComputed => Err(format!("{name} is not computed by the toolkit")),
+            Derived::NotDeclared => Ok(DerivedOrOwned::Owned(Value::Null)),
+        }
+    }
+    fn elements(&mut self, e: ElementRef, name: &str) -> Result<Vec<ElementRef>, String> {
+        Ok(match self.prop(e, name)? {
+            DerivedOrOwned::Derived(v) => v.elements().into_iter().chain(v.element()).collect(),
+            // owned properties spell element references as {"@id": ...}
+            DerivedOrOwned::Owned(v) => {
+                let refs: Vec<Value> = match v {
+                    Value::Array(a) => a,
+                    Value::Object(_) => vec![v],
+                    _ => vec![],
+                };
+                refs.iter().filter_map(|r| r["@id"].as_str()).filter_map(|id| self.rm.element_by_id(id)).collect()
+            }
+        })
+    }
+    fn element(&mut self, e: ElementRef, name: &str) -> Result<Option<ElementRef>, String> {
+        Ok(self.elements(e, name)?.into_iter().next())
+    }
+    fn scalar(&mut self, e: ElementRef, name: &str) -> Result<Value, String> {
+        Ok(match self.prop(e, name)? {
+            DerivedOrOwned::Owned(v) => v,
+            DerivedOrOwned::Derived(DerivedValue::Str(s)) => json!(s),
+            DerivedOrOwned::Derived(DerivedValue::Bool(b)) => json!(b),
+            DerivedOrOwned::Derived(DerivedValue::Null) => Value::Null,
+            DerivedOrOwned::Derived(other) => json!(format!("{other:?}")),
+        })
+    }
+    /// Features a type lists, own and inherited: the union of the spec's
+    /// `feature`, `ownedFeature` and `inheritedFeature`.
+    fn visible_features(&mut self, t: ElementRef) -> Result<Vec<ElementRef>, String> {
+        let mut out = vec![];
+        for p in ["feature", "ownedFeature", "inheritedFeature"] {
+            for f in self.elements(t, p)? {
+                if !out.contains(&f) {
+                    out.push(f);
+                }
+            }
+        }
+        Ok(out)
+    }
+    /// A referenced feature in chain form: its chainingFeatures' qualified names,
+    /// or a one-element list when it is not a chain.
+    fn chain_form(&mut self, f: ElementRef) -> Result<Value, String> {
+        let chain = self.elements(f, "chainingFeature")?;
+        let parts = if chain.is_empty() { vec![f] } else { chain };
+        Ok(json!(parts.into_iter().map(|p| self.qn(p)).collect::<Vec<_>>()))
+    }
+    /// The value expression of the feature's owned FeatureValue membership.
+    fn value_expr(&mut self, e: ElementRef) -> Result<Option<ElementRef>, String> {
+        let fv = self.elements(e, "ownedMembership")?.into_iter().find(|m| self.metaclass(*m) == "FeatureValue");
+        match fv {
+            Some(fv) => self.element(fv, "value"),
+            None => Ok(None),
+        }
+    }
+    /// Referenced features of an expression, left to right, each in chain form.
+    fn references(&mut self, x: ElementRef) -> Result<Vec<Value>, String> {
+        let mc = self.metaclass(x);
+        if mc == "FeatureReferenceExpression" {
+            return Ok(match self.element(x, "referent")? {
+                Some(f) => vec![self.chain_form(f)?],
+                None => vec![],
+            });
+        }
+        if mc == "FeatureChainExpression" {
+            let args = self.elements(x, "argument")?;
+            let mut chain: Vec<Value> = match args.first() {
+                Some(a) => match self.references(*a)?.pop() {
+                    Some(Value::Array(c)) => c,
+                    _ => vec![],
+                },
+                None => vec![],
+            };
+            if let Some(t) = self.element(x, "targetFeature")? {
+                if let Value::Array(tc) = self.chain_form(t)? {
+                    chain.extend(tc);
+                }
+            }
+            return Ok(vec![Value::Array(chain)]);
+        }
+        let mut out = vec![];
+        for a in self.elements(x, "argument")? {
+            out.extend(self.references(a)?);
+        }
+        Ok(out)
+    }
+    /// MetadataUsages whose annotatedElement includes `e`, wherever they are owned.
+    fn annotations(&mut self, e: ElementRef) -> Result<Vec<ElementRef>, String> {
+        let candidates: Vec<ElementRef> = self.rm.user_elements().filter(|x| self.rm.element_type(*x) == "MetadataUsage").collect();
+        let mut out = vec![];
+        for mu in candidates {
+            if self.elements(mu, "annotatedElement")?.contains(&e) {
+                out.push(mu);
+            }
+        }
+        Ok(out)
+    }
+    fn metaclass(&self, e: ElementRef) -> &'static str {
+        self.rm.element_type(e)
+    }
+    /// The value of a literal expression, as JSON ("*" for LiteralInfinity).
+    fn literal(&mut self, expr: ElementRef) -> Result<Value, String> {
+        if self.metaclass(expr) == "LiteralInfinity" {
+            return Ok(json!("*"));
+        }
+        self.scalar(expr, "value")
+    }
+}
+
+enum DerivedOrOwned {
+    Owned(Value),
+    Derived(DerivedValue),
+}
+
+/// Qualified names compared without quoting (`CmdPort::'~CmdPort'` vs `CmdPort::~CmdPort`).
+fn norm(qn: &str) -> String {
+    qn.replace('\'', "")
+}
+
+/// The case's `through`: absent, one qualified name, or a path.
+fn through_path(c: &Value) -> Vec<String> {
+    match &c["through"] {
+        Value::String(s) => vec![s.clone()],
+        Value::Array(a) => a.iter().map(|v| v.as_str().unwrap().to_string()).collect(),
+        _ => vec![],
+    }
+}
+
+fn bound_text(v: &Value) -> String {
+    match v {
+        Value::String(s) => s.clone(),
+        Value::Number(n) => n.to_string(),
+        other => other.to_string(),
+    }
+}
+
+fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
+    let check = c["check"].as_str().unwrap();
+    let element = c["element"].as_str().unwrap();
+    let path = through_path(c);
+    let through = path.first().map(String::as_str);
+
+    if check == "unnamedPartCount" {
+        let scope = api.find(through.unwrap_or(element)).ok_or("no scope element")?;
+        let members = if through.is_some() { api.visible_features(scope)? } else { api.elements(scope, "ownedMember")? };
+        let mut n = 0;
+        for m in members {
+            let unnamed = api.scalar(m, "name")?.is_null();
+            let owner = api.element(m, "owningNamespace")?;
+            let owner_qn = owner.and_then(|o| api.qn(o));
+            if api.metaclass(m) == "PartUsage" && unnamed && owner_qn.as_deref() == Some(element) {
+                n += 1;
+            }
+        }
+        return Ok(Value(json!(n)));
+    }
+
+    // the element, read through each step of the path as a member visible in the previous one
+    let mut owner = None;
+    let unnamed = &c["unnamed"];
+    let e = if unnamed.is_object() {
+        // the index-th unnamed member of the metaclass declared in `element`
+        let (scope, members) = if path.is_empty() {
+            let s = api.find(element).ok_or("no element")?;
+            (s, api.elements(s, "ownedMember")?)
+        } else {
+            let mut cur = api.find(&path[0]).ok_or("no element")?;
+            for step in &path[1..] {
+                let found = api.visible_features(cur)?.into_iter()
+                    .find(|f| api.qn(*f).map(|q| norm(&q)) == Some(norm(step)));
+                cur = match found {
+                    Some(f) => f,
+                    None => return Ok(Value(json!(format!("<{step} not visible>")))),
+                };
+            }
+            (cur, api.visible_features(cur)?)
+        };
+        let metaclass = unnamed["metaclass"].as_str().unwrap();
+        let mut found = vec![];
+        for m in members {
+            let owner_qn = match api.element(m, "owningNamespace")? {
+                Some(o) => api.qn(o),
+                None => None,
+            };
+            if api.scalar(m, "name")?.is_null() && api.metaclass(m).contains(metaclass)
+                && owner_qn.as_deref() == Some(element) {
+                found.push(m);
+            }
+        }
+        owner = Some(scope);
+        match found.get(unnamed["index"].as_u64().unwrap() as usize) {
+            Some(e) => *e,
+            None => return Ok(Value(json!(format!("<unnamed {metaclass} of {element} not listed>")))),
+        }
+    } else if path.is_empty() {
+        match api.find(element) {
+            Some(e) => e,
+            None => return Ok(Unsupported(format!("no element {element}"))),
+        }
+    } else {
+        let mut cur = api.find(&path[0]).ok_or(format!("no element {}", path[0]))?;
+        for step in path[1..].iter().map(String::as_str).chain([element]) {
+            let found = api.visible_features(cur)?.into_iter()
+                .find(|f| api.qn(*f).map(|q| norm(&q)) == Some(norm(step)));
+            match found {
+                Some(f) => {
+                    owner = Some(cur);
+                    cur = f;
+                }
+                None => {
+                    let cur_qn = api.qn(cur).unwrap_or_default();
+                    return Ok(Value(json!(format!("<{step} not visible through {cur_qn}>"))));
+                }
+            }
+        }
+        cur
+    };
+    Ok(Value(match check {
+        "name" => api.scalar(e, "name")?,
+        "type" => match api.element(e, "type")? {
+            Some(t) => json!(api.qn(t)),
+            None => Value::Null,
+        },
+        "isComposite" => api.scalar(e, "isComposite")?,
+        "kind" => json!(api.metaclass(e)),
+        "metadataDefs" => {
+            let mut defs = vec![];
+            for mu in api.annotations(e)? {
+                if let Some(d) = api.element(mu, "metadataDefinition")? {
+                    defs.push(api.qn(d));
+                }
+            }
+            defs.sort();
+            json!(defs)
+        }
+        "metadataValue" | "annotatedElement" => match api.annotations(e)?.first().copied() {
+            None => json!(format!("<no annotation of {element} found>")),
+            Some(mu) if check == "annotatedElement" => {
+                let mut out = vec![];
+                for a in api.elements(mu, "annotatedElement")? {
+                    out.push(api.qn(a));
+                }
+                json!(out)
+            }
+            Some(mu) => {
+                let mut v = Value::Null;
+                for f in api.elements(mu, "ownedFeature")? {
+                    if api.scalar(f, "name")? == json!("severity") {
+                        if let Some(x) = api.value_expr(f)? {
+                            v = api.literal(x)?;
+                        }
+                    }
+                }
+                v
+            }
+        },
+        "payloadArgument" | "senderArgument" | "receiverArgument" => match api.element(e, check)? {
+            Some(x) => json!(api.references(x)?),
+            None => Value::Null,
+        },
+        "assignedFeature" => match api.element(e, "referent")? {
+            Some(f) => api.chain_form(f)?,
+            None => Value::Null,
+        },
+        "valueText" => return Ok(Unsupported("no accessor returns an expression's source text".into())),
+        "valueKind" | "valueOperator" | "valueReferences" => match api.value_expr(e)? {
+            None => Value::Null,
+            Some(x) => match check {
+                "valueKind" => json!(api.metaclass(x)),
+                "valueOperator" if metaclass_conforms(api.metaclass(x), "OperatorExpression") => api.scalar(x, "operator")?,
+                "valueOperator" => Value::Null,
+                _ => json!(api.references(x)?),
+            },
+        },
+        "endCount" | "endNames" => {
+            let is_def = api.metaclass(e).ends_with("Definition");
+            let ends = api.elements(e, if is_def { "endFeature" } else { "connectorEnd" })?;
+            if check == "endCount" {
+                json!(ends.len())
+            } else {
+                let mut names = vec![];
+                for x in ends {
+                    names.push(api.scalar(x, "name")?);
+                }
+                json!(names)
+            }
+        }
+        "endReferences" => {
+            let mut out = vec![];
+            for end in api.elements(e, "connectorEnd")? {
+                let target = match api.element(end, "ownedReferenceSubsetting")? {
+                    Some(rs) => api.element(rs, "referencedFeature")?,
+                    None => None,
+                };
+                out.push(match target {
+                    Some(f) => api.chain_form(f)?,
+                    None => Value::Null,
+                });
+            }
+            json!(out)
+        }
+        "sourceFeature" => match api.element(e, "sourceFeature")? {
+            Some(f) => api.chain_form(f)?,
+            None => Value::Null,
+        },
+        "targetFeature" | "relatedFeature" => {
+            let mut out = vec![];
+            for f in api.elements(e, check)? {
+                out.push(api.chain_form(f)?);
+            }
+            json!(out)
+        }
+        "typeIsConjugated" => match api.element(e, "type")? {
+            Some(t) => json!(api.metaclass(t) == "ConjugatedPortDefinition"),
+            None => Value::Null,
+        },
+        "direction" => {
+            let Some(receiver) = owner else {
+                return Ok(Value(api.scalar(e, "direction")?));
+            };
+            let r = api.rm.invoke_operation(receiver, "Core-Types-Type-directionOf_Feature",
+                &[DerivedValue::Reference(Reference::Element(e))]).map_err(|err| format!("directionOf: {err:?}"))?;
+            match r.value {
+                DerivedValue::Null => Value::Null,
+                DerivedValue::Literal(s) | DerivedValue::Str(s) => json!(s),
+                other => json!(format!("{other:?}")),
+            }
+        }
+        "isReference" => api.scalar(e, "isReference")?,
+        "multiplicity" => match api.element(e, "multiplicity")? {
+            None => Value::Null,
+            Some(m) => {
+                let upper = match api.element(m, "upperBound")? {
+                    Some(u) => api.literal(u)?,
+                    None => Value::Null,
+                };
+                let lower = match api.element(m, "lowerBound")? {
+                    Some(l) => api.literal(l)?,
+                    None if upper == json!("*") => json!(0),
+                    None => upper.clone(),
+                };
+                json!(format!("{}..{}", bound_text(&lower), bound_text(&upper)))
+            }
+        },
+        // a value is the feature's owned membership of metaclass FeatureValue
+        "value" | "isDefault" => match api.elements(e, "ownedMembership")?.into_iter().find(|m| api.metaclass(*m) == "FeatureValue") {
+            None => Value::Null,
+            Some(fv) if check == "isDefault" => api.scalar(fv, "isDefault")?,
+            Some(fv) => match api.element(fv, "value")? {
+                Some(expr) => api.literal(expr)?,
+                None => Value::Null,
+            },
+        },
+        other => return Err(format!("unknown check {other}")),
+    }))
+}
+
+fn matches(actual: &Value, want: &Value) -> bool {
+    match (actual.as_f64(), want.as_f64()) {
+        (Some(a), Some(w)) => a == w,
+        _ => actual == want,
+    }
+}
+
+#[test]
+fn matrices() {
+    let mut files: Vec<_> = fs::read_dir(root().join("../data/cases")).unwrap()
+        .map(|e| e.unwrap().path()).filter(|p| p.extension().is_some_and(|x| x == "json")).collect();
+    files.sort();
+    let specs: Vec<Value> = files.iter()
+        .map(|f| serde_json::from_str(&fs::read_to_string(f).unwrap()).unwrap()).collect();
+
+    // One model: the standard library plus every matrix's model (each its own package).
+    let mut model = Model::new();
+    model.load_library_dir(&root().join("../../sysml-toolkit/spec-refs/SysML-v2-Release/sysml.library"))
+        .expect("standard library (initialise the sysml-toolkit submodule spec-refs/SysML-v2-Release)");
+    for s in &specs {
+        let file = s["model"].as_str().unwrap();
+        model.add_source(file, &fs::read_to_string(root().join("../data").join(file)).unwrap());
+    }
+    assert!(!model.has_errors(), "models do not parse cleanly");
+    let mut api = Api { rm: ResolvedModel::build(&model) };
+
+    let mut rows: Vec<[String; 5]> = vec![];
+    let mut failed = vec![];
+    for s in &specs {
+        let matrix = s["matrix"].as_str().unwrap();
+        for c in s["cases"].as_array().unwrap() {
+            let id = c["id"].as_str().unwrap();
+            let (outcome, detail) = match check(&mut api, c) {
+                Err(e) => ("error", e),
+                Ok(Unsupported(why)) => ("unsupported", why),
+                Ok(Value(v)) => {
+                    let accepted = c["accept"].as_array().is_some_and(|a| a.iter().any(|w| matches(&v, w)));
+                    if matches(&v, &c["expect"]) || accepted {
+                        ("pass", String::new())
+                    } else {
+                        ("fail", format!("{} {}: got {v}, want {}", c["check"].as_str().unwrap(), c["element"].as_str().unwrap(), c["expect"]))
+                    }
+                }
+            };
+            println!("{id} {outcome} {detail}");
+            if outcome == "fail" || outcome == "error" {
+                failed.push(id.to_string());
+            }
+            rows.push(["sysml-toolkit-rs".into(), matrix.into(), id.into(), outcome.into(), detail]);
+        }
+    }
+    write_csv(&rows);
+    assert!(failed.is_empty(), "failed: {failed:?}");
+}
+
+fn write_csv(rows: &[[String; 5]]) {
+    let dir = std::env::var("RESULTS_DIR").map(PathBuf::from).unwrap_or_else(|_| root().join("../results"));
+    fs::create_dir_all(&dir).unwrap();
+    let q = |s: &str| format!("\"{}\"", s.replace('"', "\"\"").replace('\n', " "));
+    let mut out = String::from("suite,matrix,id,outcome,detail\n");
+    for r in rows {
+        out.push_str(&r.iter().map(|c| q(c)).collect::<Vec<_>>().join(","));
+        out.push('\n');
+    }
+    fs::write(dir.join("sysml-toolkit-rs.csv"), out).unwrap();
+}

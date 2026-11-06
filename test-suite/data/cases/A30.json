@@ -1,0 +1,422 @@
+{
+ "matrix": "A30",
+ "model": "models/A30.sysml",
+ "notes": {
+  "reads": "name              Element::name of the port usage\n  type              qualified name of the first of Feature::type; for ~CmdPort the conjugated\n                    port definition `CmdPort::'~CmdPort'` (the unquoted spelling is accepted)\n  typeIsConjugated  whether that type is a ConjugatedPortDefinition\n  direction         Type::directionOf(feature) of the port usage (or port def) for a feature of\n                    the port def: conjugation swaps in and out",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "A30-001",
+   "check": "name",
+   "element": "A30::Device::pOut",
+   "expect": "pOut"
+  },
+  {
+   "id": "A30-002",
+   "check": "name",
+   "element": "A30::Device::pIn",
+   "expect": "pIn"
+  },
+  {
+   "id": "A30-003",
+   "check": "name",
+   "element": "A30::Device::pOut",
+   "expect": "pOut",
+   "through": [
+    "A30::device"
+   ]
+  },
+  {
+   "id": "A30-004",
+   "check": "name",
+   "element": "A30::Device::pIn",
+   "expect": "pIn",
+   "through": [
+    "A30::device"
+   ]
+  },
+  {
+   "id": "A30-005",
+   "check": "name",
+   "element": "A30::Device::pOut",
+   "expect": "pOut",
+   "through": [
+    "A30::sub"
+   ]
+  },
+  {
+   "id": "A30-006",
+   "check": "name",
+   "element": "A30::Device::pIn",
+   "expect": "pIn",
+   "through": [
+    "A30::sub"
+   ]
+  },
+  {
+   "id": "A30-007",
+   "check": "name",
+   "element": "A30::Device::pOut",
+   "expect": "pOut",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot"
+   ]
+  },
+  {
+   "id": "A30-008",
+   "check": "name",
+   "element": "A30::Device::pIn",
+   "expect": "pIn",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot"
+   ]
+  },
+  {
+   "id": "A30-009",
+   "check": "type",
+   "element": "A30::Device::pOut",
+   "expect": "A30::CmdPort"
+  },
+  {
+   "id": "A30-010",
+   "check": "type",
+   "element": "A30::Device::pIn",
+   "expect": "A30::CmdPort::'~CmdPort'",
+   "accept": [
+    "A30::CmdPort::~CmdPort"
+   ]
+  },
+  {
+   "id": "A30-011",
+   "check": "type",
+   "element": "A30::Device::pOut",
+   "expect": "A30::CmdPort",
+   "through": [
+    "A30::device"
+   ]
+  },
+  {
+   "id": "A30-012",
+   "check": "type",
+   "element": "A30::Device::pIn",
+   "expect": "A30::CmdPort::'~CmdPort'",
+   "through": [
+    "A30::device"
+   ],
+   "accept": [
+    "A30::CmdPort::~CmdPort"
+   ]
+  },
+  {
+   "id": "A30-013",
+   "check": "type",
+   "element": "A30::Device::pOut",
+   "expect": "A30::CmdPort",
+   "through": [
+    "A30::sub"
+   ]
+  },
+  {
+   "id": "A30-014",
+   "check": "type",
+   "element": "A30::Device::pIn",
+   "expect": "A30::CmdPort::'~CmdPort'",
+   "through": [
+    "A30::sub"
+   ],
+   "accept": [
+    "A30::CmdPort::~CmdPort"
+   ]
+  },
+  {
+   "id": "A30-015",
+   "check": "type",
+   "element": "A30::Device::pOut",
+   "expect": "A30::CmdPort",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot"
+   ]
+  },
+  {
+   "id": "A30-016",
+   "check": "type",
+   "element": "A30::Device::pIn",
+   "expect": "A30::CmdPort::'~CmdPort'",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot"
+   ],
+   "accept": [
+    "A30::CmdPort::~CmdPort"
+   ]
+  },
+  {
+   "id": "A30-017",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pOut",
+   "expect": false
+  },
+  {
+   "id": "A30-018",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pIn",
+   "expect": true
+  },
+  {
+   "id": "A30-019",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pOut",
+   "expect": false,
+   "through": [
+    "A30::device"
+   ]
+  },
+  {
+   "id": "A30-020",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pIn",
+   "expect": true,
+   "through": [
+    "A30::device"
+   ]
+  },
+  {
+   "id": "A30-021",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pOut",
+   "expect": false,
+   "through": [
+    "A30::sub"
+   ]
+  },
+  {
+   "id": "A30-022",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pIn",
+   "expect": true,
+   "through": [
+    "A30::sub"
+   ]
+  },
+  {
+   "id": "A30-023",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pOut",
+   "expect": false,
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot"
+   ]
+  },
+  {
+   "id": "A30-024",
+   "check": "typeIsConjugated",
+   "element": "A30::Device::pIn",
+   "expect": true,
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot"
+   ]
+  },
+  {
+   "id": "A30-025",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "out",
+   "through": [
+    "A30::CmdPort"
+   ]
+  },
+  {
+   "id": "A30-026",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "in",
+   "through": [
+    "A30::CmdPort"
+   ]
+  },
+  {
+   "id": "A30-027",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "in",
+   "through": [
+    "A30::CmdPort::'~CmdPort'"
+   ]
+  },
+  {
+   "id": "A30-028",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "out",
+   "through": [
+    "A30::CmdPort::'~CmdPort'"
+   ]
+  },
+  {
+   "id": "A30-029",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "out",
+   "through": [
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-030",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "in",
+   "through": [
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-031",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "in",
+   "through": [
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-032",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "out",
+   "through": [
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-033",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "out",
+   "through": [
+    "A30::device",
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-034",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "in",
+   "through": [
+    "A30::device",
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-035",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "in",
+   "through": [
+    "A30::device",
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-036",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "out",
+   "through": [
+    "A30::device",
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-037",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "out",
+   "through": [
+    "A30::sub",
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-038",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "in",
+   "through": [
+    "A30::sub",
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-039",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "in",
+   "through": [
+    "A30::sub",
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-040",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "out",
+   "through": [
+    "A30::sub",
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-041",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "out",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot",
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-042",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "in",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot",
+    "A30::Device::pOut"
+   ]
+  },
+  {
+   "id": "A30-043",
+   "check": "direction",
+   "element": "A30::CmdPort::cmd",
+   "expect": "in",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot",
+    "A30::Device::pIn"
+   ]
+  },
+  {
+   "id": "A30-044",
+   "check": "direction",
+   "element": "A30::CmdPort::ack",
+   "expect": "out",
+   "through": [
+    "A30::rack",
+    "A30::Rack::slot",
+    "A30::Device::pIn"
+   ]
+  }
+ ]
+}

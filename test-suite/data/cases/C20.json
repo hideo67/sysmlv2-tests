@@ -1,0 +1,956 @@
+{
+ "matrix": "C20",
+ "model": "models/C20.sysml",
+ "notes": {
+  "reads": "an argument is compared as the referenced features of its expression, each in\nchain form, as in C10; null when the action has no such argument):\n  kind              the action's metaclass (SendActionUsage, AcceptActionUsage, ...)\n  payloadArgument   SendActionUsage/AcceptActionUsage::payloadArgument\n  senderArgument    SendActionUsage::senderArgument (`via` of a send)\n  receiverArgument  SendActionUsage::receiverArgument (`to` of a send) or\n                    AcceptActionUsage::receiverArgument (`via` of an accept)\n  assignedFeature   AssignmentActionUsage::referent, in chain form\nState entry actions are left to C30.",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "C20-001",
+   "check": "kind",
+   "element": "C20::Supervise::sendVia",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C20-002",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C20-003",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": "SendActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-004",
+   "check": "kind",
+   "element": "C20::Supervise::sendTo",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C20-005",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": "SendActionUsage"
+  },
+  {
+   "id": "C20-006",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": "SendActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-007",
+   "check": "kind",
+   "element": "C20::Supervise::acceptVia",
+   "expect": "AcceptActionUsage"
+  },
+  {
+   "id": "C20-008",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": "AcceptActionUsage"
+  },
+  {
+   "id": "C20-009",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": "AcceptActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-010",
+   "check": "kind",
+   "element": "C20::Supervise::assignCount",
+   "expect": "AssignmentActionUsage"
+  },
+  {
+   "id": "C20-011",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": "AssignmentActionUsage"
+  },
+  {
+   "id": "C20-012",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-013",
+   "check": "kind",
+   "element": "C20::Supervise::performNotify",
+   "expect": "PerformActionUsage"
+  },
+  {
+   "id": "C20-014",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": "PerformActionUsage"
+  },
+  {
+   "id": "C20-015",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": "PerformActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-016",
+   "check": "kind",
+   "element": "C20::Supervise::ifAct",
+   "expect": "IfActionUsage"
+  },
+  {
+   "id": "C20-017",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": "IfActionUsage"
+  },
+  {
+   "id": "C20-018",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": "IfActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-019",
+   "check": "kind",
+   "element": "C20::Supervise::whileAct",
+   "expect": "WhileLoopActionUsage"
+  },
+  {
+   "id": "C20-020",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": "WhileLoopActionUsage"
+  },
+  {
+   "id": "C20-021",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": "WhileLoopActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-022",
+   "check": "kind",
+   "element": "C20::Supervise::forAct",
+   "expect": "ForLoopActionUsage"
+  },
+  {
+   "id": "C20-023",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": "ForLoopActionUsage"
+  },
+  {
+   "id": "C20-024",
+   "check": "kind",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": "ForLoopActionUsage",
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-025",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::sendVia",
+   "expect": [
+    [
+     "C20::Supervise::alarm"
+    ]
+   ]
+  },
+  {
+   "id": "C20-026",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": [
+    [
+     "C20::Monitor::alarm"
+    ]
+   ]
+  },
+  {
+   "id": "C20-027",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": [
+    [
+     "C20::Monitor::alarm"
+    ]
+   ],
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-028",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::sendTo",
+   "expect": [
+    [
+     "C20::Supervise::alarm"
+    ]
+   ]
+  },
+  {
+   "id": "C20-029",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": [
+    [
+     "C20::Monitor::alarm"
+    ]
+   ]
+  },
+  {
+   "id": "C20-030",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": [
+    [
+     "C20::Monitor::alarm"
+    ]
+   ],
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-031",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-032",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-033",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-034",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-035",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-036",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-037",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-038",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-039",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-040",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-041",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-042",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-043",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-044",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-045",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-046",
+   "check": "payloadArgument",
+   "element": "C20::Supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-047",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-048",
+   "check": "payloadArgument",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-049",
+   "check": "senderArgument",
+   "element": "C20::Supervise::sendVia",
+   "expect": [
+    [
+     "C20::Supervise::alarmPort"
+    ]
+   ]
+  },
+  {
+   "id": "C20-050",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": [
+    [
+     "C20::Monitor::alarmPort"
+    ]
+   ]
+  },
+  {
+   "id": "C20-051",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": [
+    [
+     "C20::Monitor::alarmPort"
+    ]
+   ],
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-052",
+   "check": "senderArgument",
+   "element": "C20::Supervise::sendTo",
+   "expect": null
+  },
+  {
+   "id": "C20-053",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": null
+  },
+  {
+   "id": "C20-054",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-055",
+   "check": "senderArgument",
+   "element": "C20::Supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-056",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-057",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-058",
+   "check": "senderArgument",
+   "element": "C20::Supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-059",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-060",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-061",
+   "check": "senderArgument",
+   "element": "C20::Supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-062",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-063",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-064",
+   "check": "senderArgument",
+   "element": "C20::Supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-065",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-066",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-067",
+   "check": "senderArgument",
+   "element": "C20::Supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-068",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-069",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-070",
+   "check": "senderArgument",
+   "element": "C20::Supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-071",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-072",
+   "check": "senderArgument",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-073",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::sendVia",
+   "expect": null
+  },
+  {
+   "id": "C20-074",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": null
+  },
+  {
+   "id": "C20-075",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-076",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::sendTo",
+   "expect": [
+    [
+     "C20::Supervise::display"
+    ]
+   ]
+  },
+  {
+   "id": "C20-077",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": [
+    [
+     "C20::Monitor::display"
+    ]
+   ]
+  },
+  {
+   "id": "C20-078",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": [
+    [
+     "C20::Monitor::display"
+    ]
+   ],
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-079",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::acceptVia",
+   "expect": [
+    [
+     "C20::Supervise::alarmPort"
+    ]
+   ]
+  },
+  {
+   "id": "C20-080",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": [
+    [
+     "C20::Monitor::alarmPort"
+    ]
+   ]
+  },
+  {
+   "id": "C20-081",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": [
+    [
+     "C20::Monitor::alarmPort"
+    ]
+   ],
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-082",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-083",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-084",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-085",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-086",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-087",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-088",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-089",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-090",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-091",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-092",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-093",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-094",
+   "check": "receiverArgument",
+   "element": "C20::Supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-095",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-096",
+   "check": "receiverArgument",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-097",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::sendVia",
+   "expect": null
+  },
+  {
+   "id": "C20-098",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": null
+  },
+  {
+   "id": "C20-099",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-100",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::sendTo",
+   "expect": null
+  },
+  {
+   "id": "C20-101",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": null
+  },
+  {
+   "id": "C20-102",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-103",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-104",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-105",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-106",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::assignCount",
+   "expect": [
+    "C20::Supervise::count"
+   ]
+  },
+  {
+   "id": "C20-107",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": [
+    "C20::Monitor::count"
+   ]
+  },
+  {
+   "id": "C20-108",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": [
+    "C20::Monitor::count"
+   ],
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-109",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-110",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-111",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-112",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-113",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-114",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-115",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-116",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-117",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-118",
+   "check": "assignedFeature",
+   "element": "C20::Supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-119",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null
+  },
+  {
+   "id": "C20-120",
+   "check": "assignedFeature",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  }
+ ]
+}

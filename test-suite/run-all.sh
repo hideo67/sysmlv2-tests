@@ -33,7 +33,7 @@ for s in "${selected[@]}"; do
   echo "== $s"
   rm -f "results/$s.csv"
   ( run_suite "$s" ) > "results/logs/$s.log" 2>&1 || { rc=1; echo "   (test failures; see results/logs/$s.log)"; }
-  [[ -f results/$s.csv ]] && echo "   $(($(wc -l < results/$s.csv) - 1)) cases recorded" ||
+  [[ -f results/$s.csv ]] && echo "   $(python3 -c 'import csv,sys; print(sum(1 for _ in csv.DictReader(open(sys.argv[1]))))' "results/$s.csv") cases recorded" ||
     { echo "   NO RESULTS WRITTEN (build or setup problem; see log)"; rc=1; }
 done
 

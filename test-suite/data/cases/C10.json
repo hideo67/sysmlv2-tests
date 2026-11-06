@@ -1,0 +1,1036 @@
+{
+ "matrix": "C10",
+ "model": "models/C10.sysml",
+ "notes": {
+  "reads": "compare the structure of the parameter's bound expression (the value of\nits owned FeatureValue membership), not its text:\n  valueKind        metaclass of the expression (LiteralRational, FeatureReferenceExpression,\n                   FeatureChainExpression, OperatorExpression); null without a value\n  valueOperator    OperatorExpression::operator; null for other expressions (a FeatureChainExpression\n                   specializes OperatorExpression with operator \".\")\n  valueReferences  referenced features, collected left to right, each in chain form (a\n                   FeatureReferenceExpression gives [referent]; a FeatureChainExpression\n                   gives its source's chain extended by its targetFeature); [] for a literal\n  valueText        the expression's source text, where an API can return it\nParameter reads: name (Element::name), direction (Feature::direction), type (first of Feature::type).",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "C10-001",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": "LiteralRational"
+  },
+  {
+   "id": "C10-002",
+   "check": "valueKind",
+   "element": "C10::Motor::boost::pLiteral",
+   "expect": "LiteralRational"
+  },
+  {
+   "id": "C10-003",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": "LiteralRational",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-004",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": "LiteralRational",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-005",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pRef",
+   "expect": "FeatureReferenceExpression"
+  },
+  {
+   "id": "C10-006",
+   "check": "valueKind",
+   "element": "C10::Motor::boost::pRef",
+   "expect": "FeatureReferenceExpression"
+  },
+  {
+   "id": "C10-007",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pRef",
+   "expect": "FeatureReferenceExpression",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-008",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pRef",
+   "expect": "FeatureReferenceExpression",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-009",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "FeatureChainExpression"
+  },
+  {
+   "id": "C10-010",
+   "check": "valueKind",
+   "element": "C10::Motor::boost::pChain",
+   "expect": "FeatureChainExpression"
+  },
+  {
+   "id": "C10-011",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "FeatureChainExpression",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-012",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "FeatureChainExpression",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-013",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C10-014",
+   "check": "valueKind",
+   "element": "C10::Motor::boost::pOp",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C10-015",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "OperatorExpression",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-016",
+   "check": "valueKind",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "OperatorExpression",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-017",
+   "check": "valueKind",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-018",
+   "check": "valueKind",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::boost"
+   ]
+  },
+  {
+   "id": "C10-019",
+   "check": "valueKind",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-020",
+   "check": "valueKind",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-021",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": null
+  },
+  {
+   "id": "C10-022",
+   "check": "valueOperator",
+   "element": "C10::Motor::boost::pLiteral",
+   "expect": null
+  },
+  {
+   "id": "C10-023",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": null,
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-024",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": null,
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-025",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pRef",
+   "expect": null
+  },
+  {
+   "id": "C10-026",
+   "check": "valueOperator",
+   "element": "C10::Motor::boost::pRef",
+   "expect": null
+  },
+  {
+   "id": "C10-027",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pRef",
+   "expect": null,
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-028",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pRef",
+   "expect": null,
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-029",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "."
+  },
+  {
+   "id": "C10-030",
+   "check": "valueOperator",
+   "element": "C10::Motor::boost::pChain",
+   "expect": "."
+  },
+  {
+   "id": "C10-031",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pChain",
+   "expect": ".",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-032",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pChain",
+   "expect": ".",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-033",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "*"
+  },
+  {
+   "id": "C10-034",
+   "check": "valueOperator",
+   "element": "C10::Motor::boost::pOp",
+   "expect": "*"
+  },
+  {
+   "id": "C10-035",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "*",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-036",
+   "check": "valueOperator",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "*",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-037",
+   "check": "valueOperator",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-038",
+   "check": "valueOperator",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::boost"
+   ]
+  },
+  {
+   "id": "C10-039",
+   "check": "valueOperator",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-040",
+   "check": "valueOperator",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-041",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": []
+  },
+  {
+   "id": "C10-042",
+   "check": "valueReferences",
+   "element": "C10::Motor::boost::pLiteral",
+   "expect": []
+  },
+  {
+   "id": "C10-043",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": [],
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-044",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": [],
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-045",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pRef",
+   "expect": [
+    [
+     "C10::Motor::level"
+    ]
+   ]
+  },
+  {
+   "id": "C10-046",
+   "check": "valueReferences",
+   "element": "C10::Motor::boost::pRef",
+   "expect": [
+    [
+     "C10::Motor::level"
+    ]
+   ]
+  },
+  {
+   "id": "C10-047",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pRef",
+   "expect": [
+    [
+     "C10::Motor::level"
+    ]
+   ],
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-048",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pRef",
+   "expect": [
+    [
+     "C10::Motor::level"
+    ]
+   ],
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-049",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pChain",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ]
+  },
+  {
+   "id": "C10-050",
+   "check": "valueReferences",
+   "element": "C10::Motor::boost::pChain",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ]
+  },
+  {
+   "id": "C10-051",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pChain",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ],
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-052",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pChain",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ],
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-053",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pOp",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ]
+  },
+  {
+   "id": "C10-054",
+   "check": "valueReferences",
+   "element": "C10::Motor::boost::pOp",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ]
+  },
+  {
+   "id": "C10-055",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pOp",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ],
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-056",
+   "check": "valueReferences",
+   "element": "C10::Motor::consume::pOp",
+   "expect": [
+    [
+     "C10::Motor::powerPort",
+     "C10::PowerPort::power"
+    ]
+   ],
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-057",
+   "check": "valueReferences",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-058",
+   "check": "valueReferences",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::boost"
+   ]
+  },
+  {
+   "id": "C10-059",
+   "check": "valueReferences",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-060",
+   "check": "valueReferences",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-061",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": "0.5"
+  },
+  {
+   "id": "C10-062",
+   "check": "valueText",
+   "element": "C10::Motor::boost::pLiteral",
+   "expect": "0.5"
+  },
+  {
+   "id": "C10-063",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": "0.5",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-064",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pLiteral",
+   "expect": "0.5",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-065",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pRef",
+   "expect": "level"
+  },
+  {
+   "id": "C10-066",
+   "check": "valueText",
+   "element": "C10::Motor::boost::pRef",
+   "expect": "level"
+  },
+  {
+   "id": "C10-067",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pRef",
+   "expect": "level",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-068",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pRef",
+   "expect": "level",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-069",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "powerPort.power"
+  },
+  {
+   "id": "C10-070",
+   "check": "valueText",
+   "element": "C10::Motor::boost::pChain",
+   "expect": "powerPort.power"
+  },
+  {
+   "id": "C10-071",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "powerPort.power",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-072",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pChain",
+   "expect": "powerPort.power",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-073",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "powerPort.power * 2.0"
+  },
+  {
+   "id": "C10-074",
+   "check": "valueText",
+   "element": "C10::Motor::boost::pOp",
+   "expect": "powerPort.power * 2.0"
+  },
+  {
+   "id": "C10-075",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "powerPort.power * 2.0",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-076",
+   "check": "valueText",
+   "element": "C10::Motor::consume::pOp",
+   "expect": "powerPort.power * 2.0",
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-077",
+   "check": "valueText",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-078",
+   "check": "valueText",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::Motor::boost"
+   ]
+  },
+  {
+   "id": "C10-079",
+   "check": "valueText",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-080",
+   "check": "valueText",
+   "element": "C10::Consume::pNone",
+   "expect": null,
+   "through": [
+    "C10::subMotor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-081",
+   "check": "name",
+   "element": "C10::Consume::pNone",
+   "expect": "pNone"
+  },
+  {
+   "id": "C10-082",
+   "check": "name",
+   "element": "C10::Consume::pNone",
+   "expect": "pNone",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-083",
+   "check": "name",
+   "element": "C10::Consume::pNone",
+   "expect": "pNone",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-084",
+   "check": "name",
+   "element": "C10::Consume::pNone",
+   "expect": "pNone",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-085",
+   "check": "name",
+   "element": "C10::Consume::heat",
+   "expect": "heat"
+  },
+  {
+   "id": "C10-086",
+   "check": "name",
+   "element": "C10::Consume::heat",
+   "expect": "heat",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-087",
+   "check": "name",
+   "element": "C10::Consume::heat",
+   "expect": "heat",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-088",
+   "check": "name",
+   "element": "C10::Consume::heat",
+   "expect": "heat",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-089",
+   "check": "name",
+   "element": "C10::Consume::mode",
+   "expect": "mode"
+  },
+  {
+   "id": "C10-090",
+   "check": "name",
+   "element": "C10::Consume::mode",
+   "expect": "mode",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-091",
+   "check": "name",
+   "element": "C10::Consume::mode",
+   "expect": "mode",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-092",
+   "check": "name",
+   "element": "C10::Consume::mode",
+   "expect": "mode",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-093",
+   "check": "direction",
+   "element": "C10::Consume::pNone",
+   "expect": "in"
+  },
+  {
+   "id": "C10-094",
+   "check": "direction",
+   "element": "C10::Consume::pNone",
+   "expect": "in",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-095",
+   "check": "direction",
+   "element": "C10::Consume::pNone",
+   "expect": "in",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-096",
+   "check": "direction",
+   "element": "C10::Consume::pNone",
+   "expect": "in",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-097",
+   "check": "direction",
+   "element": "C10::Consume::heat",
+   "expect": "out"
+  },
+  {
+   "id": "C10-098",
+   "check": "direction",
+   "element": "C10::Consume::heat",
+   "expect": "out",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-099",
+   "check": "direction",
+   "element": "C10::Consume::heat",
+   "expect": "out",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-100",
+   "check": "direction",
+   "element": "C10::Consume::heat",
+   "expect": "out",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-101",
+   "check": "direction",
+   "element": "C10::Consume::mode",
+   "expect": "inout"
+  },
+  {
+   "id": "C10-102",
+   "check": "direction",
+   "element": "C10::Consume::mode",
+   "expect": "inout",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-103",
+   "check": "direction",
+   "element": "C10::Consume::mode",
+   "expect": "inout",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-104",
+   "check": "direction",
+   "element": "C10::Consume::mode",
+   "expect": "inout",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-105",
+   "check": "type",
+   "element": "C10::Consume::pNone",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "C10-106",
+   "check": "type",
+   "element": "C10::Consume::pNone",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-107",
+   "check": "type",
+   "element": "C10::Consume::pNone",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-108",
+   "check": "type",
+   "element": "C10::Consume::pNone",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-109",
+   "check": "type",
+   "element": "C10::Consume::heat",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "C10-110",
+   "check": "type",
+   "element": "C10::Consume::heat",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-111",
+   "check": "type",
+   "element": "C10::Consume::heat",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-112",
+   "check": "type",
+   "element": "C10::Consume::heat",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-113",
+   "check": "type",
+   "element": "C10::Consume::mode",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "C10-114",
+   "check": "type",
+   "element": "C10::Consume::mode",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::SubConsume"
+   ]
+  },
+  {
+   "id": "C10-115",
+   "check": "type",
+   "element": "C10::Consume::mode",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::Motor::consume"
+   ]
+  },
+  {
+   "id": "C10-116",
+   "check": "type",
+   "element": "C10::Consume::mode",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C10::motor",
+    "C10::Motor::consume"
+   ]
+  }
+ ]
+}

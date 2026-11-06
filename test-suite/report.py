@@ -44,23 +44,39 @@ def main():
             w.writerow([i] + [cell.get((i, s), "") for s in suites])
         return
 
+    def totals(subset, s):
+        n = defaultdict(int)
+        for i in subset:
+            if (i, s) in cell:
+                n[cell[(i, s)]] += 1
+        return n
+
+    # summary per matrix: pass/fail/unsupported/error for each suite
+    matrices = sorted({i.split("-")[0] for i in ids})
+    print("## Summary (pass / fail / unsupported / error)")
+    print()
+    print("|matrix|cases|" + "|".join(suites) + "|")
+    print("|--|--:|" + "|".join(":-:" for _ in suites) + "|")
+    for mx in matrices + ["all"]:
+        subset = ids if mx == "all" else [i for i in ids if i.split("-")[0] == mx]
+        cells = []
+        for s in suites:
+            n = totals(subset, s)
+            cells.append(f"{n['pass']} / {n['fail']} / {n['unsupported']} / {n['error']}" if n else "-")
+        print(f"|{'**all**' if mx == 'all' else mx}|{len(subset)}|" + "|".join(cells) + "|")
+    print()
+
+    print("## Results")
+    print()
     show = lambda i, s: SYMBOL.get(cell.get((i, s)), "-") if (i, s) in cell else "-"
     print("|ID|" + "|".join(suites) + "|")
     print("|--|" + "|".join(":-:" for _ in suites) + "|")
     for i in ids:
         print(f"|{i}|" + "|".join(show(i, s) for s in suites) + "|")
-    print()
-    print("|suite|pass|fail|unsupported|error|other|")
-    print("|--|--:|--:|--:|--:|--:|")
-    for s in suites:
-        n = defaultdict(int)
-        for i in ids:
-            if (i, s) in cell:
-                n[cell[(i, s)]] += 1
-        other = sum(v for k, v in n.items() if k not in ("pass", "fail", "unsupported", "error"))
-        print(f"|{s}|{n['pass']}|{n['fail']}|{n['unsupported']}|{n['error']}|{other}|")
 
     if a.details:
+        print()
+        print("## Details of results other than pass")
         print()
         for i in ids:
             for s in suites:

@@ -1,0 +1,1288 @@
+{
+ "matrix": "B10",
+ "model": "models/B10.sysml",
+ "notes": {
+  "reads": "a referenced feature is written in chain form: the qualified names of its\nchainingFeatures, or a one-element list for a feature that is not a chain):\n  endCount        number of Connector::connectorEnd (usage) / Type::endFeature (def)\n  endReferences   for each connector end, its ReferenceSubsetting's referencedFeature\n  sourceFeature   Connector::sourceFeature\n  targetFeature   Connector::targetFeature (a list)\n  relatedFeature  Connector::relatedFeature (a list): per KerML the ends' referenced\n                  features, so for a chained end the chain feature, not its last feature (#1957)\n  endNames        names of the def's end features, own and inherited",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "B10-001",
+   "check": "endCount",
+   "element": "B10::Vehicle::c0",
+   "expect": 2
+  },
+  {
+   "id": "B10-002",
+   "check": "endCount",
+   "element": "B10::Vehicle::c0",
+   "expect": 2,
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-003",
+   "check": "endCount",
+   "element": "B10::Vehicle::c0",
+   "expect": 2,
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-004",
+   "check": "endCount",
+   "element": "B10::Vehicle::c1",
+   "expect": 2
+  },
+  {
+   "id": "B10-005",
+   "check": "endCount",
+   "element": "B10::Vehicle::c1",
+   "expect": 2,
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-006",
+   "check": "endCount",
+   "element": "B10::Vehicle::c1",
+   "expect": 2,
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-007",
+   "check": "endCount",
+   "element": "B10::Vehicle::c2",
+   "expect": 2
+  },
+  {
+   "id": "B10-008",
+   "check": "endCount",
+   "element": "B10::Vehicle::c2",
+   "expect": 2,
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-009",
+   "check": "endCount",
+   "element": "B10::Vehicle::c2",
+   "expect": 2,
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-010",
+   "check": "endCount",
+   "element": "B10::Vehicle::i0",
+   "expect": 2
+  },
+  {
+   "id": "B10-011",
+   "check": "endCount",
+   "element": "B10::Vehicle::i0",
+   "expect": 2,
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-012",
+   "check": "endCount",
+   "element": "B10::Vehicle::i0",
+   "expect": 2,
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-013",
+   "check": "endCount",
+   "element": "B10::Vehicle::i1",
+   "expect": 2
+  },
+  {
+   "id": "B10-014",
+   "check": "endCount",
+   "element": "B10::Vehicle::i1",
+   "expect": 2,
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-015",
+   "check": "endCount",
+   "element": "B10::Vehicle::i1",
+   "expect": 2,
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-016",
+   "check": "endCount",
+   "element": "B10::Vehicle::i2",
+   "expect": 2
+  },
+  {
+   "id": "B10-017",
+   "check": "endCount",
+   "element": "B10::Vehicle::i2",
+   "expect": 2,
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-018",
+   "check": "endCount",
+   "element": "B10::Vehicle::i2",
+   "expect": 2,
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-019",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B10-020",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-021",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-022",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-023",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-024",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-025",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-026",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-027",
+   "check": "endReferences",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-028",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B10-029",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-030",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-031",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-032",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-033",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-034",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-035",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-036",
+   "check": "endReferences",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-037",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    "B10::Vehicle::q"
+   ]
+  },
+  {
+   "id": "B10-038",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    "B10::Vehicle::q"
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-039",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    "B10::Vehicle::q"
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-040",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    "B10::Vehicle::x",
+    "B10::Unit::p"
+   ]
+  },
+  {
+   "id": "B10-041",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    "B10::Vehicle::x",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-042",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    "B10::Vehicle::x",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-043",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    "B10::Vehicle::m",
+    "B10::Pair::u1",
+    "B10::Unit::p"
+   ]
+  },
+  {
+   "id": "B10-044",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    "B10::Vehicle::m",
+    "B10::Pair::u1",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-045",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    "B10::Vehicle::m",
+    "B10::Pair::u1",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-046",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    "B10::Vehicle::q"
+   ]
+  },
+  {
+   "id": "B10-047",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    "B10::Vehicle::q"
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-048",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    "B10::Vehicle::q"
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-049",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    "B10::Vehicle::x",
+    "B10::Unit::p"
+   ]
+  },
+  {
+   "id": "B10-050",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    "B10::Vehicle::x",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-051",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    "B10::Vehicle::x",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-052",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    "B10::Vehicle::m",
+    "B10::Pair::u1",
+    "B10::Unit::p"
+   ]
+  },
+  {
+   "id": "B10-053",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    "B10::Vehicle::m",
+    "B10::Pair::u1",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-054",
+   "check": "sourceFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    "B10::Vehicle::m",
+    "B10::Pair::u1",
+    "B10::Unit::p"
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-055",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B10-056",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-057",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-058",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-059",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-060",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-061",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-062",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-063",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-064",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B10-065",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-066",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-067",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-068",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-069",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-070",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-071",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-072",
+   "check": "targetFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-073",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B10-074",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-075",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-076",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-077",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-078",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-079",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-080",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-081",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::c2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-082",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B10-083",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-084",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i0",
+   "expect": [
+    [
+     "B10::Vehicle::q"
+    ],
+    [
+     "B10::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-085",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-086",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-087",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i1",
+   "expect": [
+    [
+     "B10::Vehicle::x",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::y",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-088",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B10-089",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::vehicle"
+   ]
+  },
+  {
+   "id": "B10-090",
+   "check": "relatedFeature",
+   "element": "B10::Vehicle::i2",
+   "expect": [
+    [
+     "B10::Vehicle::m",
+     "B10::Pair::u1",
+     "B10::Unit::p"
+    ],
+    [
+     "B10::Vehicle::n",
+     "B10::Pair::u2",
+     "B10::Unit::p"
+    ]
+   ],
+   "through": [
+    "B10::fleet",
+    "B10::Fleet::v"
+   ]
+  },
+  {
+   "id": "B10-091",
+   "check": "endCount",
+   "element": "B10::Link",
+   "expect": 2
+  },
+  {
+   "id": "B10-092",
+   "check": "endCount",
+   "element": "B10::SubLink",
+   "expect": 2
+  },
+  {
+   "id": "B10-093",
+   "check": "endCount",
+   "element": "B10::Iface",
+   "expect": 2
+  },
+  {
+   "id": "B10-094",
+   "check": "endCount",
+   "element": "B10::SubIface",
+   "expect": 2
+  },
+  {
+   "id": "B10-095",
+   "check": "endNames",
+   "element": "B10::Link",
+   "expect": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "B10-096",
+   "check": "endNames",
+   "element": "B10::SubLink",
+   "expect": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "B10-097",
+   "check": "endNames",
+   "element": "B10::Iface",
+   "expect": [
+    "a",
+    "b"
+   ]
+  },
+  {
+   "id": "B10-098",
+   "check": "endNames",
+   "element": "B10::SubIface",
+   "expect": [
+    "a",
+    "b"
+   ]
+  }
+ ]
+}

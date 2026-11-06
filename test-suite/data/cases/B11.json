@@ -1,0 +1,1409 @@
+{
+ "matrix": "B11",
+ "model": "models/B11.sysml",
+ "notes": {
+  "reads": "as in B10",
+  "unnamed": "locates an unnamed element: {metaclass, index} among the unnamed members of that metaclass declared in `element`, in declaration order",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "B11-001",
+   "check": "endCount",
+   "element": "B11::Vehicle::b0",
+   "expect": 2
+  },
+  {
+   "id": "B11-002",
+   "check": "endCount",
+   "element": "B11::Vehicle::b0",
+   "expect": 2,
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-003",
+   "check": "endCount",
+   "element": "B11::Vehicle::b0",
+   "expect": 2,
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-004",
+   "check": "endCount",
+   "element": "B11::Vehicle::b1",
+   "expect": 2
+  },
+  {
+   "id": "B11-005",
+   "check": "endCount",
+   "element": "B11::Vehicle::b1",
+   "expect": 2,
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-006",
+   "check": "endCount",
+   "element": "B11::Vehicle::b1",
+   "expect": 2,
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-007",
+   "check": "endCount",
+   "element": "B11::Vehicle::b2",
+   "expect": 2
+  },
+  {
+   "id": "B11-008",
+   "check": "endCount",
+   "element": "B11::Vehicle::b2",
+   "expect": 2,
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-009",
+   "check": "endCount",
+   "element": "B11::Vehicle::b2",
+   "expect": 2,
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-010",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-011",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-012",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-013",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-014",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-015",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-016",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-017",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-018",
+   "check": "endCount",
+   "element": "B11::Vehicle",
+   "expect": 2,
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-019",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B11-020",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-021",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-022",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B11-023",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-024",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-025",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B11-026",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-027",
+   "check": "endReferences",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-028",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-029",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-030",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-031",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-032",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-033",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-034",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-035",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-036",
+   "check": "endReferences",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-037",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    "B11::Vehicle::q"
+   ]
+  },
+  {
+   "id": "B11-038",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    "B11::Vehicle::q"
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-039",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    "B11::Vehicle::q"
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-040",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    "B11::Vehicle::x",
+    "B11::Unit::p"
+   ]
+  },
+  {
+   "id": "B11-041",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    "B11::Vehicle::x",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-042",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    "B11::Vehicle::x",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-043",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    "B11::Vehicle::m",
+    "B11::Pair::u1",
+    "B11::Unit::p"
+   ]
+  },
+  {
+   "id": "B11-044",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    "B11::Vehicle::m",
+    "B11::Pair::u1",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-045",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    "B11::Vehicle::m",
+    "B11::Pair::u1",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-046",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::q"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-047",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::q"
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-048",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::q"
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-049",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::x",
+    "B11::Unit::p"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-050",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::x",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-051",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::x",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-052",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::m",
+    "B11::Pair::u1",
+    "B11::Unit::p"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-053",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::m",
+    "B11::Pair::u1",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-054",
+   "check": "sourceFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    "B11::Vehicle::m",
+    "B11::Pair::u1",
+    "B11::Unit::p"
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-055",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B11-056",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-057",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-058",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B11-059",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-060",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-061",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B11-062",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-063",
+   "check": "targetFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-064",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-065",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-066",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-067",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-068",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-069",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-070",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-071",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-072",
+   "check": "targetFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-073",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ]
+  },
+  {
+   "id": "B11-074",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-075",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b0",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-076",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B11-077",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-078",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b1",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-079",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ]
+  },
+  {
+   "id": "B11-080",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ]
+  },
+  {
+   "id": "B11-081",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle::b2",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ]
+  },
+  {
+   "id": "B11-082",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-083",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-084",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::q"
+    ],
+    [
+     "B11::Vehicle::r"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 0
+   }
+  },
+  {
+   "id": "B11-085",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-086",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-087",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::x",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::y",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 1
+   }
+  },
+  {
+   "id": "B11-088",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-089",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::vehicle"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  },
+  {
+   "id": "B11-090",
+   "check": "relatedFeature",
+   "element": "B11::Vehicle",
+   "expect": [
+    [
+     "B11::Vehicle::m",
+     "B11::Pair::u1",
+     "B11::Unit::p"
+    ],
+    [
+     "B11::Vehicle::n",
+     "B11::Pair::u2",
+     "B11::Unit::p"
+    ]
+   ],
+   "through": [
+    "B11::fleet",
+    "B11::Fleet::v"
+   ],
+   "unnamed": {
+    "metaclass": "BindingConnector",
+    "index": 2
+   }
+  }
+ ]
+}

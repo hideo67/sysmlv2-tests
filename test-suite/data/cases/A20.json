@@ -1,0 +1,657 @@
+{
+ "matrix": "A20",
+ "model": "models/A20.sysml",
+ "notes": {
+  "reads": "the spec properties, taken literally:\n  name          Element::name (effective name; a redefining feature without a declared name has the redefined one's)\n  type          first of Feature::type (derived; includes types inherited through redefinition)\n  multiplicity  Type::multiplicity, the owned Multiplicity only, as \"lower..upper\" (null if none is owned)\n  value         literal value of the owned FeatureValue (null if none is owned)\n  isDefault     FeatureValue::isDefault of the owned FeatureValue (null if none is owned)",
+  "through": "the member is read as seen from this usage, not from its declaring element",
+  "accept": "alternative values that also count as a pass, with the reason in the generator"
+ },
+ "cases": [
+  {
+   "id": "A20-001",
+   "check": "name",
+   "element": "A20::plain",
+   "expect": "plain"
+  },
+  {
+   "id": "A20-002",
+   "check": "name",
+   "element": "A20::bound",
+   "expect": "bound"
+  },
+  {
+   "id": "A20-003",
+   "check": "name",
+   "element": "A20::dflt",
+   "expect": "dflt"
+  },
+  {
+   "id": "A20-004",
+   "check": "name",
+   "element": "A20::multi",
+   "expect": "multi"
+  },
+  {
+   "id": "A20-005",
+   "check": "name",
+   "element": "A20::Vehicle::plain",
+   "expect": "plain"
+  },
+  {
+   "id": "A20-006",
+   "check": "name",
+   "element": "A20::Vehicle::bound",
+   "expect": "bound"
+  },
+  {
+   "id": "A20-007",
+   "check": "name",
+   "element": "A20::Vehicle::dflt",
+   "expect": "dflt"
+  },
+  {
+   "id": "A20-008",
+   "check": "name",
+   "element": "A20::Vehicle::multi",
+   "expect": "multi"
+  },
+  {
+   "id": "A20-009",
+   "check": "name",
+   "element": "A20::Vehicle::plain",
+   "expect": "plain",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-010",
+   "check": "name",
+   "element": "A20::Vehicle::bound",
+   "expect": "bound",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-011",
+   "check": "name",
+   "element": "A20::Vehicle::dflt",
+   "expect": "dflt",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-012",
+   "check": "name",
+   "element": "A20::Vehicle::multi",
+   "expect": "multi",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-013",
+   "check": "name",
+   "element": "A20::Vehicle::plain",
+   "expect": "plain",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-014",
+   "check": "name",
+   "element": "A20::Vehicle::bound",
+   "expect": "bound",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-015",
+   "check": "name",
+   "element": "A20::Vehicle::dflt",
+   "expect": "dflt",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-016",
+   "check": "name",
+   "element": "A20::Vehicle::multi",
+   "expect": "multi",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-017",
+   "check": "name",
+   "element": "A20::tuned::plain",
+   "expect": "plain"
+  },
+  {
+   "id": "A20-018",
+   "check": "name",
+   "element": "A20::tuned::bound",
+   "expect": "bound"
+  },
+  {
+   "id": "A20-019",
+   "check": "name",
+   "element": "A20::tuned::dflt",
+   "expect": "dflt"
+  },
+  {
+   "id": "A20-020",
+   "check": "name",
+   "element": "A20::tuned::multi",
+   "expect": "multi"
+  },
+  {
+   "id": "A20-021",
+   "check": "type",
+   "element": "A20::plain",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-022",
+   "check": "type",
+   "element": "A20::bound",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-023",
+   "check": "type",
+   "element": "A20::dflt",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-024",
+   "check": "type",
+   "element": "A20::multi",
+   "expect": "ScalarValues::Integer"
+  },
+  {
+   "id": "A20-025",
+   "check": "type",
+   "element": "A20::Vehicle::plain",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-026",
+   "check": "type",
+   "element": "A20::Vehicle::bound",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-027",
+   "check": "type",
+   "element": "A20::Vehicle::dflt",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-028",
+   "check": "type",
+   "element": "A20::Vehicle::multi",
+   "expect": "ScalarValues::Integer"
+  },
+  {
+   "id": "A20-029",
+   "check": "type",
+   "element": "A20::Vehicle::plain",
+   "expect": "ScalarValues::Real",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-030",
+   "check": "type",
+   "element": "A20::Vehicle::bound",
+   "expect": "ScalarValues::Real",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-031",
+   "check": "type",
+   "element": "A20::Vehicle::dflt",
+   "expect": "ScalarValues::Real",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-032",
+   "check": "type",
+   "element": "A20::Vehicle::multi",
+   "expect": "ScalarValues::Integer",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-033",
+   "check": "type",
+   "element": "A20::Vehicle::plain",
+   "expect": "ScalarValues::Real",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-034",
+   "check": "type",
+   "element": "A20::Vehicle::bound",
+   "expect": "ScalarValues::Real",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-035",
+   "check": "type",
+   "element": "A20::Vehicle::dflt",
+   "expect": "ScalarValues::Real",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-036",
+   "check": "type",
+   "element": "A20::Vehicle::multi",
+   "expect": "ScalarValues::Integer",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-037",
+   "check": "type",
+   "element": "A20::tuned::plain",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-038",
+   "check": "type",
+   "element": "A20::tuned::bound",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-039",
+   "check": "type",
+   "element": "A20::tuned::dflt",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "A20-040",
+   "check": "type",
+   "element": "A20::tuned::multi",
+   "expect": "ScalarValues::Integer"
+  },
+  {
+   "id": "A20-041",
+   "check": "multiplicity",
+   "element": "A20::plain",
+   "expect": "1..1"
+  },
+  {
+   "id": "A20-042",
+   "check": "multiplicity",
+   "element": "A20::bound",
+   "expect": "1..1"
+  },
+  {
+   "id": "A20-043",
+   "check": "multiplicity",
+   "element": "A20::dflt",
+   "expect": "1..1"
+  },
+  {
+   "id": "A20-044",
+   "check": "multiplicity",
+   "element": "A20::multi",
+   "expect": "2..4"
+  },
+  {
+   "id": "A20-045",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::plain",
+   "expect": "1..1"
+  },
+  {
+   "id": "A20-046",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::bound",
+   "expect": "1..1"
+  },
+  {
+   "id": "A20-047",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::dflt",
+   "expect": "1..1"
+  },
+  {
+   "id": "A20-048",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::multi",
+   "expect": "2..4"
+  },
+  {
+   "id": "A20-049",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::plain",
+   "expect": "1..1",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-050",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::bound",
+   "expect": "1..1",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-051",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::dflt",
+   "expect": "1..1",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-052",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::multi",
+   "expect": "2..4",
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-053",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::plain",
+   "expect": "1..1",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-054",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::bound",
+   "expect": "1..1",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-055",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::dflt",
+   "expect": "1..1",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-056",
+   "check": "multiplicity",
+   "element": "A20::Vehicle::multi",
+   "expect": "2..4",
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-057",
+   "check": "multiplicity",
+   "element": "A20::tuned::plain",
+   "expect": null
+  },
+  {
+   "id": "A20-058",
+   "check": "multiplicity",
+   "element": "A20::tuned::bound",
+   "expect": null
+  },
+  {
+   "id": "A20-059",
+   "check": "multiplicity",
+   "element": "A20::tuned::dflt",
+   "expect": null
+  },
+  {
+   "id": "A20-060",
+   "check": "multiplicity",
+   "element": "A20::tuned::multi",
+   "expect": "3..3"
+  },
+  {
+   "id": "A20-061",
+   "check": "value",
+   "element": "A20::plain",
+   "expect": null
+  },
+  {
+   "id": "A20-062",
+   "check": "value",
+   "element": "A20::bound",
+   "expect": 1.5
+  },
+  {
+   "id": "A20-063",
+   "check": "value",
+   "element": "A20::dflt",
+   "expect": 2.5
+  },
+  {
+   "id": "A20-064",
+   "check": "value",
+   "element": "A20::multi",
+   "expect": null
+  },
+  {
+   "id": "A20-065",
+   "check": "value",
+   "element": "A20::Vehicle::plain",
+   "expect": null
+  },
+  {
+   "id": "A20-066",
+   "check": "value",
+   "element": "A20::Vehicle::bound",
+   "expect": 1.5
+  },
+  {
+   "id": "A20-067",
+   "check": "value",
+   "element": "A20::Vehicle::dflt",
+   "expect": 2.5
+  },
+  {
+   "id": "A20-068",
+   "check": "value",
+   "element": "A20::Vehicle::multi",
+   "expect": null
+  },
+  {
+   "id": "A20-069",
+   "check": "value",
+   "element": "A20::Vehicle::plain",
+   "expect": null,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-070",
+   "check": "value",
+   "element": "A20::Vehicle::bound",
+   "expect": 1.5,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-071",
+   "check": "value",
+   "element": "A20::Vehicle::dflt",
+   "expect": 2.5,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-072",
+   "check": "value",
+   "element": "A20::Vehicle::multi",
+   "expect": null,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-073",
+   "check": "value",
+   "element": "A20::Vehicle::plain",
+   "expect": null,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-074",
+   "check": "value",
+   "element": "A20::Vehicle::bound",
+   "expect": 1.5,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-075",
+   "check": "value",
+   "element": "A20::Vehicle::dflt",
+   "expect": 2.5,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-076",
+   "check": "value",
+   "element": "A20::Vehicle::multi",
+   "expect": null,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-077",
+   "check": "value",
+   "element": "A20::tuned::plain",
+   "expect": 3.5
+  },
+  {
+   "id": "A20-078",
+   "check": "value",
+   "element": "A20::tuned::bound",
+   "expect": null,
+   "accept": [
+    1.5
+   ]
+  },
+  {
+   "id": "A20-079",
+   "check": "value",
+   "element": "A20::tuned::dflt",
+   "expect": 5.5
+  },
+  {
+   "id": "A20-080",
+   "check": "value",
+   "element": "A20::tuned::multi",
+   "expect": null
+  },
+  {
+   "id": "A20-081",
+   "check": "isDefault",
+   "element": "A20::plain",
+   "expect": null
+  },
+  {
+   "id": "A20-082",
+   "check": "isDefault",
+   "element": "A20::bound",
+   "expect": false
+  },
+  {
+   "id": "A20-083",
+   "check": "isDefault",
+   "element": "A20::dflt",
+   "expect": true
+  },
+  {
+   "id": "A20-084",
+   "check": "isDefault",
+   "element": "A20::multi",
+   "expect": null
+  },
+  {
+   "id": "A20-085",
+   "check": "isDefault",
+   "element": "A20::Vehicle::plain",
+   "expect": null
+  },
+  {
+   "id": "A20-086",
+   "check": "isDefault",
+   "element": "A20::Vehicle::bound",
+   "expect": false
+  },
+  {
+   "id": "A20-087",
+   "check": "isDefault",
+   "element": "A20::Vehicle::dflt",
+   "expect": true
+  },
+  {
+   "id": "A20-088",
+   "check": "isDefault",
+   "element": "A20::Vehicle::multi",
+   "expect": null
+  },
+  {
+   "id": "A20-089",
+   "check": "isDefault",
+   "element": "A20::Vehicle::plain",
+   "expect": null,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-090",
+   "check": "isDefault",
+   "element": "A20::Vehicle::bound",
+   "expect": false,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-091",
+   "check": "isDefault",
+   "element": "A20::Vehicle::dflt",
+   "expect": true,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-092",
+   "check": "isDefault",
+   "element": "A20::Vehicle::multi",
+   "expect": null,
+   "through": "A20::vehicle"
+  },
+  {
+   "id": "A20-093",
+   "check": "isDefault",
+   "element": "A20::Vehicle::plain",
+   "expect": null,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-094",
+   "check": "isDefault",
+   "element": "A20::Vehicle::bound",
+   "expect": false,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-095",
+   "check": "isDefault",
+   "element": "A20::Vehicle::dflt",
+   "expect": true,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-096",
+   "check": "isDefault",
+   "element": "A20::Vehicle::multi",
+   "expect": null,
+   "through": "A20::truck"
+  },
+  {
+   "id": "A20-097",
+   "check": "isDefault",
+   "element": "A20::tuned::plain",
+   "expect": false
+  },
+  {
+   "id": "A20-098",
+   "check": "isDefault",
+   "element": "A20::tuned::bound",
+   "expect": null,
+   "accept": [
+    false
+   ]
+  },
+  {
+   "id": "A20-099",
+   "check": "isDefault",
+   "element": "A20::tuned::dflt",
+   "expect": false
+  },
+  {
+   "id": "A20-100",
+   "check": "isDefault",
+   "element": "A20::tuned::multi",
+   "expect": null
+  }
+ ]
+}

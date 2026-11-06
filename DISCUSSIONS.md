@@ -33,6 +33,11 @@ row per location: 27 cases. A member counts as FAIL if the API does not list it
 as a member of the usage it is read through; UNSUPPORTED only if the property
 cannot be read at all (this takes precedence).
 
+Later addition: a fourth location, members of `Car` read through a usage of
+`SportsCar :> Car` (A10-028..036, 36 cases in all). New combinations are
+appended as a block so existing IDs stay stable. `run-all.sh` also writes
+`results/report-all.md`.
+
 Decisions / findings:
 - Package-level `part car : Car` is isComposite=false, isReference=true in both
   the Pilot and sysml-toolkit (no owning type), so that is the expected value.
@@ -43,3 +48,313 @@ Decisions / findings:
   counts are restricted to the declaring element for that reason.
 - Unnamed parts are counted through the query API in the OpenSysML suites; the
   Symbol.children() route drops them (issue #1960) and is not what is measured.
+
+## Step 3 (draft): plan of matrices
+
+### Principles
+- Each matrix is the full cross product of **what is read** x **where the
+  element appears** x **variant of the element**, as A10 is. A matrix whose
+  product becomes too large is split by variant, not thinned out.
+- The location dimension is reused across matrices, since inherited items are
+  where the APIs were seen to lose information:
+  - L1 owned by a package
+  - L2 owned by a definition
+  - L3 read through a usage typed by that definition
+  - L4 read through a usage of a definition that specializes it
+  - L5 redefined in a usage (`:>> x = ...`), read through that usage
+  - L6 reached through a feature chain of nested usages (`a.b.c`)
+
+  Not every location applies to every matrix. The matrix states which ones apply.
+- Definitions are tested as subjects in their own right, not only as containers
+  of usages. Their locations:
+  - DL1 owned by a package
+  - DL2 nested in another definition
+  - DL3 owned by a nested package
+  - DL4 reached through an import or alias
+  - DL5 a standard-library definition (`ScalarValues::Real`, `Parts::Part`)
+- Where a usage has a definition-side counterpart, the matrix covers both sides.
+  Examples: the ends of a connection def and of a connection usage, the
+  parameters of an action def and of an action usage, the features of a port def
+  and of a port usage.
+- One model file and one generator per matrix. When the second generator is
+  written, the shared parts of `gen_a10.py` move into a small common module.
+- Expected values come from the specification. Where it is unclear, the Pilot
+  Implementation is the oracle, and the decision is recorded here.
+- Matrices that import the standard library (ScalarValues, ISQ, ...) need the
+  library in every MDK. OpenSysML embeds it, and the Pilot has `sysml.library`.
+  sysml-toolkit needs its `spec-refs/SysML-v2-Release` submodule initialised.
+
+### Series
+A: structure, B: connections, C: behavior, D: annotations, E: values and
+expressions, F: runtime. Issue numbers are OpenSysML issues that motivated the matrix.
+
+| ID | Subject | What is read | Locations | Variants | Issues |
+|---|---|---|---|---|---|
+| A01 | structural definitions | name, short name, metaclass kind, isAbstract, isVariation, isIndividual | DL1-DL5 | part, item, attribute, port, connection, interface, allocation, enum, occurrence, metadata def | - |
+| A02 | definition specialization | direct generals, all generals (incl. implicit library ones), own members, inherited members (1 and 2 levels, multiple generals), redefined members, variants of a variation def | DL1-DL3 | `:>` single, multiple, chained; abstract general; redefinition in the specializing def | #1961 |
+| A10 | part usages | name, type, isComposite, isReference, unnamed listed | L1-L4 | owned, ref | #1961, #1986 (done) |
+| A20 | attribute usages | name, type, multiplicity, default/bound constant value, isDefault | L1-L5 | plain, with value, with default, redefined | #1961 |
+| A30 | port usages | name, type, isConjugated / conjugated port def, direction of the port def's features | L2-L4, L6 | `P`, `~P`, `in`/`out` features | #1962 |
+| A40 | specialization relations | kind and target of subclassification, typing, subsetting, redefinition, reference subsetting | L2-L4 | each relation kind | #1956 |
+| A50 | unnamed members | listed as member, has a usable id, resolvable by that id | L1-L3 | unnamed part, attribute, `bind`, `connect`, `flow`, metadata | #1960 |
+| A60 | namespaces | member reachable via import, alias, visibility (public/private/protected) | L1, L2 | `import X::*`, `import X::y`, `alias`, recursive import | - |
+| B10 | connection and interface ends | number of ends, each end's referenced feature, the chain's features, relatedFeature / sourceFeature / targetFeature | L2, L3, L6 | connection, interface x end depth 0/1/2; def side: `end` features of a connection/interface def | #1956, #1957, #1958 |
+| B11 | binding ends | same as B10 | L2, L3, L6 | binding (named, unnamed) x end depth 0/1/2 | #1958, #1960 |
+| B12 | named connector ends | same as B10 | L2, L3, L6 | connection, interface x end depth 0/1/2, ends named `a ::> x.p` | #1956 |
+| B20 | flows | payload type, source output, target input, end references (flow-end form) | L2, L3, L6 | flow, succession flow, message x end depth | - |
+| C01 | behavioral definitions | name, metaclass kind, isAbstract, parameters (own and inherited), result of a calc def, subject of a requirement/case def | DL1-DL5 | action, state, calc, constraint, requirement, use case, analysis, verification def | - |
+| C10 | action parameters | name, direction, type, bound value kind and text, referenced feature of a chain value | L2-L5 | literal, feature, chain, operator expression | #1965 |
+| C20 | action kinds | metaclass kind, payload, sender/receiver (`via`/`to`), accept payload, assigned feature | L2, L3 + in state `entry` | send, accept, assign, perform, if/while/for | #1985 |
+| C30 | states and transitions | substates, entry/do/exit, transition source, target, trigger, guard, effect | L2, L3 | state def, exhibit state, parallel | - |
+| D10 | metadata | annotations of an element, elements annotated by a metadata def, metadata feature values | L2, L3 + on parameters, states | prefix `#M`, body `@M;`, `metadata m : M about x` | #1963 |
+| D20 | comments | comment / doc body, annotated element, textual representation | L1-L3 | `doc`, `comment about`, `rep` | - |
+| E10 | static values | evaluated value of a feature | L2-L5 | literal, arithmetic, feature reference, quantity with unit | #1965 |
+| F10 | instances | owner and usage path of an instance, values of a connector end at runtime | L3, L6 | - | #1959, #1964 |
+
+### Decisions
+- **Members inherited from the standard library are counted.** For example,
+  `Parts::Part` gives every part def `start`, `done`, `subparts`, ...
+  Consequences:
+  - Expected member lists include library members. They are derived from the
+    library source, with the Pilot as the oracle, and they name the library
+    version used.
+  - The MDKs bundle different library snapshots. OpenSysML embeds its own,
+    sysml-toolkit pins the `SysML-v2-Release` submodule, and the Pilot has
+    `sysml.library`. A version difference could look like an API defect. Before
+    A02, compare the library versions. Where they differ, a case is marked as
+    depending on the library, so such a failure can be told apart.
+  - sysml-toolkit must load the library (`spec-refs/SysML-v2-Release`
+    initialised), or it cannot report library members at all.
+  - The OpenSysML Python `attributes()` deliberately leaves out library
+    attributes and reports only their count (`withheld_library_attributes`). Under
+    this decision that counts as missing, not as unsupported.
+  - A10 is unaffected: its only member-list check counts unnamed parts declared
+    in the model itself.
+
+- **Secondary routes are not probed.** Each suite reads through the MDK's main
+  API only. Workarounds are not tried, and there is no outcome for "readable
+  only by a workaround". The main API of each MDK:
+  - OpenSysML (Python, Go): the Symbol API and the query API. Reflection
+    (`eval` over metaobjects) and api-json / RDF export are not used.
+  - sysml-toolkit: `ResolvedModel`, its semantic model. Owned properties are
+    read with `element_properties` and derived ones with
+    `derived(element, "<spec name>")`. (Corrected in Step 4: an earlier version
+    of this note said the toolkit had no element-level API and used the
+    full-form JSON export instead.)
+  - Pilot Implementation: the EMF model (`org.omg.sysml.lang.sysml`).
+- **B10 is split into B10 and B11**, by connector kind (see the table).
+- **Other OpenSysML clients wait.** The TS, Java and Rust clients are left for a
+  later time.
+
+### Suggested order
+1. A20, A30, B10, B11, C10, C20, D10: each is backed by an issue already seen in practice.
+2. A01, A02, A40, A50.
+3. C01.
+4. A60, B20, C30, D20, E10.
+5. F10 last. Only some MDKs have a runtime, so most results would be "unsupported".
+
+## Step 4: first group of matrices
+
+### Infrastructure changes
+- Every suite now runs all of `data/cases/*.json` (one runner per suite), and the
+  CSV `matrix` column tells the matrices apart. `report.py` starts with a
+  per-matrix summary (pass / fail / unsupported / error for each suite).
+- Generators share `data/genlib.py`. `gen_a10.py` was ported to it and produces
+  byte-identical A10 files.
+- A case may carry `accept`: alternative values that also count as a pass. It
+  is used only where the expected value is genuinely ambiguous, and the
+  generator gives the reason.
+- sysml-toolkit's library submodule `spec-refs/SysML-v2-Release` is initialised
+  (pinned at de1070a, 2026-07-22). The Pilot's `sysml.library` is 0.64.0
+  (2026-10-01). OpenSysML's embedded library version is still to be checked
+  (needed before A02).
+
+### Correction: sysml-toolkit A10 results
+The first sysml-toolkit adapter read the full-form JSON export. In that export,
+`inheritedFeature` is always empty, so every inherited case failed. The toolkit's
+semantic model (`ResolvedModel`) does compute inherited features, and with an
+adapter on that API sysml-toolkit passes all of A10. The earlier fail results
+for sysml-toolkit came from the route, not the model.
+
+Observations kept for later matrices (A02 will test them directly):
+- `ResolvedModel::derived(car, "inheritedFeature")` lists engine, driver and the
+  unnamed part, but `feature`, `member` and `membership` are empty for `car`. The
+  spec derives those to include inherited ones.
+- That `inheritedFeature` leaves out library-inherited features (Part's `start`,
+  `done`, ...). Under the Step 3 decision, those should be counted.
+- In the full-form JSON export, `inheritedFeature` is empty.
+- How "visible through a usage" is read: the union of an API's member listings
+  (OpenSysML: `children()`, `parts()`, `attributes()`; sysml-toolkit and Pilot:
+  `feature`, `ownedFeature`, `inheritedFeature`).
+
+### A20 attribute usages
+5 reads x 5 locations (L1-L5) x 4 variants = 100 cases. Reads are spec
+properties taken literally (see the `notes` in `cases/A20.json`):
+- name is `Element::name`, the effective name.
+- type is the first of `Feature::type`, which includes types inherited through
+  redefinition.
+- multiplicity is `Type::multiplicity`, the owned multiplicity only. A
+  redefinition without its own multiplicity expects none.
+- value and isDefault come from the feature's owned `FeatureValue` membership.
+  `valuation` is only an association end in KerML, so it is not used.
+
+Decisions:
+- A bound value (`= 1.5`) cannot be overridden by a redefinition
+  (`validateFeatureValueOverriding`; sysml-toolkit reported it), so the L5
+  "bound" variant is redefined without a value.
+- For `tuned::bound`, the owned-FeatureValue reading is "no value". But the
+  feature is still bound to 1.5 by the redefined feature, and the OpenSysML
+  Python API reports 1.5. Both are accepted.
+
+Findings:
+- OpenSysML (Python and Go): redefining features (`attribute :>> plain = 3.5`)
+  report no type. `Feature::type` should include the redefined feature's
+  `Real`. There is also no way to tell a default value from a bound value
+  (isDefault is unsupported).
+- Pilot and sysml-toolkit pass all 100 cases.
+
+### A30 port usages and conjugation
+44 cases in two blocks:
+- Reads on the port usage (name, type, typeIsConjugated) x locations (L2, L3,
+  L4, L6) x typing (`CmdPort`, `~CmdPort`).
+- Direction of the port def's features as seen through the port
+  (`Type::directionOf`) x locations (the port def itself, L2, L3, L4, L6) x
+  typing x the feature's declared direction (out `cmd`, in `ack`).
+
+Infrastructure: `through` may now be a path (`["A30::rack", "A30::Rack::slot"]`),
+so L6 reads the port through a chain of nested usages. Qualified names are
+compared without quotes, because OpenSysML spells `CmdPort::~CmdPort` where the
+notation quotes `CmdPort::'~CmdPort'`. The quoted form is expected and the
+unquoted form is accepted.
+
+How each MDK is read: Pilot `Type.directionOf`; sysml-toolkit the operation
+`Core-Types-Type-directionOf_Feature`; OpenSysML has only the member's own
+`direction` metadata. OpenSysML gives a conjugated port def the same kind as an
+ordinary one (`portDef`), so conjugation is detected from the spec naming rule
+(`~` + the original's name).
+
+Findings:
+- OpenSysML (Python, Go): a `~CmdPort` port reports type `CmdPort` (#1962), and
+  directions seen through it are not swapped. Ports are not listed through
+  typing usages, specializations or chains (#1961). The conjugated def lists no
+  features.
+- sysml-toolkit: the conjugated def `CmdPort::'~CmdPort'` lists no features, so
+  `cmd`/`ack` are not visible through it (A30-027/028). The Pilot lists them
+  with swapped directions. Everything else passes.
+- Pilot: all 44 pass.
+
+### B10 connection and interface ends
+98 cases:
+- 5 reads x 2 kinds (connection, interface) x 3 end depths (`q`, `x.p`,
+  `m.u1.p`) x 3 locations (L2, L3, L6) = 90.
+- The def side: endCount and endNames of `Link`/`Iface`, and of
+  `SubLink :> Link`/`SubIface :> Iface` (inherited ends) = 8.
+
+A referenced feature is compared in chain form: the qualified names of its
+`chainingFeature`s, or `[qn]` for a feature that is not a chain. relatedFeature,
+sourceFeature and targetFeature follow KerML: the ends' referenced features,
+so for a chained end the chain feature, not its last feature (#1957).
+
+Findings:
+- OpenSysML (Python, Go): a connector whose ends are unnamed (`connect x.p to
+  y.p`) lists no ends at all, so endCount is 0 (#1960). relatedFeature,
+  sourceFeature and targetFeature are not available (#1956). End features of a
+  connection/interface def have no end marker (kind `referenceUsage`), so the
+  def-side reads are unsupported. Connectors are not listed through typing
+  usages or chains.
+- sysml-toolkit: everything on connector usages passes, chained ends included.
+  A specializing def (`SubLink :> Link`) reports no `endFeature`, although it
+  inherits Link's ends. This is the same pattern as `feature` leaving out
+  inherited features.
+- Pilot: all 98 pass.
+
+Adapter fix found on the way: the sysml-toolkit adapter ignored element
+references held in owned properties (`{"@id": ...}`). They are now resolved.
+
+Planned addition, B12: the same reads for connectors with named ends
+(`connect supplier ::> x.p to consumer ::> y.p`), as in the model of #1956.
+It is kept separate so B10 stays near 100 cases.
+
+### B11 binding connector ends
+90 cases: B10's 5 reads x naming (`binding b0 bind ...`, unnamed `bind ...`) x
+end depth 0/1/2 x locations (L2, L3, L6).
+
+Scope change: flows were moved from B11 to B20. A flow end is not a plain
+reference: `flow from x.o to y.i` gives an end that references `x` and owns a
+flow feature redefining `o`. Its expected values need the flow-specific reads
+planned for B20.
+
+New locator: an unnamed element has no qualified name, so a case can carry
+`unnamed: {metaclass, index}`. It selects the index-th unnamed member of that
+metaclass declared in `element` (declaration order), visible in the last element
+of `through` when one is given.
+
+Findings:
+- OpenSysML (Python, Go): a binding never lists its ends, named or not, because
+  binding ends are always unnamed (#1960). Unnamed bindings cannot be found
+  through the Symbol API. relatedFeature, sourceFeature and targetFeature are
+  unsupported.
+- Pilot and sysml-toolkit: all 90 pass.
+
+### C10 action parameters and bound values
+Decision (agreed): bound expressions are compared by structure, not text.
+116 cases in two blocks:
+- Value reads (valueKind = metaclass, valueOperator, valueReferences in chain
+  form, valueText) x value variants (literal, feature reference, feature chain,
+  operator expression, no value) x locations (perform action in part def, action
+  usage in part def, through typing usage, through usage of specialized def) = 80.
+- Parameter reads (name, direction, type) x direction (in, out, inout) x
+  locations (action def, through specializing action def, through perform
+  action, through typing usage) = 36.
+
+valueText is unsupported where an API cannot return source text. That is so far
+every MDK: OpenSysML has no expression at all, and the Pilot and sysml-toolkit
+models carry no text.
+
+Corrections found by the oracle: a FeatureChainExpression is an
+OperatorExpression with operator "." (KerML), so valueOperator for
+`powerPort.power` is "." (the Pilot reported it). The sysml-toolkit adapter
+compared the metaclass name exactly and now uses the toolkit's
+`metaclass_conforms`.
+
+Findings:
+- OpenSysML (Python, Go): no expression structure (#1965). A parameter redefined
+  by `in pLiteral = 0.5` reports no type and no redefines edge. Actions are not
+  listed through typing usages.
+- Pilot and sysml-toolkit: all structural reads pass.
+
+### C20 kinds of action
+120 cases: 5 reads (kind = metaclass, payloadArgument, senderArgument,
+receiverArgument, assignedFeature) x 8 kinds (send via, send to, accept via,
+assign, perform, if, while, for) x 3 locations (action def body, nested in an
+action usage in a part def, through typing usage). State entry actions are left
+to C30.
+
+Findings:
+- OpenSysML (Python, Go): every kind is reported as a plain `actionUsage`
+  (#1985, which here extends to accept, assign, perform, if, while and for). No
+  arguments are available.
+- sysml-toolkit: AssignmentActionUsage `referent` is null. Its model of
+  `assign count := 1` has the `target` and `replacementValues` parameters but no
+  membership naming `count`, even though `derives` reports the property as
+  exactly computed. Everything else passes.
+- Pilot: all 120 pass.
+
+### D10 metadata annotations
+45 cases: 3 reads (metadataDefs, metadataValue, annotatedElement) x 3 forms
+(prefix `#M`, body `@M { ... }`, `metadata m : M about x` owned elsewhere) x 5
+sites (part def, part usage, state, action parameter, part usage through typing
+usage). The annotations of an element are the MetadataUsages whose
+annotatedElement includes it, wherever they are owned. The metamodel APIs have
+no navigable link from the annotated element, so they scan the MetadataUsages.
+
+Findings:
+- OpenSysML (Python, Go): no annotation is found in any form. Prefix and body
+  annotations are not children (#1963). The query API lists a body annotation as
+  an anonymous `@0` row with no type. A named `metadata ... about x` is a symbol,
+  but nothing reports what it annotates.
+- Pilot and sysml-toolkit: all 45 pass.
+
+### First group: status
+A20, A30, B10, B11, C10, C20 and D10 are done (649 cases including A10). B12
+(named connector ends) is planned but not yet written.
