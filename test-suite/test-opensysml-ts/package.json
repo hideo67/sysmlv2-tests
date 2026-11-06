@@ -1,0 +1,13 @@
+{
+  "name": "test-opensysml-ts",
+  "private": true,
+  "type": "module",
+  "description": "Every matrix in data/cases against the OpenSysML TypeScript client (client/node), over sysml-grpc or sysml-wasm.",
+  "scripts": {
+    "test": "node matrices.ts"
+  },
+  "engines": { "node": ">=22.22.2" },
+  "dependencies": {
+    "@openmbee/opensysml": "file:../../OpenSysML/client/node"
+  }
+}

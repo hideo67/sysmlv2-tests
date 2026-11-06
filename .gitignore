@@ -5,6 +5,7 @@ sysml-toolkit/
 __pycache__/
 .pytest_cache/
 target/
+node_modules/
 
 # test run output (CSV results and logs)
 test-suite/results/

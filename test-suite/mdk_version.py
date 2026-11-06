@@ -80,6 +80,17 @@ SUITES = {
         api="Rust client (client/rust), Symbol API, over sysml-grpc built from this commit",
         library=opensysml_library,
         toolchain=lambda: sh("rustc", "--version", cwd=HERE / "test-opensysml-rs")),
+    "opensysml-ts": dict(
+        mdk="OpenSysML", dir="OpenSysML",
+        api="TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit",
+        library=opensysml_library,
+        toolchain=lambda: "Node.js " + sh("node", "--version")),
+    "opensysml-ts-wasm": dict(
+        mdk="OpenSysML", dir="OpenSysML",
+        api="TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module "
+            "built from this commit (connectWasm)",
+        library=opensysml_library,
+        toolchain=lambda: "Node.js " + sh("node", "--version")),
     "sysml-toolkit-rs": dict(
         mdk="sysml-toolkit", dir="sysml-toolkit",
         api="Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, "

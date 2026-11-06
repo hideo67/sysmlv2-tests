@@ -22,7 +22,7 @@ The project has the following directory structure:
   - test-opensysml-go
   - test-opensysml-py
   - test-opensysml-rs
-  - test-opensysml-ts (planned)
+  - test-opensysml-ts
   - test-opensysml-java (planned)
   - test-sysml-toolkit-rs
   - results (created by a test run, not tracked by git)
@@ -53,6 +53,7 @@ used on Linux (Ubuntu under WSL2).
 | [uv](https://docs.astral.sh/uv/) | any recent | the Python suite's virtual environment |
 | Go | 1.26 or later (OpenSysML pins toolchain go1.27.3) | building OpenSysML, the OpenSysML Go suite |
 | make | GNU make | building OpenSysML |
+| Node.js | 22.22.2 or later, with npm | building the OpenSysML TypeScript client, the OpenSysML TypeScript suites |
 | Rust (rustup, cargo) | stable; sysml-toolkit pins 1.98.1 in its `rust-toolchain.toml` | the sysml-toolkit suite, the OpenSysML Rust suite |
 | JDK | **21** | the Pilot Implementation and its suite. The Pilot does not build under JDK 25 ("Unsupported class file major version 69"). |
 | Maven | 3.9 | building the Pilot Implementation and its suite |
@@ -63,8 +64,6 @@ default is `/usr/lib/jvm/java-21-openjdk-amd64`:
 ```sh
 export JDK21=/path/to/jdk-21
 ```
-
-Node.js is not needed until the planned TypeScript suite exists.
 
 ## 1. Clone the MDKs
 
@@ -89,6 +88,13 @@ The three MDK directories are listed in `.gitignore`.
 # embedded standard library snapshot (needed to compile the Go suite)
 make -C OpenSysML build-grpc
 
+# OpenSysML WebAssembly: builds bin/wasm/release/sysml-wasm.wasm and its
+# wasm_exec.js (used by the opensysml-ts-wasm suite)
+make -C OpenSysML build-release-wasm
+
+# OpenSysML TypeScript client: builds client/node/dist from the checkout
+(cd OpenSysML/client/node && npm ci && npm run build)
+
 # Pilot Implementation: builds the fat jar
 # org.omg.sysml.interactive/target/org.omg.sysml.interactive-<version>-all.jar
 (cd SysMLv2-Pilot-Implementation && JAVA_HOME=$JDK21 PATH=$JDK21/bin:$PATH mvn -B -DskipTests package)
@@ -100,17 +106,20 @@ suites compile them as path dependencies.
 The Pilot's Maven build rewrites two committed jar files, so its checkout shows
 as modified afterwards. The test report lists them.
 
-## 3. Set up the Python suite
+## 3. Set up the Python and TypeScript suites
 
 ```sh
 cd test-suite/test-opensysml-py
 uv venv .venv
 uv pip install --python .venv/bin/python -e . pytest
+cd ../test-opensysml-ts
+npm install
 cd ../..
 ```
 
 This installs the OpenSysML Python client from the local `OpenSysML` checkout
-in editable mode. The Go, Rust and Java suites fetch their own dependencies on
+in editable mode, and links the TypeScript suite to the local
+`OpenSysML/client/node` build. The Go, Rust and Java suites fetch their own dependencies on
 first run (Go modules, crates.io, Maven Central).
 
 ## 4. Run the tests
@@ -119,7 +128,7 @@ first run (Go modules, crates.io, Maven Central).
 cd test-suite
 ./run-all.sh                    # every suite
 ./run-all.sh opensysml-go       # one suite (or several, separated by spaces)
-./run-all.sh --list             # suite names: opensysml-py opensysml-go opensysml-rs sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
+./run-all.sh --list             # suite names: opensysml-py opensysml-go opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
 ```
 
 sysml-toolkit is run twice, from the same test-sysml-toolkit-rs crate:
@@ -129,6 +138,14 @@ uses its checked reader (`property`), which refuses them. The environment
 variable `SYSML_TOOLKIT_READER` (`compatibility` or `checked`) selects the
 reader. Both runs set the toolkit's closure policy with the implied library
 heritage.
+
+The OpenSysML TypeScript client is also run twice, from test-opensysml-ts:
+`opensysml-ts` over the local `sysml-grpc` (`connect()`), and
+`opensysml-ts-wasm` over the local `sysml-wasm.wasm` module with no service
+process (`connectWasm()`). The environment variable `OPENSYSML_TS_BACKEND`
+(`grpc` or `wasm`) selects the backend. The WebAssembly module serves no
+`Query`, so the notes on unsupported reads say so instead of naming what the
+query API offers.
 
 A suite that finds failing test cases exits non-zero. That is the normal
 outcome while the MDKs have defects, and the script carries on with the next

@@ -943,9 +943,50 @@ only on F10 (instantiation, 24 pass) and level on E10 (evaluation). Against the
 checked reader it is also ahead on B12 (12 named connector ends pass, where the
 checked reader refuses all 108).
 
+## Step 9: OpenSysML TypeScript client, over gRPC and WebAssembly
+The TypeScript client (`client/node`) does not copy the Python client as the
+Rust one does. `Model.symbol(name)` takes the service's answer to `GetSymbol`
+(falling back to a breadth-first search by name or id), and a `ModelSymbol`
+carries the child ids and the attribute facts the service sends, with no
+client-side walk of supertypes. It also runs over two backends:
+`connect()`, a private child of `sysml-grpc`, and `connectWasm()`, the
+`sysml-wasm` WebAssembly module (`make build-release-wasm`) with no service
+process. The WebAssembly module is a separate build of the service, so it is
+the first OpenSysML surface that could disagree with the service the other
+suites share.
+
+One adapter (`test-opensysml-ts/matrices.ts`, run by Node's type stripping,
+no build step) runs as two suites, `opensysml-ts` and `opensysml-ts-wasm`,
+selected by `OPENSYSML_TS_BACKEND`, as the sysml-toolkit crate runs two
+readers. The client is linked from the local checkout
+(`file:../../OpenSysML/client/node`, built with `npm ci && npm run build`),
+`sysml-grpc` is the local build (`$OPENSYSML_BINARY`), and `connectWasm` is
+given the local `sysml-wasm.wasm` and its `wasm_exec.js`. Since a
+`ModelSymbol` has the shape of the Go client's `Symbol`, the reads follow the
+Go adapter (child ids and attribute facts) and use `Model.symbol` as the
+name lookup. The WebAssembly module serves no `Query`
+(`MissingCapabilityError`), so the notes on unsupported reads say so.
+
+Findings:
+- `opensysml-ts` gives the same answer as Go on all 1630 cases (504 pass,
+  364 fail, 753 unsupported, 9 error), and so differs from Python and Rust in
+  the same five cases: A60-007/008 pass (the service's answer is taken), and
+  C01-050/052/054 fail (no inherited parameter is listed, because only the
+  children are read).
+- `opensysml-ts-wasm` gives the same answer as `opensysml-ts` on every case.
+  The only differences are the notes on unsupported reads (no Query). The
+  WebAssembly build answers `GetSymbol`, `Evaluate` and `Instantiate` as
+  `sysml-grpc` does, the rejected C30 model included.
+- The five OpenSysML suites fall into two families: Python and Rust, whose
+  `attributes()` walks the supertypes on the client and whose `get` keeps
+  only a symbol with the id asked for; and Go and TypeScript, which report
+  what the service sends. Every difference between OpenSysML suites so far is
+  between the two families.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
 C30, D10, D20, E10, F10). Step 7 added C21: 22 matrices, 1630 cases.
-Step 8 added the OpenSysML Rust client as a suite.
-Deferred: the OpenSysML TS and Java clients.
+Step 8 added the OpenSysML Rust client as a suite, Step 9 the TypeScript
+client over gRPC and WebAssembly.
+Deferred: the OpenSysML Java client.
