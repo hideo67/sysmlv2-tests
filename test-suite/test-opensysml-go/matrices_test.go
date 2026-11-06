@@ -356,7 +356,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	id := norm(c.Element)
 	if len(c.Through) > 0 {
 		// each step is read as a member the previous Symbol lists: as a child,
-		// or (for attributes, own and inherited) in Attributes
+		// in Members (own and inherited), or (for attributes, own and inherited) in Attributes
 		cur, err := cl.LookupSymbol(ctx, m, norm(c.Through[0]))
 		if err != nil {
 			return nil, err
@@ -368,7 +368,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		for _, step := range steps {
 			step = norm(step)
 			name := step[strings.LastIndex(step, "::")+2:]
-			visible := slices.Contains(cur.ChildIDs, step) ||
+			visible := slices.Contains(memberIDs(cur), step) ||
 				slices.ContainsFunc(cur.Attributes, func(a opensysml.Attribute) bool { return a.Name == name })
 			if !visible {
 				return fmt.Sprintf("<%s not visible through %s>", step, cur.ID), nil
@@ -489,10 +489,18 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			slices.SortFunc(redefs, func(a, b []string) int { return strings.Compare(a[0]+a[1], b[0]+b[1]) })
 			return redefs, nil
 		}
-		// members the Symbol lists that it does not own: Attributes (own and inherited) not among the children
+		// members the Symbol lists that it does not own: inherited Members, and
+		// Attributes (own and inherited) not among the children
 		inherited := []string{}
+		seen := map[string]bool{}
+		for _, mb := range sym.Members {
+			if mb.Inherited && !seen[mb.ID] {
+				seen[mb.ID] = true
+				inherited = append(inherited, mb.Name)
+			}
+		}
 		for _, a := range sym.Attributes {
-			if !slices.Contains(owned, a.Name) {
+			if !slices.Contains(owned, a.Name) && !slices.Contains(inherited, a.Name) {
 				inherited = append(inherited, a.Name)
 			}
 		}
@@ -551,9 +559,10 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		}
 		return nil, nil
 	case "parameters":
-		// children the Symbol lists that carry a direction in their metadata
+		// members the Symbol lists (children and Members, own and inherited)
+		// that carry a direction in their metadata
 		out := [][]string{}
-		for _, cid := range sym.ChildIDs {
+		for _, cid := range memberIDs(sym) {
 			ch, err := cl.LookupSymbol(ctx, m, cid)
 			if err == nil && ch.Metadata["direction"] != "" {
 				out = append(out, []string{ch.Metadata["direction"], ch.Name})
@@ -752,4 +761,16 @@ func writeResults(t *testing.T, rows [][]string) {
 	w := csv.NewWriter(f)
 	w.Write([]string{"suite", "matrix", "id", "outcome", "detail"})
 	w.WriteAll(rows)
+}
+
+// memberIDs lists the ids of the members a Symbol lists: its children, then
+// its Members (own and inherited; library-inherited ones are withheld).
+func memberIDs(sym *opensysml.Symbol) []string {
+	out := append([]string{}, sym.ChildIDs...)
+	for _, mb := range sym.Members {
+		if !slices.Contains(out, mb.ID) {
+			out = append(out, mb.ID)
+		}
+	}
+	return out
 }

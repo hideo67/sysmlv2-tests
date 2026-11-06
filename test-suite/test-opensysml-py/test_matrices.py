@@ -55,7 +55,7 @@ def _sym(model, element):
 def _visible(s):
     """Members a Symbol lists: children, parts, attributes (own and inherited)."""
     out = {}
-    for listing in (s.children(), s.parts(), s.attributes()):
+    for listing in (s.children(), s.parts(), s.attributes(), s.members(inherited=True, library=True)):
         out.update({norm(c.id): c for c in listing})
     return out
 

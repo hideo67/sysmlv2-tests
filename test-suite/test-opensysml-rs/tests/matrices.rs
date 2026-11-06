@@ -74,10 +74,18 @@ fn sym(m: &Model, qn: &str) -> R<Symbol> {
     get(m, qn)?.ok_or_else(|| answer(format!("<no symbol {qn}>")))
 }
 
-/// Members a Symbol lists: children, parts, attributes (own and inherited), by unquoted id.
-fn visible(s: &Symbol) -> R<Vec<(String, Symbol)>> {
+/// Members a Symbol lists: children, parts, attributes (own and inherited), and the
+/// members its SymbolInfo enumerates (own and inherited; the client requests no
+/// library-inherited ones), by unquoted id.
+fn visible(m: &Model, s: &Symbol) -> R<Vec<(String, Symbol)>> {
     let mut out: Vec<(String, Symbol)> = vec![];
-    for listing in [s.children()?, s.parts()?, s.attributes()?] {
+    let mut members = vec![];
+    for mb in &s.wire().members {
+        if let Some(c) = get(m, &mb.id)? {
+            members.push(c);
+        }
+    }
+    for listing in [s.children()?, s.parts()?, s.attributes()?, members] {
         for c in listing {
             let id = norm(c.id());
             match out.iter_mut().find(|(k, _)| *k == id) {
@@ -102,7 +110,7 @@ fn resolve(
         let (cur, listed) = if let Some((through, rest)) = path.split_last() {
             let (cur, _) = resolve(m, through, rest, None)?;
             let prefix = norm(element) + "::";
-            let listed: Vec<Symbol> = visible(&cur)?
+            let listed: Vec<Symbol> = visible(m, &cur)?
                 .into_iter()
                 .map(|(_, c)| c)
                 .filter(|c| c.id().starts_with(&prefix))
@@ -133,7 +141,7 @@ fn resolve(
     let mut owner = None;
     for step in rest.iter().map(String::as_str).chain([element]) {
         let want = norm(step);
-        match visible(&cur)?.into_iter().find(|(k, _)| *k == want) {
+        match visible(m, &cur)?.into_iter().find(|(k, _)| *k == want) {
             Some((_, next)) => {
                 owner = Some(cur);
                 cur = next;
@@ -455,7 +463,7 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
                 Some((through, rest)) => {
                     let (cur, _) = resolve(m, through, rest, None)?;
                     let prefix = norm(element) + "::";
-                    visible(&cur)?
+                    visible(m, &cur)?
                         .into_iter()
                         .map(|(_, c)| c)
                         .filter(|c| norm(c.id()).starts_with(&prefix))
@@ -534,10 +542,10 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
                 .collect(),
         ),
         "inheritedFeatureNames" => {
-            // members the Symbol lists (children, parts, attributes) that it does not own
+            // members the Symbol lists (children, parts, attributes, members) that it does not own
             let prefix = norm(s.id()) + "::";
             names(
-                visible(&s)?
+                visible(m, &s)?
                     .into_iter()
                     .filter(|(id, _)| !id.starts_with(&prefix))
                     .map(|(_, c)| c)
@@ -599,7 +607,7 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
         "parameters" => {
             // members the Symbol lists that carry a direction in their metadata
             let mut out: Vec<[String; 2]> = vec![];
-            for (_, c) in visible(&s)? {
+            for (_, c) in visible(m, &s)? {
                 if let Some(d) = c.metadata().get("direction") {
                     out.push([d.clone(), c.name().to_string()]);
                 }

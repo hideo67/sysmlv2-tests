@@ -983,10 +983,68 @@ Findings:
   what the service sends. Every difference between OpenSysML suites so far is
   between the two families.
 
+## Step 10: OpenSysML enumerates members (symbol_members)
+OpenSysML develop moved from `1a8e4927dc` to `f0347a0076` (14 merges). The
+change that matters here is #1974: `GetSymbol` now reports
+`SymbolInfo.members`, KerML `Type::member`: the owned members in declaration
+order, then the inherited ones in inheritance order, each with `inherited`
+and `inherited_from`. A redefinition masks what it redefines, and a private
+member of a supertype is not inherited. Members inherited from library
+content are withheld and counted (`withheld_library_members`) unless
+`GetSymbolRequest.include_library_members` is set. The service advertises
+this as the `symbol_members` capability.
+
+Rerunning the unchanged adapters against the new build changed no outcome in
+any of the five OpenSysML suites. The new enumeration is a new field, and
+the adapters did not read it. Python's `attributes()` now delegates to it,
+but it already listed inherited attributes. So each adapter now adds the
+members to the listings it already unions (Step 1: "visible through a
+usage" is the union of an API's member listings), each through its client's
+public API:
+
+| client | API for members | library members |
+|--|--|--|
+| Python | `Symbol.members(inherited=True, library=True)` | listed |
+| Go | `Symbol.Members` | withheld; the client has no option to request them |
+| Rust | `Symbol::wire().members` (no typed accessor) | withheld; the client sends `include_library_members: false` |
+| TypeScript | none: `ModelSymbol` drops `members` | - |
+
+Results (pass / fail; unsupported 753 and error 9 unchanged):
+
+| suite | before | after |
+|--|--|--|
+| opensysml-py | 505 / 363 | 592 / 276 |
+| opensysml-go | 504 / 364 | 594 / 274 |
+| opensysml-rs | 505 / 363 | 592 / 276 |
+| opensysml-ts, opensysml-ts-wasm | 504 / 364 | unchanged (no API) |
+
+Findings:
+- Inherited parts, ports and connections are now visible through a usage.
+  About 87-90 cases per suite go from fail to pass: A10 8, A30 18, A40 18,
+  B12 24, B20 6, C10 9, C30 4, plus C01 inherited parameters. This is the
+  member side of #1961.
+- A calc def's `return r` does not mask the library `Calculation::result`.
+  With library members included (Python), `members()` of
+  `calc def Calc { in x; return r; }` lists both `r` and the inherited
+  `result`, so C01-053/054 now fail in Python. `return r` redefines
+  `result`, so `result` should be masked. Go and Rust pass these cases only
+  because they withhold library members. The same listing gives the right
+  answer for a constraint def (C01-055/056, `result` inherited and not
+  redefined, now pass in Python and still fail in Go and Rust).
+- A02 inheritedFeatureNames (A02-031..040) is still failing in every
+  OpenSysML suite. In Python, the model-inherited names and all named library
+  members now match the Pilot, but OpenSysML lists one unnamed
+  library-inherited member fewer (17 where the Pilot lists 18). Go and Rust
+  miss all library members.
+- The two families of Step 9 are now three. Python reads library members;
+  Go and Rust read model members only; TypeScript reads neither. A60-007/008
+  still separate Python/Rust from Go/TypeScript, as before.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
 C30, D10, D20, E10, F10). Step 7 added C21: 22 matrices, 1630 cases.
 Step 8 added the OpenSysML Rust client as a suite, Step 9 the TypeScript
-client over gRPC and WebAssembly.
+client over gRPC and WebAssembly. Step 10 adopted the member enumeration
+OpenSysML added (symbol_members) in the Python, Go and Rust adapters.
 Deferred: the OpenSysML Java client.
