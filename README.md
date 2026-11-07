@@ -40,6 +40,13 @@ siblings of the test-suite are cloned project repositories of the MDKs to be tes
 - [Test result snapshot](test-suite/report-all-SNAPSHOT.md)
 - [Derived-property census snapshot](test-suite/census-SNAPSHOT.md)
 
+To update them, run `test-suite/update-snapshots.sh --run`. It runs every
+suite and census, then writes both snapshots from `results/`. Without `--run`,
+it writes them from the results already there. Before writing, it checks that
+every suite recorded every case and that all suites of one MDK ran against the
+same commit. If a check fails, it writes nothing (`--force` overrides). It
+never commits.
+
 # Building and running
 
 The MDKs are cloned next to `test-suite` and built from source. The test
@@ -84,6 +91,21 @@ git -C sysml-toolkit submodule update --init --filter=blob:none spec-refs/SysML-
 The three MDK directories are listed in `.gitignore`.
 
 ## 2. Build the MDKs
+
+One script per MDK builds only what the suites use:
+
+```sh
+test-suite/build-opensysml.sh        # or name parts: grpc wasm node java rust
+test-suite/build-pilot.sh
+test-suite/build-sysml-toolkit.sh
+```
+
+The scripts are narrower than the commands below: the Pilot script builds only
+`org.omg.sysml.interactive` and the modules it needs. The OpenSysML script
+skips `sysml-prod.wasm.gz`, which `build-release-wasm` also builds. For
+sysml-toolkit and the OpenSysML Rust client, the scripts compile the crates into
+the suites' own target directories (`cargo test --release --no-run`), and the
+suite runs then reuse them. The full commands:
 
 ```sh
 # OpenSysML: builds bin/sysml-grpc (used by the Python and Rust suites) and generates the
