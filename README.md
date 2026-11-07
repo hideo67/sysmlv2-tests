@@ -19,7 +19,7 @@ The project has the following directory structure:
 - test-suite
   - data
   - test-sysml-v2-pilot-implementation-java
-  - test-opensysml-go
+  - test-opensysml-go (two suites: the Symbol API, and the element properties API)
   - test-opensysml-py (two suites: the Symbol API, and the element properties API)
   - test-opensysml-rs
   - test-opensysml-ts
@@ -128,7 +128,7 @@ first run (Go modules, crates.io, Maven Central).
 cd test-suite
 ./run-all.sh                    # every suite
 ./run-all.sh opensysml-go       # one suite (or several, separated by spaces)
-./run-all.sh --list             # suite names: opensysml-py opensysml-py-props opensysml-go opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
+./run-all.sh --list             # suite names: opensysml-py opensysml-py-props opensysml-go opensysml-go-props opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
 ```
 
 sysml-toolkit is run twice, from the same test-sysml-toolkit-rs crate:
@@ -144,7 +144,9 @@ The OpenSysML Python client is run twice, from test-opensysml-py:
 `opensysml-py-props` (`test_props.py`) reads every model value through
 `Model.element_properties`, the GetElementProperties RPC, by specification
 property name. The environment variable `OPENSYSML_PY_SUITE` names the suite
-the results are written for; `run-all.sh` sets it.
+the results are written for; `run-all.sh` sets it. The OpenSysML Go suite is
+split the same way: `opensysml-go` and `opensysml-go-props`
+(`props_test.go`), selected by `OPENSYSML_GO_SUITE`.
 
 The OpenSysML TypeScript client is also run twice, from test-opensysml-ts:
 `opensysml-ts` over the local `sysml-grpc` (`connect()`), and

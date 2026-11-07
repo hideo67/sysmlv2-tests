@@ -81,6 +81,11 @@ SUITES = {
         api="Go API (client/opensysml) in process, Symbol API",
         library=opensysml_library,
         toolchain=lambda: sh("go", "version")),
+    "opensysml-go-props": dict(
+        mdk="OpenSysML", dir="OpenSysML",
+        api="Go API (client/opensysml) in process, element properties API (GetElementProperties)",
+        library=opensysml_library,
+        toolchain=lambda: sh("go", "version")),
     "opensysml-rs": dict(
         mdk="OpenSysML", dir="OpenSysML",
         api="Rust client (client/rust), Symbol API, over sysml-grpc built from this commit",

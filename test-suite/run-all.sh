@@ -13,7 +13,7 @@ export JDK21="${JDK21:-/usr/lib/jvm/java-21-openjdk-amd64}"
 if [[ ! -x "$JDK21/bin/java" ]]; then
   echo "warning: no JDK at JDK21=$JDK21; the pilot-java suite needs JDK 21" >&2
 fi
-SUITES=(opensysml-py opensysml-py-props opensysml-go opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java)
+SUITES=(opensysml-py opensysml-py-props opensysml-go opensysml-go-props opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java)
 
 run_suite() {
   case "$1" in
@@ -22,6 +22,8 @@ run_suite() {
                       cd test-opensysml-py &&
                       OPENSYSML_PY_SUITE=opensysml-py-props .venv/bin/python -m pytest -q test_props.py ;;
     opensysml-go)     cd test-opensysml-go && go test -v ./... ;;
+    opensysml-go-props)
+                      cd test-opensysml-go && OPENSYSML_GO_SUITE=opensysml-go-props go test -v ./... ;;
     opensysml-rs)     cd test-opensysml-rs && cargo test --release -- --nocapture ;;
     opensysml-ts)     cd test-opensysml-ts && OPENSYSML_TS_BACKEND=grpc node matrices.ts ;;
     opensysml-ts-wasm)

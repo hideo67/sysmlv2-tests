@@ -1,6 +1,9 @@
-// Every matrix in data/cases/*.json against the OpenSysML Go API (in process).
+// Every matrix in data/cases/*.json against the OpenSysML Go API (in process), in
+// one of two readers, chosen by OPENSYSML_GO_SUITE:
+//   opensysml-go (default): the Symbol API, this file;
+//   opensysml-go-props: the element properties API (GetElementProperties), props_test.go.
 //
-// Only the Symbol API (LookupSymbol) is used: it is OpenSysML's element API, the
+// In suite opensysml-go only the Symbol API (LookupSymbol) is used: it is OpenSysML's element API, the
 // counterpart of the Pilot's EMF model and sysml-toolkit's ResolvedModel
 // (DISCUSSIONS.md, Step 5 decision). When the Symbol API has no field for a read, the
 // result is unsupported, and the detail says whether the standard SysML v2 API &
@@ -116,6 +119,18 @@ func metaclassOf(kind string) string {
 	return strings.ToUpper(kind[:1]) + kind[1:]
 }
 
+// suite is the suite the results are written for, and check the reader it uses.
+func suite() (string, func(context.Context, opensysml.Client, *opensysml.Model, caseSpec) (any, error)) {
+	switch s := os.Getenv("OPENSYSML_GO_SUITE"); s {
+	case "", "opensysml-go":
+		return "opensysml-go", doCheck
+	case "opensysml-go-props":
+		return s, doCheckProps
+	default:
+		panic("OPENSYSML_GO_SUITE=" + s + ": expected opensysml-go or opensysml-go-props")
+	}
+}
+
 func unsupported(format string, args ...any) error {
 	return fmt.Errorf("%w: "+format, append([]any{errUnsupported}, args...)...)
 }
@@ -127,6 +142,7 @@ func TestMatrices(t *testing.T) {
 		t.Fatal(err)
 	}
 	ctx := context.Background()
+	suiteName, check := suite()
 	client, err := opensysml.New()
 	if err != nil {
 		t.Fatal(err)
@@ -134,7 +150,7 @@ func TestMatrices(t *testing.T) {
 	defer client.Close()
 
 	var rows [][]string
-	defer func() { writeResults(t, rows) }()
+	defer func() { writeResults(t, suiteName, rows) }()
 
 	for _, file := range files {
 		raw, err := os.ReadFile(file)
@@ -147,7 +163,7 @@ func TestMatrices(t *testing.T) {
 		}
 		record := func(id, outcome, detail string) {
 			detail = strings.Join(strings.Fields(detail), " ")
-			rows = append(rows, []string{"opensysml-go", spec.Matrix, id, outcome, detail})
+			rows = append(rows, []string{suiteName, spec.Matrix, id, outcome, detail})
 		}
 		t.Run(spec.Matrix, func(t *testing.T) {
 			// each model is parsed once; a model the MDK reports errors for makes every
@@ -195,7 +211,7 @@ func TestMatrices(t *testing.T) {
 					continue
 				}
 				t.Run(c.ID, func(t *testing.T) {
-					actual, err := doCheck(ctx, client, model, c)
+					actual, err := check(ctx, client, model, c)
 					if errors.Is(err, errUnsupported) {
 						record(c.ID, "unsupported", strings.TrimPrefix(strings.ReplaceAll(err.Error(), "\n", " "), "unsupported: "))
 						t.Skipf("UNSUPPORTED: %v", err)
@@ -762,7 +778,7 @@ func number(v opensysml.Value) any {
 	}
 }
 
-func writeResults(t *testing.T, rows [][]string) {
+func writeResults(t *testing.T, suite string, rows [][]string) {
 	dir := os.Getenv("RESULTS_DIR")
 	if dir == "" {
 		dir = filepath.Join("..", "results")
@@ -771,7 +787,7 @@ func writeResults(t *testing.T, rows [][]string) {
 		t.Logf("results: %v", err)
 		return
 	}
-	f, err := os.Create(filepath.Join(dir, "opensysml-go.csv"))
+	f, err := os.Create(filepath.Join(dir, suite+".csv"))
 	if err != nil {
 		t.Logf("results: %v", err)
 		return

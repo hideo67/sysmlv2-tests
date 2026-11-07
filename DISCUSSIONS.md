@@ -1098,8 +1098,13 @@ syntax as the sysml-toolkit adapter, the other reader by spec name: visible
 members are the union of `feature`, `ownedFeature`, `inheritedFeature`,
 `member` and the `memberElement` of each `inheritedMembership`; comments and
 metadata usages are found by walking `ownedElement` from the root package.
-E10 and F10 use the runtime API, as in opensysml-py. The other clients call
-the same RPC, so they are left until their answers might differ.
+E10 and F10 use the runtime API, as in opensysml-py.
+
+`opensysml-go-props` (`test-opensysml-go/props_test.go`, selected by
+`OPENSYSML_GO_SUITE`) is the same reader in Go. The Go suite runs the library
+in process, not over `sysml-grpc`, so it checks the in-process wiring and the
+Go client's decoding of the answers. The Rust and TypeScript clients go over the
+same `sysml-grpc` as Python, so they are left until their answers might differ.
 
 Rules:
 - A property the service reports as not derived (`unsupported` with a
@@ -1122,6 +1127,11 @@ opensysml-py-props: 1236 pass, 323 fail, 62 unsupported, 9 error, against
 470 now pass and 244 fail. Every A01, A03, A20, D10, D20, E10 and F10 case
 passes. 12 cases pass in opensysml-py and fail here, all because of the
 unreadable library elements.
+
+opensysml-go-props gives the same answer as opensysml-py-props on all 1630
+cases, failure values included. In process, the Go client calls the same
+`Service.GetElementProperties` as the gRPC service, and it links the
+positional names, so the wasm gap does not apply to it.
 
 Findings (OpenSysML, through GetElementProperties):
 - Unreadable library elements. An answer names library elements that the
@@ -1172,7 +1182,7 @@ C30, D10, D20, E10, F10). Step 7 added C21: 22 matrices, 1630 cases.
 Step 8 added the OpenSysML Rust client as a suite, Step 9 the TypeScript
 client over gRPC and WebAssembly. Step 10 adopted the member enumeration
 OpenSysML added (symbol_members) in the Python, Go and Rust adapters. Step 11
-added suite opensysml-py-props, which reads OpenSysML through its element
-properties API (GetElementProperties), and read ownerPath through
+added suites opensysml-py-props and opensysml-go-props, which read OpenSysML
+through its element properties API (GetElementProperties), and read ownerPath through
 InstancePaths in Python and Go.
 Deferred: the OpenSysML Java client.
