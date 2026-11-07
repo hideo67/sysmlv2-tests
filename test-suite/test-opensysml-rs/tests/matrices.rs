@@ -294,7 +294,7 @@ fn instance_check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
     let check = c["check"].as_str().unwrap();
     if check == "ownerPath" {
         return Err(Unsupported(
-            "an Instance carries no owner or usage path (issue #1959)".into(),
+            "the client does not expose InstancePaths, which lists the paths to an object (issue #1959)".into(),
         ));
     }
     let root = c["element"].as_str().unwrap();

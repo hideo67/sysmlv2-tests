@@ -147,8 +147,6 @@ _instances = {}
 
 def instance_check(model, check, root, path, path2):
     """F10: walk `path` from the object instantiate(root) builds."""
-    if check == "ownerPath":
-        raise Unsupported("an Instance carries no owner or usage path (issue #1959)")
     key = (model.hash, root)
     if key not in _instances:
         try:
@@ -170,6 +168,17 @@ def instance_check(model, check, root, path, path2):
         return cur
 
     target = walk(path)
+    if check == "ownerPath":
+        # the object's path through its owners: of every path paths() lists, the
+        # first that steps through no connector end (an end reaches the object
+        # it references, not one it owns)
+        if isinstance(target, str):
+            return target
+
+        def through_end(p):
+            return any(getattr(model.get(s.feature_symbol_id), "kind", None) == "connectorEnd" for s in p.steps)
+        owned = [p.path for p in target.paths() if not through_end(p)]
+        return owned[0] if owned else f"<no path to {path} through owners only>"
     if check == "instanceType":
         return getattr(target, "type_symbol_id", target)
     if check == "instanceValue":

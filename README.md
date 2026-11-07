@@ -20,7 +20,7 @@ The project has the following directory structure:
   - data
   - test-sysml-v2-pilot-implementation-java
   - test-opensysml-go
-  - test-opensysml-py
+  - test-opensysml-py (two suites: the Symbol API, and the element properties API)
   - test-opensysml-rs
   - test-opensysml-ts
   - test-opensysml-java (planned)
@@ -128,7 +128,7 @@ first run (Go modules, crates.io, Maven Central).
 cd test-suite
 ./run-all.sh                    # every suite
 ./run-all.sh opensysml-go       # one suite (or several, separated by spaces)
-./run-all.sh --list             # suite names: opensysml-py opensysml-go opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
+./run-all.sh --list             # suite names: opensysml-py opensysml-py-props opensysml-go opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
 ```
 
 sysml-toolkit is run twice, from the same test-sysml-toolkit-rs crate:
@@ -138,6 +138,13 @@ uses its checked reader (`property`), which refuses them. The environment
 variable `SYSML_TOOLKIT_READER` (`compatibility` or `checked`) selects the
 reader. Both runs set the toolkit's closure policy with the implied library
 heritage.
+
+The OpenSysML Python client is run twice, from test-opensysml-py:
+`opensysml-py` (`test_matrices.py`) reads through the Symbol API, and
+`opensysml-py-props` (`test_props.py`) reads every model value through
+`Model.element_properties`, the GetElementProperties RPC, by specification
+property name. The environment variable `OPENSYSML_PY_SUITE` names the suite
+the results are written for; `run-all.sh` sets it.
 
 The OpenSysML TypeScript client is also run twice, from test-opensysml-ts:
 `opensysml-ts` over the local `sysml-grpc` (`connect()`), and

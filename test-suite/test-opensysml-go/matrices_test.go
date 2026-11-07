@@ -660,9 +660,6 @@ var instantiations = map[string]*opensysml.Instantiation{}
 
 // instanceCheck is F10: walk c.Path from the object Instantiate(c.Element) builds.
 func instanceCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
-	if c.Check == "ownerPath" {
-		return nil, unsupported("an Instance carries no owner or usage path (issue #1959)")
-	}
 	key := m.Hash + " " + c.Element
 	inst, ok := instantiations[key]
 	if !ok {
@@ -704,6 +701,28 @@ func instanceCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model,
 	}
 	target := walk(c.Path)
 	switch c.Check {
+	case "ownerPath":
+		// the object's path through its owners: of every path InstancePaths lists, the
+		// first that steps through no connector end (an end reaches the object it
+		// references, not one it owns)
+		obj, ok := target.(*opensysml.Instance)
+		if !ok {
+			return fmt.Sprint(target), nil
+		}
+		paths, err := cl.InstancePaths(ctx, m, opensysml.ObjectRef{InstanceID: obj.ID})
+		if err != nil {
+			return fmt.Sprintf("<InstancePaths failed: %v>", err), nil
+		}
+	next:
+		for _, p := range paths.Paths {
+			for _, s := range p.Steps {
+				if f, err := cl.LookupSymbol(ctx, m, s.FeatureSymbolID); err == nil && f.Kind == "connectorEnd" {
+					continue next
+				}
+			}
+			return p.Path, nil
+		}
+		return fmt.Sprintf("<no path to %s through owners only>", c.Path), nil
 	case "instanceType":
 		if obj, ok := target.(*opensysml.Instance); ok {
 			return obj.TypeSymbolID, nil

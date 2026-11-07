@@ -1,9 +1,12 @@
-"""Writes one CSV row per test case to $RESULTS_DIR/opensysml-py.csv."""
+"""Writes one CSV row per test case to $RESULTS_DIR/<suite>.csv.
+
+The suite is $OPENSYSML_PY_SUITE: opensysml-py (test_matrices.py, the Symbol API, the
+default) or opensysml-py-props (test_props.py, the element properties API)."""
 import csv
 import os
 from pathlib import Path
 
-SUITE = "opensysml-py"
+SUITE = os.environ.get("OPENSYSML_PY_SUITE") or "opensysml-py"
 _rows = []
 
 
@@ -25,7 +28,7 @@ def pytest_runtest_logreport(report):
             outcome, detail = "skip", reason
     else:
         outcome = "fail" if report.when == "call" and "AssertionError" in str(report.longrepr) else "error"
-        errs = [l[1:].strip().removeprefix("test_matrices.ModelRejected: ").removeprefix("ModelRejected: ")
+        errs = [l[1:].strip().removeprefix("test_matrices.ModelRejected: ").removeprefix("test_props.ModelRejected: ").removeprefix("ModelRejected: ")
                 for l in str(report.longreprtext).splitlines() if l.startswith("E ")]
         detail = errs[0].removeprefix("AssertionError: ") if errs else (str(report.longreprtext).strip().splitlines() or [""])[-1]
     _rows.append([SUITE, matrix, callspec, outcome, detail])

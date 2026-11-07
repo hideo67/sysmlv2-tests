@@ -1040,11 +1040,141 @@ Findings:
   Go and Rust read model members only; TypeScript reads neither. A60-007/008
   still separate Python/Rust from Go/TypeScript, as before.
 
+## Step 11: OpenSysML element properties (GetElementProperties)
+OpenSysML develop moved from `f0347a0076` to `19bc16d1df` (15 merges). Three
+of them answer issues of ours, and one adds a new element API:
+
+- #1978: an unnamed member is addressed by a positional id (`Owner::@3`), and
+  a `#M` prefix declares the metadata usage its element owns (#1960, #1963).
+- #1979 (fixes #1959): an instantiated object reports the path the traversal
+  reached it by, and `InstancePaths` lists every path to it.
+- #2016: a nameless feature takes the effective name of the feature it
+  implicitly redefines.
+- #2013 (refs #2012, which cites this suite): `GetElementProperties` reads
+  any metamodel property of one element by its specification name
+  (`connectorEnd`, `inheritedFeature`, `payloadArgument`, ...), with the same
+  values the api-json export carries. An element is named by qualified name,
+  positional id or element form id, and every element reference in an answer
+  carries an id the call accepts back. The service advertises it as the
+  `element_properties` capability. The Python, Go, Rust and TypeScript
+  clients all wrap it.
+
+### Unchanged adapters against the new build
+No case got worse. Fail to pass: A10 2-4, A50 20-30 and D10 16-20 per suite.
+Python and Rust gain the most because they read library members (Step 10).
+
+| suite | before | after |
+|--|--|--|
+| opensysml-py | 592 / 276 | 646 / 222 |
+| opensysml-go | 594 / 274 | 636 / 232 |
+| opensysml-rs | 592 / 276 | 646 / 222 |
+| opensysml-ts | 504 / 364 | 542 / 326 |
+| opensysml-ts-wasm | 504 / 364 | 504 / 364 |
+
+opensysml-ts-wasm did not move. `cmd/sysml-wasm` links
+`internal/frontend/symbolfacts` but not `symbolfacts/positional`, which
+registers the positional names (only `internal/frontend/grpc` and the REPL
+import it). Without the registration no unnamed member gets a positional id
+in the WebAssembly build, so #1978 does not reach it. Issue draft:
+`issue-drafts/opensysml-wasm-positional-ids.md`.
+
+### ownerPath (F10) through InstancePaths
+ownerPath is the path through the object's owners. `Instance.path` and
+`owner` describe the route the traversal took, so an object read through
+`c1.src` reports `c1.src`, with the connector as owner. `InstancePaths` lists
+both `c1.src` and `tank.fuelOut`. The adapters take the first path with no
+step whose feature is a connector end (the step's `feature_symbol_id` has
+Symbol kind `connectorEnd`). This is the runtime API, like F10's other reads,
+so it is open to the Symbol API suites as well. Python and Go pass all 6 cases.
+The Rust and TypeScript clients do not wrap `InstancePaths`, so those cases
+stay unsupported there, and the note says so.
+
+### Decision: a separate suite for the element properties API
+The Step 5 rule (OpenSysML is read through its Symbol API only) stands for
+the five existing suites, so that surface is still measured. A new suite,
+`opensysml-py-props` (`test-opensysml-py/test_props.py`, selected by
+`OPENSYSML_PY_SUITE`), reads every model value through
+`Model.element_properties`. It takes the same route through the abstract
+syntax as the sysml-toolkit adapter, the other reader by spec name: visible
+members are the union of `feature`, `ownedFeature`, `inheritedFeature`,
+`member` and the `memberElement` of each `inheritedMembership`; comments and
+metadata usages are found by walking `ownedElement` from the root package.
+E10 and F10 use the runtime API, as in opensysml-py. The other clients call
+the same RPC, so they are left until their answers might differ.
+
+Rules:
+- A property the service reports as not derived (`unsupported` with a
+  `defining_class`) is unsupported, with the service's reason. A property the
+  element's metaclass does not declare reads as empty.
+- KerML operations are not properties. `allSupertypes()` and `directionOf()`
+  of a feature read through an owner are unsupported (10 + 29 cases). The
+  toolkit invokes them, and the Symbol suites read direction from metadata.
+  `parameters` takes each directed feature's own `direction`. `valueText` is
+  unsupported (20): no property holds source text.
+- A name that resolves to a Membership (an alias) stands for its
+  `memberElement`, as in the toolkit adapter.
+- An element reference the service cannot read back (see below) makes the
+  case fail, with the service's message as the value. It is not an error. A
+  membership that cannot be read is left out of the visible members.
+
+### Results
+opensysml-py-props: 1236 pass, 323 fail, 62 unsupported, 9 error, against
+652 / 222 / 747 / 9 for opensysml-py. Of opensysml-py's 747 unsupported cases,
+470 now pass and 244 fail. Every A01, A03, A20, D10, D20, E10 and F10 case
+passes. 12 cases pass in opensysml-py and fail here, all because of the
+unreadable library elements.
+
+Findings (OpenSysML, through GetElementProperties):
+- Unreadable library elements. An answer names library elements that the
+  call cannot read back ("library document Systems Library/Parts.sysml writes
+  no element <id>"). For `part a : A`, 28 of the 101 `inheritedMembership`
+  entries cannot be read: 18 FeatureMemberships of Occurrences.kerml (the
+  unnamed library features A02 counts) and 10 OwningMemberships of Parts,
+  Items, Objects, Base and Occurrences. The members of those 18 are listed in
+  `inheritedFeature` and are unreadable too. This fails A02
+  inheritedFeatureNames (10), and A50 kind, owner and idRoundTrip (18), B11
+  endCount and endReferences (12) and C01-055/056, where an unnamed member
+  has to be told apart from the others.
+- A connector whose ends are feature chains (`connect x.p to y.p`) has
+  `connectorEnd` but empty `relatedFeature`, `sourceFeature` and
+  `targetFeature`. Ends at depth 0 are answered. B10, B11 and B12: 114 cases.
+- A connection def's `endFeature` is empty although its `end` features are
+  `ownedFeature` (B10 4 + 4).
+- A flow (`flow f1 of Fuel from tank.fuelOut to engine.fuelIn`) has empty
+  `sourceOutputFeature` and `targetInputFeature`; its `connectorEnd` is
+  answered. A message (`message msg of Sig from tank to engine`) has empty
+  `connectorEnd`, although its two ends are `ownedFeature` (B20, 24 + 3 cases).
+- A send action has no owned features, so `payloadArgument`,
+  `senderArgument` and `receiverArgument` are empty (C20 12). The same
+  applies to the constructor of `send new Sig(...)` (C21 sendNone, sendRef,
+  sendChain).
+- A ConstructorExpression's `instantiatedType` is empty (C21 sigValue). Its
+  `result` and `argument` are answered.
+- A FeatureChainExpression's `operator` is empty; `"."` is expected (C10 4).
+- `Usage::isReference` is answered only when written (`ref part`). The
+  derived value, `not isComposite`, is missing: no value for a composite part
+  (false expected) or for a part owned by a package (true expected) (A10 4).
+  `isComposite` is answered.
+- `Function::result` is empty for every calc, constraint, requirement, case,
+  analysis and verification def (C01-069..080). `directedFeature` lists the
+  library `result` beside the parameter that redefines it (#2009).
+- Kinds: `if`/`while`/`for` actions are reported as ActionUsage (#1985), a
+  succession flow as FlowUsage (#2008). A port typed by `~CmdPort` reports
+  type `CmdPort` (#1962), and A40 `types` misses an inherited type (#2007).
+- Name lookup does not resolve through imports and ignores visibility
+  (A60 8), as in the Symbol API.
+
+Issue draft: `issue-drafts/opensysml-2012-comment-element-properties.md`, a
+comment on #2012.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
 C30, D10, D20, E10, F10). Step 7 added C21: 22 matrices, 1630 cases.
 Step 8 added the OpenSysML Rust client as a suite, Step 9 the TypeScript
 client over gRPC and WebAssembly. Step 10 adopted the member enumeration
-OpenSysML added (symbol_members) in the Python, Go and Rust adapters.
+OpenSysML added (symbol_members) in the Python, Go and Rust adapters. Step 11
+added suite opensysml-py-props, which reads OpenSysML through its element
+properties API (GetElementProperties), and read ownerPath through
+InstancePaths in Python and Go.
 Deferred: the OpenSysML Java client.

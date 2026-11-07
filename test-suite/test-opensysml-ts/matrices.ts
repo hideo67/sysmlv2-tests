@@ -227,7 +227,7 @@ const instantiations = new Map<string, InstanceTree | string>();
 /** F10: walk `path` from the object Model.instantiate(root) builds. */
 async function instanceCheck(m: Model, c: Case): Promise<Json> {
   if (c.check === "ownerPath") {
-    throw new Unsupported("an Instance carries no owner or usage path (issue #1959)");
+    throw new Unsupported("the client does not expose InstancePaths, which lists the paths to an object (issue #1959)");
   }
   const key = `${m.hash} ${c.element}`;
   if (!instantiations.has(key)) {
