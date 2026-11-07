@@ -8,12 +8,22 @@
 """
 import argparse
 import csv
+import fnmatch
 import json
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 SYMBOL = {"pass": "PASS", "fail": "FAIL", "unsupported": "UNSUP", "error": "ERROR", "skip": "SKIP"}
+
+# Tracked files an MDK's own build rewrites (README, "Build the MDKs"): a difference in
+# them is the build's output for the tested commit, not a change to its source.
+BUILD_OUTPUTS = {
+    "SysML v2 Pilot Implementation": {
+        "org.omg.sysml.logic.bundle/lib/org.omg.sysml.logic-*.jar",
+        "org.omg.sysml.model.bundle/lib/org.omg.sysml.model-*.jar",
+    },
+}
 
 
 def print_versions(suites, versions):
@@ -39,9 +49,16 @@ def print_versions(suites, versions):
         commit = f"[`{short}`]({v['repo'].removesuffix('.git')}/commit/{v['commit']})" if "github.com" in v["repo"] else f"`{short}`"
         print(f"|{s}|{v['mdk']}|`{v['describe']}` ({v['branch']})|{commit}|{v['commit_date'][:10]}|"
               f"{v['library']}|{v['api']}|{v['toolchain']}|{v['run_at'].replace('T', ' ').rstrip('Z')}|")
-        if v.get("local_changes"):
+        changed = v.get("local_changes") or []
+        built = [p for p in changed if any(fnmatch.fnmatchcase(p, g) for g in BUILD_OUTPUTS.get(v["mdk"], ()))]
+        edited = [p for p in changed if p not in built]
+        if edited:
             notes.append(f"- {s}: the {v['mdk']} checkout differs from its commit in "
-                         + ", ".join(f"`{p}`" for p in v["local_changes"]))
+                         + ", ".join(f"`{p}`" for p in edited))
+        if built:
+            notes.append(f"- {s}: rewritten by the {v['mdk']} build of the tested commit, as expected "
+                         "(the build regenerates these committed files; no source change): "
+                         + ", ".join(f"`{p}`" for p in built))
     if notes:
         print()
         print("Local changes at run time (tracked files only):")
