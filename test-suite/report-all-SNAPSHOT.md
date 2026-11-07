@@ -1,6 +1,6 @@
 # SysML v2 MDK test results
 
-Test suite commit: `707ab4945417`
+Test suite commit: `33819792fad6`
 
 ## Versions tested
 
@@ -19,7 +19,7 @@ Test suite commit: `707ab4945417`
 
 Local changes at run time (tracked files only):
 
-- pilot-java: the SysML v2 Pilot Implementation checkout differs from its commit in `org.omg.sysml.logic.bundle/lib/org.omg.sysml.logic-0.64.0-SNAPSHOT.jar`, `org.omg.sysml.model.bundle/lib/org.omg.sysml.model-0.64.0-SNAPSHOT.jar`
+- pilot-java: rewritten by the SysML v2 Pilot Implementation build of the tested commit, as expected (the build regenerates these committed files; no source change): `org.omg.sysml.logic.bundle/lib/org.omg.sysml.logic-0.64.0-SNAPSHOT.jar`, `org.omg.sysml.model.bundle/lib/org.omg.sysml.model-0.64.0-SNAPSHOT.jar`
 
 ## Summary (pass / fail / unsupported / error)
 
