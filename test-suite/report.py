@@ -153,4 +153,5 @@ def main():
                     print(f"- {i} [{s}] {cell[(i, s)]}: {detail[(i, s)]}")
 
 
-main()
+if __name__ == "__main__":
+    main()

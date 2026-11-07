@@ -30,13 +30,15 @@ The project has the following directory structure:
 - OpenSysML
 - sysml-toolkit
 
-data holds the matrix definitions and the test data.
+data holds the matrix definitions and the test data, and (data/census) the
+property list and corpora of the derived-property census.
 test-* directories contains the test suites.
 siblings of the test-suite are cloned project repositories of the MDKs to be tested.
 
 # Test result snapshot
 
 - [Test result snapshot](test-suite/report-all-SNAPSHOT.md)
+- [Derived-property census snapshot](test-suite/census-SNAPSHOT.md)
 
 # Building and running
 
@@ -190,6 +192,38 @@ Outcomes:
 - **fail**: the API returned something else, or did not list the element where it should be visible.
 - **unsupported**: the API offers no way to read the property at all.
 - **error**: the test itself broke.
+
+## 6. The derived-property census
+
+Besides the matrices, the suite counts how much of the metamodel's derived
+properties each MDK answers. `data/gen_census.py` takes every property the
+Pilot's `SysML.ecore` marks `derived="true"` (328), the concrete metaclasses
+that carry each, and two corpora: the matrices' models (`matrix-models`) and the Pilot's
+example and training models. It writes `data/census/derived-properties.json`.
+Each census adapter loads a corpus as one model, walks every element as
+written (owned relationships that are not implied, and their owned related
+elements), and reads each derived property the element's metaclass carries:
+a non-empty value, an empty one, or no answer.
+
+```sh
+cd test-suite
+./run-census.sh                       # pilot-java, sysml-toolkit-rs, opensysml-go-props
+./run-census.sh sysml-toolkit-rs      # one census
+python3 data/gen_census.py            # regenerate the property list and corpora
+```
+
+| File | Contents |
+|---|---|
+| `results/census-report.md` | The MDK versions, the corpora, per-MDK counts, the properties that differ from the Pilot's, the element sets, and every property's counts |
+| `results/census-<suite>.json` | Counts per property and metaclass: carriers, non-empty, empty, unanswered, error |
+| `results/census-<suite>.version.json` | As for the matrices |
+
+The adapters are `CensusTest.java`, `tests/census.rs` and `census_test.go` in
+the suites' directories; each runs only when `CENSUS` is set, so `run-all.sh`
+skips them. The Pilot is the reference column, compared over the metaclasses
+both MDKs have elements of. It is a reference, not the truth: it answers some
+derived properties empty everywhere (the report lists them as another MDK
+filling more).
 
 ## Changing or adding matrices
 

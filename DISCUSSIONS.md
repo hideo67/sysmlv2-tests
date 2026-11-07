@@ -1231,6 +1231,100 @@ The Java client decodes what it receives correctly; it gives a Java user the
 TypeScript client's view of the model, without its `element_properties`.
 Filed as #2022 with the three missing bindings.
 
+## Step 13: derived-property census
+Why sysml-toolkit, a one-person project, scores close to the Pilot while
+OpenSysML does not: most of the gap is the API read (the Symbol API has no
+field for 747 reads), and the rest follows from how each MDK checks its own
+derivations. sysml-toolkit generates a census of the metamodel's derived
+properties from the normative XMI (`spec-refs/derived-properties.md`): each
+property's OCL rule, its class, and whether its example corpus gives it values.
+OpenSysML keeps a list of the properties it serves
+(`internal/semantic/metamodel/rules.go`, 298 rules), checked only for the
+constraint names, and every property found failing through
+GetElementProperties in Step 11 is on that list (`Function::result`,
+`Type::endFeature`, `Connector::sourceFeature`, `Usage::isReference`, ...).
+
+So the suite has a census of its own, run against every MDK alike, and
+published here rather than attached to an issue.
+
+Design:
+- Property list: every structural feature marked `derived="true"` in the
+  Pilot's `org.omg.sysml/model/SysML.ecore` (328), and per concrete metaclass
+  (167) the derived properties it carries through its supertypes.
+  `data/gen_census.py` writes `data/census/derived-properties.json`.
+- Corpora: the matrices' models, `matrix-models` (23), and the Pilot's examples and training
+  models (199), each loaded as one model. Four training files declare a
+  top-level name another file declares (`Action Definition Example`,
+  `Camera`, `Messaging Example`, `State Decomposition-1`); the generator leaves
+  out the later file, for every MDK (195 files).
+- Element set: each document's root namespace, its owned relationships that
+  are not implied, and their owned related elements, transitively. The Pilot
+  collects it right after parsing: resolution, validation and transformAll add
+  elements under relationships not marked implied, which no other MDK has.
+- Read: per element, every derived property its metaclass carries, through the
+  route the matrices take: EMF `eGet` (Pilot), `element_properties` then
+  `derived` under the closure policy (sysml-toolkit, compatibility reader),
+  GetElementProperties in process (OpenSysML, Go). Counted: non-empty, empty,
+  unanswered, error.
+- Comparison: the Pilot is the reference column. A property is compared over
+  the metaclasses both MDKs have elements of, so that an element one MDK builds
+  and another does not leaves the other's rate alone. Listed: unanswered,
+  answered empty where the Pilot has values, or a fill rate 25 points below or
+  above the Pilot's.
+
+Run with `./run-census.sh`; the report is `census-SNAPSHOT.md`. OpenSysML was
+run at `071880026e` (nightly-215), the checkout at the time, which is newer
+than the matrix snapshot's `19bc16d1df`.
+
+Results (properties with values / always empty / unanswered):
+
+|corpus|pilot-java|sysml-toolkit-rs|opensysml-go-props|
+|--|:-:|:-:|:-:|
+|matrix-models|194 / 71 / 0|194 / 69 / 2|142 / 86 / 33|
+|pilot-examples|300 / 22 / 0|297 / 22 / 3|180 / 82 / 54|
+
+Differences from the Pilot: sysml-toolkit 25 (suite) and 42 (examples)
+properties; OpenSysML 81 and 153.
+
+Findings, OpenSysML:
+- One document with an error diagnostic, or two documents declaring the same
+  top-level name, makes GetElementProperties refuse every element of the
+  model ("cannot convert the declaration of Camera ...: its id lands on the
+  same IRI as Camera ..."). The census leaves out the documents OpenSysML
+  reports errors in and parses again: `C30-accept.sysml` (a syntax error on
+  `entry ... then`, which the Pilot and sysml-toolkit accept), and of the
+  examples `Dynamics.sysml` (a dimension check), `PartTest.sysml` (a
+  specialization cycle) and both Annex A vehicle files (`vehicle_b` hidden by
+  two imports). The Pilot reports no error in any of them.
+- Served but always empty: the Step 11 properties (`Function::result`,
+  `Type::endFeature`, `Flow::sourceOutputFeature`/`targetInputFeature`, the
+  send action arguments, `InstantiationExpression::instantiatedType`) and more:
+  `Behavior::step`, `Behavior::parameter`, `Connector::association`,
+  `Import::importedElement`, `Feature::ownedTypeFeaturing`, the conjugated port
+  definitions, and the `...Definition` of enumeration, flow and interface
+  usages.
+- Not derived (33 on matrix-models): among them every
+  `...Definition::<usages>` list (`ActionDefinition::action`,
+  `CalculationDefinition::calculation`, ...), the `Association` end types, the
+  if/while/for action arguments, `MetadataFeature::metaclass` and
+  `PerformActionUsage::performedAction`.
+
+Findings, sysml-toolkit:
+- Fills less than the Pilot where implied relationships count:
+  `Feature::type` 33% vs 100% on the examples, `Usage::definition` 55%,
+  `Expression::function` 13%, `Step::behavior` 14%, `Type::inheritedFeature`
+  52%, `Connector::association` 10%.
+- Not computed: `Usage::mayTimeVary`, `FlowDefinition::flowEnd`;
+  `InvocationExpression::operand` is not declared on operator expressions.
+- Element set: it builds no `Multiplicity` and almost no
+  `ReturnParameterMembership` where the Pilot and OpenSysML both build them
+  (suite: 204 / 0 / 196 and 88 / 2 / 87).
+
+The Pilot answers `ActionDefinition::action`,
+`CalculationDefinition::calculation`, `Function::expression` and
+`StateDefinition::state` empty on every element; sysml-toolkit fills them. The
+reference column is a reference, not the truth.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1242,3 +1336,4 @@ added suites opensysml-py-props and opensysml-go-props, which read OpenSysML
 through its element properties API (GetElementProperties), and read ownerPath through
 InstancePaths in Python and Go.
 Step 12 added the OpenSysML Java client as suite opensysml-java.
+Step 13 added the derived-property census (run-census.sh, census-SNAPSHOT.md).
