@@ -102,6 +102,11 @@ SUITES = {
             "built from this commit (connectWasm)",
         library=opensysml_library,
         toolchain=lambda: "Node.js " + sh("node", "--version")),
+    "opensysml-java": dict(
+        mdk="OpenSysML", dir="OpenSysML",
+        api="Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit",
+        library=opensysml_library,
+        toolchain=lambda: sh(f"{JDK21}/bin/java", "-version").splitlines()[0]),
     "sysml-toolkit-rs": dict(
         mdk="sysml-toolkit", dir="sysml-toolkit",
         api="Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, "

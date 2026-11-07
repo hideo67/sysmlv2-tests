@@ -23,7 +23,7 @@ The project has the following directory structure:
   - test-opensysml-py (two suites: the Symbol API, and the element properties API)
   - test-opensysml-rs
   - test-opensysml-ts
-  - test-opensysml-java (planned)
+  - test-opensysml-java
   - test-sysml-toolkit-rs
   - results (created by a test run, not tracked by git)
 - SysMLv2-Pilot-Implementation
@@ -55,8 +55,8 @@ used on Linux (Ubuntu under WSL2).
 | make | GNU make | building OpenSysML |
 | Node.js | 22.22.2 or later, with npm | building the OpenSysML TypeScript client, the OpenSysML TypeScript suites |
 | Rust (rustup, cargo) | stable; sysml-toolkit pins 1.98.1 in its `rust-toolchain.toml` | the sysml-toolkit suite, the OpenSysML Rust suite |
-| JDK | **21** | the Pilot Implementation and its suite. The Pilot does not build under JDK 25 ("Unsupported class file major version 69"). |
-| Maven | 3.9 | building the Pilot Implementation and its suite |
+| JDK | **21** | the Pilot Implementation and its suite, the OpenSysML Java client and its suite (the client needs 17 or later). The Pilot does not build under JDK 25 ("Unsupported class file major version 69"). |
+| Maven | 3.9 | building the Pilot Implementation, the OpenSysML Java client and their suites |
 
 If JDK 21 is not your default JDK, set `JDK21` to its home directory. The
 default is `/usr/lib/jvm/java-21-openjdk-amd64`:
@@ -95,6 +95,10 @@ make -C OpenSysML build-release-wasm
 # OpenSysML TypeScript client: builds client/node/dist from the checkout
 (cd OpenSysML/client/node && npm ci && npm run build)
 
+# OpenSysML Java client: builds client/java and installs it into the local Maven
+# repository (the opensysml-java suite checks that it uses this build, not a release)
+JAVA_HOME=$JDK21 PATH=$JDK21/bin:$PATH mvn -B -DskipTests -f OpenSysML/client/java/pom.xml install
+
 # Pilot Implementation: builds the fat jar
 # org.omg.sysml.interactive/target/org.omg.sysml.interactive-<version>-all.jar
 (cd SysMLv2-Pilot-Implementation && JAVA_HOME=$JDK21 PATH=$JDK21/bin:$PATH mvn -B -DskipTests package)
@@ -104,7 +108,7 @@ sysml-toolkit and the OpenSysML Rust client need no separate step: the Rust
 suites compile them as path dependencies.
 
 The Pilot's Maven build rewrites two committed jar files, so its checkout shows
-as modified afterwards. The test report lists them.
+as modified afterwards. The test report lists them as build output.
 
 ## 3. Set up the Python and TypeScript suites
 
@@ -128,7 +132,7 @@ first run (Go modules, crates.io, Maven Central).
 cd test-suite
 ./run-all.sh                    # every suite
 ./run-all.sh opensysml-go       # one suite (or several, separated by spaces)
-./run-all.sh --list             # suite names: opensysml-py opensysml-py-props opensysml-go opensysml-go-props opensysml-rs opensysml-ts opensysml-ts-wasm sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
+./run-all.sh --list             # suite names: opensysml-py opensysml-py-props opensysml-go opensysml-go-props opensysml-rs opensysml-ts opensysml-ts-wasm opensysml-java sysml-toolkit-rs sysml-toolkit-rs-checked pilot-java
 ```
 
 sysml-toolkit is run twice, from the same test-sysml-toolkit-rs crate:

@@ -1194,6 +1194,43 @@ GetElementProperties gives. Filed as #2021 with the 37 dedicated-field cases,
 suggesting that the overlapping fields be documented as summaries, derived
 from the same evaluation as GetElementProperties, or marked when incomplete.
 
+## Step 12: OpenSysML Java client
+The Java client (`client/java`, 0.12.1 at `19bc16d1df`) is OpenSysML's binding
+for JVM hosts (Eclipse-based tools, Cameo plugins, web services). It talks to a
+private `sysml-grpc` over the Connect protocol on `java.net.http`. It is run as
+suite `opensysml-java` (`test-opensysml-java`, a Maven project like the Pilot's).
+
+Setup: `mvn -f OpenSysML/client/java/pom.xml install` puts the client into the
+local Maven repository. The local build has the same version as the release
+on Maven Central, so the suite checks before running that the jar on the
+class path is byte-identical to `client/java/opensysml-client/target/opensysml-<version>.jar`.
+It passes `ConnectionOptions.binaryPath` so that the local `bin/sysml-grpc` is
+started, never a downloaded release.
+
+The adapter follows the same rules as the other Symbol API suites. A Java
+`Symbol` has the TypeScript client's shape (child ids, attribute facts, type
+facts, multiplicity, specializations, no members), so each read takes the
+route of the TypeScript adapter.
+
+What the client lacks, although the service serves it and its generated
+protobuf classes carry it:
+- `SymbolInfo.members` (#1974): `internal/Protos.java` does not read it, and
+  `Symbol` has no members. `Capabilities.SYMBOL_MEMBERS` is defined.
+- `GetElementProperties` (#2013): no method. `Capabilities.ELEMENT_PROPERTIES`
+  is defined.
+- `InstancePaths` and `Instance.reached_by` (#1979): `Instance` is id, type and
+  feature values only, so ownerPath (F10) is unsupported.
+
+Results: 542 pass, 326 fail, 753 unsupported, 9 error, the same as
+opensysml-ts on every case, failure values included. Go passes 100 cases that
+Java does not: 94 inherited members (A10 8, A30 18, A40 18, B12 24, B20 6,
+C01 3, C10 9, C30 4, D10 4) and the 6 ownerPath cases. Java passes none that Go
+does not. Python, which also reads library members, passes 110 more.
+
+The Java client decodes what it receives correctly; it gives a Java user the
+TypeScript client's view of the model, without its `element_properties`.
+Filed as #2022 with the three missing bindings.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1204,4 +1241,4 @@ OpenSysML added (symbol_members) in the Python, Go and Rust adapters. Step 11
 added suites opensysml-py-props and opensysml-go-props, which read OpenSysML
 through its element properties API (GetElementProperties), and read ownerPath through
 InstancePaths in Python and Go.
-Deferred: the OpenSysML Java client.
+Step 12 added the OpenSysML Java client as suite opensysml-java.
