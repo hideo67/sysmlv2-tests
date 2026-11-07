@@ -1075,8 +1075,7 @@ opensysml-ts-wasm did not move. `cmd/sysml-wasm` links
 `internal/frontend/symbolfacts` but not `symbolfacts/positional`, which
 registers the positional names (only `internal/frontend/grpc` and the REPL
 import it). Without the registration no unnamed member gets a positional id
-in the WebAssembly build, so #1978 does not reach it. Issue draft:
-`issue-drafts/opensysml-wasm-positional-ids.md`.
+in the WebAssembly build, so #1978 does not reach it. Filed as #2020.
 
 ### ownerPath (F10) through InstancePaths
 ownerPath is the path through the object's owners. `Instance.path` and
@@ -1164,8 +1163,7 @@ Findings (OpenSysML, through GetElementProperties):
 - Name lookup does not resolve through imports and ignores visibility
   (A60 8), as in the Symbol API.
 
-Issue draft: `issue-drafts/opensysml-2012-comment-element-properties.md`, a
-comment on #2012.
+Posted as a comment on #2012.
 
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
