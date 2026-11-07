@@ -1175,6 +1175,25 @@ Findings (OpenSysML, through GetElementProperties):
 
 Posted as a comment on #2012.
 
+### The Symbol API next to GetElementProperties
+Of the reads that fail or are unsupported in opensysml-py and pass in
+opensysml-py-props, 470 have no Symbol field at all: a user can see that gap.
+145 have an entry point that answers wrongly, with no sign that the answer is
+incomplete:
+- 37 come from a dedicated field: `kind` reports accept, assignment, perform
+  and send actions as `actionUsage` (C20 15); `type_facts` is empty for a type
+  inherited through redefinition, subsetting or reference subsetting (A20 3,
+  A40 9); `specializations` leaves out a reference subsetting (A40 6); a
+  requirement or use case def's subject carries no direction (C01 4).
+- 108 come from generic listings the adapter reads: a connector's ends are not
+  among its children (B10, B11, B12, B20 90), an annotation is not a child
+  (D10 10), an unnamed binding is not listed and an alias is not resolved (8).
+
+A user who starts from the Symbol API has no pointer to the value
+GetElementProperties gives. Filed as #2021 with the 37 dedicated-field cases,
+suggesting that the overlapping fields be documented as summaries, derived
+from the same evaluation as GetElementProperties, or marked when incomplete.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
