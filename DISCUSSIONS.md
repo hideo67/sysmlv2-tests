@@ -1320,6 +1320,10 @@ Findings, sysml-toolkit:
   `ReturnParameterMembership` where the Pilot and OpenSysML both build them
   (suite: 204 / 0 / 196 and 88 / 2 / 87).
 
+Filed with OpenSysML as #2028 (the census, and the properties served but
+always empty) and #2029 (one document's error or duplicate top-level name
+makes the whole model unreadable).
+
 The Pilot answers `ActionDefinition::action`,
 `CalculationDefinition::calculation`, `Function::expression` and
 `StateDefinition::state` empty on every element; sysml-toolkit fills them. The
