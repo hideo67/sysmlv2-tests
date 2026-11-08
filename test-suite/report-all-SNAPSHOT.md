@@ -4,14 +4,14 @@
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-08 22:40:10|
-|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-08 22:40:04|
-|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 22:40:34|
-|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 22:40:02|
-|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 22:39:52|
-|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 22:40:20|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-08 22:40:27|
-|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-135-g528a4251ca` (develop)|[`528a4251ca`](https://github.com/Open-MBEE/OpenSysML/commit/528a4251ca25cbd76da54911fdb462c39e2533c5)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-08 22:40:23|
+|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-08 23:52:03|
+|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-08 23:51:56|
+|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 23:52:23|
+|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 23:51:40|
+|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 23:51:30|
+|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:52:10|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-08 23:52:17|
+|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-08 23:52:13|
 |pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 00:00:28|
 |sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:48|
 |sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:46|
@@ -29,7 +29,7 @@ Local changes at run time (tracked files only):
 |A03|128|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|128 / 0 / 0 / 0|110 / 18 / 0 / 0|
 |A10|36|32 / 4 / 0 / 0|18 / 2 / 16 / 0|18 / 2 / 16 / 0|32 / 4 / 0 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|18 / 2 / 16 / 0|18 / 2 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
 |A20|100|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|
-|A30|44|16 / 8 / 20 / 0|26 / 18 / 0 / 0|26 / 18 / 0 / 0|16 / 8 / 20 / 0|26 / 18 / 0 / 0|26 / 18 / 0 / 0|26 / 18 / 0 / 0|26 / 18 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|42 / 2 / 0 / 0|
+|A30|44|24 / 0 / 20 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|24 / 0 / 20 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|42 / 2 / 0 / 0|
 |A40|45|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
 |A50|54|54 / 0 / 0 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|30 / 6 / 18 / 0|30 / 6 / 18 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|24 / 8 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|24 / 8 / 0 / 0|20 / 12 / 0 / 0|20 / 12 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
@@ -46,7 +46,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1630|1284 / 275 / 62 / 9|667 / 207 / 747 / 9|667 / 207 / 747 / 9|1284 / 275 / 62 / 9|677 / 197 / 747 / 9|671 / 197 / 753 / 9|661 / 207 / 753 / 9|667 / 207 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
+|**all**|1630|1292 / 267 / 62 / 9|675 / 199 / 747 / 9|675 / 199 / 747 / 9|1292 / 267 / 62 / 9|685 / 189 / 747 / 9|679 / 189 / 753 / 9|669 / 199 / 753 / 9|675 / 199 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
 
 ## Results
 
@@ -492,21 +492,21 @@ Local changes at run time (tracked files only):
 |A30-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-010|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-012|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-012|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-014|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-014|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-015|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-016|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-018|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-018|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-020|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-020|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-021|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-022|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-024|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-025|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-026|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-027|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
@@ -2447,91 +2447,27 @@ Local changes at run time (tracked files only):
 - A20-100 [opensysml-rs] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts-wasm] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
-- A30-010 [opensysml-go-props] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-java] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-py-props] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-010 [opensysml-ts] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-go-props] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-java] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-py-props] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-012 [opensysml-ts] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-go-props] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-java] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-py-props] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-014 [opensysml-ts] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-go-props] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-go] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-java] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-py-props] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-py] fail: type A30::Device::pIn: got 'A30::CmdPort', want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-rs] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-ts-wasm] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-016 [opensysml-ts] fail: type A30::Device::pIn: got "A30::CmdPort", want "A30::CmdPort::'~CmdPort'"
-- A30-018 [opensysml-go-props] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-018 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-018 [opensysml-java] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-018 [opensysml-py-props] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-018 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-018 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-018 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-018 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-020 [opensysml-go-props] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-020 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-020 [opensysml-java] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-020 [opensysml-py-props] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-020 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-020 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-020 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-020 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-022 [opensysml-go-props] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-022 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-022 [opensysml-java] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-022 [opensysml-py-props] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-022 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-022 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-022 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-022 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-024 [opensysml-go-props] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-024 [opensysml-go] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-024 [opensysml-java] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-024 [opensysml-py-props] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-024 [opensysml-py] fail: typeIsConjugated A30::Device::pIn: got False, want True
-- A30-024 [opensysml-rs] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-024 [opensysml-ts-wasm] fail: typeIsConjugated A30::Device::pIn: got false, want true
-- A30-024 [opensysml-ts] fail: typeIsConjugated A30::Device::pIn: got false, want true
 - A30-025 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-025 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-026 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-026 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-027 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-027 [opensysml-go] fail: direction A30::CmdPort::cmd: got "\u003cA30::CmdPort::cmd not visible through A30::CmdPort::~CmdPort\u003e", want "in"
-- A30-027 [opensysml-java] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::~CmdPort>", want "in"
+- A30-027 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
+- A30-027 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-027 [opensysml-py] fail: direction A30::CmdPort::cmd: got '<A30::CmdPort::cmd not visible through A30::CmdPort::~CmdPort>', want 'in'
-- A30-027 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::~CmdPort>", want "in"
-- A30-027 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::~CmdPort>", want "in"
-- A30-027 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::~CmdPort>", want "in"
+- A30-027 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
+- A30-027 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
+- A30-027 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
+- A30-027 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [sysml-toolkit-rs] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::'~CmdPort'>", want "in"
 - A30-028 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-028 [opensysml-go] fail: direction A30::CmdPort::ack: got "\u003cA30::CmdPort::ack not visible through A30::CmdPort::~CmdPort\u003e", want "out"
-- A30-028 [opensysml-java] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::~CmdPort>", want "out"
+- A30-028 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
+- A30-028 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-028 [opensysml-py] fail: direction A30::CmdPort::ack: got '<A30::CmdPort::ack not visible through A30::CmdPort::~CmdPort>', want 'out'
-- A30-028 [opensysml-rs] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::~CmdPort>", want "out"
-- A30-028 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::~CmdPort>", want "out"
-- A30-028 [opensysml-ts] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::~CmdPort>", want "out"
+- A30-028 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
+- A30-028 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
+- A30-028 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
+- A30-028 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [sysml-toolkit-rs] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::'~CmdPort'>", want "out"
 - A30-029 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-029 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
