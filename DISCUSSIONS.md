@@ -1553,6 +1553,44 @@ since a message's ends own no features; #32 notes this too.
 A suite variant on the canonical format can wait until sysml-toolkit makes
 it the default (its changelog calls that a migration release).
 
+## Step 18: OpenSysML #1980 (conjugated port typing, fixes #1962)
+OpenSysML develop moved from `528a4251ca` to `ddc5b7a632` (two merges).
+#1980 fixes #1962, open since Step 3: a port typed `~P` is typed by the
+`ConjugatedPortDefinition` `P::'~P'` on every surface, as SysML v2.1
+§8.3.12.3 states (`ConjugatedPortTyping::conjugatedPortDefinition` redefines
+`type`). The Symbol type facts keep the `~` and resolve to the conjugate,
+and the query `type`, reflective `Feature::type` and
+`PortUsage::portDefinition` name it, while
+`ConjugatedPortTyping::portDefinition` names `P`. #2065 is a parser
+refactor. No client changed, and the adapters did not change.
+
+| suite | 528a4251ca | ddc5b7a632 |
+|--|--|--|
+| opensysml-py | 677 | 685 |
+| opensysml-go | 667 | 675 |
+| opensysml-rs | 671 | 679 |
+| opensysml-ts | 667 | 675 |
+| opensysml-ts-wasm | 661 | 669 |
+| opensysml-java | 667 | 675 |
+| opensysml-py-props, -go-props | 1284 | 1292 |
+
+Every suite gains the same 8 A30 cases, `type` and `typeIsConjugated` of
+`pIn : ~CmdPort` (A30-010..024): it now reports `CmdPort::'~CmdPort'`, and
+the adapters' naming rule (`~` + the original's name) sees it as conjugated.
+No case got worse. The props suites now pass every A30 case.
+
+Left in the Symbol suites: A30 `direction` (10 cases). A feature seen
+through a conjugated port reports its written direction (`cmd`: `out`, where
+`in` is expected), because the Symbol API carries only the written
+direction in `metadata["direction"]`; the derived `Feature::direction`,
+reversed through the conjugation, is `GetElementProperties`' `direction`,
+as the client docs say since #2040. That is the Symbol API's scope, not
+#1962.
+
+The census did not change: `ConjugatedPortTyping::portDefinition` was
+already answered through `GetElementProperties` (1/1, 33/33), and the other
+properties #1980 moves change in value, not in whether they are filled.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1574,3 +1612,4 @@ library content, and TypeScript and Java read ownerPath through
 InstancePaths.
 Step 17 took sysml-toolkit v0.12.0 (#18, #19 fixed; #20 for arguments) and
 filed the remaining checked-reader refusals as #32.
+Step 18 took OpenSysML #1980, which fixes #1962 (conjugated port typing).
