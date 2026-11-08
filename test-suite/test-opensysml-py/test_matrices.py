@@ -262,7 +262,8 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
     if check == "type":
         if s.type_facts is None:
             raise Unsupported("no type_facts")
-        return s.type_facts.resolved_id
+        # the derived Feature::type, most specific first (resolved_id is the typing as written)
+        return s.type_facts.types[0].id if s.type_facts.types else ""
     if check in ("specializations", "subsettedFeatures"):
         # OpenSysML's Specialization.kind spelled as the spec metaclass
         kinds = {"typing": "FeatureTyping", "subsets": "Subsetting", "redefines": "Redefinition",
@@ -274,8 +275,8 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
     if check == "types":
         if s.type_facts is None:
             raise Unsupported("no type_facts")
-        # TypeFacts reports one resolved type
-        return [s.type_facts.resolved_id] if s.type_facts.resolved_id else []
+        # the derived Feature::type (resolved_id is the typing as written)
+        return sorted(t.id for t in s.type_facts.types)
     if check == "idRoundTrip":
         again = model.get(s.id)
         return again is not None and again.id == s.id

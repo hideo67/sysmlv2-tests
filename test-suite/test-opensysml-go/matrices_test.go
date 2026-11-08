@@ -428,7 +428,11 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		if sym.Type == nil {
 			return nil, unsupported("no type info")
 		}
-		return sym.Type.ResolvedID, nil
+		// the derived Feature::type, most specific first (ResolvedID is the typing as written)
+		if len(sym.Type.Types) == 0 {
+			return "", nil
+		}
+		return sym.Type.Types[0].ID, nil
 	case "specializations", "subsettedFeatures":
 		// OpenSysML's Specialization.Kind spelled as the spec metaclass
 		kinds := map[string]string{"typing": "FeatureTyping", "subsets": "Subsetting", "redefines": "Redefinition",
@@ -455,11 +459,13 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		if sym.Type == nil {
 			return nil, unsupported("no type info")
 		}
-		// TypeInfo reports one resolved type
-		if sym.Type.ResolvedID == "" {
-			return []string{}, nil
+		// the derived Feature::type (ResolvedID is the typing as written)
+		types := []string{}
+		for _, t := range sym.Type.Types {
+			types = append(types, t.ID)
 		}
-		return []string{sym.Type.ResolvedID}, nil
+		slices.Sort(types)
+		return types, nil
 	case "idRoundTrip":
 		again, err := cl.LookupSymbol(ctx, m, sym.ID)
 		return err == nil && again.ID == sym.ID, nil

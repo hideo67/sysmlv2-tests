@@ -460,7 +460,8 @@ class MatricesTest {
                 return s.name();
             case "type":
                 if (s.typeFacts().isEmpty()) abort("UNSUPPORTED: no type info");
-                return resolved(s);
+                // the derived Feature::type, most specific first (resolvedId is the typing as written)
+                return s.typeFacts().get().types().stream().findFirst().map(Symbol.TypeRef::id).orElse("");
             case "specializations", "subsettedFeatures": {
                 // OpenSysML's Specialization kind spelled as the spec metaclass
                 Map<String, String> kinds = Map.of("typing", "FeatureTyping", "subsets", "Subsetting",
@@ -473,8 +474,8 @@ class MatricesTest {
             }
             case "types": {
                 if (s.typeFacts().isEmpty()) abort("UNSUPPORTED: no type info");
-                // TypeFacts reports one resolved type
-                return resolved(s).isEmpty() ? List.of() : List.of(resolved(s));
+                // the derived Feature::type (resolvedId is the typing as written)
+                return sorted(s.typeFacts().get().types().stream().map(Symbol.TypeRef::id));
             }
             case "idRoundTrip":
                 return lookup(m, s.id()).map(again -> again.id().equals(s.id())).orElse(false);

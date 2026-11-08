@@ -360,7 +360,8 @@ async function check(m: Model, c: Case): Promise<Json> {
       return s.name;
     case "type":
       if (s.type === undefined) throw new Unsupported("no type info");
-      return s.type.resolvedId;
+      // the derived Feature::type, most specific first (resolvedId is the typing as written)
+      return s.type.types[0]?.id ?? "";
     case "specializations": case "subsettedFeatures": {
       // OpenSysML's Specialization kind spelled as the spec metaclass
       const kinds: Record<string, string> = { typing: "FeatureTyping", subsets: "Subsetting", redefines: "Redefinition",
@@ -371,8 +372,8 @@ async function check(m: Model, c: Case): Promise<Json> {
     }
     case "types":
       if (s.type === undefined) throw new Unsupported("no type info");
-      // TypeFacts reports one resolved type
-      return s.type.resolvedId === "" ? [] : [s.type.resolvedId];
+      // the derived Feature::type (resolvedId is the typing as written)
+      return s.type.types.map((t) => t.id).sort(byString);
     case "idRoundTrip": {
       const again = await lookup(m, s.id);
       return again !== undefined && again.id === s.id;

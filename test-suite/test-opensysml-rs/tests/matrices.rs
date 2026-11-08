@@ -489,7 +489,8 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
         "name" => json!(s.name()),
         "type" => match s.type_facts() {
             None => return Err(Unsupported("no type_facts".into())),
-            Some(t) => json!(t.resolved_id),
+            // the derived Feature::type, most specific first (resolved_id is the typing as written)
+            Some(t) => json!(t.types.first().map_or("", |r| r.id.as_str())),
         },
         "specializations" | "subsettedFeatures" => {
             // OpenSysML's Specialization.kind spelled as the spec metaclass
@@ -523,9 +524,8 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
         }
         "types" => match s.type_facts() {
             None => return Err(Unsupported("no type_facts".into())),
-            // TypeFacts reports one resolved type
-            Some(t) if t.resolved_id.is_empty() => json!([]),
-            Some(t) => json!([t.resolved_id]),
+            // the derived Feature::type (resolved_id is the typing as written)
+            Some(t) => json!(sorted(t.types.iter().map(|r| r.id.clone()).collect::<Vec<_>>())),
         },
         "idRoundTrip" => json!(m.get(s.id())?.is_some_and(|again| again.id() == s.id())),
         "directGenerals" => json!(sorted::<String>(
