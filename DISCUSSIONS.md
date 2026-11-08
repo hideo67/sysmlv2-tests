@@ -1360,6 +1360,58 @@ reference would have collapsed into one. They now fail the case with
 id that cannot be read back (which visible_features skips). No outcome
 changes at `bfebfa9e51`.
 
+## Step 15: OpenSysML #2039 and #2040 (wasm positional ids, derived types)
+OpenSysML develop moved from `bfebfa9e51` to `4464eedb78` (four merges).
+Two answer issues of ours:
+
+- #2039 (fixes #2020): the WebAssembly modules list an unnamed member by its
+  positional id and resolve it, as `sysml-grpc` does. The positional naming
+  moved into `internal/semantic/naming`, so every build that serves
+  `SymbolInfo` links it.
+- #2040 (fixes #2007 and #2021): `TypeInfo.types` (new) is the derived
+  KerML `Feature::type`, most specific first with redundant supertypes
+  removed, so `part pSub :> q`, `ref part pRef ::> q` and `:>> a = 3.5`
+  report a type and `part pBoth : V :> q` reports `V` and `T`.
+  `declared`/`resolved_id` stay the typing as written. Reference subsetting
+  is reported among `specializations` as kind `references`. The SymbolInfo
+  docs of every client now say what `kind`, `metadata["direction"]`,
+  `type_info` and `specializations` summarise and which `element_properties`
+  property defines each, as #2021 suggested.
+
+The other two: #2054 reflects a `first x;` start marker as a `Membership` of
+the member it names, not an owned feature (no case moved); #2055 is docs.
+
+### Adapter change: type and types read TypeInfo.types
+The `type` and `types` checks of the five Symbol adapters read
+`resolved_id`, the typing as written, so #2040's fix reaches them only
+through the new field. `types` now takes every derived type (sorted), and
+`type` the first, the most specific. The other reads of `resolved_id`
+(annotation types, `typeIsConjugated`, a feature reached through its type)
+are unchanged.
+
+### Results
+| suite | bfebfa9e51 | 4464eedb78 | + adapter change |
+|--|--|--|--|
+| opensysml-py | 650 | 662 | 677 |
+| opensysml-go | 642 | 654 | 669 |
+| opensysml-rs | 646 | 658 | 673 |
+| opensysml-ts | 542 | 546 | 553 |
+| opensysml-ts-wasm | 504 | 546 | 553 |
+| opensysml-java | 542 | 546 | 553 |
+
+Pass counts; no case got worse. From the build alone: A40 specializations
+and B12 end references (kind `references`, +6 + 6 in py, go, rs; +2 + 2 in
+ts, java), and in ts-wasm the positional ids (A10 2, A50 20, D10 16), which
+make it equal to ts on every case. From the adapter change: A20 `type`
+through redefinition (+3) and A40 `types` (+12 in py, go, rs; +4 in ts,
+ts-wasm, java, whose clients do not reach members through a usage, Step 10).
+The props suites (1284) and the census did not move: on the
+GetElementProperties side `pBoth` still answers `V` only, which #2040 leaves
+to #2042.
+
+Left on these reads: a port typed `~CmdPort` reports `CmdPort` (A30 4,
+#1962).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1374,3 +1426,5 @@ Step 12 added the OpenSysML Java client as suite opensysml-java.
 Step 13 added the derived-property census (run-census.sh, census-SNAPSHOT.md).
 Step 14 took OpenSysML #2050 and made the props adapters fail on an element
 reference without an id.
+Step 15 took OpenSysML #2039 and #2040; the Symbol adapters read a
+feature's derived types from TypeInfo.types.
