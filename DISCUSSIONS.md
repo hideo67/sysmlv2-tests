@@ -1577,7 +1577,9 @@ refactor. No client changed, and the adapters did not change.
 Every suite gains the same 8 A30 cases, `type` and `typeIsConjugated` of
 `pIn : ~CmdPort` (A30-010..024): it now reports `CmdPort::'~CmdPort'`, and
 the adapters' naming rule (`~` + the original's name) sees it as conjugated.
-No case got worse. The props suites now pass every A30 case.
+No case got worse. The props suites have no A30 failure left; their A30
+`direction` cases stay unsupported (`directionOf()` is a KerML operation,
+Step 11).
 
 Left in the Symbol suites: A30 `direction` (10 cases). A feature seen
 through a conjugated port reports its written direction (`cmd`: `out`, where
