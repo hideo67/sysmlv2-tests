@@ -29,6 +29,17 @@ CASES = [(case.get("model", spec["model"]), case) for spec in SPECS for case in 
 NO_OPERATION = "GetElementProperties reads properties only; KerML operation {} is not served"
 
 
+class NoId(Exception):
+    """The service answered an element reference that carries no id: it cannot be
+    read back, and it cannot be told apart from other references without one."""
+
+
+def need_id(e):
+    if not e.id:
+        raise NoId(f"{e.metaclass} {e.qualified_name or '(unnamed)'}")
+    return e.id
+
+
 class Api:
     """Property reads of one model, each (element id, property) read once."""
 
@@ -53,6 +64,7 @@ class Api:
 
     def read(self, e, *names):
         """The ElementProperty entries of `names` for element `e`, fetched together."""
+        need_id(e)
         missing = [n for n in names if (e.id, n) not in self._props]
         if missing:
             for p in self.model.element_properties(e.id, *missing):
@@ -89,7 +101,7 @@ class Api:
         out = {}
         for p in self.read(t, "feature", "ownedFeature", "inheritedFeature", "member"):
             for f in p.elements:
-                out.setdefault(f.id, f)
+                out.setdefault(need_id(f), f)
         for ms in self.elements(t, "inheritedMembership"):
             try:
                 members = self.elements(ms, "memberElement")
@@ -98,7 +110,7 @@ class Api:
                 # (DISCUSSIONS.md, Step 11); its member is usually also an inheritedFeature
                 continue
             for f in members:
-                out.setdefault(f.id, f)
+                out.setdefault(need_id(f), f)
         return list(out.values())
 
     def chain_form(self, f):
@@ -137,7 +149,7 @@ class Api:
             out, todo, seen = [], [self.find(root)], set()
             while todo:
                 cur = todo.pop()
-                if cur is None or cur.id in seen:
+                if cur is None or need_id(cur) in seen:
                     continue
                 seen.add(cur.id)
                 out.append(cur)
@@ -305,7 +317,7 @@ def do_check(model, case):
     if check == "owner":
         return qn_of("owningNamespace")
     if check == "idRoundTrip":
-        again = api.model.element_properties(e.id, "name").element
+        again = api.model.element_properties(need_id(e), "name").element
         return again.id == e.id
     if check == "directGenerals":
         return sorted(qn_of("superclassifier", r) for r in api.elements(e, "ownedSubclassification")
@@ -422,5 +434,7 @@ def test_case(model_file, case):
     except opensysml.errors.ConversionError as e:
         # the service named an element in an answer and cannot read it back
         actual = f"<unreadable element: {e}>"
+    except NoId as e:
+        actual = f"<element without id: {e}>"
     ok = actual == case["expect"] or actual in case.get("accept", [])
     assert ok, f"{case['check']} {case['element']}: got {actual!r}, want {case['expect']!r}"

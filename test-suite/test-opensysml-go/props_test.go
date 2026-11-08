@@ -31,6 +31,26 @@ type unreadableError struct{ msg string }
 
 func (e *unreadableError) Error() string { return e.msg }
 
+// noIDError: the service answered an element reference that carries no id. It cannot
+// be read back, and it cannot be told apart from other references without one.
+type noIDError struct{ e opensysml.ElementRef }
+
+func (e *noIDError) Error() string {
+	qn := e.e.QualifiedName
+	if qn == "" {
+		qn = "(unnamed)"
+	}
+	return e.e.Metaclass + " " + qn
+}
+
+// needID is e's id, or a noIDError when it has none.
+func needID(e opensysml.ElementRef) (string, error) {
+	if e.ID == "" {
+		return "", &noIDError{e}
+	}
+	return e.ID, nil
+}
+
 type propKey struct{ id, name string }
 
 type propsAPI struct {
@@ -88,6 +108,9 @@ func (a *propsAPI) find(qn string) (*opensysml.ElementRef, error) {
 
 // read is the entries of names for element e, the missing ones fetched together.
 func (a *propsAPI) read(e opensysml.ElementRef, names ...string) ([]*opensysml.ElementProperty, error) {
+	if _, err := needID(e); err != nil {
+		return nil, err
+	}
 	var missing []string
 	for _, n := range names {
 		if _, ok := a.props[propKey{e.ID, n}]; !ok && !contains(missing, n) {
@@ -186,11 +209,16 @@ func (a *propsAPI) qnProp(e opensysml.ElementRef, prop string) (any, error) {
 func (a *propsAPI) visibleFeatures(t opensysml.ElementRef) ([]opensysml.ElementRef, error) {
 	var out []opensysml.ElementRef
 	seen := map[string]bool{}
-	add := func(f opensysml.ElementRef) {
-		if !seen[f.ID] {
-			seen[f.ID] = true
+	add := func(f opensysml.ElementRef) error {
+		id, err := needID(f)
+		if err != nil {
+			return err
+		}
+		if !seen[id] {
+			seen[id] = true
 			out = append(out, f)
 		}
+		return nil
 	}
 	ps, err := a.read(t, "feature", "ownedFeature", "inheritedFeature", "member")
 	if err != nil {
@@ -198,7 +226,9 @@ func (a *propsAPI) visibleFeatures(t opensysml.ElementRef) ([]opensysml.ElementR
 	}
 	for _, p := range ps {
 		for _, f := range p.Elements() {
-			add(f)
+			if err := add(f); err != nil {
+				return nil, err
+			}
 		}
 	}
 	mss, err := a.elements(t, "inheritedMembership")
@@ -217,7 +247,9 @@ func (a *propsAPI) visibleFeatures(t opensysml.ElementRef) ([]opensysml.ElementR
 			return nil, err
 		}
 		for _, f := range members {
-			add(f)
+			if err := add(f); err != nil {
+				return nil, err
+			}
 		}
 	}
 	return out, nil
@@ -348,7 +380,11 @@ func (a *propsAPI) tree(root string) ([]opensysml.ElementRef, error) {
 	for len(todo) > 0 {
 		cur := todo[len(todo)-1]
 		todo = todo[:len(todo)-1]
-		if seen[cur.ID] {
+		id, err := needID(cur)
+		if err != nil {
+			return nil, err
+		}
+		if seen[id] {
 			continue
 		}
 		seen[cur.ID] = true
@@ -429,12 +465,17 @@ func contains(xs []string, s string) bool {
 }
 
 // doCheckProps reads one case through GetElementProperties; an element the service
-// cannot read back makes the case fail with the service's message as the value.
+// cannot read back, or an element reference without an id, makes the case fail with
+// the service's message (or the reference) as the value.
 func doCheckProps(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c caseSpec) (any, error) {
 	v, err := propsCheck(ctx, cl, m, c)
 	var ue *unreadableError
 	if errors.As(err, &ue) {
 		return "<unreadable element: " + ue.msg + ">", nil
+	}
+	var ne *noIDError
+	if errors.As(err, &ne) {
+		return "<element without id: " + ne.Error() + ">", nil
 	}
 	return v, err
 }
@@ -786,11 +827,15 @@ func propsRead(a *propsAPI, c caseSpec, e opensysml.ElementRef, owner *opensysml
 	case "owner":
 		return a.qnProp(e, "owningNamespace")
 	case "idRoundTrip":
-		r, err := a.call(e.ID, "name")
+		id, err := needID(e)
 		if err != nil {
 			return nil, err
 		}
-		return r.Element.ID == e.ID, nil
+		r, err := a.call(id, "name")
+		if err != nil {
+			return nil, err
+		}
+		return r.Element.ID == id, nil
 	case "directGenerals":
 		rs, err := a.elements(e, "ownedSubclassification")
 		if err != nil {
