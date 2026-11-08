@@ -226,9 +226,6 @@ const instantiations = new Map<string, InstanceTree | string>();
 
 /** F10: walk `path` from the object Model.instantiate(root) builds. */
 async function instanceCheck(m: Model, c: Case): Promise<Json> {
-  if (c.check === "ownerPath") {
-    throw new Unsupported("the client does not expose InstancePaths, which lists the paths to an object (issue #1959)");
-  }
   const key = `${m.hash} ${c.element}`;
   if (!instantiations.has(key)) {
     try {
@@ -243,6 +240,29 @@ async function instanceCheck(m: Model, c: Case): Promise<Json> {
   }
   const target = walk(tree, c.path ?? "");
   switch (c.check) {
+    case "ownerPath": {
+      // the object's path through its owners: of every path InstancePaths lists, the
+      // first that steps through no connector end (an end reaches the object it
+      // references, not one it owns)
+      if (target.kind !== "object") return describe(target);
+      let paths;
+      try {
+        paths = await m.instancePaths(target.obj);
+      } catch (error) {
+        if (error instanceof MissingCapabilityError) {
+          throw new Unsupported("InstancePaths is not served by this backend (sysml-wasm lacks the instance_paths capability)");
+        }
+        return `<InstancePaths failed: ${error}>`;
+      }
+      for (const p of paths) {
+        let throughEnd = false;
+        for (const step of p.steps) {
+          if ((await lookup(m, step.featureSymbolId))?.kind === "connectorEnd") throughEnd = true;
+        }
+        if (!throughEnd) return p.path;
+      }
+      return `<no path to ${c.path} through owners only>`;
+    }
     case "instanceType":
       return target.kind === "object" ? target.obj.typeId : describe(target);
     case "instanceValue":
@@ -252,6 +272,12 @@ async function instanceCheck(m: Model, c: Case): Promise<Json> {
   }
   const other = walk(tree, c.path2 ?? "");
   return target.kind === "object" && other.kind === "object" && target.obj.id === other.obj.id;
+}
+
+/** Ids of the members a Symbol enumerates (own and inherited, library-inherited ones included),
+ * unquoted: ModelSymbol.withLibraryMembers() (DISCUSSIONS.md, Step 16). */
+async function memberIds(s: ModelSymbol): Promise<string[]> {
+  return (await s.withLibraryMembers()).members.map((mb) => norm(mb.id));
 }
 
 /** The symbols of `ids`, each looked up by its id; one the client cannot find is left out. */
@@ -329,13 +355,14 @@ async function check(m: Model, c: Case): Promise<Json> {
   let owner = parent(c.element);
   let id = norm(c.element);
   if (through.length > 0) {
-    // each step is read as a member the previous Symbol lists: as a child, or (for
-    // attributes, own and inherited) in its attribute facts
+    // each step is read as a member the previous Symbol lists: as a child, in its
+    // members (own and inherited), or (for attributes, own and inherited) in its attribute facts
     let cur = await sym(m, norm(through[0]));
     const steps = [...through.slice(1), ...(c.unnamed ? [] : [c.element])];
     for (const raw of steps) {
       const step = norm(raw);
-      const visible = cur.childIds.includes(step) || cur.attributes.some((a) => a.name === last(step));
+      const visible = cur.childIds.includes(step) || cur.attributes.some((a) => a.name === last(step)) ||
+        (await memberIds(cur)).includes(step);
       if (!visible) {
         return `<${step} not visible through ${cur.id}>`;
       }
@@ -389,8 +416,13 @@ async function check(m: Model, c: Case): Promise<Json> {
       if (c.check === "redefinitions") {
         return sortPairs(children.flatMap((ch) => ch.specializations.filter((sp) => sp.kind === "redefines").map((sp) => [ch.id, sp.targetId])));
       }
-      // members the Symbol lists that it does not own: attribute facts not among the children
-      return s.attributes.map((a) => a.name).filter((n) => !owned.includes(n)).sort(byString);
+      // members the Symbol lists that it does not own: inherited members, and attribute
+      // facts (own and inherited) not among the children
+      const inherited = [...new Set((await s.withLibraryMembers()).members.filter((mb) => mb.inherited).map((mb) => mb.name))];
+      for (const a of s.attributes) {
+        if (!owned.includes(a.name) && !inherited.includes(a.name)) inherited.push(a.name);
+      }
+      return inherited.sort(byString);
     }
     case "metadataDefs": case "metadataValue": {
       // annotations an element lists: its metadata-usage children
@@ -412,8 +444,10 @@ async function check(m: Model, c: Case): Promise<Json> {
       if (c.via === "type") return s.type && s.type.resolvedId !== "" ? s.type.resolvedId : null;
       return s.specializations.find((sp) => sp.kind === "subsets")?.targetId ?? null;
     case "parameters":
-      // children the Symbol lists that carry a direction in their metadata
-      return sortPairs((await s.children()).filter((ch) => (ch.metadata.direction ?? "") !== "").map((ch) => [ch.metadata.direction, ch.name]));
+      // members the Symbol lists (children and members, own and inherited) that carry a
+      // direction in their metadata
+      return sortPairs((await symbols(m, [...new Set([...s.childIds, ...(await memberIds(s))])]))
+        .filter((ch) => (ch.metadata.direction ?? "") !== "").map((ch) => [ch.metadata.direction, ch.name]));
     case "variants":
       // variant usages carry `variant: true` in their metadata
       return (await s.children()).filter((ch) => ch.metadata.variant === "true").map((ch) => ch.name).sort(byString);

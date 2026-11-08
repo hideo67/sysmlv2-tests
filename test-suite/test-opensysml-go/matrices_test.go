@@ -304,9 +304,9 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return number(v), nil
 	case "resolve":
 		// the Symbol API's one name lookup: LookupSymbol(qualified name)
-		s, err := cl.LookupSymbol(ctx, m, c.Element)
+		s, err := lookupSym(ctx, cl, m, c.Element)
 		if err != nil {
-			if s, err = cl.LookupSymbol(ctx, m, norm(c.Element)); err != nil {
+			if s, err = lookupSym(ctx, cl, m, norm(c.Element)); err != nil {
 				return nil, nil
 			}
 		}
@@ -355,13 +355,13 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		if len(c.Through) > 0 {
 			scope = norm(c.Through[len(c.Through)-1])
 		}
-		o, err := cl.LookupSymbol(ctx, m, scope)
+		o, err := lookupSym(ctx, cl, m, scope)
 		if err != nil {
 			return nil, err
 		}
 		n := 0
 		for _, cid := range o.ChildIDs {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && ch.Name == "" && strings.EqualFold(ch.Kind, "partUsage") && strings.HasPrefix(cid, norm(c.Element)+"::") {
 				n++
 			}
@@ -373,7 +373,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	if len(c.Through) > 0 {
 		// each step is read as a member the previous Symbol lists: as a child,
 		// in Members (own and inherited), or (for attributes, own and inherited) in Attributes
-		cur, err := cl.LookupSymbol(ctx, m, norm(c.Through[0]))
+		cur, err := lookupSym(ctx, cl, m, norm(c.Through[0]))
 		if err != nil {
 			return nil, err
 		}
@@ -390,7 +390,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 				return fmt.Sprintf("<%s not visible through %s>", step, cur.ID), nil
 			}
 			owner = cur.ID
-			if cur, err = cl.LookupSymbol(ctx, m, step); err != nil {
+			if cur, err = lookupSym(ctx, cl, m, step); err != nil {
 				return nil, err
 			}
 		}
@@ -401,13 +401,13 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		if len(c.Through) > 0 {
 			ownerID = norm(c.Through[len(c.Through)-1])
 		}
-		o, err := cl.LookupSymbol(ctx, m, ownerID)
+		o, err := lookupSym(ctx, cl, m, ownerID)
 		if err != nil {
 			return nil, err
 		}
 		var found []string
 		for _, cid := range o.ChildIDs {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && ch.Name == "" && strings.Contains(strings.ToLower(ch.Kind), strings.ToLower(c.Unnamed.Metaclass)) {
 				found = append(found, cid)
 			}
@@ -417,7 +417,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		}
 		id = found[c.Unnamed.Index]
 	}
-	sym, err := cl.LookupSymbol(ctx, m, id)
+	sym, err := lookupSym(ctx, cl, m, id)
 	if err != nil {
 		return nil, err
 	}
@@ -467,12 +467,12 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		slices.Sort(types)
 		return types, nil
 	case "idRoundTrip":
-		again, err := cl.LookupSymbol(ctx, m, sym.ID)
+		again, err := lookupSym(ctx, cl, m, sym.ID)
 		return err == nil && again.ID == sym.ID, nil
 	case "substates":
 		out := []string{}
 		for _, cid := range sym.ChildIDs {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && strings.EqualFold(ch.Kind, "stateUsage") {
 				out = append(out, ch.Name)
 			}
@@ -492,7 +492,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		owned := []string{}
 		redefs := [][]string{}
 		for _, cid := range sym.ChildIDs {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err != nil || strings.HasSuffix(strings.ToLower(ch.Kind), "def") {
 				continue
 			}
@@ -532,7 +532,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		// annotations an element lists: its metadata-usage children
 		var symbols []*opensysml.Symbol
 		for _, cid := range sym.ChildIDs {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && strings.EqualFold(ch.Kind, "metadataUsage") {
 				symbols = append(symbols, ch)
 			}
@@ -585,7 +585,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		// that carry a direction in their metadata
 		out := [][]string{}
 		for _, cid := range memberIDs(sym) {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && ch.Metadata["direction"] != "" {
 				out = append(out, []string{ch.Metadata["direction"], ch.Name})
 			}
@@ -596,7 +596,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		// variant usages carry `variant: true` in their metadata
 		out := []string{}
 		for _, cid := range sym.ChildIDs {
-			ch, err := cl.LookupSymbol(ctx, m, cid)
+			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && ch.Metadata["variant"] == "true" {
 				out = append(out, ch.Name)
 			}
@@ -607,7 +607,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		if sym.Type == nil || sym.Type.ResolvedID == "" {
 			return nil, nil
 		}
-		ty, err := cl.LookupSymbol(ctx, m, sym.Type.ResolvedID)
+		ty, err := lookupSym(ctx, cl, m, sym.Type.ResolvedID)
 		if err != nil {
 			return nil, err
 		}
@@ -626,7 +626,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		var refs [][]string
 		names := []string{}
 		for _, id := range sym.ChildIDs {
-			end, err := cl.LookupSymbol(ctx, m, id)
+			end, err := lookupSym(ctx, cl, m, id)
 			if err != nil || !strings.EqualFold(end.Kind, "connectorEnd") {
 				continue
 			}
@@ -664,7 +664,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return lower + ".." + sym.Multiplicity.Upper, nil
 	case "value":
 		// a feature's value is reported in its owner's Attributes
-		o, err := cl.LookupSymbol(ctx, m, owner)
+		o, err := lookupSym(ctx, cl, m, owner)
 		if err != nil {
 			return nil, err
 		}
@@ -738,7 +738,7 @@ func instanceCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model,
 	next:
 		for _, p := range paths.Paths {
 			for _, s := range p.Steps {
-				if f, err := cl.LookupSymbol(ctx, m, s.FeatureSymbolID); err == nil && f.Kind == "connectorEnd" {
+				if f, err := lookupSym(ctx, cl, m, s.FeatureSymbolID); err == nil && f.Kind == "connectorEnd" {
 					continue next
 				}
 			}
@@ -806,6 +806,12 @@ func writeResults(t *testing.T, suite string, rows [][]string) {
 
 // memberIDs lists the ids of the members a Symbol lists: its children, then
 // its Members (own and inherited; library-inherited ones are withheld).
+// lookupSym is LookupSymbol with the members inherited from standard-library content
+// listed in Members too (WithLibraryMembers), as Python lists them (DISCUSSIONS.md, Step 16).
+func lookupSym(ctx context.Context, cl opensysml.Client, m *opensysml.Model, id string) (*opensysml.Symbol, error) {
+	return cl.LookupSymbol(ctx, m, id, opensysml.WithLibraryMembers())
+}
+
 func memberIDs(sym *opensysml.Symbol) []string {
 	out := append([]string{}, sym.ChildIDs...)
 	for _, mb := range sym.Members {

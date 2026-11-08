@@ -210,6 +210,16 @@ class MatricesTest {
         return lookup(m, qn).orElseThrow(() -> new Answer("<no symbol " + qn + ">"));
     }
 
+    /** Ids of the members a Symbol enumerates (own and inherited, library-inherited ones
+     * included), unquoted: Model.symbol with SymbolOptions.withLibraryMembers (DISCUSSIONS.md, Step 16). */
+    static List<Symbol.Member> members(Model m, Symbol s) {
+        return m.symbol(s.id(), SymbolOptions.defaults().withLibraryMembers(true)).members();
+    }
+
+    static List<String> memberIds(Model m, Symbol s) {
+        return members(m, s).stream().map(mb -> norm(mb.id())).toList();
+    }
+
     /** The symbols of a Symbol's child ids, each looked up by its id; one not found is left out. */
     static List<Symbol> children(Model m, Symbol s) {
         List<Symbol> out = new ArrayList<>();
@@ -325,10 +335,6 @@ class MatricesTest {
 
     /** F10: walk `path` from the object Model.instantiate(root) builds. */
     static Object instanceCheck(Model m, JsonObject c, String check, String element) {
-        if (check.equals("ownerPath")) {
-            abort("UNSUPPORTED: the client does not expose InstancePaths, and an Instance carries no "
-                + "owner or path (issue #1959)");
-        }
         Object tree = instantiations.computeIfAbsent(m.hash() + " " + element, k -> {
             try {
                 return m.instantiate(element);
@@ -340,6 +346,24 @@ class MatricesTest {
         Instantiation t = (Instantiation) tree;
         Node target = walk(t, c.has("path") ? c.get("path").getAsString() : "");
         switch (check) {
+            case "ownerPath": {
+                // the object's path through its owners: of every path InstancePaths lists, the
+                // first that steps through no connector end (an end reaches the object it
+                // references, not one it owns)
+                if (!(target instanceof Obj o)) return describe(target);
+                InstancePaths paths;
+                try {
+                    paths = m.instancePaths(o.obj());
+                } catch (OpenSysMLException e) {
+                    return "<InstancePaths failed: " + e.getMessage() + ">";
+                }
+                for (InstancePaths.Path p : paths.paths()) {
+                    boolean throughEnd = p.steps().stream().anyMatch(st -> lookup(m, st.featureSymbolId())
+                        .map(f -> f.kind().equals("connectorEnd")).orElse(false));
+                    if (!throughEnd) return p.path();
+                }
+                return "<no path to " + c.get("path").getAsString() + " through owners only>";
+            }
             case "instanceType":
                 return target instanceof Obj o ? o.obj().typeSymbolId() : describe(target);
             case "instanceValue":
@@ -428,14 +452,15 @@ class MatricesTest {
         String owner = parent(element);
         String id = norm(element);
         if (!through.isEmpty()) {
-            // each step is read as a member the previous Symbol lists: as a child, or (for
-            // attributes, own and inherited) in its attribute facts
+            // each step is read as a member the previous Symbol lists: as a child, in its
+            // members (own and inherited), or (for attributes, own and inherited) in its attribute facts
             Symbol cur = sym(m, norm(through.get(0)));
             List<String> steps = new ArrayList<>(through.subList(1, through.size()));
             if (unnamed == null) steps.add(element);
             for (String raw : steps) {
                 String step = norm(raw);
-                boolean visible = cur.childIds().contains(step) || attribute(cur, last(step)).isPresent();
+                boolean visible = cur.childIds().contains(step) || attribute(cur, last(step)).isPresent()
+                    || memberIds(m, cur).contains(step);
                 if (!visible) return "<" + step + " not visible through " + cur.id() + ">";
                 owner = cur.id();
                 cur = sym(m, step);
@@ -494,8 +519,14 @@ class MatricesTest {
                         .filter(sp -> sp.kind().equals("redefines"))
                         .map(sp -> List.of(ch.id(), sp.targetId().orElse("")))));
                 }
-                // members the Symbol lists that it does not own: attribute facts not among the children
-                return sorted(s.attributes().stream().map(Symbol.Attribute::name).filter(n -> !owned.contains(n)));
+                // members the Symbol lists that it does not own: inherited members, and attribute
+                // facts (own and inherited) not among the children
+                List<String> inherited = new ArrayList<>(members(m, s).stream()
+                    .filter(Symbol.Member::inherited).map(Symbol.Member::name).distinct().toList());
+                for (Symbol.Attribute a : s.attributes()) {
+                    if (!owned.contains(a.name()) && !inherited.contains(a.name())) inherited.add(a.name());
+                }
+                return sorted(inherited.stream());
             }
             case "metadataDefs", "metadataValue": {
                 // annotations an element lists: its metadata-usage children
@@ -521,8 +552,11 @@ class MatricesTest {
                 return s.specializations().stream().filter(sp -> sp.kind().equals("subsets"))
                     .map(sp -> sp.targetId().orElse(null)).findFirst().orElse(null);
             case "parameters":
-                // children the Symbol lists that carry a direction in their metadata
-                return sortPairs(children(m, s).stream()
+                // members the Symbol lists (children and members, own and inherited) that carry a
+                // direction in their metadata
+                Set<String> ids = new LinkedHashSet<>(s.childIds());
+                ids.addAll(memberIds(m, s));
+                return sortPairs(ids.stream().map(x -> lookup(m, x)).flatMap(Optional::stream)
                     .filter(ch -> !ch.metadata().getOrDefault("direction", "").isEmpty())
                     .map(ch -> List.of(ch.metadata().get("direction"), ch.name())));
             case "variants":

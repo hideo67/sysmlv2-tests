@@ -12,7 +12,7 @@
 //! same route as in the Python suite; a different result is a difference of the client.
 use opensysml::{
     Connection, EvalOptions, Instance, Instantiation, Magnitude, Model, ParseOptions, Query,
-    Symbol, Value as OValue,
+    Symbol, SymbolOptions, Value as OValue,
 };
 use serde_json::{json, Value};
 use std::collections::HashMap;
@@ -75,12 +75,13 @@ fn sym(m: &Model, qn: &str) -> R<Symbol> {
 }
 
 /// Members a Symbol lists: children, parts, attributes (own and inherited), and the
-/// members its SymbolInfo enumerates (own and inherited; the client requests no
-/// library-inherited ones), by unquoted id.
+/// members its SymbolInfo enumerates (own and inherited, library-inherited ones
+/// included), by unquoted id.
 fn visible(m: &Model, s: &Symbol) -> R<Vec<(String, Symbol)>> {
     let mut out: Vec<(String, Symbol)> = vec![];
     let mut members = vec![];
-    for mb in &s.wire().members {
+    let listed = m.symbol_with(s.id(), &SymbolOptions { include_library_members: true })?;
+    for mb in listed.members() {
         if let Some(c) = get(m, &mb.id)? {
             members.push(c);
         }
