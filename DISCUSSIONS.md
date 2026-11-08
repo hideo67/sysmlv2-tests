@@ -1479,6 +1479,46 @@ and Rust pass A10-027/036 and ten A50 cases that Go, TypeScript and Java
 fail, and Go, TypeScript and Java pass A60-007/008 that Python and Rust
 fail.
 
+## Step 17: sysml-toolkit v0.12.0
+sysml-toolkit answered our three checked-reader issues (#18, #19, #20) as
+fixed in v0.12.0. The tag is on a commit no published branch contains
+(`ab3d590fa8`), so it is fetched by name (`git fetch origin tag v0.12.0`)
+and checked out detached; the snapshots name it `v0.12.0 (HEAD)`.
+The suite's `Cargo.lock` follows the crates' version (0.11.3 -> 0.12.0).
+
+| suite | v0.11.3 | v0.12.0 |
+|--|--|--|
+| sysml-toolkit-rs (compatibility reader) | 1527 / 53 / 50 / 0 | unchanged |
+| sysml-toolkit-rs-checked | 1095 / 0 / 50 / 485 | 1472 / 0 / 50 / 108 |
+
+(pass / fail / unsupported / error.) All 377 moves are refusals the checked
+reader now answers, correctly; no case got worse:
+- #19 (connector ends): B10 90, B11 90 and B12 108 (now every B11 and B12
+  case), and B20 30.
+- #18 (a port usage's type): A30 16.
+- #20 (an expression's argument and result): C10 8 and C21 24 that read a
+  constructor's arguments, with C01 8 and C30 3.
+
+Still refused (108): `Function::result` and `directedFeature` (C21 24,
+C01 16 + 12, "Function.result is incomplete: UnsupportedConfiguration"),
+so #20 is fixed for arguments but not for a function's result; a flow's
+`sourceOutputFeature`/`targetInputFeature` (B20 30); `metadataDefinition`
+(D10 15); a connection def's `endFeature` (B10 8); `referent` of an
+assignment (C20 3).
+
+Census:
+- The toolkit now builds `Multiplicity` elements (pilot-examples 2130, the
+  Pilot 2140; matrix-models 214 and 204), which Step 13 found missing.
+  `ReturnParameterMembership` is still nearly absent (126 vs 3055; 2 vs 88).
+  Overall it builds more of the abstract syntax: pilot-examples 41440 ->
+  45728 elements, matrix-models 2705 -> 3133.
+- On the new `Multiplicity` elements, `Type::feature`,
+  `Type::featureMembership` and `Feature::featuringType` are answered empty
+  (214 of 214), where the Pilot fills them (204 of 204; `featuringType` 196).
+  These three join the matrix-models differences (25 -> 28); on
+  pilot-examples `Feature::ownedRedefinition` leaves them (42 -> 41). The
+  summary counts (answered / always empty / unanswered) did not change.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1498,3 +1538,4 @@ feature's derived types from TypeInfo.types.
 Step 16 took OpenSysML #2041: every Symbol adapter reads members with
 library content, and TypeScript and Java read ownerPath through
 InstancePaths.
+Step 17 took sysml-toolkit v0.12.0 (#18, #19 fixed; #20 for arguments).
