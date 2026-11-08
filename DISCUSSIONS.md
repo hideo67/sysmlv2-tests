@@ -1329,6 +1329,37 @@ The Pilot answers `ActionDefinition::action`,
 `StateDefinition::state` empty on every element; sysml-toolkit fills them. The
 reference column is a reference, not the truth.
 
+## Step 14: OpenSysML #2050 (element properties read back every id)
+OpenSysML develop moved from `44563782da` to `bfebfa9e51`, which merges
+#2050. It answers item 1 of our #2012 comment (Step 11): an unnamed library
+member a model inherits (the documentation, invariants and connectors of
+`Occurrences::Occurrence`, the range of `Parts::parts`) and its owning
+membership are now written under the ids the model's answer carries, so
+every id an answer returns reads back. Only server code, tests and docs
+changed; no client interface changed.
+
+opensysml-py-props and opensysml-go-props: 1236 → 1284 pass, 323 → 275 fail.
+All 48 are fail to pass (A02 inheritedFeatureNames 10, A50 18, B11 18,
+C01-055/056 2), no `<unreadable element>` failure is left, and Python and
+Go still agree on all 1630 outcomes. The Symbol API suites and the census
+did not move.
+
+### Follow-up on #2012, and #2042
+OpenSysML replied on #2012 with a status per item. #2042 (open) moves
+GetElementProperties onto the symbol-backed structure (#2014); on its branch
+items 2, 3, 6a, 7 and 8 are fixed, 4, 5 and 6b are not (#2028 stage 2,
+#1992). It also changes the spelling of anonymous ids (`P::V::c1.r1.e0`
+rather than `P::V::c1::a`). The props adapters treat an id as opaque (read
+it back, de-duplicate by it) and compare qualified names, so the spelling
+does not matter to them.
+
+The same reply reports that on the #2042 branch 100 of 113 memberships come
+back with no id. The adapters de-duplicated by id, so every id-less
+reference would have collapsed into one. They now fail the case with
+`<element without id: <metaclass> <qualified name>>`, kept apart from an
+id that cannot be read back (which visible_features skips). No outcome
+changes at `bfebfa9e51`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1341,3 +1372,5 @@ through its element properties API (GetElementProperties), and read ownerPath th
 InstancePaths in Python and Go.
 Step 12 added the OpenSysML Java client as suite opensysml-java.
 Step 13 added the derived-property census (run-census.sh, census-SNAPSHOT.md).
+Step 14 took OpenSysML #2050 and made the props adapters fail on an element
+reference without an id.
