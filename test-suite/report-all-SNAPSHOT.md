@@ -4,14 +4,14 @@
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-08 02:02:48|
-|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-08 02:02:42|
-|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 02:02:59|
-|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 02:02:40|
-|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 02:02:29|
-|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 02:02:50|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-08 02:02:54|
-|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-65-gbfebfa9e51` (develop)|[`bfebfa9e51`](https://github.com/Open-MBEE/OpenSysML/commit/bfebfa9e5108a7501c517b87fca096cd3dd591d9)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-08 02:02:52|
+|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-08 06:44:13|
+|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-08 06:44:07|
+|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 06:44:25|
+|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 06:44:05|
+|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 06:43:55|
+|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 06:44:15|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-08 06:44:19|
+|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-84-g4464eedb78` (develop)|[`4464eedb78`](https://github.com/Open-MBEE/OpenSysML/commit/4464eedb78b012c7d7d74d6bd858b5b2875178b1)|2026-11-07|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-08 06:44:17|
 |pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 00:00:28|
 |sysml-toolkit-rs-checked|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 00:00:17|
 |sysml-toolkit-rs|sysml-toolkit|`v0.11.3` (main)|[`4d1dc460ee`](https://github.com/Open-MBEE/sysml-toolkit/commit/4d1dc460eed5ebaf773934de383a47c90b00e5fc)|2026-10-31|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 00:00:15|
@@ -27,26 +27,26 @@ Local changes at run time (tracked files only):
 |A01|117|117 / 0 / 0 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|117 / 0 / 0 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|87 / 0 / 30 / 0|117 / 0 / 0 / 0|117 / 0 / 0 / 0|117 / 0 / 0 / 0|
 |A02|50|40 / 0 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|40 / 0 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|30 / 10 / 10 / 0|50 / 0 / 0 / 0|50 / 0 / 0 / 0|50 / 0 / 0 / 0|
 |A03|128|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|128 / 0 / 0 / 0|110 / 18 / 0 / 0|
-|A10|36|32 / 4 / 0 / 0|18 / 2 / 16 / 0|10 / 10 / 16 / 0|32 / 4 / 0 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|8 / 12 / 16 / 0|10 / 10 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
-|A20|100|100 / 0 / 0 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|100 / 0 / 0 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|77 / 3 / 20 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|
+|A10|36|32 / 4 / 0 / 0|18 / 2 / 16 / 0|10 / 10 / 16 / 0|32 / 4 / 0 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|10 / 10 / 16 / 0|10 / 10 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
+|A20|100|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|
 |A30|44|16 / 8 / 20 / 0|26 / 18 / 0 / 0|8 / 36 / 0 / 0|16 / 8 / 20 / 0|26 / 18 / 0 / 0|26 / 18 / 0 / 0|8 / 36 / 0 / 0|8 / 36 / 0 / 0|44 / 0 / 0 / 0|28 / 0 / 0 / 16|42 / 2 / 0 / 0|
-|A40|45|42 / 3 / 0 / 0|27 / 18 / 0 / 0|9 / 36 / 0 / 0|42 / 3 / 0 / 0|27 / 18 / 0 / 0|27 / 18 / 0 / 0|9 / 36 / 0 / 0|9 / 36 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
-|A50|54|54 / 0 / 0 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|30 / 6 / 18 / 0|30 / 6 / 18 / 0|0 / 36 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
+|A40|45|42 / 3 / 0 / 0|45 / 0 / 0 / 0|15 / 30 / 0 / 0|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|15 / 30 / 0 / 0|15 / 30 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
+|A50|54|54 / 0 / 0 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|30 / 6 / 18 / 0|30 / 6 / 18 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|24 / 8 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|24 / 8 / 0 / 0|20 / 12 / 0 / 0|20 / 12 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
 |B10|98|54 / 44 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|54 / 44 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|98 / 0 / 0 / 0|0 / 0 / 0 / 98|98 / 0 / 0 / 0|
 |B11|90|54 / 36 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|54 / 36 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|0 / 0 / 0 / 90|90 / 0 / 0 / 0|
-|B12|108|72 / 36 / 0 / 0|36 / 18 / 54 / 0|12 / 42 / 54 / 0|72 / 36 / 0 / 0|36 / 18 / 54 / 0|36 / 18 / 54 / 0|12 / 42 / 54 / 0|12 / 42 / 54 / 0|108 / 0 / 0 / 0|0 / 0 / 0 / 108|108 / 0 / 0 / 0|
+|B12|108|72 / 36 / 0 / 0|42 / 12 / 54 / 0|14 / 40 / 54 / 0|72 / 36 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|14 / 40 / 54 / 0|14 / 40 / 54 / 0|108 / 0 / 0 / 0|0 / 0 / 0 / 108|108 / 0 / 0 / 0|
 |B20|75|42 / 33 / 0 / 0|9 / 21 / 45 / 0|3 / 27 / 45 / 0|42 / 33 / 0 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|3 / 27 / 45 / 0|3 / 27 / 45 / 0|75 / 0 / 0 / 0|15 / 0 / 0 / 60|69 / 6 / 0 / 0|
 |C01|96|78 / 18 / 0 / 0|54 / 10 / 32 / 0|51 / 13 / 32 / 0|78 / 18 / 0 / 0|52 / 12 / 32 / 0|54 / 10 / 32 / 0|51 / 13 / 32 / 0|51 / 13 / 32 / 0|96 / 0 / 0 / 0|60 / 0 / 0 / 36|96 / 0 / 0 / 0|
 |C10|116|83 / 4 / 29 / 0|36 / 0 / 80 / 0|27 / 9 / 80 / 0|83 / 4 / 29 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|27 / 9 / 80 / 0|27 / 9 / 80 / 0|96 / 0 / 20 / 0|88 / 0 / 20 / 8|96 / 0 / 20 / 0|
 |C20|120|96 / 21 / 3 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|96 / 21 / 3 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|12 / 60 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|12 / 60 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|24 / 0 / 0 / 48|48 / 24 / 0 / 0|
 |C30|78|69 / 0 / 0 / 9|6 / 0 / 63 / 9|2 / 4 / 63 / 9|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|2 / 4 / 63 / 9|2 / 4 / 63 / 9|78 / 0 / 0 / 0|75 / 0 / 0 / 3|78 / 0 / 0 / 0|
-|D10|45|45 / 0 / 0 / 0|20 / 10 / 15 / 0|16 / 14 / 15 / 0|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|0 / 30 / 15 / 0|16 / 14 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
+|D10|45|45 / 0 / 0 / 0|20 / 10 / 15 / 0|16 / 14 / 15 / 0|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|16 / 14 / 15 / 0|16 / 14 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1630|1284 / 275 / 62 / 9|642 / 232 / 747 / 9|542 / 326 / 753 / 9|1284 / 275 / 62 / 9|650 / 224 / 747 / 9|646 / 222 / 753 / 9|504 / 364 / 753 / 9|542 / 326 / 753 / 9|1580 / 0 / 50 / 0|1095 / 0 / 50 / 485|1527 / 53 / 50 / 0|
+|**all**|1630|1284 / 275 / 62 / 9|669 / 205 / 747 / 9|553 / 315 / 753 / 9|1284 / 275 / 62 / 9|677 / 197 / 747 / 9|673 / 195 / 753 / 9|553 / 315 / 753 / 9|553 / 315 / 753 / 9|1580 / 0 / 50 / 0|1095 / 0 / 50 / 485|1527 / 53 / 50 / 0|
 
 ## Results
 
@@ -371,8 +371,8 @@ Local changes at run time (tracked files only):
 |A10-022|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A10-023|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A10-024|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|A10-025|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A10-026|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A10-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A10-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A10-027|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A10-028|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A10-029|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
@@ -419,9 +419,9 @@ Local changes at run time (tracked files only):
 |A20-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A20-035|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A20-036|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A20-037|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A20-038|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A20-039|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A20-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A20-038|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A20-039|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A20-040|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A20-041|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A20-042|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -533,9 +533,9 @@ Local changes at run time (tracked files only):
 |A40-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-005|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-006|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A40-007|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-008|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-009|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-008|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-009|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-011|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-012|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
@@ -548,9 +548,9 @@ Local changes at run time (tracked files only):
 |A40-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-020|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-021|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A40-022|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-023|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-024|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A40-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-023|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-024|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-026|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-027|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
@@ -560,35 +560,35 @@ Local changes at run time (tracked files only):
 |A40-031|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-032|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A40-033|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A40-034|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-035|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-036|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-037|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-038|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-039|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-040|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-041|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-042|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-043|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-044|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A40-045|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A50-001|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-002|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A40-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-035|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-036|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-038|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-039|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-040|FAIL|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-041|FAIL|PASS|FAIL|FAIL|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-042|FAIL|PASS|FAIL|FAIL|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-043|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-044|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A40-045|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
+|A50-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-003|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A50-004|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-005|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-005|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-006|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A50-007|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A50-008|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A50-009|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A50-010|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-011|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-012|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A50-013|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-014|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-014|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-015|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A50-016|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-017|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-018|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A50-019|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A50-020|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -608,23 +608,23 @@ Local changes at run time (tracked files only):
 |A50-034|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A50-035|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |A50-036|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|A50-037|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-038|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-038|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-039|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A50-040|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-041|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-040|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-041|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-042|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A50-043|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A50-044|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A50-045|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A50-046|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-047|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-046|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-047|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-048|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A50-049|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-050|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-049|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-050|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-051|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|A50-052|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|A50-053|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|A50-052|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A50-053|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A50-054|PASS|FAIL|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |A60-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A60-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -882,18 +882,18 @@ Local changes at run time (tracked files only):
 |B12-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |B12-035|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-036|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-037|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-038|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-039|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|B12-038|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-039|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-040|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-041|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-042|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-043|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-044|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-045|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-046|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-047|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|B12-048|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-046|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|B12-047|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
+|B12-048|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-049|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-050|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |B12-051|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
@@ -1511,30 +1511,30 @@ Local changes at run time (tracked files only):
 |C30-076|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-077|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-078|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|D10-001|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
-|D10-002|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
-|D10-003|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
-|D10-004|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
+|D10-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |D10-005|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
-|D10-006|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
-|D10-007|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
-|D10-008|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
-|D10-009|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|ERROR|PASS|
+|D10-006|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |D10-010|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|ERROR|PASS|
 |D10-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |D10-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |D10-013|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |D10-014|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |D10-015|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|D10-016|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|D10-017|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|D10-018|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|D10-019|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|D10-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-018|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-020|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
-|D10-021|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|D10-022|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|D10-023|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
-|D10-024|PASS|PASS|PASS|PASS|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|
+|D10-021|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-025|PASS|PASS|FAIL|PASS|PASS|PASS|FAIL|FAIL|PASS|PASS|PASS|
 |D10-026|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |D10-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -2305,8 +2305,6 @@ Local changes at run time (tracked files only):
 - A10-024 [opensysml-rs] unsupported: no Symbol field for isReference; the standard query API does not offer it either
 - A10-024 [opensysml-ts-wasm] unsupported: no Symbol field for isReference; the standard query API is not served by this backend (sysml-wasm has no Query)
 - A10-024 [opensysml-ts] unsupported: no Symbol field for isReference; the standard query API does not offer it either
-- A10-025 [opensysml-ts-wasm] fail: unnamedPartCount A10: got 0, want 1
-- A10-026 [opensysml-ts-wasm] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-027 [opensysml-go] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-027 [opensysml-java] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-027 [opensysml-ts-wasm] fail: unnamedPartCount A10::Car: got 0, want 1
@@ -2353,24 +2351,6 @@ Local changes at run time (tracked files only):
 - A10-036 [opensysml-java] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-036 [opensysml-ts-wasm] fail: unnamedPartCount A10::Car: got 0, want 1
 - A10-036 [opensysml-ts] fail: unnamedPartCount A10::Car: got 0, want 1
-- A20-037 [opensysml-go] fail: type A20::tuned::plain: got "", want "ScalarValues::Real"
-- A20-037 [opensysml-java] fail: type A20::tuned::plain: got "", want "ScalarValues::Real"
-- A20-037 [opensysml-py] fail: type A20::tuned::plain: got '', want 'ScalarValues::Real'
-- A20-037 [opensysml-rs] fail: type A20::tuned::plain: got "", want "ScalarValues::Real"
-- A20-037 [opensysml-ts-wasm] fail: type A20::tuned::plain: got "", want "ScalarValues::Real"
-- A20-037 [opensysml-ts] fail: type A20::tuned::plain: got "", want "ScalarValues::Real"
-- A20-038 [opensysml-go] fail: type A20::tuned::bound: got "", want "ScalarValues::Real"
-- A20-038 [opensysml-java] fail: type A20::tuned::bound: got "", want "ScalarValues::Real"
-- A20-038 [opensysml-py] fail: type A20::tuned::bound: got '', want 'ScalarValues::Real'
-- A20-038 [opensysml-rs] fail: type A20::tuned::bound: got "", want "ScalarValues::Real"
-- A20-038 [opensysml-ts-wasm] fail: type A20::tuned::bound: got "", want "ScalarValues::Real"
-- A20-038 [opensysml-ts] fail: type A20::tuned::bound: got "", want "ScalarValues::Real"
-- A20-039 [opensysml-go] fail: type A20::tuned::dflt: got "", want "ScalarValues::Real"
-- A20-039 [opensysml-java] fail: type A20::tuned::dflt: got "", want "ScalarValues::Real"
-- A20-039 [opensysml-py] fail: type A20::tuned::dflt: got '', want 'ScalarValues::Real'
-- A20-039 [opensysml-rs] fail: type A20::tuned::dflt: got "", want "ScalarValues::Real"
-- A20-039 [opensysml-ts-wasm] fail: type A20::tuned::dflt: got "", want "ScalarValues::Real"
-- A20-039 [opensysml-ts] fail: type A20::tuned::dflt: got "", want "ScalarValues::Real"
 - A20-081 [opensysml-go] unsupported: neither Symbol nor Attribute tells a default from a bound value
 - A20-081 [opensysml-java] unsupported: neither Symbol nor its attribute facts tell a default from a bound value
 - A20-081 [opensysml-py] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
@@ -2739,22 +2719,10 @@ Local changes at run time (tracked files only):
 - A40-006 [opensysml-java] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want [["Subsetting","A40::Owner::q"]]
 - A40-006 [opensysml-ts-wasm] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want [["Subsetting","A40::Owner::q"]]
 - A40-006 [opensysml-ts] fail: specializations A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want [["Subsetting","A40::Owner::q"]]
-- A40-007 [opensysml-go] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-007 [opensysml-java] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-007 [opensysml-py] fail: specializations A40::Owner::pRef: got [], want [['ReferenceSubsetting', 'A40::Owner::q']]
-- A40-007 [opensysml-rs] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-007 [opensysml-ts-wasm] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-007 [opensysml-ts] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-008 [opensysml-go] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-008 [opensysml-java] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-008 [opensysml-py] fail: specializations A40::Owner::pRef: got [], want [['ReferenceSubsetting', 'A40::Owner::q']]
-- A40-008 [opensysml-rs] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-008 [opensysml-ts-wasm] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-008 [opensysml-ts] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-009 [opensysml-go] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-009 [opensysml-java] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want [["ReferenceSubsetting","A40::Owner::q"]]
-- A40-009 [opensysml-py] fail: specializations A40::Owner::pRef: got [], want [['ReferenceSubsetting', 'A40::Owner::q']]
-- A40-009 [opensysml-rs] fail: specializations A40::Owner::pRef: got [], want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-009 [opensysml-ts-wasm] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-009 [opensysml-ts] fail: specializations A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want [["ReferenceSubsetting","A40::Owner::q"]]
 - A40-011 [opensysml-java] fail: specializations A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want [["FeatureTyping","A40::V"],["Subsetting","A40::Owner::q"]]
@@ -2781,22 +2749,10 @@ Local changes at run time (tracked files only):
 - A40-021 [opensysml-java] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-021 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-021 [opensysml-ts] fail: subsettedFeatures A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::Owner::q"]
-- A40-022 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
-- A40-022 [opensysml-java] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
-- A40-022 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got [], want ['A40::Owner::q']
-- A40-022 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
-- A40-022 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
-- A40-022 [opensysml-ts] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
-- A40-023 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-023 [opensysml-java] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::Owner::q"]
-- A40-023 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got [], want ['A40::Owner::q']
-- A40-023 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-023 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::Owner::q"]
 - A40-023 [opensysml-ts] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::Owner::q"]
-- A40-024 [opensysml-go] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-024 [opensysml-java] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::Owner::q"]
-- A40-024 [opensysml-py] fail: subsettedFeatures A40::Owner::pRef: got [], want ['A40::Owner::q']
-- A40-024 [opensysml-rs] fail: subsettedFeatures A40::Owner::pRef: got [], want ["A40::Owner::q"]
 - A40-024 [opensysml-ts-wasm] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-024 [opensysml-ts] fail: subsettedFeatures A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::Owner::q"]
 - A40-026 [opensysml-java] fail: subsettedFeatures A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::Owner::q"]
@@ -2817,92 +2773,40 @@ Local changes at run time (tracked files only):
 - A40-033 [opensysml-java] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want ["A40::T"]
 - A40-033 [opensysml-ts-wasm] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want ["A40::T"]
 - A40-033 [opensysml-ts] fail: types A40::Owner::pTyped: got "<A40::Owner::pTyped not visible through A40::subOwner>", want ["A40::T"]
-- A40-034 [opensysml-go] fail: types A40::Owner::pSub: got [], want ["A40::T"]
-- A40-034 [opensysml-java] fail: types A40::Owner::pSub: got [], want ["A40::T"]
-- A40-034 [opensysml-py] fail: types A40::Owner::pSub: got [], want ['A40::T']
-- A40-034 [opensysml-rs] fail: types A40::Owner::pSub: got [], want ["A40::T"]
-- A40-034 [opensysml-ts-wasm] fail: types A40::Owner::pSub: got [], want ["A40::T"]
-- A40-034 [opensysml-ts] fail: types A40::Owner::pSub: got [], want ["A40::T"]
-- A40-035 [opensysml-go] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-035 [opensysml-java] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::T"]
-- A40-035 [opensysml-py] fail: types A40::Owner::pSub: got [], want ['A40::T']
-- A40-035 [opensysml-rs] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-035 [opensysml-ts-wasm] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::T"]
 - A40-035 [opensysml-ts] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::owner>", want ["A40::T"]
-- A40-036 [opensysml-go] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-036 [opensysml-java] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::T"]
-- A40-036 [opensysml-py] fail: types A40::Owner::pSub: got [], want ['A40::T']
-- A40-036 [opensysml-rs] fail: types A40::Owner::pSub: got [], want ["A40::T"]
 - A40-036 [opensysml-ts-wasm] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::T"]
 - A40-036 [opensysml-ts] fail: types A40::Owner::pSub: got "<A40::Owner::pSub not visible through A40::subOwner>", want ["A40::T"]
-- A40-037 [opensysml-go] fail: types A40::Owner::pRef: got [], want ["A40::T"]
-- A40-037 [opensysml-java] fail: types A40::Owner::pRef: got [], want ["A40::T"]
-- A40-037 [opensysml-py] fail: types A40::Owner::pRef: got [], want ['A40::T']
-- A40-037 [opensysml-rs] fail: types A40::Owner::pRef: got [], want ["A40::T"]
-- A40-037 [opensysml-ts-wasm] fail: types A40::Owner::pRef: got [], want ["A40::T"]
-- A40-037 [opensysml-ts] fail: types A40::Owner::pRef: got [], want ["A40::T"]
-- A40-038 [opensysml-go] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-038 [opensysml-java] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::T"]
-- A40-038 [opensysml-py] fail: types A40::Owner::pRef: got [], want ['A40::T']
-- A40-038 [opensysml-rs] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-038 [opensysml-ts-wasm] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::T"]
 - A40-038 [opensysml-ts] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::owner>", want ["A40::T"]
-- A40-039 [opensysml-go] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-039 [opensysml-java] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::T"]
-- A40-039 [opensysml-py] fail: types A40::Owner::pRef: got [], want ['A40::T']
-- A40-039 [opensysml-rs] fail: types A40::Owner::pRef: got [], want ["A40::T"]
 - A40-039 [opensysml-ts-wasm] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::T"]
 - A40-039 [opensysml-ts] fail: types A40::Owner::pRef: got "<A40::Owner::pRef not visible through A40::subOwner>", want ["A40::T"]
 - A40-040 [opensysml-go-props] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-040 [opensysml-go] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-040 [opensysml-java] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-040 [opensysml-py-props] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-040 [opensysml-py] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-040 [opensysml-rs] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-040 [opensysml-ts-wasm] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-040 [opensysml-ts] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-041 [opensysml-go-props] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-041 [opensysml-go] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-041 [opensysml-java] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::T","A40::V"]
 - A40-041 [opensysml-py-props] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-041 [opensysml-py] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-041 [opensysml-rs] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-041 [opensysml-ts-wasm] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::T","A40::V"]
 - A40-041 [opensysml-ts] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::owner>", want ["A40::T","A40::V"]
 - A40-042 [opensysml-go-props] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-042 [opensysml-go] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-042 [opensysml-java] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::T","A40::V"]
 - A40-042 [opensysml-py-props] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-042 [opensysml-py] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-042 [opensysml-rs] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
 - A40-042 [opensysml-ts-wasm] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::T","A40::V"]
 - A40-042 [opensysml-ts] fail: types A40::Owner::pBoth: got "<A40::Owner::pBoth not visible through A40::subOwner>", want ["A40::T","A40::V"]
-- A40-043 [opensysml-go] fail: types A40::SubOwner::q: got [], want ["A40::T"]
-- A40-043 [opensysml-java] fail: types A40::SubOwner::q: got [], want ["A40::T"]
-- A40-043 [opensysml-py] fail: types A40::SubOwner::q: got [], want ['A40::T']
-- A40-043 [opensysml-rs] fail: types A40::SubOwner::q: got [], want ["A40::T"]
-- A40-043 [opensysml-ts-wasm] fail: types A40::SubOwner::q: got [], want ["A40::T"]
-- A40-043 [opensysml-ts] fail: types A40::SubOwner::q: got [], want ["A40::T"]
-- A40-044 [opensysml-go] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-044 [opensysml-java] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::T"]
-- A40-044 [opensysml-py] fail: types A40::SubOwner::q: got [], want ['A40::T']
-- A40-044 [opensysml-rs] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-044 [opensysml-ts-wasm] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::T"]
 - A40-044 [opensysml-ts] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subOwner>", want ["A40::T"]
-- A40-045 [opensysml-go] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-045 [opensysml-java] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::T"]
-- A40-045 [opensysml-py] fail: types A40::SubOwner::q: got [], want ['A40::T']
-- A40-045 [opensysml-rs] fail: types A40::SubOwner::q: got [], want ["A40::T"]
 - A40-045 [opensysml-ts-wasm] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::T"]
 - A40-045 [opensysml-ts] fail: types A40::SubOwner::q: got "<A40::SubOwner::q not visible through A40::subSub>", want ["A40::T"]
-- A50-001 [opensysml-ts-wasm] fail: kind A50: got "<unnamed PartUsage #0 of A50 not listed>", want "PartUsage"
-- A50-002 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want "PartUsage"
 - A50-003 [opensysml-go] fail: kind A50::Holder: got "\u003cunnamed PartUsage #0 of A50::Holder not listed\u003e", want "PartUsage"
 - A50-003 [opensysml-java] fail: kind A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want "PartUsage"
 - A50-003 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want "PartUsage"
 - A50-003 [opensysml-ts] fail: kind A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want "PartUsage"
-- A50-004 [opensysml-ts-wasm] fail: kind A50: got "<unnamed AttributeUsage #0 of A50 not listed>", want "AttributeUsage"
-- A50-005 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed AttributeUsage #0 of A50::Holder not listed>", want "AttributeUsage"
 - A50-006 [opensysml-go] fail: kind A50::Holder: got "\u003cunnamed AttributeUsage #0 of A50::Holder not listed\u003e", want "AttributeUsage"
 - A50-006 [opensysml-java] fail: kind A50::Holder: got "<unnamed AttributeUsage #0 of A50::Holder not listed>", want "AttributeUsage"
 - A50-006 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed AttributeUsage #0 of A50::Holder not listed>", want "AttributeUsage"
@@ -2925,20 +2829,14 @@ Local changes at run time (tracked files only):
 - A50-009 [opensysml-rs] fail: kind A50::Holder: got "<unnamed BindingConnector #0 of A50::Holder not listed>", want "BindingConnectorAsUsage"
 - A50-009 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed BindingConnector #0 of A50::Holder not listed>", want "BindingConnectorAsUsage"
 - A50-009 [opensysml-ts] fail: kind A50::Holder: got "<unnamed BindingConnector #0 of A50::Holder not listed>", want "BindingConnectorAsUsage"
-- A50-010 [opensysml-ts-wasm] fail: kind A50: got "<unnamed ConnectionUsage #0 of A50 not listed>", want "ConnectionUsage"
-- A50-011 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want "ConnectionUsage"
 - A50-012 [opensysml-go] fail: kind A50::Holder: got "\u003cunnamed ConnectionUsage #0 of A50::Holder not listed\u003e", want "ConnectionUsage"
 - A50-012 [opensysml-java] fail: kind A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want "ConnectionUsage"
 - A50-012 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want "ConnectionUsage"
 - A50-012 [opensysml-ts] fail: kind A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want "ConnectionUsage"
-- A50-013 [opensysml-ts-wasm] fail: kind A50: got "<unnamed Flow #0 of A50 not listed>", want "FlowUsage"
-- A50-014 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want "FlowUsage"
 - A50-015 [opensysml-go] fail: kind A50::Holder: got "\u003cunnamed Flow #0 of A50::Holder not listed\u003e", want "FlowUsage"
 - A50-015 [opensysml-java] fail: kind A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want "FlowUsage"
 - A50-015 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want "FlowUsage"
 - A50-015 [opensysml-ts] fail: kind A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want "FlowUsage"
-- A50-016 [opensysml-ts-wasm] fail: kind A50: got "<unnamed MetadataUsage #0 of A50 not listed>", want "MetadataUsage"
-- A50-017 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed MetadataUsage #0 of A50::Holder not listed>", want "MetadataUsage"
 - A50-018 [opensysml-go] fail: kind A50::Holder: got "\u003cunnamed MetadataUsage #0 of A50::Holder not listed\u003e", want "MetadataUsage"
 - A50-018 [opensysml-java] fail: kind A50::Holder: got "<unnamed MetadataUsage #0 of A50::Holder not listed>", want "MetadataUsage"
 - A50-018 [opensysml-ts-wasm] fail: kind A50::Holder: got "<unnamed MetadataUsage #0 of A50::Holder not listed>", want "MetadataUsage"
@@ -3051,14 +2949,10 @@ Local changes at run time (tracked files only):
 - A50-036 [opensysml-rs] unsupported: no Symbol field for the owner; available through the standard query API (owner)
 - A50-036 [opensysml-ts-wasm] unsupported: no Symbol field for the owner; the standard query API is not served by this backend (sysml-wasm has no Query)
 - A50-036 [opensysml-ts] unsupported: no Symbol field for the owner; available through the standard query API (owner)
-- A50-037 [opensysml-ts-wasm] fail: idRoundTrip A50: got "<unnamed PartUsage #0 of A50 not listed>", want true
-- A50-038 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want true
 - A50-039 [opensysml-go] fail: idRoundTrip A50::Holder: got "\u003cunnamed PartUsage #0 of A50::Holder not listed\u003e", want true
 - A50-039 [opensysml-java] fail: idRoundTrip A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want true
 - A50-039 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want true
 - A50-039 [opensysml-ts] fail: idRoundTrip A50::Holder: got "<unnamed PartUsage #0 of A50::Holder not listed>", want true
-- A50-040 [opensysml-ts-wasm] fail: idRoundTrip A50: got "<unnamed AttributeUsage #0 of A50 not listed>", want true
-- A50-041 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed AttributeUsage #0 of A50::Holder not listed>", want true
 - A50-042 [opensysml-go] fail: idRoundTrip A50::Holder: got "\u003cunnamed AttributeUsage #0 of A50::Holder not listed\u003e", want true
 - A50-042 [opensysml-java] fail: idRoundTrip A50::Holder: got "<unnamed AttributeUsage #0 of A50::Holder not listed>", want true
 - A50-042 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed AttributeUsage #0 of A50::Holder not listed>", want true
@@ -3081,20 +2975,14 @@ Local changes at run time (tracked files only):
 - A50-045 [opensysml-rs] fail: idRoundTrip A50::Holder: got "<unnamed BindingConnector #0 of A50::Holder not listed>", want true
 - A50-045 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed BindingConnector #0 of A50::Holder not listed>", want true
 - A50-045 [opensysml-ts] fail: idRoundTrip A50::Holder: got "<unnamed BindingConnector #0 of A50::Holder not listed>", want true
-- A50-046 [opensysml-ts-wasm] fail: idRoundTrip A50: got "<unnamed ConnectionUsage #0 of A50 not listed>", want true
-- A50-047 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want true
 - A50-048 [opensysml-go] fail: idRoundTrip A50::Holder: got "\u003cunnamed ConnectionUsage #0 of A50::Holder not listed\u003e", want true
 - A50-048 [opensysml-java] fail: idRoundTrip A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want true
 - A50-048 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want true
 - A50-048 [opensysml-ts] fail: idRoundTrip A50::Holder: got "<unnamed ConnectionUsage #0 of A50::Holder not listed>", want true
-- A50-049 [opensysml-ts-wasm] fail: idRoundTrip A50: got "<unnamed Flow #0 of A50 not listed>", want true
-- A50-050 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want true
 - A50-051 [opensysml-go] fail: idRoundTrip A50::Holder: got "\u003cunnamed Flow #0 of A50::Holder not listed\u003e", want true
 - A50-051 [opensysml-java] fail: idRoundTrip A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want true
 - A50-051 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want true
 - A50-051 [opensysml-ts] fail: idRoundTrip A50::Holder: got "<unnamed Flow #0 of A50::Holder not listed>", want true
-- A50-052 [opensysml-ts-wasm] fail: idRoundTrip A50: got "<unnamed MetadataUsage #0 of A50 not listed>", want true
-- A50-053 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed MetadataUsage #0 of A50::Holder not listed>", want true
 - A50-054 [opensysml-go] fail: idRoundTrip A50::Holder: got "\u003cunnamed MetadataUsage #0 of A50::Holder not listed\u003e", want true
 - A50-054 [opensysml-java] fail: idRoundTrip A50::Holder: got "<unnamed MetadataUsage #0 of A50::Holder not listed>", want true
 - A50-054 [opensysml-ts-wasm] fail: idRoundTrip A50::Holder: got "<unnamed MetadataUsage #0 of A50::Holder not listed>", want true
@@ -4763,24 +4651,12 @@ Local changes at run time (tracked files only):
 - B12-036 [opensysml-ts-wasm] fail: endNames B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-036 [opensysml-ts] fail: endNames B12::Vehicle::i2: got "<B12::Fleet::v not visible through B12::fleet>", want ["supplier","consumer"]
 - B12-036 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-037 [opensysml-go] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-037 [opensysml-java] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-037 [opensysml-py] fail: endReferences B12::Vehicle::c0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-037 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-037 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-037 [opensysml-ts] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-037 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-038 [opensysml-go] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [opensysml-java] fail: endReferences B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-038 [opensysml-py] fail: endReferences B12::Vehicle::c0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-038 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [opensysml-ts] fail: endReferences B12::Vehicle::c0: got "<B12::Vehicle::c0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-038 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-039 [opensysml-go] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [opensysml-java] fail: endReferences B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-039 [opensysml-py] fail: endReferences B12::Vehicle::c0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-039 [opensysml-rs] fail: endReferences B12::Vehicle::c0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [opensysml-ts] fail: endReferences B12::Vehicle::c0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-039 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -4826,24 +4702,12 @@ Local changes at run time (tracked files only):
 - B12-045 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-045 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-045 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-046 [opensysml-go] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-046 [opensysml-java] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-046 [opensysml-py] fail: endReferences B12::Vehicle::i0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-046 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-046 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-046 [opensysml-ts] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-046 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-047 [opensysml-go] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [opensysml-java] fail: endReferences B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-047 [opensysml-py] fail: endReferences B12::Vehicle::i0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-047 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [opensysml-ts] fail: endReferences B12::Vehicle::i0: got "<B12::Vehicle::i0 not visible through B12::vehicle>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-047 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
-- B12-048 [opensysml-go] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [opensysml-java] fail: endReferences B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
-- B12-048 [opensysml-py] fail: endReferences B12::Vehicle::i0: got [[], []], want [['B12::Vehicle::q'], ['B12::Vehicle::r']]
-- B12-048 [opensysml-rs] fail: endReferences B12::Vehicle::i0: got [[],[]], want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [opensysml-ts] fail: endReferences B12::Vehicle::i0: got "<B12::Fleet::v not visible through B12::fleet>", want [["B12::Vehicle::q"],["B12::Vehicle::r"]]
 - B12-048 [sysml-toolkit-rs-checked] error: connectorEnd refused by the checked reader: property has an incomplete derivation
@@ -8724,25 +8588,17 @@ Local changes at run time (tracked files only):
 - C30-078 [opensysml-rs] unsupported: no Symbol field for effectAction; the standard query API does not offer it either
 - C30-078 [opensysml-ts-wasm] unsupported: no Symbol field for effectAction; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-078 [opensysml-ts] unsupported: no Symbol field for effectAction; the standard query API does not offer it either
-- D10-001 [opensysml-ts-wasm] fail: metadataDefs D10::PumpP: got [], want ["D10::FailureMode"]
 - D10-001 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-002 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorP: got [], want ["D10::FailureMode"]
 - D10-002 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-003 [opensysml-ts-wasm] fail: metadataDefs D10::PumpStates::overheatedP: got [], want ["D10::FailureMode"]
 - D10-003 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-004 [opensysml-ts-wasm] fail: metadataDefs D10::PumpFluid::pressureP: got [], want ["D10::FailureMode"]
 - D10-004 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
 - D10-005 [opensysml-java] fail: metadataDefs D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-005 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-005 [opensysml-ts] fail: metadataDefs D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-005 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-006 [opensysml-ts-wasm] fail: metadataDefs D10::PumpB: got [], want ["D10::FailureMode"]
 - D10-006 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-007 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorB: got [], want ["D10::FailureMode"]
 - D10-007 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-008 [opensysml-ts-wasm] fail: metadataDefs D10::PumpStates::overheatedB: got [], want ["D10::FailureMode"]
 - D10-008 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-009 [opensysml-ts-wasm] fail: metadataDefs D10::PumpFluid::pressureB: got [], want ["D10::FailureMode"]
 - D10-009 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
 - D10-010 [opensysml-java] fail: metadataDefs D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-010 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want ["D10::FailureMode"]
@@ -8783,17 +8639,9 @@ Local changes at run time (tracked files only):
 - D10-015 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-015 [opensysml-ts] fail: metadataDefs D10::Pump::motorA: got "<D10::Pump::motorA not visible through D10::pump>", want ["D10::FailureMode"]
 - D10-015 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-016 [opensysml-ts-wasm] fail: metadataValue D10::PumpP: got "<no annotation of D10::PumpP readable as a Symbol>", want null
-- D10-017 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorP: got "<no annotation of D10::Pump::motorP readable as a Symbol>", want null
-- D10-018 [opensysml-ts-wasm] fail: metadataValue D10::PumpStates::overheatedP: got "<no annotation of D10::PumpStates::overheatedP readable as a Symbol>", want null
-- D10-019 [opensysml-ts-wasm] fail: metadataValue D10::PumpFluid::pressureP: got "<no annotation of D10::PumpFluid::pressureP readable as a Symbol>", want null
 - D10-020 [opensysml-java] fail: metadataValue D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want null
 - D10-020 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want null
 - D10-020 [opensysml-ts] fail: metadataValue D10::Pump::motorP: got "<D10::Pump::motorP not visible through D10::pump>", want null
-- D10-021 [opensysml-ts-wasm] fail: metadataValue D10::PumpB: got "<no annotation of D10::PumpB readable as a Symbol>", want 3
-- D10-022 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorB: got "<no annotation of D10::Pump::motorB readable as a Symbol>", want 3
-- D10-023 [opensysml-ts-wasm] fail: metadataValue D10::PumpStates::overheatedB: got "<no annotation of D10::PumpStates::overheatedB readable as a Symbol>", want 3
-- D10-024 [opensysml-ts-wasm] fail: metadataValue D10::PumpFluid::pressureB: got "<no annotation of D10::PumpFluid::pressureB readable as a Symbol>", want 3
 - D10-025 [opensysml-java] fail: metadataValue D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want 3
 - D10-025 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want 3
 - D10-025 [opensysml-ts] fail: metadataValue D10::Pump::motorB: got "<D10::Pump::motorB not visible through D10::pump>", want 3
