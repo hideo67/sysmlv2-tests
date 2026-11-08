@@ -1519,6 +1519,40 @@ Census:
   pilot-examples `Feature::ownedRedefinition` leaves them (42 -> 41). The
   summary counts (answered / always empty / unanswered) did not change.
 
+### Follow-up: the canonical graph format, #20 and #32
+sysml-toolkit marked #18 and #19 completed and left #20 open: a constructor
+has no result parameter in the default graph format, but has one in the
+opt-in canonical format (`Model::with_graph_format(GraphFormat::CanonicalV3)`,
+CLI `--graph-format canonical`). Both readers were run once in the canonical
+format, through a temporary switch in the adapter (not committed; the suites
+and snapshots stay on the default format):
+
+| suite | default format | canonical format |
+|--|--|--|
+| sysml-toolkit-rs | 1527 / 53 / 50 / 0 | 1551 / 29 / 50 / 0 |
+| sysml-toolkit-rs-checked | 1472 / 0 / 50 / 108 | 1484 / 0 / 50 / 96 |
+
+Only C21 moved. The compatibility reader answers every constructor
+`result` (24). The checked reader answers `result` (12 `hasResult`) but
+refuses the result parameter's `type` (12 `resultType`, "type projection is
+incomplete: UnsupportedProjection"), where `derived()` gives the
+instantiated type. Posted on #20 (2026-11-09).
+
+The other refusals are the same in both formats, so they are not #20's
+cause. A standalone program against v0.12.0 reproduced each of them, in
+both formats, and they were filed as #32 (2026-11-09): `endFeature` of a
+connection or interface definition (B10 8), `metadataDefinition` (D10 15),
+a flow's `sourceOutputFeature`/`targetInputFeature` (B20 24),
+`directedFeature`/`parameter` of every behavior definition (C01 16),
+`Function::result` (C01 12), and an assignment's `referent`, which has no
+value in either reader (C20 3). On a message (B20-070..075, 6) the checked
+reader refuses the same two properties, and the compatibility reader
+answers the participants (`tank`, `engine`) where the Pilot answers none,
+since a message's ends own no features; #32 notes this too.
+
+A suite variant on the canonical format can wait until sysml-toolkit makes
+it the default (its changelog calls that a migration release).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1538,4 +1572,5 @@ feature's derived types from TypeInfo.types.
 Step 16 took OpenSysML #2041: every Symbol adapter reads members with
 library content, and TypeScript and Java read ownerPath through
 InstancePaths.
-Step 17 took sysml-toolkit v0.12.0 (#18, #19 fixed; #20 for arguments).
+Step 17 took sysml-toolkit v0.12.0 (#18, #19 fixed; #20 for arguments) and
+filed the remaining checked-reader refusals as #32.
