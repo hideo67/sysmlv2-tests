@@ -1412,6 +1412,73 @@ to #2042.
 Left on these reads: a port typed `~CmdPort` reports `CmdPort` (A30 4,
 #1962).
 
+## Step 16: OpenSysML #2041 (members and InstancePaths in every client)
+OpenSysML develop moved from `4464eedb78` to `528a4251ca` (nine merges).
+Rerunning the unchanged adapters changed no case in any suite. The ones that
+matter here:
+
+- #2041: the Java client gains `Symbol.members()`, `Model.elementProperties`
+  and `Model.instancePaths`; the Node client `ModelSymbol.members` and
+  `Model.instancePaths`; every client an option to list library-inherited
+  members (Go `WithLibraryMembers`, Rust `SymbolOptions`, Node
+  `withLibraryMembers()`, Java `SymbolOptions.withLibraryMembers`). Rust
+  gains a typed `Symbol::members()` but still has no `instance_paths`.
+- #2049: OpenSysML's own derived-property census
+  (`go run -C tools ./cmd/derived-census`), against the pinned Pilot, with a
+  baseline that fails when a served rule goes silent where the Pilot
+  answers. This is the gate #2028 asked for.
+- #2064: a bare `/* */` comment at a member position is a `Comment` element.
+  The census sees 121 more elements on pilot-examples (36737 -> 36858).
+- #2059 (a subject is a `ReferenceUsage`), #2060 (a metadata body feature
+  owns its implied `Redefinition`), #2046 (an unnamed metaobject has an id),
+  #2057 (`isAbstract`/`isIndividual` on the query leg), #2056/#2061
+  (baseline provenance) moved no case.
+
+### Adapter change: Step 10 applied to every client
+Step 10's rule is that each adapter adds the members its client enumerates
+to the listings it unions, with library members wherever the client can
+request them. Every client can now:
+
+| client | API for members | library members | ownerPath (F10) |
+|--|--|--|--|
+| Python | `Symbol.members(inherited=True, library=True)` | listed | `Instance.paths()` |
+| Go | `Symbol.Members`, looked up `WithLibraryMembers()` | listed (new) | `InstancePaths` |
+| Rust | `Model::symbol_with(...).members()` (was `wire().members`) | listed (new) | unsupported: no client API |
+| TypeScript | `ModelSymbol.withLibraryMembers().members` (new) | listed | `Model.instancePaths` (new); unsupported in sysml-wasm, which lacks `instance_paths` |
+| Java | `Model.symbol(id, withLibraryMembers).members()` (new) | listed | `Model.instancePaths` (new) |
+
+In TypeScript and Java a step is visible through a usage when it is a child,
+an attribute or a member, and `inheritedFeatureNames` and `parameters` read
+the members, as in Go.
+
+### Results
+| suite | 4464eedb78 | 528a4251ca, adapters changed |
+|--|--|--|
+| opensysml-py | 677 | 677 |
+| opensysml-go | 669 | 667 |
+| opensysml-rs | 673 | 671 |
+| opensysml-ts | 553 | 667 |
+| opensysml-ts-wasm | 553 | 661 |
+| opensysml-java | 553 | 667 |
+| opensysml-py-props, -go-props | 1284 | 1284 |
+
+TypeScript and Java gain what Step 10 gave Python, Go and Rust (A10 8, A30
+18, A40 30, B12 28, B20 6, C10 9, C30 4, D10 4, C01 2) plus F10 ownerPath
+(6). They now give the same outcome as Go on every case; ts-wasm differs
+only in the 6 ownerPath cases.
+
+C01-053/054 now fail in Go and Rust, and C01-053 in TypeScript and Java:
+`parameters` of `calc def Calc { in x; return r; }` lists the library
+`result` beside `r`, which redefines it and should mask it. This is the
+Step 10 finding (#2009 item 4, now in #2028's scope); Python showed it
+since Step 10, and the other suites passed only because they withheld
+library members.
+
+The suites now fall into two families on 14 cases, both as before: Python
+and Rust pass A10-027/036 and ten A50 cases that Go, TypeScript and Java
+fail, and Go, TypeScript and Java pass A60-007/008 that Python and Rust
+fail.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1428,3 +1495,6 @@ Step 14 took OpenSysML #2050 and made the props adapters fail on an element
 reference without an id.
 Step 15 took OpenSysML #2039 and #2040; the Symbol adapters read a
 feature's derived types from TypeInfo.types.
+Step 16 took OpenSysML #2041: every Symbol adapter reads members with
+library content, and TypeScript and Java read ownerPath through
+InstancePaths.
