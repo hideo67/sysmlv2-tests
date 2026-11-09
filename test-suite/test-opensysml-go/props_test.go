@@ -9,8 +9,9 @@
 //
 // A property the service reports as not derived is unsupported, with the service's
 // reason. A property the element's metaclass does not declare reads as empty. KerML
-// operations (allSupertypes(), directionOf()) are not properties, so the reads that
-// need them are unsupported.
+// operations are not properties: allSupertypes() is unsupported, and the direction of a
+// feature in an owner (directionOf()) is read from the owner's input and output, the
+// properties KerML defines by it (DISCUSSIONS.md, Step 19).
 package suite
 
 import (
@@ -18,6 +19,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"slices"
 	"sort"
 	"strings"
 
@@ -1122,7 +1124,29 @@ func propsRead(a *propsAPI, c caseSpec, e opensysml.ElementRef, owner *opensysml
 		return t.Metaclass == "ConjugatedPortDefinition", nil
 	case "direction":
 		if owner != nil {
-			return nil, unsupported(noOperation, "Type::directionOf(feature)")
+			// Type::directionOf(feature) is an operation; the properties defined by it are
+			// Type::input and Type::output (KerML 8.3.3.1): in, out or both is inout
+			listed := func(prop string) (bool, error) {
+				fs, err := a.elements(*owner, prop)
+				return slices.ContainsFunc(fs, func(f opensysml.ElementRef) bool { return f.ID == e.ID }), err
+			}
+			ins, err := listed("input")
+			if err != nil {
+				return nil, err
+			}
+			outs, err := listed("output")
+			if err != nil {
+				return nil, err
+			}
+			switch {
+			case ins && outs:
+				return "inout", nil
+			case ins:
+				return "in", nil
+			case outs:
+				return "out", nil
+			}
+			return nil, nil
 		}
 		return a.scalar(e, "direction")
 	case "multiplicity":

@@ -11,8 +11,9 @@ the same evaluation and instantiation API as suite opensysml-py.
 
 A property the service reports as not derived is unsupported, with the service's
 reason. A property the element's metaclass does not declare reads as empty.
-KerML operations (`allSupertypes()`, `directionOf()`) are not properties, so the
-reads that need them are unsupported.
+KerML operations are not properties: `allSupertypes()` is unsupported, and the
+direction of a feature in an owner (`directionOf()`) is read from the owner's
+`input` and `output`, the properties KerML defines by it (DISCUSSIONS.md, Step 19).
 """
 import json
 from pathlib import Path
@@ -403,7 +404,11 @@ def do_check(model, case):
         return t.metaclass == "ConjugatedPortDefinition" if t else None
     if check == "direction":
         if owner is not None:
-            raise Unsupported(NO_OPERATION.format("Type::directionOf(feature)"))
+            # Type::directionOf(feature) is an operation; the properties defined by it are
+            # Type::input and Type::output (KerML 8.3.3.1): in, out or both is inout
+            ins = any(f.id == e.id for f in api.elements(owner, "input"))
+            outs = any(f.id == e.id for f in api.elements(owner, "output"))
+            return {(True, False): "in", (False, True): "out", (True, True): "inout"}.get((ins, outs))
         return api.scalar(e, "direction")
     if check == "multiplicity":
         m = api.element(e, "multiplicity")
