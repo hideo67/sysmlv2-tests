@@ -1,19 +1,17 @@
 # SysML v2 MDK test results
 
-Test suite commit: `71bb7f6b980d`
-
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 07:58:40|
-|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 07:58:33|
-|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 07:59:02|
-|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 07:58:32|
-|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 07:58:22|
-|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:58:49|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 07:58:56|
-|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 07:58:52|
+|opensysml-go-props|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 12:28:41|
+|opensysml-go|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 12:28:34|
+|opensysml-java|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 12:29:05|
+|opensysml-py-props|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 12:28:17|
+|opensysml-py|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 12:28:07|
+|opensysml-rs|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 12:28:51|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 12:28:59|
+|opensysml-ts|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 12:28:55|
 |pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 07:59:17|
 |sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:59:05|
 |sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:59:04|
@@ -44,12 +42,12 @@ Local changes at run time (tracked files only):
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|120|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|48 / 0 / 0 / 24|48 / 24 / 0 / 0|
-|C30|78|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|78 / 0 / 0 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|
+|C30|78|78 / 0 / 0 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|78 / 0 / 0 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|
 |D10|45|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1795|1542 / 211 / 33 / 9|709 / 231 / 846 / 9|709 / 231 / 846 / 9|1542 / 211 / 33 / 9|719 / 221 / 846 / 9|713 / 221 / 852 / 9|703 / 231 / 852 / 9|709 / 231 / 846 / 9|1745 / 0 / 50 / 0|1619 / 18 / 50 / 108|1674 / 71 / 50 / 0|
+|**all**|1795|1551 / 211 / 33 / 0|709 / 231 / 855 / 0|709 / 231 / 855 / 0|1551 / 211 / 33 / 0|719 / 221 / 855 / 0|713 / 221 / 861 / 0|703 / 231 / 861 / 0|709 / 231 / 855 / 0|1745 / 0 / 50 / 0|1619 / 18 / 50 / 108|1674 / 71 / 50 / 0|
 
 ## Results
 
@@ -1604,9 +1602,9 @@ Local changes at run time (tracked files only):
 |C30-001|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-002|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-003|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C30-004|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
-|C30-005|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
-|C30-006|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
+|C30-004|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-005|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-006|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-007|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-008|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-009|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1616,9 +1614,9 @@ Local changes at run time (tracked files only):
 |C30-013|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-014|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-015|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C30-016|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
-|C30-017|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
-|C30-018|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
+|C30-016|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-017|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-018|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-019|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-020|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-021|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1628,9 +1626,9 @@ Local changes at run time (tracked files only):
 |C30-025|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-026|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-027|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C30-028|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
-|C30-029|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
-|C30-030|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|ERROR|PASS|PASS|PASS|
+|C30-028|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-029|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-030|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-031|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-032|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-033|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -8227,30 +8225,24 @@ Local changes at run time (tracked files only):
 - C30-003 [opensysml-rs] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-003 [opensysml-ts-wasm] unsupported: no Symbol field for entryAction; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-003 [opensysml-ts] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
-- C30-004 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-004 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-005 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-006 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
+- C30-004 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-004 [opensysml-java] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-004 [opensysml-py] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-004 [opensysml-rs] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-004 [opensysml-ts-wasm] unsupported: no Symbol field for entryAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-004 [opensysml-ts] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-005 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-005 [opensysml-java] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-005 [opensysml-py] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-005 [opensysml-rs] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-005 [opensysml-ts-wasm] unsupported: no Symbol field for entryAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-005 [opensysml-ts] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-006 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-006 [opensysml-java] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-006 [opensysml-py] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-006 [opensysml-rs] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
+- C30-006 [opensysml-ts-wasm] unsupported: no Symbol field for entryAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-006 [opensysml-ts] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-007 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-007 [opensysml-java] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-007 [opensysml-py] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
@@ -8305,30 +8297,24 @@ Local changes at run time (tracked files only):
 - C30-015 [opensysml-rs] unsupported: no Symbol field for doAction; the standard query API does not offer it either
 - C30-015 [opensysml-ts-wasm] unsupported: no Symbol field for doAction; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-015 [opensysml-ts] unsupported: no Symbol field for doAction; the standard query API does not offer it either
-- C30-016 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-016 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-017 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-018 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
+- C30-016 [opensysml-go] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-016 [opensysml-java] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-016 [opensysml-py] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-016 [opensysml-rs] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-016 [opensysml-ts-wasm] unsupported: no Symbol field for doAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-016 [opensysml-ts] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-017 [opensysml-go] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-017 [opensysml-java] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-017 [opensysml-py] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-017 [opensysml-rs] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-017 [opensysml-ts-wasm] unsupported: no Symbol field for doAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-017 [opensysml-ts] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-018 [opensysml-go] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-018 [opensysml-java] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-018 [opensysml-py] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-018 [opensysml-rs] unsupported: no Symbol field for doAction; the standard query API does not offer it either
+- C30-018 [opensysml-ts-wasm] unsupported: no Symbol field for doAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-018 [opensysml-ts] unsupported: no Symbol field for doAction; the standard query API does not offer it either
 - C30-019 [opensysml-go] unsupported: no Symbol field for doAction; the standard query API does not offer it either
 - C30-019 [opensysml-java] unsupported: no Symbol field for doAction; the standard query API does not offer it either
 - C30-019 [opensysml-py] unsupported: no Symbol field for doAction; the standard query API does not offer it either
@@ -8383,30 +8369,24 @@ Local changes at run time (tracked files only):
 - C30-027 [opensysml-rs] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
 - C30-027 [opensysml-ts-wasm] unsupported: no Symbol field for exitAction; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-027 [opensysml-ts] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
-- C30-028 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-028 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-029 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-go-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-go] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-java] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-py-props] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-py] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-rs] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-ts-wasm] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
-- C30-030 [opensysml-ts] error: model rejected: line 9: expected an action, an action reference or '{' after 'entry'; line 9: expected the target of the transition after 'then'
+- C30-028 [opensysml-go] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-028 [opensysml-java] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-028 [opensysml-py] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-028 [opensysml-rs] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-028 [opensysml-ts-wasm] unsupported: no Symbol field for exitAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-028 [opensysml-ts] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-029 [opensysml-go] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-029 [opensysml-java] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-029 [opensysml-py] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-029 [opensysml-rs] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-029 [opensysml-ts-wasm] unsupported: no Symbol field for exitAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-029 [opensysml-ts] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-030 [opensysml-go] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-030 [opensysml-java] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-030 [opensysml-py] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-030 [opensysml-rs] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
+- C30-030 [opensysml-ts-wasm] unsupported: no Symbol field for exitAction; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C30-030 [opensysml-ts] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
 - C30-031 [opensysml-go] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
 - C30-031 [opensysml-java] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
 - C30-031 [opensysml-py] unsupported: no Symbol field for exitAction; the standard query API does not offer it either
