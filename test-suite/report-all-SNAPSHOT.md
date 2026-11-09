@@ -4,14 +4,14 @@
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 00:04:46|
-|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 00:04:40|
-|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 00:05:07|
-|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 00:04:39|
-|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 00:04:29|
-|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 00:04:54|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 00:05:01|
-|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 00:04:57|
+|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 03:29:49|
+|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 03:29:43|
+|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 03:30:11|
+|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 03:29:26|
+|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 03:29:16|
+|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 03:29:57|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 03:30:04|
+|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-214-g48bcb7cbfe` (develop)|[`48bcb7cbfe`](https://github.com/Open-MBEE/OpenSysML/commit/48bcb7cbfe6bc8a9ea8a581440c2c8465b334ff4)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 03:30:00|
 |pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 00:00:28|
 |sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:48|
 |sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:46|
@@ -36,17 +36,17 @@ Local changes at run time (tracked files only):
 |B10|98|54 / 44 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|54 / 44 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
 |B11|90|54 / 36 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|54 / 36 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
 |B12|108|72 / 36 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|72 / 36 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
-|B20|75|42 / 33 / 0 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|42 / 33 / 0 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
-|C01|96|78 / 18 / 0 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|78 / 18 / 0 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|96 / 0 / 0 / 0|68 / 0 / 0 / 28|96 / 0 / 0 / 0|
+|B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
+|C01|96|78 / 18 / 0 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|78 / 18 / 0 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|96 / 0 / 0 / 0|68 / 0 / 0 / 28|96 / 0 / 0 / 0|
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
-|C20|120|96 / 21 / 3 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|96 / 21 / 3 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
+|C20|120|105 / 12 / 3 / 0|18 / 6 / 96 / 0|18 / 6 / 96 / 0|105 / 12 / 3 / 0|18 / 6 / 96 / 0|18 / 6 / 96 / 0|18 / 6 / 96 / 0|18 / 6 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|12 / 60 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|12 / 60 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|48 / 0 / 0 / 24|48 / 24 / 0 / 0|
 |C30|78|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|78 / 0 / 0 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|
 |D10|45|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1630|1321 / 267 / 33 / 9|675 / 199 / 747 / 9|675 / 199 / 747 / 9|1321 / 267 / 33 / 9|685 / 189 / 747 / 9|679 / 189 / 753 / 9|669 / 199 / 753 / 9|675 / 199 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
+|**all**|1630|1336 / 252 / 33 / 9|703 / 171 / 747 / 9|703 / 171 / 747 / 9|1336 / 252 / 33 / 9|713 / 161 / 747 / 9|707 / 161 / 753 / 9|697 / 171 / 753 / 9|703 / 171 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
 
 ## Results
 
@@ -960,12 +960,12 @@ Local changes at run time (tracked files only):
 |B20-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-005|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-006|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B20-007|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-008|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-009|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-010|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-011|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-012|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B20-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B20-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B20-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B20-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B20-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B20-012|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-013|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B20-014|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B20-015|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1085,10 +1085,10 @@ Local changes at run time (tracked files only):
 |C01-054|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-055|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-056|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-057|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-058|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-059|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|C01-060|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|C01-057|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-058|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-059|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-060|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |C01-061|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-062|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
 |C01-063|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
@@ -1247,24 +1247,24 @@ Local changes at run time (tracked files only):
 |C20-004|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |C20-005|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |C20-006|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-007|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-008|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-009|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-010|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-013|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-014|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-015|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-016|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-017|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-018|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-019|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-020|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-021|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-022|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-023|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|C20-024|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|C20-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-012|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-014|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-015|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-018|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-020|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-021|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C20-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C20-025|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-026|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-027|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -4543,54 +4543,6 @@ Local changes at run time (tracked files only):
 - B12-108 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
 - B12-108 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-108 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B20-007 [opensysml-go-props] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-007 [opensysml-go] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-007 [opensysml-java] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-007 [opensysml-py-props] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-007 [opensysml-py] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-007 [opensysml-rs] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-007 [opensysml-ts-wasm] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-007 [opensysml-ts] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-go-props] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-go] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-java] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-py-props] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-008 [opensysml-py] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-008 [opensysml-rs] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-ts-wasm] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-008 [opensysml-ts] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-009 [opensysml-go-props] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-009 [opensysml-go] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-009 [opensysml-java] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-009 [opensysml-py-props] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-009 [opensysml-py] fail: kind B20::Vehicle::s1: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-009 [opensysml-rs] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-009 [opensysml-ts-wasm] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-009 [opensysml-ts] fail: kind B20::Vehicle::s1: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-010 [opensysml-go-props] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-010 [opensysml-go] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-010 [opensysml-java] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-010 [opensysml-py-props] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-010 [opensysml-py] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-010 [opensysml-rs] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-010 [opensysml-ts-wasm] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-010 [opensysml-ts] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-go-props] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-go] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-java] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-py-props] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-011 [opensysml-py] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-011 [opensysml-rs] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-ts-wasm] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-011 [opensysml-ts] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-012 [opensysml-go-props] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-012 [opensysml-go] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-012 [opensysml-java] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-012 [opensysml-py-props] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-012 [opensysml-py] fail: kind B20::Vehicle::s2: got 'FlowUsage', want 'SuccessionFlowUsage'
-- B20-012 [opensysml-rs] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-012 [opensysml-ts-wasm] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
-- B20-012 [opensysml-ts] fail: kind B20::Vehicle::s2: got "FlowUsage", want "SuccessionFlowUsage"
 - B20-013 [opensysml-go] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
 - B20-013 [opensysml-java] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
 - B20-013 [opensysml-py] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
@@ -5077,69 +5029,45 @@ Local changes at run time (tracked files only):
 - C01-056 [opensysml-ts-wasm] fail: parameters C01::SubCons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-056 [opensysml-ts] fail: parameters C01::SubCons: got [["in","x"]], want [["in","x"],["out","result"]]
 - C01-056 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-057 [opensysml-go] fail: parameters C01::Req: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-057 [opensysml-java] fail: parameters C01::Req: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-057 [opensysml-py] fail: parameters C01::Req: got [['in', 'x'], ['out', 'result']], want [['in', 's'], ['in', 'x'], ['out', 'result']]
-- C01-057 [opensysml-rs] fail: parameters C01::Req: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-057 [opensysml-ts-wasm] fail: parameters C01::Req: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-057 [opensysml-ts] fail: parameters C01::Req: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
 - C01-057 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-058 [opensysml-go] fail: parameters C01::SubReq: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-058 [opensysml-java] fail: parameters C01::SubReq: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-058 [opensysml-py] fail: parameters C01::SubReq: got [['in', 'x'], ['out', 'result']], want [['in', 's'], ['in', 'x'], ['out', 'result']]
-- C01-058 [opensysml-rs] fail: parameters C01::SubReq: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-058 [opensysml-ts-wasm] fail: parameters C01::SubReq: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
-- C01-058 [opensysml-ts] fail: parameters C01::SubReq: got [["in","x"],["out","result"]], want [["in","s"],["in","x"],["out","result"]]
 - C01-058 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-059 [opensysml-go] fail: parameters C01::UC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-059 [opensysml-java] fail: parameters C01::UC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-059 [opensysml-py] fail: parameters C01::UC: got [['out', 'result']], want [['in', 's'], ['out', 'result']]
-- C01-059 [opensysml-rs] fail: parameters C01::UC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-059 [opensysml-ts-wasm] fail: parameters C01::UC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-059 [opensysml-ts] fail: parameters C01::UC: got [["out","result"]], want [["in","s"],["out","result"]]
 - C01-059 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
-- C01-060 [opensysml-go] fail: parameters C01::SubUC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-060 [opensysml-java] fail: parameters C01::SubUC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-060 [opensysml-py] fail: parameters C01::SubUC: got [['out', 'result']], want [['in', 's'], ['out', 'result']]
-- C01-060 [opensysml-rs] fail: parameters C01::SubUC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-060 [opensysml-ts-wasm] fail: parameters C01::SubUC: got [["out","result"]], want [["in","s"],["out","result"]]
-- C01-060 [opensysml-ts] fail: parameters C01::SubUC: got [["out","result"]], want [["in","s"],["out","result"]]
 - C01-060 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-061 [opensysml-go-props] fail: parameters C01::An: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-061 [opensysml-go] fail: parameters C01::An: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-061 [opensysml-java] fail: parameters C01::An: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-061 [opensysml-go] fail: parameters C01::An: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-061 [opensysml-java] fail: parameters C01::An: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
 - C01-061 [opensysml-py-props] fail: parameters C01::An: got [['in', 's'], ['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
-- C01-061 [opensysml-py] fail: parameters C01::An: got [['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
-- C01-061 [opensysml-rs] fail: parameters C01::An: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-061 [opensysml-ts-wasm] fail: parameters C01::An: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-061 [opensysml-ts] fail: parameters C01::An: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-061 [opensysml-py] fail: parameters C01::An: got [['in', 's'], ['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
+- C01-061 [opensysml-rs] fail: parameters C01::An: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-061 [opensysml-ts-wasm] fail: parameters C01::An: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-061 [opensysml-ts] fail: parameters C01::An: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
 - C01-061 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-062 [opensysml-go-props] fail: parameters C01::SubAn: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-062 [opensysml-go] fail: parameters C01::SubAn: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-062 [opensysml-java] fail: parameters C01::SubAn: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-062 [opensysml-go] fail: parameters C01::SubAn: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-062 [opensysml-java] fail: parameters C01::SubAn: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
 - C01-062 [opensysml-py-props] fail: parameters C01::SubAn: got [['in', 's'], ['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
-- C01-062 [opensysml-py] fail: parameters C01::SubAn: got [['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
-- C01-062 [opensysml-rs] fail: parameters C01::SubAn: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-062 [opensysml-ts-wasm] fail: parameters C01::SubAn: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
-- C01-062 [opensysml-ts] fail: parameters C01::SubAn: got [["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-062 [opensysml-py] fail: parameters C01::SubAn: got [['in', 's'], ['out', 'r'], ['out', 'result']], want [['in', 's'], ['out', 'r']]
+- C01-062 [opensysml-rs] fail: parameters C01::SubAn: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-062 [opensysml-ts-wasm] fail: parameters C01::SubAn: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
+- C01-062 [opensysml-ts] fail: parameters C01::SubAn: got [["in","s"],["out","r"],["out","result"]], want [["in","s"],["out","r"]]
 - C01-062 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-063 [opensysml-go-props] fail: parameters C01::Ver: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-063 [opensysml-go] fail: parameters C01::Ver: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-063 [opensysml-java] fail: parameters C01::Ver: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-063 [opensysml-go] fail: parameters C01::Ver: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-063 [opensysml-java] fail: parameters C01::Ver: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
 - C01-063 [opensysml-py-props] fail: parameters C01::Ver: got [['in', 's'], ['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
-- C01-063 [opensysml-py] fail: parameters C01::Ver: got [['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
-- C01-063 [opensysml-rs] fail: parameters C01::Ver: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-063 [opensysml-ts-wasm] fail: parameters C01::Ver: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-063 [opensysml-ts] fail: parameters C01::Ver: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-063 [opensysml-py] fail: parameters C01::Ver: got [['in', 's'], ['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
+- C01-063 [opensysml-rs] fail: parameters C01::Ver: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-063 [opensysml-ts-wasm] fail: parameters C01::Ver: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-063 [opensysml-ts] fail: parameters C01::Ver: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
 - C01-063 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-064 [opensysml-go-props] fail: parameters C01::SubVer: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-064 [opensysml-go] fail: parameters C01::SubVer: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-064 [opensysml-java] fail: parameters C01::SubVer: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-064 [opensysml-go] fail: parameters C01::SubVer: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-064 [opensysml-java] fail: parameters C01::SubVer: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
 - C01-064 [opensysml-py-props] fail: parameters C01::SubVer: got [['in', 's'], ['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
-- C01-064 [opensysml-py] fail: parameters C01::SubVer: got [['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
-- C01-064 [opensysml-rs] fail: parameters C01::SubVer: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-064 [opensysml-ts-wasm] fail: parameters C01::SubVer: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
-- C01-064 [opensysml-ts] fail: parameters C01::SubVer: got [["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-064 [opensysml-py] fail: parameters C01::SubVer: got [['in', 's'], ['out', 'result'], ['out', 'verdict']], want [['in', 's'], ['out', 'verdict']]
+- C01-064 [opensysml-rs] fail: parameters C01::SubVer: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-064 [opensysml-ts-wasm] fail: parameters C01::SubVer: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
+- C01-064 [opensysml-ts] fail: parameters C01::SubVer: got [["in","s"],["out","result"],["out","verdict"]], want [["in","s"],["out","verdict"]]
 - C01-064 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
 - C01-065 [opensysml-go] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
 - C01-065 [opensysml-java] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
@@ -5993,132 +5921,6 @@ Local changes at run time (tracked files only):
 - C20-006 [opensysml-rs] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
 - C20-006 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
 - C20-006 [opensysml-ts] fail: kind C20::Monitor::supervise::sendTo: got "ActionUsage", want "SendActionUsage"
-- C20-007 [opensysml-go] fail: kind C20::Supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-007 [opensysml-java] fail: kind C20::Supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-007 [opensysml-py] fail: kind C20::Supervise::acceptVia: got 'ActionUsage', want 'AcceptActionUsage'
-- C20-007 [opensysml-rs] fail: kind C20::Supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-007 [opensysml-ts-wasm] fail: kind C20::Supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-007 [opensysml-ts] fail: kind C20::Supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-008 [opensysml-go] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-008 [opensysml-java] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-008 [opensysml-py] fail: kind C20::Monitor::supervise::acceptVia: got 'ActionUsage', want 'AcceptActionUsage'
-- C20-008 [opensysml-rs] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-008 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-008 [opensysml-ts] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-009 [opensysml-go] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-009 [opensysml-java] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-009 [opensysml-py] fail: kind C20::Monitor::supervise::acceptVia: got 'ActionUsage', want 'AcceptActionUsage'
-- C20-009 [opensysml-rs] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-009 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-009 [opensysml-ts] fail: kind C20::Monitor::supervise::acceptVia: got "ActionUsage", want "AcceptActionUsage"
-- C20-010 [opensysml-go] fail: kind C20::Supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-010 [opensysml-java] fail: kind C20::Supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-010 [opensysml-py] fail: kind C20::Supervise::assignCount: got 'ActionUsage', want 'AssignmentActionUsage'
-- C20-010 [opensysml-rs] fail: kind C20::Supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-010 [opensysml-ts-wasm] fail: kind C20::Supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-010 [opensysml-ts] fail: kind C20::Supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-011 [opensysml-go] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-011 [opensysml-java] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-011 [opensysml-py] fail: kind C20::Monitor::supervise::assignCount: got 'ActionUsage', want 'AssignmentActionUsage'
-- C20-011 [opensysml-rs] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-011 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-011 [opensysml-ts] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-012 [opensysml-go] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-012 [opensysml-java] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-012 [opensysml-py] fail: kind C20::Monitor::supervise::assignCount: got 'ActionUsage', want 'AssignmentActionUsage'
-- C20-012 [opensysml-rs] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-012 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-012 [opensysml-ts] fail: kind C20::Monitor::supervise::assignCount: got "ActionUsage", want "AssignmentActionUsage"
-- C20-013 [opensysml-go] fail: kind C20::Supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-013 [opensysml-java] fail: kind C20::Supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-013 [opensysml-py] fail: kind C20::Supervise::performNotify: got 'ActionUsage', want 'PerformActionUsage'
-- C20-013 [opensysml-rs] fail: kind C20::Supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-013 [opensysml-ts-wasm] fail: kind C20::Supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-013 [opensysml-ts] fail: kind C20::Supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-014 [opensysml-go] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-014 [opensysml-java] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-014 [opensysml-py] fail: kind C20::Monitor::supervise::performNotify: got 'ActionUsage', want 'PerformActionUsage'
-- C20-014 [opensysml-rs] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-014 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-014 [opensysml-ts] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-015 [opensysml-go] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-015 [opensysml-java] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-015 [opensysml-py] fail: kind C20::Monitor::supervise::performNotify: got 'ActionUsage', want 'PerformActionUsage'
-- C20-015 [opensysml-rs] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-015 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-015 [opensysml-ts] fail: kind C20::Monitor::supervise::performNotify: got "ActionUsage", want "PerformActionUsage"
-- C20-016 [opensysml-go-props] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-016 [opensysml-go] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-016 [opensysml-java] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-016 [opensysml-py-props] fail: kind C20::Supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
-- C20-016 [opensysml-py] fail: kind C20::Supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
-- C20-016 [opensysml-rs] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-016 [opensysml-ts-wasm] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-016 [opensysml-ts] fail: kind C20::Supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-017 [opensysml-go-props] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-017 [opensysml-go] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-017 [opensysml-java] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-017 [opensysml-py-props] fail: kind C20::Monitor::supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
-- C20-017 [opensysml-py] fail: kind C20::Monitor::supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
-- C20-017 [opensysml-rs] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-017 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-017 [opensysml-ts] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-go-props] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-go] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-java] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-py-props] fail: kind C20::Monitor::supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
-- C20-018 [opensysml-py] fail: kind C20::Monitor::supervise::ifAct: got 'ActionUsage', want 'IfActionUsage'
-- C20-018 [opensysml-rs] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-018 [opensysml-ts] fail: kind C20::Monitor::supervise::ifAct: got "ActionUsage", want "IfActionUsage"
-- C20-019 [opensysml-go-props] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-019 [opensysml-go] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-019 [opensysml-java] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-019 [opensysml-py-props] fail: kind C20::Supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
-- C20-019 [opensysml-py] fail: kind C20::Supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
-- C20-019 [opensysml-rs] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-019 [opensysml-ts-wasm] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-019 [opensysml-ts] fail: kind C20::Supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-020 [opensysml-go-props] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-020 [opensysml-go] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-020 [opensysml-java] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-020 [opensysml-py-props] fail: kind C20::Monitor::supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
-- C20-020 [opensysml-py] fail: kind C20::Monitor::supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
-- C20-020 [opensysml-rs] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-020 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-020 [opensysml-ts] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-go-props] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-go] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-java] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-py-props] fail: kind C20::Monitor::supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
-- C20-021 [opensysml-py] fail: kind C20::Monitor::supervise::whileAct: got 'ActionUsage', want 'WhileLoopActionUsage'
-- C20-021 [opensysml-rs] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-021 [opensysml-ts] fail: kind C20::Monitor::supervise::whileAct: got "ActionUsage", want "WhileLoopActionUsage"
-- C20-022 [opensysml-go-props] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-022 [opensysml-go] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-022 [opensysml-java] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-022 [opensysml-py-props] fail: kind C20::Supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
-- C20-022 [opensysml-py] fail: kind C20::Supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
-- C20-022 [opensysml-rs] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-022 [opensysml-ts-wasm] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-022 [opensysml-ts] fail: kind C20::Supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-023 [opensysml-go-props] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-023 [opensysml-go] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-023 [opensysml-java] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-023 [opensysml-py-props] fail: kind C20::Monitor::supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
-- C20-023 [opensysml-py] fail: kind C20::Monitor::supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
-- C20-023 [opensysml-rs] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-023 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-023 [opensysml-ts] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-go-props] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-go] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-java] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-py-props] fail: kind C20::Monitor::supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
-- C20-024 [opensysml-py] fail: kind C20::Monitor::supervise::forAct: got 'ActionUsage', want 'ForLoopActionUsage'
-- C20-024 [opensysml-rs] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-ts-wasm] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
-- C20-024 [opensysml-ts] fail: kind C20::Monitor::supervise::forAct: got "ActionUsage", want "ForLoopActionUsage"
 - C20-025 [opensysml-go-props] fail: payloadArgument C20::Supervise::sendVia: got null, want [["C20::Supervise::alarm"]]
 - C20-025 [opensysml-go] unsupported: the Symbol API reports no arguments of an action
 - C20-025 [opensysml-java] unsupported: the Symbol API reports no arguments of an action
