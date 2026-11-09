@@ -102,6 +102,7 @@ expressions, F: runtime. Issue numbers are OpenSysML issues that motivated the m
 | B10 | connection and interface ends | number of ends, each end's referenced feature, the chain's features, relatedFeature / sourceFeature / targetFeature | L2, L3, L6 | connection, interface x end depth 0/1/2; def side: `end` features of a connection/interface def | #1956, #1957, #1958 |
 | B11 | binding ends | same as B10 | L2, L3, L6 | binding (named, unnamed) x end depth 0/1/2 | #1958, #1960 |
 | B12 | named connector ends | same as B10 | L2, L3, L6 | connection, interface x end depth 0/1/2, ends named `a ::> x.p` | #1956 |
+| B13 | succession and body-declared ends | same as B10 | def, L2, L3, L6 | succession named, unnamed, `then` shorthand, at an unnamed node, guarded, state transition; connection/interface with `end ... ::> x;` in its body | - |
 | B20 | flows | payload type, source output, target input, end references (flow-end form) | L2, L3, L6 | flow, succession flow, message x end depth | - |
 | C01 | behavioral definitions | name, metaclass kind, isAbstract, parameters (own and inherited), result of a calc def, subject of a requirement/case def | DL1-DL5 | action, state, calc, constraint, requirement, use case, analysis, verification def | - |
 | C10 | action parameters | name, direction, type, bound value kind and text, referenced feature of a chain value | L2-L5 | literal, feature, chain, operator expression | #1965 |
@@ -1740,6 +1741,77 @@ always empty. `Connector::relatedFeature` on the matrix models goes from 9 to
 32 of 34 (the Pilot: 33). On the Pilot examples it goes from 68 to 198 of
 447, still below the Pilot's 571 of 608, and needs a closer look.
 
+## Step 22: matrix B13 (succession ends, connector ends declared in the body)
+The census after Step 21 showed `Connector::relatedFeature` on the Pilot
+examples at 198 of 447 connectors, against the Pilot's 571 of 608. The
+matrices did not read successions, or connector ends declared in a
+connector's body, so the gap came from forms no matrix covered. On the Pilot
+examples (each file loaded on its own) the empty cases fall into four groups,
+each reproduced on a small model against the Pilot:
+
+1. An unnamed succession (`first a1 then a2;`, `then a2;`) answers
+   `sourceFeature` and `targetFeature`, but `relatedFeature` is empty. A
+   named `succession s first a1 then a2;` answers it (47).
+2. The succession of a TransitionUsage, a decision branch (`if g then a1;`)
+   or a state transition, answers no source and no target (46).
+3. A succession to or from an unnamed node (`then decide;`,
+   `then accept Sig;`) loses that end (26).
+4. A connection or interface whose ends are declared in its body
+   (`connection k : C { end :>> e1 ::> d1; ... }`, the `#derivation
+   connection { end #original ::> r; ... }` form) has no connector ends
+   (10).
+
+The api-json export shows the same for groups 1 to 3. The 36 flows without
+related features are messages; the Pilot leaves them empty too. One thing
+checked and withdrawn: after `then m1;` (a reference, not a declaration), the
+next `then accept ...` succession starts from `start` in OpenSysML; the Pilot
+gives `start` as well.
+
+B13 reads the five B10 reads on each written form of a succession, one owner
+per form (an action or state def, read on the def, through a typing usage,
+and through `plant.<usage>`), and on connection and interface usages with
+body-declared ends (redefining the def's ends, or their own) at L2, L3, L6:
+165 cases. An unnamed succession is located with the `unnamed` selector of
+B11; the succession of a guarded succession or a transition is the unnamed
+SuccessionAsUsage of the named TransitionUsage. An unnamed referenced feature
+(the accept node) is written as `[null]`. The expected values are the
+Pilot's, which passes all 165 with no adapter change. The census corpus
+`matrix-models` now includes B13.sysml.
+
+| suite | B13 pass | fail | unsupported |
+|--|--|--|--|
+| pilot-java | 165 | 0 | 0 |
+| sysml-toolkit-rs, -checked | 147 | 18 | 0 |
+| opensysml-py-props, -go-props | 50 | 115 | 0 |
+| opensysml Symbol suites (6) | 0 | 66 | 99 |
+
+OpenSysML, through GetElementProperties:
+- Named succession: all pass.
+- Unnamed succession: `relatedFeature` empty; the rest pass.
+- `then` shorthand: `relatedFeature` empty, and the first end has no
+  referenced feature (`endReferences` `[None, [a2]]`) while `sourceFeature`
+  is `a1`.
+- Target at the accept node: `targetFeature` empty, and as in the
+  shorthand the first end references nothing while `sourceFeature` is `a1`.
+  Source at the accept node: the succession has no ends at all.
+- Guarded succession and state transition: `sourceFeature`, `targetFeature`
+  and `relatedFeature` are empty. The second end references the target
+  (`a1`, `s2`); the first end references nothing. A state transition's
+  succession is not among the transition's owned members (the DEF cases, e.g.
+  B13-019), while it is visible through a typing usage. The guarded
+  succession's is listed.
+- Body-declared ends: no connector ends, for all four connectors.
+- The Symbol suites have no end fields (as in B10), and unsupported reads.
+
+sysml-toolkit, both readers: `first a1; then a2;` gives `a2` as the source
+(the last action declared before the `first`, rather than the `first`'s
+`a1`), in the shorthand and the to-node forms (18). Everything else passes,
+including the transitions and body-declared ends.
+
+The OpenSysML findings are drafted as a new issue
+(`issue-drafts/opensysml-succession-and-body-connector-ends.md`); #1957,
+which covered chained connection ends, is closed.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1767,3 +1839,5 @@ and Type::output.
 Step 20 took OpenSysML #2053, which fixes #2008 and #2009.
 Step 21 took OpenSysML #2051 (fixes #1956, #1957, #1958) and #1992 (fixes
 #1985).
+Step 22 added B13 (succession ends, body-declared connector ends): 23
+matrices, 1795 cases.
