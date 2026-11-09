@@ -1670,11 +1670,18 @@ Left:
   and a verification def lists the library's `verdict` and also
   `Evaluation::result`, which the library's `return verdict` redefines.
   #2053 states that a declared `return` masks the inherited parameter it
-  redefines; with library members listed it does not. This is item 4 of
-  #2009, which OpenSysML moved to #2028's scope.
+  redefines, and the default member listing does (`Calc`: `x`, `r`; `Ver`:
+  `s`, `verdict`); with library members included, `Evaluation::result`
+  is listed again, and GetElementProperties' `directedFeature` lists it in
+  both. This is item 4 of #2009, which OpenSysML moved to #2028's scope.
 - In the Symbol suites, a constraint def lists no inherited `result` at all,
   library members included (C01-055/056). The props suites pass these, and
   Python passed them in Step 10, so the Symbol member listing lost it since.
+  `directedFeature` lists it, as the unnamed
+  `Performances::BooleanEvaluation/Feature[0]`.
+
+Both were posted on #2028 (2026-11-09), with a small reproduction through
+both APIs.
 
 Census: no property lost its answer. Succession flows and action nodes are
 now metaclasses OpenSysML shares with the Pilot, so the compared sets and
