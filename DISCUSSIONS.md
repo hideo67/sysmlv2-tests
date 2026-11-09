@@ -1811,6 +1811,28 @@ including the transitions and body-declared ends.
 The OpenSysML findings were filed as #2068 (2026-11-09); #1957, which
 covered chained connection ends, is closed.
 
+## Step 23: OpenSysML #2044 (accept as a state's entry/do/exit action, fixes #2001)
+OpenSysML develop moved from `227e88ee3b` to `539110c486` (two merges).
+#2044 fixes #2001: `entry accept ...`, `do accept ...` and `exit accept
+...` parse, so C30-accept.sysml loads. #2038 keeps the parentheses of a
+printed condition (#2006, by another reporter); no case reads printed
+conditions. No client changed, and the adapters did not change.
+
+| suite | 227e88ee3b | 539110c486 |
+|--|--|--|
+| opensysml-py-props, -go-props | 1542 | 1551 |
+| the Symbol suites | unchanged | unchanged |
+
+No case got worse, and no OpenSysML suite has an error case left. The 9
+error cases of C30-accept (C30-004..006, 016..018, 028..030: the kind of
+an accept entry/do/exit action) pass in the props suites. In the Symbol
+suites they are unsupported, like every other C30 entry/do/exit kind, since
+the Symbol API has no entry, do or exit action field.
+
+Census: C30-accept.sysml is no longer excluded, so the matrix-models corpus
+grows from 3413 to 3476 OpenSysML elements; its rows move with the
+denominators. The Pilot-examples part is unchanged.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1840,3 +1862,4 @@ Step 21 took OpenSysML #2051 (fixes #1956, #1957, #1958) and #1992 (fixes
 #1985).
 Step 22 added B13 (succession ends, body-declared connector ends): 23
 matrices, 1795 cases.
+Step 23 took OpenSysML #2044, which fixes #2001.
