@@ -1,20 +1,22 @@
 # SysML v2 MDK test results
 
+Test suite commit: `71bb7f6b980d`
+
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 07:27:23|
-|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 07:27:16|
-|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 07:27:45|
-|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 07:27:00|
-|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 07:26:51|
-|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:27:31|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 07:27:38|
-|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 07:27:34|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 00:00:28|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:48|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:46|
+|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 07:58:40|
+|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 07:58:33|
+|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 07:59:02|
+|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 07:58:32|
+|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 07:58:22|
+|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:58:49|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 07:58:56|
+|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-255-g227e88ee3b` (develop)|[`227e88ee3b`](https://github.com/Open-MBEE/OpenSysML/commit/227e88ee3b8a013c798fed66417035b25e9ff894)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 07:58:52|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 07:59:17|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:59:05|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:59:04|
 
 Local changes at run time (tracked files only):
 
@@ -36,6 +38,7 @@ Local changes at run time (tracked files only):
 |B10|98|90 / 8 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|90 / 8 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
 |B11|90|90 / 0 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
 |B12|108|108 / 0 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
+|B13|165|50 / 115 / 0 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|50 / 115 / 0 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
 |B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|96|78 / 18 / 0 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|78 / 18 / 0 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|56 / 8 / 32 / 0|96 / 0 / 0 / 0|68 / 0 / 0 / 28|96 / 0 / 0 / 0|
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
@@ -46,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1630|1492 / 96 / 33 / 9|709 / 165 / 747 / 9|709 / 165 / 747 / 9|1492 / 96 / 33 / 9|719 / 155 / 747 / 9|713 / 155 / 753 / 9|703 / 165 / 753 / 9|709 / 165 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
+|**all**|1795|1542 / 211 / 33 / 9|709 / 231 / 846 / 9|709 / 231 / 846 / 9|1542 / 211 / 33 / 9|719 / 221 / 846 / 9|713 / 221 / 852 / 9|703 / 231 / 852 / 9|709 / 231 / 846 / 9|1745 / 0 / 50 / 0|1619 / 18 / 50 / 108|1674 / 71 / 50 / 0|
 
 ## Results
 
@@ -954,6 +957,171 @@ Local changes at run time (tracked files only):
 |B12-106|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B12-107|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B12-108|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-001|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-002|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-003|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-004|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-005|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-006|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-007|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-008|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-009|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-010|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-013|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-014|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-015|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-016|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-017|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-018|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-019|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-020|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-021|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-022|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-023|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-024|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-025|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-026|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-028|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|FAIL|FAIL|
+|B13-029|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|FAIL|FAIL|
+|B13-030|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|FAIL|FAIL|
+|B13-031|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|FAIL|FAIL|
+|B13-032|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|FAIL|FAIL|
+|B13-033|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|FAIL|FAIL|
+|B13-034|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-035|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-036|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-037|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-038|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-039|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-040|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-041|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-042|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-043|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-044|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-045|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-046|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-047|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-048|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-049|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-050|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-051|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-052|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-053|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-054|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-055|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-056|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-057|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-058|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-059|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-060|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-061|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-062|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-063|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-064|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-065|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-066|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-067|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-068|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-069|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-070|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-071|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-072|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-073|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-074|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-075|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-076|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-077|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-078|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-079|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-080|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-081|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-082|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-083|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-084|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-085|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-086|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-087|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-088|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-089|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-090|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-091|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-092|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-093|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-094|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-095|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-096|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
+|B13-097|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-098|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-099|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-100|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-101|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-102|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-103|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-104|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-105|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-106|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-107|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-108|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-109|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-110|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-111|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-112|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-113|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-114|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-115|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-116|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-117|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-118|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-119|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-120|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-121|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-122|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-123|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-124|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-125|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-126|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-127|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-128|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-129|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-130|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-131|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-132|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-133|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-134|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-135|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-136|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-137|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-138|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-139|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-140|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-141|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-142|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-143|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-144|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-145|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-146|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-147|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-148|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-149|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-150|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-151|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-152|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-153|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-154|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-155|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-156|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-157|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-158|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-159|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-160|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-161|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-162|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-163|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-164|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-165|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B20-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -4327,6 +4495,1262 @@ Local changes at run time (tracked files only):
 - B12-108 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
 - B12-108 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-108 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-001 [opensysml-go] fail: endCount B13::Named::s: got 0, want 2
+- B13-001 [opensysml-java] fail: endCount B13::Named::s: got 0, want 2
+- B13-001 [opensysml-py] fail: endCount B13::Named::s: got 0, want 2
+- B13-001 [opensysml-rs] fail: endCount B13::Named::s: got 0, want 2
+- B13-001 [opensysml-ts-wasm] fail: endCount B13::Named::s: got 0, want 2
+- B13-001 [opensysml-ts] fail: endCount B13::Named::s: got 0, want 2
+- B13-002 [opensysml-go] fail: endCount B13::Named::s: got 0, want 2
+- B13-002 [opensysml-java] fail: endCount B13::Named::s: got 0, want 2
+- B13-002 [opensysml-py] fail: endCount B13::Named::s: got 0, want 2
+- B13-002 [opensysml-rs] fail: endCount B13::Named::s: got 0, want 2
+- B13-002 [opensysml-ts-wasm] fail: endCount B13::Named::s: got 0, want 2
+- B13-002 [opensysml-ts] fail: endCount B13::Named::s: got 0, want 2
+- B13-003 [opensysml-go] fail: endCount B13::Named::s: got 0, want 2
+- B13-003 [opensysml-java] fail: endCount B13::Named::s: got 0, want 2
+- B13-003 [opensysml-py] fail: endCount B13::Named::s: got 0, want 2
+- B13-003 [opensysml-rs] fail: endCount B13::Named::s: got 0, want 2
+- B13-003 [opensysml-ts-wasm] fail: endCount B13::Named::s: got 0, want 2
+- B13-003 [opensysml-ts] fail: endCount B13::Named::s: got 0, want 2
+- B13-004 [opensysml-go] fail: endCount B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want 2
+- B13-004 [opensysml-java] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-004 [opensysml-py] fail: endCount B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want 2
+- B13-004 [opensysml-rs] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-004 [opensysml-ts-wasm] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-004 [opensysml-ts] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-005 [opensysml-go] fail: endCount B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want 2
+- B13-005 [opensysml-java] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-005 [opensysml-py] fail: endCount B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want 2
+- B13-005 [opensysml-rs] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-005 [opensysml-ts-wasm] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-005 [opensysml-ts] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-006 [opensysml-go] fail: endCount B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want 2
+- B13-006 [opensysml-java] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-006 [opensysml-py] fail: endCount B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want 2
+- B13-006 [opensysml-rs] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-006 [opensysml-ts-wasm] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-006 [opensysml-ts] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
+- B13-007 [opensysml-go] fail: endCount B13::Shorthand: got "\u003cunnamed SuccessionAsUsage #0 of B13::Shorthand not listed\u003e", want 2
+- B13-007 [opensysml-java] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-007 [opensysml-py] fail: endCount B13::Shorthand: got '<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>', want 2
+- B13-007 [opensysml-rs] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-007 [opensysml-ts-wasm] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-007 [opensysml-ts] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-008 [opensysml-go] fail: endCount B13::Shorthand: got "\u003cunnamed SuccessionAsUsage #0 of B13::Shorthand not listed\u003e", want 2
+- B13-008 [opensysml-java] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-008 [opensysml-py] fail: endCount B13::Shorthand: got '<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>', want 2
+- B13-008 [opensysml-rs] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-008 [opensysml-ts-wasm] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-008 [opensysml-ts] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-009 [opensysml-go] fail: endCount B13::Shorthand: got "\u003cunnamed SuccessionAsUsage #0 of B13::Shorthand not listed\u003e", want 2
+- B13-009 [opensysml-java] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-009 [opensysml-py] fail: endCount B13::Shorthand: got '<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>', want 2
+- B13-009 [opensysml-rs] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-009 [opensysml-ts-wasm] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-009 [opensysml-ts] fail: endCount B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want 2
+- B13-010 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #0 of B13::NodeEnds not listed\u003e", want 2
+- B13-010 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-010 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>', want 2
+- B13-010 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-010 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-010 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-011 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #0 of B13::NodeEnds not listed\u003e", want 2
+- B13-011 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-011 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>', want 2
+- B13-011 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-011 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-011 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-012 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #0 of B13::NodeEnds not listed\u003e", want 2
+- B13-012 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-012 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>', want 2
+- B13-012 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-012 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-012 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
+- B13-013 [opensysml-go-props] fail: endCount B13::NodeEnds: got 0, want 2
+- B13-013 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want 2
+- B13-013 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-013 [opensysml-py-props] fail: endCount B13::NodeEnds: got 0, want 2
+- B13-013 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want 2
+- B13-013 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-013 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-013 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-014 [opensysml-go-props] fail: endCount B13::NodeEnds: got 0, want 2
+- B13-014 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want 2
+- B13-014 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-014 [opensysml-py-props] fail: endCount B13::NodeEnds: got 0, want 2
+- B13-014 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want 2
+- B13-014 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-014 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-014 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-015 [opensysml-go-props] fail: endCount B13::NodeEnds: got 0, want 2
+- B13-015 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want 2
+- B13-015 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-015 [opensysml-py-props] fail: endCount B13::NodeEnds: got 0, want 2
+- B13-015 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want 2
+- B13-015 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-015 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-015 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
+- B13-016 [opensysml-go] fail: endCount B13::Guarded::g: got "\u003cunnamed SuccessionAsUsage #0 of B13::Guarded::g not listed\u003e", want 2
+- B13-016 [opensysml-java] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-016 [opensysml-py] fail: endCount B13::Guarded::g: got '<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>', want 2
+- B13-016 [opensysml-rs] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-016 [opensysml-ts-wasm] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-016 [opensysml-ts] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-017 [opensysml-go] fail: endCount B13::Guarded::g: got "\u003cunnamed SuccessionAsUsage #0 of B13::Guarded::g not listed\u003e", want 2
+- B13-017 [opensysml-java] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-017 [opensysml-py] fail: endCount B13::Guarded::g: got '<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>', want 2
+- B13-017 [opensysml-rs] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-017 [opensysml-ts-wasm] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-017 [opensysml-ts] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-018 [opensysml-go] fail: endCount B13::Guarded::g: got "\u003cunnamed SuccessionAsUsage #0 of B13::Guarded::g not listed\u003e", want 2
+- B13-018 [opensysml-java] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-018 [opensysml-py] fail: endCount B13::Guarded::g: got '<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>', want 2
+- B13-018 [opensysml-rs] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-018 [opensysml-ts-wasm] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-018 [opensysml-ts] fail: endCount B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want 2
+- B13-019 [opensysml-go-props] fail: endCount B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want 2
+- B13-019 [opensysml-go] fail: endCount B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want 2
+- B13-019 [opensysml-java] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-019 [opensysml-py-props] fail: endCount B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want 2
+- B13-019 [opensysml-py] fail: endCount B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want 2
+- B13-019 [opensysml-rs] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-019 [opensysml-ts-wasm] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-019 [opensysml-ts] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-020 [opensysml-go] fail: endCount B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want 2
+- B13-020 [opensysml-java] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-020 [opensysml-py] fail: endCount B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want 2
+- B13-020 [opensysml-rs] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-020 [opensysml-ts-wasm] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-020 [opensysml-ts] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-021 [opensysml-go] fail: endCount B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want 2
+- B13-021 [opensysml-java] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-021 [opensysml-py] fail: endCount B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want 2
+- B13-021 [opensysml-rs] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-021 [opensysml-ts-wasm] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-021 [opensysml-ts] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
+- B13-022 [opensysml-go] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-022 [opensysml-java] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-022 [opensysml-py] fail: endReferences B13::Named::s: got [], want [['B13::Named::a1'], ['B13::Named::a2']]
+- B13-022 [opensysml-rs] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-022 [opensysml-ts-wasm] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-022 [opensysml-ts] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-023 [opensysml-go] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-023 [opensysml-java] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-023 [opensysml-py] fail: endReferences B13::Named::s: got [], want [['B13::Named::a1'], ['B13::Named::a2']]
+- B13-023 [opensysml-rs] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-023 [opensysml-ts-wasm] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-023 [opensysml-ts] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-024 [opensysml-go] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-024 [opensysml-java] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-024 [opensysml-py] fail: endReferences B13::Named::s: got [], want [['B13::Named::a1'], ['B13::Named::a2']]
+- B13-024 [opensysml-rs] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-024 [opensysml-ts-wasm] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-024 [opensysml-ts] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
+- B13-025 [opensysml-go] fail: endReferences B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-025 [opensysml-java] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-025 [opensysml-py] fail: endReferences B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
+- B13-025 [opensysml-rs] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-025 [opensysml-ts-wasm] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-025 [opensysml-ts] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-026 [opensysml-go] fail: endReferences B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-026 [opensysml-java] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-026 [opensysml-py] fail: endReferences B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
+- B13-026 [opensysml-rs] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-026 [opensysml-ts-wasm] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-026 [opensysml-ts] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-027 [opensysml-go] fail: endReferences B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-027 [opensysml-java] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-027 [opensysml-py] fail: endReferences B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
+- B13-027 [opensysml-rs] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-027 [opensysml-ts-wasm] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-027 [opensysml-ts] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-028 [opensysml-go-props] fail: endReferences B13::Shorthand: got [null,["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [opensysml-go] fail: endReferences B13::Shorthand: got "\u003cunnamed SuccessionAsUsage #0 of B13::Shorthand not listed\u003e", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [opensysml-java] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [opensysml-py-props] fail: endReferences B13::Shorthand: got [None, ['B13::Shorthand::a2']], want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-028 [opensysml-py] fail: endReferences B13::Shorthand: got '<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>', want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-028 [opensysml-rs] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [opensysml-ts-wasm] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [opensysml-ts] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [sysml-toolkit-rs-checked] fail: endReferences B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-028 [sysml-toolkit-rs] fail: endReferences B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [opensysml-go-props] fail: endReferences B13::Shorthand: got [null,["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [opensysml-go] fail: endReferences B13::Shorthand: got "\u003cunnamed SuccessionAsUsage #0 of B13::Shorthand not listed\u003e", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [opensysml-java] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [opensysml-py-props] fail: endReferences B13::Shorthand: got [None, ['B13::Shorthand::a2']], want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-029 [opensysml-py] fail: endReferences B13::Shorthand: got '<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>', want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-029 [opensysml-rs] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [opensysml-ts-wasm] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [opensysml-ts] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [sysml-toolkit-rs-checked] fail: endReferences B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-029 [sysml-toolkit-rs] fail: endReferences B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [opensysml-go-props] fail: endReferences B13::Shorthand: got [null,["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [opensysml-go] fail: endReferences B13::Shorthand: got "\u003cunnamed SuccessionAsUsage #0 of B13::Shorthand not listed\u003e", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [opensysml-java] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [opensysml-py-props] fail: endReferences B13::Shorthand: got [None, ['B13::Shorthand::a2']], want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-030 [opensysml-py] fail: endReferences B13::Shorthand: got '<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>', want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-030 [opensysml-rs] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [opensysml-ts-wasm] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [opensysml-ts] fail: endReferences B13::Shorthand: got "<unnamed SuccessionAsUsage #0 of B13::Shorthand not listed>", want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [sysml-toolkit-rs-checked] fail: endReferences B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-030 [sysml-toolkit-rs] fail: endReferences B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-031 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [null,[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #0 of B13::NodeEnds not listed\u003e", want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [None, [None]], want [['B13::NodeEnds::a1'], [None]]
+- B13-031 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>', want [['B13::NodeEnds::a1'], [None]]
+- B13-031 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [sysml-toolkit-rs-checked] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-031 [sysml-toolkit-rs] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [null,[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #0 of B13::NodeEnds not listed\u003e", want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [None, [None]], want [['B13::NodeEnds::a1'], [None]]
+- B13-032 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>', want [['B13::NodeEnds::a1'], [None]]
+- B13-032 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [sysml-toolkit-rs-checked] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-032 [sysml-toolkit-rs] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [null,[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #0 of B13::NodeEnds not listed\u003e", want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [None, [None]], want [['B13::NodeEnds::a1'], [None]]
+- B13-033 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>', want [['B13::NodeEnds::a1'], [None]]
+- B13-033 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [sysml-toolkit-rs-checked] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-033 [sysml-toolkit-rs] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-034 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-034 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want [[null],["B13::NodeEnds::a3"]]
+- B13-034 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-034 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-034 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want [[None], ['B13::NodeEnds::a3']]
+- B13-034 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-034 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-034 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-035 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want [[None], ['B13::NodeEnds::a3']]
+- B13-035 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-036 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want [[None], ['B13::NodeEnds::a3']]
+- B13-036 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
+- B13-037 [opensysml-go-props] fail: endReferences B13::Guarded::g: got [null,["B13::Guarded::a1"]], want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-037 [opensysml-go] fail: endReferences B13::Guarded::g: got "\u003cunnamed SuccessionAsUsage #0 of B13::Guarded::g not listed\u003e", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-037 [opensysml-java] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-037 [opensysml-py-props] fail: endReferences B13::Guarded::g: got [None, ['B13::Guarded::a1']], want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-037 [opensysml-py] fail: endReferences B13::Guarded::g: got '<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>', want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-037 [opensysml-rs] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-037 [opensysml-ts-wasm] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-037 [opensysml-ts] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-038 [opensysml-go-props] fail: endReferences B13::Guarded::g: got [null,["B13::Guarded::a1"]], want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-038 [opensysml-go] fail: endReferences B13::Guarded::g: got "\u003cunnamed SuccessionAsUsage #0 of B13::Guarded::g not listed\u003e", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-038 [opensysml-java] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-038 [opensysml-py-props] fail: endReferences B13::Guarded::g: got [None, ['B13::Guarded::a1']], want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-038 [opensysml-py] fail: endReferences B13::Guarded::g: got '<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>', want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-038 [opensysml-rs] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-038 [opensysml-ts-wasm] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-038 [opensysml-ts] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-039 [opensysml-go-props] fail: endReferences B13::Guarded::g: got [null,["B13::Guarded::a1"]], want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-039 [opensysml-go] fail: endReferences B13::Guarded::g: got "\u003cunnamed SuccessionAsUsage #0 of B13::Guarded::g not listed\u003e", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-039 [opensysml-java] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-039 [opensysml-py-props] fail: endReferences B13::Guarded::g: got [None, ['B13::Guarded::a1']], want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-039 [opensysml-py] fail: endReferences B13::Guarded::g: got '<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>', want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-039 [opensysml-rs] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-039 [opensysml-ts-wasm] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-039 [opensysml-ts] fail: endReferences B13::Guarded::g: got "<unnamed SuccessionAsUsage #0 of B13::Guarded::g not listed>", want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-040 [opensysml-go-props] fail: endReferences B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-040 [opensysml-go] fail: endReferences B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-040 [opensysml-java] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-040 [opensysml-py-props] fail: endReferences B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-040 [opensysml-py] fail: endReferences B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-040 [opensysml-rs] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-040 [opensysml-ts-wasm] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-040 [opensysml-ts] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-041 [opensysml-go-props] fail: endReferences B13::Machine::t: got [null,["B13::Machine::s2"]], want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-041 [opensysml-go] fail: endReferences B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-041 [opensysml-java] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-041 [opensysml-py-props] fail: endReferences B13::Machine::t: got [None, ['B13::Machine::s2']], want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-041 [opensysml-py] fail: endReferences B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-041 [opensysml-rs] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-041 [opensysml-ts-wasm] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-041 [opensysml-ts] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-042 [opensysml-go-props] fail: endReferences B13::Machine::t: got [null,["B13::Machine::s2"]], want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-042 [opensysml-go] fail: endReferences B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-042 [opensysml-java] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-042 [opensysml-py-props] fail: endReferences B13::Machine::t: got [None, ['B13::Machine::s2']], want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-042 [opensysml-py] fail: endReferences B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-042 [opensysml-rs] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-042 [opensysml-ts-wasm] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-042 [opensysml-ts] fail: endReferences B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-043 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-043 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-043 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-043 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-043 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-043 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-044 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-044 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-044 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-044 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-044 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-044 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-045 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-045 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-045 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-045 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-045 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-045 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-046 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-046 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-046 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-046 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-046 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-046 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-047 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-047 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-047 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-047 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-047 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-047 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-048 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-048 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-048 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-048 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-048 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-048 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-049 [sysml-toolkit-rs-checked] fail: sourceFeature B13::Shorthand: got ["B13::Shorthand::a2"], want ["B13::Shorthand::a1"]
+- B13-049 [sysml-toolkit-rs] fail: sourceFeature B13::Shorthand: got ["B13::Shorthand::a2"], want ["B13::Shorthand::a1"]
+- B13-050 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-050 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-050 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-050 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-050 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-050 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-050 [sysml-toolkit-rs-checked] fail: sourceFeature B13::Shorthand: got ["B13::Shorthand::a2"], want ["B13::Shorthand::a1"]
+- B13-050 [sysml-toolkit-rs] fail: sourceFeature B13::Shorthand: got ["B13::Shorthand::a2"], want ["B13::Shorthand::a1"]
+- B13-051 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-051 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-051 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-051 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-051 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-051 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-051 [sysml-toolkit-rs-checked] fail: sourceFeature B13::Shorthand: got ["B13::Shorthand::a2"], want ["B13::Shorthand::a1"]
+- B13-051 [sysml-toolkit-rs] fail: sourceFeature B13::Shorthand: got ["B13::Shorthand::a2"], want ["B13::Shorthand::a1"]
+- B13-052 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-052 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-052 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-052 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-052 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-052 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-052 [sysml-toolkit-rs-checked] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
+- B13-052 [sysml-toolkit-rs] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
+- B13-053 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-053 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-053 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-053 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-053 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-053 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-053 [sysml-toolkit-rs-checked] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
+- B13-053 [sysml-toolkit-rs] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
+- B13-054 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-054 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-054 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-054 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-054 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-054 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-054 [sysml-toolkit-rs-checked] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
+- B13-054 [sysml-toolkit-rs] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
+- B13-055 [opensysml-go-props] fail: sourceFeature B13::NodeEnds: got null, want [null]
+- B13-055 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-055 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-055 [opensysml-py-props] fail: sourceFeature B13::NodeEnds: got None, want [None]
+- B13-055 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-055 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-055 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-055 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-056 [opensysml-go-props] fail: sourceFeature B13::NodeEnds: got null, want [null]
+- B13-056 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-056 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-056 [opensysml-py-props] fail: sourceFeature B13::NodeEnds: got None, want [None]
+- B13-056 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-056 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-056 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-056 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-057 [opensysml-go-props] fail: sourceFeature B13::NodeEnds: got null, want [null]
+- B13-057 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-057 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-057 [opensysml-py-props] fail: sourceFeature B13::NodeEnds: got None, want [None]
+- B13-057 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-057 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-057 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-057 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-058 [opensysml-go-props] fail: sourceFeature B13::Guarded::g: got null, want ["B13::Guarded::d"]
+- B13-058 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-058 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-058 [opensysml-py-props] fail: sourceFeature B13::Guarded::g: got None, want ['B13::Guarded::d']
+- B13-058 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-058 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-058 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-058 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-059 [opensysml-go-props] fail: sourceFeature B13::Guarded::g: got null, want ["B13::Guarded::d"]
+- B13-059 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-059 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-059 [opensysml-py-props] fail: sourceFeature B13::Guarded::g: got None, want ['B13::Guarded::d']
+- B13-059 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-059 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-059 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-059 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-060 [opensysml-go-props] fail: sourceFeature B13::Guarded::g: got null, want ["B13::Guarded::d"]
+- B13-060 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-060 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-060 [opensysml-py-props] fail: sourceFeature B13::Guarded::g: got None, want ['B13::Guarded::d']
+- B13-060 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-060 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-060 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-060 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-061 [opensysml-go-props] fail: sourceFeature B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want ["B13::Machine::s1"]
+- B13-061 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-061 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-061 [opensysml-py-props] fail: sourceFeature B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want ['B13::Machine::s1']
+- B13-061 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-061 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-061 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-061 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-062 [opensysml-go-props] fail: sourceFeature B13::Machine::t: got null, want ["B13::Machine::s1"]
+- B13-062 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-062 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-062 [opensysml-py-props] fail: sourceFeature B13::Machine::t: got None, want ['B13::Machine::s1']
+- B13-062 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-062 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-062 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-062 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-063 [opensysml-go-props] fail: sourceFeature B13::Machine::t: got null, want ["B13::Machine::s1"]
+- B13-063 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-063 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-063 [opensysml-py-props] fail: sourceFeature B13::Machine::t: got None, want ['B13::Machine::s1']
+- B13-063 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-063 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-063 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-063 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
+- B13-064 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-064 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-064 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-064 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-064 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-064 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-065 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-065 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-065 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-065 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-065 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-065 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-066 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-066 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-066 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-066 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-066 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-066 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-067 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-067 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-067 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-067 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-067 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-067 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-068 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-068 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-068 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-068 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-068 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-068 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-069 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-069 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-069 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-069 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-069 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-069 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-070 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-070 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-070 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-070 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-070 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-070 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-071 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-071 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-071 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-071 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-071 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-071 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-072 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-072 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-072 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-072 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-072 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-072 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-073 [opensysml-go-props] fail: targetFeature B13::NodeEnds: got [], want [[null]]
+- B13-073 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-073 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-073 [opensysml-py-props] fail: targetFeature B13::NodeEnds: got [], want [[None]]
+- B13-073 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-073 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-073 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-073 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-074 [opensysml-go-props] fail: targetFeature B13::NodeEnds: got [], want [[null]]
+- B13-074 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-074 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-074 [opensysml-py-props] fail: targetFeature B13::NodeEnds: got [], want [[None]]
+- B13-074 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-074 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-074 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-074 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-075 [opensysml-go-props] fail: targetFeature B13::NodeEnds: got [], want [[null]]
+- B13-075 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-075 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-075 [opensysml-py-props] fail: targetFeature B13::NodeEnds: got [], want [[None]]
+- B13-075 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-075 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-075 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-075 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-076 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-076 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-076 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-076 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-076 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-076 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-077 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-077 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-077 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-077 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-077 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-077 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-078 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-078 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-078 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-078 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-078 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-078 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-079 [opensysml-go-props] fail: targetFeature B13::Guarded::g: got [], want [["B13::Guarded::a1"]]
+- B13-079 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-079 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-079 [opensysml-py-props] fail: targetFeature B13::Guarded::g: got [], want [['B13::Guarded::a1']]
+- B13-079 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-079 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-079 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-079 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-080 [opensysml-go-props] fail: targetFeature B13::Guarded::g: got [], want [["B13::Guarded::a1"]]
+- B13-080 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-080 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-080 [opensysml-py-props] fail: targetFeature B13::Guarded::g: got [], want [['B13::Guarded::a1']]
+- B13-080 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-080 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-080 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-080 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-081 [opensysml-go-props] fail: targetFeature B13::Guarded::g: got [], want [["B13::Guarded::a1"]]
+- B13-081 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-081 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-081 [opensysml-py-props] fail: targetFeature B13::Guarded::g: got [], want [['B13::Guarded::a1']]
+- B13-081 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-081 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-081 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-081 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-082 [opensysml-go-props] fail: targetFeature B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want [["B13::Machine::s2"]]
+- B13-082 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-082 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-082 [opensysml-py-props] fail: targetFeature B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want [['B13::Machine::s2']]
+- B13-082 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-082 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-082 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-082 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-083 [opensysml-go-props] fail: targetFeature B13::Machine::t: got [], want [["B13::Machine::s2"]]
+- B13-083 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-083 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-083 [opensysml-py-props] fail: targetFeature B13::Machine::t: got [], want [['B13::Machine::s2']]
+- B13-083 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-083 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-083 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-083 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-084 [opensysml-go-props] fail: targetFeature B13::Machine::t: got [], want [["B13::Machine::s2"]]
+- B13-084 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-084 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-084 [opensysml-py-props] fail: targetFeature B13::Machine::t: got [], want [['B13::Machine::s2']]
+- B13-084 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-084 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-084 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-084 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
+- B13-085 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-085 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-085 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-085 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-085 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-085 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-086 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-086 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-086 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-086 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-086 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-086 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-087 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-087 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-087 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-087 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-087 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-087 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-088 [opensysml-go-props] fail: relatedFeature B13::Unnamed: got [], want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-088 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-088 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-088 [opensysml-py-props] fail: relatedFeature B13::Unnamed: got [], want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
+- B13-088 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-088 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-088 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-088 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-089 [opensysml-go-props] fail: relatedFeature B13::Unnamed: got [], want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-089 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-089 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-089 [opensysml-py-props] fail: relatedFeature B13::Unnamed: got [], want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
+- B13-089 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-089 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-089 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-089 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-090 [opensysml-go-props] fail: relatedFeature B13::Unnamed: got [], want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
+- B13-090 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-090 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-090 [opensysml-py-props] fail: relatedFeature B13::Unnamed: got [], want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
+- B13-090 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-090 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-090 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-090 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [opensysml-go-props] fail: relatedFeature B13::Shorthand: got [], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-091 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [opensysml-py-props] fail: relatedFeature B13::Shorthand: got [], want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-091 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-091 [sysml-toolkit-rs-checked] fail: relatedFeature B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-091 [sysml-toolkit-rs] fail: relatedFeature B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-092 [opensysml-go-props] fail: relatedFeature B13::Shorthand: got [], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-092 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-092 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-092 [opensysml-py-props] fail: relatedFeature B13::Shorthand: got [], want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-092 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-092 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-092 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-092 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-092 [sysml-toolkit-rs-checked] fail: relatedFeature B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-092 [sysml-toolkit-rs] fail: relatedFeature B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-093 [opensysml-go-props] fail: relatedFeature B13::Shorthand: got [], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-093 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-093 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-093 [opensysml-py-props] fail: relatedFeature B13::Shorthand: got [], want [['B13::Shorthand::a1'], ['B13::Shorthand::a2']]
+- B13-093 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-093 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-093 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-093 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-093 [sysml-toolkit-rs-checked] fail: relatedFeature B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-093 [sysml-toolkit-rs] fail: relatedFeature B13::Shorthand: got [["B13::Shorthand::a2"],["B13::Shorthand::a2"]], want [["B13::Shorthand::a1"],["B13::Shorthand::a2"]]
+- B13-094 [opensysml-go-props] fail: relatedFeature B13::NodeEnds: got [], want [["B13::NodeEnds::a1"],[null]]
+- B13-094 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-094 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-094 [opensysml-py-props] fail: relatedFeature B13::NodeEnds: got [], want [['B13::NodeEnds::a1'], [None]]
+- B13-094 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-094 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-094 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-094 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-094 [sysml-toolkit-rs-checked] fail: relatedFeature B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-094 [sysml-toolkit-rs] fail: relatedFeature B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-095 [opensysml-go-props] fail: relatedFeature B13::NodeEnds: got [], want [["B13::NodeEnds::a1"],[null]]
+- B13-095 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-095 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-095 [opensysml-py-props] fail: relatedFeature B13::NodeEnds: got [], want [['B13::NodeEnds::a1'], [None]]
+- B13-095 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-095 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-095 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-095 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-095 [sysml-toolkit-rs-checked] fail: relatedFeature B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-095 [sysml-toolkit-rs] fail: relatedFeature B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-096 [opensysml-go-props] fail: relatedFeature B13::NodeEnds: got [], want [["B13::NodeEnds::a1"],[null]]
+- B13-096 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-096 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-096 [opensysml-py-props] fail: relatedFeature B13::NodeEnds: got [], want [['B13::NodeEnds::a1'], [None]]
+- B13-096 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-096 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-096 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-096 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-096 [sysml-toolkit-rs-checked] fail: relatedFeature B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-096 [sysml-toolkit-rs] fail: relatedFeature B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
+- B13-097 [opensysml-go-props] fail: relatedFeature B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-097 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-097 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-097 [opensysml-py-props] fail: relatedFeature B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-097 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-097 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-097 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-097 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-098 [opensysml-go-props] fail: relatedFeature B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-098 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-098 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-098 [opensysml-py-props] fail: relatedFeature B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-098 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-098 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-098 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-098 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-099 [opensysml-go-props] fail: relatedFeature B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-099 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-099 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-099 [opensysml-py-props] fail: relatedFeature B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-099 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-099 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-099 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-099 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-100 [opensysml-go-props] fail: relatedFeature B13::Guarded::g: got [], want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-100 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-100 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-100 [opensysml-py-props] fail: relatedFeature B13::Guarded::g: got [], want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-100 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-100 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-100 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-100 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-101 [opensysml-go-props] fail: relatedFeature B13::Guarded::g: got [], want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-101 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-101 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-101 [opensysml-py-props] fail: relatedFeature B13::Guarded::g: got [], want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-101 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-101 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-101 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-101 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-102 [opensysml-go-props] fail: relatedFeature B13::Guarded::g: got [], want [["B13::Guarded::d"],["B13::Guarded::a1"]]
+- B13-102 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-102 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-102 [opensysml-py-props] fail: relatedFeature B13::Guarded::g: got [], want [['B13::Guarded::d'], ['B13::Guarded::a1']]
+- B13-102 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-102 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-102 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-102 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-103 [opensysml-go-props] fail: relatedFeature B13::Machine::t: got "\u003cunnamed SuccessionAsUsage #0 of B13::Machine::t not listed\u003e", want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-103 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-103 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-103 [opensysml-py-props] fail: relatedFeature B13::Machine::t: got '<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>', want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-103 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-103 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-103 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-103 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-104 [opensysml-go-props] fail: relatedFeature B13::Machine::t: got [], want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-104 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-104 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-104 [opensysml-py-props] fail: relatedFeature B13::Machine::t: got [], want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-104 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-104 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-104 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-104 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-105 [opensysml-go-props] fail: relatedFeature B13::Machine::t: got [], want [["B13::Machine::s1"],["B13::Machine::s2"]]
+- B13-105 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-105 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-105 [opensysml-py-props] fail: relatedFeature B13::Machine::t: got [], want [['B13::Machine::s1'], ['B13::Machine::s2']]
+- B13-105 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-105 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-105 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-105 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
+- B13-106 [opensysml-go-props] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-go] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-java] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-py-props] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-py] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-rs] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-ts-wasm] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-106 [opensysml-ts] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-go-props] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-go] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-java] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-py-props] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-py] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-rs] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-ts-wasm] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-107 [opensysml-ts] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-go-props] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-go] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-java] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-py-props] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-py] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-rs] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-ts-wasm] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-108 [opensysml-ts] fail: endCount B13::Sys::k1: got 0, want 2
+- B13-109 [opensysml-go-props] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-go] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-java] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-py-props] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-py] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-rs] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-ts-wasm] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-109 [opensysml-ts] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-go-props] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-go] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-java] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-py-props] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-py] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-rs] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-ts-wasm] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-110 [opensysml-ts] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-go-props] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-go] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-java] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-py-props] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-py] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-rs] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-ts-wasm] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-111 [opensysml-ts] fail: endCount B13::Sys::k2: got 0, want 2
+- B13-112 [opensysml-go-props] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-go] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-java] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-py-props] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-py] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-rs] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-ts-wasm] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-112 [opensysml-ts] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-go-props] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-go] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-java] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-py-props] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-py] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-rs] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-ts-wasm] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-113 [opensysml-ts] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-go-props] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-go] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-java] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-py-props] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-py] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-rs] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-ts-wasm] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-114 [opensysml-ts] fail: endCount B13::Sys::j1: got 0, want 2
+- B13-115 [opensysml-go-props] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-go] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-java] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-py-props] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-py] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-rs] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-ts-wasm] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-115 [opensysml-ts] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-go-props] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-go] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-java] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-py-props] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-py] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-rs] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-ts-wasm] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-116 [opensysml-ts] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-go-props] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-go] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-java] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-py-props] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-py] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-rs] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-ts-wasm] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-117 [opensysml-ts] fail: endCount B13::Sys::j2: got 0, want 2
+- B13-118 [opensysml-go-props] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-118 [opensysml-go] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-118 [opensysml-java] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-118 [opensysml-py-props] fail: endReferences B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-118 [opensysml-py] fail: endReferences B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-118 [opensysml-rs] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-118 [opensysml-ts-wasm] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-118 [opensysml-ts] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-119 [opensysml-go-props] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-119 [opensysml-go] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-119 [opensysml-java] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-119 [opensysml-py-props] fail: endReferences B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-119 [opensysml-py] fail: endReferences B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-119 [opensysml-rs] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-119 [opensysml-ts-wasm] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-119 [opensysml-ts] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-120 [opensysml-go-props] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-120 [opensysml-go] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-120 [opensysml-java] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-120 [opensysml-py-props] fail: endReferences B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-120 [opensysml-py] fail: endReferences B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-120 [opensysml-rs] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-120 [opensysml-ts-wasm] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-120 [opensysml-ts] fail: endReferences B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-121 [opensysml-go-props] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-121 [opensysml-go] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-121 [opensysml-java] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-121 [opensysml-py-props] fail: endReferences B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-121 [opensysml-py] fail: endReferences B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-121 [opensysml-rs] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-121 [opensysml-ts-wasm] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-121 [opensysml-ts] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-122 [opensysml-go-props] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-122 [opensysml-go] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-122 [opensysml-java] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-122 [opensysml-py-props] fail: endReferences B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-122 [opensysml-py] fail: endReferences B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-122 [opensysml-rs] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-122 [opensysml-ts-wasm] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-122 [opensysml-ts] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-123 [opensysml-go-props] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-123 [opensysml-go] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-123 [opensysml-java] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-123 [opensysml-py-props] fail: endReferences B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-123 [opensysml-py] fail: endReferences B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-123 [opensysml-rs] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-123 [opensysml-ts-wasm] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-123 [opensysml-ts] fail: endReferences B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-124 [opensysml-go-props] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-124 [opensysml-go] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-124 [opensysml-java] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-124 [opensysml-py-props] fail: endReferences B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-124 [opensysml-py] fail: endReferences B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-124 [opensysml-rs] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-124 [opensysml-ts-wasm] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-124 [opensysml-ts] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-125 [opensysml-go-props] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-125 [opensysml-go] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-125 [opensysml-java] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-125 [opensysml-py-props] fail: endReferences B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-125 [opensysml-py] fail: endReferences B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-125 [opensysml-rs] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-125 [opensysml-ts-wasm] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-125 [opensysml-ts] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-126 [opensysml-go-props] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-126 [opensysml-go] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-126 [opensysml-java] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-126 [opensysml-py-props] fail: endReferences B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-126 [opensysml-py] fail: endReferences B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-126 [opensysml-rs] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-126 [opensysml-ts-wasm] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-126 [opensysml-ts] fail: endReferences B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-127 [opensysml-go-props] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-127 [opensysml-go] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-127 [opensysml-java] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-127 [opensysml-py-props] fail: endReferences B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-127 [opensysml-py] fail: endReferences B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-127 [opensysml-rs] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-127 [opensysml-ts-wasm] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-127 [opensysml-ts] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-128 [opensysml-go-props] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-128 [opensysml-go] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-128 [opensysml-java] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-128 [opensysml-py-props] fail: endReferences B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-128 [opensysml-py] fail: endReferences B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-128 [opensysml-rs] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-128 [opensysml-ts-wasm] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-128 [opensysml-ts] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-129 [opensysml-go-props] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-129 [opensysml-go] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-129 [opensysml-java] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-129 [opensysml-py-props] fail: endReferences B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-129 [opensysml-py] fail: endReferences B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-129 [opensysml-rs] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-129 [opensysml-ts-wasm] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-129 [opensysml-ts] fail: endReferences B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-130 [opensysml-go-props] fail: sourceFeature B13::Sys::k1: got null, want ["B13::Sys::d1"]
+- B13-130 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-130 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-130 [opensysml-py-props] fail: sourceFeature B13::Sys::k1: got None, want ['B13::Sys::d1']
+- B13-130 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-130 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-130 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-130 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-131 [opensysml-go-props] fail: sourceFeature B13::Sys::k1: got null, want ["B13::Sys::d1"]
+- B13-131 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-131 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-131 [opensysml-py-props] fail: sourceFeature B13::Sys::k1: got None, want ['B13::Sys::d1']
+- B13-131 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-131 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-131 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-131 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-132 [opensysml-go-props] fail: sourceFeature B13::Sys::k1: got null, want ["B13::Sys::d1"]
+- B13-132 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-132 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-132 [opensysml-py-props] fail: sourceFeature B13::Sys::k1: got None, want ['B13::Sys::d1']
+- B13-132 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-132 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-132 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-132 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-133 [opensysml-go-props] fail: sourceFeature B13::Sys::k2: got null, want ["B13::Sys::d1"]
+- B13-133 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-133 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-133 [opensysml-py-props] fail: sourceFeature B13::Sys::k2: got None, want ['B13::Sys::d1']
+- B13-133 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-133 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-133 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-133 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-134 [opensysml-go-props] fail: sourceFeature B13::Sys::k2: got null, want ["B13::Sys::d1"]
+- B13-134 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-134 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-134 [opensysml-py-props] fail: sourceFeature B13::Sys::k2: got None, want ['B13::Sys::d1']
+- B13-134 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-134 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-134 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-134 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-135 [opensysml-go-props] fail: sourceFeature B13::Sys::k2: got null, want ["B13::Sys::d1"]
+- B13-135 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-135 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-135 [opensysml-py-props] fail: sourceFeature B13::Sys::k2: got None, want ['B13::Sys::d1']
+- B13-135 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-135 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-135 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-135 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-136 [opensysml-go-props] fail: sourceFeature B13::Sys::j1: got null, want ["B13::Sys::p1"]
+- B13-136 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-136 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-136 [opensysml-py-props] fail: sourceFeature B13::Sys::j1: got None, want ['B13::Sys::p1']
+- B13-136 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-136 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-136 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-136 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-137 [opensysml-go-props] fail: sourceFeature B13::Sys::j1: got null, want ["B13::Sys::p1"]
+- B13-137 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-137 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-137 [opensysml-py-props] fail: sourceFeature B13::Sys::j1: got None, want ['B13::Sys::p1']
+- B13-137 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-137 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-137 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-137 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-138 [opensysml-go-props] fail: sourceFeature B13::Sys::j1: got null, want ["B13::Sys::p1"]
+- B13-138 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-138 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-138 [opensysml-py-props] fail: sourceFeature B13::Sys::j1: got None, want ['B13::Sys::p1']
+- B13-138 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-138 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-138 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-138 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-139 [opensysml-go-props] fail: sourceFeature B13::Sys::j2: got null, want ["B13::Sys::p1"]
+- B13-139 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-139 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-139 [opensysml-py-props] fail: sourceFeature B13::Sys::j2: got None, want ['B13::Sys::p1']
+- B13-139 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-139 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-139 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-139 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-140 [opensysml-go-props] fail: sourceFeature B13::Sys::j2: got null, want ["B13::Sys::p1"]
+- B13-140 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-140 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-140 [opensysml-py-props] fail: sourceFeature B13::Sys::j2: got None, want ['B13::Sys::p1']
+- B13-140 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-140 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-140 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-140 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-141 [opensysml-go-props] fail: sourceFeature B13::Sys::j2: got null, want ["B13::Sys::p1"]
+- B13-141 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-141 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-141 [opensysml-py-props] fail: sourceFeature B13::Sys::j2: got None, want ['B13::Sys::p1']
+- B13-141 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-141 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-141 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-141 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B13-142 [opensysml-go-props] fail: targetFeature B13::Sys::k1: got [], want [["B13::Sys::d2"]]
+- B13-142 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-142 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-142 [opensysml-py-props] fail: targetFeature B13::Sys::k1: got [], want [['B13::Sys::d2']]
+- B13-142 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-142 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-142 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-142 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-143 [opensysml-go-props] fail: targetFeature B13::Sys::k1: got [], want [["B13::Sys::d2"]]
+- B13-143 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-143 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-143 [opensysml-py-props] fail: targetFeature B13::Sys::k1: got [], want [['B13::Sys::d2']]
+- B13-143 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-143 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-143 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-143 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-144 [opensysml-go-props] fail: targetFeature B13::Sys::k1: got [], want [["B13::Sys::d2"]]
+- B13-144 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-144 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-144 [opensysml-py-props] fail: targetFeature B13::Sys::k1: got [], want [['B13::Sys::d2']]
+- B13-144 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-144 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-144 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-144 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-145 [opensysml-go-props] fail: targetFeature B13::Sys::k2: got [], want [["B13::Sys::d2"]]
+- B13-145 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-145 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-145 [opensysml-py-props] fail: targetFeature B13::Sys::k2: got [], want [['B13::Sys::d2']]
+- B13-145 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-145 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-145 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-145 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-146 [opensysml-go-props] fail: targetFeature B13::Sys::k2: got [], want [["B13::Sys::d2"]]
+- B13-146 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-146 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-146 [opensysml-py-props] fail: targetFeature B13::Sys::k2: got [], want [['B13::Sys::d2']]
+- B13-146 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-146 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-146 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-146 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-147 [opensysml-go-props] fail: targetFeature B13::Sys::k2: got [], want [["B13::Sys::d2"]]
+- B13-147 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-147 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-147 [opensysml-py-props] fail: targetFeature B13::Sys::k2: got [], want [['B13::Sys::d2']]
+- B13-147 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-147 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-147 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-147 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-148 [opensysml-go-props] fail: targetFeature B13::Sys::j1: got [], want [["B13::Sys::p2"]]
+- B13-148 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-148 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-148 [opensysml-py-props] fail: targetFeature B13::Sys::j1: got [], want [['B13::Sys::p2']]
+- B13-148 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-148 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-148 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-148 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-149 [opensysml-go-props] fail: targetFeature B13::Sys::j1: got [], want [["B13::Sys::p2"]]
+- B13-149 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-149 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-149 [opensysml-py-props] fail: targetFeature B13::Sys::j1: got [], want [['B13::Sys::p2']]
+- B13-149 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-149 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-149 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-149 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-150 [opensysml-go-props] fail: targetFeature B13::Sys::j1: got [], want [["B13::Sys::p2"]]
+- B13-150 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-150 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-150 [opensysml-py-props] fail: targetFeature B13::Sys::j1: got [], want [['B13::Sys::p2']]
+- B13-150 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-150 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-150 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-150 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-151 [opensysml-go-props] fail: targetFeature B13::Sys::j2: got [], want [["B13::Sys::p2"]]
+- B13-151 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-151 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-151 [opensysml-py-props] fail: targetFeature B13::Sys::j2: got [], want [['B13::Sys::p2']]
+- B13-151 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-151 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-151 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-151 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-152 [opensysml-go-props] fail: targetFeature B13::Sys::j2: got [], want [["B13::Sys::p2"]]
+- B13-152 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-152 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-152 [opensysml-py-props] fail: targetFeature B13::Sys::j2: got [], want [['B13::Sys::p2']]
+- B13-152 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-152 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-152 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-152 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-153 [opensysml-go-props] fail: targetFeature B13::Sys::j2: got [], want [["B13::Sys::p2"]]
+- B13-153 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-153 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-153 [opensysml-py-props] fail: targetFeature B13::Sys::j2: got [], want [['B13::Sys::p2']]
+- B13-153 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-153 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-153 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-153 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B13-154 [opensysml-go-props] fail: relatedFeature B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-154 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-154 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-154 [opensysml-py-props] fail: relatedFeature B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-154 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-154 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-154 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-154 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-155 [opensysml-go-props] fail: relatedFeature B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-155 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-155 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-155 [opensysml-py-props] fail: relatedFeature B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-155 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-155 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-155 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-155 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-156 [opensysml-go-props] fail: relatedFeature B13::Sys::k1: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-156 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-156 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-156 [opensysml-py-props] fail: relatedFeature B13::Sys::k1: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-156 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-156 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-156 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-156 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-157 [opensysml-go-props] fail: relatedFeature B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-157 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-157 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-157 [opensysml-py-props] fail: relatedFeature B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-157 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-157 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-157 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-157 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-158 [opensysml-go-props] fail: relatedFeature B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-158 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-158 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-158 [opensysml-py-props] fail: relatedFeature B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-158 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-158 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-158 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-158 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-159 [opensysml-go-props] fail: relatedFeature B13::Sys::k2: got [], want [["B13::Sys::d1"],["B13::Sys::d2"]]
+- B13-159 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-159 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-159 [opensysml-py-props] fail: relatedFeature B13::Sys::k2: got [], want [['B13::Sys::d1'], ['B13::Sys::d2']]
+- B13-159 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-159 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-159 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-159 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-160 [opensysml-go-props] fail: relatedFeature B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-160 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-160 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-160 [opensysml-py-props] fail: relatedFeature B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-160 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-160 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-160 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-160 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-161 [opensysml-go-props] fail: relatedFeature B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-161 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-161 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-161 [opensysml-py-props] fail: relatedFeature B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-161 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-161 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-161 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-161 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-162 [opensysml-go-props] fail: relatedFeature B13::Sys::j1: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-162 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-162 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-162 [opensysml-py-props] fail: relatedFeature B13::Sys::j1: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-162 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-162 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-162 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-162 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-163 [opensysml-go-props] fail: relatedFeature B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-163 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-163 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-163 [opensysml-py-props] fail: relatedFeature B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-163 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-163 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-163 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-163 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-164 [opensysml-go-props] fail: relatedFeature B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-164 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-164 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-164 [opensysml-py-props] fail: relatedFeature B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-164 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-164 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-164 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-164 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-165 [opensysml-go-props] fail: relatedFeature B13::Sys::j2: got [], want [["B13::Sys::p1"],["B13::Sys::p2"]]
+- B13-165 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-165 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-165 [opensysml-py-props] fail: relatedFeature B13::Sys::j2: got [], want [['B13::Sys::p1'], ['B13::Sys::p2']]
+- B13-165 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-165 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B13-165 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
+- B13-165 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
 - B20-013 [opensysml-go] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
 - B20-013 [opensysml-java] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
 - B20-013 [opensysml-py] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
