@@ -1,0 +1,2426 @@
+{
+ "matrix": "B13",
+ "model": "models/B13.sysml",
+ "notes": {
+  "reads": "as in B10; an unnamed referenced feature (an action node) is written as [null]",
+  "unnamed": "locates an unnamed element: {metaclass, index} among the unnamed members of that metaclass declared in `element`, in declaration order",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "B13-001",
+   "check": "endCount",
+   "element": "B13::Named::s",
+   "expect": 2
+  },
+  {
+   "id": "B13-002",
+   "check": "endCount",
+   "element": "B13::Named::s",
+   "expect": 2,
+   "through": [
+    "B13::named"
+   ]
+  },
+  {
+   "id": "B13-003",
+   "check": "endCount",
+   "element": "B13::Named::s",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::named"
+   ]
+  },
+  {
+   "id": "B13-004",
+   "check": "endCount",
+   "element": "B13::Unnamed",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-005",
+   "check": "endCount",
+   "element": "B13::Unnamed",
+   "expect": 2,
+   "through": [
+    "B13::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-006",
+   "check": "endCount",
+   "element": "B13::Unnamed",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-007",
+   "check": "endCount",
+   "element": "B13::Shorthand",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-008",
+   "check": "endCount",
+   "element": "B13::Shorthand",
+   "expect": 2,
+   "through": [
+    "B13::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-009",
+   "check": "endCount",
+   "element": "B13::Shorthand",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-010",
+   "check": "endCount",
+   "element": "B13::NodeEnds",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-011",
+   "check": "endCount",
+   "element": "B13::NodeEnds",
+   "expect": 2,
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-012",
+   "check": "endCount",
+   "element": "B13::NodeEnds",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-013",
+   "check": "endCount",
+   "element": "B13::NodeEnds",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-014",
+   "check": "endCount",
+   "element": "B13::NodeEnds",
+   "expect": 2,
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-015",
+   "check": "endCount",
+   "element": "B13::NodeEnds",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-016",
+   "check": "endCount",
+   "element": "B13::Guarded::g",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-017",
+   "check": "endCount",
+   "element": "B13::Guarded::g",
+   "expect": 2,
+   "through": [
+    "B13::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-018",
+   "check": "endCount",
+   "element": "B13::Guarded::g",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-019",
+   "check": "endCount",
+   "element": "B13::Machine::t",
+   "expect": 2,
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-020",
+   "check": "endCount",
+   "element": "B13::Machine::t",
+   "expect": 2,
+   "through": [
+    "B13::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-021",
+   "check": "endCount",
+   "element": "B13::Machine::t",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-022",
+   "check": "endReferences",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a1"
+    ],
+    [
+     "B13::Named::a2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-023",
+   "check": "endReferences",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a1"
+    ],
+    [
+     "B13::Named::a2"
+    ]
+   ],
+   "through": [
+    "B13::named"
+   ]
+  },
+  {
+   "id": "B13-024",
+   "check": "endReferences",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a1"
+    ],
+    [
+     "B13::Named::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::named"
+   ]
+  },
+  {
+   "id": "B13-025",
+   "check": "endReferences",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a1"
+    ],
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-026",
+   "check": "endReferences",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a1"
+    ],
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "through": [
+    "B13::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-027",
+   "check": "endReferences",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a1"
+    ],
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-028",
+   "check": "endReferences",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a1"
+    ],
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-029",
+   "check": "endReferences",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a1"
+    ],
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "through": [
+    "B13::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-030",
+   "check": "endReferences",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a1"
+    ],
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-031",
+   "check": "endReferences",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a1"
+    ],
+    [
+     null
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-032",
+   "check": "endReferences",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a1"
+    ],
+    [
+     null
+    ]
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-033",
+   "check": "endReferences",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a1"
+    ],
+    [
+     null
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-034",
+   "check": "endReferences",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ],
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-035",
+   "check": "endReferences",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ],
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-036",
+   "check": "endReferences",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ],
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-037",
+   "check": "endReferences",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::d"
+    ],
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-038",
+   "check": "endReferences",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::d"
+    ],
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "through": [
+    "B13::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-039",
+   "check": "endReferences",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::d"
+    ],
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-040",
+   "check": "endReferences",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s1"
+    ],
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-041",
+   "check": "endReferences",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s1"
+    ],
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "through": [
+    "B13::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-042",
+   "check": "endReferences",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s1"
+    ],
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-043",
+   "check": "sourceFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    "B13::Named::a1"
+   ]
+  },
+  {
+   "id": "B13-044",
+   "check": "sourceFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    "B13::Named::a1"
+   ],
+   "through": [
+    "B13::named"
+   ]
+  },
+  {
+   "id": "B13-045",
+   "check": "sourceFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    "B13::Named::a1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::named"
+   ]
+  },
+  {
+   "id": "B13-046",
+   "check": "sourceFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    "B13::Unnamed::a1"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-047",
+   "check": "sourceFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    "B13::Unnamed::a1"
+   ],
+   "through": [
+    "B13::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-048",
+   "check": "sourceFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    "B13::Unnamed::a1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-049",
+   "check": "sourceFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    "B13::Shorthand::a1"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-050",
+   "check": "sourceFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    "B13::Shorthand::a1"
+   ],
+   "through": [
+    "B13::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-051",
+   "check": "sourceFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    "B13::Shorthand::a1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-052",
+   "check": "sourceFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    "B13::NodeEnds::a1"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-053",
+   "check": "sourceFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    "B13::NodeEnds::a1"
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-054",
+   "check": "sourceFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    "B13::NodeEnds::a1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-055",
+   "check": "sourceFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    null
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-056",
+   "check": "sourceFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    null
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-057",
+   "check": "sourceFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    null
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-058",
+   "check": "sourceFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    "B13::Guarded::d"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-059",
+   "check": "sourceFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    "B13::Guarded::d"
+   ],
+   "through": [
+    "B13::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-060",
+   "check": "sourceFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    "B13::Guarded::d"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-061",
+   "check": "sourceFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    "B13::Machine::s1"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-062",
+   "check": "sourceFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    "B13::Machine::s1"
+   ],
+   "through": [
+    "B13::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-063",
+   "check": "sourceFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    "B13::Machine::s1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-064",
+   "check": "targetFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-065",
+   "check": "targetFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a2"
+    ]
+   ],
+   "through": [
+    "B13::named"
+   ]
+  },
+  {
+   "id": "B13-066",
+   "check": "targetFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::named"
+   ]
+  },
+  {
+   "id": "B13-067",
+   "check": "targetFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-068",
+   "check": "targetFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "through": [
+    "B13::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-069",
+   "check": "targetFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-070",
+   "check": "targetFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-071",
+   "check": "targetFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "through": [
+    "B13::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-072",
+   "check": "targetFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-073",
+   "check": "targetFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-074",
+   "check": "targetFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ]
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-075",
+   "check": "targetFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-076",
+   "check": "targetFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-077",
+   "check": "targetFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-078",
+   "check": "targetFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-079",
+   "check": "targetFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-080",
+   "check": "targetFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "through": [
+    "B13::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-081",
+   "check": "targetFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-082",
+   "check": "targetFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-083",
+   "check": "targetFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "through": [
+    "B13::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-084",
+   "check": "targetFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-085",
+   "check": "relatedFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a1"
+    ],
+    [
+     "B13::Named::a2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-086",
+   "check": "relatedFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a1"
+    ],
+    [
+     "B13::Named::a2"
+    ]
+   ],
+   "through": [
+    "B13::named"
+   ]
+  },
+  {
+   "id": "B13-087",
+   "check": "relatedFeature",
+   "element": "B13::Named::s",
+   "expect": [
+    [
+     "B13::Named::a1"
+    ],
+    [
+     "B13::Named::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::named"
+   ]
+  },
+  {
+   "id": "B13-088",
+   "check": "relatedFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a1"
+    ],
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-089",
+   "check": "relatedFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a1"
+    ],
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "through": [
+    "B13::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-090",
+   "check": "relatedFeature",
+   "element": "B13::Unnamed",
+   "expect": [
+    [
+     "B13::Unnamed::a1"
+    ],
+    [
+     "B13::Unnamed::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::unnamed"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-091",
+   "check": "relatedFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a1"
+    ],
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-092",
+   "check": "relatedFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a1"
+    ],
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "through": [
+    "B13::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-093",
+   "check": "relatedFeature",
+   "element": "B13::Shorthand",
+   "expect": [
+    [
+     "B13::Shorthand::a1"
+    ],
+    [
+     "B13::Shorthand::a2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::shorthand"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-094",
+   "check": "relatedFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a1"
+    ],
+    [
+     null
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-095",
+   "check": "relatedFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a1"
+    ],
+    [
+     null
+    ]
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-096",
+   "check": "relatedFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     "B13::NodeEnds::a1"
+    ],
+    [
+     null
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-097",
+   "check": "relatedFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ],
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-098",
+   "check": "relatedFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ],
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "through": [
+    "B13::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-099",
+   "check": "relatedFeature",
+   "element": "B13::NodeEnds",
+   "expect": [
+    [
+     null
+    ],
+    [
+     "B13::NodeEnds::a3"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::nodeEnds"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "B13-100",
+   "check": "relatedFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::d"
+    ],
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-101",
+   "check": "relatedFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::d"
+    ],
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "through": [
+    "B13::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-102",
+   "check": "relatedFeature",
+   "element": "B13::Guarded::g",
+   "expect": [
+    [
+     "B13::Guarded::d"
+    ],
+    [
+     "B13::Guarded::a1"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::guarded",
+    "B13::Guarded::g"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-103",
+   "check": "relatedFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s1"
+    ],
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-104",
+   "check": "relatedFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s1"
+    ],
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "through": [
+    "B13::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-105",
+   "check": "relatedFeature",
+   "element": "B13::Machine::t",
+   "expect": [
+    [
+     "B13::Machine::s1"
+    ],
+    [
+     "B13::Machine::s2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::machine",
+    "B13::Machine::t"
+   ],
+   "unnamed": {
+    "metaclass": "SuccessionAsUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "B13-106",
+   "check": "endCount",
+   "element": "B13::Sys::k1",
+   "expect": 2
+  },
+  {
+   "id": "B13-107",
+   "check": "endCount",
+   "element": "B13::Sys::k1",
+   "expect": 2,
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-108",
+   "check": "endCount",
+   "element": "B13::Sys::k1",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-109",
+   "check": "endCount",
+   "element": "B13::Sys::k2",
+   "expect": 2
+  },
+  {
+   "id": "B13-110",
+   "check": "endCount",
+   "element": "B13::Sys::k2",
+   "expect": 2,
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-111",
+   "check": "endCount",
+   "element": "B13::Sys::k2",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-112",
+   "check": "endCount",
+   "element": "B13::Sys::j1",
+   "expect": 2
+  },
+  {
+   "id": "B13-113",
+   "check": "endCount",
+   "element": "B13::Sys::j1",
+   "expect": 2,
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-114",
+   "check": "endCount",
+   "element": "B13::Sys::j1",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-115",
+   "check": "endCount",
+   "element": "B13::Sys::j2",
+   "expect": 2
+  },
+  {
+   "id": "B13-116",
+   "check": "endCount",
+   "element": "B13::Sys::j2",
+   "expect": 2,
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-117",
+   "check": "endCount",
+   "element": "B13::Sys::j2",
+   "expect": 2,
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-118",
+   "check": "endReferences",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-119",
+   "check": "endReferences",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-120",
+   "check": "endReferences",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-121",
+   "check": "endReferences",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-122",
+   "check": "endReferences",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-123",
+   "check": "endReferences",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-124",
+   "check": "endReferences",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-125",
+   "check": "endReferences",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-126",
+   "check": "endReferences",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-127",
+   "check": "endReferences",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-128",
+   "check": "endReferences",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-129",
+   "check": "endReferences",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-130",
+   "check": "sourceFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    "B13::Sys::d1"
+   ]
+  },
+  {
+   "id": "B13-131",
+   "check": "sourceFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    "B13::Sys::d1"
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-132",
+   "check": "sourceFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    "B13::Sys::d1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-133",
+   "check": "sourceFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    "B13::Sys::d1"
+   ]
+  },
+  {
+   "id": "B13-134",
+   "check": "sourceFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    "B13::Sys::d1"
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-135",
+   "check": "sourceFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    "B13::Sys::d1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-136",
+   "check": "sourceFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    "B13::Sys::p1"
+   ]
+  },
+  {
+   "id": "B13-137",
+   "check": "sourceFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    "B13::Sys::p1"
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-138",
+   "check": "sourceFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    "B13::Sys::p1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-139",
+   "check": "sourceFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    "B13::Sys::p1"
+   ]
+  },
+  {
+   "id": "B13-140",
+   "check": "sourceFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    "B13::Sys::p1"
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-141",
+   "check": "sourceFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    "B13::Sys::p1"
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-142",
+   "check": "targetFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-143",
+   "check": "targetFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-144",
+   "check": "targetFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-145",
+   "check": "targetFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-146",
+   "check": "targetFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-147",
+   "check": "targetFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-148",
+   "check": "targetFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-149",
+   "check": "targetFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-150",
+   "check": "targetFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-151",
+   "check": "targetFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-152",
+   "check": "targetFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-153",
+   "check": "targetFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-154",
+   "check": "relatedFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-155",
+   "check": "relatedFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-156",
+   "check": "relatedFeature",
+   "element": "B13::Sys::k1",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-157",
+   "check": "relatedFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-158",
+   "check": "relatedFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-159",
+   "check": "relatedFeature",
+   "element": "B13::Sys::k2",
+   "expect": [
+    [
+     "B13::Sys::d1"
+    ],
+    [
+     "B13::Sys::d2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-160",
+   "check": "relatedFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-161",
+   "check": "relatedFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-162",
+   "check": "relatedFeature",
+   "element": "B13::Sys::j1",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  },
+  {
+   "id": "B13-163",
+   "check": "relatedFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ]
+  },
+  {
+   "id": "B13-164",
+   "check": "relatedFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::sys"
+   ]
+  },
+  {
+   "id": "B13-165",
+   "check": "relatedFeature",
+   "element": "B13::Sys::j2",
+   "expect": [
+    [
+     "B13::Sys::p1"
+    ],
+    [
+     "B13::Sys::p2"
+    ]
+   ],
+   "through": [
+    "B13::plant",
+    "B13::Plant::sys"
+   ]
+  }
+ ]
+}
