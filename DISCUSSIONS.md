@@ -1593,6 +1593,42 @@ The census did not change: `ConjugatedPortTyping::portDefinition` was
 already answered through `GetElementProperties` (1/1, 33/33), and the other
 properties #1980 moves change in value, not in whether they are filled.
 
+Confirmed on #1962 (2026-11-09).
+
+## Step 19: direction in an owner through Type::input and Type::output
+Step 11 made every read that needs a KerML operation unsupported in the
+props suites, since GetElementProperties reads properties only. One of the
+two operations has property counterparts: KerML 8.3.3.1 defines
+`Type::input` as the features whose `directionOf` in the type is `in` or
+`inout`, and `Type::output` as those whose direction is `out` or `inout`.
+OpenSysML answers both with conjugation applied:
+
+| element | `input` | `output` |
+|--|--|--|
+| `pOut : CmdPort` | `ack` | `cmd` |
+| `pIn : ~CmdPort` | `cmd` | `ack` |
+| `CmdPort::'~CmdPort'` | `cmd` | `ack` |
+
+while `cmd`'s own `direction` stays `out`, as written.
+
+Revised rule: the direction of a feature read through an owner is `in`,
+`out` or `inout` by its membership in the owner's `input` and `output`
+(neither: no direction). A feature read on its own keeps its own
+`direction`. `allSupertypes()` has no property counterpart and stays
+unsupported: computing the closure over `ownedSpecialization` would be the
+adapter's derivation, not the MDK's.
+
+opensysml-py-props and opensysml-go-props: 1292 -> 1321 pass, 62 -> 33
+unsupported. All 29 cases move from unsupported to pass (A30 20, C10 9),
+including the A30 directions seen through `pIn : ~CmdPort`, so every A30
+case now passes through GetElementProperties. Python and Go still agree on
+all 1630 outcomes. Left unsupported: an expression's source text (C10 20),
+`allSupertypes()` (A02 10) and `AssignmentActionUsage::referent`, which
+OpenSysML reports as not derived (C20 3).
+
+The Symbol suites are unchanged: the Symbol API carries only the written
+direction (Step 18).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1615,3 +1651,5 @@ InstancePaths.
 Step 17 took sysml-toolkit v0.12.0 (#18, #19 fixed; #20 for arguments) and
 filed the remaining checked-reader refusals as #32.
 Step 18 took OpenSysML #1980, which fixes #1962 (conjugated port typing).
+Step 19: the props suites read a direction in an owner through Type::input
+and Type::output.
