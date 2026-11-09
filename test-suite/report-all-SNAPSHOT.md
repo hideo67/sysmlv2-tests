@@ -4,14 +4,14 @@
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-08 23:52:03|
-|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-08 23:51:56|
-|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 23:52:23|
-|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 23:51:40|
-|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-08 23:51:30|
-|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:52:10|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-08 23:52:17|
-|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-08 23:52:13|
+|opensysml-go-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 00:04:46|
+|opensysml-go|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-09 00:04:40|
+|opensysml-java|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 00:05:07|
+|opensysml-py-props|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 00:04:39|
+|opensysml-py|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-09 00:04:29|
+|opensysml-rs|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 00:04:54|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-09 00:05:01|
+|opensysml-ts|OpenSysML|`nightly-20261107-fdf6ec872c-196-gddc5b7a632` (develop)|[`ddc5b7a632`](https://github.com/Open-MBEE/OpenSysML/commit/ddc5b7a632d497f8101dd290679cfa65ac755a77)|2026-11-08|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-09 00:04:57|
 |pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-08 00:00:28|
 |sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:48|
 |sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-08 23:24:46|
@@ -29,7 +29,7 @@ Local changes at run time (tracked files only):
 |A03|128|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|128 / 0 / 0 / 0|110 / 18 / 0 / 0|
 |A10|36|32 / 4 / 0 / 0|18 / 2 / 16 / 0|18 / 2 / 16 / 0|32 / 4 / 0 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|18 / 2 / 16 / 0|18 / 2 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
 |A20|100|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|
-|A30|44|24 / 0 / 20 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|24 / 0 / 20 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|42 / 2 / 0 / 0|
+|A30|44|44 / 0 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|42 / 2 / 0 / 0|
 |A40|45|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
 |A50|54|54 / 0 / 0 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|30 / 6 / 18 / 0|30 / 6 / 18 / 0|20 / 16 / 18 / 0|20 / 16 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|24 / 8 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|24 / 8 / 0 / 0|20 / 12 / 0 / 0|20 / 12 / 0 / 0|22 / 10 / 0 / 0|22 / 10 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
@@ -38,7 +38,7 @@ Local changes at run time (tracked files only):
 |B12|108|72 / 36 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|72 / 36 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |B20|75|42 / 33 / 0 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|42 / 33 / 0 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|9 / 21 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|96|78 / 18 / 0 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|78 / 18 / 0 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|52 / 12 / 32 / 0|96 / 0 / 0 / 0|68 / 0 / 0 / 28|96 / 0 / 0 / 0|
-|C10|116|83 / 4 / 29 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|83 / 4 / 29 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
+|C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|120|96 / 21 / 3 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|96 / 21 / 3 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|0 / 24 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|12 / 60 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|12 / 60 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|48 / 0 / 0 / 24|48 / 24 / 0 / 0|
 |C30|78|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|69 / 0 / 0 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|6 / 0 / 63 / 9|78 / 0 / 0 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|
@@ -46,7 +46,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1630|1292 / 267 / 62 / 9|675 / 199 / 747 / 9|675 / 199 / 747 / 9|1292 / 267 / 62 / 9|685 / 189 / 747 / 9|679 / 189 / 753 / 9|669 / 199 / 753 / 9|675 / 199 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
+|**all**|1630|1321 / 267 / 33 / 9|675 / 199 / 747 / 9|675 / 199 / 747 / 9|1321 / 267 / 33 / 9|685 / 189 / 747 / 9|679 / 189 / 753 / 9|669 / 199 / 753 / 9|675 / 199 / 747 / 9|1580 / 0 / 50 / 0|1472 / 0 / 50 / 108|1527 / 53 / 50 / 0|
 
 ## Results
 
@@ -507,26 +507,26 @@ Local changes at run time (tracked files only):
 |A30-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-025|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-026|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-027|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
-|A30-028|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
-|A30-029|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-030|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-031|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-032|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-033|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-034|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-035|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-036|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-037|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-038|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-039|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-040|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-041|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-042|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-043|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-044|UNSUP|FAIL|FAIL|UNSUP|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
+|A30-028|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
+|A30-029|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-031|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-032|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-033|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-035|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-036|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-038|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-039|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-040|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-041|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-042|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A30-043|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-044|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -1218,17 +1218,17 @@ Local changes at run time (tracked files only):
 |C10-091|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-092|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-093|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-094|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-095|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-096|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-094|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-095|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-096|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-097|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-098|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-099|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-100|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-098|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-099|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-100|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-101|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-102|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-103|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|C10-104|UNSUP|PASS|PASS|UNSUP|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-102|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-103|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C10-104|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-105|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-106|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |C10-107|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -2447,104 +2447,64 @@ Local changes at run time (tracked files only):
 - A20-100 [opensysml-rs] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts-wasm] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
-- A30-025 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-025 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-026 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-026 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-027 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-027 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-027 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-027 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-027 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [sysml-toolkit-rs] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::'~CmdPort'>", want "in"
-- A30-028 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-028 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-028 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-028 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-028 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [sysml-toolkit-rs] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::'~CmdPort'>", want "out"
-- A30-029 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-029 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-030 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-030 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-031 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-031 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-031 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-031 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-031 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-031 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-031 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-031 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-032 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-032 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-032 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-032 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-032 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-033 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-033 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-034 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-034 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-035 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-035 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-035 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-035 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-035 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-036 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-036 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-036 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-036 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-036 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-037 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-037 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-038 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-038 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-039 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-039 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-039 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-039 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-039 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-040 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-040 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-040 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-040 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-040 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-041 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-041 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-042 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-042 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- A30-043 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-043 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-043 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-043 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-043 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-044 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-044 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-044 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-044 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - A30-044 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-044 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-044 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
@@ -5997,24 +5957,6 @@ Local changes at run time (tracked files only):
 - C10-080 [pilot-java] unsupported: the EMF model has no source text of an expression
 - C10-080 [sysml-toolkit-rs-checked] unsupported: no accessor returns an expression's source text
 - C10-080 [sysml-toolkit-rs] unsupported: no accessor returns an expression's source text
-- C10-094 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-094 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-095 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-095 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-096 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-096 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-098 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-098 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-099 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-099 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-100 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-100 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-102 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-102 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-103 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-103 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-104 [opensysml-go-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
-- C10-104 [opensysml-py-props] unsupported: GetElementProperties reads properties only; KerML operation Type::directionOf(feature) is not served
 - C20-001 [opensysml-go] fail: kind C20::Supervise::sendVia: got "ActionUsage", want "SendActionUsage"
 - C20-001 [opensysml-java] fail: kind C20::Supervise::sendVia: got "ActionUsage", want "SendActionUsage"
 - C20-001 [opensysml-py] fail: kind C20::Supervise::sendVia: got 'ActionUsage', want 'SendActionUsage'
