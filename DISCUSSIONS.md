@@ -1808,9 +1808,8 @@ sysml-toolkit, both readers: `first a1; then a2;` gives `a2` as the source
 `a1`), in the shorthand and the to-node forms (18). Everything else passes,
 including the transitions and body-declared ends.
 
-The OpenSysML findings are drafted as a new issue
-(`issue-drafts/opensysml-succession-and-body-connector-ends.md`); #1957,
-which covered chained connection ends, is closed.
+The OpenSysML findings were filed as #2068 (2026-11-09); #1957, which
+covered chained connection ends, is closed.
 
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
