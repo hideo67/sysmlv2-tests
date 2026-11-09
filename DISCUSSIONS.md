@@ -1689,6 +1689,57 @@ their denominators move, and OpenSysML builds 12 fewer elements on the
 matrix models (3100 -> 3088), consistent with a named `if`/`while`/`for`
 node now being the one element that carries the name.
 
+## Step 21: OpenSysML #2051 and #1992 (connector related features, send actions)
+OpenSysML develop moved from `48bcb7cbfe` to `227e88ee3b` (two merges).
+
+- #2051 fixes #1956, #1957 and #1958: when a connector end is written as a
+  feature chain (`connect x.p to y.p`), its `relatedFeature`, `sourceFeature`
+  and `targetFeature` are the chain Feature, not the chain's last feature,
+  in semantics, reflection, GetElementProperties and the exports. As stated
+  on #1956, the Symbol and query surfaces are not extended; the ends are read
+  through GetElementProperties.
+- #1992 fixes #1985: a send action is a `SendActionUsage` on every surface,
+  with its payload, sender and receiver.
+
+No client changed, and the adapters did not change.
+
+| suite | 48bcb7cbfe | 227e88ee3b |
+|--|--|--|
+| opensysml-py | 713 | 719 |
+| opensysml-go | 703 | 709 |
+| opensysml-rs | 707 | 713 |
+| opensysml-ts | 703 | 709 |
+| opensysml-ts-wasm | 697 | 703 |
+| opensysml-java | 703 | 709 |
+| opensysml-py-props, -go-props | 1336 | 1492 |
+
+No case got worse. Symbol suites: C20 `kind` 6 (send actions). Props
+suites, 156 each:
+- B10, B11, B12 `relatedFeature`, `sourceFeature`, `targetFeature`: 108, so
+  every chained-end case of the three matrices now passes.
+- C20 `payloadArgument` 6, `senderArgument` 3, `receiverArgument` 3.
+- C21, the constructor of `send new Sig(...)`, now reachable as the send's
+  payload: `exprKind`, `argumentCount`, `argumentReferences` and `hasResult`,
+  9 each.
+
+Left in these matrices:
+- C21 `instantiatedType` and `resultType` (12 each, props): empty for every
+  constructor, the sends' and `sigValue`'s alike. This is the known empty
+  `instantiatedType` (Step 11 list); the result's type follows from it.
+- B10 `endCount` and `endNames` of a connection definition (4 each, props):
+  `Type::endFeature` is empty.
+- C20 `referent` of an assignment (3, props): not derived.
+- Symbol suites: no connector end fields (B10–B12 `endCount`,
+  `endReferences`) and no send arguments (C20 unsupported), by OpenSysML's
+  decision to read these through GetElementProperties.
+
+Census: no property lost its answer. OpenSysML builds 56 more elements on
+the matrix models (3088 -> 3144) and 136 more on the Pilot examples, a
+send's synthesized parameters. The `SendActionUsage` arguments are no longer
+always empty. `Connector::relatedFeature` on the matrix models goes from 9 to
+32 of 34 (the Pilot: 33). On the Pilot examples it goes from 68 to 198 of
+447, still below the Pilot's 571 of 608, and needs a closer look.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1714,3 +1765,5 @@ Step 18 took OpenSysML #1980, which fixes #1962 (conjugated port typing).
 Step 19: the props suites read a direction in an owner through Type::input
 and Type::output.
 Step 20 took OpenSysML #2053, which fixes #2008 and #2009.
+Step 21 took OpenSysML #2051 (fixes #1956, #1957, #1958) and #1992 (fixes
+#1985).
