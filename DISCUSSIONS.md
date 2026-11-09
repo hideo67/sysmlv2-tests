@@ -1629,6 +1629,59 @@ OpenSysML reports as not derived (C20 3).
 The Symbol suites are unchanged: the Symbol API carries only the written
 direction (Step 18).
 
+## Step 20: OpenSysML #2053 (action node kinds, subjects; fixes #2008, #2009)
+OpenSysML develop moved from `ddc5b7a632` to `48bcb7cbfe` (two merges).
+#2053 fixes #2008 and #2009:
+
+- An action declared as a node (`action a accept ...`, `assign`, `perform
+  action a`, `if`, `while`, `for`, `terminate`) reports its own kind
+  (`acceptActionUsage`, ...) on the Symbol `kind`, the query `@type`, the
+  reflective metaclass and the export, and a `succession flow` reports
+  `successionFlowUsage`. Send actions are left to #1992 (open).
+- A requirement body's subject carries its type and direction, and the
+  parameters a behavior inherits from the library (a case's or
+  requirement's `result`, a verification case's `verdict`) are listed among
+  its members like a declared `return r`, instead of being withheld with
+  the library members.
+
+#2066 changes the query leg's ids for a metadata body feature; no case
+moved. No client changed, and the adapters did not change.
+
+| suite | ddc5b7a632 | 48bcb7cbfe |
+|--|--|--|
+| opensysml-py | 685 | 713 |
+| opensysml-go | 675 | 703 |
+| opensysml-rs | 679 | 707 |
+| opensysml-ts | 675 | 703 |
+| opensysml-ts-wasm | 669 | 697 |
+| opensysml-java | 675 | 703 |
+| opensysml-py-props, -go-props | 1321 | 1336 |
+
+No case got worse. Symbol suites: C20 `kind` 18, B20 `kind` 6 (succession
+flows) and C01 `parameters` 4 (requirement and use case defs, C01-057..060).
+Props suites: C20 `kind` 9 and B20 `kind` 6.
+
+Left:
+- Send actions report `ActionUsage` (C20-001..006 in the Symbol suites),
+  pending #1992.
+- A redefining `return` does not mask the inherited `result` (C01, 6 per
+  suite, the Symbol and props suites alike): `calc def Calc { return r; }`
+  and the analysis def list `Performances::Evaluation::result` beside `r`,
+  and a verification def lists the library's `verdict` and also
+  `Evaluation::result`, which the library's `return verdict` redefines.
+  #2053 states that a declared `return` masks the inherited parameter it
+  redefines; with library members listed it does not. This is item 4 of
+  #2009, which OpenSysML moved to #2028's scope.
+- In the Symbol suites, a constraint def lists no inherited `result` at all,
+  library members included (C01-055/056). The props suites pass these, and
+  Python passed them in Step 10, so the Symbol member listing lost it since.
+
+Census: no property lost its answer. Succession flows and action nodes are
+now metaclasses OpenSysML shares with the Pilot, so the compared sets and
+their denominators move, and OpenSysML builds 12 fewer elements on the
+matrix models (3100 -> 3088), consistent with a named `if`/`while`/`for`
+node now being the one element that carries the name.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1653,3 +1706,4 @@ filed the remaining checked-reader refusals as #32.
 Step 18 took OpenSysML #1980, which fixes #1962 (conjugated port typing).
 Step 19: the props suites read a direction in an owner through Type::input
 and Type::output.
+Step 20 took OpenSysML #2053, which fixes #2008 and #2009.
