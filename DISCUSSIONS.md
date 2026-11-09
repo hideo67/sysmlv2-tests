@@ -1807,6 +1807,9 @@ sysml-toolkit, both readers: `first a1; then a2;` gives `a2` as the source
 (the last action declared before the `first`, rather than the `first`'s
 `a1`), in the shorthand and the to-node forms (18). Everything else passes,
 including the transitions and body-declared ends.
+Filed as sysml-toolkit #33 (2026-11-09): the source of `then y;` is the
+last action declared before it, not the preceding `first` (`first start;
+then a1;` gets the body's last action as source).
 
 The OpenSysML findings were filed as #2068 (2026-11-09); #1957, which
 covered chained connection ends, is closed.
