@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `36bf75bc3ad0`
+Test suite commit: `17e464046fdc`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-10 00:24:04|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-10 00:24:14|
-|opensysml-go-props|OpenSysML|`nightly-20261109-ddc5b7a632-177-gddc4a547fe` (develop)|[`ddc4a547fe`](https://github.com/Open-MBEE/OpenSysML/commit/ddc4a547fec08cf28670b166469d0ca8c1bd4569)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-10 00:24:43|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-10 05:55:44|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-10 05:55:53|
+|opensysml-go-props|OpenSysML|`nightly-20261109-ddc5b7a632-215-g11bf2f67f5` (develop)|[`11bf2f67f5`](https://github.com/Open-MBEE/OpenSysML/commit/11bf2f67f5d9dc7de358fb2b591aee391da37277)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-10 05:56:18|
 
 Local changes at run time (tracked files only):
 
@@ -35,8 +35,8 @@ Properties, of those carried by some element of the corpus: answered with values
 
 |corpus|pilot-java|sysml-toolkit-rs|opensysml-go-props|
 |--|:-:|:-:|:-:|
-|matrix-models|194 / 71 / 0|194 / 69 / 2|149 / 83 / 33|
-|pilot-examples|300 / 22 / 0|297 / 22 / 3|187 / 79 / 54|
+|matrix-models|194 / 71 / 0|194 / 69 / 2|150 / 83 / 32|
+|pilot-examples|300 / 22 / 0|297 / 22 / 3|188 / 79 / 53|
 
 ## Differences from the reference
 
@@ -75,7 +75,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Function::expression`|fills more|100% vs 0% (12/12 vs 0/12)||
 |`StateDefinition::state`|fills more|100% vs 0% (6/6 vs 0/6)||
 
-**opensysml-go-props**: 73 properties
+**opensysml-go-props**: 72 properties
 
 |property|difference|detail|note|
 |--|--|--|--|
@@ -92,7 +92,6 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Association::targetType`|unanswered|17 elements|Association::targetType is not derived by OpenSysML: Requires the Association::targetType engine fact: the connector-end membership, its referenced Feature, and the associated Type needed by this property.|
 |`CalculationDefinition::calculation`|unanswered|8 elements|CalculationDefinition::calculation is not derived by OpenSysML: Requires the CalculationDefinition::calculation engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
 |`ConnectionDefinition::connectionEnd`|unanswered|17 elements|ConnectionDefinition::connectionEnd is not derived by OpenSysML: Requires the ConnectionDefinition::connectionEnd engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
-|`Documentation::documentedElement`|unanswered|3 elements|Documentation::documentedElement is not derived for this element: missing-structure Documentation::documentedElement has no supported Structure projection|
 |`EnumerationDefinition::enumeratedValue`|unanswered|3 elements|EnumerationDefinition::enumeratedValue is not derived by OpenSysML: Requires the EnumerationDefinition::enumeratedValue engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
 |`EventOccurrenceUsage::eventOccurrence`|unanswered|10 elements|EventOccurrenceUsage::eventOccurrence is not derived by OpenSysML: Requires the EventOccurrenceUsage::eventOccurrence engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
 |`ExhibitStateUsage::exhibitedState`|unanswered|2 elements|ExhibitStateUsage::exhibitedState is not derived by OpenSysML: Requires the ExhibitStateUsage::exhibitedState engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
@@ -201,7 +200,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ViewUsage::exposedElement`|fills more|67% vs 11% (6/9 vs 1/9)||
 |`ViewpointUsage::viewpointStakeholder`|fills more|100% vs 50% (2/2 vs 1/2)||
 
-**opensysml-go-props**: 150 properties
+**opensysml-go-props**: 149 properties
 
 |property|difference|detail|note|
 |--|--|--|--|
@@ -221,7 +220,6 @@ Properties, of those carried by some element of the corpus: answered with values
 |`BooleanExpression::predicate`|unanswered|210 elements|BooleanExpression::predicate is not derived by OpenSysML: Requires the BooleanExpression::predicate engine fact: evaluate the AST expression and resolve its resulting Feature or value.|
 |`CalculationDefinition::calculation`|unanswered|45 elements|CalculationDefinition::calculation is not derived by OpenSysML: Requires the CalculationDefinition::calculation engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
 |`ConnectionDefinition::connectionEnd`|unanswered|34 elements|ConnectionDefinition::connectionEnd is not derived by OpenSysML: Requires the ConnectionDefinition::connectionEnd engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
-|`Documentation::documentedElement`|unanswered|101 elements|Documentation::documentedElement is not derived for this element: missing-structure Documentation::documentedElement has no supported Structure projection|
 |`EnumerationDefinition::enumeratedValue`|unanswered|9 elements|EnumerationDefinition::enumeratedValue is not derived by OpenSysML: Requires the EnumerationDefinition::enumeratedValue engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
 |`EventOccurrenceUsage::eventOccurrence`|unanswered|209 elements|EventOccurrenceUsage::eventOccurrence is not derived by OpenSysML: Requires the EventOccurrenceUsage::eventOccurrence engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
 |`ExhibitStateUsage::exhibitedState`|unanswered|3 elements|ExhibitStateUsage::exhibitedState is not derived by OpenSysML: Requires the ExhibitStateUsage::exhibitedState engine fact: a resolved graph relationship or semantic value for this property, which the current semantic index does not provide.|
@@ -486,7 +484,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Definition::usage`|185/220|185/220|199/220|
 |`Definition::variant`|11/220|11/220|11/220|
 |`Definition::variantMembership`|11/220|11/220|11/220|
-|`Documentation::documentedElement`|3/3|3/3|unanswered|
+|`Documentation::documentedElement`|3/3|3/3|3/3|
 |`Element::documentation`|3/3597|3/3429|3/3476|
 |`Element::isLibraryElement`|3597/3597|3429/3429|3476/3476|
 |`Element::name`|1009/3597|869/3429|776/3476|
@@ -772,7 +770,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Definition::usage`|911/1054|911/1054|685/725 (73 unanswered)|
 |`Definition::variant`|22/1054|22/1054|14/798|
 |`Definition::variantMembership`|22/1054|22/1054|14/798|
-|`Documentation::documentedElement`|121/121|120/120|unanswered|
+|`Documentation::documentedElement`|121/121|120/120|101/101|
 |`Element::documentation`|120/52706|119/45728|99/36994|
 |`Element::isLibraryElement`|52706/52706|45728/45728|36994/36994|
 |`Element::name`|13179/52706|7990/45728|5187/36987 (7 unanswered)|
