@@ -1882,6 +1882,29 @@ else moved.
 Confirmed on #2028 (2026-11-10), with the reproduction of the earlier
 comment rerun at `ddc4a547fe`.
 
+## Step 25: OpenSysML #2073 and query fixes (no case moved)
+OpenSysML develop moved from `ddc4a547fe` to `11bf2f67f5` (eight merges):
+#2073 (closes out the part of #2012 not owned by #2042 and #2052: a census
+of every served and omitted property through GetElementProperties, per-family
+conformance cases, Julia and MATLAB bindings), #2077 and #2085 (query
+outcome and OSLC fixes after #2027), #2082 (Java client decodes a failed
+query's outcome), #2083 (document queries from Cameo/MDK DocGen), #2074
+(WebAssembly size gate), and two dependency updates. The adapters did not
+change.
+
+No case moved in any OpenSysML suite (the scores of Step 24 stand).
+
+Census: `Documentation::documentedElement` is now answered (matrix models
+3 of 3, Pilot examples 101 of 101; before: not derived, missing structure).
+Nothing else moved.
+
+#2029 was closed on 2026-11-10 by a maintainer, without a comment or a
+linked commit. Its fix, #2052 (stacked on #2042), is still open, and on
+`11bf2f67f5` the behaviour is unchanged: with a syntax error in one document,
+or a top-level name two documents declare, `element_properties` of an
+element in another, valid document raises `ConversionError`; a validation
+error alone does not.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1913,3 +1936,4 @@ Step 22 added B13 (succession ends, body-declared connector ends): 23
 matrices, 1795 cases.
 Step 23 took OpenSysML #2044, which fixes #2001.
 Step 24 took OpenSysML #2069, which closes #2028.
+Step 25 took OpenSysML #2073; no case moved.
