@@ -1905,6 +1905,22 @@ or a top-level name two documents declare, `element_properties` of an
 element in another, valid document raises `ConversionError`; a validation
 error alone does not.
 
+## Step 26: OpenSysML #1936 and three more merges (no case moved)
+OpenSysML develop moved from `11bf2f67f5` to `6f9622b8a9`: #1936 (an audit
+of implicit generalizations), #2086 (inline-query review follow-ups), #2089
+(sync of extension nodes), #2088 (reserved-word names in the query table).
+The adapters did not change, and no case moved in any OpenSysML suite.
+
+Census: inherited features and memberships fill more (#1936). Pilot
+examples: `Type::inheritedFeature` and `inheritedMembership` 5740 -> 5892,
+`Type::feature` and `featureMembership` 8057 -> 8186, `Namespace::member`
+and `membership` 10187 -> 10268, `Type::input`/`output`, `directedFeature`
+and `Usage::directedUsage` a few more; matrix models: `inheritedFeature` and
+`inheritedMembership` 956 -> 969. Nothing lost its answer.
+
+#2029 still reproduces at `6f9622b8a9` (the same three-document check as in
+Step 25); #2042 and #2052 are still open.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1937,3 +1953,4 @@ matrices, 1795 cases.
 Step 23 took OpenSysML #2044, which fixes #2001.
 Step 24 took OpenSysML #2069, which closes #2028.
 Step 25 took OpenSysML #2073; no case moved.
+Step 26 took OpenSysML #1936; no case moved.
