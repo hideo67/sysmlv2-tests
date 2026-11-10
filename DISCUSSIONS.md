@@ -1919,7 +1919,9 @@ and `Usage::directedUsage` a few more; matrix models: `inheritedFeature` and
 `inheritedMembership` 956 -> 969. Nothing lost its answer.
 
 #2029 still reproduces at `6f9622b8a9` (the same three-document check as in
-Step 25); #2042 and #2052 are still open.
+Step 25); #2042 and #2052 are still open. We said so on #2029
+(https://github.com/Open-MBEE/OpenSysML/issues/2029#issuecomment-6767531865)
+and will rerun the check when #2052 merges.
 
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
