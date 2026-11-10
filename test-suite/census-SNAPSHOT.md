@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `ba98c64f3477`
+Test suite commit: `36bf75bc3ad0`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 12:33:31|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 12:33:41|
-|opensysml-go-props|OpenSysML|`nightly-20261109-ddc5b7a632-78-g539110c486` (develop)|[`539110c486`](https://github.com/Open-MBEE/OpenSysML/commit/539110c486971defb4a835488870dae5ea3eb2b5)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-09 12:34:09|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-10 00:24:04|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-10 00:24:14|
+|opensysml-go-props|OpenSysML|`nightly-20261109-ddc5b7a632-177-gddc4a547fe` (develop)|[`ddc4a547fe`](https://github.com/Open-MBEE/OpenSysML/commit/ddc4a547fec08cf28670b166469d0ca8c1bd4569)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-10 00:24:43|
 
 Local changes at run time (tracked files only):
 
@@ -338,7 +338,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Namespace::member`|fills less|74% vs 100% (10185/13776 vs 21897/21922)|Namespace::member is not derived for this element: depends-on-unsupported Namespace::membership|
 |`Namespace::membership`|fills less|74% vs 100% (10185/13776 vs 21897/21922)|Namespace::membership is not derived for this element: unresolved-reference Namespace::membership contains an unresolved imported reference|
 |`OccurrenceUsage::occurrenceDefinition`|fills less|54% vs 100% (990/1831 vs 3148/3148)|OccurrenceUsage::occurrenceDefinition is not derived for this element: depends-on-unsupported Feature::type|
-|`OwningMembership::ownedMemberName`|fills less|35% vs 61% (5175/14886 vs 13179/21481)|OwningMembership::ownedMemberName is not derived for this element: depends-on-unsupported Element::name|
+|`OwningMembership::ownedMemberName`|fills less|35% vs 61% (5189/14886 vs 13179/21481)|OwningMembership::ownedMemberName is not derived for this element: depends-on-unsupported Element::name|
 |`PartUsage::partDefinition`|fills less|68% vs 100% (421/622 vs 977/977)|PartUsage::partDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`RequirementDefinition::subjectParameter`|fills less|54% vs 100% (14/26 vs 37/37)||
 |`RequirementUsage::requirementDefinition`|fills less|53% vs 100% (46/87 vs 161/161)|RequirementUsage::requirementDefinition is not derived for this element: depends-on-unsupported Feature::type|
@@ -775,13 +775,13 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Documentation::documentedElement`|121/121|120/120|unanswered|
 |`Element::documentation`|120/52706|119/45728|99/36994|
 |`Element::isLibraryElement`|52706/52706|45728/45728|36994/36994|
-|`Element::name`|13179/52706|7990/45728|5173/36987 (7 unanswered)|
+|`Element::name`|13179/52706|7990/45728|5187/36987 (7 unanswered)|
 |`Element::ownedAnnotation`|3/52706|0/45728|0/36994|
 |`Element::ownedElement`|15884/52706|12294/45728|8854/36994|
 |`Element::owner`|22022/52706|18578/45728|36803/36994|
 |`Element::owningMembership`|21481/52706|18071/45728|14888/36994|
 |`Element::owningNamespace`|21481/52706|18071/45728|15258/36994|
-|`Element::qualifiedName`|6286/52706|6250/45728|4387/36994|
+|`Element::qualifiedName`|6286/52706|6250/45728|4401/36994|
 |`Element::shortName`|63/52706|61/45728|45/36912 (82 unanswered)|
 |`Element::textualRepresentation`|3/52706|3/45728|3/36994|
 |`ElementFilterMembership::condition`|15/15|15/15|7/7|
@@ -863,7 +863,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`OccurrenceUsage::occurrenceDefinition`|3148/3148|1734/3098|990/1831 (362 unanswered)|
 |`OwningMembership::ownedMemberElement`|21481/21481|18071/18071|14888/14893|
 |`OwningMembership::ownedMemberElementId`|21481/21481|18071/18071|14888/14888 (5 unanswered)|
-|`OwningMembership::ownedMemberName`|13179/21481|7990/18071|5175/14886 (7 unanswered)|
+|`OwningMembership::ownedMemberName`|13179/21481|7990/18071|5189/14886 (7 unanswered)|
 |`OwningMembership::ownedMemberShortName`|63/21481|61/18071|45/14811 (82 unanswered)|
 |`Package::filterCondition`|10/378|10/378|unanswered|
 |`ParameterMembership::ownedMemberParameter`|6068/6068|3054/3054|4454/4454|
