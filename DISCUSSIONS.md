@@ -1836,6 +1836,49 @@ Census: C30-accept.sysml is no longer excluded, so the matrix-models corpus
 grows from 3413 to 3476 OpenSysML elements; its rows move with the
 denominators. The Pilot-examples part is unchanged.
 
+## Step 24: OpenSysML #2069 (redefined library parameters; closes #2028)
+OpenSysML develop moved from `539110c486` to `ddc4a547fe` (ten merges).
+#2069 fixes the two Symbol-side findings posted on #2028, which OpenSysML
+closed with it. A behavior with more than one general (`Calculation :>
+Action, Evaluation`) inherited no parameters, so `return r` and the
+library's `verdict` redefined nothing. Now a redefined `result` is masked
+with and without library members, and a constraint def lists `result`, the
+effective name of `BooleanEvaluation`'s nameless `return`. `parameter` and
+`Function::result` answering empty stay with #2042.
+
+Other merges: #2063 (a feature typed by a library type inherits that type's
+memberships in the symbol structure), #2070 (`qualifiedName` through an
+effective name), #2072 (fixes #2062, `conjugatedPortDefinition`), #2027 and
+#2026 (the query API and OSLC queries translated into document-query plans,
+and inline document queries), #2071 (notes kept as `sysx:Note` in exports),
+#2035, #2036 (constraint checks through derived values), #2075 (docs). No
+client changed, and the adapters did not change.
+
+| suite | 539110c486 | ddc4a547fe |
+|--|--|--|
+| opensysml-py | 719 | 727 |
+| opensysml-go, -ts, -java | 709 | 717 |
+| opensysml-rs | 713 | 721 |
+| opensysml-ts-wasm | 703 | 711 |
+| opensysml-py-props, -go-props | 1551 | 1557 |
+
+No case got worse. C01 `parameters` now passes in every OpenSysML suite:
+C01-053/054, 061..064 (the masked `result` of calc, analysis and
+verification defs; Symbol and props suites) and C01-055/056 (a constraint
+def's `result`; Symbol suites, the props suites passed them already).
+
+Since #2027 the query API answers any metamodel property, so in the five
+Symbol suites over gRPC the reason of 121 unsupported cases each now reads
+"available through the standard query API (...)" (`sourceFeature`,
+`targetFeature`, `relatedFeature` 30 each, `isComposite`, `isReference`,
+`subjectParameter` 8 each, `result`, `isParallel` 6, a transition's trigger,
+guard and effect 3 each). The adapters consult the query only for that note;
+the Symbol suites stay Symbol API reads, and the outcomes did not change.
+
+Census: 14 more elements on the Pilot examples answer `name`,
+`qualifiedName` and `ownedMemberName` (#2070's effective names); nothing
+else moved.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1866,3 +1909,4 @@ Step 21 took OpenSysML #2051 (fixes #1956, #1957, #1958) and #1992 (fixes
 Step 22 added B13 (succession ends, body-declared connector ends): 23
 matrices, 1795 cases.
 Step 23 took OpenSysML #2044, which fixes #2001.
+Step 24 took OpenSysML #2069, which closes #2028.
