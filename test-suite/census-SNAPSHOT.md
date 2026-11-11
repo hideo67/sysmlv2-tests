@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `04c1fe48c246`
+Test suite commit: `71922a4b9471`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-10 08:54:46|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-10 08:54:55|
-|opensysml-go-props|OpenSysML|`nightly-20261109-ddc5b7a632-247-g6f9622b8a9` (develop)|[`6f9622b8a9`](https://github.com/Open-MBEE/OpenSysML/commit/6f9622b8a9d5f1fc77a0e921203c0496783ac33d)|2026-11-09|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-10 08:55:21|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-11 06:30:22|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-11 06:30:31|
+|opensysml-go-props|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-11 06:30:57|
 
 Local changes at run time (tracked files only):
 
@@ -200,7 +200,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ViewUsage::exposedElement`|fills more|67% vs 11% (6/9 vs 1/9)||
 |`ViewpointUsage::viewpointStakeholder`|fills more|100% vs 50% (2/2 vs 1/2)||
 
-**opensysml-go-props**: 149 properties
+**opensysml-go-props**: 148 properties
 
 |property|difference|detail|note|
 |--|--|--|--|
@@ -321,7 +321,6 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ViewUsage::viewDefinition`|always empty|reference fills 9/9; answered empty on all 7||
 |`ViewpointUsage::viewpointDefinition`|always empty|reference fills 2/2; answered empty on all 2||
 |`ActionUsage::actionDefinition`|fills less|23% vs 100% (133/585 vs 964/964)|ActionUsage::actionDefinition is not derived for this element: depends-on-unsupported Feature::type|
-|`CaseDefinition::subjectParameter`|fills less|67% vs 100% (16/24 vs 31/31)||
 |`Classifier::ownedSubclassification`|fills less|20% vs 92% (156/798 vs 973/1052)||
 |`ConnectionUsage::connectionDefinition`|fills less|43% vs 100% (30/69 vs 110/110)||
 |`Connector::relatedFeature`|fills less|44% vs 94% (198/447 vs 571/608)||
@@ -718,7 +717,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`CalculationUsage::calculationDefinition`|83/83|68/83|37/48 (19 unanswered)|
 |`CaseDefinition::actorParameter`|8/31|8/31|5/24|
 |`CaseDefinition::objectiveRequirement`|31/31|31/31|0/24|
-|`CaseDefinition::subjectParameter`|31/31|31/31|16/24|
+|`CaseDefinition::subjectParameter`|31/31|31/31|22/24|
 |`CaseUsage::actorParameter`|20/62|20/62|11/47 (4 unanswered)|
 |`CaseUsage::caseDefinition`|62/62|48/62|0/51|
 |`CaseUsage::objectiveRequirement`|62/62|62/62|0/51|
@@ -931,7 +930,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Type::featureMembership`|21346/21425|11370/17983|8186/13483 (1336 unanswered)|
 |`Type::inheritedFeature`|21425/21425|8220/17983|5892/13483 (1336 unanswered)|
 |`Type::inheritedMembership`|21425/21425|8220/17983|5892/13483 (1336 unanswered)|
-|`Type::input`|3241/21425|2760/17983|1818/13483 (1336 unanswered)|
+|`Type::input`|3241/21425|2760/17983|1817/13483 (1336 unanswered)|
 |`Type::intersectingType`|0/21425|0/17983|0/14819|
 |`Type::isConjugated`|21425/21425|17983/17983|14819/14819|
 |`Type::multiplicity`|2615/21425|2605/17983|1383/14819|
