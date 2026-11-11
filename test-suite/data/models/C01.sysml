@@ -42,4 +42,9 @@ package C01 {
     use case def SubUC :> UC;
     analysis def SubAn :> An;
     verification def SubVer :> Ver;
+
+    // a specializing case definition with its own objective, inheriting the rest
+    use case def ObjUC :> UC { objective o; }
+    analysis def ObjAn :> An { objective o; }
+    verification def ObjVer :> Ver { objective o; }
 }

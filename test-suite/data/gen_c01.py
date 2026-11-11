@@ -3,7 +3,8 @@
 
 Full cross product: reads x definition kind (action, state, calc, constraint, requirement,
 use case, analysis, verification) x location (DL1 the definition itself, inherited by a
-specializing definition `SubX :> X`).
+specializing definition `SubX :> X`; for the case kinds, also inherited by a specializing
+definition with its own objective, `ObjX :> X { objective o; }`).
 
 Reads:
   name        Element::name
@@ -35,7 +36,9 @@ KINDS = {  # base name -> (metaclass, own parameters, subject)
 }
 KIND_COL = {"Act": "action def", "St": "state def", "Calc": "calc def", "Cons": "constraint def",
             "Req": "requirement def", "UC": "use case def", "An": "analysis def", "Ver": "verification def"}
-LOC_COL = {"DL1": "definition itself", "DINH": "inherited by specializing def"}
+LOC_COL = {"DL1": "definition itself", "DINH": "inherited by specializing def",
+           "DINHO": "inherited by specializing def with own objective"}
+OBJ_KINDS = ["UC", "An", "Ver"]   # the kinds that can own an objective (case definitions)
 # Directed features inherited from the library, and the result parameter's name: the Pilot's
 # answer (library 0.64.0), checked against the library source: `return result` in
 # Performances.kerml (evaluations, constraints) and Requirements.sysml, `return verdict ... :>> result`
@@ -50,18 +53,27 @@ m = Matrix("C01", "behavioral definitions", "models/C01.sysml",
            list(READ_COL.values()) + list(KIND_COL.values()) + list(LOC_COL.values()),
            description="Behavioral definitions of each kind, and their parameters, result and subject.",
            notes={"reads": __doc__.split("Reads:")[1].strip()})
+def add(read, k, loc):
+    metaclass, own, subject = KINDS[k]
+    name = {"DL1": k, "DINH": f"Sub{k}", "DINHO": f"Obj{k}"}[loc]
+    extra = {}
+    if read == "parameters":
+        expect = sorted(own + LIB_PARAMS[k])
+    elif read == "result":
+        expect = RESULT[k]
+    else:
+        expect = {"name": name, "kind": metaclass, "isAbstract": False, "subject": subject}[read]
+    if read in ("parameters", "result") and k in FROM_LIBRARY:
+        extra["libraryDependent"] = True
+    m.add({READ_COL[read], KIND_COL[k], LOC_COL[loc]}, read, f"C01::{name}", expect, **extra)
+
+
 for read in READS:
-    for k, (metaclass, own, subject) in KINDS.items():
-        for loc in LOC_COL:
-            name = k if loc == "DL1" else f"Sub{k}"
-            extra = {}
-            if read == "parameters":
-                expect = sorted(own + LIB_PARAMS[k])
-            elif read == "result":
-                expect = RESULT[k]
-            else:
-                expect = {"name": name, "kind": metaclass, "isAbstract": False, "subject": subject}[read]
-            if read in ("parameters", "result") and k in FROM_LIBRARY:
-                extra["libraryDependent"] = True
-            m.add({READ_COL[read], KIND_COL[k], LOC_COL[loc]}, read, f"C01::{name}", expect, **extra)
+    for k in KINDS:
+        for loc in ("DL1", "DINH"):
+            add(read, k, loc)
+# appended after the first 96 cases so their ids stay stable; an own objective is not a parameter
+for read in READS:
+    for k in OBJ_KINDS:
+        add(read, k, "DINHO")
 m.write("gen_c01.py")

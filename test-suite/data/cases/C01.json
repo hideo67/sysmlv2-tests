@@ -740,6 +740,145 @@
    "check": "subject",
    "element": "C01::SubVer",
    "expect": "s"
+  },
+  {
+   "id": "C01-097",
+   "check": "name",
+   "element": "C01::ObjUC",
+   "expect": "ObjUC"
+  },
+  {
+   "id": "C01-098",
+   "check": "name",
+   "element": "C01::ObjAn",
+   "expect": "ObjAn"
+  },
+  {
+   "id": "C01-099",
+   "check": "name",
+   "element": "C01::ObjVer",
+   "expect": "ObjVer"
+  },
+  {
+   "id": "C01-100",
+   "check": "kind",
+   "element": "C01::ObjUC",
+   "expect": "UseCaseDefinition"
+  },
+  {
+   "id": "C01-101",
+   "check": "kind",
+   "element": "C01::ObjAn",
+   "expect": "AnalysisCaseDefinition"
+  },
+  {
+   "id": "C01-102",
+   "check": "kind",
+   "element": "C01::ObjVer",
+   "expect": "VerificationCaseDefinition"
+  },
+  {
+   "id": "C01-103",
+   "check": "isAbstract",
+   "element": "C01::ObjUC",
+   "expect": false
+  },
+  {
+   "id": "C01-104",
+   "check": "isAbstract",
+   "element": "C01::ObjAn",
+   "expect": false
+  },
+  {
+   "id": "C01-105",
+   "check": "isAbstract",
+   "element": "C01::ObjVer",
+   "expect": false
+  },
+  {
+   "id": "C01-106",
+   "check": "parameters",
+   "element": "C01::ObjUC",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "result"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-107",
+   "check": "parameters",
+   "element": "C01::ObjAn",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "r"
+    ]
+   ]
+  },
+  {
+   "id": "C01-108",
+   "check": "parameters",
+   "element": "C01::ObjVer",
+   "expect": [
+    [
+     "in",
+     "s"
+    ],
+    [
+     "out",
+     "verdict"
+    ]
+   ],
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-109",
+   "check": "result",
+   "element": "C01::ObjUC",
+   "expect": "result",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-110",
+   "check": "result",
+   "element": "C01::ObjAn",
+   "expect": "r"
+  },
+  {
+   "id": "C01-111",
+   "check": "result",
+   "element": "C01::ObjVer",
+   "expect": "verdict",
+   "libraryDependent": true
+  },
+  {
+   "id": "C01-112",
+   "check": "subject",
+   "element": "C01::ObjUC",
+   "expect": "s"
+  },
+  {
+   "id": "C01-113",
+   "check": "subject",
+   "element": "C01::ObjAn",
+   "expect": "s"
+  },
+  {
+   "id": "C01-114",
+   "check": "subject",
+   "element": "C01::ObjVer",
+   "expect": "s"
   }
  ]
 }

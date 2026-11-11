@@ -104,7 +104,7 @@ expressions, F: runtime. Issue numbers are OpenSysML issues that motivated the m
 | B12 | named connector ends | same as B10 | L2, L3, L6 | connection, interface x end depth 0/1/2, ends named `a ::> x.p` | #1956 |
 | B13 | succession and body-declared ends | same as B10 | def, L2, L3, L6 | succession named, unnamed, `then` shorthand, at an unnamed node, guarded, state transition; connection/interface with `end ... ::> x;` in its body | - |
 | B20 | flows | payload type, source output, target input, end references (flow-end form) | L2, L3, L6 | flow, succession flow, message x end depth | - |
-| C01 | behavioral definitions | name, metaclass kind, isAbstract, parameters (own and inherited), result of a calc def, subject of a requirement/case def | DL1-DL5 | action, state, calc, constraint, requirement, use case, analysis, verification def | - |
+| C01 | behavioral definitions | name, metaclass kind, isAbstract, parameters (own and inherited), result of a calc def, subject of a requirement/case def | DL1-DL5 | action, state, calc, constraint, requirement, use case, analysis, verification def; a case def specialized with its own objective | - |
 | C10 | action parameters | name, direction, type, bound value kind and text, referenced feature of a chain value | L2-L5 | literal, feature, chain, operator expression | #1965 |
 | C20 | action kinds | metaclass kind, payload, sender/receiver (`via`/`to`), accept payload, assigned feature | L2, L3 + in state `entry` | send, accept, assign, perform, if/while/for | #1985 |
 | C30 | states and transitions | substates, entry/do/exit, transition source, target, trigger, guard, effect | L2, L3 | state def, exhibit state, parallel | - |
@@ -1952,6 +1952,34 @@ at a time):
 #2042 and #2052 are still open, and #2029 still reproduces at `3c7cd28a50`
 (the same three-document check as in Step 25).
 
+## Step 28: C01, inherited subject beside an own objective
+Step 27 found the census gain of `subjectParameter` on six analysis defs of
+EVSample and EVSample1, which no matrix case saw: C01 already reads the
+subject inherited by `SubAn :> An`, which passed before. Reading both builds
+of OpenSysML with variations of the form showed what differed: the
+specializing def owns an objective. At `6f9622b8a9` a specializing analysis,
+use case or verification def with its own `objective o;` answered no
+`subjectParameter`; at `3c7cd28a50` it answers the inherited subject, as the
+Pilot does (the objective is no longer counted as a parameter, #2093). An own
+`return`, requirement, part or attribute did not hide it in either build. An
+own `in x` does hide it in both, and the Pilot too: it answers no subject and
+reports "Subject must be first parameter", so that form is not valid.
+
+C01 gets a third location, a specializing def with its own objective (`ObjUC`,
+`ObjAn`, `ObjVer`, `X { objective o; }`), for the three case kinds that can own
+one: 18 cases, C01-097..114, appended so the earlier ids stay. 23 matrices,
+1813 cases.
+
+| Suite | New cases passed |
+|--|--|
+| pilot-java | 18 of 18 |
+| sysml-toolkit-rs | 18 |
+| sysml-toolkit-rs-checked | 12 (`parameters` and `result` refused, as for `SubX`) |
+| opensysml-py-props, -go-props | 15 (`result` empty, as for `SubX`; #2042) |
+| Symbol API suites | 12 (`result` and `subject` unsupported, as for `SubX`) |
+
+Every new case has the outcome of its `SubX` counterpart in every suite.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1986,3 +2014,5 @@ Step 24 took OpenSysML #2069, which closes #2028.
 Step 25 took OpenSysML #2073; no case moved.
 Step 26 took OpenSysML #1936; no case moved.
 Step 27 took OpenSysML #2091/#2093/#2100 and more; no case moved.
+Step 28 added a C01 location, a specializing case def with its own objective:
+23 matrices, 1813 cases.
