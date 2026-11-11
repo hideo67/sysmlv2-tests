@@ -1923,6 +1923,35 @@ Step 25); #2042 and #2052 are still open. We said so on #2029
 (https://github.com/Open-MBEE/OpenSysML/issues/2029#issuecomment-6767531865)
 and will rerun the check when #2052 merges.
 
+## Step 27: OpenSysML #2091, #2093, #2100 and more (no case moved)
+OpenSysML develop moved from `6f9622b8a9` to `3c7cd28a50`, 25 merged PRs.
+Those touching what we read: #2091 (an objective's `verify r;` is a
+RequirementUsage), #2093 (an objective is not a parameter; via #2101), #2099
+(a requirement's actors and stakeholders), #2100 (an anonymous assume/require
+constraint is a member of the requirement's constraints), #2110 (exact
+metaclass in query type filters; via #2101), #2117 (metadata body features).
+The rest are CI, MCP authentication and scopes, client coverage reports and
+the Go toolchain. The adapters did not change, no case moved in any OpenSysML
+suite, and no detail text changed.
+
+Census, Pilot examples (to find the elements, we read both builds one element
+at a time):
+- `CaseDefinition::subjectParameter` on AnalysisCaseDefinition 8 -> 14 of 14,
+  as the Pilot. The six that gained it are analysis defs whose subject is
+  inherited from a specialized analysis def (`RangeAnalysis :>
+  VehicleAnalysis` in EVSample and EVSample1); they now answer
+  `VehicleAnalysis::vehicle`. Matrix C01 covers owned subjects only, so no
+  case saw this.
+- `Type::input` on VerificationCaseUsage 4 -> 3 of 5 (the Pilot: 7 of 7). The
+  objective `obj` is no longer listed as an input (#2093, as the Pilot
+  exports it), which is right. `VerificationMetadataExample::massTests` had
+  `obj` as its only input and now has none: the subject it inherits from
+  `VerificationCases::VerificationCase` is not answered as a parameter, the
+  known gap with #2042.
+
+#2042 and #2052 are still open, and #2029 still reproduces at `3c7cd28a50`
+(the same three-document check as in Step 25).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -1956,3 +1985,4 @@ Step 23 took OpenSysML #2044, which fixes #2001.
 Step 24 took OpenSysML #2069, which closes #2028.
 Step 25 took OpenSysML #2073; no case moved.
 Step 26 took OpenSysML #1936; no case moved.
+Step 27 took OpenSysML #2091/#2093/#2100 and more; no case moved.
