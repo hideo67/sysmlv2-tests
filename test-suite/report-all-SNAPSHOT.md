@@ -1,20 +1,22 @@
 # SysML v2 MDK test results
 
+Test suite commit: `4d7662fc3a5e`
+
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-11 06:25:31|
-|opensysml-go|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-11 06:25:24|
-|opensysml-java|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.12.1" 2026-08-18|2026-11-11 06:25:56|
-|opensysml-py-props|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-11 06:25:05|
-|opensysml-py|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-11 06:24:54|
-|opensysml-rs|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-11 06:25:41|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-11 06:25:49|
-|opensysml-ts|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-11 06:25:45|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.12.1" 2026-08-18|2026-11-09 07:59:17|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:59:05|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-09 07:59:04|
+|opensysml-go-props|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-11 06:45:17|
+|opensysml-go|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-11 06:45:10|
+|opensysml-java|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-11 06:45:42|
+|opensysml-py-props|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-11 06:45:09|
+|opensysml-py|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-11 06:44:58|
+|opensysml-rs|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-11 06:45:27|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-11 06:45:36|
+|opensysml-ts|OpenSysML|`nightly-20261110-6ff0288b83-59-g3c7cd28a50` (develop)|[`3c7cd28a50`](https://github.com/Open-MBEE/OpenSysML/commit/3c7cd28a5073e61282843931eb85031cb7746339)|2026-11-10|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-11 06:45:31|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-11 06:45:57|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-11 06:45:46|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-11 06:45:44|
 
 Local changes at run time (tracked files only):
 
@@ -38,7 +40,7 @@ Local changes at run time (tracked files only):
 |B12|108|108 / 0 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |B13|165|50 / 115 / 0 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|50 / 115 / 0 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
 |B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
-|C01|96|84 / 12 / 0 / 0|64 / 0 / 32 / 0|64 / 0 / 32 / 0|84 / 12 / 0 / 0|64 / 0 / 32 / 0|64 / 0 / 32 / 0|64 / 0 / 32 / 0|64 / 0 / 32 / 0|96 / 0 / 0 / 0|68 / 0 / 0 / 28|96 / 0 / 0 / 0|
+|C01|114|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|120|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|48 / 0 / 0 / 24|48 / 24 / 0 / 0|
@@ -47,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1795|1557 / 205 / 33 / 0|717 / 223 / 855 / 0|717 / 223 / 855 / 0|1557 / 205 / 33 / 0|727 / 213 / 855 / 0|721 / 213 / 861 / 0|711 / 223 / 861 / 0|717 / 223 / 855 / 0|1745 / 0 / 50 / 0|1619 / 18 / 50 / 108|1674 / 71 / 50 / 0|
+|**all**|1813|1572 / 208 / 33 / 0|729 / 223 / 861 / 0|729 / 223 / 861 / 0|1572 / 208 / 33 / 0|739 / 213 / 861 / 0|733 / 213 / 867 / 0|723 / 223 / 867 / 0|729 / 223 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -1291,6 +1293,24 @@ Local changes at run time (tracked files only):
 |C01-094|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C01-095|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C01-096|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C01-097|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-098|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-099|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-100|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-101|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-102|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-103|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-104|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-105|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|C01-106|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-107|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-108|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|C01-109|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C01-110|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C01-111|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|C01-112|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C01-113|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C01-114|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-001|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-002|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-003|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -6443,6 +6463,54 @@ Local changes at run time (tracked files only):
 - C01-096 [opensysml-rs] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
 - C01-096 [opensysml-ts-wasm] unsupported: no Symbol field for the subject parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C01-096 [opensysml-ts] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-106 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
+- C01-107 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
+- C01-108 [sysml-toolkit-rs-checked] error: directedFeature refused by the checked reader: property has an incomplete derivation
+- C01-109 [opensysml-go-props] fail: result C01::ObjUC: got null, want "result"
+- C01-109 [opensysml-go] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-109 [opensysml-java] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-109 [opensysml-py-props] fail: result C01::ObjUC: got None, want 'result'
+- C01-109 [opensysml-py] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-109 [opensysml-rs] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-109 [opensysml-ts-wasm] unsupported: no Symbol field for the result parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C01-109 [opensysml-ts] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-109 [sysml-toolkit-rs-checked] error: result refused by the checked reader: Function.result is incomplete: UnsupportedConfiguration
+- C01-110 [opensysml-go-props] fail: result C01::ObjAn: got null, want "r"
+- C01-110 [opensysml-go] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-110 [opensysml-java] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-110 [opensysml-py-props] fail: result C01::ObjAn: got None, want 'r'
+- C01-110 [opensysml-py] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-110 [opensysml-rs] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-110 [opensysml-ts-wasm] unsupported: no Symbol field for the result parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C01-110 [opensysml-ts] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-110 [sysml-toolkit-rs-checked] error: result refused by the checked reader: Function.result is incomplete: UnsupportedConfiguration
+- C01-111 [opensysml-go-props] fail: result C01::ObjVer: got null, want "verdict"
+- C01-111 [opensysml-go] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-111 [opensysml-java] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-111 [opensysml-py-props] fail: result C01::ObjVer: got None, want 'verdict'
+- C01-111 [opensysml-py] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-111 [opensysml-rs] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-111 [opensysml-ts-wasm] unsupported: no Symbol field for the result parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C01-111 [opensysml-ts] unsupported: no Symbol field for the result parameter; the standard query API does not offer it either
+- C01-111 [sysml-toolkit-rs-checked] error: result refused by the checked reader: Function.result is incomplete: UnsupportedConfiguration
+- C01-112 [opensysml-go] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-112 [opensysml-java] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-112 [opensysml-py] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-112 [opensysml-rs] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-112 [opensysml-ts-wasm] unsupported: no Symbol field for the subject parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C01-112 [opensysml-ts] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-113 [opensysml-go] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-113 [opensysml-java] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-113 [opensysml-py] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-113 [opensysml-rs] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-113 [opensysml-ts-wasm] unsupported: no Symbol field for the subject parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C01-113 [opensysml-ts] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-114 [opensysml-go] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-114 [opensysml-java] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-114 [opensysml-py] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-114 [opensysml-rs] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
+- C01-114 [opensysml-ts-wasm] unsupported: no Symbol field for the subject parameter; the standard query API is not served by this backend (sysml-wasm has no Query)
+- C01-114 [opensysml-ts] unsupported: no Symbol field for the subject parameter; available through the standard query API (subjectParameter)
 - C10-001 [opensysml-go] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-001 [opensysml-java] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-001 [opensysml-py] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
