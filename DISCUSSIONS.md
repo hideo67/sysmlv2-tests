@@ -1980,6 +1980,14 @@ one: 18 cases, C01-097..114, appended so the earlier ids stay. 23 matrices,
 
 Every new case has the outcome of its `SubX` counterpart in every suite.
 
+## Step 29: OpenSysML #2121 and three more merges (no case moved)
+OpenSysML develop moved from `3c7cd28a50` to `c708674d36`: #2121 (a `then x;`
+succession without a body is an owned SuccessionAsUsage in the symbol
+structure), #2119 and #2084 (api-json differential baseline), #2129 (CI
+shards). No case moved in any OpenSysML suite, no detail text changed, and
+the census is unchanged: B13 and the census already read these successions
+through `GetElementProperties`. #2042 and #2052 are still open.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2016,3 +2024,4 @@ Step 26 took OpenSysML #1936; no case moved.
 Step 27 took OpenSysML #2091/#2093/#2100 and more; no case moved.
 Step 28 added a C01 location, a specializing case def with its own objective:
 23 matrices, 1813 cases.
+Step 29 took OpenSysML #2121; no case moved.
