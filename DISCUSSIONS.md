@@ -1988,6 +1988,45 @@ shards). No case moved in any OpenSysML suite, no detail text changed, and
 the census is unchanged: B13 and the census already read these successions
 through `GetElementProperties`. #2042 and #2052 are still open.
 
+## Step 30: sixty OpenSysML merges, #2161 and #2133 among them
+OpenSysML develop moved from `c708674d36` to `a159469093`, 60 merged PRs. #2042
+and #2052 are still open, and none of the new commits names #2029, #2042,
+#2052 or #2068. Those touching what we read: #2161 (successions, bindings,
+perform, exhibit, include and event usages answer isComposite false and
+isReference true), #2166 (isReference in the element form), #2133 (a state
+body's `then` after a state is a TransitionUsage owning its succession),
+#2143 (a bare `entry;`, `do;`, `exit;` performs an anonymous empty action),
+#2164 and #2173 (`then x;` succession ends and source/target on the export
+and native walk), #2135, #2172, #2175, #2180 and #2194
+(Relationship::relatedElement, source and target of connectors and
+associations), #2160 (an imported membership takes its import's visibility).
+
+Matrices: A10 `isReference` now passes in both GetElementProperties suites
+(A10-019, 021, 023, 034: `car`, and `Car::engine` on the def and through
+`car` and `sportsCar`); nothing else moved, and no detail text
+changed. B13 is unchanged: the #2068 reproduction answers as filed through
+GetElementProperties. #2068 was confirmed as a bug on 2026-11-09, with a fix
+outlined in the shared semantic layer; it has not landed.
+
+Census, Pilot examples (opensysml-go-props):
+- `Usage::isReference` answered on every usage, 228 -> 4951 of 4951, as the
+  Pilot (before: empty where not true); matrix models 47 -> 591 of 591.
+- `Relationship::relatedElement` 21135 -> 21245 (matrix models 2001 -> 2028).
+- 9 more elements: the anonymous entry/do/exit actions (#2143), and two
+  TransitionUsages (#2133). `StateUsage::entryAction` 7 -> 11,
+  `StateDefinition::entryAction` 1 -> 2, `TransitionUsage::source` 28 -> 30 and
+  `target` 59 -> 61, `OwningMembership::ownedMemberElement` now on all.
+- `Connector::sourceFeature` and `targetFeature` 2 fewer (292 -> 290, 296 ->
+  294). Reading both builds connector by connector, the two are the `then
+  wait;` after `state increment { ... }` and `state decrement { ... }` in
+  AssignmentTest. They were bare successions from `increment`/`decrement` to
+  `wait`; now they are the successions of TransitionUsages, as the Pilot reads
+  them, and a transition's succession answers no source or target, group 2 of
+  #2068. The transitions themselves answer `source` and `target`.
+
+#2029 still reproduces at `a159469093` (the same three-document check as in
+Step 25).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2025,3 +2064,4 @@ Step 27 took OpenSysML #2091/#2093/#2100 and more; no case moved.
 Step 28 added a C01 location, a specializing case def with its own objective:
 23 matrices, 1813 cases.
 Step 29 took OpenSysML #2121; no case moved.
+Step 30 took 60 OpenSysML merges; A10 isReference passes in the props suites.
