@@ -2034,6 +2034,15 @@ is still empty for every succession (through GetElementProperties and the
 api-json export alike), and a transition's succession answers no source or
 target, which since #2133 includes a state body's `then x;` after a state.
 
+On the two issues closed on 2026-11-13 with a request to reopen if the fix
+does not hold, #1986 (composite vs. reference parts) and #1965 (a parameter's
+bound expression), we agree with the closures: A10 `isComposite` and
+`isReference` and C10 `valueKind` and `valueReferences` pass in both props
+suites, and `model.query` selects `isComposite`/`isReference`. We noted on
+#1965 the one leftover, a FeatureChainExpression's empty `operator` (`"."`
+expected, C10-029..032), first mentioned on #2012
+(https://github.com/Open-MBEE/OpenSysML/issues/1965#issuecomment-6853606089).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
