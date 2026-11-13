@@ -2043,6 +2043,19 @@ suites, and `model.query` selects `isComposite`/`isReference`. We noted on
 expected, C10-029..032), first mentioned on #2012
 (https://github.com/Open-MBEE/OpenSysML/issues/1965#issuecomment-6853606089).
 
+What the remaining OpenSysML failures come from (opensysml-py-props, 204
+cases): B13 115 (#2068); C01 `result` 15, B10 connection def `endFeature` 8,
+C21 constructor `instantiatedType`/`resultType` 24 (with #2042/#2052, which
+#2012's closure handed them to); C10 chain `operator` 4 (noted on #1965);
+and two groups not yet filed, now filed: A40 `pBoth : V :> q` whose
+GetElementProperties `type` leaves out `T` while the Symbol API answers it
+(A40-040..042, #2198), and B20 flows' `sourceOutputFeature`/`targetInputFeature`
+and the message's `connectorEnd` (27 cases, #2199; item 4 of our #2012
+comment, which no open PR carried). A60 `resolve` (8: the lookup is by
+declared name, not KerML name resolution) is left unfiled. The Symbol API
+suites' further failures are by design since #2021 documented the Symbol as a
+summary of what is written.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
