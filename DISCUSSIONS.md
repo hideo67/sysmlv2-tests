@@ -2027,6 +2027,13 @@ Census, Pilot examples (opensysml-go-props):
 #2029 still reproduces at `a159469093` (the same three-document check as in
 Step 25).
 
+We posted this status on #2068
+(https://github.com/Open-MBEE/OpenSysML/issues/2068#issuecomment-6853404595):
+the ends of `then` and transition successions now exist, but `relatedFeature`
+is still empty for every succession (through GetElementProperties and the
+api-json export alike), and a transition's succession answers no source or
+target, which since #2133 includes a state body's `then x;` after a state.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
