@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `c6d75be0f481`
+Test suite commit: `254a2821075f`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-13 12:22:02|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-13 12:22:11|
-|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-186-ga159469093` (develop)|[`a159469093`](https://github.com/Open-MBEE/OpenSysML/commit/a159469093b1dcd30e44a196cff9cfdba4329074)|2026-11-13|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-13 12:22:35|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-14 11:33:31|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-14 11:33:39|
+|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-14 11:34:02|
 
 Local changes at run time (tracked files only):
 
@@ -207,7 +207,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ViewUsage::exposedElement`|fills more|67% vs 11% (6/9 vs 1/9)||
 |`ViewpointUsage::viewpointStakeholder`|fills more|100% vs 50% (2/2 vs 1/2)||
 
-**opensysml-go-props**: 147 properties
+**opensysml-go-props**: 144 properties
 
 |property|difference|detail|note|
 |--|--|--|--|
@@ -330,9 +330,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ActionUsage::actionDefinition`|fills less|22% vs 100% (133/592 vs 964/964)|ActionUsage::actionDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`Classifier::ownedSubclassification`|fills less|20% vs 92% (156/798 vs 973/1052)||
 |`ConnectionUsage::connectionDefinition`|fills less|43% vs 100% (30/69 vs 110/110)||
-|`Connector::relatedFeature`|fills less|44% vs 94% (198/447 vs 571/608)||
-|`Connector::sourceFeature`|fills less|65% vs 94% (290/447 vs 571/608)||
-|`Connector::targetFeature`|fills less|66% vs 94% (294/447 vs 571/608)||
+|`Connector::relatedFeature`|fills less|58% vs 94% (259/447 vs 571/608)||
 |`ConstraintUsage::constraintDefinition`|fills less|48% vs 100% (77/161 vs 269/269)|ConstraintUsage::constraintDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`Expression::function`|fills less|8% vs 100% (253/3321 vs 4496/4496)|Expression::function is not derived for this element: no-rule Expression::function|
 |`Feature::ownedRedefinition`|fills less|6% vs 45% (882/14026 vs 9127/20297)||
@@ -350,7 +348,6 @@ Properties, of those carried by some element of the corpus: answered with values
 |`StateUsage::stateDefinition`|fills less|8% vs 100% (5/64 vs 103/103)|StateUsage::stateDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`Step::behavior`|fills less|5% vs 100% (210/3865 vs 5377/5377)|Step::behavior is not derived for this element: no-rule Step::behavior|
 |`Step::parameter`|fills less|58% vs 94% (2308/3975 vs 5037/5377)||
-|`TransitionUsage::source`|fills less|48% vs 100% (30/62 vs 86/86)||
 |`Type::feature`|fills less|61% vs 100% (8191/13488 vs 21270/21349)|Type::feature is not derived for this element: depends-on-unsupported Type::inheritedFeature|
 |`Type::featureMembership`|fills less|61% vs 100% (8191/13488 vs 21270/21349)|Type::featureMembership is not derived for this element: unresolved-reference Type::featureMembership has unresolved specialization references|
 |`Type::inheritedFeature`|fills less|44% vs 100% (5899/13488 vs 21349/21349)|Type::inheritedFeature is not derived for this element: unresolved-reference Type::inheritedFeature has unresolved specialization references|
@@ -456,9 +453,9 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Connector::association`|45/45|14/45|0/45|
 |`Connector::connectorEnd`|45/45|45/45|39/45|
 |`Connector::defaultFeaturingType`|41/45|41/45|0/45|
-|`Connector::relatedFeature`|44/45|44/45|33/45|
-|`Connector::sourceFeature`|44/45|44/45|36/45|
-|`Connector::targetFeature`|44/45|44/45|36/45|
+|`Connector::relatedFeature`|44/45|44/45|37/45|
+|`Connector::sourceFeature`|44/45|44/45|40/45|
+|`Connector::targetFeature`|44/45|44/45|40/45|
 |`ConstraintUsage::constraintDefinition`|3/3|0/3|0/3|
 |`Definition::directedUsage`|29/223|29/223|31/223|
 |`Definition::ownedAction`|19/223|19/223|21/223|
@@ -586,7 +583,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`PortDefinition::conjugatedPortDefinition`|14/28|14/28|14/28|
 |`PortUsage::portDefinition`|48/48|42/48|42/48|
 |`ReferenceSubsetting::referencingFeature`|85/85|83/83|86/86|
-|`Relationship::relatedElement`|2154/2155|2049/2067|2028/2094|
+|`Relationship::relatedElement`|2154/2155|2049/2067|2055/2094|
 |`RequirementDefinition::actorParameter`|0/2|0/2|0/2|
 |`RequirementDefinition::assumedConstraint`|0/2|0/2|0/2|
 |`RequirementDefinition::framedConcern`|0/2|0/2|0/2|
@@ -750,9 +747,9 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Connector::association`|608/608|58/608|0/447|
 |`Connector::connectorEnd`|608/608|607/608|361/447|
 |`Connector::defaultFeaturingType`|508/608|555/608|0/447|
-|`Connector::relatedFeature`|571/608|600/608|198/447|
-|`Connector::sourceFeature`|571/608|585/608|290/447|
-|`Connector::targetFeature`|571/608|600/608|294/447|
+|`Connector::relatedFeature`|571/608|600/608|259/447|
+|`Connector::sourceFeature`|571/608|585/608|347/447|
+|`Connector::targetFeature`|571/608|600/608|355/447|
 |`ConstraintUsage::constraintDefinition`|269/269|135/269|77/161 (49 unanswered)|
 |`CrossSubsetting::crossingFeature`|2/2|2/2||
 |`Definition::directedUsage`|204/1054|203/1054|160/725 (73 unanswered)|
@@ -887,7 +884,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`PortDefinition::conjugatedPortDefinition`|79/158|79/158|39/78|
 |`PortUsage::portDefinition`|333/333|297/333|132/146 (12 unanswered)|
 |`ReferenceSubsetting::referencingFeature`|1045/1045|1029/1029|803/803|
-|`Relationship::relatedElement`|31109/31147|27563/27613|21245/22020 (7 unanswered)|
+|`Relationship::relatedElement`|31109/31147|27563/27613|21436/22020 (7 unanswered)|
 |`RenderingDefinition::rendering`|1/1|1/1|unanswered|
 |`RenderingUsage::renderingDefinition`|12/12|11/12|0/10|
 |`RequirementConstraintMembership::ownedConstraint`|65/65|65/65|49/49|
@@ -936,7 +933,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`TransitionFeatureMembership::transitionFeature`|93/93|93/93|67/67|
 |`TransitionUsage::effectAction`|17/86|17/86|9/62|
 |`TransitionUsage::guardExpression`|19/86|19/86|17/62|
-|`TransitionUsage::source`|86/86|86/86|30/62|
+|`TransitionUsage::source`|86/86|86/86|57/62|
 |`TransitionUsage::succession`|86/86|86/86|62/62|
 |`TransitionUsage::target`|86/86|86/86|61/61 (1 unanswered)|
 |`TransitionUsage::triggerAction`|57/86|57/86|41/62|
