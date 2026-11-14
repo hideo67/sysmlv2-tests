@@ -2123,6 +2123,9 @@ Census, Pilot examples (opensysml-go-props): `Connector::relatedFeature` 198 ->
 C10's chain `operator` is still empty after #2140. #2029 still reproduces at
 `dd05a85437` (the same three-document check as in Step 25).
 
+We replied on #2202 that the notes are applied and what moved
+(https://github.com/Open-MBEE/OpenSysML/issues/2202#issuecomment-6876712295).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
