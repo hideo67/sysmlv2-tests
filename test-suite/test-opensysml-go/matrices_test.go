@@ -360,7 +360,7 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			return nil, err
 		}
 		n := 0
-		for _, cid := range o.ChildIDs {
+		for _, cid := range scopeIDs(o, len(c.Through) > 0) {
 			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && ch.Name == "" && strings.EqualFold(ch.Kind, "partUsage") && strings.HasPrefix(cid, norm(c.Element)+"::") {
 				n++
@@ -406,7 +406,10 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 			return nil, err
 		}
 		var found []string
-		for _, cid := range o.ChildIDs {
+		for _, cid := range scopeIDs(o, len(c.Through) > 0) {
+			if len(c.Through) > 0 && !strings.HasPrefix(cid, norm(c.Element)+"::") {
+				continue
+			}
 			ch, err := lookupSym(ctx, cl, m, cid)
 			if err == nil && ch.Name == "" && strings.Contains(strings.ToLower(ch.Kind), strings.ToLower(c.Unnamed.Metaclass)) {
 				found = append(found, cid)
@@ -516,7 +519,8 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		inherited := []string{}
 		seen := map[string]bool{}
 		for _, mb := range sym.Members {
-			if mb.Inherited && !seen[mb.ID] {
+			// features only: Type::inheritedFeature, not inheritedMembership (a doc or comment is not)
+			if mb.Inherited && !seen[mb.ID] && isFeatureKind(mb.Kind) {
 				seen[mb.ID] = true
 				inherited = append(inherited, mb.Name)
 			}
@@ -810,6 +814,27 @@ func writeResults(t *testing.T, suite string, rows [][]string) {
 // listed in Members too (WithLibraryMembers), as Python lists them (DISCUSSIONS.md, Step 16).
 func lookupSym(ctx context.Context, cl opensysml.Client, m *opensysml.Model, id string) (*opensysml.Symbol, error) {
 	return cl.LookupSymbol(ctx, m, id, opensysml.WithLibraryMembers())
+}
+
+// scopeIDs lists where a member declared in an element is looked for: the children of the
+// element itself, or, read through a usage (`part holder : Holder;`), the usage's children and
+// Members, since what the usage gets from its definition are inherited memberships (as the
+// Python harness reads them).
+func scopeIDs(o *opensysml.Symbol, through bool) []string {
+	if through {
+		return memberIDs(o)
+	}
+	return o.ChildIDs
+}
+
+// nonFeatureKinds are the Symbol kinds that are not features
+// (internal/semantic/symbols/symbol.go); every other kind, the usages above all, is a feature.
+var nonFeatureKinds = map[string]bool{"documentation": true, "comment": true, "textualRepresentation": true,
+	"alias": true, "dependency": true, "relationship": true, "namespace": true, "package": true,
+	"kermlType": true, "metaclass": true}
+
+func isFeatureKind(kind string) bool {
+	return !nonFeatureKinds[kind] && !strings.HasSuffix(kind, "Def")
 }
 
 func memberIDs(sym *opensysml.Symbol) []string {

@@ -95,6 +95,16 @@ KIND_WORDS = {"calc": "calculation", "enum": "enumeration"}
 KIND_WHOLE = {"bindingUsage": "BindingConnectorAsUsage"}
 
 
+# Symbol kinds that are not features (internal/semantic/symbols/symbol.go); every other kind,
+# the usages above all, is a feature.
+NON_FEATURE_KINDS = {"documentation", "comment", "textualRepresentation", "alias", "dependency",
+                     "relationship", "namespace", "package", "kermlType", "metaclass"}
+
+
+def is_feature_kind(kind):
+    return kind not in NON_FEATURE_KINDS and not kind.endswith("Def")
+
+
 def metaclass_of(kind):
     """The Symbol kind spelled as the spec metaclass: lower camel case, with `Def` for
     `Definition` and the abbreviations of KIND_WORDS expanded (`calcDef` -> `CalculationDefinition`)."""
@@ -285,8 +295,10 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
     if check == "ownedFeatureNames":
         return sorted(c.name for c in s.children() if not c.kind.endswith("Def"))
     if check == "inheritedFeatureNames":
-        # members the Symbol lists (children, parts, attributes) that it does not own
-        return sorted(c.name for c in _visible(s).values() if not norm(c.id).startswith(norm(s.id) + "::"))
+        # members the Symbol lists (children, parts, attributes) that it does not own, and that
+        # are features: Type::inheritedFeature, not inheritedMembership (a doc or comment is not)
+        return sorted(c.name for c in _visible(s).values()
+                      if not norm(c.id).startswith(norm(s.id) + "::") and is_feature_kind(c.kind))
     if check == "redefinitions":
         return sorted([c.id, sp.target_id] for c in s.children() for sp in c.specializations if sp.kind == "redefines")
     if check in ("metadataDefs", "metadataValue"):

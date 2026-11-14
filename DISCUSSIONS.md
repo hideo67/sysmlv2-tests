@@ -2056,6 +2056,73 @@ declared name, not KerML name resolution) is left unfiled. The Symbol API
 suites' further failures are by design since #2021 documented the Symbol as a
 summary of what is written.
 
+## Step 31: OpenSysML #2205, #2210, #2220-#2222; adapter fixes from #2202
+OpenSysML develop moved from `a159469093` to `dd05a85437`, 26 merged PRs.
+Those touching what we read: #2205 (a qualified name is resolved from the root
+through visible memberships: imports, aliases, visibility; `GetSymbol` gains
+`resolve_name`, set by each client's name lookup), #2210 (the Symbol API lists
+unnamed inherited library members, and a binding's kind is
+`bindingConnectorAsUsage`), #2216, #2220, #2221 and #2222 (the succession a
+transition owns: its ends, relatedFeature, source and target), #2215 (a flow's
+relatedElement, source and target), #2140 (relationship ends and expression
+operators the query refused), #2208. #2042 and #2052 are still open.
+
+The Rust client's `SymbolOptions` gained `by_reported_id` (#2205), so the Rust
+adapter did not compile: it now sets `by_reported_id: true` where it re-reads a
+symbol by the id the service reported.
+
+The results moved in two stages, kept apart.
+
+OpenSysML alone (adapters unchanged but for the Rust compile fix):
+- A60 `resolve` passes all 16 cases through GetElementProperties (8 were
+  failing), and in the Python, Go, TypeScript and Java Symbol suites (12, 10,
+  6, 10 more). Rust did not move: see below.
+- B13: 15 more cases pass in both props suites. Guarded successions 3 -> 12 of
+  15 and state transitions 2 -> 8: `sourceFeature`, `targetFeature` and
+  `relatedFeature` now answer. A transition's first end still references
+  nothing (`endReferences`), and on the def `Machine::t` still does not list
+  its succession among its owned members. Unnamed, shorthand and node-end
+  successions and body-declared ends (#2068 groups 1, 3, 4) did not move.
+- A50: the unnamed binding is found by its kind now (#2210): 2 or 3 cases per
+  Symbol suite.
+
+Adapter changes, after the maintainers' notes on #2202
+(https://github.com/Open-MBEE/OpenSysML/issues/2202#issuecomment-6862407890),
+each checked against our results:
+- A02 `inheritedFeatureNames` collected the names of every inherited member.
+  With #2210 the unnamed inherited features are listed (the Pilot's 18), but
+  so are 5 documentation members and a comment, which are inherited
+  memberships, not features. All five Symbol adapters now keep only members
+  whose Symbol kind is a feature kind (not documentation, comment,
+  textualRepresentation, alias, dependency, relationship, namespace, package,
+  kermlType, metaclass, or a definition; the kinds of
+  internal/semantic/symbols/symbol.go). The TypeScript and Java adapters also
+  deduplicated by name, which folded the 18 unnamed features into one; they
+  now deduplicate by member id, as Go did. A02-031..040 pass in all five.
+- Read through a typing usage (`part holder : Holder;`), the unnamed lookup and
+  `unnamedPartCount` scanned only the usage's own children in Go, TypeScript
+  and Java; what the usage gets from its definition are inherited
+  memberships. They now scan its children and members, as Python and Rust did:
+  A50 12 and A10 2 more cases pass in each of the three.
+- `resolve`: the Rust adapter called `Model::get`, which the client documents
+  as a lookup by id; `Model::symbol` resolves a name. The TypeScript adapter
+  called `Model.symbol`, which falls back to a walk by id when resolution
+  finds nothing, so private members were still found; it now calls
+  `Model.symbolById`, documented as resolving from the root namespace. A60
+  passes in both (Rust 12 more, TypeScript 4).
+
+The five Symbol suites now give the same outcome on every case except F10
+`ownerPath` (6, unsupported in Rust): 185 failures each, where they ranged from
+207 to 223.
+
+Census, Pilot examples (opensysml-go-props): `Connector::relatedFeature` 198 ->
+259, `sourceFeature` 290 -> 347, `targetFeature` 294 -> 355,
+`TransitionUsage::source` 30 -> 57, `Relationship::relatedElement` 21245 ->
+21436; matrix models `relatedFeature` 33 -> 37. Nothing lost its answer.
+
+C10's chain `operator` is still empty after #2140. #2029 still reproduces at
+`dd05a85437` (the same three-document check as in Step 25).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2094,3 +2161,4 @@ Step 28 added a C01 location, a specializing case def with its own objective:
 23 matrices, 1813 cases.
 Step 29 took OpenSysML #2121; no case moved.
 Step 30 took 60 OpenSysML merges; A10 isReference passes in the props suites.
+Step 31 took #2205/#2210/#2220-#2222 and fixed the Symbol adapters after #2202.

@@ -220,6 +220,27 @@ class MatricesTest {
         return members(m, s).stream().map(mb -> norm(mb.id())).toList();
     }
 
+    /** Symbol kinds that are not features (internal/semantic/symbols/symbol.go); every other kind,
+     * the usages above all, is a feature. */
+    static final Set<String> NON_FEATURE_KINDS = Set.of("documentation", "comment", "textualRepresentation", "alias",
+        "dependency", "relationship", "namespace", "package", "kermlType", "metaclass");
+
+    static boolean isFeatureKind(String kind) {
+        return !NON_FEATURE_KINDS.contains(kind) && !kind.endsWith("Def");
+    }
+
+    /** Where a member declared in an element is looked for: the element's children, or, read through
+     * a usage ({@code part holder : Holder;}), the usage's children and members, since what the usage
+     * gets from its definition are inherited memberships (as the Python harness reads them). */
+    static List<Symbol> scopeSymbols(Model m, Symbol o, boolean through) {
+        if (!through) return children(m, o);
+        List<Symbol> out = new ArrayList<>(children(m, o));
+        for (String id : memberIds(m, o)) {
+            if (out.stream().noneMatch(x -> norm(x.id()).equals(id))) lookup(m, id).ifPresent(out::add);
+        }
+        return out;
+    }
+
     /** The symbols of a Symbol's child ids, each looked up by its id; one not found is left out. */
     static List<Symbol> children(Model m, Symbol s) {
         List<Symbol> out = new ArrayList<>();
@@ -442,8 +463,8 @@ class MatricesTest {
                 // unnamed part usages declared in the element, among the children the Symbol lists
                 Symbol o = sym(m, norm(through.isEmpty() ? element : through.get(through.size() - 1)));
                 String prefix = norm(element) + "::";
-                return children(m, o).stream()
-                    .filter(ch -> ch.name().isEmpty() && ch.kind().equals("partUsage") && ch.id().startsWith(prefix)).count();
+                return scopeSymbols(m, o, !through.isEmpty()).stream()
+                    .filter(ch -> ch.name().isEmpty() && ch.kind().equals("partUsage") && norm(ch.id()).startsWith(prefix)).count();
             }
             default:
                 break;
@@ -471,8 +492,10 @@ class MatricesTest {
             Symbol o = sym(m, norm(through.isEmpty() ? element : through.get(through.size() - 1)));
             String meta = unnamed.get("metaclass").getAsString().toLowerCase(Locale.ROOT);
             int index = unnamed.get("index").getAsInt();
-            List<Symbol> found = children(m, o).stream()
-                .filter(ch -> ch.name().isEmpty() && ch.kind().toLowerCase(Locale.ROOT).contains(meta)).toList();
+            String prefix = norm(element) + "::";
+            List<Symbol> found = scopeSymbols(m, o, !through.isEmpty()).stream()
+                .filter(ch -> ch.name().isEmpty() && ch.kind().toLowerCase(Locale.ROOT).contains(meta)
+                    && (through.isEmpty() || norm(ch.id()).startsWith(prefix))).toList();
             if (found.size() <= index) {
                 return "<unnamed " + unnamed.get("metaclass").getAsString() + " #" + index + " of " + element + " not listed>";
             }
@@ -521,8 +544,12 @@ class MatricesTest {
                 }
                 // members the Symbol lists that it does not own: inherited members, and attribute
                 // facts (own and inherited) not among the children
-                List<String> inherited = new ArrayList<>(members(m, s).stream()
-                    .filter(Symbol.Member::inherited).map(Symbol.Member::name).distinct().toList());
+                // features only: Type::inheritedFeature, not inheritedMembership (a doc or comment is not);
+                // one entry per member id, since unnamed members all have the name ""
+                Map<String, String> byId = new LinkedHashMap<>();
+                members(m, s).stream().filter(mb -> mb.inherited() && isFeatureKind(mb.kind()))
+                    .forEach(mb -> byId.putIfAbsent(mb.id(), mb.name()));
+                List<String> inherited = new ArrayList<>(byId.values());
                 for (Symbol.Attribute a : s.attributes()) {
                     if (!owned.contains(a.name()) && !inherited.contains(a.name())) inherited.add(a.name());
                 }

@@ -276,6 +276,23 @@ async function instanceCheck(m: Model, c: Case): Promise<Json> {
 
 /** Ids of the members a Symbol enumerates (own and inherited, library-inherited ones included),
  * unquoted: ModelSymbol.withLibraryMembers() (DISCUSSIONS.md, Step 16). */
+/** Symbol kinds that are not features (internal/semantic/symbols/symbol.go); every other kind,
+ * the usages above all, is a feature. */
+const NON_FEATURE_KINDS = new Set(["documentation", "comment", "textualRepresentation", "alias", "dependency",
+  "relationship", "namespace", "package", "kermlType", "metaclass"]);
+
+function isFeatureKind(kind: string): boolean {
+  return !NON_FEATURE_KINDS.has(kind) && !kind.endsWith("Def");
+}
+
+/** Where a member declared in an element is looked for: the element's children, or, read through
+ * a usage (`part holder : Holder;`), the usage's children and members, since what the usage gets
+ * from its definition are inherited memberships (as the Python harness reads them). */
+async function scopeSymbols(m: Model, o: ModelSymbol, through: boolean): Promise<ModelSymbol[]> {
+  if (!through) return o.children();
+  return symbols(m, [...new Set([...o.childIds, ...(await memberIds(o))])]);
+}
+
 async function memberIds(s: ModelSymbol): Promise<string[]> {
   return (await s.withLibraryMembers()).members.map((mb) => norm(mb.id));
 }
@@ -300,9 +317,14 @@ async function check(m: Model, c: Case): Promise<Json> {
     case "evaluatedValue": case "evaluatedUnit":
       return evaluate(m, c);
     case "resolve": {
-      // the client's name lookup: Model.symbol(qualified name)
-      const s = await lookup(m, c.element);
-      return s === undefined ? null : s.id;
+      // the client's name lookup by qualified name: Model.symbolById resolves it from the root
+      // namespace (imports, aliases, visibility); Model.symbol also falls back to a walk by id
+      try {
+        return (await m.symbolById(c.element)).id;
+      } catch (error) {
+        if (error instanceof SymbolNotFoundError) return null;
+        throw error;
+      }
     }
     case "entryKind": case "doKind": case "exitKind": case "isParallel": case "source": case "target":
     case "triggerPayload": case "guardKind": case "effectKind": {
@@ -348,7 +370,8 @@ async function check(m: Model, c: Case): Promise<Json> {
       const scope = norm(through.length > 0 ? through[through.length - 1] : c.element);
       const o = await sym(m, scope);
       const prefix = norm(c.element) + "::";
-      return (await o.children()).filter((ch) => ch.name === "" && ch.kind === "partUsage" && ch.id.startsWith(prefix)).length;
+      return (await scopeSymbols(m, o, through.length > 0))
+        .filter((ch) => ch.name === "" && ch.kind === "partUsage" && norm(ch.id).startsWith(prefix)).length;
     }
   }
 
@@ -374,7 +397,10 @@ async function check(m: Model, c: Case): Promise<Json> {
     // the index-th unnamed member of the metaclass declared in c.element
     const o = await sym(m, norm(through.length > 0 ? through[through.length - 1] : c.element));
     const meta = c.unnamed.metaclass.toLowerCase();
-    const found = (await o.children()).filter((ch) => ch.name === "" && ch.kind.toLowerCase().includes(meta));
+    const prefix = norm(c.element) + "::";
+    const found = (await scopeSymbols(m, o, through.length > 0))
+      .filter((ch) => ch.name === "" && ch.kind.toLowerCase().includes(meta) &&
+        (through.length === 0 || norm(ch.id).startsWith(prefix)));
     if (found.length <= c.unnamed.index) {
       return `<unnamed ${c.unnamed.metaclass} #${c.unnamed.index} of ${c.element} not listed>`;
     }
@@ -418,7 +444,11 @@ async function check(m: Model, c: Case): Promise<Json> {
       }
       // members the Symbol lists that it does not own: inherited members, and attribute
       // facts (own and inherited) not among the children
-      const inherited = [...new Set((await s.withLibraryMembers()).members.filter((mb) => mb.inherited).map((mb) => mb.name))];
+      // features only: Type::inheritedFeature, not inheritedMembership (a doc or comment is not);
+      // one entry per member id, since unnamed members all have the name ""
+      const byId = new Map((await s.withLibraryMembers()).members
+        .filter((mb) => mb.inherited && isFeatureKind(mb.kind)).map((mb) => [mb.id, mb.name] as const));
+      const inherited = [...byId.values()];
       for (const a of s.attributes) {
         if (!owned.includes(a.name) && !inherited.includes(a.name)) inherited.push(a.name);
       }

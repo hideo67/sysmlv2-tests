@@ -70,6 +70,15 @@ fn get(m: &Model, qn: &str) -> R<Option<Symbol>> {
     Ok(m.get(&norm(qn))?)
 }
 
+/// Symbol kinds that are not features (internal/semantic/symbols/symbol.go); every other
+/// kind, the usages above all, is a feature.
+const NON_FEATURE_KINDS: [&str; 10] = ["documentation", "comment", "textualRepresentation", "alias",
+    "dependency", "relationship", "namespace", "package", "kermlType", "metaclass"];
+
+fn is_feature_kind(kind: &str) -> bool {
+    !NON_FEATURE_KINDS.contains(&kind) && !kind.ends_with("Def")
+}
+
 fn sym(m: &Model, qn: &str) -> R<Symbol> {
     get(m, qn)?.ok_or_else(|| answer(format!("<no symbol {qn}>")))
 }
@@ -80,7 +89,9 @@ fn sym(m: &Model, qn: &str) -> R<Symbol> {
 fn visible(m: &Model, s: &Symbol) -> R<Vec<(String, Symbol)>> {
     let mut out: Vec<(String, Symbol)> = vec![];
     let mut members = vec![];
-    let listed = m.symbol_with(s.id(), &SymbolOptions { include_library_members: true })?;
+    // s.id() is an id the service reported, so it is looked up as such, not resolved as a
+    // qualified name from the root (which respects visibility since OpenSysML #2205)
+    let listed = m.symbol_with(s.id(), &SymbolOptions { include_library_members: true, by_reported_id: true })?;
     for mb in listed.members() {
         if let Some(c) = get(m, &mb.id)? {
             members.push(c);
@@ -363,8 +374,13 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
             return Ok(evaluate(m, check, element, c["subject"].as_str()))
         }
         "resolve" => {
-            // the Symbol API's one name lookup: get(qualified name)
-            return Ok(get(m, element)?.map_or(Value::Null, |s| json!(s.id())));
+            // the client's name lookup: Model::symbol resolves a qualified name from the root
+            // namespace (imports, aliases, visibility); get is a lookup by reported id
+            return match m.symbol(element) {
+                Ok(s) => Ok(json!(s.id())),
+                Err(opensysml::Error::Model(_)) => Ok(Value::Null),
+                Err(e) => Err(e.into()),
+            };
         }
         "isComposite" | "isReference" => return Err(no_symbol_field(m, element, check, check)),
         "entryKind" | "doKind" | "exitKind" | "isParallel" | "source" | "target"
@@ -543,12 +559,14 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
                 .collect(),
         ),
         "inheritedFeatureNames" => {
-            // members the Symbol lists (children, parts, attributes, members) that it does not own
+            // members the Symbol lists (children, parts, attributes, members) that it does not
+            // own, and that are features: Type::inheritedFeature, not inheritedMembership (a doc
+            // or comment is not)
             let prefix = norm(s.id()) + "::";
             names(
                 visible(m, &s)?
                     .into_iter()
-                    .filter(|(id, _)| !id.starts_with(&prefix))
+                    .filter(|(id, c)| !id.starts_with(&prefix) && is_feature_kind(c.kind()))
                     .map(|(_, c)| c)
                     .collect(),
             )
