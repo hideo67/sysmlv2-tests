@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `0dccc9fc6d17`
+Test suite commit: `96739397c2aa`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-15 01:19:12|
-|opensysml-go|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-15 01:19:07|
-|opensysml-java|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-15 01:19:55|
-|opensysml-py-props|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-15 01:19:04|
-|opensysml-py|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-15 01:18:55|
-|opensysml-rs|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 01:19:25|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-15 01:19:45|
-|opensysml-ts|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-15 01:19:34|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-15 01:20:11|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 01:19:59|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 01:19:57|
+|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-15 23:36:52|
+|opensysml-go|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-15 23:36:46|
+|opensysml-java|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-15 23:37:36|
+|opensysml-py-props|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-15 23:36:44|
+|opensysml-py|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-15 23:36:35|
+|opensysml-rs|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 23:37:05|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-15 23:37:26|
+|opensysml-ts|OpenSysML|`nightly-20261112-d60b50d525-507-gb9f9d5da50` (develop)|[`b9f9d5da50`](https://github.com/Open-MBEE/OpenSysML/commit/b9f9d5da50b25e813b4134519d25e402966c3d0f)|2026-11-15|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-15 23:37:15|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-15 23:37:51|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 23:37:39|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 23:37:37|
 
 Local changes at run time (tracked files only):
 
@@ -38,7 +38,7 @@ Local changes at run time (tracked files only):
 |B10|98|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
 |B11|90|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
 |B12|108|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
-|B13|165|65 / 100 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|65 / 100 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
+|B13|165|71 / 94 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|71 / 94 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
 |B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|114|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
@@ -49,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1599 / 181 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1599 / 181 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1605 / 175 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1605 / 175 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -1011,9 +1011,9 @@ Local changes at run time (tracked files only):
 |B13-052|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
 |B13-053|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
 |B13-054|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|FAIL|FAIL|
-|B13-055|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B13-056|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B13-057|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-055|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-056|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-057|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-058|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-059|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-060|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1029,9 +1029,9 @@ Local changes at run time (tracked files only):
 |B13-070|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-071|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-072|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B13-073|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B13-074|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B13-075|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-073|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-074|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|B13-075|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-076|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-077|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B13-078|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -4127,26 +4127,20 @@ Local changes at run time (tracked files only):
 - B13-054 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-054 [sysml-toolkit-rs-checked] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
 - B13-054 [sysml-toolkit-rs] fail: sourceFeature B13::NodeEnds: got ["B13::NodeEnds::a2"], want ["B13::NodeEnds::a1"]
-- B13-055 [opensysml-go-props] fail: sourceFeature B13::NodeEnds: got null, want [null]
 - B13-055 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-055 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
-- B13-055 [opensysml-py-props] fail: sourceFeature B13::NodeEnds: got None, want [None]
 - B13-055 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-055 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-055 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-055 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
-- B13-056 [opensysml-go-props] fail: sourceFeature B13::NodeEnds: got null, want [null]
 - B13-056 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-056 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
-- B13-056 [opensysml-py-props] fail: sourceFeature B13::NodeEnds: got None, want [None]
 - B13-056 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-056 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-056 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-056 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
-- B13-057 [opensysml-go-props] fail: sourceFeature B13::NodeEnds: got null, want [null]
 - B13-057 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-057 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
-- B13-057 [opensysml-py-props] fail: sourceFeature B13::NodeEnds: got None, want [None]
 - B13-057 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-057 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B13-057 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
@@ -4243,26 +4237,20 @@ Local changes at run time (tracked files only):
 - B13-072 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-072 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-072 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
-- B13-073 [opensysml-go-props] fail: targetFeature B13::NodeEnds: got [], want [[null]]
 - B13-073 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-073 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
-- B13-073 [opensysml-py-props] fail: targetFeature B13::NodeEnds: got [], want [[None]]
 - B13-073 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-073 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-073 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-073 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
-- B13-074 [opensysml-go-props] fail: targetFeature B13::NodeEnds: got [], want [[null]]
 - B13-074 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-074 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
-- B13-074 [opensysml-py-props] fail: targetFeature B13::NodeEnds: got [], want [[None]]
 - B13-074 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-074 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-074 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-074 [opensysml-ts] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
-- B13-075 [opensysml-go-props] fail: targetFeature B13::NodeEnds: got [], want [[null]]
 - B13-075 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-075 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
-- B13-075 [opensysml-py-props] fail: targetFeature B13::NodeEnds: got [], want [[None]]
 - B13-075 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-075 [opensysml-rs] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B13-075 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
