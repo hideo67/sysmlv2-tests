@@ -2227,6 +2227,16 @@ answer.
 #2029 still reproduces at `b9f9d5da50` (the same three-document check as in
 Step 25).
 
+#2263 (the fix for #2198) left two Devin Review findings for triage. We
+reproduced the first through the public API: on #2263's head `bf401c46da`
+(which merges #2251), a model with `part def A :> B, C; part def B :> A, C;`
+and a directed feature in `C` makes `sysml-grpc` exit with a stack overflow in
+`structureEffectiveDirection` on any derived read (`directedFeature`, `input`,
+`output`, `feature`, `inheritedFeature`) and on the api-json export, where
+`develop` answers them. The Pilot's `PartTest.sysml` cycles do not trigger it.
+Posted on #2263
+(https://github.com/Open-MBEE/OpenSysML/pull/2263#issuecomment-6903481473).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
