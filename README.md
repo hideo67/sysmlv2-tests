@@ -47,6 +47,28 @@ every suite recorded every case and that all suites of one MDK ran against the
 same commit. If a check fails, it writes nothing (`--force` overrides). It
 never commits.
 
+# Releases and citing
+
+The suite is released as tags; see
+[Releases](https://github.com/hideo67/sysmlv2-tests/releases). To refer to
+results or cases, cite a tag and a case id, for example
+`sysmlv2-tests v1.0.0, A40-040`, rather than a commit.
+
+Case ids are stable: new cases are appended to a matrix, and existing ids are
+never renumbered. Version numbers change as follows:
+
+- **Minor** (`v1.1.0`): cases are added (a new matrix, location or variant).
+- **Patch** (`v1.0.1`): an expectation, an adapter or a reader is corrected.
+  This can change outcomes without any change in an MDK.
+- **Major**: only if case ids were ever renumbered, which the rule above
+  excludes.
+- A snapshot refresh against a newer MDK commit is not a release, since it
+  does not change the suite.
+
+Each release notes the cases added and any expectation or adapter changes. That
+way a moved case can be traced either to an MDK or to the suite.
+[DISCUSSIONS.md](DISCUSSIONS.md) records each step in detail.
+
 # Building and running
 
 The MDKs are cloned next to `test-suite` and built from source. The test
