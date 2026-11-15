@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `254a2821075f`
+Test suite commit: `0dccc9fc6d17`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-14 11:28:21|
-|opensysml-go|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-14 11:28:14|
-|opensysml-java|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-14 11:29:08|
-|opensysml-py-props|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-14 11:28:12|
-|opensysml-py|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-14 11:28:01|
-|opensysml-rs|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-14 11:28:36|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-14 11:28:57|
-|opensysml-ts|OpenSysML|`nightly-20261112-d60b50d525-334-gdd05a85437` (develop)|[`dd05a85437`](https://github.com/Open-MBEE/OpenSysML/commit/dd05a85437fcd42cda89aac52c6c86fefb28bec1)|2026-11-14|embedded; SysML-v2-Release 2026-09 (b7a6b7700), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-14 11:28:46|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-14 11:29:24|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-14 11:29:11|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-14 11:29:09|
+|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-15 01:19:12|
+|opensysml-go|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-15 01:19:07|
+|opensysml-java|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-15 01:19:55|
+|opensysml-py-props|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-15 01:19:04|
+|opensysml-py|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-15 01:18:55|
+|opensysml-rs|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 01:19:25|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-15 01:19:45|
+|opensysml-ts|OpenSysML|`nightly-20261112-d60b50d525-413-gdd08d75454` (develop)|[`dd08d75454`](https://github.com/Open-MBEE/OpenSysML/commit/dd08d7545477dabfc70aec1f9d83e13afc76db86)|2026-11-14|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-15 01:19:34|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-15 01:20:11|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 01:19:59|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-15 01:19:57|
 
 Local changes at run time (tracked files only):
 
@@ -35,21 +35,21 @@ Local changes at run time (tracked files only):
 |A40|45|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
 |A50|54|54 / 0 / 0 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|54 / 0 / 0 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
-|B10|98|90 / 8 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|90 / 8 / 0 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|0 / 36 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
-|B11|90|90 / 0 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|0 / 36 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
-|B12|108|108 / 0 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|42 / 12 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
-|B13|165|65 / 100 / 0 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|65 / 100 / 0 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|0 / 66 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
+|B10|98|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
+|B11|90|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
+|B12|108|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
+|B13|165|65 / 100 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|65 / 100 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
 |B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|114|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|120|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|48 / 0 / 0 / 24|48 / 24 / 0 / 0|
 |C30|78|78 / 0 / 0 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|78 / 0 / 0 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|
-|D10|45|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|45 / 0 / 0 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|20 / 10 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
+|D10|45|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1599 / 181 / 33 / 0|767 / 185 / 861 / 0|767 / 185 / 861 / 0|1599 / 181 / 33 / 0|767 / 185 / 861 / 0|761 / 185 / 867 / 0|761 / 185 / 867 / 0|767 / 185 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1599 / 181 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1599 / 181 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -661,42 +661,42 @@ Local changes at run time (tracked files only):
 |A60-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A60-031|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A60-032|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B10-001|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-002|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-003|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-004|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-005|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-006|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-007|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-008|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-009|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-010|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-013|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-014|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-015|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-016|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-017|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-018|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-019|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-020|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-021|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-022|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-023|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-024|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-025|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-026|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-028|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-029|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-030|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-031|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-032|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-033|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-034|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-035|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B10-036|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B10-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-005|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-006|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-012|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-014|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-015|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-018|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-020|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-021|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-027|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-028|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-029|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-031|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-032|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-033|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-035|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B10-036|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B10-037|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B10-038|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B10-039|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -759,42 +759,42 @@ Local changes at run time (tracked files only):
 |B10-096|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B10-097|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B10-098|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B11-001|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-002|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-003|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-004|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-005|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-006|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-007|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-008|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-009|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-010|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-013|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-014|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-015|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-016|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-017|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-018|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-019|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-020|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-021|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-022|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-023|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-024|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-025|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-026|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-028|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-029|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-030|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-031|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-032|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-033|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-034|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-035|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B11-036|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B11-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-004|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-005|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-006|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-007|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-012|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-014|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-015|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-018|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-019|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-020|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-021|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-027|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-028|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-029|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-031|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-032|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-033|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-035|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B11-036|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B11-037|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B11-038|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B11-039|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -888,21 +888,21 @@ Local changes at run time (tracked files only):
 |B12-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B12-038|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B12-039|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B12-040|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-041|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-042|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-043|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-044|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-045|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B12-040|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-041|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-042|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-043|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-044|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-045|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B12-046|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B12-047|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B12-048|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|B12-049|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-050|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-051|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-052|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-053|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B12-054|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B12-049|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-050|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-051|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-052|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-053|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B12-054|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B12-055|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B12-056|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B12-057|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -957,9 +957,9 @@ Local changes at run time (tracked files only):
 |B12-106|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B12-107|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B12-108|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B13-001|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-002|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-003|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B13-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B13-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B13-004|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-005|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-006|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -978,9 +978,9 @@ Local changes at run time (tracked files only):
 |B13-019|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-020|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-021|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-022|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-023|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-024|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-022|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B13-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|B13-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B13-025|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-026|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -1707,11 +1707,11 @@ Local changes at run time (tracked files only):
 |D10-008|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |D10-009|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |D10-010|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
-|D10-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|D10-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|D10-013|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|D10-014|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
-|D10-015|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|ERROR|PASS|
+|D10-011|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-012|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-013|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-014|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
+|D10-015|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|ERROR|PASS|
 |D10-016|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-017|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-018|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -1722,11 +1722,11 @@ Local changes at run time (tracked files only):
 |D10-023|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|D10-026|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|D10-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|D10-028|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|D10-029|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|D10-030|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|D10-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-027|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-028|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-029|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|D10-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |D10-031|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |D10-032|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |D10-033|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -2733,222 +2733,6 @@ Local changes at run time (tracked files only):
 - A50-036 [opensysml-rs] unsupported: no Symbol field for the owner; available through the standard query API (owner)
 - A50-036 [opensysml-ts-wasm] unsupported: no Symbol field for the owner; the standard query API is not served by this backend (sysml-wasm has no Query)
 - A50-036 [opensysml-ts] unsupported: no Symbol field for the owner; available through the standard query API (owner)
-- B10-001 [opensysml-go] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-001 [opensysml-java] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-001 [opensysml-py] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-001 [opensysml-rs] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-001 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-001 [opensysml-ts] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-002 [opensysml-go] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-002 [opensysml-java] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-002 [opensysml-py] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-002 [opensysml-rs] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-002 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-002 [opensysml-ts] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-003 [opensysml-go] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-003 [opensysml-java] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-003 [opensysml-py] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-003 [opensysml-rs] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-003 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-003 [opensysml-ts] fail: endCount B10::Vehicle::c0: got 0, want 2
-- B10-004 [opensysml-go] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-004 [opensysml-java] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-004 [opensysml-py] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-004 [opensysml-rs] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-004 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-004 [opensysml-ts] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-005 [opensysml-go] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-005 [opensysml-java] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-005 [opensysml-py] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-005 [opensysml-rs] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-005 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-005 [opensysml-ts] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-006 [opensysml-go] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-006 [opensysml-java] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-006 [opensysml-py] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-006 [opensysml-rs] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-006 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-006 [opensysml-ts] fail: endCount B10::Vehicle::c1: got 0, want 2
-- B10-007 [opensysml-go] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-007 [opensysml-java] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-007 [opensysml-py] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-007 [opensysml-rs] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-007 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-007 [opensysml-ts] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-008 [opensysml-go] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-008 [opensysml-java] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-008 [opensysml-py] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-008 [opensysml-rs] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-008 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-008 [opensysml-ts] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-009 [opensysml-go] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-009 [opensysml-java] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-009 [opensysml-py] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-009 [opensysml-rs] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-009 [opensysml-ts-wasm] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-009 [opensysml-ts] fail: endCount B10::Vehicle::c2: got 0, want 2
-- B10-010 [opensysml-go] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-010 [opensysml-java] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-010 [opensysml-py] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-010 [opensysml-rs] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-010 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-010 [opensysml-ts] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-011 [opensysml-go] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-011 [opensysml-java] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-011 [opensysml-py] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-011 [opensysml-rs] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-011 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-011 [opensysml-ts] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-012 [opensysml-go] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-012 [opensysml-java] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-012 [opensysml-py] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-012 [opensysml-rs] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-012 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-012 [opensysml-ts] fail: endCount B10::Vehicle::i0: got 0, want 2
-- B10-013 [opensysml-go] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-013 [opensysml-java] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-013 [opensysml-py] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-013 [opensysml-rs] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-013 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-013 [opensysml-ts] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-014 [opensysml-go] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-014 [opensysml-java] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-014 [opensysml-py] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-014 [opensysml-rs] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-014 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-014 [opensysml-ts] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-015 [opensysml-go] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-015 [opensysml-java] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-015 [opensysml-py] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-015 [opensysml-rs] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-015 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-015 [opensysml-ts] fail: endCount B10::Vehicle::i1: got 0, want 2
-- B10-016 [opensysml-go] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-016 [opensysml-java] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-016 [opensysml-py] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-016 [opensysml-rs] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-016 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-016 [opensysml-ts] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-017 [opensysml-go] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-017 [opensysml-java] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-017 [opensysml-py] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-017 [opensysml-rs] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-017 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-017 [opensysml-ts] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-018 [opensysml-go] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-018 [opensysml-java] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-018 [opensysml-py] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-018 [opensysml-rs] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-018 [opensysml-ts-wasm] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-018 [opensysml-ts] fail: endCount B10::Vehicle::i2: got 0, want 2
-- B10-019 [opensysml-go] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-019 [opensysml-java] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-019 [opensysml-py] fail: endReferences B10::Vehicle::c0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-019 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-019 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-019 [opensysml-ts] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-020 [opensysml-go] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-020 [opensysml-java] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-020 [opensysml-py] fail: endReferences B10::Vehicle::c0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-020 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-020 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-020 [opensysml-ts] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-021 [opensysml-go] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-021 [opensysml-java] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-021 [opensysml-py] fail: endReferences B10::Vehicle::c0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-021 [opensysml-rs] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-021 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-021 [opensysml-ts] fail: endReferences B10::Vehicle::c0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-022 [opensysml-go] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-022 [opensysml-java] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-022 [opensysml-py] fail: endReferences B10::Vehicle::c1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-022 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-022 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-022 [opensysml-ts] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-023 [opensysml-go] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-023 [opensysml-java] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-023 [opensysml-py] fail: endReferences B10::Vehicle::c1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-023 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-023 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-023 [opensysml-ts] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-024 [opensysml-go] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-024 [opensysml-java] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-024 [opensysml-py] fail: endReferences B10::Vehicle::c1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-024 [opensysml-rs] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-024 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-024 [opensysml-ts] fail: endReferences B10::Vehicle::c1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-025 [opensysml-go] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-025 [opensysml-java] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-025 [opensysml-py] fail: endReferences B10::Vehicle::c2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-025 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-025 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-025 [opensysml-ts] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-026 [opensysml-go] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-026 [opensysml-java] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-026 [opensysml-py] fail: endReferences B10::Vehicle::c2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-026 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-026 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-026 [opensysml-ts] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-027 [opensysml-go] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-027 [opensysml-java] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-027 [opensysml-py] fail: endReferences B10::Vehicle::c2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-027 [opensysml-rs] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-027 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-027 [opensysml-ts] fail: endReferences B10::Vehicle::c2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-028 [opensysml-go] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-028 [opensysml-java] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-028 [opensysml-py] fail: endReferences B10::Vehicle::i0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-028 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-028 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-028 [opensysml-ts] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-029 [opensysml-go] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-029 [opensysml-java] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-029 [opensysml-py] fail: endReferences B10::Vehicle::i0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-029 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-029 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-029 [opensysml-ts] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-030 [opensysml-go] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-030 [opensysml-java] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-030 [opensysml-py] fail: endReferences B10::Vehicle::i0: got [], want [['B10::Vehicle::q'], ['B10::Vehicle::r']]
-- B10-030 [opensysml-rs] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-030 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-030 [opensysml-ts] fail: endReferences B10::Vehicle::i0: got [], want [["B10::Vehicle::q"],["B10::Vehicle::r"]]
-- B10-031 [opensysml-go] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-031 [opensysml-java] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-031 [opensysml-py] fail: endReferences B10::Vehicle::i1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-031 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-031 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-031 [opensysml-ts] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-032 [opensysml-go] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-032 [opensysml-java] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-032 [opensysml-py] fail: endReferences B10::Vehicle::i1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-032 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-032 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-032 [opensysml-ts] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-033 [opensysml-go] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-033 [opensysml-java] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-033 [opensysml-py] fail: endReferences B10::Vehicle::i1: got [], want [['B10::Vehicle::x', 'B10::Unit::p'], ['B10::Vehicle::y', 'B10::Unit::p']]
-- B10-033 [opensysml-rs] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-033 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-033 [opensysml-ts] fail: endReferences B10::Vehicle::i1: got [], want [["B10::Vehicle::x","B10::Unit::p"],["B10::Vehicle::y","B10::Unit::p"]]
-- B10-034 [opensysml-go] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-034 [opensysml-java] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-034 [opensysml-py] fail: endReferences B10::Vehicle::i2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-034 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-034 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-034 [opensysml-ts] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-035 [opensysml-go] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-035 [opensysml-java] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-035 [opensysml-py] fail: endReferences B10::Vehicle::i2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-035 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-035 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-035 [opensysml-ts] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-036 [opensysml-go] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-036 [opensysml-java] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-036 [opensysml-py] fail: endReferences B10::Vehicle::i2: got [], want [['B10::Vehicle::m', 'B10::Pair::u1', 'B10::Unit::p'], ['B10::Vehicle::n', 'B10::Pair::u2', 'B10::Unit::p']]
-- B10-036 [opensysml-rs] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-036 [opensysml-ts-wasm] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
-- B10-036 [opensysml-ts] fail: endReferences B10::Vehicle::i2: got [], want [["B10::Vehicle::m","B10::Pair::u1","B10::Unit::p"],["B10::Vehicle::n","B10::Pair::u2","B10::Unit::p"]]
 - B10-037 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-037 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-037 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
@@ -3345,222 +3129,6 @@ Local changes at run time (tracked files only):
 - B10-098 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-098 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-098 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B11-001 [opensysml-go] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-001 [opensysml-java] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-001 [opensysml-py] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-001 [opensysml-rs] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-001 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-001 [opensysml-ts] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-002 [opensysml-go] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-002 [opensysml-java] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-002 [opensysml-py] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-002 [opensysml-rs] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-002 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-002 [opensysml-ts] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-003 [opensysml-go] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-003 [opensysml-java] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-003 [opensysml-py] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-003 [opensysml-rs] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-003 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-003 [opensysml-ts] fail: endCount B11::Vehicle::b0: got 0, want 2
-- B11-004 [opensysml-go] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-004 [opensysml-java] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-004 [opensysml-py] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-004 [opensysml-rs] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-004 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-004 [opensysml-ts] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-005 [opensysml-go] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-005 [opensysml-java] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-005 [opensysml-py] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-005 [opensysml-rs] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-005 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-005 [opensysml-ts] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-006 [opensysml-go] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-006 [opensysml-java] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-006 [opensysml-py] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-006 [opensysml-rs] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-006 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-006 [opensysml-ts] fail: endCount B11::Vehicle::b1: got 0, want 2
-- B11-007 [opensysml-go] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-007 [opensysml-java] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-007 [opensysml-py] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-007 [opensysml-rs] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-007 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-007 [opensysml-ts] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-008 [opensysml-go] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-008 [opensysml-java] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-008 [opensysml-py] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-008 [opensysml-rs] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-008 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-008 [opensysml-ts] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-009 [opensysml-go] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-009 [opensysml-java] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-009 [opensysml-py] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-009 [opensysml-rs] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-009 [opensysml-ts-wasm] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-009 [opensysml-ts] fail: endCount B11::Vehicle::b2: got 0, want 2
-- B11-010 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-010 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-010 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-010 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-010 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-010 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-011 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-011 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-011 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-011 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-011 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-011 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-012 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-012 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-012 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-012 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-012 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-012 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-013 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-013 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-013 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-013 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-013 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-013 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-014 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-014 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-014 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-014 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-014 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-014 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-015 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-015 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-015 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-015 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-015 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-015 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-016 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-016 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-016 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-016 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-016 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-016 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-017 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-017 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-017 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-017 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-017 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-017 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-018 [opensysml-go] fail: endCount B11::Vehicle: got 0, want 2
-- B11-018 [opensysml-java] fail: endCount B11::Vehicle: got 0, want 2
-- B11-018 [opensysml-py] fail: endCount B11::Vehicle: got 0, want 2
-- B11-018 [opensysml-rs] fail: endCount B11::Vehicle: got 0, want 2
-- B11-018 [opensysml-ts-wasm] fail: endCount B11::Vehicle: got 0, want 2
-- B11-018 [opensysml-ts] fail: endCount B11::Vehicle: got 0, want 2
-- B11-019 [opensysml-go] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-019 [opensysml-java] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-019 [opensysml-py] fail: endReferences B11::Vehicle::b0: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-019 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-019 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-019 [opensysml-ts] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-020 [opensysml-go] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-020 [opensysml-java] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-020 [opensysml-py] fail: endReferences B11::Vehicle::b0: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-020 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-020 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-020 [opensysml-ts] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-021 [opensysml-go] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-021 [opensysml-java] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-021 [opensysml-py] fail: endReferences B11::Vehicle::b0: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-021 [opensysml-rs] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-021 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-021 [opensysml-ts] fail: endReferences B11::Vehicle::b0: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-022 [opensysml-go] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-022 [opensysml-java] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-022 [opensysml-py] fail: endReferences B11::Vehicle::b1: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-022 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-022 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-022 [opensysml-ts] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-023 [opensysml-go] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-023 [opensysml-java] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-023 [opensysml-py] fail: endReferences B11::Vehicle::b1: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-023 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-023 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-023 [opensysml-ts] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-024 [opensysml-go] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-024 [opensysml-java] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-024 [opensysml-py] fail: endReferences B11::Vehicle::b1: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-024 [opensysml-rs] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-024 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-024 [opensysml-ts] fail: endReferences B11::Vehicle::b1: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-025 [opensysml-go] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-025 [opensysml-java] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-025 [opensysml-py] fail: endReferences B11::Vehicle::b2: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-025 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-025 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-025 [opensysml-ts] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-026 [opensysml-go] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-026 [opensysml-java] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-026 [opensysml-py] fail: endReferences B11::Vehicle::b2: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-026 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-026 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-026 [opensysml-ts] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-027 [opensysml-go] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-027 [opensysml-java] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-027 [opensysml-py] fail: endReferences B11::Vehicle::b2: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-027 [opensysml-rs] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-027 [opensysml-ts-wasm] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-027 [opensysml-ts] fail: endReferences B11::Vehicle::b2: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-028 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-028 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-028 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-028 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-028 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-028 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-029 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-029 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-029 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-029 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-029 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-029 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-030 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-030 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-030 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::q'], ['B11::Vehicle::r']]
-- B11-030 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-030 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-030 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::q"],["B11::Vehicle::r"]]
-- B11-031 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-031 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-031 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-031 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-031 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-031 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-032 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-032 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-032 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-032 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-032 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-032 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-033 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-033 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-033 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::x', 'B11::Unit::p'], ['B11::Vehicle::y', 'B11::Unit::p']]
-- B11-033 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-033 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-033 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::x","B11::Unit::p"],["B11::Vehicle::y","B11::Unit::p"]]
-- B11-034 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-034 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-034 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-034 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-034 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-034 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-035 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-035 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-035 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-035 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-035 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-035 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-036 [opensysml-go] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-036 [opensysml-java] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-036 [opensysml-py] fail: endReferences B11::Vehicle: got [], want [['B11::Vehicle::m', 'B11::Pair::u1', 'B11::Unit::p'], ['B11::Vehicle::n', 'B11::Pair::u2', 'B11::Unit::p']]
-- B11-036 [opensysml-rs] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-036 [opensysml-ts-wasm] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
-- B11-036 [opensysml-ts] fail: endReferences B11::Vehicle: got [], want [["B11::Vehicle::m","B11::Pair::u1","B11::Unit::p"],["B11::Vehicle::n","B11::Pair::u2","B11::Unit::p"]]
 - B11-037 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-037 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-037 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
@@ -3885,78 +3453,6 @@ Local changes at run time (tracked files only):
 - B11-090 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
 - B11-090 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
 - B11-090 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
-- B12-040 [opensysml-go] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-040 [opensysml-java] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-040 [opensysml-py] fail: endReferences B12::Vehicle::c1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-040 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-040 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-040 [opensysml-ts] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-041 [opensysml-go] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-041 [opensysml-java] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-041 [opensysml-py] fail: endReferences B12::Vehicle::c1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-041 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-041 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-041 [opensysml-ts] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-042 [opensysml-go] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-042 [opensysml-java] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-042 [opensysml-py] fail: endReferences B12::Vehicle::c1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-042 [opensysml-rs] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-042 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-042 [opensysml-ts] fail: endReferences B12::Vehicle::c1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-043 [opensysml-go] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-043 [opensysml-java] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-043 [opensysml-py] fail: endReferences B12::Vehicle::c2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-043 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-043 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-043 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-044 [opensysml-go] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-044 [opensysml-java] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-044 [opensysml-py] fail: endReferences B12::Vehicle::c2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-044 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-044 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-044 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-045 [opensysml-go] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-045 [opensysml-java] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-045 [opensysml-py] fail: endReferences B12::Vehicle::c2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-045 [opensysml-rs] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-045 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-045 [opensysml-ts] fail: endReferences B12::Vehicle::c2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-049 [opensysml-go] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-049 [opensysml-java] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-049 [opensysml-py] fail: endReferences B12::Vehicle::i1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-049 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-049 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-049 [opensysml-ts] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-050 [opensysml-go] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-050 [opensysml-java] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-050 [opensysml-py] fail: endReferences B12::Vehicle::i1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-050 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-050 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-050 [opensysml-ts] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-051 [opensysml-go] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-051 [opensysml-java] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-051 [opensysml-py] fail: endReferences B12::Vehicle::i1: got [[], []], want [['B12::Vehicle::x', 'B12::Unit::p'], ['B12::Vehicle::y', 'B12::Unit::p']]
-- B12-051 [opensysml-rs] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-051 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-051 [opensysml-ts] fail: endReferences B12::Vehicle::i1: got [[],[]], want [["B12::Vehicle::x","B12::Unit::p"],["B12::Vehicle::y","B12::Unit::p"]]
-- B12-052 [opensysml-go] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-052 [opensysml-java] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-052 [opensysml-py] fail: endReferences B12::Vehicle::i2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-052 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-052 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-052 [opensysml-ts] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-053 [opensysml-go] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-053 [opensysml-java] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-053 [opensysml-py] fail: endReferences B12::Vehicle::i2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-053 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-053 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-053 [opensysml-ts] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-054 [opensysml-go] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-054 [opensysml-java] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-054 [opensysml-py] fail: endReferences B12::Vehicle::i2: got [[], []], want [['B12::Vehicle::m', 'B12::Pair::u1', 'B12::Unit::p'], ['B12::Vehicle::n', 'B12::Pair::u2', 'B12::Unit::p']]
-- B12-054 [opensysml-rs] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-054 [opensysml-ts-wasm] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
-- B12-054 [opensysml-ts] fail: endReferences B12::Vehicle::i2: got [[],[]], want [["B12::Vehicle::m","B12::Pair::u1","B12::Unit::p"],["B12::Vehicle::n","B12::Pair::u2","B12::Unit::p"]]
 - B12-055 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-055 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-055 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
@@ -4281,24 +3777,6 @@ Local changes at run time (tracked files only):
 - B12-108 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
 - B12-108 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-108 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B13-001 [opensysml-go] fail: endCount B13::Named::s: got 0, want 2
-- B13-001 [opensysml-java] fail: endCount B13::Named::s: got 0, want 2
-- B13-001 [opensysml-py] fail: endCount B13::Named::s: got 0, want 2
-- B13-001 [opensysml-rs] fail: endCount B13::Named::s: got 0, want 2
-- B13-001 [opensysml-ts-wasm] fail: endCount B13::Named::s: got 0, want 2
-- B13-001 [opensysml-ts] fail: endCount B13::Named::s: got 0, want 2
-- B13-002 [opensysml-go] fail: endCount B13::Named::s: got 0, want 2
-- B13-002 [opensysml-java] fail: endCount B13::Named::s: got 0, want 2
-- B13-002 [opensysml-py] fail: endCount B13::Named::s: got 0, want 2
-- B13-002 [opensysml-rs] fail: endCount B13::Named::s: got 0, want 2
-- B13-002 [opensysml-ts-wasm] fail: endCount B13::Named::s: got 0, want 2
-- B13-002 [opensysml-ts] fail: endCount B13::Named::s: got 0, want 2
-- B13-003 [opensysml-go] fail: endCount B13::Named::s: got 0, want 2
-- B13-003 [opensysml-java] fail: endCount B13::Named::s: got 0, want 2
-- B13-003 [opensysml-py] fail: endCount B13::Named::s: got 0, want 2
-- B13-003 [opensysml-rs] fail: endCount B13::Named::s: got 0, want 2
-- B13-003 [opensysml-ts-wasm] fail: endCount B13::Named::s: got 0, want 2
-- B13-003 [opensysml-ts] fail: endCount B13::Named::s: got 0, want 2
 - B13-004 [opensysml-go] fail: endCount B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want 2
 - B13-004 [opensysml-java] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
 - B13-004 [opensysml-py] fail: endCount B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want 2
@@ -4415,24 +3893,6 @@ Local changes at run time (tracked files only):
 - B13-021 [opensysml-rs] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
 - B13-021 [opensysml-ts-wasm] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
 - B13-021 [opensysml-ts] fail: endCount B13::Machine::t: got "<unnamed SuccessionAsUsage #0 of B13::Machine::t not listed>", want 2
-- B13-022 [opensysml-go] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-022 [opensysml-java] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-022 [opensysml-py] fail: endReferences B13::Named::s: got [], want [['B13::Named::a1'], ['B13::Named::a2']]
-- B13-022 [opensysml-rs] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-022 [opensysml-ts-wasm] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-022 [opensysml-ts] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-023 [opensysml-go] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-023 [opensysml-java] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-023 [opensysml-py] fail: endReferences B13::Named::s: got [], want [['B13::Named::a1'], ['B13::Named::a2']]
-- B13-023 [opensysml-rs] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-023 [opensysml-ts-wasm] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-023 [opensysml-ts] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-024 [opensysml-go] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-024 [opensysml-java] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-024 [opensysml-py] fail: endReferences B13::Named::s: got [], want [['B13::Named::a1'], ['B13::Named::a2']]
-- B13-024 [opensysml-rs] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-024 [opensysml-ts-wasm] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
-- B13-024 [opensysml-ts] fail: endReferences B13::Named::s: got [], want [["B13::Named::a1"],["B13::Named::a2"]]
 - B13-025 [opensysml-go] fail: endReferences B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
 - B13-025 [opensysml-java] fail: endReferences B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want [["B13::Unnamed::a1"],["B13::Unnamed::a2"]]
 - B13-025 [opensysml-py] fail: endReferences B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want [['B13::Unnamed::a1'], ['B13::Unnamed::a2']]
@@ -8395,71 +7855,11 @@ Local changes at run time (tracked files only):
 - D10-008 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
 - D10-009 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
 - D10-010 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-011 [opensysml-go] fail: metadataDefs D10::PumpA: got [], want ["D10::FailureMode"]
-- D10-011 [opensysml-java] fail: metadataDefs D10::PumpA: got [], want ["D10::FailureMode"]
-- D10-011 [opensysml-py] fail: metadataDefs D10::PumpA: got [], want ['D10::FailureMode']
-- D10-011 [opensysml-rs] fail: metadataDefs D10::PumpA: got [], want ["D10::FailureMode"]
-- D10-011 [opensysml-ts-wasm] fail: metadataDefs D10::PumpA: got [], want ["D10::FailureMode"]
-- D10-011 [opensysml-ts] fail: metadataDefs D10::PumpA: got [], want ["D10::FailureMode"]
 - D10-011 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-012 [opensysml-go] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-012 [opensysml-java] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-012 [opensysml-py] fail: metadataDefs D10::Pump::motorA: got [], want ['D10::FailureMode']
-- D10-012 [opensysml-rs] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-012 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-012 [opensysml-ts] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
 - D10-012 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-013 [opensysml-go] fail: metadataDefs D10::PumpStates::overheatedA: got [], want ["D10::FailureMode"]
-- D10-013 [opensysml-java] fail: metadataDefs D10::PumpStates::overheatedA: got [], want ["D10::FailureMode"]
-- D10-013 [opensysml-py] fail: metadataDefs D10::PumpStates::overheatedA: got [], want ['D10::FailureMode']
-- D10-013 [opensysml-rs] fail: metadataDefs D10::PumpStates::overheatedA: got [], want ["D10::FailureMode"]
-- D10-013 [opensysml-ts-wasm] fail: metadataDefs D10::PumpStates::overheatedA: got [], want ["D10::FailureMode"]
-- D10-013 [opensysml-ts] fail: metadataDefs D10::PumpStates::overheatedA: got [], want ["D10::FailureMode"]
 - D10-013 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-014 [opensysml-go] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
-- D10-014 [opensysml-java] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
-- D10-014 [opensysml-py] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ['D10::FailureMode']
-- D10-014 [opensysml-rs] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
-- D10-014 [opensysml-ts-wasm] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
-- D10-014 [opensysml-ts] fail: metadataDefs D10::PumpFluid::pressureA: got [], want ["D10::FailureMode"]
 - D10-014 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-015 [opensysml-go] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-015 [opensysml-java] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-015 [opensysml-py] fail: metadataDefs D10::Pump::motorA: got [], want ['D10::FailureMode']
-- D10-015 [opensysml-rs] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-015 [opensysml-ts-wasm] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
-- D10-015 [opensysml-ts] fail: metadataDefs D10::Pump::motorA: got [], want ["D10::FailureMode"]
 - D10-015 [sysml-toolkit-rs-checked] error: metadataDefinition refused by the checked reader: property has an incomplete derivation
-- D10-026 [opensysml-go] fail: metadataValue D10::PumpA: got "\u003cno annotation of D10::PumpA readable as a Symbol\u003e", want 2
-- D10-026 [opensysml-java] fail: metadataValue D10::PumpA: got "<no annotation of D10::PumpA readable as a Symbol>", want 2
-- D10-026 [opensysml-py] fail: metadataValue D10::PumpA: got '<no annotation of D10::PumpA readable as a Symbol>', want 2
-- D10-026 [opensysml-rs] fail: metadataValue D10::PumpA: got "<no annotation of D10::PumpA readable as a Symbol>", want 2
-- D10-026 [opensysml-ts-wasm] fail: metadataValue D10::PumpA: got "<no annotation of D10::PumpA readable as a Symbol>", want 2
-- D10-026 [opensysml-ts] fail: metadataValue D10::PumpA: got "<no annotation of D10::PumpA readable as a Symbol>", want 2
-- D10-027 [opensysml-go] fail: metadataValue D10::Pump::motorA: got "\u003cno annotation of D10::Pump::motorA readable as a Symbol\u003e", want 2
-- D10-027 [opensysml-java] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-027 [opensysml-py] fail: metadataValue D10::Pump::motorA: got '<no annotation of D10::Pump::motorA readable as a Symbol>', want 2
-- D10-027 [opensysml-rs] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-027 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-027 [opensysml-ts] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-028 [opensysml-go] fail: metadataValue D10::PumpStates::overheatedA: got "\u003cno annotation of D10::PumpStates::overheatedA readable as a Symbol\u003e", want 2
-- D10-028 [opensysml-java] fail: metadataValue D10::PumpStates::overheatedA: got "<no annotation of D10::PumpStates::overheatedA readable as a Symbol>", want 2
-- D10-028 [opensysml-py] fail: metadataValue D10::PumpStates::overheatedA: got '<no annotation of D10::PumpStates::overheatedA readable as a Symbol>', want 2
-- D10-028 [opensysml-rs] fail: metadataValue D10::PumpStates::overheatedA: got "<no annotation of D10::PumpStates::overheatedA readable as a Symbol>", want 2
-- D10-028 [opensysml-ts-wasm] fail: metadataValue D10::PumpStates::overheatedA: got "<no annotation of D10::PumpStates::overheatedA readable as a Symbol>", want 2
-- D10-028 [opensysml-ts] fail: metadataValue D10::PumpStates::overheatedA: got "<no annotation of D10::PumpStates::overheatedA readable as a Symbol>", want 2
-- D10-029 [opensysml-go] fail: metadataValue D10::PumpFluid::pressureA: got "\u003cno annotation of D10::PumpFluid::pressureA readable as a Symbol\u003e", want 2
-- D10-029 [opensysml-java] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
-- D10-029 [opensysml-py] fail: metadataValue D10::PumpFluid::pressureA: got '<no annotation of D10::PumpFluid::pressureA readable as a Symbol>', want 2
-- D10-029 [opensysml-rs] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
-- D10-029 [opensysml-ts-wasm] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
-- D10-029 [opensysml-ts] fail: metadataValue D10::PumpFluid::pressureA: got "<no annotation of D10::PumpFluid::pressureA readable as a Symbol>", want 2
-- D10-030 [opensysml-go] fail: metadataValue D10::Pump::motorA: got "\u003cno annotation of D10::Pump::motorA readable as a Symbol\u003e", want 2
-- D10-030 [opensysml-java] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-030 [opensysml-py] fail: metadataValue D10::Pump::motorA: got '<no annotation of D10::Pump::motorA readable as a Symbol>', want 2
-- D10-030 [opensysml-rs] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-030 [opensysml-ts-wasm] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
-- D10-030 [opensysml-ts] fail: metadataValue D10::Pump::motorA: got "<no annotation of D10::Pump::motorA readable as a Symbol>", want 2
 - D10-031 [opensysml-go] unsupported: neither the Symbol nor the query API reports what a metadata usage annotates
 - D10-031 [opensysml-java] unsupported: neither the Symbol nor the query API reports what a metadata usage annotates
 - D10-031 [opensysml-py] unsupported: neither the Symbol nor the query API reports what a metadata usage annotates
