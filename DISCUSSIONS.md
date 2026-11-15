@@ -2159,6 +2159,46 @@ transition links (#2242) and the memberships `then` and decision branches own
 #2029 still reproduces at `dd08d75454` (the same three-document check as in
 Step 25).
 
+## Step 33: #2042 and #2052 measured as they stand (unmerged PR heads)
+#2042 and #2052 have not moved for days and conflict with `develop`: a trial
+merge of #2042 into `develop` `dd08d75454` conflicts in 28 files (56 hunks),
+about 15 of them code in the semantic core that `develop` changed since (805
+commits). Rather than resolve them ourselves, which would measure our
+resolution and not the PR, we measured the PR heads as they stand: `make
+build-grpc` of each commit in a scratch worktree, then `opensysml-py-props`
+with that commit's Python client (RESULTS_DIR outside `results/`; nothing in the
+repository changed).
+
+| Build | Pass | Fail | Unsupported |
+|--|--:|--:|--:|
+| #2042 base `cd95e326ee` | 1566 | 214 | 33 |
+| #2042 head `462dde206d` | 1667 | 104 | 42 |
+| #2052 base `b1d029d2d5` (an older #2042 revision) | 1644 | 80 | 89 |
+| #2052 head `1ec2ebbf2b` | 1644 | 80 | 89 |
+| `develop` `dd08d75454` | 1599 | 181 | 33 |
+
+- Only in #2042 (`develop` fails, #2042 passes): A40 `types` (3, #2198), B10
+  connection def ends (8), B20 message `connectorEnd` (3, #2199), C01 `result`
+  (15), C10 chain `operator` (4), C21 `instantiatedType` (12), B13
+  `endCount`/`endReferences`/`relatedFeature` (about 40, #2068).
+- Not in #2042: B20 flow `sourceOutputFeature`/`targetInputFeature` still
+  empty (24; "not derived: no-rule" in the older revision), although the reply
+  on #2199 counted them in.
+- #2042 against its base, pass to fail (`develop` passes them): C30 entry/do/
+  exit performing an action reported as ActionUsage (9); B13 shorthand
+  `sourceFeature` `a2` instead of `a1` and empty `targetFeature`, node-end
+  `sourceFeature` empty and `targetFeature` not derived (12).
+- #2052 moves no matrix case against its own base. #2029's three-document
+  check: the base refuses on a syntax error and on a duplicate top-level name;
+  #2042 answers the duplicate name; #2052 also answers the syntax error. So
+  #2029 needs both.
+- `develop` gained since #2042 branched: #2205 (A60 8) and #2220 to #2222
+  (transition successions in B13).
+
+Posted on #2042, suggesting smaller PRs on today's `develop` if a rebase of
+109 files is harder
+(https://github.com/Open-MBEE/OpenSysML/pull/2042#issuecomment-6887826296).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2199,3 +2239,4 @@ Step 29 took OpenSysML #2121; no case moved.
 Step 30 took 60 OpenSysML merges; A10 isReference passes in the props suites.
 Step 31 took #2205/#2210/#2220-#2222 and fixed the Symbol adapters after #2202.
 Step 32 took #2206 (Symbol connector ends) and adopted #2209 (annotating metadata).
+Step 33 measured the unmerged #2042 and #2052 heads as they stand.
