@@ -11,8 +11,8 @@
 //! `Symbol::children`, `parts`, `attributes`, `attribute_facts`), so each read takes the
 //! same route as in the Python suite; a different result is a difference of the client.
 use opensysml::{
-    Connection, EvalOptions, Instance, Instantiation, Magnitude, Model, ParseOptions, Query,
-    Symbol, SymbolOptions, Value as OValue,
+    Connection, EvalOptions, Instance, Instantiation, Lookup, Magnitude, Model, ParseOptions,
+    Query, Symbol, SymbolOptions, Value as OValue,
 };
 use serde_json::{json, Value};
 use std::collections::HashMap;
@@ -89,9 +89,12 @@ fn sym(m: &Model, qn: &str) -> R<Symbol> {
 fn visible(m: &Model, s: &Symbol) -> R<Vec<(String, Symbol)>> {
     let mut out: Vec<(String, Symbol)> = vec![];
     let mut members = vec![];
-    // s.id() is an id the service reported, so it is looked up as such, not resolved as a
-    // qualified name from the root (which respects visibility since OpenSysML #2205)
-    let listed = m.symbol_with(s.id(), &SymbolOptions { include_library_members: true, by_reported_id: true })?;
+    // s.id() is an id the service reported, so it is looked up as an element id, never resolved
+    // as a qualified name from the root (OpenSysML #2205, #2255)
+    let listed = m.symbol_with(
+        s.id(),
+        &SymbolOptions { include_library_members: true, lookup: Lookup::ElementId, ..Default::default() },
+    )?;
     for mb in listed.members() {
         if let Some(c) = get(m, &mb.id)? {
             members.push(c);

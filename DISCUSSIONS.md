@@ -2199,6 +2199,34 @@ Posted on #2042, suggesting smaller PRs on today's `develop` if a rebase of
 109 files is harder
 (https://github.com/Open-MBEE/OpenSysML/pull/2042#issuecomment-6887826296).
 
+## Step 34: OpenSysML #2259 and #2255 (successions at unnamed nodes)
+OpenSysML develop moved from `dd08d75454` to `b9f9d5da50`, 13 merged PRs.
+Those touching what we read: #2259 (a `then` succession reaching a nameless
+member by position states it as its sourceFeature and source), #2255 (an
+explicit lookup kind tells a qualified name from an element id), #2260, #2271,
+#2258. #2042 and #2052 are still open; the fix for #2198 is up in #2263, not
+merged yet.
+
+The Rust client's `SymbolOptions` gained `lookup` (#2255), so the Rust adapter
+did not compile again. It now looks the reported id up with
+`lookup: Lookup::ElementId` ("an id the service reported for an element,
+whatever its visibility; never read as a name") instead of
+`by_reported_id: true`. No outcome changed from it.
+
+Matrices: B13 6 cases pass in both props suites: the succession from the accept
+node to `a3` now answers its `sourceFeature` (the accept node, B13-055..057),
+and the one from `a1` to the accept node its `targetFeature` (B13-073..075).
+Their ends still do not reference the node, so `endReferences` and
+`relatedFeature` fail as before (#2068 group 3). Nothing else moved, and no
+detail text changed.
+
+Census, Pilot examples: `Connector::sourceFeature` 347 -> 388 and
+`targetFeature` 355 -> 393 of 447; matrix models 40 -> 41 each. Nothing lost its
+answer.
+
+#2029 still reproduces at `b9f9d5da50` (the same three-document check as in
+Step 25).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2240,3 +2268,4 @@ Step 30 took 60 OpenSysML merges; A10 isReference passes in the props suites.
 Step 31 took #2205/#2210/#2220-#2222 and fixed the Symbol adapters after #2202.
 Step 32 took #2206 (Symbol connector ends) and adopted #2209 (annotating metadata).
 Step 33 measured the unmerged #2042 and #2052 heads as they stand.
+Step 34 took #2259 (successions at unnamed nodes); Rust adapter on Lookup::ElementId.
