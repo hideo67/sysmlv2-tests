@@ -302,8 +302,9 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
     if check == "redefinitions":
         return sorted([c.id, sp.target_id] for c in s.children() for sp in c.specializations if sp.kind == "redefines")
     if check in ("metadataDefs", "metadataValue"):
-        # annotations an element lists: its metadata-usage children
-        symbols = [c for c in s.children() if c.kind == "metadataUsage"]
+        # the metadata usages annotating the element (prefix, body and `about` forms), the
+        # inverse of AnnotatingElement::annotatedElement (OpenSysML #2209)
+        symbols = s.annotating_metadata()
         if check == "metadataDefs":
             return sorted({c.type_facts.resolved_id for c in symbols if c.type_facts})
         if not symbols:

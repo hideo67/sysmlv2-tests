@@ -556,8 +556,10 @@ class MatricesTest {
                 return sorted(inherited.stream());
             }
             case "metadataDefs", "metadataValue": {
-                // annotations an element lists: its metadata-usage children
-                List<Symbol> annotations = children(m, s).stream().filter(ch -> ch.kind().equals("metadataUsage")).toList();
+                // the metadata usages annotating the element (prefix, body and `about` forms), the
+                // inverse of AnnotatingElement::annotatedElement (OpenSysML #2209)
+                List<Symbol> annotations = new ArrayList<>();
+                for (String aid : s.annotatingMetadataIds()) lookup(m, aid).ifPresent(annotations::add);
                 if (check.equals("metadataValue")) {
                     if (annotations.isEmpty()) return "<no annotation of " + s.id() + " readable as a Symbol>";
                     return attribute(annotations.get(0), "severity").flatMap(Symbol.Attribute::value)

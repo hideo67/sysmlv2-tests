@@ -455,8 +455,9 @@ async function check(m: Model, c: Case): Promise<Json> {
       return inherited.sort(byString);
     }
     case "metadataDefs": case "metadataValue": {
-      // annotations an element lists: its metadata-usage children
-      const annotations = (await s.children()).filter((ch) => ch.kind === "metadataUsage");
+      // the metadata usages annotating the element (prefix, body and `about` forms), the
+      // inverse of AnnotatingElement::annotatedElement (OpenSysML #2209)
+      const annotations = await s.annotatingMetadata();
       if (c.check === "metadataValue") {
         if (annotations.length === 0) return `<no annotation of ${s.id} readable as a Symbol>`;
         return toJson(annotations[0].attribute("severity")?.value);

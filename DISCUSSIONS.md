@@ -2126,6 +2126,39 @@ C10's chain `operator` is still empty after #2140. #2029 still reproduces at
 We replied on #2202 that the notes are applied and what moved
 (https://github.com/Open-MBEE/OpenSysML/issues/2202#issuecomment-6876712295).
 
+## Step 32: OpenSysML #2206 and #2209 (Symbol API connector ends, annotating metadata)
+OpenSysML develop moved from `dd05a85437` to `dd08d75454`, 12 merged PRs.
+Those touching what we read: #2206 (GetSymbol lists a connector usage's ends
+and the feature or feature chain each references), #2209 (SymbolInfo gains
+`annotating_metadata_ids`, the metadata usages annotating an element,
+including those written elsewhere with `about`), #2245 (a state body's `then
+x;` and a decision branch own the Membership naming the member before them),
+#2242 (a transition owns its transitionLink), #2250 (a flow end chained ahead
+of its payload), #2234, #2241. #2042 and #2052 are still open.
+
+OpenSysML alone: the six Symbol suites gain 90 cases each (#2206). B10, B11 and
+B12 `endCount`/`endReferences` now pass in all of them (18 + 18 + 18 + 18 +
+12), and B13's named succession (`endCount`, `endReferences` at its three
+locations, 6). The props suites did not move, and no detail text changed
+there: #2245 and #2250 move no GetElementProperties case.
+
+Adapter change: the five Symbol adapters read D10 `metadataDefs` and
+`metadataValue` from the new field (Python `annotating_metadata()`, Go
+`AnnotatingMetadataIDs` looked up by reported id, Rust
+`annotating_metadata()`, TypeScript `annotatingMetadata()`, Java
+`annotatingMetadataIds()`) instead of an element's metadata-usage children,
+which miss the `about` form. D10's 10 `about` cases pass in every Symbol suite;
+the prefix and body forms come first in the field and pass as before.
+`annotatedElement` stays unsupported: the field goes from an element to its
+metadata, not back. The Symbol suites now fail 85 cases each (185 in Step 31).
+
+Census: 202 more elements on the Pilot examples (8 in the matrix models), the
+transition links (#2242) and the memberships `then` and decision branches own
+(#2245); every changed row grew, nothing lost its answer.
+
+#2029 still reproduces at `dd08d75454` (the same three-document check as in
+Step 25).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2165,3 +2198,4 @@ Step 28 added a C01 location, a specializing case def with its own objective:
 Step 29 took OpenSysML #2121; no case moved.
 Step 30 took 60 OpenSysML merges; A10 isReference passes in the props suites.
 Step 31 took #2205/#2210/#2220-#2222 and fixed the Symbol adapters after #2202.
+Step 32 took #2206 (Symbol connector ends) and adopted #2209 (annotating metadata).

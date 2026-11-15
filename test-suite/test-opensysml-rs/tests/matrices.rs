@@ -583,12 +583,9 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
             json!(sorted(out))
         }
         "metadataDefs" | "metadataValue" => {
-            // annotations an element lists: its metadata-usage children
-            let symbols: Vec<Symbol> = s
-                .children()?
-                .into_iter()
-                .filter(|c| c.kind() == "metadataUsage")
-                .collect();
+            // the metadata usages annotating the element (prefix, body and `about` forms), the
+            // inverse of AnnotatingElement::annotatedElement (OpenSysML #2209)
+            let symbols: Vec<Symbol> = s.annotating_metadata()?;
             if check == "metadataDefs" {
                 let mut defs: Vec<String> = symbols
                     .iter()

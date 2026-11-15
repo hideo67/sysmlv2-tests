@@ -533,12 +533,12 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		slices.Sort(inherited)
 		return inherited, nil
 	case "metadataDefs", "metadataValue":
-		// annotations an element lists: its metadata-usage children
+		// the metadata usages annotating the element (prefix, body and `about` forms), the
+		// inverse of AnnotatingElement::annotatedElement (OpenSysML #2209); ids the service reported
 		var symbols []*opensysml.Symbol
-		for _, cid := range sym.ChildIDs {
-			ch, err := lookupSym(ctx, cl, m, cid)
-			if err == nil && strings.EqualFold(ch.Kind, "metadataUsage") {
-				symbols = append(symbols, ch)
+		for _, aid := range sym.AnnotatingMetadataIDs {
+			if a, err := cl.LookupSymbol(ctx, m, aid, opensysml.ByReportedID()); err == nil {
+				symbols = append(symbols, a)
 			}
 		}
 		if c.Check == "metadataValue" {
