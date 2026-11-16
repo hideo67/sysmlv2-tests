@@ -2250,6 +2250,21 @@ identical on both corpora (same elements, same fill counts, no file newly
 excluded): the new syntax checks reject nothing in our models or the Pilot
 examples. #2029 still reproduces at `5cb054db65`.
 
+## Step 36: ten OpenSysML merges, #2279 among them (no case moved)
+OpenSysML develop moved from `5cb054db65` to `a5198b609f`, 10 merged PRs, among
+them #2279 (occurrence-prefixed usages are OccurrenceUsage whether named or
+not), #2308 (a chain expression member not featured within its argument is
+reported), #2305 (subrequirements). #2042, #2052, #2251 and #2263 are still
+open.
+
+No case moved in any suite, and no detail text changed. Census, Pilot examples:
+the same 37205 elements, but five that were ReferenceUsage are now two
+OccurrenceUsage and three EnumerationUsage (#2279), which moves their rows
+between metaclasses; the fills move by one or two (`Definition::ownedAttribute`
++1, `ownedReference` -1, `Usage::nestedOccurrence` +2, `nestedReference` -2,
+`OccurrenceUsage::occurrenceDefinition` 2 more unanswered, the two new occurrence
+usages). Matrix models unchanged. #2029 still reproduces at `a5198b609f`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2293,3 +2308,4 @@ Step 32 took #2206 (Symbol connector ends) and adopted #2209 (annotating metadat
 Step 33 measured the unmerged #2042 and #2052 heads as they stand.
 Step 34 took #2259 (successions at unnamed nodes); Rust adapter on Lookup::ElementId.
 Step 35 took twenty OpenSysML merges; no case moved.
+Step 36 took ten OpenSysML merges (#2279); no case moved.
