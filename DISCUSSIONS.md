@@ -2237,6 +2237,19 @@ and a directed feature in `C` makes `sysml-grpc` exit with a stack overflow in
 Posted on #2263
 (https://github.com/Open-MBEE/OpenSysML/pull/2263#issuecomment-6903481473).
 
+## Step 35: twenty OpenSysML merges (no case moved)
+OpenSysML develop moved from `b9f9d5da50` to `5cb054db65`, 20 merged PRs, among
+them #2273, #2275 and #2276 (KerML-only declarations, `typed by` and
+`namespace` rejected in a `.sysml` file), #2318 (api-json streamed, inherited
+lists only on request), #2282 (inheritance less what removeRedefinedFeatures
+removes), #2303 (satisfy), #2313 (transition endpoints by name resolution).
+#2042, #2052, #2251 and #2263 are still open.
+
+No case moved in any OpenSysML suite, no detail text changed, and the census is
+identical on both corpora (same elements, same fill counts, no file newly
+excluded): the new syntax checks reject nothing in our models or the Pilot
+examples. #2029 still reproduces at `5cb054db65`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2279,3 +2292,4 @@ Step 31 took #2205/#2210/#2220-#2222 and fixed the Symbol adapters after #2202.
 Step 32 took #2206 (Symbol connector ends) and adopted #2209 (annotating metadata).
 Step 33 measured the unmerged #2042 and #2052 heads as they stand.
 Step 34 took #2259 (successions at unnamed nodes); Rust adapter on Lookup::ElementId.
+Step 35 took twenty OpenSysML merges; no case moved.
