@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `f92642ff54da`
+Test suite commit: `84af4ac3ca7e`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-16 12:55:19|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-16 12:55:29|
-|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-629-g5cb054db65` (develop)|[`5cb054db65`](https://github.com/Open-MBEE/OpenSysML/commit/5cb054db659737988e79a0c4497257f95f674c25)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-16 12:55:49|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-16 23:37:12|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-16 23:37:21|
+|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-16 23:37:38|
 
 Local changes at run time (tracked files only):
 
@@ -290,7 +290,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Definition::ownedView`|always empty|reference fills 1/1052; answered empty on all 798||
 |`Definition::ownedViewpoint`|always empty|reference fills 1/1052; answered empty on all 798||
 |`Element::ownedAnnotation`|always empty|reference fills 3/52628; answered empty on all 37203||
-|`EnumerationUsage::enumerationDefinition`|always empty|reference fills 42/42; answered empty on all 25||
+|`EnumerationUsage::enumerationDefinition`|always empty|reference fills 42/42; answered empty on all 28||
 |`Feature::crossFeature`|always empty|reference fills 48/20297; answered empty on all 14105||
 |`Feature::ownedCrossSubsetting`|always empty|reference fills 48/20297; answered empty on all 14105||
 |`Feature::ownedTypeFeaturing`|always empty|reference fills 18846/20297; answered empty on all 14105||
@@ -304,7 +304,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`InstantiationExpression::instantiatedType`|always empty|reference fills 1456/1456; answered empty on all 1108||
 |`InterfaceUsage::interfaceDefinition`|always empty|reference fills 38/38; answered empty on all 22||
 |`Namespace::importedMembership`|always empty|reference fills 188/21922; answered empty on all 15198|Namespace::importedMembership is not derived for this element: no-rule Namespace::importedMembership|
-|`OccurrenceUsage::individualDefinition`|always empty|reference fills 64/3148; answered empty on all 2200||
+|`OccurrenceUsage::individualDefinition`|always empty|reference fills 64/3148; answered empty on all 2202||
 |`PortConjugation::conjugatedPortDefinition`|always empty|reference fills 79/79; answered empty on all 39||
 |`RenderingUsage::renderingDefinition`|always empty|reference fills 12/12; answered empty on all 10||
 |`RequirementVerificationMembership::verifiedRequirement`|always empty|reference fills 5/5; answered empty on all 3||
@@ -387,7 +387,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |Multiplicity|2140|2130|1025|
 |FeatureValue|3412|3384|2529|
 |ParameterMembership|2874|2789|2091|
-|ReferenceUsage|2638|2672|2009|
+|ReferenceUsage|2638|2672|2004|
 |FeatureTyping|2166|2166|1622|
 |FeatureChaining|1396|1318|855|
 |EndFeatureMembership|1118|1258|734|
@@ -723,7 +723,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Association::relatedType`|41/42|39/42|unanswered|
 |`Association::sourceType`|41/42|39/42|unanswered|
 |`Association::targetType`|41/42|39/42|unanswered|
-|`AttributeUsage::attributeDefinition`|782/782|672/782|258/336 (213 unanswered)|
+|`AttributeUsage::attributeDefinition`|782/782|672/782|258/339 (213 unanswered)|
 |`Behavior::parameter`|180/220|179/220|0/169|
 |`Behavior::step`|220/220|220/220|0/169|
 |`BooleanExpression::predicate`|269/269|135/269|unanswered|
@@ -756,7 +756,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Definition::ownedAction`|64/1054|64/1054|52/798|
 |`Definition::ownedAllocation`|0/1054|0/1054|0/798|
 |`Definition::ownedAnalysisCase`|1/1054|1/1054|0/798|
-|`Definition::ownedAttribute`|188/1054|188/1054|153/798|
+|`Definition::ownedAttribute`|188/1054|188/1054|154/798|
 |`Definition::ownedCalculation`|5/1054|5/1054|4/798|
 |`Definition::ownedCase`|4/1054|4/1054|0/798|
 |`Definition::ownedConcern`|4/1054|4/1054|0/798|
@@ -770,7 +770,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Definition::ownedOccurrence`|268/1054|268/1054|219/798|
 |`Definition::ownedPart`|96/1054|96/1054|86/798|
 |`Definition::ownedPort`|60/1054|60/1054|33/798|
-|`Definition::ownedReference`|215/1054|215/1054|180/798|
+|`Definition::ownedReference`|215/1054|215/1054|179/798|
 |`Definition::ownedRendering`|3/1054|3/1054|0/798|
 |`Definition::ownedRequirement`|25/1054|25/1054|0/798|
 |`Definition::ownedState`|14/1054|14/1054|5/798|
@@ -797,7 +797,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Element::textualRepresentation`|3/52706|3/45728|3/37205|
 |`ElementFilterMembership::condition`|15/15|15/15|7/7|
 |`EnumerationDefinition::enumeratedValue`|14/15|14/15|unanswered|
-|`EnumerationUsage::enumerationDefinition`|42/42|41/42|0/25|
+|`EnumerationUsage::enumerationDefinition`|42/42|41/42|0/28|
 |`EventOccurrenceUsage::eventOccurrence`|334/334|284/284|unanswered|
 |`ExhibitStateUsage::exhibitedState`|15/15|15/15|unanswered|
 |`Expression::function`|4513/4513|1522/4442|253/3321 (68 unanswered)|
@@ -870,8 +870,8 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Namespace::ownedMember`|12594/21998|12223/18556|8789/15357|
 |`Namespace::ownedMembership`|12611/21998|12266/18556|8789/15357|
 |`ObjectiveMembership::ownedObjectiveRequirement`|24/24|24/24|18/18|
-|`OccurrenceUsage::individualDefinition`|64/3148|64/3098|0/2200|
-|`OccurrenceUsage::occurrenceDefinition`|3148/3148|1734/3098|990/1838 (362 unanswered)|
+|`OccurrenceUsage::individualDefinition`|64/3148|64/3098|0/2202|
+|`OccurrenceUsage::occurrenceDefinition`|3148/3148|1734/3098|990/1838 (364 unanswered)|
 |`OwningMembership::ownedMemberElement`|21481/21481|18071/18071|14974/14974|
 |`OwningMembership::ownedMemberElementId`|21481/21481|18071/18071|14974/14974|
 |`OwningMembership::ownedMemberName`|13179/21481|7990/18071|5189/14967 (7 unanswered)|
@@ -977,10 +977,10 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Usage::nestedInterface`|16/6993|16/6977|0/5030|
 |`Usage::nestedItem`|307/6993|307/6977|329/5030|
 |`Usage::nestedMetadata`|187/6993|129/6977|104/5030|
-|`Usage::nestedOccurrence`|859/6993|834/6977|689/5030|
+|`Usage::nestedOccurrence`|859/6993|834/6977|691/5030|
 |`Usage::nestedPart`|243/6993|243/6977|174/5030|
 |`Usage::nestedPort`|137/6993|137/6977|66/5030|
-|`Usage::nestedReference`|1112/6993|1078/6977|802/5030|
+|`Usage::nestedReference`|1112/6993|1078/6977|800/5030|
 |`Usage::nestedRendering`|6/6993|6/6977|0/5030|
 |`Usage::nestedRequirement`|59/6993|59/6977|41/5030|
 |`Usage::nestedState`|39/6993|39/6977|26/5030|
