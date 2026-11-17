@@ -2265,6 +2265,28 @@ between metaclasses; the fills move by one or two (`Definition::ownedAttribute`
 `OccurrenceUsage::occurrenceDefinition` 2 more unanswered, the two new occurrence
 usages). Matrix models unchanged. #2029 still reproduces at `a5198b609f`.
 
+## Step 37: OpenSysML #2268 and #2266 (end features, flow ends)
+OpenSysML develop moved from `a5198b609f` to `65d6c25003`, 23 merged PRs.
+Those touching what we read: #2268 (a declared end feature is owned through a
+FeatureMembership whose member isEnd), #2266 (a flow owns its two FlowEnds on
+the native walk), #2306, #2292. #2042, #2052, #2251 and #2263 are still open.
+
+Matrices: B13-013..015 pass in both props suites: the succession from the
+accept node to `a3` now has its two ends. Its first end still references
+nothing (`endReferences` fails, its detail now `[None, [a3]]`; #2068 group 3).
+Detail-only changes: C30's 12 `source`/`target` notes in the Symbol suites say
+the query API now offers them; B20's 12 flow `endReferences` in
+opensysml-ts-wasm now read `[[], []]` (two ends, no reference) where the gRPC
+Symbol suites still read `[]`. Both fail; the WebAssembly and gRPC builds of
+the same commit list a flow's ends differently, which we keep an eye on.
+
+Census, Pilot examples: 205 more elements (the flow ends and end features);
+`Connector::connectorEnd` 361 -> 402 of 447, `Type::ownedEndFeature` 410 -> 451,
+`Feature::ownedReferenceSubsetting` 803 -> 844. `Feature::type` and
+`Usage::definition` gain 35 unanswered each, from the new elements; nothing
+lost its answer. Matrix models: 5 more elements, `connectorEnd` 39 -> 40.
+#2029 still reproduces at `65d6c25003`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2309,3 +2331,4 @@ Step 33 measured the unmerged #2042 and #2052 heads as they stand.
 Step 34 took #2259 (successions at unnamed nodes); Rust adapter on Lookup::ElementId.
 Step 35 took twenty OpenSysML merges; no case moved.
 Step 36 took ten OpenSysML merges (#2279); no case moved.
+Step 37 took #2268/#2266 (end features, flow ends).
