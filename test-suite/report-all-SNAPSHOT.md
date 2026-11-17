@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `84af4ac3ca7e`
+Test suite commit: `de3c8cf872da`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-16 23:32:08|
-|opensysml-go|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-16 23:32:03|
-|opensysml-java|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-16 23:32:54|
-|opensysml-py-props|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-16 23:32:00|
-|opensysml-py|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-16 23:31:51|
-|opensysml-rs|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-16 23:32:23|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-16 23:32:43|
-|opensysml-ts|OpenSysML|`nightly-20261112-d60b50d525-686-ga5198b609f` (develop)|[`a5198b609f`](https://github.com/Open-MBEE/OpenSysML/commit/a5198b609f3ac56d1f51d120b6c7670d1b144f3d)|2026-11-16|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-16 23:32:32|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-16 23:33:10|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-16 23:32:57|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-16 23:32:56|
+|opensysml-go-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-17 12:47:05|
+|opensysml-go|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-17 12:46:59|
+|opensysml-java|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-17 12:47:55|
+|opensysml-py-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-17 12:46:37|
+|opensysml-py|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-17 12:46:27|
+|opensysml-rs|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-17 12:47:20|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-17 12:47:43|
+|opensysml-ts|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-17 12:47:31|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-17 12:48:12|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-17 12:47:58|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-17 12:47:56|
 
 Local changes at run time (tracked files only):
 
@@ -38,7 +38,7 @@ Local changes at run time (tracked files only):
 |B10|98|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
 |B11|90|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
 |B12|108|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
-|B13|165|71 / 94 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|71 / 94 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
+|B13|165|74 / 91 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|74 / 91 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
 |B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|114|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
@@ -49,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1605 / 175 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1605 / 175 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1608 / 172 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1608 / 172 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -969,9 +969,9 @@ Local changes at run time (tracked files only):
 |B13-010|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-011|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-012|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-013|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-014|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B13-015|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-013|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-014|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|B13-015|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-016|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-017|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B13-018|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
@@ -3831,26 +3831,20 @@ Local changes at run time (tracked files only):
 - B13-012 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
 - B13-012 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
 - B13-012 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want 2
-- B13-013 [opensysml-go-props] fail: endCount B13::NodeEnds: got 0, want 2
 - B13-013 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want 2
 - B13-013 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
-- B13-013 [opensysml-py-props] fail: endCount B13::NodeEnds: got 0, want 2
 - B13-013 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want 2
 - B13-013 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
 - B13-013 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
 - B13-013 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
-- B13-014 [opensysml-go-props] fail: endCount B13::NodeEnds: got 0, want 2
 - B13-014 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want 2
 - B13-014 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
-- B13-014 [opensysml-py-props] fail: endCount B13::NodeEnds: got 0, want 2
 - B13-014 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want 2
 - B13-014 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
 - B13-014 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
 - B13-014 [opensysml-ts] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
-- B13-015 [opensysml-go-props] fail: endCount B13::NodeEnds: got 0, want 2
 - B13-015 [opensysml-go] fail: endCount B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want 2
 - B13-015 [opensysml-java] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
-- B13-015 [opensysml-py-props] fail: endCount B13::NodeEnds: got 0, want 2
 - B13-015 [opensysml-py] fail: endCount B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want 2
 - B13-015 [opensysml-rs] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
 - B13-015 [opensysml-ts-wasm] fail: endCount B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want 2
@@ -3971,26 +3965,26 @@ Local changes at run time (tracked files only):
 - B13-033 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #0 of B13::NodeEnds not listed>", want [["B13::NodeEnds::a1"],[null]]
 - B13-033 [sysml-toolkit-rs-checked] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
 - B13-033 [sysml-toolkit-rs] fail: endReferences B13::NodeEnds: got [["B13::NodeEnds::a2"],[null]], want [["B13::NodeEnds::a1"],[null]]
-- B13-034 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-034 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [null,["B13::NodeEnds::a3"]], want [[null],["B13::NodeEnds::a3"]]
 - B13-034 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want [[null],["B13::NodeEnds::a3"]]
 - B13-034 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
-- B13-034 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-034 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [None, ['B13::NodeEnds::a3']], want [[None], ['B13::NodeEnds::a3']]
 - B13-034 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want [[None], ['B13::NodeEnds::a3']]
 - B13-034 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
 - B13-034 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
 - B13-034 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
-- B13-035 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-035 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [null,["B13::NodeEnds::a3"]], want [[null],["B13::NodeEnds::a3"]]
 - B13-035 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want [[null],["B13::NodeEnds::a3"]]
 - B13-035 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
-- B13-035 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-035 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [None, ['B13::NodeEnds::a3']], want [[None], ['B13::NodeEnds::a3']]
 - B13-035 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want [[None], ['B13::NodeEnds::a3']]
 - B13-035 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
 - B13-035 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
 - B13-035 [opensysml-ts] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
-- B13-036 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [], want [[null],["B13::NodeEnds::a3"]]
+- B13-036 [opensysml-go-props] fail: endReferences B13::NodeEnds: got [null,["B13::NodeEnds::a3"]], want [[null],["B13::NodeEnds::a3"]]
 - B13-036 [opensysml-go] fail: endReferences B13::NodeEnds: got "\u003cunnamed SuccessionAsUsage #1 of B13::NodeEnds not listed\u003e", want [[null],["B13::NodeEnds::a3"]]
 - B13-036 [opensysml-java] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
-- B13-036 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [], want [[None], ['B13::NodeEnds::a3']]
+- B13-036 [opensysml-py-props] fail: endReferences B13::NodeEnds: got [None, ['B13::NodeEnds::a3']], want [[None], ['B13::NodeEnds::a3']]
 - B13-036 [opensysml-py] fail: endReferences B13::NodeEnds: got '<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>', want [[None], ['B13::NodeEnds::a3']]
 - B13-036 [opensysml-rs] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
 - B13-036 [opensysml-ts-wasm] fail: endReferences B13::NodeEnds: got "<unnamed SuccessionAsUsage #1 of B13::NodeEnds not listed>", want [[null],["B13::NodeEnds::a3"]]
@@ -5031,73 +5025,73 @@ Local changes at run time (tracked files only):
 - B20-025 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-025 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
 - B20-025 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-025 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-025 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-025 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
 - B20-026 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-026 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
 - B20-027 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-027 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-027 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-028 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-028 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-028 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
 - B20-028 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-028 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-028 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-028 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
 - B20-029 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-029 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
 - B20-030 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-030 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-030 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-031 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-031 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-031 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
 - B20-031 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-031 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-031 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-031 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
 - B20-032 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-032 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
 - B20-033 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-033 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-033 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-034 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-034 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-034 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
 - B20-034 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-034 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-034 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-034 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
 - B20-035 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-035 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
 - B20-036 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-036 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-037 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f1: got null, want "B20::Tank::fuelOut"
 - B20-037 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
@@ -7653,78 +7647,78 @@ Local changes at run time (tracked files only):
 - C30-048 [opensysml-rs] unsupported: no Symbol field for isParallel; available through the standard query API (isParallel)
 - C30-048 [opensysml-ts-wasm] unsupported: no Symbol field for isParallel; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-048 [opensysml-ts] unsupported: no Symbol field for isParallel; available through the standard query API (isParallel)
-- C30-049 [opensysml-go] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-049 [opensysml-java] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-049 [opensysml-py] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-049 [opensysml-rs] unsupported: no Symbol field for source; the standard query API does not offer it either
+- C30-049 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-049 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-049 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-049 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-049 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-049 [opensysml-ts] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-050 [opensysml-go] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-050 [opensysml-java] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-050 [opensysml-py] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-050 [opensysml-rs] unsupported: no Symbol field for source; the standard query API does not offer it either
+- C30-049 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-050 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-050 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-050 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-050 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-050 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-050 [opensysml-ts] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-051 [opensysml-go] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-051 [opensysml-java] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-051 [opensysml-py] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-051 [opensysml-rs] unsupported: no Symbol field for source; the standard query API does not offer it either
+- C30-050 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-051 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-051 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-051 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-051 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-051 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-051 [opensysml-ts] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-052 [opensysml-go] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-052 [opensysml-java] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-052 [opensysml-py] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-052 [opensysml-rs] unsupported: no Symbol field for source; the standard query API does not offer it either
+- C30-051 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-052 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-052 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-052 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-052 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-052 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-052 [opensysml-ts] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-053 [opensysml-go] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-053 [opensysml-java] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-053 [opensysml-py] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-053 [opensysml-rs] unsupported: no Symbol field for source; the standard query API does not offer it either
+- C30-052 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-053 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-053 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-053 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-053 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-053 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-053 [opensysml-ts] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-054 [opensysml-go] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-054 [opensysml-java] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-054 [opensysml-py] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-054 [opensysml-rs] unsupported: no Symbol field for source; the standard query API does not offer it either
+- C30-053 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-054 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-054 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-054 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-054 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-054 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-054 [opensysml-ts] unsupported: no Symbol field for source; the standard query API does not offer it either
-- C30-055 [opensysml-go] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-055 [opensysml-java] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-055 [opensysml-py] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-055 [opensysml-rs] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-054 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
+- C30-055 [opensysml-go] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-055 [opensysml-java] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-055 [opensysml-py] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-055 [opensysml-rs] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-055 [opensysml-ts-wasm] unsupported: no Symbol field for target; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-055 [opensysml-ts] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-056 [opensysml-go] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-056 [opensysml-java] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-056 [opensysml-py] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-056 [opensysml-rs] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-055 [opensysml-ts] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-056 [opensysml-go] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-056 [opensysml-java] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-056 [opensysml-py] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-056 [opensysml-rs] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-056 [opensysml-ts-wasm] unsupported: no Symbol field for target; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-056 [opensysml-ts] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-057 [opensysml-go] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-057 [opensysml-java] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-057 [opensysml-py] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-057 [opensysml-rs] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-056 [opensysml-ts] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-057 [opensysml-go] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-057 [opensysml-java] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-057 [opensysml-py] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-057 [opensysml-rs] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-057 [opensysml-ts-wasm] unsupported: no Symbol field for target; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-057 [opensysml-ts] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-058 [opensysml-go] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-058 [opensysml-java] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-058 [opensysml-py] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-058 [opensysml-rs] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-057 [opensysml-ts] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-058 [opensysml-go] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-058 [opensysml-java] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-058 [opensysml-py] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-058 [opensysml-rs] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-058 [opensysml-ts-wasm] unsupported: no Symbol field for target; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-058 [opensysml-ts] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-059 [opensysml-go] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-059 [opensysml-java] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-059 [opensysml-py] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-059 [opensysml-rs] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-058 [opensysml-ts] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-059 [opensysml-go] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-059 [opensysml-java] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-059 [opensysml-py] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-059 [opensysml-rs] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-059 [opensysml-ts-wasm] unsupported: no Symbol field for target; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-059 [opensysml-ts] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-060 [opensysml-go] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-060 [opensysml-java] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-060 [opensysml-py] unsupported: no Symbol field for target; the standard query API does not offer it either
-- C30-060 [opensysml-rs] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-059 [opensysml-ts] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-060 [opensysml-go] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-060 [opensysml-java] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-060 [opensysml-py] unsupported: no Symbol field for target; available through the standard query API (target)
+- C30-060 [opensysml-rs] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-060 [opensysml-ts-wasm] unsupported: no Symbol field for target; the standard query API is not served by this backend (sysml-wasm has no Query)
-- C30-060 [opensysml-ts] unsupported: no Symbol field for target; the standard query API does not offer it either
+- C30-060 [opensysml-ts] unsupported: no Symbol field for target; available through the standard query API (target)
 - C30-061 [opensysml-go] unsupported: no Symbol field for triggerAction; available through the standard query API (triggerAction)
 - C30-061 [opensysml-java] unsupported: no Symbol field for triggerAction; available through the standard query API (triggerAction)
 - C30-061 [opensysml-py] unsupported: no Symbol field for triggerAction; available through the standard query API (triggerAction)
