@@ -2287,6 +2287,22 @@ Census, Pilot examples: 205 more elements (the flow ends and end features);
 lost its answer. Matrix models: 5 more elements, `connectorEnd` 39 -> 40.
 #2029 still reproduces at `65d6c25003`.
 
+## Step 38: OpenSysML #2359 (chain expression operator)
+OpenSysML develop moved from `65d6c25003` to `9add4822df`, 19 merged PRs.
+Those touching what we read: #2359 (a FeatureChainExpression states its
+operator "."), #2369 (the ReferenceUsage a flow end owns is named by the
+feature it redefines), #2347 (a feature specializes the result of its feature
+value). #2042, #2052, #2251 and #2263 are still open.
+
+Matrices: C10 `valueOperator` C10-029..032 pass in both props suites: the
+chain `powerPort.power` answers `"."`, the leftover we noted on #1965. Nothing
+else moved, and no detail text changed (B20's flow ends still read `[[], []]`
+in opensysml-ts-wasm and `[]` in the gRPC Symbol suites).
+
+Census, Pilot examples: `Element::name` and `OwningMembership::ownedMemberName`
+answer 6 more (7 -> 1 unanswered), the flow-end usages #2369 names. Matrix
+models unchanged. #2029 still reproduces at `9add4822df`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2332,3 +2348,4 @@ Step 34 took #2259 (successions at unnamed nodes); Rust adapter on Lookup::Eleme
 Step 35 took twenty OpenSysML merges; no case moved.
 Step 36 took ten OpenSysML merges (#2279); no case moved.
 Step 37 took #2268/#2266 (end features, flow ends).
+Step 38 took #2359; C10 chain operator passes.
