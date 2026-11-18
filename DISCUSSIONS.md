@@ -2303,6 +2303,9 @@ Census, Pilot examples: `Element::name` and `OwningMembership::ownedMemberName`
 answer 6 more (7 -> 1 unanswered), the flow-end usages #2369 names. Matrix
 models unchanged. #2029 still reproduces at `9add4822df`.
 
+We confirmed the fix on #1965
+(https://github.com/Open-MBEE/OpenSysML/issues/1965#issuecomment-6979504780).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
