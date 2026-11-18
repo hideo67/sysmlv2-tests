@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `de3c8cf872da`
+Test suite commit: `5d0bb950a172`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-17 12:47:05|
-|opensysml-go|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-17 12:46:59|
-|opensysml-java|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-17 12:47:55|
-|opensysml-py-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-17 12:46:37|
-|opensysml-py|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-17 12:46:27|
-|opensysml-rs|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-17 12:47:20|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-17 12:47:43|
-|opensysml-ts|OpenSysML|`nightly-20261117-0e9ef8bfd8-42-g65d6c25003` (develop)|[`65d6c25003`](https://github.com/Open-MBEE/OpenSysML/commit/65d6c25003b27204572ac83edbdafe55d81dd875)|2026-11-17|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-17 12:47:31|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-17 12:48:12|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-17 12:47:58|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-17 12:47:56|
+|opensysml-go-props|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-18 13:01:38|
+|opensysml-go|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-18 13:01:32|
+|opensysml-java|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-18 13:02:27|
+|opensysml-py-props|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-18 13:01:06|
+|opensysml-py|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-18 13:00:56|
+|opensysml-rs|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-18 13:01:52|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-18 13:02:15|
+|opensysml-ts|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-18 13:02:03|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-18 13:02:43|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-18 13:02:31|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-18 13:02:29|
 
 Local changes at run time (tracked files only):
 
@@ -41,7 +41,7 @@ Local changes at run time (tracked files only):
 |B13|165|74 / 91 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|74 / 91 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
 |B20|75|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|48 / 27 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|114|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|99 / 15 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
-|C10|116|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|92 / 4 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
+|C10|116|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|120|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
 |C21|72|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|48 / 24 / 0 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|0 / 0 / 72 / 0|72 / 0 / 0 / 0|48 / 0 / 0 / 24|48 / 24 / 0 / 0|
 |C30|78|78 / 0 / 0 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|78 / 0 / 0 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|6 / 0 / 72 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|78 / 0 / 0 / 0|
@@ -49,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1608 / 172 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1608 / 172 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1612 / 168 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1612 / 168 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -1339,10 +1339,10 @@ Local changes at run time (tracked files only):
 |C10-026|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-027|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-028|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C10-029|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C10-030|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C10-031|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C10-032|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C10-029|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C10-030|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C10-031|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C10-032|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-033|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-034|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C10-035|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -5859,34 +5859,26 @@ Local changes at run time (tracked files only):
 - C10-028 [opensysml-rs] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-028 [opensysml-ts-wasm] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-028 [opensysml-ts] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-029 [opensysml-go-props] fail: valueOperator C10::Motor::consume::pChain: got null, want "."
 - C10-029 [opensysml-go] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-029 [opensysml-java] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-029 [opensysml-py-props] fail: valueOperator C10::Motor::consume::pChain: got None, want '.'
 - C10-029 [opensysml-py] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-029 [opensysml-rs] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-029 [opensysml-ts-wasm] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-029 [opensysml-ts] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-030 [opensysml-go-props] fail: valueOperator C10::Motor::boost::pChain: got null, want "."
 - C10-030 [opensysml-go] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-030 [opensysml-java] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-030 [opensysml-py-props] fail: valueOperator C10::Motor::boost::pChain: got None, want '.'
 - C10-030 [opensysml-py] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-030 [opensysml-rs] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-030 [opensysml-ts-wasm] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-030 [opensysml-ts] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-031 [opensysml-go-props] fail: valueOperator C10::Motor::consume::pChain: got null, want "."
 - C10-031 [opensysml-go] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-031 [opensysml-java] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-031 [opensysml-py-props] fail: valueOperator C10::Motor::consume::pChain: got None, want '.'
 - C10-031 [opensysml-py] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-031 [opensysml-rs] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-031 [opensysml-ts-wasm] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-031 [opensysml-ts] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-032 [opensysml-go-props] fail: valueOperator C10::Motor::consume::pChain: got null, want "."
 - C10-032 [opensysml-go] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-032 [opensysml-java] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
-- C10-032 [opensysml-py-props] fail: valueOperator C10::Motor::consume::pChain: got None, want '.'
 - C10-032 [opensysml-py] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-032 [opensysml-rs] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
 - C10-032 [opensysml-ts-wasm] unsupported: the Symbol API reports a value only as a folded constant, with no expression structure or text
