@@ -2372,6 +2372,43 @@ Posted on #2068 that #2311 reaches the query API but not GetElementProperties
 or the export for the unnamed succession
 (https://github.com/Open-MBEE/OpenSysML/issues/2068#issuecomment-7002314055).
 
+## Step 41: OpenSysML #2309 and endFeature fixes; #2042 measured again
+OpenSysML develop moved from `19a9be9a31` to `109d8faa0e`, 26 merged PRs, among
+them #2309 (a library type the model states completes the inherited properties
+in the element form), the endFeature fixes (a private end of a supertype is no
+endFeature of the subtype; a conjugated type's endFeature is read from its
+original type), #2393 (the query API answers a verify's ends and a chained
+connector end), #2391, and #1928 (NPR 7123.1D library). #2042 and #2052 are
+still open.
+
+Matrices: B10 `endCount`/`endNames`, 8 cases, pass in both props suites (a
+connection def's `endFeature`). Nothing else moved. Detail-only: 90 B10-B12
+`sourceFeature`/`targetFeature`/`relatedFeature` notes in the Symbol suites now
+say the query API offers them (#2393); they stay unsupported, as the Symbol API
+has no such field.
+
+Census, Pilot examples: the inherited family answers almost everywhere.
+`Type::inheritedFeature`/`inheritedMembership` 6060 -> 7808 (unanswered 1336 ->
+41), `Type::feature`/`featureMembership` 8354 -> 10028, `Namespace::member`/
+`membership` 10436 -> 12110 (unanswered 1493 -> 198), `Type::endFeature` 0 ->
+574, `Type::input` 1826 -> 2242, `Usage::usage` 2676 -> 3759,
+`Definition::usage` 685 -> 747; matrix models likewise (`Type::endFeature` 0 ->
+62, inherited rows unanswered 77 -> 0). Nothing lost its answer. #2029 still
+reproduces at `109d8faa0e`.
+
+#2042 measured as it stands after the bot's work of 2026-11-19 (head
+`16489759ee`, against `develop` `28a9bb3b81`, `opensysml-py-props`): 1729 / 51 /
+33 against 1623 / 157 / 33, no case from pass to fail; the C30 and B13
+regressions of Step 33 are fixed. It adds C01 `result` (15), C21
+`instantiatedType` (12), B20 message ends (3) and 76 B13 cases; still failing
+there: B13 `endReferences` (15), B20 flow `sourceOutput`/`targetInput` (24),
+C21 `resultType` (12), and #2029's syntax-error case (#2052's part). A trial
+merge into `develop` conflicts in 579 files, 544 of them baselines under
+`docs/project`. Since the branch carries `Function::result`, our PR 1 (the
+first of the focused replacements proposed on #2042) is held, committed only in
+the fork clone. Posted on #2042
+(https://github.com/Open-MBEE/OpenSysML/pull/2042#issuecomment-7025066791).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2420,3 +2457,4 @@ Step 37 took #2268/#2266 (end features, flow ends).
 Step 38 took #2359; C10 chain operator passes.
 Step 39 took #2263 (#2198 fixed) and #2251; Go adapter reads members AsMemberOf.
 Step 40 took #2311; no case moved (it reaches the query API, not GetElementProperties).
+Step 41 took #2309 and the endFeature fixes (B10 passes); #2042 measured again.
