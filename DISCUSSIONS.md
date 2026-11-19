@@ -2350,6 +2350,24 @@ Released as sysmlv2-tests v1.0.1, a patch release for the adapter corrections
 the fix on #2198
 (https://github.com/Open-MBEE/OpenSysML/issues/2198#issuecomment-6997192196).
 
+## Step 40: OpenSysML #2311 (no case moved)
+OpenSysML develop moved from `13038ee707` to `19a9be9a31`, 3 merged PRs: #2311
+(a succession's related features are what its owned ends reference; an action
+body's two-ended `first a then b;` is an owned SuccessionAsUsage; bare assign,
+terminate and perform statements are action usages), #2379, #2381. #2042 and
+#2052 are still open.
+
+No case moved in any suite, no detail text changed, and the census is identical
+on both corpora. #2311 was verified on the semantic model ("native walk") and
+the structure differential, and it does reach the query API: for
+`action def Unnamed { action a1; action a2; first a1 then a2; }`, `model.query`
+selects `relatedFeature` on the unnamed succession as it does on a named one
+(the query table shows the first value of a multi-valued property, `a1`, for
+both). `GetElementProperties` and the api-json export still answer the unnamed
+succession's `relatedFeature` empty, so B13 (#2068 group 1) does not move.
+
+#2029 still reproduces at `19a9be9a31`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2397,3 +2415,4 @@ Step 36 took ten OpenSysML merges (#2279); no case moved.
 Step 37 took #2268/#2266 (end features, flow ends).
 Step 38 took #2359; C10 chain operator passes.
 Step 39 took #2263 (#2198 fixed) and #2251; Go adapter reads members AsMemberOf.
+Step 40 took #2311; no case moved (it reaches the query API, not GetElementProperties).
