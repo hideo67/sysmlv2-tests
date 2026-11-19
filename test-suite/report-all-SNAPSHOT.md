@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `7373c20f1d3a`
+Test suite commit: `fb705ad9c064`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-19 06:58:13|
-|opensysml-go|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-19 06:58:09|
-|opensysml-java|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-19 06:58:59|
-|opensysml-py-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-19 06:57:46|
-|opensysml-py|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-19 06:57:38|
-|opensysml-rs|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 06:58:28|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-19 06:58:48|
-|opensysml-ts|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-19 06:58:38|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-19 06:59:14|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 06:59:03|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 06:59:01|
+|opensysml-go-props|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-19 23:27:21|
+|opensysml-go|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-19 23:27:13|
+|opensysml-java|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-19 23:28:05|
+|opensysml-py-props|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-19 23:26:51|
+|opensysml-py|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-19 23:26:39|
+|opensysml-rs|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 23:27:34|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-19 23:27:55|
+|opensysml-ts|OpenSysML|`nightly-20261119-32b562fca6-182-g109d8faa0e` (develop)|[`109d8faa0e`](https://github.com/Open-MBEE/OpenSysML/commit/109d8faa0ed7a3b069633ed25f1c2a8338cea07d)|2026-11-19|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-19 23:27:44|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-19 23:28:22|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 23:28:09|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 23:28:07|
 
 Local changes at run time (tracked files only):
 
@@ -35,7 +35,7 @@ Local changes at run time (tracked files only):
 |A40|45|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
 |A50|54|54 / 0 / 0 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|54 / 0 / 0 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
-|B10|98|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
+|B10|98|98 / 0 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
 |B11|90|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
 |B12|108|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |B13|165|74 / 91 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|74 / 91 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
@@ -49,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1615 / 165 / 33 / 0|877 / 75 / 861 / 0|867 / 85 / 861 / 0|1615 / 165 / 33 / 0|877 / 75 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1623 / 157 / 33 / 0|877 / 75 / 861 / 0|867 / 85 / 861 / 0|1623 / 157 / 33 / 0|877 / 75 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -751,14 +751,14 @@ Local changes at run time (tracked files only):
 |B10-088|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B10-089|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |B10-090|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|B10-091|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-092|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-093|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-094|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-095|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-096|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-097|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B10-098|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-091|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-092|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-093|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-094|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-095|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-096|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-097|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B10-098|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B11-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B11-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B11-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -2725,42 +2725,42 @@ Local changes at run time (tracked files only):
 - B10-039 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-039 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B10-039 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
-- B10-040 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-040 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-040 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-040 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-040 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-040 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-040 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-040 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-040 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-040 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-041 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-041 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-041 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-041 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-040 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-041 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-041 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-041 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-041 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-041 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-041 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-042 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-042 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-042 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-042 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-041 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-042 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-042 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-042 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-042 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-042 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-042 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-043 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-043 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-043 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-043 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-042 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-043 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-043 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-043 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-043 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-043 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-043 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-044 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-044 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-044 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-044 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-043 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-044 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-044 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-044 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-044 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-044 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-044 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-045 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-045 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-045 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-045 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-044 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-045 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-045 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-045 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-045 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-045 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-045 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-045 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-046 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-046 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-046 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
@@ -2779,42 +2779,42 @@ Local changes at run time (tracked files only):
 - B10-048 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-048 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B10-048 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
-- B10-049 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-049 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-049 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-049 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-049 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-049 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-049 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-049 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-049 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-049 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-050 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-050 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-050 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-050 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-049 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-050 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-050 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-050 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-050 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-050 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-050 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-051 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-051 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-051 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-051 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-050 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-051 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-051 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-051 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-051 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-051 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-051 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-052 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-052 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-052 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-052 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-051 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-052 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-052 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-052 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-052 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-052 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-052 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-053 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-053 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-053 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-053 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-052 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-053 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-053 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-053 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-053 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-053 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-053 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-054 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-054 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-054 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B10-054 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-053 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-054 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-054 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-054 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B10-054 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-054 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-054 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B10-054 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B10-055 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-055 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-055 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
@@ -2833,42 +2833,42 @@ Local changes at run time (tracked files only):
 - B10-057 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-057 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B10-057 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
-- B10-058 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-058 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-058 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-058 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-058 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-058 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-058 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-058 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-058 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-058 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-059 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-059 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-059 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-059 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-058 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-059 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-059 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-059 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-059 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-059 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-059 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-060 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-060 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-060 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-060 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-059 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-060 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-060 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-060 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-060 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-060 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-060 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-061 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-061 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-061 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-061 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-060 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-061 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-061 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-061 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-061 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-061 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-061 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-062 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-062 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-062 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-062 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-061 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-062 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-062 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-062 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-062 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-062 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-062 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-063 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-063 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-063 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-063 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-062 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-063 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-063 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-063 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-063 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-063 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-063 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-063 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-064 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-064 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-064 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
@@ -2887,42 +2887,42 @@ Local changes at run time (tracked files only):
 - B10-066 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-066 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B10-066 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
-- B10-067 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-067 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-067 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-067 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-067 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-067 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-067 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-067 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-067 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-067 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-068 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-068 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-068 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-068 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-067 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-068 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-068 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-068 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-068 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-068 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-068 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-069 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-069 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-069 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-069 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-068 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-069 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-069 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-069 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-069 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-069 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-069 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-070 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-070 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-070 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-070 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-069 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-070 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-070 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-070 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-070 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-070 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-070 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-071 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-071 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-071 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-071 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-070 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-071 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-071 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-071 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-071 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-071 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-071 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-072 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-072 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-072 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B10-072 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-071 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-072 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-072 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-072 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B10-072 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-072 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-072 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B10-072 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B10-073 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-073 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-073 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
@@ -2941,42 +2941,42 @@ Local changes at run time (tracked files only):
 - B10-075 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-075 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B10-075 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
-- B10-076 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-076 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-076 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-076 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-076 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-076 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-076 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-076 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-076 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-076 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-077 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-077 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-077 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-077 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-076 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-077 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-077 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-077 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-077 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-077 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-077 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-078 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-078 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-078 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-078 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-077 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-078 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-078 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-078 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-078 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-078 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-078 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-079 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-079 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-079 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-079 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-078 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-079 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-079 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-079 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-079 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-079 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-079 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-080 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-080 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-080 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-080 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-079 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-080 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-080 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-080 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-080 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-080 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-080 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-081 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-081 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-081 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-081 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-080 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-081 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-081 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-081 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-081 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-081 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-081 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-081 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-082 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-082 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-082 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
@@ -2995,109 +2995,93 @@ Local changes at run time (tracked files only):
 - B10-084 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-084 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B10-084 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
-- B10-085 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-085 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-085 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-085 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-085 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-085 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-085 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-085 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-085 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-085 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-086 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-086 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-086 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-086 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-085 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-086 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-086 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-086 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-086 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-086 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-086 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-087 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-087 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-087 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-087 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-086 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-087 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-087 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-087 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-087 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-087 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-087 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-088 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-088 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-088 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-088 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-087 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-088 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-088 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-088 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-088 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-088 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-088 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-089 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-089 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-089 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-089 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-088 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-089 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-089 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-089 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-089 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-089 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-089 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-090 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-090 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-090 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-090 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B10-089 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-090 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-090 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-090 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B10-090 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-090 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B10-090 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B10-091 [opensysml-go-props] fail: endCount B10::Link: got 0, want 2
+- B10-090 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B10-091 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-091 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-091 [opensysml-py-props] fail: endCount B10::Link: got 0, want 2
 - B10-091 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-091 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-091 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-091 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-091 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-092 [opensysml-go-props] fail: endCount B10::SubLink: got 0, want 2
 - B10-092 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-092 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-092 [opensysml-py-props] fail: endCount B10::SubLink: got 0, want 2
 - B10-092 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-092 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-092 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-092 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-092 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-093 [opensysml-go-props] fail: endCount B10::Iface: got 0, want 2
 - B10-093 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-093 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-093 [opensysml-py-props] fail: endCount B10::Iface: got 0, want 2
 - B10-093 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-093 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-093 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-093 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-093 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-094 [opensysml-go-props] fail: endCount B10::SubIface: got 0, want 2
 - B10-094 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-094 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-094 [opensysml-py-props] fail: endCount B10::SubIface: got 0, want 2
 - B10-094 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-094 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-094 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-094 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-094 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-095 [opensysml-go-props] fail: endNames B10::Link: got [], want ["a","b"]
 - B10-095 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-095 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-095 [opensysml-py-props] fail: endNames B10::Link: got [], want ['a', 'b']
 - B10-095 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-095 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-095 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-095 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-095 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-096 [opensysml-go-props] fail: endNames B10::SubLink: got [], want ["a","b"]
 - B10-096 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-096 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-096 [opensysml-py-props] fail: endNames B10::SubLink: got [], want ['a', 'b']
 - B10-096 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-096 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-096 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-096 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-096 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-097 [opensysml-go-props] fail: endNames B10::Iface: got [], want ["a","b"]
 - B10-097 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-097 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-097 [opensysml-py-props] fail: endNames B10::Iface: got [], want ['a', 'b']
 - B10-097 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-097 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-097 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
 - B10-097 [opensysml-ts] unsupported: the Symbol API does not mark the end features of a definition
 - B10-097 [sysml-toolkit-rs-checked] error: endFeature refused by the checked reader: property has an incomplete derivation
-- B10-098 [opensysml-go-props] fail: endNames B10::SubIface: got [], want ["a","b"]
 - B10-098 [opensysml-go] unsupported: the Symbol API does not mark the end features of a definition
 - B10-098 [opensysml-java] unsupported: the Symbol API does not mark the end features of a definition
-- B10-098 [opensysml-py-props] fail: endNames B10::SubIface: got [], want ['a', 'b']
 - B10-098 [opensysml-py] unsupported: the Symbol API does not mark the end features of a definition
 - B10-098 [opensysml-rs] unsupported: the Symbol API does not mark the end features of a definition
 - B10-098 [opensysml-ts-wasm] unsupported: the Symbol API does not mark the end features of a definition
@@ -3121,42 +3105,42 @@ Local changes at run time (tracked files only):
 - B11-039 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-039 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B11-039 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
-- B11-040 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-040 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-040 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-040 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-040 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-040 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-040 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-040 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-040 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-040 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-041 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-041 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-041 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-041 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-040 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-041 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-041 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-041 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-041 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-041 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-041 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-042 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-042 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-042 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-042 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-041 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-042 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-042 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-042 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-042 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-042 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-042 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-043 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-043 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-043 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-043 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-042 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-043 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-043 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-043 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-043 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-043 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-043 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-044 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-044 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-044 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-044 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-043 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-044 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-044 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-044 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-044 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-044 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-044 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-045 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-045 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-045 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B11-045 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-044 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-045 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-045 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-045 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B11-045 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-045 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-045 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B11-045 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B11-046 [opensysml-go] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B11-046 [opensysml-java] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
 - B11-046 [opensysml-py] unsupported: no Symbol field for sourceFeature; the query API cannot address an unnamed element
@@ -3229,42 +3213,42 @@ Local changes at run time (tracked files only):
 - B11-057 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-057 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B11-057 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
-- B11-058 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-058 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-058 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-058 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-058 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-058 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-058 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-058 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-058 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-058 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-059 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-059 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-059 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-059 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-058 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-059 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-059 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-059 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-059 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-059 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-059 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-060 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-060 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-060 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-060 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-059 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-060 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-060 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-060 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-060 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-060 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-060 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-061 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-061 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-061 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-061 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-060 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-061 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-061 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-061 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-061 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-061 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-061 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-062 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-062 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-062 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-062 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-061 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-062 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-062 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-062 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-062 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-062 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-062 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-063 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-063 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-063 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B11-063 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-062 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-063 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-063 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-063 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B11-063 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-063 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-063 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B11-063 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B11-064 [opensysml-go] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B11-064 [opensysml-java] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
 - B11-064 [opensysml-py] unsupported: no Symbol field for targetFeature; the query API cannot address an unnamed element
@@ -3337,42 +3321,42 @@ Local changes at run time (tracked files only):
 - B11-075 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-075 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B11-075 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
-- B11-076 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-076 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-076 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-076 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-076 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-076 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-076 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-076 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-076 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-076 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-077 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-077 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-077 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-077 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-076 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-077 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-077 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-077 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-077 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-077 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-077 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-078 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-078 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-078 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-078 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-077 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-078 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-078 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-078 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-078 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-078 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-078 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-079 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-079 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-079 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-079 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-078 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-079 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-079 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-079 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-079 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-079 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-079 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-080 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-080 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-080 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-080 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-079 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-080 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-080 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-080 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-080 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-080 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-080 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-081 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-081 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-081 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B11-081 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-080 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-081 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-081 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-081 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B11-081 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-081 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B11-081 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B11-081 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B11-082 [opensysml-go] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
 - B11-082 [opensysml-java] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
 - B11-082 [opensysml-py] unsupported: no Symbol field for relatedFeature; the query API cannot address an unnamed element
@@ -3445,42 +3429,42 @@ Local changes at run time (tracked files only):
 - B12-057 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-057 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-057 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
-- B12-058 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-058 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-058 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-058 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-058 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-058 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-058 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-058 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-058 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-058 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-059 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-059 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-059 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-059 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-058 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-059 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-059 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-059 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-059 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-059 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-059 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-060 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-060 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-060 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-060 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-059 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-060 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-060 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-060 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-060 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-060 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-060 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-061 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-061 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-061 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-061 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-060 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-061 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-061 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-061 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-061 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-061 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-061 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-062 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-062 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-062 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-062 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-061 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-062 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-062 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-062 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-062 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-062 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-062 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-063 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-063 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-063 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-063 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-062 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-063 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-063 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-063 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-063 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-063 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-063 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-063 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-064 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-064 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-064 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
@@ -3499,42 +3483,42 @@ Local changes at run time (tracked files only):
 - B12-066 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-066 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-066 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
-- B12-067 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-067 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-067 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-067 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-067 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-067 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-067 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-067 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-067 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-067 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-068 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-068 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-068 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-068 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-067 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-068 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-068 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-068 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-068 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-068 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-068 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-069 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-069 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-069 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-069 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-068 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-069 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-069 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-069 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-069 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-069 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-069 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-070 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-070 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-070 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-070 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-069 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-070 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-070 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-070 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-070 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-070 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-070 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-071 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-071 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-071 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-071 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-070 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-071 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-071 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-071 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-071 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-071 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-071 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-072 [opensysml-go] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-072 [opensysml-java] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-072 [opensysml-py] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
-- B12-072 [opensysml-rs] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-071 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-072 [opensysml-go] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-072 [opensysml-java] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-072 [opensysml-py] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
+- B12-072 [opensysml-rs] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-072 [opensysml-ts-wasm] unsupported: no Symbol field for sourceFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-072 [opensysml-ts] unsupported: no Symbol field for sourceFeature; the standard query API does not offer it either
+- B12-072 [opensysml-ts] unsupported: no Symbol field for sourceFeature; available through the standard query API (sourceFeature)
 - B12-073 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-073 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-073 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
@@ -3553,42 +3537,42 @@ Local changes at run time (tracked files only):
 - B12-075 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-075 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-075 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
-- B12-076 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-076 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-076 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-076 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-076 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-076 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-076 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-076 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-076 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-076 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-077 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-077 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-077 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-077 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-076 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-077 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-077 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-077 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-077 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-077 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-077 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-078 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-078 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-078 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-078 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-077 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-078 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-078 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-078 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-078 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-078 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-078 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-079 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-079 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-079 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-079 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-078 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-079 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-079 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-079 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-079 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-079 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-079 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-080 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-080 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-080 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-080 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-079 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-080 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-080 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-080 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-080 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-080 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-080 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-081 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-081 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-081 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-081 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-080 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-081 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-081 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-081 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-081 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-081 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-081 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-081 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-082 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-082 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-082 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
@@ -3607,42 +3591,42 @@ Local changes at run time (tracked files only):
 - B12-084 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-084 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-084 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
-- B12-085 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-085 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-085 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-085 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-085 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-085 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-085 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-085 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-085 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-085 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-086 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-086 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-086 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-086 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-085 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-086 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-086 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-086 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-086 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-086 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-086 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-087 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-087 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-087 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-087 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-086 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-087 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-087 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-087 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-087 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-087 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-087 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-088 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-088 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-088 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-088 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-087 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-088 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-088 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-088 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-088 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-088 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-088 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-089 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-089 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-089 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-089 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-088 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-089 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-089 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-089 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-089 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-089 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-089 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-090 [opensysml-go] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-090 [opensysml-java] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-090 [opensysml-py] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
-- B12-090 [opensysml-rs] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-089 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-090 [opensysml-go] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-090 [opensysml-java] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-090 [opensysml-py] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
+- B12-090 [opensysml-rs] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-090 [opensysml-ts-wasm] unsupported: no Symbol field for targetFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-090 [opensysml-ts] unsupported: no Symbol field for targetFeature; the standard query API does not offer it either
+- B12-090 [opensysml-ts] unsupported: no Symbol field for targetFeature; available through the standard query API (targetFeature)
 - B12-091 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-091 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-091 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
@@ -3661,42 +3645,42 @@ Local changes at run time (tracked files only):
 - B12-093 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-093 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-093 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
-- B12-094 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-094 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-094 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-094 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-094 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-094 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-094 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-094 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-094 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-094 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-095 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-095 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-095 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-095 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-094 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-095 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-095 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-095 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-095 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-095 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-095 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-096 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-096 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-096 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-096 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-095 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-096 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-096 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-096 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-096 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-096 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-096 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-097 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-097 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-097 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-097 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-096 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-097 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-097 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-097 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-097 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-097 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-097 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-098 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-098 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-098 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-098 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-097 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-098 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-098 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-098 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-098 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-098 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-098 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-099 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-099 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-099 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-099 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-098 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-099 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-099 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-099 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-099 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-099 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-099 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-099 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-100 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-100 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-100 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
@@ -3715,42 +3699,42 @@ Local changes at run time (tracked files only):
 - B12-102 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-102 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B12-102 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
-- B12-103 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-103 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-103 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-103 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-103 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-103 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-103 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-103 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-103 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-103 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-104 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-104 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-104 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-104 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-103 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-104 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-104 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-104 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-104 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-104 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-104 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-105 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-105 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-105 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-105 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-104 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-105 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-105 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-105 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-105 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-105 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-105 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-106 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-106 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-106 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-106 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-105 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-106 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-106 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-106 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-106 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-106 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-106 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-107 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-107 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-107 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-107 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-106 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-107 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-107 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-107 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-107 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-107 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-107 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-108 [opensysml-go] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-108 [opensysml-java] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-108 [opensysml-py] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
-- B12-108 [opensysml-rs] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-107 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-108 [opensysml-go] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-108 [opensysml-java] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-108 [opensysml-py] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
+- B12-108 [opensysml-rs] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B12-108 [opensysml-ts-wasm] unsupported: no Symbol field for relatedFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
-- B12-108 [opensysml-ts] unsupported: no Symbol field for relatedFeature; the standard query API does not offer it either
+- B12-108 [opensysml-ts] unsupported: no Symbol field for relatedFeature; available through the standard query API (relatedFeature)
 - B13-004 [opensysml-go] fail: endCount B13::Unnamed: got "\u003cunnamed SuccessionAsUsage #0 of B13::Unnamed not listed\u003e", want 2
 - B13-004 [opensysml-java] fail: endCount B13::Unnamed: got "<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>", want 2
 - B13-004 [opensysml-py] fail: endCount B13::Unnamed: got '<unnamed SuccessionAsUsage #0 of B13::Unnamed not listed>', want 2
