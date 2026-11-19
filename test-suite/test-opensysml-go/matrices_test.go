@@ -370,6 +370,10 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	}
 	owner := parent(c.Element)
 	id := norm(c.Element)
+	// the Symbol the element is read through, when it is: its member is then looked up as a
+	// member of it (AsMemberOf), so that relative facts such as direction are stated relative
+	// to it (OpenSysML #2251), as the Python client does for the members it lists
+	memberOf := ""
 	if len(c.Through) > 0 {
 		// each step is read as a member the previous Symbol lists: as a child,
 		// in Members (own and inherited), or (for attributes, own and inherited) in Attributes
@@ -390,9 +394,10 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 				return fmt.Sprintf("<%s not visible through %s>", step, cur.ID), nil
 			}
 			owner = cur.ID
-			if cur, err = lookupSym(ctx, cl, m, step); err != nil {
+			if cur, err = lookupSym(ctx, cl, m, step, opensysml.AsMemberOf(cur.ID)); err != nil {
 				return nil, err
 			}
+			memberOf = owner
 		}
 	}
 	if c.Unnamed != nil {
@@ -420,7 +425,13 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		}
 		id = found[c.Unnamed.Index]
 	}
-	sym, err := lookupSym(ctx, cl, m, id)
+	var sym *opensysml.Symbol
+	var err error
+	if memberOf != "" && c.Unnamed == nil {
+		sym, err = lookupSym(ctx, cl, m, id, opensysml.AsMemberOf(memberOf))
+	} else {
+		sym, err = lookupSym(ctx, cl, m, id)
+	}
 	if err != nil {
 		return nil, err
 	}
@@ -812,8 +823,8 @@ func writeResults(t *testing.T, suite string, rows [][]string) {
 // its Members (own and inherited; library-inherited ones are withheld).
 // lookupSym is LookupSymbol with the members inherited from standard-library content
 // listed in Members too (WithLibraryMembers), as Python lists them (DISCUSSIONS.md, Step 16).
-func lookupSym(ctx context.Context, cl opensysml.Client, m *opensysml.Model, id string) (*opensysml.Symbol, error) {
-	return cl.LookupSymbol(ctx, m, id, opensysml.WithLibraryMembers())
+func lookupSym(ctx context.Context, cl opensysml.Client, m *opensysml.Model, id string, opts ...opensysml.SymbolOption) (*opensysml.Symbol, error) {
+	return cl.LookupSymbol(ctx, m, id, append([]opensysml.SymbolOption{opensysml.WithLibraryMembers()}, opts...)...)
 }
 
 // scopeIDs lists where a member declared in an element is looked for: the children of the

@@ -2306,6 +2306,45 @@ models unchanged. #2029 still reproduces at `9add4822df`.
 We confirmed the fix on #1965
 (https://github.com/Open-MBEE/OpenSysML/issues/1965#issuecomment-6979504780).
 
+## Step 39: #2263 and #2251 merged (#2198 fixed; relative direction)
+OpenSysML develop moved from `9add4822df` to `13038ee707`, 12 merged PRs, among
+them #2263 (Feature::type joins a feature's own typings with those it
+inherits; fixes #2198) and #2251 (the Symbol API reports a member's direction
+relative to the type it is read through, `GetSymbolRequest.member_of`), and
+#2349 (golang.org/x/text 0.44.0). #2042 and #2052 are still open.
+
+The Go test module needed `go mod tidy` after #2349 (golang.org/x/text 0.43.0 ->
+0.44.0 in go.mod and go.sum); until then the Go suites and the census refused
+to run ("updates to go.mod needed").
+
+Matrices:
+- A40-040..042 pass in both props suites (#2263): `pBoth : V :> q` answers
+  `[V, T]`. #2198 is closed.
+- A30 `direction`, 10 cases, pass in opensysml-py (#2251): the Python client
+  passes the listing symbol as `member_of`, so `cmd` read through `pIn : ~CmdPort`
+  is `in`. #2251's description noted that the Go reader looks the member up by
+  id alone, so A30-029/030 and 031/032 make the identical call and cannot both
+  pass; Go's new `AsMemberOf(owner)` names the type. Adapter change: the Go
+  adapter now looks each step of a `through` path, and the element read at its
+  end, up `AsMemberOf` the symbol it is read through. The 10 A30 cases pass in
+  opensysml-go too; nothing else moved. TypeScript, Java and Rust do not bind
+  `member_of` yet (#2251's parity table), so those suites still fail them.
+
+The cyclic model of our #2263 comment (`part def A :> B, C; part def B :> A,
+C;` with a directed feature in `C`) answers every derived read and the api-json
+export on `develop`: #2251 carries one visited set through the read
+(`TestAPIJSONDirectionThroughMutuallySpecializingTypes`).
+
+Census, Pilot examples: definitions and types answer far more often:
+`Usage::definition` 2013 -> 2122, `OccurrenceUsage::occurrenceDefinition` 990 ->
+1094, `Expression::function` 253 -> 301, `Step::behavior` 210 -> 260,
+`Feature::type` 2475 -> 2512, `ConstraintUsage::constraintDefinition` 77 -> 113,
+`RequirementUsage::requirementDefinition` 46 -> 76, `ItemUsage::itemDefinition`
+627 -> 665, `PartUsage::partDefinition` 421 -> 456, with the unanswered counts
+down by as much. `Type::input` 1828 -> 1826 and `Type::output` 2833 -> 2835 are
+the two conjugated ports #2251 corrects. Matrix models: 1 more in a few
+definition rows. #2029 still reproduces at `13038ee707`.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2352,3 +2391,4 @@ Step 35 took twenty OpenSysML merges; no case moved.
 Step 36 took ten OpenSysML merges (#2279); no case moved.
 Step 37 took #2268/#2266 (end features, flow ends).
 Step 38 took #2359; C10 chain operator passes.
+Step 39 took #2263 (#2198 fixed) and #2251; Go adapter reads members AsMemberOf.
