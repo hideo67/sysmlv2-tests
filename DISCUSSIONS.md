@@ -2368,6 +2368,10 @@ succession's `relatedFeature` empty, so B13 (#2068 group 1) does not move.
 
 #2029 still reproduces at `19a9be9a31`.
 
+Posted on #2068 that #2311 reaches the query API but not GetElementProperties
+or the export for the unnamed succession
+(https://github.com/Open-MBEE/OpenSysML/issues/2068#issuecomment-7002314055).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
