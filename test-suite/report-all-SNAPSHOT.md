@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `5d0bb950a172`
+Test suite commit: `2ff9d5b74254`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-18 13:01:38|
-|opensysml-go|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-18 13:01:32|
-|opensysml-java|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-18 13:02:27|
-|opensysml-py-props|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-18 13:01:06|
-|opensysml-py|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-18 13:00:56|
-|opensysml-rs|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-18 13:01:52|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-18 13:02:15|
-|opensysml-ts|OpenSysML|`nightly-20261118-4d67c7a98f-48-g9add4822df` (develop)|[`9add4822df`](https://github.com/Open-MBEE/OpenSysML/commit/9add4822dfd18022d034017b8b9fc8fe7241b357)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-18 13:02:03|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-18 13:02:43|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-18 13:02:31|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-18 13:02:29|
+|opensysml-go-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-19 01:30:25|
+|opensysml-go|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-19 01:30:18|
+|opensysml-java|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-19 01:31:10|
+|opensysml-py-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-19 01:30:16|
+|opensysml-py|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-19 01:30:05|
+|opensysml-rs|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 01:30:39|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-19 01:30:59|
+|opensysml-ts|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-19 01:30:48|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-19 01:31:26|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 01:31:14|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 01:31:12|
 
 Local changes at run time (tracked files only):
 
@@ -31,8 +31,8 @@ Local changes at run time (tracked files only):
 |A03|128|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|96 / 0 / 32 / 0|128 / 0 / 0 / 0|128 / 0 / 0 / 0|110 / 18 / 0 / 0|
 |A10|36|36 / 0 / 0 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|36 / 0 / 0 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|20 / 0 / 16 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|36 / 0 / 0 / 0|
 |A20|100|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|80 / 0 / 20 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|100 / 0 / 0 / 0|
-|A30|44|44 / 0 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|42 / 2 / 0 / 0|
-|A40|45|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|42 / 3 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
+|A30|44|44 / 0 / 0 / 0|44 / 0 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|34 / 10 / 0 / 0|44 / 0 / 0 / 0|44 / 0 / 0 / 0|42 / 2 / 0 / 0|
+|A40|45|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|45 / 0 / 0 / 0|
 |A50|54|54 / 0 / 0 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|54 / 0 / 0 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|36 / 0 / 18 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|54 / 0 / 0 / 0|
 |A60|32|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|32 / 0 / 0 / 0|
 |B10|98|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|90 / 8 / 0 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|36 / 0 / 62 / 0|98 / 0 / 0 / 0|90 / 0 / 0 / 8|98 / 0 / 0 / 0|
@@ -49,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1612 / 168 / 33 / 0|867 / 85 / 861 / 0|867 / 85 / 861 / 0|1612 / 168 / 33 / 0|867 / 85 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1615 / 165 / 33 / 0|877 / 75 / 861 / 0|867 / 85 / 861 / 0|1615 / 165 / 33 / 0|877 / 75 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -512,24 +512,24 @@ Local changes at run time (tracked files only):
 |A30-024|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-025|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-026|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-027|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
-|A30-028|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
+|A30-027|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
+|A30-028|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|FAIL|
 |A30-029|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-030|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-031|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-032|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-031|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-032|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-033|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-034|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-035|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-036|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-035|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-036|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-038|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-039|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-040|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-039|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-040|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A30-041|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A30-042|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A30-043|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|A30-044|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-043|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
+|A30-044|PASS|PASS|FAIL|PASS|PASS|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |A40-001|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-002|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-003|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -569,9 +569,9 @@ Local changes at run time (tracked files only):
 |A40-037|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-038|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-039|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-040|FAIL|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-041|FAIL|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
-|A40-042|FAIL|PASS|PASS|FAIL|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-040|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-041|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
+|A40-042|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-043|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-044|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |A40-045|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -2557,74 +2557,48 @@ Local changes at run time (tracked files only):
 - A20-100 [opensysml-rs] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts-wasm] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
 - A20-100 [opensysml-ts] unsupported: neither Symbol nor AttributeFacts tells a default from a bound value
-- A30-027 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-027 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-027 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-027 [sysml-toolkit-rs] fail: direction A30::CmdPort::cmd: got "<A30::CmdPort::cmd not visible through A30::CmdPort::'~CmdPort'>", want "in"
-- A30-028 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-028 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-028 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-028 [sysml-toolkit-rs] fail: direction A30::CmdPort::ack: got "<A30::CmdPort::ack not visible through A30::CmdPort::'~CmdPort'>", want "out"
-- A30-031 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-031 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-031 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-031 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-031 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-031 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-032 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-032 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-032 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-032 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-035 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-035 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-035 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-035 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-036 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-036 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-036 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-036 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-039 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-039 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-039 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-039 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-040 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-040 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-040 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-040 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-043 [opensysml-go] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-java] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-043 [opensysml-py] fail: direction A30::CmdPort::cmd: got 'out', want 'in'
 - A30-043 [opensysml-rs] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-ts-wasm] fail: direction A30::CmdPort::cmd: got "out", want "in"
 - A30-043 [opensysml-ts] fail: direction A30::CmdPort::cmd: got "out", want "in"
-- A30-044 [opensysml-go] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-044 [opensysml-java] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A30-044 [opensysml-py] fail: direction A30::CmdPort::ack: got 'in', want 'out'
 - A30-044 [opensysml-rs] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-044 [opensysml-ts-wasm] fail: direction A30::CmdPort::ack: got "in", want "out"
 - A30-044 [opensysml-ts] fail: direction A30::CmdPort::ack: got "in", want "out"
-- A40-040 [opensysml-go-props] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-040 [opensysml-py-props] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-041 [opensysml-go-props] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-041 [opensysml-py-props] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
-- A40-042 [opensysml-go-props] fail: types A40::Owner::pBoth: got ["A40::V"], want ["A40::T","A40::V"]
-- A40-042 [opensysml-py-props] fail: types A40::Owner::pBoth: got ['A40::V'], want ['A40::T', 'A40::V']
 - A50-019 [opensysml-go] unsupported: no Symbol field for the owner; available through the standard query API (owner)
 - A50-019 [opensysml-java] unsupported: no Symbol field for the owner; available through the standard query API (owner)
 - A50-019 [opensysml-py] unsupported: no Symbol field for the owner; available through the standard query API (owner)
