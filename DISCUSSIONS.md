@@ -2345,6 +2345,11 @@ down by as much. `Type::input` 1828 -> 1826 and `Type::output` 2833 -> 2835 are
 the two conjugated ports #2251 corrects. Matrix models: 1 more in a few
 definition rows. #2029 still reproduces at `13038ee707`.
 
+Released as sysmlv2-tests v1.0.1, a patch release for the adapter corrections
+(https://github.com/hideo67/sysmlv2-tests/releases/tag/v1.0.1), and confirmed
+the fix on #2198
+(https://github.com/Open-MBEE/OpenSysML/issues/2198#issuecomment-6997192196).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
