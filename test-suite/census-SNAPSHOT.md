@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `2ff9d5b74254`
+Test suite commit: `7373c20f1d3a`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-19 01:35:23|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 01:35:32|
-|opensysml-go-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-341-g13038ee707` (develop)|[`13038ee707`](https://github.com/Open-MBEE/OpenSysML/commit/13038ee70741745d8dc64d8f525163ec1cf3b5e3)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-19 01:36:00|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-14-g378a8700c` (master)|[`378a8700c0`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/378a8700c0bc5dfc08a97a5bb637f61dd8cfed02)|2026-11-04|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.0.3" 2026-10-24|2026-11-19 07:03:17|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-19 07:03:26|
+|opensysml-go-props|OpenSysML|`nightly-20261117-0e9ef8bfd8-371-g19a9be9a31` (develop)|[`19a9be9a31`](https://github.com/Open-MBEE/OpenSysML/commit/19a9be9a31efe44d3d6ea557057e4869a316ccd9)|2026-11-18|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-19 07:03:42|
 
 Local changes at run time (tracked files only):
 
