@@ -2464,7 +2464,18 @@ answer.
 repeats the top-level name, and the response lists the left-out document in
 `excluded_documents`; with a validation error only, nothing is excluded.
 #2052 is still open. The stack under #2042 is now #2042 -> #2048, both
-conflicting.
+conflicting. Reported the fix on #2029
+(https://github.com/Open-MBEE/OpenSysML/issues/2029#issuecomment-7037023327).
+
+Trial merges (`git merge-tree`) against `develop` `2a8ba6cbdd`: #2048 (head
+`9262570133`) conflicts only in 9 generated files, so a `ci:rebaseline` run
+may be all it needs. #2042 (head `16489759ee`) does not depend on #2048's
+content: #2048's own changes touch 14 non-generated files (mostly
+`examples/self-model` and `.agents/skills`), #2042's own 93, with no overlap.
+Replayed onto `develop` without #2048, #2042 conflicts in 541 files, 16 of
+them code (`internal/frontend/grpc`, `internal/semantic`, `internal/translate/
+export`, `internal/doc/queryexec`). Posted both on #2042, offering either order
+(https://github.com/Open-MBEE/OpenSysML/pull/2042#issuecomment-7040343799).
 
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
