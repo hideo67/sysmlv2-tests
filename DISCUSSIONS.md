@@ -2430,6 +2430,10 @@ always empty. Matrix models unchanged. Nothing lost its answer.
 Step 25). The stack under #2042 is now #2052 -> #2042 -> #2048 -> #2002, after
 #2400 merged; all four are open and conflicting.
 
+The Pilot moved from `378a8700c0` to `82d26f18a7` (#828, ST6RI-970: the
+bundles' Maven artifacts no longer depend on the build environment's path;
+build properties only). pilot-java and its census are identical.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
