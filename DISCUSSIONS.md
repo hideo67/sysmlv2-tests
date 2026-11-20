@@ -2409,6 +2409,27 @@ first of the focused replacements proposed on #2042) is held, committed only in
 the fork clone. Posted on #2042
 (https://github.com/Open-MBEE/OpenSysML/pull/2042#issuecomment-7025066791).
 
+## Step 42: fourteen OpenSysML merges (#2414 cross subsetting); no case moved
+OpenSysML develop moved from `109d8faa0e` to `1f208d2c97`, 14 merged PRs,
+among them #2400 (NPR 7123 walk), #2408 and #2414 (query element ids; #2414
+also materializes CrossSubsetting and a type's owned Unioning, Intersecting
+and Differencing in the export), #2410 (library package, exhibit, include and
+succession flow reflected as their own metaclasses), #2409/#2412 (declared
+names of alias memberships and conjugated port definitions) and #2413.
+
+No case moved in any suite, and no detail text changed.
+
+Census, Pilot examples: OpenSysML reads 37418 elements (was 37410), the
+CrossSubsetting relationships and their chains among them.
+`Feature::ownedCrossSubsetting` 0 -> 2 (no longer always empty; the Pilot fills
+48, sysml-toolkit 2), and `CrossSubsetting::crossingFeature` is answered (2/2).
+Summary row 189 / 78 / 53 -> 191 / 77 / 53. `Feature::crossFeature` is still
+always empty. Matrix models unchanged. Nothing lost its answer.
+
+#2029 still reproduces at `1f208d2c97` (the same three-document check as in
+Step 25). The stack under #2042 is now #2052 -> #2042 -> #2048 -> #2002, after
+#2400 merged; all four are open and conflicting.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2458,3 +2479,4 @@ Step 38 took #2359; C10 chain operator passes.
 Step 39 took #2263 (#2198 fixed) and #2251; Go adapter reads members AsMemberOf.
 Step 40 took #2311; no case moved (it reaches the query API, not GetElementProperties).
 Step 41 took #2309 and the endFeature fixes (B10 passes); #2042 measured again.
+Step 42 took fourteen OpenSysML merges (#2414 cross subsetting); no case moved.
