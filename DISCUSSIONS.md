@@ -2434,6 +2434,38 @@ The Pilot moved from `378a8700c0` to `82d26f18a7` (#828, ST6RI-970: the
 bundles' Maven artifacts no longer depend on the build environment's path;
 build properties only). pilot-java and its census are identical.
 
+## Step 43: OpenSysML #2002 and #2424 (#2029 fixed); no case moved
+OpenSysML develop moved from `1f208d2c97` to `fe073d042d`, 7 merged PRs:
+#2002 (an expression's implied base completes its type and inherited family
+in the element form), #2424 (GetElementProperties reads a model one document
+at a time; supersedes #2052), #2423 (implied specializations derived once,
+after the redundancy rules), #2422 (parser rejects prefixes the grammar omits
+on metadata, attribute and port declarations), #2417, #2419, #2421. #2002 was
+refreshed by develop's new `ci:rebaseline` workflow (#2416) before it merged.
+
+No case moved in any suite, and no detail text changed.
+
+Census (opensysml-go-props only; the Pilot and sysml-toolkit are identical):
+every expression now answers its implied library base. Pilot examples:
+`Expression::function` 301 -> 3274 of 3369, `Step::behavior` 260 -> 3372 of
+3915, `Feature::type` 2514 -> 5626, `Type::inheritedFeature`/
+`inheritedMembership` 7810 -> 10915, `Type::feature`/`featureMembership`
+10028 -> 10918, `Namespace::member`/`membership` 12112 -> 13002,
+`Type::directedFeature` 3548 -> 4438, `Type::output` 3066 -> 3956. Matrix
+models likewise (`Expression::function` 8 -> 153 of 156, `Step::behavior` 24
+-> 177 of 264, `Feature::type` 397 -> 550). The rows were answered empty
+before, so the summary row (properties with values / always empty / not
+answered) is unchanged; `Expression::function` leaves the "fills less" list
+on both corpora, `Step::behavior` on the Pilot examples. Nothing lost its
+answer.
+
+#2029 is fixed at `fe073d042d` (the same three-document check as in Step 25):
+`A::x` is answered beside a document with a syntax error and beside one that
+repeats the top-level name, and the response lists the left-out document in
+`excluded_documents`; with a validation error only, nothing is excluded.
+#2052 is still open. The stack under #2042 is now #2042 -> #2048, both
+conflicting.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2484,3 +2516,4 @@ Step 39 took #2263 (#2198 fixed) and #2251; Go adapter reads members AsMemberOf.
 Step 40 took #2311; no case moved (it reaches the query API, not GetElementProperties).
 Step 41 took #2309 and the endFeature fixes (B10 passes); #2042 measured again.
 Step 42 took fourteen OpenSysML merges (#2414 cross subsetting); no case moved.
+Step 43 took #2002 (expression implied bases, census) and #2424 (#2029 fixed); no case moved.
