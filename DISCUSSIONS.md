@@ -2525,6 +2525,76 @@ branch at `220186cc8d`); GitHub reports it mergeable, its checks pass, and a
 trial merge with `aa03065f72` is clean. When it merges we rerun and report on
 #2042 as promised.
 
+## Step 46: OpenSysML #2042 merged; props suites +106, no regressions
+OpenSysML develop moved from `aa03065f72` to `2d8bbc7a96`: #2042 (the
+symbol-backed element properties reader, "Fixes #2199") and six smaller
+merges (#2456, #2492, #2465, #2471, #2472, #2473). GitHub closed #2199 with
+the merge; #2052 had been closed unmerged by the maintainer earlier the same
+day (superseded by #2424).
+
+Suites. opensysml-py-props and opensysml-go-props each move 106 cases
+fail -> pass and none the other way: 157 -> 51 failures. By matrix: B13 76
+(succession ends, #2068), C01 15 (`Function::result`), C21 12
+(`ConstructorExpression::instantiatedType`), B20 3 (message ends, the
+message half of #2199). The Symbol suites, the Pilot and sysml-toolkit are
+unchanged in outcome. Detail-only:
+
+- Symbol suites except opensysml-ts-wasm, B20-067..069 (message
+  `endReferences`): OpenSysML now lists the message's ends as the `from`/`to`
+  parts (`got [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]`) where the
+  Pilot has two ends without references; was `got []`. Still failing; the
+  props suites now agree with the Pilot here.
+- props B13-040: the unnamed transition succession is listed now and its
+  target is right; its source is still missing.
+
+The 51 props failures left: B20-037..060 flow `sourceOutput`/`targetInput`
+(24), B13 shorthand, node-end and transition sources (15) and C21-061..072
+`resultType` (12). The B20 flow cases are the flow half of #2199: OpenSysML
+now answers `Flow::sourceOutputFeature` with the redefined feature itself
+(`B20::Tank::fuelOut`) where the Pilot answers the flow end's own feature
+that redefines it, so the census counts it as filled (6, reference 6) while
+the case still fails.
+
+Census (opensysml-go-props only). Summary row: matrix models
+153 / 90 / 33 -> 181 / 62 / 33, Pilot examples 192 / 76 / 53 ->
+252 / 16 / 53. Elements answered: 3504 -> 3538 and 37418 -> 37579. Most
+changes are gains, among them `Feature::type` (Pilot examples 5331 -> 9421,
+reference 19930), `Usage::definition` and the typed `*Definition` rows
+(1998 -> 4713, reference 6810), `Expression::result` (2230 -> 3403),
+`Behavior::parameter`/`step`, `Connector::association` and
+`defaultFeaturingType`, `Flow::*`, `Function::result`, `Import::importedElement`
+and `InstantiationExpression::instantiatedType`, all from 0.
+
+Corrections towards the reference: `Element::owningNamespace` of imports and
+of non-owning memberships (0, reference 0), `Type::input` of a
+ConstructorExpression (0, reference 0).
+
+Above the reference, where the Pilot fills nothing: `InvocationExpression::operand`
+(0 -> 1042 on the Pilot examples), `Function::expression` (0 -> 90),
+`StateDefinition::state` (0 -> 7); `Annotation::owningAnnotatedElement` and
+`Element::ownedAnnotation` exceed it (16 vs 3, 13 vs 2).
+
+Four rows that matched the Pilot before now fall short of it:
+
+- `Type::input` of a SendActionUsage: always empty (matrix models 13/13 ->
+  0, Pilot examples 23 -> 0; reference fills all). Checked directly: a
+  `send new Sig(gain) via sp` action has two parameters with direction `in`
+  and three directed features, but `input` is empty.
+- `Expression::function` of a ConstructorExpression: now unanswered, "not
+  defined for a ConstructorExpression" (matrix models 8/8 -> 0, Pilot
+  examples 75 -> 0; reference fills 84/84). `behavior` and `type` still
+  answer `Performances::Evaluation`.
+- `Connector::targetFeature` of a SuccessionAsUsage, Pilot examples: 223 ->
+  164 filled, 54 empty, 6 unanswered (reference 304/304).
+- `InstantiationExpression::argument` of a ConstructorExpression, Pilot
+  examples: 66 -> 24 filled, 44 unanswered (reference 69/84); unchanged on the
+  matrix models. #2042 moved a constructor's arguments to features of its
+  result, which may explain it. ParameterMembership rows fall with it
+  (2091 -> 2030).
+
+No suite case covers these four; they are candidates for a report and for
+new cases.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2578,3 +2648,4 @@ Step 42 took fourteen OpenSysML merges (#2414 cross subsetting); no case moved.
 Step 43 took #2002 (expression implied bases, census) and #2424 (#2029 fixed); no case moved.
 Step 44 took twenty OpenSysML merges (#2324 imported memberships, #2142 metaclasses); no case moved.
 Step 45 took OpenSysML #2048; no case moved, #2042 now targets develop.
+Step 46 took OpenSysML #2042: the props suites pass 106 more cases, no regressions; four census rows fall short of the Pilot.
