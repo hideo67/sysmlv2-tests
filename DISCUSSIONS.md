@@ -2513,6 +2513,18 @@ Census (opensysml-go-props only; the Pilot and sysml-toolkit are identical):
   `Membership::memberElementId` 16665 -> 16667, `Relationship::relatedElement`
   21688 -> 21690.
 
+## Step 45: OpenSysML #2048 (self-model QVTS); no case moved
+OpenSysML develop moved from `753f597e17` to `aa03065f72`: #2490 (drops
+unnecessary conversions) and #2048 (self-model QVTS), the PR #2042 was
+stacked on. All suites and the census give results identical to Step 44,
+details included; outside generated baselines, #2048 touches only the
+self-model examples, agent skills and docs, no code.
+
+#2042 is now based on `develop` (head `024e8e3488`, branched from #2048's
+branch at `220186cc8d`); GitHub reports it mergeable, its checks pass, and a
+trial merge with `aa03065f72` is clean. When it merges we rerun and report on
+#2042 as promised.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2565,3 +2577,4 @@ Step 41 took #2309 and the endFeature fixes (B10 passes); #2042 measured again.
 Step 42 took fourteen OpenSysML merges (#2414 cross subsetting); no case moved.
 Step 43 took #2002 (expression implied bases, census) and #2424 (#2029 fixed); no case moved.
 Step 44 took twenty OpenSysML merges (#2324 imported memberships, #2142 metaclasses); no case moved.
+Step 45 took OpenSysML #2048; no case moved, #2042 now targets develop.
