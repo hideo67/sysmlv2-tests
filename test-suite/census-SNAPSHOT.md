@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `5707683e84a1`
+Test suite commit: `c09fd54ffecb`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-20 10:13:38|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-20 10:13:48|
-|opensysml-go-props|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-20 10:14:11|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-21 00:10:39|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-21 00:10:49|
+|opensysml-go-props|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-21 00:11:13|
 
 Local changes at run time (tracked files only):
 
@@ -36,7 +36,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |corpus|pilot-java|sysml-toolkit-rs|opensysml-go-props|
 |--|:-:|:-:|:-:|
 |matrix-models|201 / 75 / 0|198 / 76 / 2|153 / 90 / 33|
-|pilot-examples|300 / 22 / 0|297 / 22 / 3|191 / 77 / 53|
+|pilot-examples|300 / 22 / 0|297 / 22 / 3|192 / 76 / 53|
 
 ## Differences from the reference
 
@@ -78,7 +78,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Function::expression`|fills more|100% vs 0% (15/15 vs 0/15)||
 |`StateDefinition::state`|fills more|100% vs 0% (6/6 vs 0/6)||
 
-**opensysml-go-props**: 72 properties
+**opensysml-go-props**: 71 properties
 
 |property|difference|detail|note|
 |--|--|--|--|
@@ -127,7 +127,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Definition::ownedRequirement`|always empty|reference fills 3/223; answered empty on all 223||
 |`Definition::ownedTransition`|always empty|reference fills 3/223; answered empty on all 223||
 |`EnumerationUsage::enumerationDefinition`|always empty|reference fills 6/6; answered empty on all 6||
-|`Feature::ownedTypeFeaturing`|always empty|reference fills 1060/1222; answered empty on all 1169||
+|`Feature::ownedTypeFeaturing`|always empty|reference fills 1061/1223; answered empty on all 1169||
 |`Flow::interaction`|always empty|reference fills 7/7; answered empty on all 7||
 |`Flow::sourceOutputFeature`|always empty|reference fills 6/7; answered empty on all 7||
 |`Flow::targetInputFeature`|always empty|reference fills 6/7; answered empty on all 7||
@@ -136,7 +136,6 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Import::importedElement`|always empty|reference fills 19/19; answered empty on all 19||
 |`InstantiationExpression::instantiatedType`|always empty|reference fills 35/35; answered empty on all 33||
 |`InterfaceUsage::interfaceDefinition`|always empty|reference fills 8/8; answered empty on all 8||
-|`Namespace::importedMembership`|always empty|reference fills 16/1506; answered empty on all 1437|Namespace::importedMembership is not derived for this element: no-rule Namespace::importedMembership|
 |`PortConjugation::conjugatedPortDefinition`|always empty|reference fills 14/14; answered empty on all 14||
 |`RequirementUsage::requirementDefinition`|always empty|reference fills 3/3; answered empty on all 3||
 |`RequirementUsage::subjectParameter`|always empty|reference fills 3/3; answered empty on all 3||
@@ -144,16 +143,16 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ActionUsage::actionDefinition`|fills less|22% vs 100% (24/108 vs 112/112)||
 |`Classifier::ownedSubclassification`|fills less|13% vs 94% (29/223 vs 209/223)||
 |`ConnectionUsage::connectionDefinition`|fills less|67% vs 100% (14/21 vs 21/21)||
-|`Feature::ownedRedefinition`|fills less|3% vs 34% (36/1169 vs 418/1222)||
-|`Feature::ownedSubsetting`|fills less|11% vs 100% (129/1169 vs 1222/1222)||
-|`Feature::type`|fills less|48% vs 100% (550/1140 vs 1222/1222)|Feature::type is not derived for this element: unrepresented-endpoint Feature::type owned Subsetting target is unavailable|
+|`Feature::ownedRedefinition`|fills less|3% vs 34% (36/1169 vs 418/1223)||
+|`Feature::ownedSubsetting`|fills less|11% vs 100% (129/1169 vs 1223/1223)||
+|`Feature::type`|fills less|48% vs 100% (550/1140 vs 1223/1223)|Feature::type is not derived for this element: unrepresented-endpoint Feature::type owned Subsetting target is unavailable|
 |`OccurrenceUsage::occurrenceDefinition`|fills less|59% vs 100% (202/342 vs 346/346)||
 |`StateUsage::stateDefinition`|fills less|21% vs 100% (4/19 vs 19/19)||
 |`Step::behavior`|fills less|67% vs 100% (177/264 vs 266/266)||
 |`Step::parameter`|fills less|42% vs 75% (110/264 vs 200/266)||
-|`Type::ownedSpecialization`|fills less|30% vs 99% (417/1392 vs 1431/1445)||
-|`Usage::definition`|fills less|60% vs 100% (346/572 vs 624/624)|Usage::definition is not derived for this element: depends-on-unsupported Feature::type|
-|`Element::owner`|fills more|99% vs 41% (3480/3504 vs 1494/3611)||
+|`Type::ownedSpecialization`|fills less|30% vs 99% (417/1392 vs 1432/1446)||
+|`Usage::definition`|fills less|60% vs 100% (346/572 vs 625/625)|Usage::definition is not derived for this element: depends-on-unsupported Feature::type|
+|`Element::owner`|fills more|99% vs 41% (3480/3504 vs 1495/3612)||
 
 ### pilot-examples
 
@@ -203,7 +202,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ViewUsage::exposedElement`|fills more|67% vs 11% (6/9 vs 1/9)||
 |`ViewpointUsage::viewpointStakeholder`|fills more|100% vs 50% (2/2 vs 1/2)||
 
-**opensysml-go-props**: 138 properties
+**opensysml-go-props**: 137 properties
 
 |property|difference|detail|note|
 |--|--|--|--|
@@ -285,10 +284,10 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Definition::ownedVerificationCase`|always empty|reference fills 1/1052; answered empty on all 798||
 |`Definition::ownedView`|always empty|reference fills 1/1052; answered empty on all 798||
 |`Definition::ownedViewpoint`|always empty|reference fills 1/1052; answered empty on all 798||
-|`Element::ownedAnnotation`|always empty|reference fills 3/52630; answered empty on all 37416||
+|`Element::ownedAnnotation`|always empty|reference fills 3/52687; answered empty on all 37416||
 |`EnumerationUsage::enumerationDefinition`|always empty|reference fills 42/42; answered empty on all 28||
-|`Feature::crossFeature`|always empty|reference fills 48/20297; answered empty on all 14189||
-|`Feature::ownedTypeFeaturing`|always empty|reference fills 18846/20297; answered empty on all 14189||
+|`Feature::crossFeature`|always empty|reference fills 48/20354; answered empty on all 14189||
+|`Feature::ownedTypeFeaturing`|always empty|reference fills 18895/20354; answered empty on all 14189||
 |`Flow::interaction`|always empty|reference fills 130/130; answered empty on all 106||
 |`Flow::sourceOutputFeature`|always empty|reference fills 88/130; answered empty on all 106||
 |`Flow::targetInputFeature`|always empty|reference fills 88/130; answered empty on all 106||
@@ -298,23 +297,22 @@ Properties, of those carried by some element of the corpus: answered with values
 |`Import::importedElement`|always empty|reference fills 408/408; answered empty on all 325||
 |`InstantiationExpression::instantiatedType`|always empty|reference fills 1456/1456; answered empty on all 1108||
 |`InterfaceUsage::interfaceDefinition`|always empty|reference fills 38/38; answered empty on all 22||
-|`Namespace::importedMembership`|always empty|reference fills 188/21922; answered empty on all 15282|Namespace::importedMembership is not derived for this element: no-rule Namespace::importedMembership|
 |`OccurrenceUsage::individualDefinition`|always empty|reference fills 64/3148; answered empty on all 2202||
 |`PortConjugation::conjugatedPortDefinition`|always empty|reference fills 79/79; answered empty on all 39||
 |`RenderingUsage::renderingDefinition`|always empty|reference fills 12/12; answered empty on all 10||
 |`RequirementVerificationMembership::verifiedRequirement`|always empty|reference fills 5/5; answered empty on all 3||
 |`StateSubactionMembership::action`|always empty|reference fills 39/39; answered empty on all 25||
-|`Usage::nestedAllocation`|always empty|reference fills 7/6936; answered empty on all 5112||
-|`Usage::nestedAnalysisCase`|always empty|reference fills 7/6936; answered empty on all 5112||
-|`Usage::nestedCase`|always empty|reference fills 13/6936; answered empty on all 5112||
-|`Usage::nestedConcern`|always empty|reference fills 2/6936; answered empty on all 5112||
-|`Usage::nestedFlow`|always empty|reference fills 43/6936; answered empty on all 5112||
-|`Usage::nestedInterface`|always empty|reference fills 16/6936; answered empty on all 5112||
-|`Usage::nestedRendering`|always empty|reference fills 6/6936; answered empty on all 5112||
-|`Usage::nestedTransition`|always empty|reference fills 24/6936; answered empty on all 5112||
-|`Usage::nestedUseCase`|always empty|reference fills 5/6936; answered empty on all 5112||
-|`Usage::nestedVerificationCase`|always empty|reference fills 1/6936; answered empty on all 5112||
-|`Usage::nestedView`|always empty|reference fills 2/6936; answered empty on all 5112||
+|`Usage::nestedAllocation`|always empty|reference fills 7/6993; answered empty on all 5112||
+|`Usage::nestedAnalysisCase`|always empty|reference fills 7/6993; answered empty on all 5112||
+|`Usage::nestedCase`|always empty|reference fills 13/6993; answered empty on all 5112||
+|`Usage::nestedConcern`|always empty|reference fills 2/6993; answered empty on all 5112||
+|`Usage::nestedFlow`|always empty|reference fills 43/6993; answered empty on all 5112||
+|`Usage::nestedInterface`|always empty|reference fills 16/6993; answered empty on all 5112||
+|`Usage::nestedRendering`|always empty|reference fills 6/6993; answered empty on all 5112||
+|`Usage::nestedTransition`|always empty|reference fills 24/6993; answered empty on all 5112||
+|`Usage::nestedUseCase`|always empty|reference fills 5/6993; answered empty on all 5112||
+|`Usage::nestedVerificationCase`|always empty|reference fills 1/6993; answered empty on all 5112||
+|`Usage::nestedView`|always empty|reference fills 2/6993; answered empty on all 5112||
 |`UseCaseDefinition::includedUseCase`|always empty|reference fills 2/9; answered empty on all 6||
 |`UseCaseUsage::useCaseDefinition`|always empty|reference fills 25/25; answered empty on all 19||
 |`VerificationCaseUsage::verificationCaseDefinition`|always empty|reference fills 7/7; answered empty on all 5||
@@ -326,9 +324,9 @@ Properties, of those carried by some element of the corpus: answered with values
 |`ConnectionUsage::connectionDefinition`|fills less|43% vs 100% (30/69 vs 110/110)||
 |`Connector::relatedFeature`|fills less|58% vs 94% (259/447 vs 571/608)||
 |`ConstraintUsage::constraintDefinition`|fills less|57% vs 100% (113/197 vs 269/269)|ConstraintUsage::constraintDefinition is not derived for this element: depends-on-unsupported Feature::type|
-|`Feature::ownedRedefinition`|fills less|6% vs 45% (882/14189 vs 9127/20297)||
-|`Feature::ownedSubsetting`|fills less|14% vs 100% (1951/14189 vs 20297/20297)||
-|`Feature::type`|fills less|44% vs 100% (5626/12898 vs 20297/20297)|Feature::type is not derived for this element: unrepresented-endpoint Feature::type a FeatureTyping, Subsetting, or FeatureChaining target is unavailable in Structure|
+|`Feature::ownedRedefinition`|fills less|6% vs 45% (882/14189 vs 9135/20354)||
+|`Feature::ownedSubsetting`|fills less|14% vs 100% (1951/14189 vs 20354/20354)||
+|`Feature::type`|fills less|44% vs 100% (5626/12898 vs 20354/20354)|Feature::type is not derived for this element: unrepresented-endpoint Feature::type a FeatureTyping, Subsetting, or FeatureChaining target is unavailable in Structure|
 |`ItemUsage::itemDefinition`|fills less|74% vs 100% (665/900 vs 1310/1310)|ItemUsage::itemDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`OccurrenceUsage::occurrenceDefinition`|fills less|56% vs 100% (1094/1942 vs 3148/3148)|OccurrenceUsage::occurrenceDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`OwningMembership::ownedMemberName`|fills less|35% vs 61% (5277/15055 vs 13179/21481)|OwningMembership::ownedMemberName is not derived for this element: depends-on-unsupported Element::name|
@@ -338,13 +336,13 @@ Properties, of those carried by some element of the corpus: answered with values
 |`RequirementUsage::subjectParameter`|fills less|56% vs 100% (71/126 vs 161/161)||
 |`StateUsage::stateDefinition`|fills less|8% vs 100% (5/64 vs 103/103)|StateUsage::stateDefinition is not derived for this element: depends-on-unsupported Feature::type|
 |`Step::parameter`|fills less|58% vs 94% (2308/3975 vs 5037/5377)||
-|`Type::feature`|fills less|73% vs 100% (10918/14946 vs 21270/21349)|Type::feature is not derived for this element: depends-on-unsupported Type::inheritedFeature|
-|`Type::featureMembership`|fills less|73% vs 100% (10918/14946 vs 21270/21349)|Type::featureMembership is not derived for this element: unresolved-reference Type::featureMembership has unresolved specialization references|
-|`Type::inheritedFeature`|fills less|73% vs 100% (10915/14946 vs 21349/21349)|Type::inheritedFeature is not derived for this element: unresolved-reference Type::inheritedFeature has unresolved specialization references|
-|`Type::inheritedMembership`|fills less|73% vs 100% (10915/14946 vs 21349/21349)|Type::inheritedMembership is not derived for this element: unresolved-reference Type::inheritedMembership has unresolved specialization references|
-|`Type::ownedSpecialization`|fills less|24% vs 100% (3580/14987 vs 21270/21349)||
-|`Usage::definition`|fills less|53% vs 100% (2122/4010 vs 6936/6936)|Usage::definition is not derived for this element: depends-on-unsupported Feature::type|
-|`Element::owner`|fills more|99% vs 42% (37225/37416 vs 21946/52630)||
+|`Type::feature`|fills less|73% vs 100% (10918/14946 vs 21327/21406)|Type::feature is not derived for this element: depends-on-unsupported Type::inheritedFeature|
+|`Type::featureMembership`|fills less|73% vs 100% (10918/14946 vs 21327/21406)|Type::featureMembership is not derived for this element: unresolved-reference Type::featureMembership has unresolved specialization references|
+|`Type::inheritedFeature`|fills less|73% vs 100% (10915/14946 vs 21406/21406)|Type::inheritedFeature is not derived for this element: unresolved-reference Type::inheritedFeature has unresolved specialization references|
+|`Type::inheritedMembership`|fills less|73% vs 100% (10915/14946 vs 21406/21406)|Type::inheritedMembership is not derived for this element: unresolved-reference Type::inheritedMembership has unresolved specialization references|
+|`Type::ownedSpecialization`|fills less|24% vs 100% (3580/14987 vs 21327/21406)||
+|`Usage::definition`|fills less|53% vs 100% (2122/4010 vs 6993/6993)|Usage::definition is not derived for this element: depends-on-unsupported Feature::type|
+|`Element::owner`|fills more|99% vs 42% (37225/37416 vs 22003/52687)||
 
 ## Element sets
 
@@ -358,13 +356,12 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |ReturnParameterMembership|88|2|90|
 |Multiplicity|235|245|216|
 |ParameterMembership|126|133|104|
-|ReferenceUsage|199|204|176|
+|ReferenceUsage|199|204|175|
 |EndFeatureMembership|80|98|80|
 |Redefinition|36|30|36|
 |EventOccurrenceUsage|2|0|2|
 |FlowEnd|12|14|12|
 |OperatorExpression|18|16|16|
-|Usage|1|1|0|
 
 ### pilot-examples
 
@@ -377,7 +374,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |Multiplicity|2140|2130|1025|
 |FeatureValue|3412|3384|2529|
 |ParameterMembership|2874|2789|2091|
-|ReferenceUsage|2638|2672|2086|
+|ReferenceUsage|2638|2672|2035|
 |FeatureTyping|2166|2166|1622|
 |FeatureChaining|1396|1318|859|
 |EndFeatureMembership|1118|1258|816|
@@ -448,10 +445,10 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Connector::targetFeature`|44/45|44/45|41/45|
 |`ConstraintUsage::constraintDefinition`|3/3|0/3|0/3|
 |`Definition::directedUsage`|29/223|29/223|31/223|
-|`Definition::ownedAction`|19/223|19/223|21/223|
+|`Definition::ownedAction`|19/223|19/223|19/223|
 |`Definition::ownedAllocation`|0/223|0/223|0/223|
 |`Definition::ownedAnalysisCase`|0/223|0/223|0/223|
-|`Definition::ownedAttribute`|22/223|22/223|25/223|
+|`Definition::ownedAttribute`|22/223|22/223|22/223|
 |`Definition::ownedCalculation`|0/223|0/223|0/223|
 |`Definition::ownedCase`|0/223|0/223|0/223|
 |`Definition::ownedConcern`|0/223|0/223|0/223|
@@ -460,17 +457,17 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Definition::ownedEnumeration`|0/223|0/223|0/223|
 |`Definition::ownedFlow`|2/223|2/223|0/223|
 |`Definition::ownedInterface`|3/223|3/223|0/223|
-|`Definition::ownedItem`|49/223|49/223|55/223|
+|`Definition::ownedItem`|49/223|49/223|49/223|
 |`Definition::ownedMetadata`|3/223|3/223|3/223|
-|`Definition::ownedOccurrence`|77/223|77/223|87/223|
-|`Definition::ownedPart`|46/223|46/223|48/223|
+|`Definition::ownedOccurrence`|77/223|77/223|77/223|
+|`Definition::ownedPart`|46/223|46/223|46/223|
 |`Definition::ownedPort`|21/223|21/223|21/223|
 |`Definition::ownedReference`|17/223|17/223|17/223|
 |`Definition::ownedRendering`|0/223|0/223|0/223|
 |`Definition::ownedRequirement`|3/223|3/223|0/223|
 |`Definition::ownedState`|7/223|7/223|7/223|
 |`Definition::ownedTransition`|3/223|3/223|0/223|
-|`Definition::ownedUsage`|98/223|98/223|111/223|
+|`Definition::ownedUsage`|98/223|98/223|98/223|
 |`Definition::ownedUseCase`|0/223|0/223|0/223|
 |`Definition::ownedVerificationCase`|0/223|0/223|0/223|
 |`Definition::ownedView`|0/223|0/223|0/223|
@@ -552,9 +549,9 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`MultiplicityRange::bound`|10/10|10/10|10/10|
 |`MultiplicityRange::lowerBound`|2/10|2/10|2/10|
 |`MultiplicityRange::upperBound`|10/10|10/10|10/10|
-|`Namespace::importedMembership`|16/1507|16/1427|0/1437 (16 unanswered)|
-|`Namespace::member`|1506/1507|1104/1427|1347/1437 (16 unanswered)|
-|`Namespace::membership`|1506/1507|1104/1427|1347/1437 (16 unanswered)|
+|`Namespace::importedMembership`|16/1507|16/1427|16/1453|
+|`Namespace::member`|1506/1507|1104/1427|1363/1453|
+|`Namespace::membership`|1506/1507|1104/1427|1363/1453|
 |`Namespace::ownedImport`|16/1507|16/1427|16/1453|
 |`Namespace::ownedMember`|783/1507|771/1427|734/1453|
 |`Namespace::ownedMembership`|783/1507|773/1427|734/1453|
@@ -649,14 +646,14 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Usage::nestedCalculation`|0/625|0/628|0/597|
 |`Usage::nestedCase`|0/625|0/628|0/597|
 |`Usage::nestedConcern`|0/625|0/628|0/597|
-|`Usage::nestedConnection`|0/625|0/628|4/597|
+|`Usage::nestedConnection`|0/625|0/628|0/597|
 |`Usage::nestedConstraint`|0/625|0/628|0/597|
 |`Usage::nestedEnumeration`|0/625|0/628|0/597|
 |`Usage::nestedFlow`|0/625|0/628|0/597|
 |`Usage::nestedInterface`|0/625|0/628|0/597|
-|`Usage::nestedItem`|2/625|2/628|8/597|
+|`Usage::nestedItem`|2/625|2/628|2/597|
 |`Usage::nestedMetadata`|7/625|6/628|6/597|
-|`Usage::nestedOccurrence`|33/625|32/628|35/597|
+|`Usage::nestedOccurrence`|33/625|32/628|29/597|
 |`Usage::nestedPart`|2/625|2/628|2/597|
 |`Usage::nestedPort`|8/625|8/628|8/597|
 |`Usage::nestedReference`|85/625|77/628|65/597|
@@ -664,7 +661,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Usage::nestedRequirement`|0/625|0/628|0/597|
 |`Usage::nestedState`|2/625|2/628|2/597|
 |`Usage::nestedTransition`|0/625|0/628|0/597|
-|`Usage::nestedUsage`|117/625|104/628|101/597|
+|`Usage::nestedUsage`|117/625|104/628|95/597|
 |`Usage::nestedUseCase`|0/625|0/628|0/597|
 |`Usage::nestedVerificationCase`|0/625|0/628|0/597|
 |`Usage::nestedView`|0/625|0/628|0/597|
@@ -743,10 +740,10 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`ConstraintUsage::constraintDefinition`|269/269|135/269|113/197 (13 unanswered)|
 |`CrossSubsetting::crossingFeature`|2/2|2/2|2/2|
 |`Definition::directedUsage`|204/1054|203/1054|160/798|
-|`Definition::ownedAction`|64/1054|64/1054|52/798|
+|`Definition::ownedAction`|64/1054|64/1054|51/798|
 |`Definition::ownedAllocation`|0/1054|0/1054|0/798|
 |`Definition::ownedAnalysisCase`|1/1054|1/1054|0/798|
-|`Definition::ownedAttribute`|188/1054|188/1054|154/798|
+|`Definition::ownedAttribute`|188/1054|188/1054|144/798|
 |`Definition::ownedCalculation`|5/1054|5/1054|4/798|
 |`Definition::ownedCase`|4/1054|4/1054|0/798|
 |`Definition::ownedConcern`|4/1054|4/1054|0/798|
@@ -755,17 +752,17 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Definition::ownedEnumeration`|0/1054|0/1054|0/798|
 |`Definition::ownedFlow`|18/1054|18/1054|0/798|
 |`Definition::ownedInterface`|3/1054|3/1054|0/798|
-|`Definition::ownedItem`|143/1054|143/1054|125/798|
+|`Definition::ownedItem`|143/1054|143/1054|115/798|
 |`Definition::ownedMetadata`|16/1054|11/1054|9/798|
-|`Definition::ownedOccurrence`|268/1054|268/1054|219/798|
-|`Definition::ownedPart`|96/1054|96/1054|86/798|
+|`Definition::ownedOccurrence`|268/1054|268/1054|209/798|
+|`Definition::ownedPart`|96/1054|96/1054|85/798|
 |`Definition::ownedPort`|60/1054|60/1054|33/798|
-|`Definition::ownedReference`|215/1054|215/1054|179/798|
+|`Definition::ownedReference`|215/1054|215/1054|175/798|
 |`Definition::ownedRendering`|3/1054|3/1054|0/798|
 |`Definition::ownedRequirement`|25/1054|25/1054|0/798|
 |`Definition::ownedState`|14/1054|14/1054|5/798|
 |`Definition::ownedTransition`|6/1054|6/1054|0/798|
-|`Definition::ownedUsage`|552/1054|552/1054|461/798|
+|`Definition::ownedUsage`|552/1054|552/1054|444/798|
 |`Definition::ownedUseCase`|2/1054|2/1054|0/798|
 |`Definition::ownedVerificationCase`|1/1054|1/1054|0/798|
 |`Definition::ownedView`|1/1054|1/1054|0/798|
@@ -809,7 +806,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Feature::owningFeatureMembership`|12313/20371|8964/16929|8761/14189|
 |`Feature::owningType`|12313/20371|8964/16929|8761/14189|
 |`Feature::type`|20371/20371|5888/16929|5626/12898 (1291 unanswered)|
-|`FeatureChainExpression::targetFeature`|361/361|368/368|348/348 (7 unanswered)|
+|`FeatureChainExpression::targetFeature`|361/361|368/368|350/350 (5 unanswered)|
 |`FeatureChaining::featureChained`|1396/1396|1318/1318|859/859|
 |`FeatureMembership::ownedMemberFeature`|12313/12313|8964/8964|7799/8761|
 |`FeatureMembership::owningType`|12313/12313|8964/8964|8761/8761|
@@ -845,7 +842,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`InvocationExpression::operand`|0/1372|unanswered|6/1033|
 |`ItemUsage::itemDefinition`|1310/1310|991/1310|665/900 (82 unanswered)|
 |`LoopActionUsage::bodyAction`|6/6|4/6|unanswered|
-|`Membership::memberElementId`|23511/23511|20101/20101|16665/16665 (45 unanswered)|
+|`Membership::memberElementId`|23511/23511|20101/20101|16667/16667 (43 unanswered)|
 |`Membership::membershipOwningNamespace`|23511/23511|20101/20101|15132/16710|
 |`MetadataAccessExpression::referencedElement`|17/17|17/17||
 |`MetadataFeature::metaclass`|153/153|153/153|unanswered|
@@ -853,9 +850,9 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`MultiplicityRange::bound`|475/475|475/475|358/358|
 |`MultiplicityRange::lowerBound`|107/475|107/475|89/358|
 |`MultiplicityRange::upperBound`|475/475|475/475|358/358|
-|`Namespace::importedMembership`|188/21998|192/18556|0/15284 (157 unanswered)|
-|`Namespace::member`|21973/21998|15451/18556|13002/15243 (198 unanswered)|
-|`Namespace::membership`|21973/21998|15451/18556|13002/15243 (198 unanswered)|
+|`Namespace::importedMembership`|188/21998|192/18556|157/15441|
+|`Namespace::member`|21973/21998|15451/18556|13159/15400 (41 unanswered)|
+|`Namespace::membership`|21973/21998|15451/18556|13159/15400 (41 unanswered)|
 |`Namespace::ownedImport`|197/21998|197/18556|157/15441|
 |`Namespace::ownedMember`|12594/21998|12223/18556|8830/15441|
 |`Namespace::ownedMembership`|12611/21998|12266/18556|8830/15441|
@@ -874,7 +871,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`PortDefinition::conjugatedPortDefinition`|79/158|79/158|39/78|
 |`PortUsage::portDefinition`|333/333|297/333|133/147 (11 unanswered)|
 |`ReferenceSubsetting::referencingFeature`|1045/1045|1029/1029|844/844|
-|`Relationship::relatedElement`|31109/31147|27563/27613|21688/22272 (7 unanswered)|
+|`Relationship::relatedElement`|31109/31147|27563/27613|21690/22272 (7 unanswered)|
 |`RenderingDefinition::rendering`|1/1|1/1|unanswered|
 |`RenderingUsage::renderingDefinition`|12/12|11/12|0/10|
 |`RequirementConstraintMembership::ownedConstraint`|65/65|65/65|49/49|
@@ -953,29 +950,29 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Usage::directedUsage`|1221/6993|1103/6977|821/5095 (17 unanswered)|
 |`Usage::isReference`|6993/6993|6776/6977|5112/5112|
 |`Usage::mayTimeVary`|6993/6993|unanswered|5112/5112|
-|`Usage::nestedAction`|305/6993|305/6977|222/5112|
+|`Usage::nestedAction`|305/6993|305/6977|221/5112|
 |`Usage::nestedAllocation`|7/6993|7/6977|0/5112|
 |`Usage::nestedAnalysisCase`|7/6993|7/6977|0/5112|
 |`Usage::nestedAttribute`|220/6993|220/6977|166/5112|
-|`Usage::nestedCalculation`|22/6993|22/6977|21/5112|
+|`Usage::nestedCalculation`|22/6993|22/6977|20/5112|
 |`Usage::nestedCase`|13/6993|13/6977|0/5112|
 |`Usage::nestedConcern`|2/6993|2/6977|0/5112|
-|`Usage::nestedConnection`|138/6993|138/6977|168/5112|
-|`Usage::nestedConstraint`|109/6993|109/6977|79/5112|
+|`Usage::nestedConnection`|138/6993|138/6977|106/5112|
+|`Usage::nestedConstraint`|109/6993|109/6977|78/5112|
 |`Usage::nestedEnumeration`|0/6993|0/6977|0/5112|
 |`Usage::nestedFlow`|43/6993|43/6977|0/5112|
 |`Usage::nestedInterface`|16/6993|16/6977|0/5112|
-|`Usage::nestedItem`|307/6993|307/6977|329/5112|
+|`Usage::nestedItem`|307/6993|307/6977|225/5112|
 |`Usage::nestedMetadata`|187/6993|129/6977|104/5112|
-|`Usage::nestedOccurrence`|859/6993|834/6977|691/5112|
-|`Usage::nestedPart`|243/6993|243/6977|174/5112|
-|`Usage::nestedPort`|137/6993|137/6977|66/5112|
-|`Usage::nestedReference`|1112/6993|1078/6977|841/5112|
+|`Usage::nestedOccurrence`|859/6993|834/6977|591/5112|
+|`Usage::nestedPart`|243/6993|243/6977|173/5112|
+|`Usage::nestedPort`|137/6993|137/6977|65/5112|
+|`Usage::nestedReference`|1112/6993|1078/6977|802/5112|
 |`Usage::nestedRendering`|6/6993|6/6977|0/5112|
-|`Usage::nestedRequirement`|59/6993|59/6977|41/5112|
+|`Usage::nestedRequirement`|59/6993|59/6977|40/5112|
 |`Usage::nestedState`|39/6993|39/6977|26/5112|
 |`Usage::nestedTransition`|24/6993|24/6977|0/5112|
-|`Usage::nestedUsage`|1940/6993|1875/6977|1491/5112|
+|`Usage::nestedUsage`|1940/6993|1875/6977|1391/5112|
 |`Usage::nestedUseCase`|5/6993|5/6977|0/5112|
 |`Usage::nestedVerificationCase`|1/6993|1/6977|0/5112|
 |`Usage::nestedView`|2/6993|2/6977|0/5112|

@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `5707683e84a1`
+Test suite commit: `c09fd54ffecb`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-20 10:08:36|
-|opensysml-go|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-20 10:08:27|
-|opensysml-java|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-20 10:09:21|
-|opensysml-py-props|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-20 10:08:04|
-|opensysml-py|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-20 10:07:52|
-|opensysml-rs|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-20 10:08:50|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-20 10:09:10|
-|opensysml-ts|OpenSysML|`nightly-20261119-32b562fca6-332-gfe073d042d` (develop)|[`fe073d042d`](https://github.com/Open-MBEE/OpenSysML/commit/fe073d042da5b94a45530417815b39ebd9cc5efa)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-20 10:08:59|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-20 10:09:37|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-20 10:09:24|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-20 10:09:22|
+|opensysml-go-props|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-21 00:05:29|
+|opensysml-go|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-21 00:05:19|
+|opensysml-java|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-21 00:06:14|
+|opensysml-py-props|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-21 00:04:56|
+|opensysml-py|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-21 00:04:43|
+|opensysml-rs|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-21 00:05:43|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-21 00:06:03|
+|opensysml-ts|OpenSysML|`nightly-20261119-32b562fca6-515-g753f597e17` (develop)|[`753f597e17`](https://github.com/Open-MBEE/OpenSysML/commit/753f597e17e95566d6b0e39ed1fe3dc86363e232)|2026-11-20|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-21 00:05:52|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-21 00:06:30|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-21 00:06:18|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-21 00:06:16|
 
 Local changes at run time (tracked files only):
 
@@ -4979,78 +4979,78 @@ Local changes at run time (tracked files only):
 - B20-024 [opensysml-rs] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
 - B20-024 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's payloadType; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-024 [opensysml-ts] unsupported: no Symbol field for the flow's payloadType; the standard query API does not offer it either
-- B20-025 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-025 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-025 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-025 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-025 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-025 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-025 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [[], []], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-025 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-025 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-025 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-026 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-026 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-026 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-026 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-025 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [[], []], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-026 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-026 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-026 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-027 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-027 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-027 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-027 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-026 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-027 [opensysml-go] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-027 [opensysml-java] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-027 [opensysml-py] fail: endReferences B20::Vehicle::f1: got [[], []], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-027 [opensysml-rs] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-027 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-027 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-028 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-028 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-028 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-028 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-027 [opensysml-ts] fail: endReferences B20::Vehicle::f1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-028 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-028 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-028 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [[], []], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-028 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-028 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-028 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-029 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-029 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-029 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-029 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-028 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [[], []], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-029 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-029 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-029 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-030 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-030 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-030 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-030 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-029 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-030 [opensysml-go] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-030 [opensysml-java] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-030 [opensysml-py] fail: endReferences B20::Vehicle::f2: got [[], []], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-030 [opensysml-rs] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-030 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-030 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-031 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-031 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-031 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-031 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-030 [opensysml-ts] fail: endReferences B20::Vehicle::f2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-031 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-031 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-031 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [[], []], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-031 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-031 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-031 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-032 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-032 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-032 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-032 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-031 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [[], []], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-032 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-032 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-032 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-033 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-033 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-033 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
-- B20-033 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-032 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-033 [opensysml-go] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-033 [opensysml-java] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-033 [opensysml-py] fail: endReferences B20::Vehicle::s1: got [[], []], want [['B20::Vehicle::tank'], ['B20::Vehicle::engine']]
+- B20-033 [opensysml-rs] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
 - B20-033 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-033 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
-- B20-034 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-034 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-034 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-034 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-033 [opensysml-ts] fail: endReferences B20::Vehicle::s1: got [[],[]], want [["B20::Vehicle::tank"],["B20::Vehicle::engine"]]
+- B20-034 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-034 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-034 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [[], []], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-034 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-034 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-034 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-035 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-035 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-035 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-035 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-034 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [[], []], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-035 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-035 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-035 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-036 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-036 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-036 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
-- B20-036 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-035 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-go] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-java] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-py] fail: endReferences B20::Vehicle::s2: got [[], []], want [['B20::Vehicle::m', 'B20::Module::tank'], ['B20::Vehicle::n', 'B20::Module::engine']]
+- B20-036 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-036 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
+- B20-036 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-037 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f1: got null, want "B20::Tank::fuelOut"
 - B20-037 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-037 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
