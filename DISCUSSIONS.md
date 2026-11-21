@@ -2477,6 +2477,42 @@ them code (`internal/frontend/grpc`, `internal/semantic`, `internal/translate/
 export`, `internal/doc/queryexec`). Posted both on #2042, offering either order
 (https://github.com/Open-MBEE/OpenSysML/pull/2042#issuecomment-7040343799).
 
+## Step 44: twenty OpenSysML merges (#2324 imported memberships, #2142 metaclasses); no case moved
+OpenSysML develop moved from `fe073d042d` to `753f597e17`, 20 merged PRs,
+among them #2324 (imported memberships derived over the graph in the element
+form), #2142 (the concrete metaclass of eight grammar forms is reflected),
+#2280 and #2425 (owning memberships of a `#M` prefix and of a trigger's named
+payload), #2432, #2418, #2116 (QVTS query result view) and a series of
+refactorings. #2048 and #2042 are still open; neither has moved since
+2026-11-19.
+
+No case moved in any suite. Detail-only: B20-025..036 `endReferences` (12
+cases) in the Symbol suites except opensysml-ts-wasm now read two ends with no
+references (`got [[], []]`) where they read none (`got []`); still failing.
+
+Census (opensysml-go-props only; the Pilot and sysml-toolkit are identical):
+
+- `Namespace::importedMembership` answered (#2324): 0 -> 157 on the Pilot
+  examples (reference 188), 0 -> 16 on the matrix models (reference 16), no
+  longer unanswered; `Namespace::member`/`membership` 13002 -> 13159
+  (unanswered 198 -> 41), matrix models 1347 -> 1363 (unanswered 16 -> 0).
+  Summary row, Pilot examples: 191 / 77 / 53 -> 192 / 76 / 53.
+- The `Usage::nested*` and `Definition::owned*` families fill fewer elements,
+  and almost all of it is over-counting removed (#2142). On the matrix models
+  every changed `Definition::owned*` row now equals the Pilot's (for example
+  `ownedUsage` 111 -> 98, reference 98), as do `nestedConnection` (4 -> 0) and
+  `nestedItem` (8 -> 2). On the Pilot examples a TransitionUsage no longer
+  answers `nestedConnection` (62 -> 0, reference 0), an EnumerationDefinition
+  no longer answers `ownedUsage` (8 -> 0, reference 0), and ConnectionUsage
+  and ReferenceUsage rows mostly drop to the reference. Some owner metaclasses
+  drop below the reference, e.g. `nestedUsage` on ItemUsage 35 -> 18
+  (reference 24) and ReferenceUsage 103 -> 31 (reference 73); without the
+  element-by-element comparison (phase 2) we cannot tell whether values were
+  lost or wrong ones removed.
+- Small gains: `FeatureChainExpression::targetFeature` 348 -> 350,
+  `Membership::memberElementId` 16665 -> 16667, `Relationship::relatedElement`
+  21688 -> 21690.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2528,3 +2564,4 @@ Step 40 took #2311; no case moved (it reaches the query API, not GetElementPrope
 Step 41 took #2309 and the endFeature fixes (B10 passes); #2042 measured again.
 Step 42 took fourteen OpenSysML merges (#2414 cross subsetting); no case moved.
 Step 43 took #2002 (expression implied bases, census) and #2424 (#2029 fixed); no case moved.
+Step 44 took twenty OpenSysML merges (#2324 imported memberships, #2142 metaclasses); no case moved.
