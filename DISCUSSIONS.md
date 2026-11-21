@@ -2592,8 +2592,17 @@ Four rows that matched the Pilot before now fall short of it:
   result, which may explain it. ParameterMembership rows fall with it
   (2091 -> 2030).
 
-No suite case covers these four; they are candidates for a report and for
-new cases.
+No suite case covers these four; they are candidates for new cases. Each
+reproduces in a few lines against `sysml-grpc` built at `aa03065f72` and at
+`2d8bbc7a96`: the send action's `input` is empty though both parameters are
+`in`; a constructor's `function` (was `P::Sig`) is refused; a transition with
+an `accept` trigger answers source `b` and no target where it answered `a`
+and `b` (66 successions in the Pilot examples); a constructor of a library
+type (`new Cuboid(…)`) refuses `argument` (62 in the Pilot examples).
+
+Reported on 2026-11-21: the flow half on #2199, asking for it to be reopened
+(issuecomment-7059252549; we cannot reopen it), the four rows as #2495, and
+the promised result on #2042 (issuecomment-7059255871).
 
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
