@@ -2670,6 +2670,70 @@ Reported on 2026-11-23: the fix and the correction on #2199
 (issuecomment-7088732781), the first ends on #2068 (issuecomment-7088733064),
 and C21 `resultType` as #2519.
 
+## Step 49: cases for #2495 and the message's relatedFeature (1813 -> 1915 cases)
+The four #2495 items had no matrix case; only the census covered them, and it
+counts filled values, not right ones. 102 cases are appended to four matrices;
+no existing case id or expectation changes, and no existing case moves in any
+suite.
+
+- C20 (+24, C20-121..144): read `inputCount`, the size of `Type::input`, for
+  every action kind and location. Expected values are the action's own and its
+  library action's `in`/`inout` parameters, as the Pilot answers: send 3
+  (payload, sender, receiver), accept 2, assign 2 (target,
+  replacementValues), perform 0 (`Notify` has none), if 2 (`IfThenAction`:
+  ifTest, thenClause), while 3 (whileTest, body, untilTest), for 2 (seq,
+  body). Our first guess of 0 for if/while/for was wrong; the library confirms
+  the Pilot.
+- C21 (+33, C21-073..105): read `exprFunction` (`Expression::function`,
+  `Performances::Evaluation` as the Pilot answers) for the four variants, then
+  a variant constructing a library type, `item shape = new Triangle(src.l,
+  src.w, src.x)`, for every read. It is in its own model,
+  `models/C21-library.sysml` (package C21Lib), through the case field
+  `model`, as C30 does for its accept state. A first attempt with
+  `ShapeItems::Cuboid` made OpenSysML reject the whole C21 model ("faces of
+  Cuboid is typed by Polygon; cannot bind a value of type LengthValue"):
+  Cuboid's first owned features are faces, so positional lengths bind to
+  them. `Triangle`'s first owned features are `length`, `width` and
+  `xoffset`, all redefined lengths, which still exercises binding to inherited,
+  redefined features.
+- C30 (+30, C30-079..108): two transitions in the target shorthand after a
+  state, which has no `transition` keyword and so is unnamed (located by the
+  existing `unnamed` selector): `state sWait; accept s : Sig via p if count > 0
+  do assign count := 0 then seq;` and `state sIdle; then sWait;`, with the five
+  transition reads. #2495 item 3 is about the succession's ends; the
+  transition's own `source` shows the same bug and needs no new read.
+- B20 (+15, B20-076..090): read `relatedFeature` (as B10) for flows and the
+  message; the message expects an empty list, the correction of Step 48.
+
+Adapters: the two new reads (`exprFunction`, `inputCount`) are read in the
+Pilot, both props suites and sysml-toolkit. The five Symbol suites report them
+unsupported, with the reason they give for the other C21 reads, and for
+`inputCount` that the Symbol API has no `Type::input`.
+
+Results at OpenSysML `013190a6f5` (sysml-toolkit v0.12.0, Pilot `82d26f18a7`):
+
+| Suite | New cases: pass / fail / error / unsupported |
+|--|--|
+| pilot-java | 102 / 0 / 0 / 0 |
+| opensysml-py-props, opensysml-go-props | 57 / 21 / 0 / 24 |
+| sysml-toolkit-rs | 81 / 21 / 0 / 0 |
+| sysml-toolkit-rs-checked | 81 / 0 / 21 / 0 |
+| Symbol suites | 0 / 0 / 0 / 102 |
+
+In the props suites the four #2495 items show as expected: send `inputCount`
+0 (6 fail), constructor `function` refused (15 unsupported, the suite's
+convention for a property the service reports as not derived), library-type
+constructor `argument` refused (6 unsupported), shorthand transition with a
+trigger `source` = `C30::Ctl`, the state def (3 fail; its `target` is right).
+Also: `inputCount` is 0 for assign, while and for (9 fail), beyond #2495
+(accept, if and perform pass); the library-type constructor's `resultType`
+is empty (3 fail, #2519); the message's `relatedFeature` is refused (3
+unsupported). sysml-toolkit answers no `function` for any constructor (15) and
+no result for the library-type constructor (6; #20 covers the result).
+
+Census matrix models grow with the models: elements 3612 -> 3688 (Pilot),
+3444 -> 3512 (sysml-toolkit), 3538 -> 3608 (OpenSysML).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2726,3 +2790,4 @@ Step 45 took OpenSysML #2048; no case moved, #2042 now targets develop.
 Step 46 took OpenSysML #2042: the props suites pass 106 more cases, no regressions; four census rows fall short of the Pilot.
 Step 47 took 52 OpenSysML merges (#2496, #2509); no case moved.
 Step 48 took OpenSysML #2516 (#2199 fixed): the props suites pass 24 more cases, B20 passes there.
+Step 49 added 102 cases for #2495 and the message's relatedFeature to C20, C21, C30 and B20: 23 matrices, 1915 cases.
