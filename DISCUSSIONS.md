@@ -2604,6 +2604,38 @@ Reported on 2026-11-21: the flow half on #2199, asking for it to be reopened
 (issuecomment-7059252549; we cannot reopen it), the four rows as #2495, and
 the promised result on #2042 (issuecomment-7059255871).
 
+## Step 47: 52 OpenSysML merges (#2496, #2509); no case moved
+OpenSysML develop moved from `2d8bbc7a96` to `9347078fb3`: 52 merges, mostly
+runtime, client hardening, CI and export work. Those nearest our reads are
+#2496 (filtered imports, qualified transition targets, decision branch ends
+in `GetElementProperties`), #2509 (implied redefinitions and type featurings
+derived once) and #2507/#2513 (KerML classifiers in the export). All suites
+give results identical to Step 46, details included.
+
+Census (opensysml-go-props, Pilot examples only; matrix models identical):
+elements 37579 -> 37594, all of it ReferenceSubsettings (829 -> 844, Pilot
+1045), owned by ReferenceUsages (`Feature::ownedReferenceSubsetting` 449 ->
+464). That fits #2496's decision branch ends, but we did not bisect it. Small
+gains also in ReferenceUsage `input` (100 -> 104), `output` (32 -> 35) and
+`usage` (1072 -> 1083), and one RequirementUsage now has its
+`constraintDefinition` and `function` (101 -> 102 of 102). No row lost
+values.
+
+Open upstream, none of it merged at `9347078fb3`:
+
+- #2199, flow half: reopened and confirmed against KerML
+  `deriveFlowSourceOutputFeature`; fix is #2516 (open, mergeable, checks
+  pass). Its description gives group B20 of its recorded run of our suite as
+  75 pass / 0 fail, so we expect our 24 flow cases to pass.
+- #2495: all four confirmed as bugs, one fix announced, no PR yet; they asked
+  for a census rerun on its merge commit. The four rows are as in Step 46.
+- #2068: stays open for the api-json export's `relatedFeature` only; no PR
+  yet.
+
+sysml-toolkit released v0.12.1 to v0.13.0 (packaging commands, full-JSON
+performance, verification report fields). The changelog names nothing our
+suites read, and #20, #32 and #33 are still open, so it stays at v0.12.0.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2658,3 +2690,4 @@ Step 43 took #2002 (expression implied bases, census) and #2424 (#2029 fixed); n
 Step 44 took twenty OpenSysML merges (#2324 imported memberships, #2142 metaclasses); no case moved.
 Step 45 took OpenSysML #2048; no case moved, #2042 now targets develop.
 Step 46 took OpenSysML #2042: the props suites pass 106 more cases, no regressions; four census rows fall short of the Pilot.
+Step 47 took 52 OpenSysML merges (#2496, #2509); no case moved.
