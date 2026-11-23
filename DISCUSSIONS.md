@@ -2636,6 +2636,36 @@ sysml-toolkit released v0.12.1 to v0.13.0 (packaging commands, full-JSON
 performance, verification report fields). The changelog names nothing our
 suites read, and #20, #32 and #33 are still open, so it stays at v0.12.0.
 
+## Step 48: OpenSysML #2516 (#2199 fixed); props suites +24, B20 passes
+OpenSysML develop moved from `9347078fb3` to `013190a6f5`: #2516 (a flow's
+`sourceOutputFeature`/`targetInputFeature` from its ends, "Fixes #2199"; it
+closed #2199) and #2289 (measurement scale arithmetic). opensysml-py-props and
+opensysml-go-props each move the 24 flow cases B20-037..060 fail -> pass
+(1729 / 51 / 33 -> 1753 / 27 / 33), as #2516 announced, and no other case or
+detail moves in any suite. B20 has no failure left in the props suites; the
+Symbol suites are unchanged. Census: only `Flow::sourceOutputFeature` and
+`targetInputFeature` on the Pilot examples, 71 -> 72 of 106 each.
+
+The reproduction of #2199, read directly: `f` and `s` answer `f::source::fuelOut`
+and `f::target::fuelIn` (`s::...` for the succession flow), redefining
+`Tank::fuelOut` and `Engine::fuelIn`, and the api-json export writes the same.
+
+Correction to Step 46 and to our comment on #2199 (issuecomment-7059252549):
+the message's `relatedFeature` is not empty but refused ("missing-structure
+Connector::relatedFeature has no owned end features"), where the Pilot answers
+an empty list. The census counted it as unanswered at `2d8bbc7a96` already.
+The message's inherited ends are read as `Flows::flows::source`/`target`,
+where #2199 gave the Pilot's as from `Flows::messages` (Pilot not remeasured).
+No case covers either.
+
+The 27 props failures left: B13-028..042 `endReferences` (15) and C21-061..072
+`resultType` (12). For B13, `sourceFeature`, `targetFeature` and
+`relatedFeature` are right, but the first end of a `then` shorthand, a node-end
+succession or a transition's succession owns no ReferenceSubsetting. That is
+in #2068's expectations, but the maintainers now keep #2068 open only for the
+api-json export. C21 `resultType` was named on #2042 (2026-11-20) and has no
+issue of its own.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2691,3 +2721,4 @@ Step 44 took twenty OpenSysML merges (#2324 imported memberships, #2142 metaclas
 Step 45 took OpenSysML #2048; no case moved, #2042 now targets develop.
 Step 46 took OpenSysML #2042: the props suites pass 106 more cases, no regressions; four census rows fall short of the Pilot.
 Step 47 took 52 OpenSysML merges (#2496, #2509); no case moved.
+Step 48 took OpenSysML #2516 (#2199 fixed): the props suites pass 24 more cases, B20 passes there.
