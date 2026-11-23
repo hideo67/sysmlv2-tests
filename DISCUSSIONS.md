@@ -2663,8 +2663,12 @@ The 27 props failures left: B13-028..042 `endReferences` (15) and C21-061..072
 `relatedFeature` are right, but the first end of a `then` shorthand, a node-end
 succession or a transition's succession owns no ReferenceSubsetting. That is
 in #2068's expectations, but the maintainers now keep #2068 open only for the
-api-json export. C21 `resultType` was named on #2042 (2026-11-20) and has no
+api-json export. C21 `resultType` was named on #2042 (2026-11-20) but had no
 issue of its own.
+
+Reported on 2026-11-23: the fix and the correction on #2199
+(issuecomment-7088732781), the first ends on #2068 (issuecomment-7088733064),
+and C21 `resultType` as #2519.
 
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
