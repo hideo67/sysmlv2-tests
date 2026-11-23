@@ -21,12 +21,15 @@ Reads:
   sourceOutput   the feature redefined by Flow::sourceOutputFeature (what the flow draws from);
                  null when the flow has none (a message)
   targetInput    the feature redefined by Flow::targetInputFeature
+  relatedFeature Connector::relatedFeature in chain form (B10); empty for a message, whose ends
+                 reference nothing. Appended after the original reads to keep their IDs.
 """
 from genlib import Matrix
 
 READS = ["kind", "payloadTypes", "endReferences", "sourceOutput", "targetInput"]
 READ_COL = {"kind": "can get kind", "payloadTypes": "can get payload type", "endReferences": "can get end references",
-            "sourceOutput": "can get source output", "targetInput": "can get target input"}
+            "sourceOutput": "can get source output", "targetInput": "can get target input",
+            "relatedFeature": "can get relatedFeature"}
 KIND_COL = {"flow": "flow", "succ": "succession flow", "msg": "message"}
 DEPTH_COL = {1: "end depth 1", 2: "end depth 2"}
 LOC_COL = {"L2": "appears in part def", "L3": "read through typing usage", "L6": "read through nested usage chain"}
@@ -57,4 +60,11 @@ for read in READS:
         expect = {"kind": "FlowUsage", "payloadTypes": ["B20::Sig"],
                   "endReferences": [None, None], "sourceOutput": None, "targetInput": None}[read]
         m.add({READ_COL[read], KIND_COL["msg"], LOC_COL[loc]}, read, V + "msg", expect, THROUGH[loc])
+for kind, prefix in [("flow", "f"), ("succ", "s")]:
+    for depth in DEPTH_COL:
+        for loc in LOC_COL:
+            m.add({READ_COL["relatedFeature"], KIND_COL[kind], DEPTH_COL[depth], LOC_COL[loc]}, "relatedFeature",
+                  f"{V}{prefix}{depth}", ENDS[depth], THROUGH[loc])
+for loc in LOC_COL:
+    m.add({READ_COL["relatedFeature"], KIND_COL["msg"], LOC_COL[loc]}, "relatedFeature", V + "msg", [], THROUGH[loc])
 m.write("gen_b20.py")

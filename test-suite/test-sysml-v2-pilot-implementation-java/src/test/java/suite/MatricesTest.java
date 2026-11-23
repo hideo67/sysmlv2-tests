@@ -513,6 +513,13 @@ class MatricesTest {
                 List<Type> types = x.getResult().getType();
                 return types.isEmpty() ? null : types.get(0).getQualifiedName();
             }
+            case "exprFunction": {
+                Expression x = constructorOf(e);
+                if (x == null) return null;
+                Function f = x.getFunction();
+                return f == null ? null : f.getQualifiedName();
+            }
+            case "inputCount": return ((Type) e).getInput().size();
             case "endCount":
                 return (e instanceof Connector k ? k.getConnectorEnd() : ((Type) e).getEndFeature()).size();
             case "endNames":

@@ -454,9 +454,11 @@ class MatricesTest {
                 abort("UNSUPPORTED: the Symbol API reports no arguments of an action");
             case "valueKind", "valueOperator", "valueReferences", "valueText":
                 abort("UNSUPPORTED: the Symbol API reports a value only as a folded constant, with no expression structure or text");
-            case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType":
+            case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType", "exprFunction":
                 abort("UNSUPPORTED: the Symbol API reports neither the arguments of an action nor expression structure, "
                     + "so no constructor expression is reachable");
+            case "inputCount":
+                abort("UNSUPPORTED: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)");
             case "isDefault":
                 abort("UNSUPPORTED: neither Symbol nor its attribute facts tell a default from a bound value");
             case "unnamedPartCount": {

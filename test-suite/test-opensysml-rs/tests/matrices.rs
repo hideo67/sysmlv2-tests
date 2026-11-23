@@ -465,10 +465,17 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
             ))
         }
         "exprKind" | "instantiatedType" | "argumentCount" | "argumentReferences" | "hasResult"
-        | "resultType" => {
+        | "resultType" | "exprFunction" => {
             return Err(Unsupported(
                 "the Symbol API reports neither the arguments of an action nor expression \
                  structure, so no constructor expression is reachable"
+                    .into(),
+            ))
+        }
+        "inputCount" => {
+            return Err(Unsupported(
+                "the Symbol API has no Type::input (the owned and inherited features with direction \
+                 in or inout)"
                     .into(),
             ))
         }

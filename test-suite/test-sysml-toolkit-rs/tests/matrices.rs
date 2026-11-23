@@ -628,11 +628,17 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
             None => Value::Null,
         },
         // C21: the constructor, the payload of a send action or the value expression of a feature
-        "exprKind" | "instantiatedType" | "argumentCount" | "argumentReferences" | "hasResult" | "resultType" => {
+        "inputCount" => json!(api.elements(e, "input")?.len()),
+        "exprKind" | "instantiatedType" | "argumentCount" | "argumentReferences" | "hasResult" | "resultType"
+        | "exprFunction" => {
             let x = if api.metaclass(e) == "SendActionUsage" { api.element(e, "payloadArgument")? } else { api.value_expr(e)? };
             let Some(x) = x else { return Ok(Value(Value::Null)) };
             match check {
                 "exprKind" => json!(api.metaclass(x)),
+                "exprFunction" => match api.element(x, "function")? {
+                    Some(f) => json!(api.qn(f)),
+                    None => Value::Null,
+                },
                 "instantiatedType" => match api.element(x, "instantiatedType")? {
                     Some(t) => json!(api.qn(t)),
                     None => Value::Null,

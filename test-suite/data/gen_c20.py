@@ -13,13 +13,17 @@ chain form, as in C10; null when the action has no such argument):
   receiverArgument  SendActionUsage::receiverArgument (`to` of a send) or
                     AcceptActionUsage::receiverArgument (`via` of an accept)
   assignedFeature   AssignmentActionUsage::referent, in chain form
+  inputCount        the number of Type::input (owned and inherited features with direction in or
+                    inout); appended after the original reads to keep their IDs
 State entry actions are left to C30.
 """
 from genlib import Matrix
 
 READS = ["kind", "payloadArgument", "senderArgument", "receiverArgument", "assignedFeature"]
 READ_COL = {"kind": "can get kind", "payloadArgument": "can get payload", "senderArgument": "can get sender",
-            "receiverArgument": "can get receiver", "assignedFeature": "can get assigned feature"}
+            "receiverArgument": "can get receiver", "assignedFeature": "can get assigned feature",
+            "inputCount": "can count inputs"}
+INPUTS = {"sendVia": 3, "sendTo": 3, "accept": 2, "assign": 2, "perform": 0, "if": 2, "while": 3, "for": 2}  # the action's own and its library action's in/inout parameters (Actions::IfThenAction: ifTest, thenClause; ...)
 KINDS = {  # kind -> (action name, metaclass, payload, sender, receiver, assigned); X = the owner of the features
     "sendVia": ("sendVia", "SendActionUsage", "alarm", "alarmPort", None, None),
     "sendTo": ("sendTo", "SendActionUsage", "alarm", None, "display", None),
@@ -53,4 +57,9 @@ for read in READS:
                       "receiverArgument": ref(receiver),
                       "assignedFeature": [f"{feature_owner}::{assigned}"] if assigned else None}[read]
             m.add({READ_COL[read], KIND_COL[kind], LOC_COL[loc]}, read, f"{action_owner}::{name}", expect, through)
+for kind, (name, *_) in KINDS.items():
+    for loc in LOC_COL:
+        action_owner, _, through = LOC[loc]
+        m.add({READ_COL["inputCount"], KIND_COL[kind], LOC_COL[loc]}, "inputCount", f"{action_owner}::{name}",
+              INPUTS[kind], through)
 m.write("gen_c20.py")

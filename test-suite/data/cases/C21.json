@@ -2,7 +2,8 @@
  "matrix": "C21",
  "model": "models/C21.sysml",
  "notes": {
-  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type",
+  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read).",
+  "model": "a case may name its own model; it overrides the matrix's model for that case",
   "through": "a path: each element is read as a member visible in the previous one"
  },
  "cases": [
@@ -575,6 +576,308 @@
     "C21::emitter",
     "C21::Emitter::emit"
    ]
+  },
+  {
+   "id": "C21-073",
+   "check": "exprFunction",
+   "element": "C21::Emit::sendNone",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-074",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-075",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sendNone",
+   "expect": "Performances::Evaluation",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-076",
+   "check": "exprFunction",
+   "element": "C21::Emit::sendRef",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-077",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-078",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sendRef",
+   "expect": "Performances::Evaluation",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-079",
+   "check": "exprFunction",
+   "element": "C21::Emit::sendChain",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-080",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-081",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sendChain",
+   "expect": "Performances::Evaluation",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-082",
+   "check": "exprFunction",
+   "element": "C21::Emit::sigValue",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-083",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "Performances::Evaluation"
+  },
+  {
+   "id": "C21-084",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::sigValue",
+   "expect": "Performances::Evaluation",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-085",
+   "check": "exprKind",
+   "element": "C21Lib::Emit::shape",
+   "expect": "ConstructorExpression",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-086",
+   "check": "exprKind",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "ConstructorExpression",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-087",
+   "check": "exprKind",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "ConstructorExpression",
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-088",
+   "check": "instantiatedType",
+   "element": "C21Lib::Emit::shape",
+   "expect": "ShapeItems::Triangle",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-089",
+   "check": "instantiatedType",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "ShapeItems::Triangle",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-090",
+   "check": "instantiatedType",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "ShapeItems::Triangle",
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-091",
+   "check": "argumentCount",
+   "element": "C21Lib::Emit::shape",
+   "expect": 3,
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-092",
+   "check": "argumentCount",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": 3,
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-093",
+   "check": "argumentCount",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": 3,
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-094",
+   "check": "argumentReferences",
+   "element": "C21Lib::Emit::shape",
+   "expect": [
+    [
+     "C21Lib::Emit::src",
+     "C21Lib::Src::l"
+    ],
+    [
+     "C21Lib::Emit::src",
+     "C21Lib::Src::w"
+    ],
+    [
+     "C21Lib::Emit::src",
+     "C21Lib::Src::x"
+    ]
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-095",
+   "check": "argumentReferences",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": [
+    [
+     "C21Lib::Emitter::src",
+     "C21Lib::Src::l"
+    ],
+    [
+     "C21Lib::Emitter::src",
+     "C21Lib::Src::w"
+    ],
+    [
+     "C21Lib::Emitter::src",
+     "C21Lib::Src::x"
+    ]
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-096",
+   "check": "argumentReferences",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": [
+    [
+     "C21Lib::Emitter::src",
+     "C21Lib::Src::l"
+    ],
+    [
+     "C21Lib::Emitter::src",
+     "C21Lib::Src::w"
+    ],
+    [
+     "C21Lib::Emitter::src",
+     "C21Lib::Src::x"
+    ]
+   ],
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-097",
+   "check": "hasResult",
+   "element": "C21Lib::Emit::shape",
+   "expect": true,
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-098",
+   "check": "hasResult",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": true,
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-099",
+   "check": "hasResult",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": true,
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-100",
+   "check": "resultType",
+   "element": "C21Lib::Emit::shape",
+   "expect": "ShapeItems::Triangle",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-101",
+   "check": "resultType",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "ShapeItems::Triangle",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-102",
+   "check": "resultType",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "ShapeItems::Triangle",
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-103",
+   "check": "exprFunction",
+   "element": "C21Lib::Emit::shape",
+   "expect": "Performances::Evaluation",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-104",
+   "check": "exprFunction",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "Performances::Evaluation",
+   "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-105",
+   "check": "exprFunction",
+   "element": "C21Lib::Emitter::emit::shape",
+   "expect": "Performances::Evaluation",
+   "through": [
+    "C21Lib::emitter",
+    "C21Lib::Emitter::emit"
+   ],
+   "model": "models/C21-library.sysml"
   }
  ]
 }

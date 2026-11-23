@@ -361,8 +361,11 @@ async function check(m: Model, c: Case): Promise<Json> {
     case "valueKind": case "valueOperator": case "valueReferences": case "valueText":
       throw new Unsupported("the Symbol API reports a value only as a folded constant, with no expression structure or text");
     case "exprKind": case "instantiatedType": case "argumentCount": case "argumentReferences": case "hasResult": case "resultType":
+    case "exprFunction":
       throw new Unsupported("the Symbol API reports neither the arguments of an action nor expression structure, " +
         "so no constructor expression is reachable");
+    case "inputCount":
+      throw new Unsupported("the Symbol API has no Type::input (the owned and inherited features with direction in or inout)");
     case "isDefault":
       throw new Unsupported("neither Symbol nor AttributeFacts tells a default from a bound value");
     case "unnamedPartCount": {

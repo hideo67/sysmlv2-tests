@@ -2,7 +2,7 @@
  "matrix": "C20",
  "model": "models/C20.sysml",
  "notes": {
-  "reads": "an argument is compared as the referenced features of its expression, each in\nchain form, as in C10; null when the action has no such argument):\n  kind              the action's metaclass (SendActionUsage, AcceptActionUsage, ...)\n  payloadArgument   SendActionUsage/AcceptActionUsage::payloadArgument\n  senderArgument    SendActionUsage::senderArgument (`via` of a send)\n  receiverArgument  SendActionUsage::receiverArgument (`to` of a send) or\n                    AcceptActionUsage::receiverArgument (`via` of an accept)\n  assignedFeature   AssignmentActionUsage::referent, in chain form\nState entry actions are left to C30.",
+  "reads": "an argument is compared as the referenced features of its expression, each in\nchain form, as in C10; null when the action has no such argument):\n  kind              the action's metaclass (SendActionUsage, AcceptActionUsage, ...)\n  payloadArgument   SendActionUsage/AcceptActionUsage::payloadArgument\n  senderArgument    SendActionUsage::senderArgument (`via` of a send)\n  receiverArgument  SendActionUsage::receiverArgument (`to` of a send) or\n                    AcceptActionUsage::receiverArgument (`via` of an accept)\n  assignedFeature   AssignmentActionUsage::referent, in chain form\n  inputCount        the number of Type::input (owned and inherited features with direction in or\n                    inout); appended after the original reads to keep their IDs\nState entry actions are left to C30.",
   "through": "a path: each element is read as a member visible in the previous one"
  },
  "cases": [
@@ -947,6 +947,182 @@
    "check": "assignedFeature",
    "element": "C20::Monitor::supervise::forAct",
    "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-121",
+   "check": "inputCount",
+   "element": "C20::Supervise::sendVia",
+   "expect": 3
+  },
+  {
+   "id": "C20-122",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": 3
+  },
+  {
+   "id": "C20-123",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": 3,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-124",
+   "check": "inputCount",
+   "element": "C20::Supervise::sendTo",
+   "expect": 3
+  },
+  {
+   "id": "C20-125",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": 3
+  },
+  {
+   "id": "C20-126",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": 3,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-127",
+   "check": "inputCount",
+   "element": "C20::Supervise::acceptVia",
+   "expect": 2
+  },
+  {
+   "id": "C20-128",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": 2
+  },
+  {
+   "id": "C20-129",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": 2,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-130",
+   "check": "inputCount",
+   "element": "C20::Supervise::assignCount",
+   "expect": 2
+  },
+  {
+   "id": "C20-131",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": 2
+  },
+  {
+   "id": "C20-132",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": 2,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-133",
+   "check": "inputCount",
+   "element": "C20::Supervise::performNotify",
+   "expect": 0
+  },
+  {
+   "id": "C20-134",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": 0
+  },
+  {
+   "id": "C20-135",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": 0,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-136",
+   "check": "inputCount",
+   "element": "C20::Supervise::ifAct",
+   "expect": 2
+  },
+  {
+   "id": "C20-137",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": 2
+  },
+  {
+   "id": "C20-138",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": 2,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-139",
+   "check": "inputCount",
+   "element": "C20::Supervise::whileAct",
+   "expect": 3
+  },
+  {
+   "id": "C20-140",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": 3
+  },
+  {
+   "id": "C20-141",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": 3,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-142",
+   "check": "inputCount",
+   "element": "C20::Supervise::forAct",
+   "expect": 2
+  },
+  {
+   "id": "C20-143",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": 2
+  },
+  {
+   "id": "C20-144",
+   "check": "inputCount",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": 2,
    "through": [
     "C20::monitor",
     "C20::Monitor::supervise"

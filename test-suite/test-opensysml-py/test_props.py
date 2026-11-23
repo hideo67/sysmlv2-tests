@@ -359,7 +359,10 @@ def do_check(model, case):
     if check == "assignedFeature":
         f = api.element(e, "referent")
         return api.chain_form(f) if f else None
-    if check in ("exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType"):
+    if check == "inputCount":
+        return len(api.elements(e, "input"))
+    if check in ("exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType",
+                 "exprFunction"):
         x = api.element(e, "payloadArgument") if e.metaclass == "SendActionUsage" else api.value_expr(e)
         if x is None:
             return None
@@ -367,6 +370,8 @@ def do_check(model, case):
             return x.metaclass
         if check == "instantiatedType":
             return qn_of("instantiatedType", x)
+        if check == "exprFunction":
+            return qn_of("function", x)
         if check == "argumentCount":
             return len(api.elements(x, "argument"))
         if check == "argumentReferences":

@@ -4,6 +4,7 @@
  "notes": {
   "reads": "entryKind / doKind / exitKind  metaclass of StateUsage::entryAction / doAction / exitAction\n  substates       sorted names of the owned features that are StateUsages\n  isParallel      StateUsage::isParallel\n  source, target  TransitionUsage::source / target (qualified names)\n  triggerPayload  type of the payload parameter of TransitionUsage::triggerAction; null without one\n  guardKind       metaclass of TransitionUsage::guardExpression; null without one\n  effectKind      metaclass of TransitionUsage::effectAction; null without one",
   "model": "a case may name its own model; it overrides the matrix's model for that case",
+  "unnamed": "locates an unnamed element: {metaclass, index} among the unnamed members of that metaclass declared in `element`, in declaration order",
   "through": "a path: each element is read as a member visible in the previous one"
  },
  "cases": [
@@ -683,6 +684,376 @@
     "C30::device",
     "C30::Device::ex"
    ]
+  },
+  {
+   "id": "C30-079",
+   "check": "source",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sWait",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-080",
+   "check": "source",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sWait",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-081",
+   "check": "source",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sWait",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-082",
+   "check": "source",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sIdle",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-083",
+   "check": "source",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sIdle",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-084",
+   "check": "source",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sIdle",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-085",
+   "check": "target",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::seq",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-086",
+   "check": "target",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::seq",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-087",
+   "check": "target",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::seq",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-088",
+   "check": "target",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sWait",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-089",
+   "check": "target",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sWait",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-090",
+   "check": "target",
+   "element": "C30::Ctl",
+   "expect": "C30::Ctl::sWait",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-091",
+   "check": "triggerPayload",
+   "element": "C30::Ctl",
+   "expect": "C30::Sig",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-092",
+   "check": "triggerPayload",
+   "element": "C30::Ctl",
+   "expect": "C30::Sig",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-093",
+   "check": "triggerPayload",
+   "element": "C30::Ctl",
+   "expect": "C30::Sig",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-094",
+   "check": "triggerPayload",
+   "element": "C30::Ctl",
+   "expect": null,
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-095",
+   "check": "triggerPayload",
+   "element": "C30::Ctl",
+   "expect": null,
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-096",
+   "check": "triggerPayload",
+   "element": "C30::Ctl",
+   "expect": null,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-097",
+   "check": "guardKind",
+   "element": "C30::Ctl",
+   "expect": "OperatorExpression",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-098",
+   "check": "guardKind",
+   "element": "C30::Ctl",
+   "expect": "OperatorExpression",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-099",
+   "check": "guardKind",
+   "element": "C30::Ctl",
+   "expect": "OperatorExpression",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-100",
+   "check": "guardKind",
+   "element": "C30::Ctl",
+   "expect": null,
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-101",
+   "check": "guardKind",
+   "element": "C30::Ctl",
+   "expect": null,
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-102",
+   "check": "guardKind",
+   "element": "C30::Ctl",
+   "expect": null,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-103",
+   "check": "effectKind",
+   "element": "C30::Ctl",
+   "expect": "AssignmentActionUsage",
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-104",
+   "check": "effectKind",
+   "element": "C30::Ctl",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-105",
+   "check": "effectKind",
+   "element": "C30::Ctl",
+   "expect": "AssignmentActionUsage",
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 0
+   }
+  },
+  {
+   "id": "C30-106",
+   "check": "effectKind",
+   "element": "C30::Ctl",
+   "expect": null,
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-107",
+   "check": "effectKind",
+   "element": "C30::Ctl",
+   "expect": null,
+   "through": [
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
+  },
+  {
+   "id": "C30-108",
+   "check": "effectKind",
+   "element": "C30::Ctl",
+   "expect": null,
+   "through": [
+    "C30::device",
+    "C30::Device::ex"
+   ],
+   "unnamed": {
+    "metaclass": "TransitionUsage",
+    "index": 1
+   }
   }
  ]
 }

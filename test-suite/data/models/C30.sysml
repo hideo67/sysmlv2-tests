@@ -45,6 +45,13 @@ package C30 {
         // transitions: with trigger, guard and effect; and a bare one
         transition t1 first sSend accept s : Sig via p if count > 0 do assign count := 0 then sAssign;
         transition t2 first sAssign then sPerform;
+
+        // the target transition shorthand after a state: an unnamed TransitionUsage from that state
+        state sWait;
+            accept s : Sig via p if count > 0 do assign count := 0
+            then seq;                   // 1st unnamed transition: sWait -> seq
+        state sIdle;
+            then sWait;                 // 2nd unnamed transition: sIdle -> sWait
     }
 
     part def Device {

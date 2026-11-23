@@ -11,7 +11,9 @@ Three blocks, each a full cross product with location (DEF in the state def, EXH
      (send, accept, assign, perform; a performed action is written `entry onEntry;`)
   2. structure: reads (substates, isParallel) x state (sequential with substates, parallel)
   3. transitions: reads (source, target, triggerPayload, guardKind, effectKind) x transition
-     (with trigger, guard and effect; a bare `first a then b`)
+     (with trigger, guard and effect; a bare `first a then b`; appended later, the target
+     transition shorthand after a state, without the `transition` keyword and so unnamed: with
+     trigger, guard and effect, and bare `then b;`)
 
 Reads:
   entryKind / doKind / exitKind  metaclass of StateUsage::entryAction / doAction / exitAction
@@ -30,7 +32,8 @@ READ_COL = {"entryKind": "can get entry action", "doKind": "can get do action", 
             "effectKind": "can get effect"}
 ACT_COL = {"send": "send action", "accept": "accept action", "assign": "assign action", "perform": "perform action"}
 STATE_COL = {"seq": "sequential state", "par": "parallel state"}
-TRANS_COL = {"full": "transition with trigger, guard, effect", "bare": "bare transition"}
+TRANS_COL = {"full": "transition with trigger, guard, effect", "bare": "bare transition",
+             "shortFull": "shorthand with trigger, guard, effect", "shortBare": "bare shorthand"}
 LOC_COL = {"DEF": "in state def", "EXH": "through exhibit state", "L3": "through typing usage"}
 THROUGH = {"DEF": None, "EXH": ["C30::Device::ex"], "L3": ["C30::device", "C30::Device::ex"]}
 C = "C30::Ctl::"
@@ -39,6 +42,9 @@ ACT = {"send": ("sSend", "SendActionUsage"), "accept": ("sAccept", "AcceptAction
 STATE = {"seq": ("seq", ["s1", "s2"], False), "par": ("par", ["r1", "r2"], True)}
 TRANS = {"full": ("t1", C + "sSend", C + "sAssign", "C30::Sig", "OperatorExpression", "AssignmentActionUsage"),
          "bare": ("t2", C + "sAssign", C + "sPerform", None, None, None)}
+# an unnamed TransitionUsage of Ctl, by its index among those declared there
+SHORT = {"shortFull": (0, C + "sWait", C + "seq", "C30::Sig", "OperatorExpression", "AssignmentActionUsage"),
+         "shortBare": (1, C + "sIdle", C + "sWait", None, None, None)}
 
 m = Matrix("C30", "states and transitions", "models/C30.sysml",
            list(READ_COL.values()) + list(ACT_COL.values()) + list(STATE_COL.values()) + list(TRANS_COL.values())
@@ -46,6 +52,8 @@ m = Matrix("C30", "states and transitions", "models/C30.sysml",
            description="State entry/do/exit actions, state structure, and transitions.",
            notes={"reads": __doc__.split("Reads:")[1].strip(),
                   "model": "a case may name its own model; it overrides the matrix's model for that case",
+                  "unnamed": "locates an unnamed element: {metaclass, index} among the unnamed members "
+                             "of that metaclass declared in `element`, in declaration order",
                   "through": "a path: each element is read as a member visible in the previous one"})
 for read in ["entryKind", "doKind", "exitKind"]:
     for act, (state, metaclass) in ACT.items():
@@ -66,4 +74,10 @@ for read in ["source", "target", "triggerPayload", "guardKind", "effectKind"]:
         for loc in LOC_COL:
             expect = {"source": src, "target": tgt, "triggerPayload": trig, "guardKind": guard, "effectKind": effect}[read]
             m.add({READ_COL[read], TRANS_COL[tr], LOC_COL[loc]}, read, C + name, expect, THROUGH[loc])
+for read in ["source", "target", "triggerPayload", "guardKind", "effectKind"]:
+    for tr, (idx, src, tgt, trig, guard, effect) in SHORT.items():
+        for loc in LOC_COL:
+            expect = {"source": src, "target": tgt, "triggerPayload": trig, "guardKind": guard, "effectKind": effect}[read]
+            m.add({READ_COL[read], TRANS_COL[tr], LOC_COL[loc]}, read, "C30::Ctl", expect, THROUGH[loc],
+                  unnamed={"metaclass": "TransitionUsage", "index": idx})
 m.write("gen_c30.py")

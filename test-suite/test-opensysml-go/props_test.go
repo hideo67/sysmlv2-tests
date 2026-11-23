@@ -990,7 +990,10 @@ func propsRead(a *propsAPI, c caseSpec, e opensysml.ElementRef, owner *opensysml
 			return nil, err
 		}
 		return a.chainForm(*f)
-	case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType":
+	case "inputCount":
+		ins, err := a.elements(e, "input")
+		return len(ins), err
+	case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType", "exprFunction":
 		var x *opensysml.ElementRef
 		var err error
 		if e.Metaclass == "SendActionUsage" {
@@ -1006,6 +1009,8 @@ func propsRead(a *propsAPI, c caseSpec, e opensysml.ElementRef, owner *opensysml
 			return x.Metaclass, nil
 		case "instantiatedType":
 			return a.qnProp(*x, "instantiatedType")
+		case "exprFunction":
+			return a.qnProp(*x, "function")
 		case "argumentCount":
 			args, err := a.elements(*x, "argument")
 			return len(args), err
