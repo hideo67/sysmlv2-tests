@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `f2b47f495e3e`
+Test suite commit: `6fb5753d2712`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-23 00:03:55|
-|opensysml-go|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-23 00:03:46|
-|opensysml-java|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-23 00:04:41|
-|opensysml-py-props|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-23 00:03:23|
-|opensysml-py|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-23 00:03:11|
-|opensysml-rs|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 00:04:08|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-23 00:04:30|
-|opensysml-ts|OpenSysML|`nightly-20261122-00a68e3a61-140-g9347078fb3` (develop)|[`9347078fb3`](https://github.com/Open-MBEE/OpenSysML/commit/9347078fb3208f11e2e3ebc2be8c0a14c697b775)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-23 00:04:18|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-23 00:04:57|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 00:04:45|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 00:04:43|
+|opensysml-go-props|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-23 00:36:49|
+|opensysml-go|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-23 00:36:40|
+|opensysml-java|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-23 00:37:35|
+|opensysml-py-props|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-23 00:36:18|
+|opensysml-py|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-23 00:36:06|
+|opensysml-rs|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 00:37:03|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-23 00:37:25|
+|opensysml-ts|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-23 00:37:13|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-23 00:37:51|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 00:37:39|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 00:37:37|
 
 Local changes at run time (tracked files only):
 
@@ -39,7 +39,7 @@ Local changes at run time (tracked files only):
 |B11|90|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|36 / 0 / 54 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|90 / 0 / 0 / 0|
 |B12|108|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|54 / 0 / 54 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |B13|165|150 / 15 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|150 / 15 / 0 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|6 / 60 / 99 / 0|165 / 0 / 0 / 0|147 / 18 / 0 / 0|147 / 18 / 0 / 0|
-|B20|75|51 / 24 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|51 / 24 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
+|B20|75|75 / 0 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|15 / 15 / 45 / 0|75 / 0 / 0 / 0|45 / 0 / 0 / 30|69 / 6 / 0 / 0|
 |C01|114|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|120|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|117 / 0 / 3 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|24 / 0 / 96 / 0|120 / 0 / 0 / 0|117 / 0 / 0 / 3|117 / 3 / 0 / 0|
@@ -49,7 +49,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1813|1729 / 51 / 33 / 0|877 / 75 / 861 / 0|867 / 85 / 861 / 0|1729 / 51 / 33 / 0|877 / 75 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
+|**all**|1813|1753 / 27 / 33 / 0|877 / 75 / 861 / 0|867 / 85 / 861 / 0|1753 / 27 / 33 / 0|877 / 75 / 861 / 0|861 / 85 / 867 / 0|861 / 85 / 867 / 0|867 / 85 / 861 / 0|1763 / 0 / 50 / 0|1631 / 18 / 50 / 114|1692 / 71 / 50 / 0|
 
 ## Results
 
@@ -1158,30 +1158,30 @@ Local changes at run time (tracked files only):
 |B20-034|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B20-035|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
 |B20-036|PASS|FAIL|FAIL|PASS|FAIL|FAIL|FAIL|FAIL|PASS|PASS|PASS|
-|B20-037|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-038|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-039|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-040|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-041|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-042|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-043|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-044|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-045|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-046|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-047|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-048|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-049|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-050|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-051|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-052|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-053|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-054|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-055|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-056|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-057|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-058|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-059|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
-|B20-060|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-037|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-038|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-039|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-040|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-041|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-042|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-043|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-044|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-045|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-046|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-047|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-048|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-049|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-050|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-051|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-052|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-053|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-054|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-055|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-056|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-057|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-058|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-059|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
+|B20-060|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|PASS|
 |B20-061|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-062|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
 |B20-063|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|PASS|
@@ -4899,217 +4899,169 @@ Local changes at run time (tracked files only):
 - B20-036 [opensysml-rs] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-ts-wasm] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
 - B20-036 [opensysml-ts] fail: endReferences B20::Vehicle::s2: got [[],[]], want [["B20::Vehicle::m","B20::Module::tank"],["B20::Vehicle::n","B20::Module::engine"]]
-- B20-037 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f1: got null, want "B20::Tank::fuelOut"
 - B20-037 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-037 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-037 [opensysml-py-props] fail: sourceOutput B20::Vehicle::f1: got None, want 'B20::Tank::fuelOut'
 - B20-037 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-037 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-037 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-037 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-037 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-038 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f1: got null, want "B20::Tank::fuelOut"
 - B20-038 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-038 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-038 [opensysml-py-props] fail: sourceOutput B20::Vehicle::f1: got None, want 'B20::Tank::fuelOut'
 - B20-038 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-038 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-038 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-038 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-038 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-039 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f1: got null, want "B20::Tank::fuelOut"
 - B20-039 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-039 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-039 [opensysml-py-props] fail: sourceOutput B20::Vehicle::f1: got None, want 'B20::Tank::fuelOut'
 - B20-039 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-039 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-039 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-039 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-039 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-040 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f2: got null, want "B20::Tank::fuelOut"
 - B20-040 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-040 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-040 [opensysml-py-props] fail: sourceOutput B20::Vehicle::f2: got None, want 'B20::Tank::fuelOut'
 - B20-040 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-040 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-040 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-040 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-040 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-041 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f2: got null, want "B20::Tank::fuelOut"
 - B20-041 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-041 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-041 [opensysml-py-props] fail: sourceOutput B20::Vehicle::f2: got None, want 'B20::Tank::fuelOut'
 - B20-041 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-041 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-041 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-041 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-041 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-042 [opensysml-go-props] fail: sourceOutput B20::Vehicle::f2: got null, want "B20::Tank::fuelOut"
 - B20-042 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-042 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-042 [opensysml-py-props] fail: sourceOutput B20::Vehicle::f2: got None, want 'B20::Tank::fuelOut'
 - B20-042 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-042 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-042 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-042 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-042 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-043 [opensysml-go-props] fail: sourceOutput B20::Vehicle::s1: got null, want "B20::Tank::fuelOut"
 - B20-043 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-043 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-043 [opensysml-py-props] fail: sourceOutput B20::Vehicle::s1: got None, want 'B20::Tank::fuelOut'
 - B20-043 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-043 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-043 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-043 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-043 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-044 [opensysml-go-props] fail: sourceOutput B20::Vehicle::s1: got null, want "B20::Tank::fuelOut"
 - B20-044 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-044 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-044 [opensysml-py-props] fail: sourceOutput B20::Vehicle::s1: got None, want 'B20::Tank::fuelOut'
 - B20-044 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-044 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-044 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-044 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-044 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-045 [opensysml-go-props] fail: sourceOutput B20::Vehicle::s1: got null, want "B20::Tank::fuelOut"
 - B20-045 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-045 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-045 [opensysml-py-props] fail: sourceOutput B20::Vehicle::s1: got None, want 'B20::Tank::fuelOut'
 - B20-045 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-045 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-045 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-045 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-045 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-046 [opensysml-go-props] fail: sourceOutput B20::Vehicle::s2: got null, want "B20::Tank::fuelOut"
 - B20-046 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-046 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-046 [opensysml-py-props] fail: sourceOutput B20::Vehicle::s2: got None, want 'B20::Tank::fuelOut'
 - B20-046 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-046 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-046 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-046 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-046 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-047 [opensysml-go-props] fail: sourceOutput B20::Vehicle::s2: got null, want "B20::Tank::fuelOut"
 - B20-047 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-047 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-047 [opensysml-py-props] fail: sourceOutput B20::Vehicle::s2: got None, want 'B20::Tank::fuelOut'
 - B20-047 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-047 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-047 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-047 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-047 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-048 [opensysml-go-props] fail: sourceOutput B20::Vehicle::s2: got null, want "B20::Tank::fuelOut"
 - B20-048 [opensysml-go] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-048 [opensysml-java] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
-- B20-048 [opensysml-py-props] fail: sourceOutput B20::Vehicle::s2: got None, want 'B20::Tank::fuelOut'
 - B20-048 [opensysml-py] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-048 [opensysml-rs] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-048 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-048 [opensysml-ts] unsupported: no Symbol field for the flow's sourceOutputFeature; the standard query API does not offer it either
 - B20-048 [sysml-toolkit-rs-checked] error: sourceOutputFeature refused by the checked reader: property has an incomplete derivation
-- B20-049 [opensysml-go-props] fail: targetInput B20::Vehicle::f1: got null, want "B20::Engine::fuelIn"
 - B20-049 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-049 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-049 [opensysml-py-props] fail: targetInput B20::Vehicle::f1: got None, want 'B20::Engine::fuelIn'
 - B20-049 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-049 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-049 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-049 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-049 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-050 [opensysml-go-props] fail: targetInput B20::Vehicle::f1: got null, want "B20::Engine::fuelIn"
 - B20-050 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-050 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-050 [opensysml-py-props] fail: targetInput B20::Vehicle::f1: got None, want 'B20::Engine::fuelIn'
 - B20-050 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-050 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-050 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-050 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-050 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-051 [opensysml-go-props] fail: targetInput B20::Vehicle::f1: got null, want "B20::Engine::fuelIn"
 - B20-051 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-051 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-051 [opensysml-py-props] fail: targetInput B20::Vehicle::f1: got None, want 'B20::Engine::fuelIn'
 - B20-051 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-051 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-051 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-051 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-051 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-052 [opensysml-go-props] fail: targetInput B20::Vehicle::f2: got null, want "B20::Engine::fuelIn"
 - B20-052 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-052 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-052 [opensysml-py-props] fail: targetInput B20::Vehicle::f2: got None, want 'B20::Engine::fuelIn'
 - B20-052 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-052 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-052 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-052 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-052 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-053 [opensysml-go-props] fail: targetInput B20::Vehicle::f2: got null, want "B20::Engine::fuelIn"
 - B20-053 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-053 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-053 [opensysml-py-props] fail: targetInput B20::Vehicle::f2: got None, want 'B20::Engine::fuelIn'
 - B20-053 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-053 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-053 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-053 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-053 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-054 [opensysml-go-props] fail: targetInput B20::Vehicle::f2: got null, want "B20::Engine::fuelIn"
 - B20-054 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-054 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-054 [opensysml-py-props] fail: targetInput B20::Vehicle::f2: got None, want 'B20::Engine::fuelIn'
 - B20-054 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-054 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-054 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-054 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-054 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-055 [opensysml-go-props] fail: targetInput B20::Vehicle::s1: got null, want "B20::Engine::fuelIn"
 - B20-055 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-055 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-055 [opensysml-py-props] fail: targetInput B20::Vehicle::s1: got None, want 'B20::Engine::fuelIn'
 - B20-055 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-055 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-055 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-055 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-055 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-056 [opensysml-go-props] fail: targetInput B20::Vehicle::s1: got null, want "B20::Engine::fuelIn"
 - B20-056 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-056 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-056 [opensysml-py-props] fail: targetInput B20::Vehicle::s1: got None, want 'B20::Engine::fuelIn'
 - B20-056 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-056 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-056 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-056 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-056 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-057 [opensysml-go-props] fail: targetInput B20::Vehicle::s1: got null, want "B20::Engine::fuelIn"
 - B20-057 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-057 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-057 [opensysml-py-props] fail: targetInput B20::Vehicle::s1: got None, want 'B20::Engine::fuelIn'
 - B20-057 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-057 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-057 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-057 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-057 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-058 [opensysml-go-props] fail: targetInput B20::Vehicle::s2: got null, want "B20::Engine::fuelIn"
 - B20-058 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-058 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-058 [opensysml-py-props] fail: targetInput B20::Vehicle::s2: got None, want 'B20::Engine::fuelIn'
 - B20-058 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-058 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-058 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-058 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-058 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-059 [opensysml-go-props] fail: targetInput B20::Vehicle::s2: got null, want "B20::Engine::fuelIn"
 - B20-059 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-059 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-059 [opensysml-py-props] fail: targetInput B20::Vehicle::s2: got None, want 'B20::Engine::fuelIn'
 - B20-059 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-059 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-059 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
 - B20-059 [opensysml-ts] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-059 [sysml-toolkit-rs-checked] error: targetInputFeature refused by the checked reader: property has an incomplete derivation
-- B20-060 [opensysml-go-props] fail: targetInput B20::Vehicle::s2: got null, want "B20::Engine::fuelIn"
 - B20-060 [opensysml-go] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-060 [opensysml-java] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
-- B20-060 [opensysml-py-props] fail: targetInput B20::Vehicle::s2: got None, want 'B20::Engine::fuelIn'
 - B20-060 [opensysml-py] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-060 [opensysml-rs] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API does not offer it either
 - B20-060 [opensysml-ts-wasm] unsupported: no Symbol field for the flow's targetInputFeature; the standard query API is not served by this backend (sysml-wasm has no Query)
