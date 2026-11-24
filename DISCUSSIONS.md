@@ -2734,6 +2734,74 @@ no result for the library-type constructor (6; #20 covers the result).
 Census matrix models grow with the models: elements 3612 -> 3688 (Pilot),
 3444 -> 3512 (sysml-toolkit), 3538 -> 3608 (OpenSysML).
 
+## Step 50: OpenSysML #2549 (#2495 fixed) and #2558; #2556 drops a for loop's variable; C20 loopVariable (1939 cases)
+OpenSysML develop moved from `013190a6f5` to `262a110859`, in two pulls.
+
+`e59fd20871` (14 merges, mostly performance and CI, among them #2520, which
+moves the element-properties reader's placement of unnamed library members so
+it runs once) gave results identical to Step 49, cases and census alike.
+
+`9d148bbd4f` (16 more merges): cases identical, but the census of the matrix
+models lost 36 elements, and `Usage::nestedReference` of the two for loops fell
+from 2/2 to 0 (the Pilot fills both). For `action forAct for i : Integer in (1,
+2, 3) { action each; }` the loop variable `i` is no longer an owned feature.
+Bisected with a scratch worktree and the probe pointed at each build through
+`OPENSYSML_BINARY`: `i` is there at `7e7dcaf3c4` and gone at `0ea62ec65e`,
+#2556's merge (for #2552, element ids of action-body expressions). #2556 leaves
+the variable out on purpose: for a named loop it was a second copy without an
+id, and an unnamed loop already lacked it, which is why the Pilot examples
+(unnamed loops only) showed 0 before. The grammar gives every for loop its
+variable: `ForLoopNode` owns a `ForVariableDeclarationMember`, a
+FeatureMembership owning the loop variable as a ReferenceUsage, which SysML's
+`ForLoopActionUsage::loopVariable` derives as the first ownedFeature. The
+loop's collection and body are not parameters either (`NodeParameterMember`,
+`ActionBodyParameterMember`), which fits C20 `inputCount` 0 for `for`.
+
+New cases, appended (C20-145..168, 1915 -> 1939): read `loopVariable`
+for every action kind and location, null for any kind but `for`. The Pilot
+reads the property; the props and sysml-toolkit adapters read it through
+SysML's derivation (the first ownedFeature, if a ReferenceUsage), since
+OpenSysML does not serve the property ("not derived"); the Symbol adapters
+report it unsupported. The Pilot and both sysml-toolkit suites pass all 24; the
+props suites fail the three `for` cases.
+
+`262a110859` (9 more merges, among them #2549 "Fixes #2495" and #2558, the
+implied relationships of expression-owned elements). Against the v1.1.0
+snapshot, both props suites move 45 cases to pass and none the other way:
+the four #2495 items (C20 send `inputCount` 6, C21 constructor `exprFunction`
+15, library-type constructor `argument` 6, C30 shorthand-transition `source`
+3) and C21 `resultType` 15 (C21-061..072 and the library variant's
+C21-100..102), the cases of #2519, which is still open. Props failures left:
+27, namely B13 first-end references 15, C20 `inputCount` of assign, while and
+for 9 (the cases raised on #2495, issuecomment-7090076098; #2549 does not
+mention them) and C20 `loopVariable` 3. No other suite moved.
+
+Census, the four #2495 rows (OpenSysML / Pilot):
+
+| Row | Before #2042 | After #2042 | `262a110859` | Pilot |
+|--|--|--|--|--|
+| SendActionUsage `input`, matrix models | 13/13 | 0 | 13/13 | 13/13 |
+| ConstructorExpression `function`, Pilot examples | 75 | unanswered | 76/76 | 84/84 |
+| ConstructorExpression `argument`, Pilot examples | 66 | 24 | 67 | 69 |
+| SuccessionAsUsage `targetFeature`, Pilot examples | 223 | 164 | 196 (22 empty, 6 unanswered) | 304 |
+
+The last row recovers only part of the way. Walking the Pilot examples one
+file at a time finds the empty targets in, among others,
+`AHFNorwayTopics.sysml` (the self-transitions `state Idle; accept … then
+Idle;`), `ServerSequence*Realization-3.sysml` (`then continuePublishing;` to a
+merge node), `Fork Join Example.sysml` (`then joinNode;`), `StateTest.sysml`
+and `ActionTest.sysml`. Each form written as a small model answers correctly,
+so the cause depends on more of those files than we isolated.
+Also a large gain from #2558's implied relationships of expression results:
+`Feature::type` of plain Features (expression parameters and results), matrix
+models 34 of 184 -> 174 of 182 (Pilot 190/190), Pilot examples 191 of 4474 ->
+4156 (Pilot 6383/6383). This was the wider gap behind #2519.
+
+A note on method: the Python client starts `$OPENSYSML_BINARY`, or else the
+release cached in `~/.opensysml/bin` (v0.12.1 here). The suite sets the
+variable; ad-hoc probes must set it too (the ones behind our posted comments
+imported the suite's module, which sets it).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2791,3 +2859,4 @@ Step 46 took OpenSysML #2042: the props suites pass 106 more cases, no regressio
 Step 47 took 52 OpenSysML merges (#2496, #2509); no case moved.
 Step 48 took OpenSysML #2516 (#2199 fixed): the props suites pass 24 more cases, B20 passes there.
 Step 49 added 102 cases for #2495 and the message's relatedFeature to C20, C21, C30 and B20: 23 matrices, 1915 cases.
+Step 50 took OpenSysML #2549 (#2495 fixed) and #2558 (C21 resultType passes); #2556 drops a for loop's variable; C20 loopVariable: 23 matrices, 1939 cases.
