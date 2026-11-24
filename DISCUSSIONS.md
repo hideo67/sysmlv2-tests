@@ -2802,6 +2802,31 @@ release cached in `~/.opensysml/bin` (v0.12.1 here). The suite sets the
 variable; ad-hoc probes must set it too (the ones behind our posted comments
 imported the suite's module, which sets it).
 
+## Step 51: OpenSysML #2589 restores the for loop variable; sysml-toolkit v0.13.0; no other case moved
+OpenSysML develop moved from `262a110859` to `60680a21ed`: nineteen merges,
+among them #2589 ("restore typed for-loop variables", part of #2577) and
+#2590/#2602 (action-local connections). sysml-toolkit moved from v0.12.0 to
+v0.13.0.
+
+Suites. opensysml-py-props and opensysml-go-props move C20-166..168
+(`loopVariable` of `for`) fail -> pass; nothing else moves in any suite,
+details included (1879 / 24 / 36 each). The 24 props failures left are B13
+first-end references (15, #2068) and C20 `inputCount` of assign, while and for
+(9), the other half of #2577, which the open #2617 ("reflect action node
+parameters", closes #2577) addresses.
+
+Census (opensysml-go-props). `ForLoopActionUsage::loopVariable` (unanswered ->
+2/2) and `Usage::nestedReference` of the for loops (0 -> 2/2) now match the
+Pilot on both corpora; the Pilot examples, whose loops are unnamed, never had
+them before. #2589 brings the variable back once, typed and with an id: our
+models gain 6 elements (the two variables with their FeatureMembership and
+FeatureTyping), not the 36 that #2556 removed; the Pilot examples gain 5.
+
+sysml-toolkit v0.13.0 (packaging commands, full-JSON export, bindings; no change
+in the reader the suites use): both suites and the census give results
+identical to v0.12.0. #20, #32 and #33 are still open. The suite's Cargo.lock
+follows it (6cac59a).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2860,3 +2885,4 @@ Step 47 took 52 OpenSysML merges (#2496, #2509); no case moved.
 Step 48 took OpenSysML #2516 (#2199 fixed): the props suites pass 24 more cases, B20 passes there.
 Step 49 added 102 cases for #2495 and the message's relatedFeature to C20, C21, C30 and B20: 23 matrices, 1915 cases.
 Step 50 took OpenSysML #2549 (#2495 fixed) and #2558 (C21 resultType passes); #2556 drops a for loop's variable; C20 loopVariable: 23 matrices, 1939 cases.
+Step 51 took OpenSysML #2589 (for loop variable restored) and sysml-toolkit v0.13.0; no other case moved.
