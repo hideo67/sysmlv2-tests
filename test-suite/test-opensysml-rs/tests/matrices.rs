@@ -472,6 +472,13 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
                     .into(),
             ))
         }
+        "loopVariable" => {
+            return Err(Unsupported(
+                "the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned \
+                 features in order"
+                    .into(),
+            ))
+        }
         "inputCount" => {
             return Err(Unsupported(
                 "the Symbol API has no Type::input (the owned and inherited features with direction \

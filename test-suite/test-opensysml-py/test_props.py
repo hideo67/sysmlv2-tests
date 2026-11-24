@@ -361,6 +361,12 @@ def do_check(model, case):
         return api.chain_form(f) if f else None
     if check == "inputCount":
         return len(api.elements(e, "input"))
+    if check == "loopVariable":
+        # SysML derives ForLoopActionUsage::loopVariable as the first ownedFeature, if a ReferenceUsage
+        if e.metaclass != "ForLoopActionUsage":
+            return None
+        f = api.element(e, "ownedFeature")
+        return api.qn(f) if f is not None and f.metaclass == "ReferenceUsage" else None
     if check in ("exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType",
                  "exprFunction"):
         x = api.element(e, "payloadArgument") if e.metaclass == "SendActionUsage" else api.value_expr(e)

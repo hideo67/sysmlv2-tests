@@ -520,6 +520,10 @@ class MatricesTest {
                 return f == null ? null : f.getQualifiedName();
             }
             case "inputCount": return ((Type) e).getInput().size();
+            case "loopVariable": {
+                if (!(e instanceof ForLoopActionUsage f) || f.getLoopVariable() == null) return null;
+                return f.getLoopVariable().getQualifiedName();
+            }
             case "endCount":
                 return (e instanceof Connector k ? k.getConnectorEnd() : ((Type) e).getEndFeature()).size();
             case "endNames":

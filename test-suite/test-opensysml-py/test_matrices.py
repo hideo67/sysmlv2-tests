@@ -252,6 +252,8 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
                  "exprFunction"):
         raise Unsupported("the Symbol API reports neither the arguments of an action nor expression structure, "
                           "so no constructor expression is reachable")
+    if check == "loopVariable":
+        raise Unsupported("the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order")
     if check == "inputCount":
         raise Unsupported("the Symbol API has no Type::input (the owned and inherited features with direction in or inout)")
     if check == "isDefault":

@@ -629,6 +629,12 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         // C21: the constructor, the payload of a send action or the value expression of a feature
         "inputCount" => json!(api.elements(e, "input")?.len()),
+        // SysML derives ForLoopActionUsage::loopVariable as the first ownedFeature, if a ReferenceUsage
+        "loopVariable" if api.metaclass(e) != "ForLoopActionUsage" => Value::Null,
+        "loopVariable" => match api.elements(e, "ownedFeature")?.first() {
+            Some(&f) if api.metaclass(f) == "ReferenceUsage" => json!(api.qn(f)),
+            _ => Value::Null,
+        },
         "exprKind" | "instantiatedType" | "argumentCount" | "argumentReferences" | "hasResult" | "resultType"
         | "exprFunction" => {
             let x = if api.metaclass(e) == "SendActionUsage" { api.element(e, "payloadArgument")? } else { api.value_expr(e)? };

@@ -364,6 +364,8 @@ async function check(m: Model, c: Case): Promise<Json> {
     case "exprFunction":
       throw new Unsupported("the Symbol API reports neither the arguments of an action nor expression structure, " +
         "so no constructor expression is reachable");
+    case "loopVariable":
+      throw new Unsupported("the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order");
     case "inputCount":
       throw new Unsupported("the Symbol API has no Type::input (the owned and inherited features with direction in or inout)");
     case "isDefault":

@@ -457,6 +457,8 @@ class MatricesTest {
             case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType", "exprFunction":
                 abort("UNSUPPORTED: the Symbol API reports neither the arguments of an action nor expression structure, "
                     + "so no constructor expression is reachable");
+            case "loopVariable":
+                abort("UNSUPPORTED: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order");
             case "inputCount":
                 abort("UNSUPPORTED: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)");
             case "isDefault":

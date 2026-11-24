@@ -347,6 +347,8 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 	case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType", "exprFunction":
 		return nil, unsupported("the Symbol API reports neither the arguments of an action nor expression structure, " +
 			"so no constructor expression is reachable")
+	case "loopVariable":
+		return nil, unsupported("the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order")
 	case "inputCount":
 		return nil, unsupported("the Symbol API has no Type::input (the owned and inherited features with direction in or inout)")
 	case "isDefault":

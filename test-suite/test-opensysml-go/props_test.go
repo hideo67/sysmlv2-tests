@@ -993,6 +993,16 @@ func propsRead(a *propsAPI, c caseSpec, e opensysml.ElementRef, owner *opensysml
 	case "inputCount":
 		ins, err := a.elements(e, "input")
 		return len(ins), err
+	case "loopVariable":
+		// SysML derives ForLoopActionUsage::loopVariable as the first ownedFeature, if a ReferenceUsage
+		if e.Metaclass != "ForLoopActionUsage" {
+			return nil, nil
+		}
+		f, err := a.element(e, "ownedFeature")
+		if err != nil || f == nil || f.Metaclass != "ReferenceUsage" {
+			return nil, err
+		}
+		return qnOf(f), nil
 	case "exprKind", "instantiatedType", "argumentCount", "argumentReferences", "hasResult", "resultType", "exprFunction":
 		var x *opensysml.ElementRef
 		var err error

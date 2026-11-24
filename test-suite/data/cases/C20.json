@@ -2,7 +2,7 @@
  "matrix": "C20",
  "model": "models/C20.sysml",
  "notes": {
-  "reads": "an argument is compared as the referenced features of its expression, each in\nchain form, as in C10; null when the action has no such argument):\n  kind              the action's metaclass (SendActionUsage, AcceptActionUsage, ...)\n  payloadArgument   SendActionUsage/AcceptActionUsage::payloadArgument\n  senderArgument    SendActionUsage::senderArgument (`via` of a send)\n  receiverArgument  SendActionUsage::receiverArgument (`to` of a send) or\n                    AcceptActionUsage::receiverArgument (`via` of an accept)\n  assignedFeature   AssignmentActionUsage::referent, in chain form\n  inputCount        the number of Type::input (owned and inherited features with direction in or\n                    inout); appended after the original reads to keep their IDs\nState entry actions are left to C30.",
+  "reads": "an argument is compared as the referenced features of its expression, each in\nchain form, as in C10; null when the action has no such argument):\n  kind              the action's metaclass (SendActionUsage, AcceptActionUsage, ...)\n  payloadArgument   SendActionUsage/AcceptActionUsage::payloadArgument\n  senderArgument    SendActionUsage::senderArgument (`via` of a send)\n  receiverArgument  SendActionUsage::receiverArgument (`to` of a send) or\n                    AcceptActionUsage::receiverArgument (`via` of an accept)\n  assignedFeature   AssignmentActionUsage::referent, in chain form\n  inputCount        the number of Type::input (owned and inherited features with direction in or\n                    inout); appended after the original reads to keep their IDs\n  loopVariable      ForLoopActionUsage::loopVariable (qualified name), which SysML derives as the\n                    first ownedFeature when it is a ReferenceUsage (`for i : Integer in ...`\n                    declares it through a FeatureMembership); null for any other kind of action.\n                    Appended after inputCount\nState entry actions are left to C30.",
   "through": "a path: each element is read as a member visible in the previous one"
  },
  "cases": [
@@ -1123,6 +1123,182 @@
    "check": "inputCount",
    "element": "C20::Monitor::supervise::forAct",
    "expect": 2,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-145",
+   "check": "loopVariable",
+   "element": "C20::Supervise::sendVia",
+   "expect": null
+  },
+  {
+   "id": "C20-146",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": null
+  },
+  {
+   "id": "C20-147",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::sendVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-148",
+   "check": "loopVariable",
+   "element": "C20::Supervise::sendTo",
+   "expect": null
+  },
+  {
+   "id": "C20-149",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": null
+  },
+  {
+   "id": "C20-150",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::sendTo",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-151",
+   "check": "loopVariable",
+   "element": "C20::Supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-152",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null
+  },
+  {
+   "id": "C20-153",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::acceptVia",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-154",
+   "check": "loopVariable",
+   "element": "C20::Supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-155",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null
+  },
+  {
+   "id": "C20-156",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::assignCount",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-157",
+   "check": "loopVariable",
+   "element": "C20::Supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-158",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null
+  },
+  {
+   "id": "C20-159",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::performNotify",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-160",
+   "check": "loopVariable",
+   "element": "C20::Supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-161",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null
+  },
+  {
+   "id": "C20-162",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::ifAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-163",
+   "check": "loopVariable",
+   "element": "C20::Supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-164",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null
+  },
+  {
+   "id": "C20-165",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::whileAct",
+   "expect": null,
+   "through": [
+    "C20::monitor",
+    "C20::Monitor::supervise"
+   ]
+  },
+  {
+   "id": "C20-166",
+   "check": "loopVariable",
+   "element": "C20::Supervise::forAct",
+   "expect": "C20::Supervise::forAct::i"
+  },
+  {
+   "id": "C20-167",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": "C20::Monitor::supervise::forAct::i"
+  },
+  {
+   "id": "C20-168",
+   "check": "loopVariable",
+   "element": "C20::Monitor::supervise::forAct",
+   "expect": "C20::Monitor::supervise::forAct::i",
    "through": [
     "C20::monitor",
     "C20::Monitor::supervise"
