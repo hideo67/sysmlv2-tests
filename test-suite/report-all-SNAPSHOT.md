@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `c4ab4c4e48e7`
+Test suite commit: `6cac59a4dfc0`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-24 05:15:16|
-|opensysml-go|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-24 05:15:08|
-|opensysml-java|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-24 05:15:59|
-|opensysml-py-props|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-24 05:15:05|
-|opensysml-py|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-24 05:14:55|
-|opensysml-rs|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 05:15:29|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-24 05:15:49|
-|opensysml-ts|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-24 05:15:38|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-24 05:16:14|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 05:16:03|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 05:16:01|
+|opensysml-go-props|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-24 23:43:36|
+|opensysml-go|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-24 23:43:27|
+|opensysml-java|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-24 23:44:27|
+|opensysml-py-props|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-24 23:43:24|
+|opensysml-py|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-24 23:43:13|
+|opensysml-rs|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 23:43:51|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-24 23:44:15|
+|opensysml-ts|OpenSysML|`nightly-20261124-af30460ff1-56-g60680a21ed` (develop)|[`60680a21ed`](https://github.com/Open-MBEE/OpenSysML/commit/60680a21ed108b7b9af62fead1eaa49488f12198)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-24 23:44:02|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-24 23:44:44|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 23:44:31|
+|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 23:44:28|
 
 Local changes at run time (tracked files only):
 
@@ -42,14 +42,14 @@ Local changes at run time (tracked files only):
 |B20|90|87 / 0 / 3 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|87 / 0 / 3 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|90 / 0 / 0 / 0|60 / 0 / 0 / 30|84 / 6 / 0 / 0|
 |C01|114|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
-|C20|168|153 / 12 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|153 / 12 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|168 / 0 / 0 / 0|165 / 0 / 0 / 3|165 / 3 / 0 / 0|
+|C20|168|156 / 9 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|156 / 9 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|168 / 0 / 0 / 0|165 / 0 / 0 / 3|165 / 3 / 0 / 0|
 |C21|105|105 / 0 / 0 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|105 / 0 / 0 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|105 / 0 / 0 / 0|60 / 0 / 0 / 45|60 / 45 / 0 / 0|
 |C30|108|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |D10|45|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1939|1876 / 27 / 36 / 0|877 / 75 / 987 / 0|867 / 85 / 987 / 0|1876 / 27 / 36 / 0|877 / 75 / 987 / 0|861 / 85 / 993 / 0|861 / 85 / 993 / 0|867 / 85 / 987 / 0|1889 / 0 / 50 / 0|1736 / 18 / 50 / 135|1797 / 92 / 50 / 0|
+|**all**|1939|1879 / 24 / 36 / 0|877 / 75 / 987 / 0|867 / 85 / 987 / 0|1879 / 24 / 36 / 0|877 / 75 / 987 / 0|861 / 85 / 993 / 0|861 / 85 / 993 / 0|867 / 85 / 987 / 0|1889 / 0 / 50 / 0|1736 / 18 / 50 / 135|1797 / 92 / 50 / 0|
 
 ## Results
 
@@ -1607,9 +1607,9 @@ Local changes at run time (tracked files only):
 |C20-163|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-164|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-165|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-166|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-167|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-168|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-166|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-167|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-168|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-001|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-002|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-003|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -7091,26 +7091,20 @@ Local changes at run time (tracked files only):
 - C20-165 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-165 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-165 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
-- C20-166 [opensysml-go-props] fail: loopVariable C20::Supervise::forAct: got null, want "C20::Supervise::forAct::i"
 - C20-166 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-166 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
-- C20-166 [opensysml-py-props] fail: loopVariable C20::Supervise::forAct: got None, want 'C20::Supervise::forAct::i'
 - C20-166 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-166 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-166 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-166 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
-- C20-167 [opensysml-go-props] fail: loopVariable C20::Monitor::supervise::forAct: got null, want "C20::Monitor::supervise::forAct::i"
 - C20-167 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-167 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
-- C20-167 [opensysml-py-props] fail: loopVariable C20::Monitor::supervise::forAct: got None, want 'C20::Monitor::supervise::forAct::i'
 - C20-167 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-167 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-167 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-167 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
-- C20-168 [opensysml-go-props] fail: loopVariable C20::Monitor::supervise::forAct: got null, want "C20::Monitor::supervise::forAct::i"
 - C20-168 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-168 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
-- C20-168 [opensysml-py-props] fail: loopVariable C20::Monitor::supervise::forAct: got None, want 'C20::Monitor::supervise::forAct::i'
 - C20-168 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-168 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C20-168 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
