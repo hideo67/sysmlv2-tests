@@ -2,6 +2,7 @@
 # Update the committed SNAPSHOT reports from results/:
 #   report-all-SNAPSHOT.md   ./report.py --details   (every suite of run-all.sh)
 #   census-SNAPSHOT.md       ./census_report.py      (every census of run-census.sh)
+#   PROGRESS-SNAPSHOT.md     ./progress.py           (every committed report snapshot, plus this one)
 #
 #   ./update-snapshots.sh                  both, from the results already in results/
 #   ./update-snapshots.sh report           only the test result snapshot
@@ -88,5 +89,7 @@ for k in "${which[@]}"; do
     rm -f "$tmp"; echo "== $k: ${gen[*]} failed; $out left as it was"; rc=1
   fi
 done
-git diff --stat -- report-all-SNAPSHOT.md census-SNAPSHOT.md
+echo "== progress: ./progress.py"
+./progress.py || rc=1
+git diff --stat -- report-all-SNAPSHOT.md census-SNAPSHOT.md PROGRESS-SNAPSHOT.md
 exit $rc

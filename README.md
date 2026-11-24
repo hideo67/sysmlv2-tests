@@ -39,9 +39,12 @@ siblings of the test-suite are cloned project repositories of the MDKs to be tes
 
 - [Test result snapshot](test-suite/report-all-SNAPSHOT.md)
 - [Derived-property census snapshot](test-suite/census-SNAPSHOT.md)
+- [Progress across snapshots](test-suite/PROGRESS-SNAPSHOT.md): failures per suite over
+  time, with release tags, built from the history of the test result snapshot
 
 To update them, run `test-suite/update-snapshots.sh --run`. It runs every
-suite and census, then writes both snapshots from `results/`. Without `--run`,
+suite and census, then writes both snapshots from `results/`, and the progress
+page from their git history (`test-suite/progress.py`). Without `--run`,
 it writes them from the results already there. Before writing, it checks that
 every suite recorded every case and that all suites of one MDK ran against the
 same commit. If a check fails, it writes nothing (`--force` overrides). It
