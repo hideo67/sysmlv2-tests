@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `3518dbd2808c`
+Test suite commit: `c4ab4c4e48e7`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-23 02:24:16|
-|opensysml-go|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-23 02:24:08|
-|opensysml-java|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-23 02:25:00|
-|opensysml-py-props|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-23 02:24:05|
-|opensysml-py|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-23 02:23:53|
-|opensysml-rs|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 02:24:29|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-23 02:24:50|
-|opensysml-ts|OpenSysML|`nightly-20261122-00a68e3a61-168-g013190a6f5` (develop)|[`013190a6f5`](https://github.com/Open-MBEE/OpenSysML/commit/013190a6f50048bde91c255604077fcb4c680679)|2026-11-22|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-23 02:24:39|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-23 02:25:14|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 02:25:03|
-|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-23 02:25:01|
+|opensysml-go-props|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-24 05:15:16|
+|opensysml-go|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-24 05:15:08|
+|opensysml-java|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-24 05:15:59|
+|opensysml-py-props|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-24 05:15:05|
+|opensysml-py|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-24 05:14:55|
+|opensysml-rs|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 05:15:29|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-24 05:15:49|
+|opensysml-ts|OpenSysML|`nightly-20261123-083410d18f-163-g262a110859` (develop)|[`262a110859`](https://github.com/Open-MBEE/OpenSysML/commit/262a110859043cc75c1241386d76c54e6883641d)|2026-11-24|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-24 05:15:38|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-24 05:16:14|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 05:16:03|
+|sysml-toolkit-rs|sysml-toolkit|`v0.12.0` (HEAD)|[`ab3d590fa8`](https://github.com/Open-MBEE/sysml-toolkit/commit/ab3d590fa8bf3602eeae7fcf9e5e263f1e5b4768)|2026-11-08|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-24 05:16:01|
 
 Local changes at run time (tracked files only):
 
@@ -42,14 +42,14 @@ Local changes at run time (tracked files only):
 |B20|90|87 / 0 / 3 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|87 / 0 / 3 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|90 / 0 / 0 / 0|60 / 0 / 0 / 30|84 / 6 / 0 / 0|
 |C01|114|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
-|C20|144|126 / 15 / 3 / 0|24 / 0 / 120 / 0|24 / 0 / 120 / 0|126 / 15 / 3 / 0|24 / 0 / 120 / 0|24 / 0 / 120 / 0|24 / 0 / 120 / 0|24 / 0 / 120 / 0|144 / 0 / 0 / 0|141 / 0 / 0 / 3|141 / 3 / 0 / 0|
-|C21|105|69 / 15 / 21 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|69 / 15 / 21 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|105 / 0 / 0 / 0|60 / 0 / 0 / 45|60 / 45 / 0 / 0|
-|C30|108|105 / 3 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|105 / 3 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
+|C20|168|153 / 12 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|153 / 12 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|168 / 0 / 0 / 0|165 / 0 / 0 / 3|165 / 3 / 0 / 0|
+|C21|105|105 / 0 / 0 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|105 / 0 / 0 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|0 / 0 / 105 / 0|105 / 0 / 0 / 0|60 / 0 / 0 / 45|60 / 45 / 0 / 0|
+|C30|108|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |D10|45|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|1915|1810 / 48 / 57 / 0|877 / 75 / 963 / 0|867 / 85 / 963 / 0|1810 / 48 / 57 / 0|877 / 75 / 963 / 0|861 / 85 / 969 / 0|861 / 85 / 969 / 0|867 / 85 / 963 / 0|1865 / 0 / 50 / 0|1712 / 18 / 50 / 135|1773 / 92 / 50 / 0|
+|**all**|1939|1876 / 27 / 36 / 0|877 / 75 / 987 / 0|867 / 85 / 987 / 0|1876 / 27 / 36 / 0|877 / 75 / 987 / 0|861 / 85 / 993 / 0|861 / 85 / 993 / 0|867 / 85 / 987 / 0|1889 / 0 / 50 / 0|1736 / 18 / 50 / 135|1797 / 92 / 50 / 0|
 
 ## Results
 
@@ -1562,12 +1562,12 @@ Local changes at run time (tracked files only):
 |C20-118|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-119|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-120|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-121|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-122|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-123|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-124|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-125|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-126|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-121|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-122|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-123|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-124|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-125|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-126|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-127|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-128|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-129|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1586,6 +1586,30 @@ Local changes at run time (tracked files only):
 |C20-142|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-143|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-144|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-145|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-146|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-147|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-148|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-149|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-150|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-151|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-152|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-153|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-154|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-155|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-156|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-157|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-158|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-159|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-160|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-161|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-162|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-163|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-164|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-165|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-166|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-167|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-168|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-001|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-002|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-003|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1646,51 +1670,51 @@ Local changes at run time (tracked files only):
 |C21-058|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C21-059|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C21-060|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-061|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-062|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-063|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-064|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-065|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-066|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-067|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-068|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-069|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-070|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-071|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-072|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-073|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-074|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-075|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-076|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-077|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-078|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-079|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-080|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-081|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-082|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-083|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-084|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-061|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-062|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-063|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-064|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-065|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-066|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-067|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-068|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-069|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-070|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-071|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-072|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-073|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-074|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-075|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-076|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-077|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-078|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-079|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-080|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-081|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-082|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-083|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-084|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C21-085|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-086|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-087|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-088|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-089|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-090|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C21-091|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C21-092|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C21-093|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C21-094|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C21-095|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C21-096|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-091|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-092|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-093|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-094|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-095|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-096|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-097|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C21-098|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C21-099|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-100|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-101|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-102|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-103|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-104|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
-|C21-105|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-100|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-101|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-102|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-103|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-104|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-105|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
 |C30-001|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-002|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-003|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1769,9 +1793,9 @@ Local changes at run time (tracked files only):
 |C30-076|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-077|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-078|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C30-079|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C30-080|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C30-081|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-079|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-080|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C30-081|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-082|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-083|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-084|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -6779,50 +6803,38 @@ Local changes at run time (tracked files only):
 - C20-120 [opensysml-rs] unsupported: the Symbol API reports no arguments of an action
 - C20-120 [opensysml-ts-wasm] unsupported: the Symbol API reports no arguments of an action
 - C20-120 [opensysml-ts] unsupported: the Symbol API reports no arguments of an action
-- C20-121 [opensysml-go-props] fail: inputCount C20::Supervise::sendVia: got 0, want 3
 - C20-121 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-121 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-121 [opensysml-py-props] fail: inputCount C20::Supervise::sendVia: got 0, want 3
 - C20-121 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-121 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-121 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-121 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-122 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::sendVia: got 0, want 3
 - C20-122 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-122 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-122 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::sendVia: got 0, want 3
 - C20-122 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-122 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-122 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-122 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-123 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::sendVia: got 0, want 3
 - C20-123 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-123 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-123 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::sendVia: got 0, want 3
 - C20-123 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-123 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-123 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-123 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-124 [opensysml-go-props] fail: inputCount C20::Supervise::sendTo: got 0, want 3
 - C20-124 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-124 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-124 [opensysml-py-props] fail: inputCount C20::Supervise::sendTo: got 0, want 3
 - C20-124 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-124 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-124 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-124 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-125 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::sendTo: got 0, want 3
 - C20-125 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-125 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-125 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::sendTo: got 0, want 3
 - C20-125 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-125 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-125 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-125 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-126 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::sendTo: got 0, want 3
 - C20-126 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-126 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-126 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::sendTo: got 0, want 3
 - C20-126 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-126 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-126 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
@@ -6953,6 +6965,156 @@ Local changes at run time (tracked files only):
 - C20-144 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-144 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-144 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
+- C20-145 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-145 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-145 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-145 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-145 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-145 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-146 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-146 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-146 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-146 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-146 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-146 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-147 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-147 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-147 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-147 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-147 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-147 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-148 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-148 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-148 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-148 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-148 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-148 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-149 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-149 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-149 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-149 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-149 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-149 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-150 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-150 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-150 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-150 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-150 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-150 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-151 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-151 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-151 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-151 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-151 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-151 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-152 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-152 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-152 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-152 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-152 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-152 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-153 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-153 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-153 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-153 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-153 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-153 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-154 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-154 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-154 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-154 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-154 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-154 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-155 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-155 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-155 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-155 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-155 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-155 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-156 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-156 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-156 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-156 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-156 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-156 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-157 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-157 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-157 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-157 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-157 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-157 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-158 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-158 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-158 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-158 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-158 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-158 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-159 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-159 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-159 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-159 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-159 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-159 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-160 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-160 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-160 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-160 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-160 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-160 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-161 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-161 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-161 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-161 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-161 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-161 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-162 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-162 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-162 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-162 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-162 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-162 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-163 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-163 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-163 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-163 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-163 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-163 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-164 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-164 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-164 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-164 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-164 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-164 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-165 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-165 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-165 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-165 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-165 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-165 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-166 [opensysml-go-props] fail: loopVariable C20::Supervise::forAct: got null, want "C20::Supervise::forAct::i"
+- C20-166 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-166 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-166 [opensysml-py-props] fail: loopVariable C20::Supervise::forAct: got None, want 'C20::Supervise::forAct::i'
+- C20-166 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-166 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-166 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-166 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-167 [opensysml-go-props] fail: loopVariable C20::Monitor::supervise::forAct: got null, want "C20::Monitor::supervise::forAct::i"
+- C20-167 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-167 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-167 [opensysml-py-props] fail: loopVariable C20::Monitor::supervise::forAct: got None, want 'C20::Monitor::supervise::forAct::i'
+- C20-167 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-167 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-167 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-167 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-168 [opensysml-go-props] fail: loopVariable C20::Monitor::supervise::forAct: got null, want "C20::Monitor::supervise::forAct::i"
+- C20-168 [opensysml-go] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-168 [opensysml-java] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-168 [opensysml-py-props] fail: loopVariable C20::Monitor::supervise::forAct: got None, want 'C20::Monitor::supervise::forAct::i'
+- C20-168 [opensysml-py] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-168 [opensysml-rs] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-168 [opensysml-ts-wasm] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
+- C20-168 [opensysml-ts] unsupported: the Symbol API has no ForLoopActionUsage::loopVariable, nor the loop's owned features in order
 - C21-001 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-001 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-001 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
@@ -7337,240 +7499,192 @@ Local changes at run time (tracked files only):
 - C21-060 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-060 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-060 [sysml-toolkit-rs] fail: hasResult C21::Emitter::emit::sigValue: got false, want true
-- C21-061 [opensysml-go-props] fail: resultType C21::Emit::sendNone: got null, want "C21::Sig"
 - C21-061 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-061 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-061 [opensysml-py-props] fail: resultType C21::Emit::sendNone: got None, want 'C21::Sig'
 - C21-061 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-061 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-061 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-061 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-061 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-061 [sysml-toolkit-rs] fail: resultType C21::Emit::sendNone: got null, want "C21::Sig"
-- C21-062 [opensysml-go-props] fail: resultType C21::Emitter::emit::sendNone: got null, want "C21::Sig"
 - C21-062 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-062 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-062 [opensysml-py-props] fail: resultType C21::Emitter::emit::sendNone: got None, want 'C21::Sig'
 - C21-062 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-062 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-062 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-062 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-062 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-062 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendNone: got null, want "C21::Sig"
-- C21-063 [opensysml-go-props] fail: resultType C21::Emitter::emit::sendNone: got null, want "C21::Sig"
 - C21-063 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-063 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-063 [opensysml-py-props] fail: resultType C21::Emitter::emit::sendNone: got None, want 'C21::Sig'
 - C21-063 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-063 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-063 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-063 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-063 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-063 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendNone: got null, want "C21::Sig"
-- C21-064 [opensysml-go-props] fail: resultType C21::Emit::sendRef: got null, want "C21::Sig"
 - C21-064 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-064 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-064 [opensysml-py-props] fail: resultType C21::Emit::sendRef: got None, want 'C21::Sig'
 - C21-064 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-064 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-064 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-064 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-064 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-064 [sysml-toolkit-rs] fail: resultType C21::Emit::sendRef: got null, want "C21::Sig"
-- C21-065 [opensysml-go-props] fail: resultType C21::Emitter::emit::sendRef: got null, want "C21::Sig"
 - C21-065 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-065 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-065 [opensysml-py-props] fail: resultType C21::Emitter::emit::sendRef: got None, want 'C21::Sig'
 - C21-065 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-065 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-065 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-065 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-065 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-065 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendRef: got null, want "C21::Sig"
-- C21-066 [opensysml-go-props] fail: resultType C21::Emitter::emit::sendRef: got null, want "C21::Sig"
 - C21-066 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-066 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-066 [opensysml-py-props] fail: resultType C21::Emitter::emit::sendRef: got None, want 'C21::Sig'
 - C21-066 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-066 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-066 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-066 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-066 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-066 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendRef: got null, want "C21::Sig"
-- C21-067 [opensysml-go-props] fail: resultType C21::Emit::sendChain: got null, want "C21::Sig"
 - C21-067 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-067 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-067 [opensysml-py-props] fail: resultType C21::Emit::sendChain: got None, want 'C21::Sig'
 - C21-067 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-067 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-067 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-067 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-067 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-067 [sysml-toolkit-rs] fail: resultType C21::Emit::sendChain: got null, want "C21::Sig"
-- C21-068 [opensysml-go-props] fail: resultType C21::Emitter::emit::sendChain: got null, want "C21::Sig"
 - C21-068 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-068 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-068 [opensysml-py-props] fail: resultType C21::Emitter::emit::sendChain: got None, want 'C21::Sig'
 - C21-068 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-068 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-068 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-068 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-068 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-068 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendChain: got null, want "C21::Sig"
-- C21-069 [opensysml-go-props] fail: resultType C21::Emitter::emit::sendChain: got null, want "C21::Sig"
 - C21-069 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-069 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-069 [opensysml-py-props] fail: resultType C21::Emitter::emit::sendChain: got None, want 'C21::Sig'
 - C21-069 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-069 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-069 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-069 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-069 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-069 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sendChain: got null, want "C21::Sig"
-- C21-070 [opensysml-go-props] fail: resultType C21::Emit::sigValue: got null, want "C21::Sig"
 - C21-070 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-070 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-070 [opensysml-py-props] fail: resultType C21::Emit::sigValue: got None, want 'C21::Sig'
 - C21-070 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-070 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-070 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-070 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-070 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-070 [sysml-toolkit-rs] fail: resultType C21::Emit::sigValue: got null, want "C21::Sig"
-- C21-071 [opensysml-go-props] fail: resultType C21::Emitter::emit::sigValue: got null, want "C21::Sig"
 - C21-071 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-071 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-071 [opensysml-py-props] fail: resultType C21::Emitter::emit::sigValue: got None, want 'C21::Sig'
 - C21-071 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-071 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-071 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-071 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-071 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-071 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sigValue: got null, want "C21::Sig"
-- C21-072 [opensysml-go-props] fail: resultType C21::Emitter::emit::sigValue: got null, want "C21::Sig"
 - C21-072 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-072 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-072 [opensysml-py-props] fail: resultType C21::Emitter::emit::sigValue: got None, want 'C21::Sig'
 - C21-072 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-072 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-072 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-072 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-072 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-072 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::sigValue: got null, want "C21::Sig"
-- C21-073 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-073 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-073 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-073 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-073 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-073 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-073 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-073 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-073 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-073 [sysml-toolkit-rs] fail: exprFunction C21::Emit::sendNone: got null, want "Performances::Evaluation"
-- C21-074 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-074 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-074 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-074 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-074 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-074 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-074 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-074 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-074 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-074 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sendNone: got null, want "Performances::Evaluation"
-- C21-075 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-075 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-075 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-075 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-075 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-075 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-075 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-075 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-075 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-075 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sendNone: got null, want "Performances::Evaluation"
-- C21-076 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-076 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-076 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-076 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-076 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-076 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-076 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-076 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-076 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-076 [sysml-toolkit-rs] fail: exprFunction C21::Emit::sendRef: got null, want "Performances::Evaluation"
-- C21-077 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-077 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-077 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-077 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-077 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-077 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-077 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-077 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-077 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-077 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sendRef: got null, want "Performances::Evaluation"
-- C21-078 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-078 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-078 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-078 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-078 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-078 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-078 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-078 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-078 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-078 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sendRef: got null, want "Performances::Evaluation"
-- C21-079 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-079 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-079 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-079 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-079 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-079 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-079 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-079 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-079 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-079 [sysml-toolkit-rs] fail: exprFunction C21::Emit::sendChain: got null, want "Performances::Evaluation"
-- C21-080 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-080 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-080 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-080 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-080 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-080 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-080 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-080 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-080 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-080 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sendChain: got null, want "Performances::Evaluation"
-- C21-081 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-081 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-081 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-081 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-081 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-081 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-081 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-081 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-081 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-081 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sendChain: got null, want "Performances::Evaluation"
-- C21-082 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-082 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-082 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-082 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-082 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-082 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-082 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-082 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-082 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-082 [sysml-toolkit-rs] fail: exprFunction C21::Emit::sigValue: got null, want "Performances::Evaluation"
-- C21-083 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-083 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-083 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-083 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-083 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-083 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-083 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-083 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-083 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-083 [sysml-toolkit-rs] fail: exprFunction C21::Emitter::emit::sigValue: got null, want "Performances::Evaluation"
-- C21-084 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-084 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-084 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-084 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-084 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-084 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-084 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
@@ -7613,50 +7727,38 @@ Local changes at run time (tracked files only):
 - C21-090 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-090 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-090 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-091 [opensysml-go-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-091 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-091 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-091 [opensysml-py-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-091 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-091 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-091 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-091 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-092 [opensysml-go-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-092 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-092 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-092 [opensysml-py-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-092 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-092 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-092 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-092 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-093 [opensysml-go-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-093 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-093 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-093 [opensysml-py-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-093 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-093 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-093 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-093 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-094 [opensysml-go-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-094 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-094 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-094 [opensysml-py-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-094 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-094 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-094 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-094 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-095 [opensysml-go-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-095 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-095 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-095 [opensysml-py-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-095 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-095 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-095 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-095 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-096 [opensysml-go-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-096 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-096 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-096 [opensysml-py-props] unsupported: argument of ConstructorExpression: InstantiationExpression::argument is not derived for this element: incomplete-structure InstantiationExpression::argument actual arguments cannot be bound to formal input Parameters
 - C21-096 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-096 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-096 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
@@ -7685,60 +7787,48 @@ Local changes at run time (tracked files only):
 - C21-099 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-099 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-099 [sysml-toolkit-rs] fail: hasResult C21Lib::Emitter::emit::shape: got false, want true
-- C21-100 [opensysml-go-props] fail: resultType C21Lib::Emit::shape: got null, want "ShapeItems::Triangle"
 - C21-100 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-100 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-100 [opensysml-py-props] fail: resultType C21Lib::Emit::shape: got None, want 'ShapeItems::Triangle'
 - C21-100 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-100 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-100 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-100 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-100 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-100 [sysml-toolkit-rs] fail: resultType C21Lib::Emit::shape: got null, want "ShapeItems::Triangle"
-- C21-101 [opensysml-go-props] fail: resultType C21Lib::Emitter::emit::shape: got null, want "ShapeItems::Triangle"
 - C21-101 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-101 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-101 [opensysml-py-props] fail: resultType C21Lib::Emitter::emit::shape: got None, want 'ShapeItems::Triangle'
 - C21-101 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-101 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-101 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-101 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-101 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-101 [sysml-toolkit-rs] fail: resultType C21Lib::Emitter::emit::shape: got null, want "ShapeItems::Triangle"
-- C21-102 [opensysml-go-props] fail: resultType C21Lib::Emitter::emit::shape: got null, want "ShapeItems::Triangle"
 - C21-102 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-102 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-102 [opensysml-py-props] fail: resultType C21Lib::Emitter::emit::shape: got None, want 'ShapeItems::Triangle'
 - C21-102 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-102 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-102 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-102 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-102 [sysml-toolkit-rs-checked] error: result refused by the checked reader: property has an incomplete derivation
 - C21-102 [sysml-toolkit-rs] fail: resultType C21Lib::Emitter::emit::shape: got null, want "ShapeItems::Triangle"
-- C21-103 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-103 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-103 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-103 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-103 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-103 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-103 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-103 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-103 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-103 [sysml-toolkit-rs] fail: exprFunction C21Lib::Emit::shape: got null, want "Performances::Evaluation"
-- C21-104 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-104 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-104 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-104 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-104 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-104 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-104 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-104 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-104 [sysml-toolkit-rs-checked] error: function refused by the checked reader: type projection is incomplete: MissingRequiredFamilies
 - C21-104 [sysml-toolkit-rs] fail: exprFunction C21Lib::Emitter::emit::shape: got null, want "Performances::Evaluation"
-- C21-105 [opensysml-go-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-105 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-105 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
-- C21-105 [opensysml-py-props] unsupported: function of ConstructorExpression: Expression::function is not derived for this element: not-applicable Expression::function is not defined for a ConstructorExpression
 - C21-105 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-105 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-105 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
@@ -8177,26 +8267,20 @@ Local changes at run time (tracked files only):
 - C30-078 [opensysml-rs] unsupported: no Symbol field for effectAction; the standard query API does not offer it either
 - C30-078 [opensysml-ts-wasm] unsupported: no Symbol field for effectAction; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-078 [opensysml-ts] unsupported: no Symbol field for effectAction; the standard query API does not offer it either
-- C30-079 [opensysml-go-props] fail: source C30::Ctl: got "C30::Ctl", want "C30::Ctl::sWait"
 - C30-079 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-079 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
-- C30-079 [opensysml-py-props] fail: source C30::Ctl: got 'C30::Ctl', want 'C30::Ctl::sWait'
 - C30-079 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-079 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-079 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-079 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
-- C30-080 [opensysml-go-props] fail: source C30::Ctl: got "C30::Ctl", want "C30::Ctl::sWait"
 - C30-080 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-080 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
-- C30-080 [opensysml-py-props] fail: source C30::Ctl: got 'C30::Ctl', want 'C30::Ctl::sWait'
 - C30-080 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-080 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-080 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
 - C30-080 [opensysml-ts] unsupported: no Symbol field for source; available through the standard query API (source)
-- C30-081 [opensysml-go-props] fail: source C30::Ctl: got "C30::Ctl", want "C30::Ctl::sWait"
 - C30-081 [opensysml-go] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-081 [opensysml-java] unsupported: no Symbol field for source; available through the standard query API (source)
-- C30-081 [opensysml-py-props] fail: source C30::Ctl: got 'C30::Ctl', want 'C30::Ctl::sWait'
 - C30-081 [opensysml-py] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-081 [opensysml-rs] unsupported: no Symbol field for source; available through the standard query API (source)
 - C30-081 [opensysml-ts-wasm] unsupported: no Symbol field for source; the standard query API is not served by this backend (sysml-wasm has no Query)
