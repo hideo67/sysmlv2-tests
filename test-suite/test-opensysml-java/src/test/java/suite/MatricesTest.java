@@ -573,6 +573,14 @@ class MatricesTest {
             }
             case "kind":
                 return metaclassOf(s.kind());
+            // SysML derives both as the reference subsetting's feature, or else the usage itself
+            case "performedAction", "exhibitedState": {
+                if (s.kind().equals("stateUsage"))
+                    abort("UNSUPPORTED: the Symbol API kinds an ExhibitStateUsage as stateUsage, so an exhibited state cannot be told from a state usage");
+                if (!s.kind().equals("performActionUsage") || check.equals("exhibitedState")) return null;
+                return s.specializations().stream().filter(sp -> sp.kind().equals("references"))
+                    .map(sp -> (Object) sp.targetId().orElse("")).findFirst().orElse(s.id());
+            }
             // Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
             case "isAbstract":
                 return "true".equals(s.metadata().get("abstract"));

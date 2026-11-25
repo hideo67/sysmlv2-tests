@@ -581,6 +581,20 @@ func doCheck(ctx context.Context, cl opensysml.Client, m *opensysml.Model, c cas
 		return out, nil
 	case "kind":
 		return metaclassOf(sym.Kind), nil
+	case "performedAction", "exhibitedState":
+		// SysML derives both as the reference subsetting's feature, or else the usage itself
+		if sym.Kind == "stateUsage" {
+			return nil, unsupported("the Symbol API kinds an ExhibitStateUsage as stateUsage, so an exhibited state cannot be told from a state usage")
+		}
+		if sym.Kind != "performActionUsage" || c.Check == "exhibitedState" {
+			return nil, nil
+		}
+		for _, sp := range sym.Specializations {
+			if sp.Kind == "references" {
+				return sp.TargetID, nil
+			}
+		}
+		return sym.ID, nil
 	case "isAbstract":
 		// Symbol metadata carries `abstract: true` for an abstract element, nothing otherwise
 		return sym.Metadata["abstract"] == "true", nil

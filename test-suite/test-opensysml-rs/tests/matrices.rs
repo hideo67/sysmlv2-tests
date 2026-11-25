@@ -624,6 +624,24 @@ fn check(ctx: &mut Ctx, m: &Model, c: &Value) -> R<Value> {
             }
         }
         "kind" => json!(metaclass_of(s.kind())),
+        // SysML derives both as the reference subsetting's feature, or else the usage itself
+        "performedAction" | "exhibitedState" => {
+            if s.kind() == "stateUsage" {
+                return Err(Unsupported(
+                    "the Symbol API kinds an ExhibitStateUsage as stateUsage, so an exhibited state \
+                     cannot be told from a state usage"
+                        .into(),
+                ));
+            }
+            if s.kind() != "performActionUsage" || check == "exhibitedState" {
+                Value::Null
+            } else {
+                match s.specializations().into_iter().find(|sp| sp.kind == "references") {
+                    Some(sp) => json!(sp.target_id),
+                    None => json!(s.id()),
+                }
+            }
+        }
         // Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
         "isAbstract" => json!(meta.get("abstract").is_some_and(|v| v == "true")),
         "isVariation" => json!(meta.get("variation").is_some_and(|v| v == "true")),

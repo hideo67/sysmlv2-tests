@@ -105,6 +105,11 @@ def is_feature_kind(kind):
     return kind not in NON_FEATURE_KINDS and not kind.endswith("Def")
 
 
+# C31: a perform action is told by its kind; an exhibited state is not
+NO_EXHIBIT_KIND = ("the Symbol API kinds an ExhibitStateUsage as stateUsage, so an exhibited state "
+                   "cannot be told from a state usage")
+
+
 def metaclass_of(kind):
     """The Symbol kind spelled as the spec metaclass: lower camel case, with `Def` for
     `Definition` and the abbreviations of KIND_WORDS expanded (`calcDef` -> `CalculationDefinition`)."""
@@ -318,6 +323,14 @@ def do_check(model, check, element, through=None, unnamed=None, via=None, subjec
         return facts.get("severity")
     if check == "kind":
         return metaclass_of(s.kind)
+    if check in ("performedAction", "exhibitedState"):
+        # SysML derives both as the reference subsetting's feature, or else the usage itself
+        if s.kind == "stateUsage":
+            raise Unsupported(NO_EXHIBIT_KIND)
+        if s.kind != "performActionUsage" or check == "exhibitedState":
+            return None
+        refs = [sp.target_id for sp in s.specializations if sp.kind == "references"]
+        return refs[0] if refs else s.id
     if check in ("isAbstract", "isVariation"):
         # Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
         return s.metadata.get("abstract" if check == "isAbstract" else "variation") == "true"

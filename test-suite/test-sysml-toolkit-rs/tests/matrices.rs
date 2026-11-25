@@ -629,6 +629,21 @@ fn check(api: &mut Api, c: &Value) -> Result<Outcome, String> {
         },
         // C21: the constructor, the payload of a send action or the value expression of a feature
         "inputCount" => json!(api.elements(e, "input")?.len()),
+        // SysML derives both as the referenced feature of the ownedReferenceSubsetting, or else the
+        // usage itself (exhibitedState redefines performedAction)
+        "performedAction" | "exhibitedState"
+            if !matches!(api.metaclass(e), "PerformActionUsage" | "ExhibitStateUsage" | "IncludeUseCaseUsage")
+                || (check == "exhibitedState" && api.metaclass(e) != "ExhibitStateUsage") =>
+        {
+            Value::Null
+        }
+        "performedAction" | "exhibitedState" => match api.element(e, "ownedReferenceSubsetting")? {
+            Some(rs) => match api.element(rs, "referencedFeature")? {
+                Some(f) => json!(api.qn(f)),
+                None => Value::Null,
+            },
+            None => json!(api.qn(e)),
+        },
         // SysML derives ForLoopActionUsage::loopVariable as the first ownedFeature, if a ReferenceUsage
         "loopVariable" if api.metaclass(e) != "ForLoopActionUsage" => Value::Null,
         "loopVariable" => match api.elements(e, "ownedFeature")?.first() {

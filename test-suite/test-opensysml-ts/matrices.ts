@@ -471,6 +471,13 @@ async function check(m: Model, c: Case): Promise<Json> {
     }
     case "kind":
       return metaclassOf(s.kind);
+    case "performedAction":
+    case "exhibitedState": {
+      // SysML derives both as the reference subsetting's feature, or else the usage itself
+      if (s.kind === "stateUsage") throw new Unsupported("the Symbol API kinds an ExhibitStateUsage as stateUsage, so an exhibited state cannot be told from a state usage");
+      if (s.kind !== "performActionUsage" || c.check === "exhibitedState") return null;
+      return s.specializations.find((sp) => sp.kind === "references")?.targetId ?? s.id;
+    }
     // Symbol metadata carries `abstract` / `variation: true` when they hold, nothing otherwise
     case "isAbstract":
       return s.metadata.abstract === "true";

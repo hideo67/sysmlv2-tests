@@ -524,6 +524,14 @@ class MatricesTest {
                 if (!(e instanceof ForLoopActionUsage f) || f.getLoopVariable() == null) return null;
                 return f.getLoopVariable().getQualifiedName();
             }
+            case "performedAction": {
+                if (!(e instanceof PerformActionUsage p) || p.getPerformedAction() == null) return null;
+                return p.getPerformedAction().getQualifiedName();
+            }
+            case "exhibitedState": {
+                if (!(e instanceof ExhibitStateUsage x) || x.getExhibitedState() == null) return null;
+                return x.getExhibitedState().getQualifiedName();
+            }
             case "endCount":
                 return (e instanceof Connector k ? k.getConnectorEnd() : ((Type) e).getEndFeature()).size();
             case "endNames":

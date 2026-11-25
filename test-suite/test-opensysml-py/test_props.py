@@ -27,6 +27,8 @@ DATA = Path(__file__).resolve().parents[1] / "data"
 SPECS = [json.loads(p.read_text()) for p in sorted((DATA / "cases").glob("*.json"))]
 CASES = [(case.get("model", spec["model"]), case) for spec in SPECS for case in spec["cases"]]
 
+# PerformActionUsage and its specializations
+PERFORMS = ("PerformActionUsage", "ExhibitStateUsage", "IncludeUseCaseUsage")
 NO_OPERATION = "GetElementProperties reads properties only; KerML operation {} is not served"
 
 
@@ -361,6 +363,13 @@ def do_check(model, case):
         return api.chain_form(f) if f else None
     if check == "inputCount":
         return len(api.elements(e, "input"))
+    if check in ("performedAction", "exhibitedState"):
+        # SysML derives both as the referenced feature of the ownedReferenceSubsetting, or else
+        # the usage itself (exhibitedState redefines performedAction)
+        if e.metaclass not in PERFORMS or (check == "exhibitedState" and e.metaclass != "ExhibitStateUsage"):
+            return None
+        rs = api.element(e, "ownedReferenceSubsetting")
+        return api.qn(api.element(rs, "referencedFeature")) if rs is not None else api.qn(e)
     if check == "loopVariable":
         # SysML derives ForLoopActionUsage::loopVariable as the first ownedFeature, if a ReferenceUsage
         if e.metaclass != "ForLoopActionUsage":

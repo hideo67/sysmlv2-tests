@@ -1,0 +1,370 @@
+{
+ "matrix": "C31",
+ "model": "models/C31.sysml",
+ "notes": {
+  "reads": "performedAction  PerformActionUsage::performedAction (qualified name): the referenced\n                   feature of its ownedReferenceSubsetting, or else the usage itself\n  exhibitedState   ExhibitStateUsage::exhibitedState (qualified name), derived the same way;\n                   null for a usage that is not an ExhibitStateUsage",
+  "through": "a path: each element is read as a member visible in the previous one"
+ },
+ "cases": [
+  {
+   "id": "C31-001",
+   "check": "performedAction",
+   "element": "C31::Machine::shared",
+   "expect": "C31::shared"
+  },
+  {
+   "id": "C31-002",
+   "check": "performedAction",
+   "element": "C31::Machine::shared",
+   "expect": "C31::shared",
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-003",
+   "check": "performedAction",
+   "element": "C31::Machine::shared",
+   "expect": "C31::shared",
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-004",
+   "check": "performedAction",
+   "element": "C31::Machine::own",
+   "expect": "C31::Machine::own"
+  },
+  {
+   "id": "C31-005",
+   "check": "performedAction",
+   "element": "C31::Machine::own",
+   "expect": "C31::Machine::own",
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-006",
+   "check": "performedAction",
+   "element": "C31::Machine::own",
+   "expect": "C31::Machine::own",
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-007",
+   "check": "performedAction",
+   "element": "C31::Machine::sharedModes",
+   "expect": "C31::sharedModes"
+  },
+  {
+   "id": "C31-008",
+   "check": "performedAction",
+   "element": "C31::Machine::sharedModes",
+   "expect": "C31::sharedModes",
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-009",
+   "check": "performedAction",
+   "element": "C31::Machine::sharedModes",
+   "expect": "C31::sharedModes",
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-010",
+   "check": "performedAction",
+   "element": "C31::Machine::modes",
+   "expect": "C31::Machine::modes"
+  },
+  {
+   "id": "C31-011",
+   "check": "performedAction",
+   "element": "C31::Machine::modes",
+   "expect": "C31::Machine::modes",
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-012",
+   "check": "performedAction",
+   "element": "C31::Machine::modes",
+   "expect": "C31::Machine::modes",
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-013",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::normal::real",
+   "expect": "C31::Machine::real"
+  },
+  {
+   "id": "C31-014",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::normal::real",
+   "expect": "C31::Machine::real",
+   "through": [
+    "C31::machine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-015",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::normal::real",
+   "expect": "C31::Machine::real",
+   "through": [
+    "C31::subMachine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-016",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::normal::work",
+   "expect": "C31::Machine::modes::normal::work"
+  },
+  {
+   "id": "C31-017",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::normal::work",
+   "expect": "C31::Machine::modes::normal::work",
+   "through": [
+    "C31::machine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-018",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::normal::work",
+   "expect": "C31::Machine::modes::normal::work",
+   "through": [
+    "C31::subMachine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-019",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::idle::real",
+   "expect": "C31::Machine::real"
+  },
+  {
+   "id": "C31-020",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::idle::real",
+   "expect": "C31::Machine::real",
+   "through": [
+    "C31::machine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::idle"
+   ]
+  },
+  {
+   "id": "C31-021",
+   "check": "performedAction",
+   "element": "C31::Machine::modes::idle::real",
+   "expect": "C31::Machine::real",
+   "through": [
+    "C31::subMachine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::idle"
+   ]
+  },
+  {
+   "id": "C31-022",
+   "check": "exhibitedState",
+   "element": "C31::Machine::shared",
+   "expect": null
+  },
+  {
+   "id": "C31-023",
+   "check": "exhibitedState",
+   "element": "C31::Machine::shared",
+   "expect": null,
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-024",
+   "check": "exhibitedState",
+   "element": "C31::Machine::shared",
+   "expect": null,
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-025",
+   "check": "exhibitedState",
+   "element": "C31::Machine::own",
+   "expect": null
+  },
+  {
+   "id": "C31-026",
+   "check": "exhibitedState",
+   "element": "C31::Machine::own",
+   "expect": null,
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-027",
+   "check": "exhibitedState",
+   "element": "C31::Machine::own",
+   "expect": null,
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-028",
+   "check": "exhibitedState",
+   "element": "C31::Machine::sharedModes",
+   "expect": "C31::sharedModes"
+  },
+  {
+   "id": "C31-029",
+   "check": "exhibitedState",
+   "element": "C31::Machine::sharedModes",
+   "expect": "C31::sharedModes",
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-030",
+   "check": "exhibitedState",
+   "element": "C31::Machine::sharedModes",
+   "expect": "C31::sharedModes",
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-031",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes",
+   "expect": "C31::Machine::modes"
+  },
+  {
+   "id": "C31-032",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes",
+   "expect": "C31::Machine::modes",
+   "through": [
+    "C31::machine"
+   ]
+  },
+  {
+   "id": "C31-033",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes",
+   "expect": "C31::Machine::modes",
+   "through": [
+    "C31::subMachine"
+   ]
+  },
+  {
+   "id": "C31-034",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::normal::real",
+   "expect": null
+  },
+  {
+   "id": "C31-035",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::normal::real",
+   "expect": null,
+   "through": [
+    "C31::machine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-036",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::normal::real",
+   "expect": null,
+   "through": [
+    "C31::subMachine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-037",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::normal::work",
+   "expect": null
+  },
+  {
+   "id": "C31-038",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::normal::work",
+   "expect": null,
+   "through": [
+    "C31::machine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-039",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::normal::work",
+   "expect": null,
+   "through": [
+    "C31::subMachine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::normal"
+   ]
+  },
+  {
+   "id": "C31-040",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::idle::real",
+   "expect": null
+  },
+  {
+   "id": "C31-041",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::idle::real",
+   "expect": null,
+   "through": [
+    "C31::machine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::idle"
+   ]
+  },
+  {
+   "id": "C31-042",
+   "check": "exhibitedState",
+   "element": "C31::Machine::modes::idle::real",
+   "expect": null,
+   "through": [
+    "C31::subMachine",
+    "C31::Machine::modes",
+    "C31::Machine::modes::idle"
+   ]
+  }
+ ]
+}

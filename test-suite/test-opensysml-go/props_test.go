@@ -200,6 +200,15 @@ func qnOf(e *opensysml.ElementRef) any {
 	return e.QualifiedName
 }
 
+// performs is whether metaclass is a PerformActionUsage or one of its specializations.
+func performs(metaclass string) bool {
+	switch metaclass {
+	case "PerformActionUsage", "ExhibitStateUsage", "IncludeUseCaseUsage":
+		return true
+	}
+	return false
+}
+
 // qnProp is the qualified name of the element property `prop` of e, nil when empty.
 func (a *propsAPI) qnProp(e opensysml.ElementRef, prop string) (any, error) {
 	x, err := a.element(e, prop)
@@ -993,6 +1002,21 @@ func propsRead(a *propsAPI, c caseSpec, e opensysml.ElementRef, owner *opensysml
 	case "inputCount":
 		ins, err := a.elements(e, "input")
 		return len(ins), err
+	case "performedAction", "exhibitedState":
+		// SysML derives both as the referenced feature of the ownedReferenceSubsetting, or else
+		// the usage itself (exhibitedState redefines performedAction)
+		if !performs(e.Metaclass) || (c.Check == "exhibitedState" && e.Metaclass != "ExhibitStateUsage") {
+			return nil, nil
+		}
+		rs, err := a.element(e, "ownedReferenceSubsetting")
+		if err != nil || rs == nil {
+			return qnOf(&e), err
+		}
+		f, err := a.element(*rs, "referencedFeature")
+		if err != nil || f == nil {
+			return nil, err
+		}
+		return qnOf(f), nil
 	case "loopVariable":
 		// SysML derives ForLoopActionUsage::loopVariable as the first ownedFeature, if a ReferenceUsage
 		if e.Metaclass != "ForLoopActionUsage" {
