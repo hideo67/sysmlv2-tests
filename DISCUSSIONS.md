@@ -2827,6 +2827,71 @@ in the reader the suites use): both suites and the census give results
 identical to v0.12.0. #20, #32 and #33 are still open. The suite's Cargo.lock
 follows it (6cac59a).
 
+## Step 52: two findings reported from another project; C31 perform and exhibit targets, C21 type operators (24 matrices, 2044 cases)
+Another project evaluating OpenSysML sent two findings. Both were checked at
+OpenSysML `60680a21ed` against the Pilot at `82d26f18a`, and each gave new
+cases.
+
+Finding 1: `exhibitedState` of an exhibit state and `performedAction` of
+`perform real;` and `do action work;` are not derived. Reproduced: both
+properties come back "not derived" with the service's reason, and the census
+has always shown them unanswered (the Pilot answers every one). But the inputs
+are served: `ownedReferenceSubsetting` and its `referencedFeature`, from which
+SysML derives both (the referenced feature, or else the usage itself; the Pilot
+computes `FeatureUtil.getEffectiveReferencedFeatureOf`). By the standard of this
+suite that is not a bug: when GetElementProperties declares a property not
+derived and serves what it is derived from, deriving it is up to the
+application, as for `loopVariable` (Step 50), where #2577 reported only the
+missing structure. Bugs remain served-but-empty answers, wrong values and
+missing structure. The draft issue was not filed; the other project can be told
+how to derive the value.
+
+New matrix C31 (perform and exhibit targets, 42 cases): `performedAction` and
+`exhibitedState` x seven variants (perform by reference and declared, exhibit
+by reference and declared, `perform real;`, `do action work;` and `entry
+real;` in a state) x three locations (part def, typing usage, usage of a
+specialized def); `exhibitedState` is null for a usage that is not an exhibit.
+A perform or exhibit by reference has no declared name and is located by its
+effective name (the referenced feature's); the targets of the references in the
+part def are at package level so that name does not clash. The Pilot reads the
+properties; the props and sysml-toolkit adapters derive them as above; the
+Symbol adapters derive them from the `references` specialization of a
+`performActionUsage`, and report a `stateUsage` unsupported, since the Symbol API
+has no exhibit kind (an ExhibitStateUsage is kinded `stateUsage`). Results: the
+Pilot, both props suites and both sysml-toolkit suites pass all 42; the six
+Symbol suites pass 30, 12 unsupported.
+
+Finding 2: the result of a cast (`original as Command`) is typed
+`Base::Anything`, and its "second input" is typed by `Command`. Reproduced, and
+it is a bug by the standard above (a served wrong value, and structure the
+grammar does not give). In the KerML grammar the type operand of `as` is a
+`TypeResultMember`, a ReturnParameterMembership: the TypeReference typed by
+`Command` is the expression's result. OpenSysML builds it as an extra `in`
+ParameterMembership, as for the classification tests (`istype`, whose
+TypeReferenceMember is an input), and the result keeps the library's `Anything`.
+`all Command` (also a TypeResultMember) gets an untyped extra input, counted as
+an argument, and a result typed `Objects::Object`. The Pilot builds both with
+the result typed by `Command`. The workaround the other project found (the
+second input's type) depends on the misplaced feature. Nothing filed matches;
+the nearest are #2519 (constructor result type) and #2328 (collection
+operations). Drafted as issue-drafts/opensysml-cast-result-type.md.
+
+C21 gained three variants (C21-106..168, now "constructor and type operator
+expressions"): `original as Command`, `all Command` and `original istype
+Command` as feature values at its three locations, for all seven reads. No
+adapter changed. The Pilot and sysml-toolkit-rs pass all 63. The props suites
+fail 9: `resultType` of `as` (C21-151..153, `Base::Anything`) and of `all`
+(C21-154..156, `Objects::Object`), and `argumentCount` of `all` (C21-127..129, 1
+instead of 0); `istype` passes. They also report `instantiatedType` of all
+three unsupported (not derived, though `function` is served). The checked
+sysml-toolkit reader refuses `resultType` of all three (UnsupportedProjection)
+and the arguments of `istype` (UnmappedArgument): 15 errors, for #32.
+
+The census spec was regenerated (75a0659): the matrix-models corpus gains
+C31.sysml and C21-library.sysml, which was missing since it was added, and the
+recorded Pilot commit is now the one tested. No MDK changed and no existing
+case moved in any suite (39298e6). Released as v1.3.0.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2886,3 +2951,4 @@ Step 48 took OpenSysML #2516 (#2199 fixed): the props suites pass 24 more cases,
 Step 49 added 102 cases for #2495 and the message's relatedFeature to C20, C21, C30 and B20: 23 matrices, 1915 cases.
 Step 50 took OpenSysML #2549 (#2495 fixed) and #2558 (C21 resultType passes); #2556 drops a for loop's variable; C20 loopVariable: 23 matrices, 1939 cases.
 Step 51 took OpenSysML #2589 (for loop variable restored) and sysml-toolkit v0.13.0; no other case moved.
+Step 52 added C31 (perform and exhibit targets) and C21 type operators, from two findings of another project: 24 matrices, 2044 cases; v1.3.0.
