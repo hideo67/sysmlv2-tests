@@ -2,7 +2,7 @@
  "matrix": "C21",
  "model": "models/C21.sysml",
  "notes": {
-  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read).",
+  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read), then the type operators\n(for every read): an item feature value `original as Command` (a cast), `all Command`, and an\nattribute feature value `original istype Command`. By the grammar the type operand of `as` and\n`all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result\nis typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the\nlibrary function's Boolean. Their instantiatedType is the operator's function, and the type\noperand is not an argument.",
   "model": "a case may name its own model; it overrides the matrix's model for that case",
   "through": "a path: each element is read as a member visible in the previous one"
  },
@@ -878,6 +878,492 @@
     "C21Lib::Emitter::emit"
    ],
    "model": "models/C21-library.sysml"
+  },
+  {
+   "id": "C21-106",
+   "check": "exprKind",
+   "element": "C21::Emit::narrowed",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-107",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-108",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "OperatorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-109",
+   "check": "exprKind",
+   "element": "C21::Emit::allCommands",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-110",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-111",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "OperatorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-112",
+   "check": "exprKind",
+   "element": "C21::Emit::tested",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-113",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-114",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "OperatorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-115",
+   "check": "instantiatedType",
+   "element": "C21::Emit::narrowed",
+   "expect": "BaseFunctions::as"
+  },
+  {
+   "id": "C21-116",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "BaseFunctions::as"
+  },
+  {
+   "id": "C21-117",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "BaseFunctions::as",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-118",
+   "check": "instantiatedType",
+   "element": "C21::Emit::allCommands",
+   "expect": "BaseFunctions::all"
+  },
+  {
+   "id": "C21-119",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "BaseFunctions::all"
+  },
+  {
+   "id": "C21-120",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "BaseFunctions::all",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-121",
+   "check": "instantiatedType",
+   "element": "C21::Emit::tested",
+   "expect": "BaseFunctions::istype"
+  },
+  {
+   "id": "C21-122",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "BaseFunctions::istype"
+  },
+  {
+   "id": "C21-123",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "BaseFunctions::istype",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-124",
+   "check": "argumentCount",
+   "element": "C21::Emit::narrowed",
+   "expect": 1
+  },
+  {
+   "id": "C21-125",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": 1
+  },
+  {
+   "id": "C21-126",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-127",
+   "check": "argumentCount",
+   "element": "C21::Emit::allCommands",
+   "expect": 0
+  },
+  {
+   "id": "C21-128",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": 0
+  },
+  {
+   "id": "C21-129",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": 0,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-130",
+   "check": "argumentCount",
+   "element": "C21::Emit::tested",
+   "expect": 1
+  },
+  {
+   "id": "C21-131",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::tested",
+   "expect": 1
+  },
+  {
+   "id": "C21-132",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::tested",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-133",
+   "check": "argumentReferences",
+   "element": "C21::Emit::narrowed",
+   "expect": [
+    [
+     "C21::Emit::original"
+    ]
+   ]
+  },
+  {
+   "id": "C21-134",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": [
+    [
+     "C21::Emitter::original"
+    ]
+   ]
+  },
+  {
+   "id": "C21-135",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": [
+    [
+     "C21::Emitter::original"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-136",
+   "check": "argumentReferences",
+   "element": "C21::Emit::allCommands",
+   "expect": []
+  },
+  {
+   "id": "C21-137",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": []
+  },
+  {
+   "id": "C21-138",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": [],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-139",
+   "check": "argumentReferences",
+   "element": "C21::Emit::tested",
+   "expect": [
+    [
+     "C21::Emit::original"
+    ]
+   ]
+  },
+  {
+   "id": "C21-140",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::tested",
+   "expect": [
+    [
+     "C21::Emitter::original"
+    ]
+   ]
+  },
+  {
+   "id": "C21-141",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::tested",
+   "expect": [
+    [
+     "C21::Emitter::original"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-142",
+   "check": "hasResult",
+   "element": "C21::Emit::narrowed",
+   "expect": true
+  },
+  {
+   "id": "C21-143",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": true
+  },
+  {
+   "id": "C21-144",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-145",
+   "check": "hasResult",
+   "element": "C21::Emit::allCommands",
+   "expect": true
+  },
+  {
+   "id": "C21-146",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": true
+  },
+  {
+   "id": "C21-147",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-148",
+   "check": "hasResult",
+   "element": "C21::Emit::tested",
+   "expect": true
+  },
+  {
+   "id": "C21-149",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::tested",
+   "expect": true
+  },
+  {
+   "id": "C21-150",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::tested",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-151",
+   "check": "resultType",
+   "element": "C21::Emit::narrowed",
+   "expect": "C21::Command"
+  },
+  {
+   "id": "C21-152",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "C21::Command"
+  },
+  {
+   "id": "C21-153",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "C21::Command",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-154",
+   "check": "resultType",
+   "element": "C21::Emit::allCommands",
+   "expect": "C21::Command"
+  },
+  {
+   "id": "C21-155",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "C21::Command"
+  },
+  {
+   "id": "C21-156",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "C21::Command",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-157",
+   "check": "resultType",
+   "element": "C21::Emit::tested",
+   "expect": "ScalarValues::Boolean"
+  },
+  {
+   "id": "C21-158",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "ScalarValues::Boolean"
+  },
+  {
+   "id": "C21-159",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "ScalarValues::Boolean",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-160",
+   "check": "exprFunction",
+   "element": "C21::Emit::narrowed",
+   "expect": "BaseFunctions::as"
+  },
+  {
+   "id": "C21-161",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "BaseFunctions::as"
+  },
+  {
+   "id": "C21-162",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::narrowed",
+   "expect": "BaseFunctions::as",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-163",
+   "check": "exprFunction",
+   "element": "C21::Emit::allCommands",
+   "expect": "BaseFunctions::all"
+  },
+  {
+   "id": "C21-164",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "BaseFunctions::all"
+  },
+  {
+   "id": "C21-165",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::allCommands",
+   "expect": "BaseFunctions::all",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-166",
+   "check": "exprFunction",
+   "element": "C21::Emit::tested",
+   "expect": "BaseFunctions::istype"
+  },
+  {
+   "id": "C21-167",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "BaseFunctions::istype"
+  },
+  {
+   "id": "C21-168",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::tested",
+   "expect": "BaseFunctions::istype",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
   }
  ]
 }

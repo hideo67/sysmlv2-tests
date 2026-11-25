@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Matrix C21 - constructor expressions.
+"""Matrix C21 - constructor and type operator expressions.
 
 Full cross product: reads x constructor variant (send payload without argument, with a feature
 reference argument, with a feature chain argument; a feature value with a feature chain
@@ -18,7 +18,13 @@ features of their expressions, each in chain form):
   resultType          qualified name of the first of the result parameter's Feature::type
   exprFunction        qualified name of Expression::function
 Added later, appended after the original cases to keep their IDs: the read exprFunction (for the
-four original variants), then the variant library (for every read).
+four original variants), then the variant library (for every read), then the type operators
+(for every read): an item feature value `original as Command` (a cast), `all Command`, and an
+attribute feature value `original istype Command`. By the grammar the type operand of `as` and
+`all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result
+is typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the
+library function's Boolean. Their instantiatedType is the operator's function, and the type
+operand is not an argument.
 """
 from genlib import Matrix
 
@@ -33,10 +39,18 @@ VARIANTS = {  # variant -> (element name, referenced features of the arguments; 
     "chain": ("sendChain", [["X::src", "C21::Src::v"]]),
     "value": ("sigValue", [["X::src", "C21::Src::v"]]),
 }
+# type operator -> (element name, referenced features of the arguments, function, result type)
+OPERATORS = {
+    "cast": ("narrowed", [["X::original"]], "BaseFunctions::as", "C21::Command"),
+    "all": ("allCommands", [], "BaseFunctions::all", "C21::Command"),
+    "istype": ("tested", [["X::original"]], "BaseFunctions::istype", "ScalarValues::Boolean"),
+}
 LIBRARY = ("shape", [["X::src", "C21Lib::Src::l"], ["X::src", "C21Lib::Src::w"], ["X::src", "C21Lib::Src::x"]])
 VARIANT_COL = {"none": "send payload, no argument", "ref": "send payload, reference argument",
                "chain": "send payload, chain argument", "value": "feature value, chain argument",
-               "library": "library type, item feature value"}
+               "library": "library type, item feature value",
+               "cast": "cast (as), item feature value", "all": "all instances (all), item feature value",
+               "istype": "classification test (istype), attribute feature value"}
 LOC_COL = {"ADEF": "in action def", "AUSE": "nested in action usage in part def", "L3": "read through typing usage"}
 LOC = {  # location -> (owner of the element, owner of the referenced features, through)
     "ADEF": ("C21::Emit", "C21::Emit", None),
@@ -47,6 +61,7 @@ LOC = {  # location -> (owner of the element, owner of the referenced features, 
 m = Matrix("C21", "constructor expressions", "models/C21.sysml",
            list(READ_COL.values()) + list(VARIANT_COL.values()) + list(LOC_COL.values()),
            description="Constructor expressions (`new Sig(...)`) as send payloads and as a feature value, "
+                       "and the type operators `as`, `all` and `istype` as feature values, "
                        "read for their instantiated type, arguments and result.",
            notes={"reads": __doc__.split("Reads (")[1].strip(),
                   "model": "a case may name its own model; it overrides the matrix's model for that case",
@@ -54,16 +69,17 @@ m = Matrix("C21", "constructor expressions", "models/C21.sysml",
 FUNCTION = "Performances::Evaluation"  # the Function typing every ConstructorExpression (Pilot)
 
 
-def add(read, variant, name, refs, instantiated, **extra):
+def add(read, variant, name, refs, instantiated, kind="ConstructorExpression", function=FUNCTION, result=None,
+        **extra):
     for loc in LOC_COL:
         element_owner, feature_owner, through = LOC[loc]
         if extra:  # the library variant's own model: the same structure in package C21Lib
             element_owner, feature_owner = (s.replace("C21::", "C21Lib::") for s in (element_owner, feature_owner))
             through = [s.replace("C21::", "C21Lib::") for s in through] if through else None
-        expect = {"exprKind": "ConstructorExpression", "instantiatedType": instantiated,
+        expect = {"exprKind": kind, "instantiatedType": instantiated,
                   "argumentCount": len(refs),
                   "argumentReferences": [[f.replace("X::", f"{feature_owner}::") for f in r] for r in refs],
-                  "hasResult": True, "resultType": instantiated, "exprFunction": FUNCTION}[read]
+                  "hasResult": True, "resultType": result or instantiated, "exprFunction": function}[read]
         m.add({READ_COL[read], VARIANT_COL[variant], LOC_COL[loc]}, read, f"{element_owner}::{name}", expect, through,
               **extra)
 
@@ -75,4 +91,7 @@ for variant, (name, refs) in VARIANTS.items():
     add("exprFunction", variant, name, refs, "C21::Sig")
 for read in READS + ["exprFunction"]:
     add(read, "library", *LIBRARY, "ShapeItems::Triangle", model="models/C21-library.sysml")
+for read in READS + ["exprFunction"]:
+    for variant, (name, refs, function, result) in OPERATORS.items():
+        add(read, variant, name, refs, function, kind="OperatorExpression", function=function, result=result)
 m.write("gen_c21.py")
