@@ -1,7 +1,7 @@
 {
  "source": {
   "file": "org.omg.sysml/model/SysML.ecore",
-  "pilotCommit": "378a8700c0bc5dfc08a97a5bb637f61dd8cfed02",
+  "pilotCommit": "82d26f18a72569263f1971e1156c0f5f100e0b05",
   "nsURI": "https://www.omg.org/spec/SysML/20250201"
  },
  "generator": "data/gen_census.py",
@@ -33,9 +33,11 @@
    "data/models/C01.sysml",
    "data/models/C10.sysml",
    "data/models/C20.sysml",
+   "data/models/C21-library.sysml",
    "data/models/C21.sysml",
    "data/models/C30-accept.sysml",
    "data/models/C30.sysml",
+   "data/models/C31.sysml",
    "data/models/D10.sysml",
    "data/models/D20.sysml",
    "data/models/E10.sysml",
