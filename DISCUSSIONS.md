@@ -2928,6 +2928,24 @@ ci` refuses that; OpenSysML's own CI avoids `npm ci` for the same reason
 keeps the checkout's lock file untouched (085cfd7). The opensysml-rs suite's
 Cargo.lock follows the Rust client 0.13.0 (e0e68d8).
 
+## Step 54: OpenSysML at 8b71b726c1 (client, LSP, sequence view and panic guards); no case moved
+OpenSysML develop moved from `93a6a8ef2e` to `8b71b726c1`, 14 merges: sequence
+view fixes (#2623, #2658, #2661), client fixes in Go (#2604, #2608) and Node
+(#2607), the LSP (#2599), panic guards (#2615, among them an ownership-cycle
+guard in qualified-name identity), an atomic open-with-kind (#2596), reading a
+confined library once (#2626), the Emacs mode (#2632), CI (#2662, #2663) and
+#2659, which adds the v0.13.0 platform packages to `client/node`'s lock file.
+sysml-toolkit v0.13.0 and the Pilot `82d26f18a7` are unchanged.
+
+Suites and census. No case moved in any of the 11 suites, and the census
+differs from the snapshot only in its version lines. The props failures are
+still B13 first-end references (15, #2068) and C20 `inputCount` (9, #2577;
+#2617 open).
+
+Build. All parts built with no change to build-opensysml.sh. Now that the lock
+file lists the platform packages, `npm ci` would likely work again; the script
+keeps `npm install --no-save`, which works either way.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2989,3 +3007,4 @@ Step 50 took OpenSysML #2549 (#2495 fixed) and #2558 (C21 resultType passes); #2
 Step 51 took OpenSysML #2589 (for loop variable restored) and sysml-toolkit v0.13.0; no other case moved.
 Step 52 added C31 (perform and exhibit targets) and C21 type operators, from two findings of another project: 24 matrices, 2044 cases; v1.3.0.
 Step 53 took OpenSysML #2624 (#2620 fixed): the props suites pass 12 more cases; no other case moved.
+Step 54 took OpenSysML at 8b71b726c1 (client, LSP, sequence view, panic guards); no case moved.
