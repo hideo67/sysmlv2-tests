@@ -2946,6 +2946,21 @@ Build. All parts built with no change to build-opensysml.sh. Now that the lock
 file lists the platform packages, `npm ci` would likely work again; the script
 keeps `npm install --no-save`, which works either way.
 
+## Step 55: OpenSysML at 59fd3b6c3e (error messages, REPL, Emacs, install); no case moved
+OpenSysML develop moved from `8b71b726c1` to `59fd3b6c3e`, 15 merges: clearer
+error messages (#2671, #2674, #2676, #2678, #2681), the use-case article
+(#2679), an import alias in an action body (#2670), a redefined inherited
+succession in the sequence view (#2669), boolean arithmetic operands at run
+time (#2677), engine and install fixes (#2601, #2651), the sweep parameter
+list (#2675), Emacs eglot (#2631), REPL caret alignment (#2685) and the
+back-merge of main 0.13.0 (#2692). sysml-toolkit v0.13.0 and the Pilot
+`82d26f18a7` are unchanged.
+
+Suites and census. No case moved in any of the 11 suites, and the census
+differs from the snapshot only in its version lines. The props failures are
+still B13 first-end references (15, #2068) and C20 `inputCount` (9, #2577;
+#2617 open).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -3008,3 +3023,4 @@ Step 51 took OpenSysML #2589 (for loop variable restored) and sysml-toolkit v0.1
 Step 52 added C31 (perform and exhibit targets) and C21 type operators, from two findings of another project: 24 matrices, 2044 cases; v1.3.0.
 Step 53 took OpenSysML #2624 (#2620 fixed): the props suites pass 12 more cases; no other case moved.
 Step 54 took OpenSysML at 8b71b726c1 (client, LSP, sequence view, panic guards); no case moved.
+Step 55 took OpenSysML at 59fd3b6c3e (error messages, REPL, Emacs, install); no case moved.
