@@ -46,7 +46,9 @@ fi
 
 if want node; then
   echo "== OpenSysML: TypeScript client (client/node/dist)"
-  (cd "$MDK/client/node" && npm ci && npm run build)
+  # not `npm ci`, which OpenSysML's CI avoids too (npm/cli#9846); --no-save leaves the
+  # checkout's package-lock.json as it is, even where it lags package.json
+  (cd "$MDK/client/node" && npm install --no-save --ignore-scripts --no-audit --no-fund && npm run build)
 fi
 
 if want java; then
