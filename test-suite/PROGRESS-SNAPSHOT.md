@@ -11,7 +11,7 @@ The suite grows over time: a release adds cases, and new cases may fail at first
 So the count can rise without any MDK changing. Release tags mark the last snapshot
 each release contains; [DISCUSSIONS.md](../DISCUSSIONS.md) explains every step.
 
-Latest: 2044 cases, OpenSysML `93a6a8ef2e`, sysml-toolkit `v0.13.0`, Pilot `82d26f18a7`.
+Latest: 2044 cases, OpenSysML `8b71b726c1`, sysml-toolkit `v0.13.0`, Pilot `82d26f18a7`.
 
 ## Charts
 
@@ -56,7 +56,8 @@ Newest first. The suite columns give fail + error; – means the suite did not e
 
 |date|snapshot|release|cases|OpenSysML|sysml-toolkit|Pilot|py-props|go-props|py|go|rs|ts|ts-wasm|java|toolkit|toolkit-checked|Pilot|what changed|
 |--|--|--|--:|--|--|--|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--|
-|2026-11-26|working tree||2044|`93a6a8ef2e`|`v0.13.0`|`82d26f18a7`|24|24|75|75|85|85|85|85|92|168|0|this snapshot (written with it, not yet committed)|
+|2026-11-26|working tree||2044|`8b71b726c1`|`v0.13.0`|`82d26f18a7`|24|24|75|75|85|85|85|85|92|168|0|this snapshot (written with it, not yet committed)|
+|2026-11-26|[`0d9bd04`](https://github.com/hideo67/sysmlv2-tests/commit/0d9bd04241c88e301652dfb85b88e6b339b153ec)||2044|`93a6a8ef2e`|`v0.13.0`|`82d26f18a7`|24|24|75|75|85|85|85|85|92|168|0|OpenSysML at 93a6a8ef2e (#2624 fixes #2620; props +12).|
 |2026-11-25|[`39298e6`](https://github.com/hideo67/sysmlv2-tests/commit/39298e6c6cd3dbe62026baac3e19bf3b8d9b8994)|[v1.3.0](https://github.com/hideo67/sysmlv2-tests/releases/tag/v1.3.0)|2044|`60680a21ed`|`v0.13.0`|`82d26f18a7`|33|33|75|75|85|85|85|85|92|168|0|2044 cases (C31 added, C21 type operators); no MDK change.|
 |2026-11-25|[`a497865`](https://github.com/hideo67/sysmlv2-tests/commit/a497865523dcaf2f21b1183f350c9c828c3aa970)||1939|`60680a21ed`|`v0.13.0`|`82d26f18a7`|24|24|75|75|85|85|85|85|92|153|0|OpenSysML at 60680a21ed (#2589 for loop variable; props +3), sysml-toolkit v0.13.0.|
 |2026-11-24|[`94c6d79`](https://github.com/hideo67/sysmlv2-tests/commit/94c6d790c8d5586f13ab3e0fe3eb6e2bbffbe4be)|[v1.2.0](https://github.com/hideo67/sysmlv2-tests/releases/tag/v1.2.0)|1939|`262a110859`|`v0.12.0`|`82d26f18a7`|27|27|75|75|85|85|85|85|92|153|0|1939 cases, OpenSysML at 262a110859 (#2549 fixes #2495; #2558; props +45).|
