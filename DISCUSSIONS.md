@@ -2892,6 +2892,42 @@ C31.sysml and C21-library.sysml, which was missing since it was added, and the
 recorded Pilot commit is now the one tested. No MDK changed and no existing
 case moved in any suite (39298e6). Released as v1.3.0.
 
+## Step 53: OpenSysML #2624 fixes #2620 (cast and extent result type); props suites +12, no other case moved
+OpenSysML develop moved from `60680a21ed` to `93a6a8ef2e`: the 0.13.0 release
+fold (#2583) and, among the merges, #2624 ("type the result of a cast and an
+extent by the type they name", fixes #2620), #2622 (one binding for a local
+under its name and short name), #2625 (reference subsetting featured within) and
+#2579 (sequence succession order). sysml-toolkit v0.13.0 and the Pilot
+`82d26f18a7` are unchanged.
+
+#2624 was opened the morning after #2620 was filed. Before it appeared we had
+started the same fix on a fork branch (`fix/2620-type-result-member`, never
+pushed): it took the same design layer by layer, and our props suite gave
+identical results on both builds. #2624 also reads the type from the core
+ownership links alone and re-records the API-JSON differential and derived
+census, so the branch was left to be dropped. We confirmed #2624 at its head
+`905cf8c9d8` on the PR (issuecomment-7154162158).
+
+Suites. Both props suites move 12 cases to pass and none the other way:
+`argumentCount` of `all` (C21-127..129, 1 -> 0), `argumentReferences` of
+`all` (C21-136..138, unsupported -> none) and `resultType` of `as` and `all`
+(C21-151..156, `Base::Anything` / `Objects::Object` -> `C21::Command`). The 24
+props failures left are B13 first-end references (15, #2068) and C20
+`inputCount` of assign, while and for (9, #2577; #2617 still open). No other
+suite moved.
+
+Census (opensysml-go-props). The matrix models lose 16 elements and the Pilot
+examples 40: the type parameters casts no longer own and the operand `all` no
+longer has. The counts that shrink with them are the only movement.
+
+Build. OpenSysML 0.13.0's `client/node/package.json` lists the
+`@openmbee/opensysml-sysml-grpc-*@0.13.0` platform packages as optional
+dependencies that `package-lock.json` leaves out on purpose (#1195), and `npm
+ci` refuses that; OpenSysML's own CI avoids `npm ci` for the same reason
+(npm/cli#9846). build-opensysml.sh now runs `npm install --no-save`, which
+keeps the checkout's lock file untouched (085cfd7). The opensysml-rs suite's
+Cargo.lock follows the Rust client 0.13.0 (e0e68d8).
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -2952,3 +2988,4 @@ Step 49 added 102 cases for #2495 and the message's relatedFeature to C20, C21, 
 Step 50 took OpenSysML #2549 (#2495 fixed) and #2558 (C21 resultType passes); #2556 drops a for loop's variable; C20 loopVariable: 23 matrices, 1939 cases.
 Step 51 took OpenSysML #2589 (for loop variable restored) and sysml-toolkit v0.13.0; no other case moved.
 Step 52 added C31 (perform and exhibit targets) and C21 type operators, from two findings of another project: 24 matrices, 2044 cases; v1.3.0.
+Step 53 took OpenSysML #2624 (#2620 fixed): the props suites pass 12 more cases; no other case moved.
