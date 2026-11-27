@@ -2993,6 +2993,14 @@ counts grow with the new expressions; no verdict changed. Both OpenSysML
 findings are filed as #2698 (issue-drafts/opensysml-chain-result-type.md). Released
 as v1.4.0.
 
+sysml-toolkit, checked with a probe: the structure is right (the result subsets
+the target feature `machine.id` and redefines `Evaluation::result`), but
+`derived(result, "type")` is `[Base::Anything, ScalarValues::String]`. KerML
+removes redundant supertypes from `Feature::type`, as the toolkit does for
+`targetId` itself; the Pilot answers `[ScalarValues::String]`. Filed as
+sysml-toolkit #44 (issue-drafts/sysml-toolkit-chain-result-redundant-type.md);
+the checked reader's refusal of the result's `type` stays with #20.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
