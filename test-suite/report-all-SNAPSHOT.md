@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `9d154c41d3ce`
+Test suite commit: `27348097bfec`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-27 02:11:54|
-|opensysml-go|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-27 02:11:45|
-|opensysml-java|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-27 02:12:39|
-|opensysml-py-props|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-27 02:11:42|
-|opensysml-py|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-27 02:11:31|
-|opensysml-rs|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 02:12:08|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-27 02:12:28|
-|opensysml-ts|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-27 02:12:17|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-27 02:12:54|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 02:12:42|
-|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 02:12:40|
+|opensysml-go-props|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-27 14:40:00|
+|opensysml-go|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-27 14:39:51|
+|opensysml-java|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-27 14:40:50|
+|opensysml-py-props|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-27 14:39:27|
+|opensysml-py|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-27 14:39:15|
+|opensysml-rs|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 14:40:16|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-27 14:40:39|
+|opensysml-ts|OpenSysML|`nightly-20261127-cbc85786d2-59-g1a5ab88061` (develop)|[`1a5ab88061`](https://github.com/Open-MBEE/OpenSysML/commit/1a5ab88061f7971229f06b119e13f8e6d60e5427)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-27 14:40:26|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-27 14:41:08|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 14:40:54|
+|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 14:40:52|
 
 Local changes at run time (tracked files only):
 
@@ -42,7 +42,7 @@ Local changes at run time (tracked files only):
 |B20|90|87 / 0 / 3 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|87 / 0 / 3 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|15 / 15 / 60 / 0|90 / 0 / 0 / 0|60 / 0 / 0 / 30|84 / 6 / 0 / 0|
 |C01|114|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
-|C20|168|156 / 9 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|156 / 9 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|168 / 0 / 0 / 0|165 / 0 / 0 / 3|165 / 3 / 0 / 0|
+|C20|168|162 / 3 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|162 / 3 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|168 / 0 / 0 / 0|165 / 0 / 0 / 3|165 / 3 / 0 / 0|
 |C21|189|174 / 6 / 9 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|174 / 6 / 9 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|189 / 0 / 0 / 0|126 / 0 / 0 / 63|141 / 48 / 0 / 0|
 |C30|108|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |C31|42|42 / 0 / 0 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|42 / 0 / 0 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|42 / 0 / 0 / 0|42 / 0 / 0 / 0|42 / 0 / 0 / 0|
@@ -50,7 +50,7 @@ Local changes at run time (tracked files only):
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|2065|1990 / 30 / 45 / 0|907 / 75 / 1083 / 0|897 / 85 / 1083 / 0|1990 / 30 / 45 / 0|907 / 75 / 1083 / 0|891 / 85 / 1089 / 0|891 / 85 / 1089 / 0|897 / 85 / 1083 / 0|2015 / 0 / 50 / 0|1844 / 18 / 50 / 153|1920 / 95 / 50 / 0|
+|**all**|2065|1996 / 24 / 45 / 0|907 / 75 / 1083 / 0|897 / 85 / 1083 / 0|1996 / 24 / 45 / 0|907 / 75 / 1083 / 0|891 / 85 / 1089 / 0|891 / 85 / 1089 / 0|897 / 85 / 1083 / 0|2015 / 0 / 50 / 0|1844 / 18 / 50 / 153|1920 / 95 / 50 / 0|
 
 ## Results
 
@@ -1572,9 +1572,9 @@ Local changes at run time (tracked files only):
 |C20-127|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-128|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-129|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-130|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-131|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-132|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-130|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-131|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-132|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-133|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-134|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-135|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -1584,9 +1584,9 @@ Local changes at run time (tracked files only):
 |C20-139|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-140|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-141|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-142|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-143|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
-|C20-144|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-142|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-143|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C20-144|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-145|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-146|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C20-147|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -6984,26 +6984,20 @@ Local changes at run time (tracked files only):
 - C20-129 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-129 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-129 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-130 [opensysml-go-props] fail: inputCount C20::Supervise::assignCount: got 0, want 2
 - C20-130 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-130 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-130 [opensysml-py-props] fail: inputCount C20::Supervise::assignCount: got 0, want 2
 - C20-130 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-130 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-130 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-130 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-131 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::assignCount: got 0, want 2
 - C20-131 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-131 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-131 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::assignCount: got 0, want 2
 - C20-131 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-131 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-131 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-131 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-132 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::assignCount: got 0, want 2
 - C20-132 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-132 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-132 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::assignCount: got 0, want 2
 - C20-132 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-132 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-132 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
@@ -7044,50 +7038,44 @@ Local changes at run time (tracked files only):
 - C20-138 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-138 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-138 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-139 [opensysml-go-props] fail: inputCount C20::Supervise::whileAct: got 0, want 3
+- C20-139 [opensysml-go-props] fail: inputCount C20::Supervise::whileAct: got 2, want 3
 - C20-139 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-139 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-139 [opensysml-py-props] fail: inputCount C20::Supervise::whileAct: got 0, want 3
+- C20-139 [opensysml-py-props] fail: inputCount C20::Supervise::whileAct: got 2, want 3
 - C20-139 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-139 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-139 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-139 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-140 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::whileAct: got 0, want 3
+- C20-140 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::whileAct: got 2, want 3
 - C20-140 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-140 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-140 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::whileAct: got 0, want 3
+- C20-140 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::whileAct: got 2, want 3
 - C20-140 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-140 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-140 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-140 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-141 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::whileAct: got 0, want 3
+- C20-141 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::whileAct: got 2, want 3
 - C20-141 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-141 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-141 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::whileAct: got 0, want 3
+- C20-141 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::whileAct: got 2, want 3
 - C20-141 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-141 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-141 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-141 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-142 [opensysml-go-props] fail: inputCount C20::Supervise::forAct: got 0, want 2
 - C20-142 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-142 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-142 [opensysml-py-props] fail: inputCount C20::Supervise::forAct: got 0, want 2
 - C20-142 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-142 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-142 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-142 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-143 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::forAct: got 0, want 2
 - C20-143 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-143 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-143 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::forAct: got 0, want 2
 - C20-143 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-143 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-143 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-143 [opensysml-ts] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-144 [opensysml-go-props] fail: inputCount C20::Monitor::supervise::forAct: got 0, want 2
 - C20-144 [opensysml-go] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-144 [opensysml-java] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
-- C20-144 [opensysml-py-props] fail: inputCount C20::Monitor::supervise::forAct: got 0, want 2
 - C20-144 [opensysml-py] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-144 [opensysml-rs] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
 - C20-144 [opensysml-ts-wasm] unsupported: the Symbol API has no Type::input (the owned and inherited features with direction in or inout)
