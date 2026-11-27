@@ -3001,6 +3001,35 @@ removes redundant supertypes from `Feature::type`, as the toolkit does for
 sysml-toolkit #44 (issue-drafts/sysml-toolkit-chain-result-redundant-type.md);
 the checked reader's refusal of the result's `type` stays with #20.
 
+## Step 57: OpenSysML #2617 and #2618 (action node parameters); props suites +6, `while` still short of the inherited `untilTest`
+OpenSysML develop moved from `59fd3b6c3e` to `1a5ab88061` (153 commits):
+#2617 ("reflect action node parameters", closes #2577), #2618 (action
+parameters held as elements, with their implied relationships), #2693 (tests
+locking the constructor result type), #2697 and #2694 (name lookup through
+unheld members), and Emacs, MCP and test-helper work. sysml-toolkit v0.13.0 and
+the Pilot `82d26f18a7` are unchanged. #2698 has no reply yet; its six C21
+cases still fail.
+
+Suites. The props suites pass 6 more cases, C20 `inputCount` of `assign`
+(C20-130..132) and `for` (C20-142..144); no other case moved in any suite.
+`inputCount` of `while` (C20-139..141) still fails, 2 instead of 3. OpenSysML
+now lists the two owned parameters `whileTest` and `body`; the Pilot also lists
+`Actions::WhileLoopAction::untilTest`, inherited, since C20's `while count < 3
+{ ... }` has no `until` clause to redefine it, and `Type::input` includes
+inherited `in` features. #2577's own example had `until count > 5`, so three
+owned parameters, which is why the reply there expected 3. An `if` without
+`else` is an `IfThenAction`, whose two inputs are both owned, so `if` passes.
+#2577 asked for a comment if C20 still differed: drafted as
+issue-drafts/opensysml-2577-comment-while-until.md. The props failures left are
+B13 first-end references (15, #2068), C20 `while` (3) and C21 chain (6, #2698).
+
+Census. OpenSysML holds more elements, the action parameters of #2618
+(matrix models 3918 -> 3986, Pilot examples 37576 -> 37754), and the derived
+properties over them fill accordingly (`Usage::definition`, `Feature::type`,
+`Type::inheritedFeature` and others). `Step::parameter` on the matrix models
+(48% -> 50% vs the Pilot's 75%) left the "fills less" list; no other verdict
+changed.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -3065,3 +3094,4 @@ Step 53 took OpenSysML #2624 (#2620 fixed): the props suites pass 12 more cases;
 Step 54 took OpenSysML at 8b71b726c1 (client, LSP, sequence view, panic guards); no case moved.
 Step 55 took OpenSysML at 59fd3b6c3e (error messages, REPL, Emacs, install); no case moved.
 Step 56 added the C21 feature chain operator, from a study project's finding: 24 matrices, 2065 cases; v1.4.0.
+Step 57 took OpenSysML #2617/#2618 (action node parameters): props +6 (C20 assign, for); `while` misses the inherited `untilTest`.
