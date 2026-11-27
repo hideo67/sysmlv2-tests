@@ -2961,6 +2961,38 @@ differs from the snapshot only in its version lines. The props failures are
 still B13 first-end references (15, #2068) and C20 `inputCount` (9, #2577;
 #2617 open).
 
+## Step 56: a finding from a study project; C21 feature chain operator (24 matrices, 2065 cases)
+A study project found that the value of `attribute targetId : String =
+machine.id;` is a FeatureChainExpression whose result is typed `Base::Anything`.
+Checked at OpenSysML `59fd3b6c3e` against the Pilot at `82d26f18a`:
+reproduced. The Pilot implies a Subsetting of the result to the chain
+`source.id` (checkFeatureChainExpressionResultSpecialization, KerML semantics,
+Control Functions), so the result's `type` is `ScalarValues::String`;
+OpenSysML implies none and serves `Anything`, the return type of
+`ControlFunctions::'.'`. That is a served wrong value, so a bug by the standard
+of Step 52. OpenSysML's own implied-relationship test lists the three chain
+constraints as a known difference (reason `chain-target-feature`), but no issue
+states the effect on `type`; the nearest are #2620 (as/all result type), #2519
+(constructor result type) and #2415 (implied relationships as elements).
+
+C21 gained a variant (C21-169..189): an attribute feature value `src.v` at
+C21's three locations, for all seven reads. Its one argument is the source
+expression; `instantiatedType` and `function` are `ControlFunctions::'.'`, and
+the unquoted spelling OpenSysML gives is accepted (as for `~CmdPort` in A30);
+`resultType` is `ScalarValues::Real`. `add` in gen_c21.py now tells the
+library variant by its `model` field, so that `accept` can be passed too. No
+adapter changed. The Pilot passes all 21. The props suites fail 6: `resultType`
+(C21-184..186, `Base::Anything`) and `instantiatedType` (C21-172..174), served
+as derived with the value `C21::Src::v`: the default InstantiationExpression
+rule (the first non-feature membership, here the target feature's alias
+membership) where OperatorExpression redefines it as the operator's library
+function. sysml-toolkit-rs fails `resultType` too (`Base::Anything`) and the
+checked reader refuses it (UnsupportedProjection); the Symbol suites report all
+21 unsupported. No existing case moved (ee6c679). The census's matrix-models
+counts grow with the new expressions; no verdict changed. Both OpenSysML
+findings are drafted as issue-drafts/opensysml-chain-result-type.md. Released
+as v1.4.0.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -3024,3 +3056,4 @@ Step 52 added C31 (perform and exhibit targets) and C21 type operators, from two
 Step 53 took OpenSysML #2624 (#2620 fixed): the props suites pass 12 more cases; no other case moved.
 Step 54 took OpenSysML at 8b71b726c1 (client, LSP, sequence view, panic guards); no case moved.
 Step 55 took OpenSysML at 59fd3b6c3e (error messages, REPL, Emacs, install); no case moved.
+Step 56 added the C21 feature chain operator, from a study project's finding: 24 matrices, 2065 cases; v1.4.0.
