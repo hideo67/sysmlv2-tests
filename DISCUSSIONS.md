@@ -3019,7 +3019,7 @@ now lists the two owned parameters `whileTest` and `body`; the Pilot also lists
 inherited `in` features. #2577's own example had `until count > 5`, so three
 owned parameters, which is why the reply there expected 3. An `if` without
 `else` is an `IfThenAction`, whose two inputs are both owned, so `if` passes.
-#2577 asked for a comment if C20 still differed: drafted as
+#2577 asked for a comment if C20 still differed: posted (issuecomment-7221301976), from
 issue-drafts/opensysml-2577-comment-while-until.md. The props failures left are
 B13 first-end references (15, #2068), C20 `while` (3) and C21 chain (6, #2698).
 
