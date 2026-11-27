@@ -2990,7 +2990,7 @@ function. sysml-toolkit-rs fails `resultType` too (`Base::Anything`) and the
 checked reader refuses it (UnsupportedProjection); the Symbol suites report all
 21 unsupported. No existing case moved (ee6c679). The census's matrix-models
 counts grow with the new expressions; no verdict changed. Both OpenSysML
-findings are drafted as issue-drafts/opensysml-chain-result-type.md. Released
+findings are filed as #2698 (issue-drafts/opensysml-chain-result-type.md). Released
 as v1.4.0.
 
 ## Plan status
