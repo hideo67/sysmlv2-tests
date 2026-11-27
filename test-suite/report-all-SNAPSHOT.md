@@ -1,22 +1,22 @@
 # SysML v2 MDK test results
 
-Test suite commit: `31b660d5354c`
+Test suite commit: `9d154c41d3ce`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|opensysml-go-props|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-26 23:32:43|
-|opensysml-go|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-26 23:32:35|
-|opensysml-java|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-26 23:33:31|
-|opensysml-py-props|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-26 23:32:12|
-|opensysml-py|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-26 23:32:00|
-|opensysml-rs|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-26 23:32:59|
-|opensysml-ts-wasm|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-26 23:33:20|
-|opensysml-ts|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-26 23:33:08|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-26 23:33:48|
-|sysml-toolkit-rs-checked|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-26 23:33:35|
-|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-26 23:33:32|
+|opensysml-go-props|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-27 02:11:54|
+|opensysml-go|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, Symbol API|go version go1.27.3 linux/amd64|2026-11-27 02:11:45|
+|opensysml-java|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Java client (client/java, installed from this commit), Symbol API, over sysml-grpc built from this commit|openjdk version "21.0.13.1" 2026-11-17|2026-11-27 02:12:39|
+|opensysml-py-props|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), element properties API (GetElementProperties), over sysml-grpc built from this commit|Python 3.14.4|2026-11-27 02:11:42|
+|opensysml-py|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Python client (client/python), Symbol API, over sysml-grpc built from this commit|Python 3.14.4|2026-11-27 02:11:31|
+|opensysml-rs|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Rust client (client/rust), Symbol API, over sysml-grpc built from this commit|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 02:12:08|
+|opensysml-ts-wasm|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over the sysml-wasm WebAssembly module built from this commit (connectWasm)|Node.js v24.22.2|2026-11-27 02:12:28|
+|opensysml-ts|OpenSysML|`nightly-20261126-8b71b726c1-73-g59fd3b6c3e` (develop)|[`59fd3b6c3e`](https://github.com/Open-MBEE/OpenSysML/commit/59fd3b6c3e61a5efb38ddb504121daf841086bde)|2026-11-26|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|TypeScript client (client/node), Symbol API, over sysml-grpc built from this commit|Node.js v24.22.2|2026-11-27 02:12:17|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-27 02:12:54|
+|sysml-toolkit-rs-checked|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel checked reader (property), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 02:12:42|
+|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-27 02:12:40|
 
 Local changes at run time (tracked files only):
 
@@ -43,14 +43,14 @@ Local changes at run time (tracked files only):
 |C01|114|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|76 / 0 / 38 / 0|114 / 0 / 0 / 0|80 / 0 / 0 / 34|114 / 0 / 0 / 0|
 |C10|116|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|36 / 0 / 80 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|96 / 0 / 20 / 0|
 |C20|168|156 / 9 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|156 / 9 / 3 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|24 / 0 / 144 / 0|168 / 0 / 0 / 0|165 / 0 / 0 / 3|165 / 3 / 0 / 0|
-|C21|168|159 / 0 / 9 / 0|0 / 0 / 168 / 0|0 / 0 / 168 / 0|159 / 0 / 9 / 0|0 / 0 / 168 / 0|0 / 0 / 168 / 0|0 / 0 / 168 / 0|0 / 0 / 168 / 0|168 / 0 / 0 / 0|108 / 0 / 0 / 60|123 / 45 / 0 / 0|
+|C21|189|174 / 6 / 9 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|174 / 6 / 9 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|0 / 0 / 189 / 0|189 / 0 / 0 / 0|126 / 0 / 0 / 63|141 / 48 / 0 / 0|
 |C30|108|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|6 / 0 / 102 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|108 / 0 / 0 / 0|
 |C31|42|42 / 0 / 0 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|42 / 0 / 0 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|30 / 0 / 12 / 0|42 / 0 / 0 / 0|42 / 0 / 0 / 0|42 / 0 / 0 / 0|
 |D10|45|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|30 / 0 / 15 / 0|45 / 0 / 0 / 0|30 / 0 / 0 / 15|45 / 0 / 0 / 0|
 |D20|48|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|0 / 0 / 48 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |E10|48|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|48 / 0 / 0 / 0|
 |F10|30|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|30 / 0 / 0 / 0|24 / 0 / 6 / 0|24 / 0 / 6 / 0|30 / 0 / 0 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|0 / 0 / 30 / 0|
-|**all**|2044|1975 / 24 / 45 / 0|907 / 75 / 1062 / 0|897 / 85 / 1062 / 0|1975 / 24 / 45 / 0|907 / 75 / 1062 / 0|891 / 85 / 1068 / 0|891 / 85 / 1068 / 0|897 / 85 / 1062 / 0|1994 / 0 / 50 / 0|1826 / 18 / 50 / 150|1902 / 92 / 50 / 0|
+|**all**|2065|1990 / 30 / 45 / 0|907 / 75 / 1083 / 0|897 / 85 / 1083 / 0|1990 / 30 / 45 / 0|907 / 75 / 1083 / 0|891 / 85 / 1089 / 0|891 / 85 / 1089 / 0|897 / 85 / 1083 / 0|2015 / 0 / 50 / 0|1844 / 18 / 50 / 153|1920 / 95 / 50 / 0|
 
 ## Results
 
@@ -1779,6 +1779,27 @@ Local changes at run time (tracked files only):
 |C21-166|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-167|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C21-168|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-169|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-170|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-171|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-172|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-173|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-174|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-175|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-176|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-177|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-178|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-179|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-180|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-181|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-182|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-183|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-184|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-185|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-186|FAIL|UNSUP|UNSUP|FAIL|UNSUP|UNSUP|UNSUP|UNSUP|PASS|ERROR|FAIL|
+|C21-187|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-188|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
+|C21-189|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-001|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-002|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
 |C30-003|PASS|UNSUP|UNSUP|PASS|UNSUP|UNSUP|UNSUP|UNSUP|PASS|PASS|PASS|
@@ -8346,6 +8367,150 @@ Local changes at run time (tracked files only):
 - C21-168 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-168 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C21-168 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-169 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-169 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-169 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-169 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-169 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-169 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-170 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-170 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-170 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-170 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-170 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-170 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-171 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-171 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-171 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-171 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-171 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-171 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-172 [opensysml-go-props] fail: instantiatedType C21::Emit::chained: got "C21::Src::v", want "ControlFunctions::'.'"
+- C21-172 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-172 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-172 [opensysml-py-props] fail: instantiatedType C21::Emit::chained: got 'C21::Src::v', want "ControlFunctions::'.'"
+- C21-172 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-172 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-172 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-172 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-173 [opensysml-go-props] fail: instantiatedType C21::Emitter::emit::chained: got "C21::Src::v", want "ControlFunctions::'.'"
+- C21-173 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-173 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-173 [opensysml-py-props] fail: instantiatedType C21::Emitter::emit::chained: got 'C21::Src::v', want "ControlFunctions::'.'"
+- C21-173 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-173 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-173 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-173 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-174 [opensysml-go-props] fail: instantiatedType C21::Emitter::emit::chained: got "C21::Src::v", want "ControlFunctions::'.'"
+- C21-174 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-174 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-174 [opensysml-py-props] fail: instantiatedType C21::Emitter::emit::chained: got 'C21::Src::v', want "ControlFunctions::'.'"
+- C21-174 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-174 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-174 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-174 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-175 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-175 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-175 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-175 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-175 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-175 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-176 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-176 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-176 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-176 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-176 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-176 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-177 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-177 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-177 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-177 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-177 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-177 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-178 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-178 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-178 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-178 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-178 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-178 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-179 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-179 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-179 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-179 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-179 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-179 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-180 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-180 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-180 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-180 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-180 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-180 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-181 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-181 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-181 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-181 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-181 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-181 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-182 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-182 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-182 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-182 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-182 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-182 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-183 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-183 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-183 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-183 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-183 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-183 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [opensysml-go-props] fail: resultType C21::Emit::chained: got "Base::Anything", want "ScalarValues::Real"
+- C21-184 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [opensysml-py-props] fail: resultType C21::Emit::chained: got 'Base::Anything', want 'ScalarValues::Real'
+- C21-184 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-184 [sysml-toolkit-rs-checked] error: type refused by the checked reader: type projection is incomplete: UnsupportedProjection
+- C21-184 [sysml-toolkit-rs] fail: resultType C21::Emit::chained: got "Base::Anything", want "ScalarValues::Real"
+- C21-185 [opensysml-go-props] fail: resultType C21::Emitter::emit::chained: got "Base::Anything", want "ScalarValues::Real"
+- C21-185 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-185 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-185 [opensysml-py-props] fail: resultType C21::Emitter::emit::chained: got 'Base::Anything', want 'ScalarValues::Real'
+- C21-185 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-185 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-185 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-185 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-185 [sysml-toolkit-rs-checked] error: type refused by the checked reader: type projection is incomplete: UnsupportedProjection
+- C21-185 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::chained: got "Base::Anything", want "ScalarValues::Real"
+- C21-186 [opensysml-go-props] fail: resultType C21::Emitter::emit::chained: got "Base::Anything", want "ScalarValues::Real"
+- C21-186 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-186 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-186 [opensysml-py-props] fail: resultType C21::Emitter::emit::chained: got 'Base::Anything', want 'ScalarValues::Real'
+- C21-186 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-186 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-186 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-186 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-186 [sysml-toolkit-rs-checked] error: type refused by the checked reader: type projection is incomplete: UnsupportedProjection
+- C21-186 [sysml-toolkit-rs] fail: resultType C21::Emitter::emit::chained: got "Base::Anything", want "ScalarValues::Real"
+- C21-187 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-187 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-187 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-187 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-187 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-187 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-188 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-188 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-188 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-188 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-188 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-188 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-189 [opensysml-go] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-189 [opensysml-java] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-189 [opensysml-py] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-189 [opensysml-rs] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-189 [opensysml-ts-wasm] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
+- C21-189 [opensysml-ts] unsupported: the Symbol API reports neither the arguments of an action nor expression structure, so no constructor expression is reachable
 - C30-001 [opensysml-go] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-001 [opensysml-java] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
 - C30-001 [opensysml-py] unsupported: no Symbol field for entryAction; the standard query API does not offer it either
