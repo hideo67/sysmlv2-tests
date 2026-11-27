@@ -28,6 +28,9 @@ package C21 {
         item narrowed : Command = original as Command;              // a cast
         item allCommands : Command[0..*] = all Command;             // all instances of a type
         attribute tested : Boolean = original istype Command;       // a classification test
+
+        // added later: the feature chain operator, whose result subsets the chain src.v
+        attribute chained : Real = src.v;
     }
 
     // the same constructors, nested in an action usage owned by a part def
@@ -43,6 +46,7 @@ package C21 {
             item narrowed : Command = original as Command;
             item allCommands : Command[0..*] = all Command;
             attribute tested : Boolean = original istype Command;
+            attribute chained : Real = src.v;
         }
         item original : Message;
     }

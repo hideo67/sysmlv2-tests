@@ -24,7 +24,12 @@ attribute feature value `original istype Command`. By the grammar the type opera
 `all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result
 is typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the
 library function's Boolean. Their instantiatedType is the operator's function, and the type
-operand is not an argument.
+operand is not an argument. Then the feature chain operator (for every read): an attribute feature
+value `src.v`, a FeatureChainExpression (an OperatorExpression with operator "."). Its one argument
+is the source expression (the target feature is not an argument), its function is
+ControlFunctions::'.' (the unquoted spelling is accepted), and its result is typed by the chain's target feature's type, ScalarValues::Real:
+by checkFeatureChainExpressionResultSpecialization (KerML semantics, Control Functions) the result subsets the
+expression's feature chain, so the result's Feature::type includes the types of that chain.
 """
 from genlib import Matrix
 
@@ -45,12 +50,14 @@ OPERATORS = {
     "all": ("allCommands", [], "BaseFunctions::all", "C21::Command"),
     "istype": ("tested", [["X::original"]], "BaseFunctions::istype", "ScalarValues::Boolean"),
 }
+CHAIN_OP = ("chained", [["X::src"]], "ControlFunctions::'.'", "ScalarValues::Real")
 LIBRARY = ("shape", [["X::src", "C21Lib::Src::l"], ["X::src", "C21Lib::Src::w"], ["X::src", "C21Lib::Src::x"]])
 VARIANT_COL = {"none": "send payload, no argument", "ref": "send payload, reference argument",
                "chain": "send payload, chain argument", "value": "feature value, chain argument",
                "library": "library type, item feature value",
                "cast": "cast (as), item feature value", "all": "all instances (all), item feature value",
-               "istype": "classification test (istype), attribute feature value"}
+               "istype": "classification test (istype), attribute feature value",
+               "chainop": "feature chain (.), attribute feature value"}
 LOC_COL = {"ADEF": "in action def", "AUSE": "nested in action usage in part def", "L3": "read through typing usage"}
 LOC = {  # location -> (owner of the element, owner of the referenced features, through)
     "ADEF": ("C21::Emit", "C21::Emit", None),
@@ -61,7 +68,7 @@ LOC = {  # location -> (owner of the element, owner of the referenced features, 
 m = Matrix("C21", "constructor expressions", "models/C21.sysml",
            list(READ_COL.values()) + list(VARIANT_COL.values()) + list(LOC_COL.values()),
            description="Constructor expressions (`new Sig(...)`) as send payloads and as a feature value, "
-                       "and the type operators `as`, `all` and `istype` as feature values, "
+                       "the type operators `as`, `all` and `istype` and the feature chain operator `.` as feature values, "
                        "read for their instantiated type, arguments and result.",
            notes={"reads": __doc__.split("Reads (")[1].strip(),
                   "model": "a case may name its own model; it overrides the matrix's model for that case",
@@ -73,15 +80,16 @@ def add(read, variant, name, refs, instantiated, kind="ConstructorExpression", f
         **extra):
     for loc in LOC_COL:
         element_owner, feature_owner, through = LOC[loc]
-        if extra:  # the library variant's own model: the same structure in package C21Lib
+        if "model" in extra:  # the library variant's own model: the same structure in package C21Lib
             element_owner, feature_owner = (s.replace("C21::", "C21Lib::") for s in (element_owner, feature_owner))
             through = [s.replace("C21::", "C21Lib::") for s in through] if through else None
         expect = {"exprKind": kind, "instantiatedType": instantiated,
                   "argumentCount": len(refs),
                   "argumentReferences": [[f.replace("X::", f"{feature_owner}::") for f in r] for r in refs],
                   "hasResult": True, "resultType": result or instantiated, "exprFunction": function}[read]
+        accept = {"accept": [expect.replace("'", "")]} if isinstance(expect, str) and "'" in expect else {}
         m.add({READ_COL[read], VARIANT_COL[variant], LOC_COL[loc]}, read, f"{element_owner}::{name}", expect, through,
-              **extra)
+              **extra, **accept)
 
 
 for read in READS:
@@ -94,4 +102,7 @@ for read in READS + ["exprFunction"]:
 for read in READS + ["exprFunction"]:
     for variant, (name, refs, function, result) in OPERATORS.items():
         add(read, variant, name, refs, function, kind="OperatorExpression", function=function, result=result)
+name, refs, function, result = CHAIN_OP
+for read in READS + ["exprFunction"]:
+    add(read, "chainop", name, refs, function, kind="FeatureChainExpression", function=function, result=result)
 m.write("gen_c21.py")

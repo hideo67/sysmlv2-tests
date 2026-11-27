@@ -2,7 +2,7 @@
  "matrix": "C21",
  "model": "models/C21.sysml",
  "notes": {
-  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read), then the type operators\n(for every read): an item feature value `original as Command` (a cast), `all Command`, and an\nattribute feature value `original istype Command`. By the grammar the type operand of `as` and\n`all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result\nis typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the\nlibrary function's Boolean. Their instantiatedType is the operator's function, and the type\noperand is not an argument.",
+  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read), then the type operators\n(for every read): an item feature value `original as Command` (a cast), `all Command`, and an\nattribute feature value `original istype Command`. By the grammar the type operand of `as` and\n`all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result\nis typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the\nlibrary function's Boolean. Their instantiatedType is the operator's function, and the type\noperand is not an argument. Then the feature chain operator (for every read): an attribute feature\nvalue `src.v`, a FeatureChainExpression (an OperatorExpression with operator \".\"). Its one argument\nis the source expression (the target feature is not an argument), its function is\nControlFunctions::'.' (the unquoted spelling is accepted), and its result is typed by the chain's target feature's type, ScalarValues::Real:\nby checkFeatureChainExpressionResultSpecialization (KerML semantics, Control Functions) the result subsets the\nexpression's feature chain, so the result's Feature::type includes the types of that chain.",
   "model": "a case may name its own model; it overrides the matrix's model for that case",
   "through": "a path: each element is read as a member visible in the previous one"
  },
@@ -1363,6 +1363,190 @@
    "through": [
     "C21::emitter",
     "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-169",
+   "check": "exprKind",
+   "element": "C21::Emit::chained",
+   "expect": "FeatureChainExpression"
+  },
+  {
+   "id": "C21-170",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "FeatureChainExpression"
+  },
+  {
+   "id": "C21-171",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "FeatureChainExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-172",
+   "check": "instantiatedType",
+   "element": "C21::Emit::chained",
+   "expect": "ControlFunctions::'.'",
+   "accept": [
+    "ControlFunctions::."
+   ]
+  },
+  {
+   "id": "C21-173",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "ControlFunctions::'.'",
+   "accept": [
+    "ControlFunctions::."
+   ]
+  },
+  {
+   "id": "C21-174",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "ControlFunctions::'.'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "ControlFunctions::."
+   ]
+  },
+  {
+   "id": "C21-175",
+   "check": "argumentCount",
+   "element": "C21::Emit::chained",
+   "expect": 1
+  },
+  {
+   "id": "C21-176",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::chained",
+   "expect": 1
+  },
+  {
+   "id": "C21-177",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::chained",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-178",
+   "check": "argumentReferences",
+   "element": "C21::Emit::chained",
+   "expect": [
+    [
+     "C21::Emit::src"
+    ]
+   ]
+  },
+  {
+   "id": "C21-179",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::chained",
+   "expect": [
+    [
+     "C21::Emitter::src"
+    ]
+   ]
+  },
+  {
+   "id": "C21-180",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::chained",
+   "expect": [
+    [
+     "C21::Emitter::src"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-181",
+   "check": "hasResult",
+   "element": "C21::Emit::chained",
+   "expect": true
+  },
+  {
+   "id": "C21-182",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::chained",
+   "expect": true
+  },
+  {
+   "id": "C21-183",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::chained",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-184",
+   "check": "resultType",
+   "element": "C21::Emit::chained",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "C21-185",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "ScalarValues::Real"
+  },
+  {
+   "id": "C21-186",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "ScalarValues::Real",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-187",
+   "check": "exprFunction",
+   "element": "C21::Emit::chained",
+   "expect": "ControlFunctions::'.'",
+   "accept": [
+    "ControlFunctions::."
+   ]
+  },
+  {
+   "id": "C21-188",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "ControlFunctions::'.'",
+   "accept": [
+    "ControlFunctions::."
+   ]
+  },
+  {
+   "id": "C21-189",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::chained",
+   "expect": "ControlFunctions::'.'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "ControlFunctions::."
    ]
   }
  ]
