@@ -3062,6 +3062,33 @@ yet).
 Census. `InstantiationExpression::instantiatedType` on the Pilot examples
 answers 8 more elements (500/500, 627 unanswered); nothing else changed.
 
+## Step 59: C21 plain operator expressions, after #2701 (24 matrices, 2128 cases)
+#2701 left one gap for its own change: a plain operator expression read from
+the element graph (`machine.n + 1`) still answers the generic rule for
+`instantiatedType`. No case read it, so C21 gained three variants
+(C21-190..252): `src.v + gain` (binary), `-src.v` (unary) and `src.v > gain`
+(comparison), as attribute feature values at C21's three locations, for all
+seven reads. `instantiatedType` and `function` are the operator's library
+function (DataFunctions::'+', '-', '>'; OperatorExpression::instantiatedType()
+resolves the operator), with the unquoted spelling accepted; the arguments are
+the operands; the result is not narrowed, so it is typed by the function's
+return, `Base::DataValue` for `+` and `-` and `ScalarValues::Boolean` for `>`.
+`and` was left out: its second operand is lazy, and the Pilot wraps it in a
+FeatureReferenceExpression where OpenSysML holds the written expression (the
+`lazy-operand` difference OpenSysML pins), which the argument reads would mix
+in. No adapter changed.
+
+Results at OpenSysML `15f2dc088d`. The Pilot and sysml-toolkit-rs pass all 63.
+The props suites pass 54; `instantiatedType` (C21-199..207) is "not derived"
+(missing-structure), while `function`, the same library function, is served:
+unsupported, not a bug by the standard of Step 52, and not the wrong value the
+PR's wording might suggest. The checked sysml-toolkit reader refuses the result
+`type` (C21-235..243, UnsupportedProjection, as on #20); the Symbol suites
+report all 63 unsupported. No existing case moved (snapshots after 65a3215).
+The census's matrix-models counts grow with the new expressions; no verdict
+changed. Reported back on #2701 as promised in our confirmation there
+(issue-drafts/opensysml-2701-comment-plain-operators.md). Released as v1.5.0.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -3128,3 +3155,4 @@ Step 55 took OpenSysML at 59fd3b6c3e (error messages, REPL, Emacs, install); no 
 Step 56 added the C21 feature chain operator, from a study project's finding: 24 matrices, 2065 cases; v1.4.0.
 Step 57 took OpenSysML #2617/#2618 (action node parameters): props +6 (C20 assign, for); `while` misses the inherited `untilTest`.
 Step 58 took OpenSysML #2701 (#2698 fixed): props +6 (C21 chain); opensysml-go module tidied for #2567.
+Step 59 added C21 plain operator expressions (+, unary -, >) after #2701: 24 matrices, 2128 cases; v1.5.0.
