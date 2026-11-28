@@ -3086,7 +3086,7 @@ PR's wording might suggest. The checked sysml-toolkit reader refuses the result
 `type` (C21-235..243, UnsupportedProjection, as on #20); the Symbol suites
 report all 63 unsupported. No existing case moved (snapshots after 65a3215).
 The census's matrix-models counts grow with the new expressions; no verdict
-changed. Reported back on #2701 as promised in our confirmation there
+changed. Reported back on #2701 (issuecomment-7231166633) as promised in our confirmation there
 (issue-drafts/opensysml-2701-comment-plain-operators.md). Released as v1.5.0.
 
 ## Plan status
