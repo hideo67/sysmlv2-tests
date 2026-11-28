@@ -3089,6 +3089,25 @@ The census's matrix-models counts grow with the new expressions; no verdict
 changed. Reported back on #2701 (issuecomment-7231166633) as promised in our confirmation there
 (issue-drafts/opensysml-2701-comment-plain-operators.md). Released as v1.5.0.
 
+## Step 60: OpenSysML at 8e95d5fd87 (#2711 implied binding connectors); no case moved, census gains
+OpenSysML develop moved from `15f2dc088d` to `8e95d5fd87` (45 commits, 6
+merges): #2711 (implied binding connectors held with their ends and chains),
+#2716 (loop conditions outside unnamed bodies), #2712 and #2723 (export of
+typed and rebuilt action nodes), #2715 (swimlane layout) and #2721 (WASM REPL
+budget). sysml-toolkit v0.13.0 and the Pilot `82d26f18a7` are unchanged; the
+opensysml-go module needed no change.
+
+Suites. No case moved in any of the 11 suites. The props failures are still B13
+first-end references (15, #2068) and C20 `while` (3, our #2577 comment, no reply
+yet); the 18 props unsupported in C21 are `instantiatedType` of the type and
+plain operators, not derived. No reply on sysml-toolkit #44 either.
+
+Census. Element counts are unchanged. `Connector::association` fills more
+(Pilot examples 244 -> 306 of 447, still "fills less" at 68%; matrix models 37 ->
+43 of 47), the binding connectors of #2711 now typed by their association;
+`Element::name`/`qualifiedName` (Pilot examples +94/+20), `Feature::type` and
+`Usage::definition` (+17) gain a little. No verdict changed.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -3156,3 +3175,4 @@ Step 56 added the C21 feature chain operator, from a study project's finding: 24
 Step 57 took OpenSysML #2617/#2618 (action node parameters): props +6 (C20 assign, for); `while` misses the inherited `untilTest`.
 Step 58 took OpenSysML #2701 (#2698 fixed): props +6 (C21 chain); opensysml-go module tidied for #2567.
 Step 59 added C21 plain operator expressions (+, unary -, >) after #2701: 24 matrices, 2128 cases; v1.5.0.
+Step 60 took OpenSysML at 8e95d5fd87 (#2711 implied binding connectors); no case moved, census gains.
