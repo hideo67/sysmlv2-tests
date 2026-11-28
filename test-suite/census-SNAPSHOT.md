@@ -1,14 +1,14 @@
 # SysML v2 derived-property census
 
-Test suite commit: `65a32157ff88`
+Test suite commit: `bd90e38df974`
 
 ## Versions tested
 
 |suite|MDK|version (git describe)|commit|commit date|standard library|API exercised|toolchain|run at (UTC)|
 |--|--|--|--|--|--|--|--|--|
-|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-28 00:43:50|
-|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-28 00:43:58|
-|opensysml-go-props|OpenSysML|`nightly-20261127-cbc85786d2-164-g15f2dc088d` (develop)|[`15f2dc088d`](https://github.com/Open-MBEE/OpenSysML/commit/15f2dc088dd2a4f556fe61c852b4a239e802c847)|2026-11-27|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-28 00:44:21|
+|pilot-java|SysML v2 Pilot Implementation|`2026-09.1-16-g82d26f18a` (master)|[`82d26f18a7`](https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/commit/82d26f18a72569263f1971e1156c0f5f100e0b05)|2026-11-16|sysml.library of the tested commit (0.64.0-SNAPSHOT)|EMF model (org.omg.sysml.lang.sysml) via SysMLInteractive, build 0.64.0-SNAPSHOT|openjdk version "21.0.13.1" 2026-11-17|2026-11-28 12:44:34|
+|sysml-toolkit-rs|sysml-toolkit|`v0.13.0` (HEAD)|[`c8d256bdf6`](https://github.com/Open-MBEE/sysml-toolkit/commit/c8d256bdf6638d3f867e61850df332da43a0f9e9)|2026-11-19|SysML-v2-Release 2026-05 (de1070ae8), submodule spec-refs/SysML-v2-Release|Rust crate sysmlv2-parser, ResolvedModel compatibility reader (element_properties, derived), closure policy with implied heritage|rustc 1.99.1 (58cf8f9c3 2026-10-13)|2026-11-28 12:44:44|
+|opensysml-go-props|OpenSysML|`nightly-20261128-8e95d5fd87` (develop)|[`8e95d5fd87`](https://github.com/Open-MBEE/OpenSysML/commit/8e95d5fd874569265bbc6602b200fcc200fb8430)|2026-11-28|embedded; SysML-v2-Release 2026-09.1 (9546486f4), per scripts/pilot-pin.sh|Go API (client/opensysml) in process, element properties API (GetElementProperties)|go version go1.27.3 linux/amd64|2026-11-28 12:45:12|
 
 Local changes at run time (tracked files only):
 
@@ -236,7 +236,7 @@ Properties, of those carried by some element of the corpus: answered with values
 |`CaseDefinition::objectiveRequirement`|fills less|62% vs 100% (15/24 vs 31/31)||
 |`CaseUsage::objectiveRequirement`|fills less|53% vs 100% (27/51 vs 62/62)||
 |`Classifier::ownedSubclassification`|fills less|20% vs 93% (156/800 vs 975/1054)||
-|`Connector::association`|fills less|55% vs 100% (244/447 vs 608/608)||
+|`Connector::association`|fills less|68% vs 100% (306/447 vs 608/608)||
 |`Feature::ownedRedefinition`|fills less|6% vs 45% (896/14342 vs 9135/20354)||
 |`Feature::ownedSubsetting`|fills less|14% vs 100% (1965/14342 vs 20354/20354)||
 |`RequirementDefinition::subjectParameter`|fills less|54% vs 100% (14/26 vs 37/37)||
@@ -345,7 +345,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Conjugation::owningType`|14/14|14/14|14/14|
 |`ConnectionDefinition::connectionEnd`|17/17|17/17|unanswered|
 |`ConnectionUsage::connectionDefinition`|21/21|14/21|21/21|
-|`Connector::association`|47/47|14/47|37/47|
+|`Connector::association`|47/47|14/47|43/47|
 |`Connector::connectorEnd`|47/47|47/47|47/47|
 |`Connector::defaultFeaturingType`|43/47|43/47|38/47|
 |`Connector::relatedFeature`|46/47|46/47|46/46 (1 unanswered)|
@@ -386,13 +386,13 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Documentation::documentedElement`|3/3|3/3|3/3|
 |`Element::documentation`|3/4222|3/3926|3/4152|
 |`Element::isLibraryElement`|4222/4222|3926/3926|4152/4152|
-|`Element::name`|1174/4222|943/3926|1145/4152|
+|`Element::name`|1174/4222|943/3926|1157/4152|
 |`Element::ownedAnnotation`|0/4222|0/3926|7/4152|
 |`Element::ownedElement`|1259/4222|910/3926|901/4152|
 |`Element::owner`|1756/4222|1612/3926|4126/4152|
 |`Element::owningMembership`|1718/4222|1574/3926|1681/4152|
 |`Element::owningNamespace`|1718/4222|1574/3926|1681/4152|
-|`Element::qualifiedName`|901/4222|882/3926|854/4152|
+|`Element::qualifiedName`|901/4222|882/3926|862/4152|
 |`Element::shortName`|30/4222|30/3926|30/4152|
 |`Element::textualRepresentation`|3/4222|3/3926|3/4152|
 |`EnumerationDefinition::enumeratedValue`|3/3|3/3|unanswered|
@@ -417,7 +417,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Feature::ownedTyping`|384/1473|372/1329|298/1436|
 |`Feature::owningFeatureMembership`|848/1473|685/1329|830/1436|
 |`Feature::owningType`|848/1473|685/1329|830/1436|
-|`Feature::type`|1473/1473|512/1329|1417/1428 (8 unanswered)|
+|`Feature::type`|1473/1473|512/1329|1418/1428 (8 unanswered)|
 |`FeatureChainExpression::targetFeature`|23/23|23/23|23/23|
 |`FeatureChaining::featureChained`|91/91|91/91|91/91|
 |`FeatureMembership::ownedMemberFeature`|848/848|685/685|830/830|
@@ -468,7 +468,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`OccurrenceUsage::occurrenceDefinition`|377/377|234/375|369/377|
 |`OwningMembership::ownedMemberElement`|1718/1718|1574/1574|1681/1681|
 |`OwningMembership::ownedMemberElementId`|1718/1718|1574/1574|1681/1681|
-|`OwningMembership::ownedMemberName`|1174/1718|943/1574|1145/1681|
+|`OwningMembership::ownedMemberName`|1174/1718|943/1574|1157/1681|
 |`OwningMembership::ownedMemberShortName`|30/1718|30/1574|30/1681|
 |`Package::filterCondition`|0/39|0/39|unanswered|
 |`ParameterMembership::ownedMemberParameter`|316/316|188/188|305/305|
@@ -543,7 +543,7 @@ Elements per metaclass where the MDKs differ by more than 10% (largest differenc
 |`Type::ownedSpecialization`|1691/1705|1509/1561|462/1668|
 |`Type::ownedUnioning`|0/1705|0/1561|0/1668|
 |`Type::unioningType`|0/1705|0/1561|0/1668|
-|`Usage::definition`|685/685|403/686|680/687 (4 unanswered)|
+|`Usage::definition`|685/685|403/686|681/687 (4 unanswered)|
 |`Usage::directedUsage`|73/685|72/686|73/691|
 |`Usage::isReference`|685/685|625/686|691/691|
 |`Usage::mayTimeVary`|685/685|unanswered|691/691|
@@ -639,7 +639,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Conjugation::owningType`|79/79|79/79|39/39|
 |`ConnectionDefinition::connectionEnd`|40/40|40/40|unanswered|
 |`ConnectionUsage::connectionDefinition`|110/110|47/110|69/69|
-|`Connector::association`|608/608|58/608|244/447|
+|`Connector::association`|608/608|58/608|306/447|
 |`Connector::connectorEnd`|608/608|607/608|446/447|
 |`Connector::defaultFeaturingType`|508/608|555/608|355/447|
 |`Connector::relatedFeature`|571/608|600/608|411/411 (36 unanswered)|
@@ -681,13 +681,13 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Documentation::documentedElement`|121/121|120/120|100/100|
 |`Element::documentation`|120/52706|119/45728|99/37754|
 |`Element::isLibraryElement`|52706/52706|45728/45728|37754/37754|
-|`Element::name`|13179/52706|7990/45728|9469/37754|
+|`Element::name`|13179/52706|7990/45728|9563/37754|
 |`Element::ownedAnnotation`|3/52706|0/45728|13/37754|
 |`Element::ownedElement`|15884/52706|12294/45728|9088/37754|
 |`Element::owner`|22022/52706|18578/45728|37563/37754|
 |`Element::owningMembership`|21481/52706|18071/45728|15208/37754|
 |`Element::owningNamespace`|21481/52706|18071/45728|15208/37754|
-|`Element::qualifiedName`|6286/52706|6250/45728|4436/37754|
+|`Element::qualifiedName`|6286/52706|6250/45728|4456/37754|
 |`Element::shortName`|63/52706|61/45728|39/37680 (74 unanswered)|
 |`Element::textualRepresentation`|3/52706|3/45728|3/37754|
 |`ElementFilterMembership::condition`|15/15|15/15|7/7|
@@ -713,7 +713,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Feature::ownedTyping`|3745/20371|3574/16929|1653/14342|
 |`Feature::owningFeatureMembership`|12313/20371|8964/16929|8899/14342|
 |`Feature::owningType`|12313/20371|8964/16929|8899/14342|
-|`Feature::type`|20371/20371|5888/16929|13785/14077 (265 unanswered)|
+|`Feature::type`|20371/20371|5888/16929|13802/14077 (265 unanswered)|
 |`FeatureChainExpression::targetFeature`|361/361|368/368|350/350 (8 unanswered)|
 |`FeatureChaining::featureChained`|1396/1396|1318/1318|859/859|
 |`FeatureMembership::ownedMemberFeature`|12313/12313|8964/8964|8899/8899|
@@ -769,7 +769,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`OccurrenceUsage::occurrenceDefinition`|3148/3148|1734/3098|2136/2163 (38 unanswered)|
 |`OwningMembership::ownedMemberElement`|21481/21481|18071/18071|15208/15208|
 |`OwningMembership::ownedMemberElementId`|21481/21481|18071/18071|15208/15208|
-|`OwningMembership::ownedMemberName`|13179/21481|7990/18071|9469/15208|
+|`OwningMembership::ownedMemberName`|13179/21481|7990/18071|9563/15208|
 |`OwningMembership::ownedMemberShortName`|63/21481|61/18071|45/15134 (74 unanswered)|
 |`Package::filterCondition`|10/378|10/378|unanswered|
 |`ParameterMembership::ownedMemberParameter`|6068/6068|3054/3054|4478/4478|
@@ -854,7 +854,7 @@ Not carried by any element of this corpus: `ActorMembership::ownedActorParameter
 |`Type::ownedSpecialization`|21346/21425|17340/17983|3595/15142|
 |`Type::ownedUnioning`|0/21425|0/17983|0/15142|
 |`Type::unioningType`|0/21425|0/17983|0/15142|
-|`Usage::definition`|6993/6993|3845/6977|4961/5154 (46 unanswered)|
+|`Usage::definition`|6993/6993|3845/6977|4978/5154 (46 unanswered)|
 |`Usage::directedUsage`|1221/6993|1103/6977|860/5192 (8 unanswered)|
 |`Usage::isReference`|6993/6993|6776/6977|5200/5200|
 |`Usage::mayTimeVary`|6993/6993|unanswered|5200/5200|

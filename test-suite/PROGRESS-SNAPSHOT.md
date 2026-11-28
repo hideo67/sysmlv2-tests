@@ -11,40 +11,40 @@ The suite grows over time: a release adds cases, and new cases may fail at first
 So the count can rise without any MDK changing. Release tags mark the last snapshot
 each release contains; [DISCUSSIONS.md](../DISCUSSIONS.md) explains every step.
 
-Latest: 2128 cases, OpenSysML `15f2dc088d`, sysml-toolkit `v0.13.0`, Pilot `82d26f18a7`.
+Latest: 2128 cases, OpenSysML `8e95d5fd87`, sysml-toolkit `v0.13.0`, Pilot `82d26f18a7`.
 
 ## Charts
 
 ```mermaid
 xychart-beta
     title "OpenSysML, GetElementProperties (opensysml-py-props)"
-    x-axis ["11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "11-28"]
+    x-axis ["11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "v1.5.0", "11-28"]
     y-axis "fail + error" 0 --> 365
-    line [332, 284, 211, 205, 208, 204, 181, 181, 175, 172, 168, 165, 165, 157, 51, 48, 27, 33, 24, 30, 24, 18]
+    line [332, 284, 211, 205, 208, 204, 181, 181, 175, 172, 168, 165, 165, 157, 51, 48, 27, 33, 24, 30, 24, 18, 18]
 ```
 
 ```mermaid
 xychart-beta
     title "OpenSysML, Symbol API (opensysml-py)"
-    x-axis ["11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "11-28"]
+    x-axis ["11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "v1.5.0", "11-28"]
     y-axis "fail + error" 0 --> 313
-    line [285, 231, 206, 221, 213, 213, 213, 185, 85, 85, 85, 85, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75]
+    line [285, 231, 206, 221, 213, 213, 213, 185, 85, 85, 85, 85, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75]
 ```
 
 ```mermaid
 xychart-beta
     title "sysml-toolkit, derived() (sysml-toolkit-rs)"
-    x-axis ["11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "11-28"]
+    x-axis ["11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "v1.5.0", "11-28"]
     y-axis "fail + error" 0 --> 104
-    line [53, 53, 53, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 92, 92, 92, 92, 95, 95, 95]
+    line [53, 53, 53, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 92, 92, 92, 92, 95, 95, 95, 95]
 ```
 
 ```mermaid
 xychart-beta
     title "sysml-toolkit, checked property() (sysml-toolkit-rs-checked)"
-    x-axis ["11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "11-28"]
+    x-axis ["11-06", "11-07", "11-08", "11-09", "11-10", "11-11", "11-13", "11-14", "v1.0.0", "11-16", "11-17", "11-18", "v1.0.1", "11-19", "11-20", "11-21", "v1.1.0", "v1.2.0", "v1.3.0", "11-26", "v1.4.0", "11-27", "v1.5.0", "11-28"]
     y-axis "fail + error" 0 --> 533
-    line [485, 485, 485, 126, 126, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 153, 153, 168, 168, 171, 171, 180]
+    line [485, 485, 485, 126, 126, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 153, 153, 168, 168, 171, 171, 180, 180]
 ```
 
 The Pilot is the reference: its expected values are the suite's, and it has failed no
@@ -56,7 +56,8 @@ Newest first. The suite columns give fail + error; – means the suite did not e
 
 |date|snapshot|release|cases|OpenSysML|sysml-toolkit|Pilot|py-props|go-props|py|go|rs|ts|ts-wasm|java|toolkit|toolkit-checked|Pilot|what changed|
 |--|--|--|--:|--|--|--|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--|
-|2026-11-28|working tree||2128|`15f2dc088d`|`v0.13.0`|`82d26f18a7`|18|18|75|75|85|85|85|85|95|180|0|this snapshot (written with it, not yet committed)|
+|2026-11-28|working tree||2128|`8e95d5fd87`|`v0.13.0`|`82d26f18a7`|18|18|75|75|85|85|85|85|95|180|0|this snapshot (written with it, not yet committed)|
+|2026-11-28|[`ce6c644`](https://github.com/hideo67/sysmlv2-tests/commit/ce6c644c05f115478012adc440f8bdb19a41d441)|[v1.5.0](https://github.com/hideo67/sysmlv2-tests/releases/tag/v1.5.0)|2128|`15f2dc088d`|`v0.13.0`|`82d26f18a7`|18|18|75|75|85|85|85|85|95|180|0|2128 cases (C21 plain operators); no MDK change.|
 |2026-11-28|[`d9726ff`](https://github.com/hideo67/sysmlv2-tests/commit/d9726ff9c8a70883f11aaa30b8ac76037fb60a49)||2065|`15f2dc088d`|`v0.13.0`|`82d26f18a7`|18|18|75|75|85|85|85|85|95|171|0|OpenSysML at 15f2dc088d (#2701 fixes #2698; props +6).|
 |2026-11-27|[`1da31bf`](https://github.com/hideo67/sysmlv2-tests/commit/1da31bfc58bce8144df525ff9faa65638f0c77a8)||2065|`1a5ab88061`|`v0.13.0`|`82d26f18a7`|24|24|75|75|85|85|85|85|95|171|0|OpenSysML at 1a5ab88061 (#2617 action node parameters; props +6).|
 |2026-11-27|[`ee6c679`](https://github.com/hideo67/sysmlv2-tests/commit/ee6c67999405e554482e00e1b7a31e1b710b9c3a)|[v1.4.0](https://github.com/hideo67/sysmlv2-tests/releases/tag/v1.4.0)|2065|`59fd3b6c3e`|`v0.13.0`|`82d26f18a7`|30|30|75|75|85|85|85|85|95|171|0|2065 cases (C21 feature chain operator); no MDK change.|
