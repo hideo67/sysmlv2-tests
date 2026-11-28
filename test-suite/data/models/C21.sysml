@@ -31,6 +31,11 @@ package C21 {
 
         // added later: the feature chain operator, whose result subsets the chain src.v
         attribute chained : Real = src.v;
+
+        // added later: plain operator expressions (binary, unary, comparison)
+        attribute summed : Real = src.v + gain;
+        attribute negated : Real = -src.v;
+        attribute above : Boolean = src.v > gain;
     }
 
     // the same constructors, nested in an action usage owned by a part def
@@ -47,6 +52,9 @@ package C21 {
             item allCommands : Command[0..*] = all Command;
             attribute tested : Boolean = original istype Command;
             attribute chained : Real = src.v;
+            attribute summed : Real = src.v + gain;
+            attribute negated : Real = -src.v;
+            attribute above : Boolean = src.v > gain;
         }
         item original : Message;
     }

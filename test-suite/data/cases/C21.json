@@ -2,7 +2,7 @@
  "matrix": "C21",
  "model": "models/C21.sysml",
  "notes": {
-  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read), then the type operators\n(for every read): an item feature value `original as Command` (a cast), `all Command`, and an\nattribute feature value `original istype Command`. By the grammar the type operand of `as` and\n`all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result\nis typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the\nlibrary function's Boolean. Their instantiatedType is the operator's function, and the type\noperand is not an argument. Then the feature chain operator (for every read): an attribute feature\nvalue `src.v`, a FeatureChainExpression (an OperatorExpression with operator \".\"). Its one argument\nis the source expression (the target feature is not an argument), its function is\nControlFunctions::'.' (the unquoted spelling is accepted), and its result is typed by the chain's target feature's type, ScalarValues::Real:\nby checkFeatureChainExpressionResultSpecialization (KerML semantics, Control Functions) the result subsets the\nexpression's feature chain, so the result's Feature::type includes the types of that chain.",
+  "reads": "the constructor is the payloadArgument of the send action, or the value expression of\nthe attribute's owned FeatureValue; arguments are compared as in C10, as the referenced\nfeatures of their expressions, each in chain form):\n  exprKind            metaclass of the constructor (ConstructorExpression)\n  instantiatedType    qualified name of InstantiationExpression::instantiatedType\n  argumentCount       number of InstantiationExpression::argument\n  argumentReferences  referenced features of the arguments, collected left to right\n  hasResult           whether Expression::result is present (multiplicity 1 in KerML)\n  resultType          qualified name of the first of the result parameter's Feature::type\n  exprFunction        qualified name of Expression::function\nAdded later, appended after the original cases to keep their IDs: the read exprFunction (for the\nfour original variants), then the variant library (for every read), then the type operators\n(for every read): an item feature value `original as Command` (a cast), `all Command`, and an\nattribute feature value `original istype Command`. By the grammar the type operand of `as` and\n`all` is the result parameter (TypeResultMember, a ReturnParameterMembership), so their result\nis typed by P::Command; that of `istype` is an input (TypeReferenceMember), and its result is the\nlibrary function's Boolean. Their instantiatedType is the operator's function, and the type\noperand is not an argument. Then the feature chain operator (for every read): an attribute feature\nvalue `src.v`, a FeatureChainExpression (an OperatorExpression with operator \".\"). Its one argument\nis the source expression (the target feature is not an argument), its function is\nControlFunctions::'.' (the unquoted spelling is accepted), and its result is typed by the chain's target feature's type, ScalarValues::Real:\nby checkFeatureChainExpressionResultSpecialization (KerML semantics, Control Functions) the result subsets the\nexpression's feature chain, so the result's Feature::type includes the types of that chain.\nThen plain operator expressions (for every read), as attribute feature values: `src.v + gain`\n(binary), `-src.v` (unary) and `src.v > gain` (comparison). Their instantiatedType and function\nare the operator's library function, DataFunctions::'+', '-' and '>' (OperatorExpression::\ninstantiatedType() resolves the operator in BaseFunctions, DataFunctions or ControlFunctions; the\nunquoted spelling is accepted); their arguments are the operands; their result is not narrowed,\nso it is typed by the function's return: Base::DataValue for '+' and '-', ScalarValues::Boolean\nfor '>'.",
   "model": "a case may name its own model; it overrides the matrix's model for that case",
   "through": "a path: each element is read as a member visible in the previous one"
  },
@@ -1547,6 +1547,585 @@
    ],
    "accept": [
     "ControlFunctions::."
+   ]
+  },
+  {
+   "id": "C21-190",
+   "check": "exprKind",
+   "element": "C21::Emit::summed",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-191",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-192",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "OperatorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-193",
+   "check": "exprKind",
+   "element": "C21::Emit::negated",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-194",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-195",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "OperatorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-196",
+   "check": "exprKind",
+   "element": "C21::Emit::above",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-197",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::above",
+   "expect": "OperatorExpression"
+  },
+  {
+   "id": "C21-198",
+   "check": "exprKind",
+   "element": "C21::Emitter::emit::above",
+   "expect": "OperatorExpression",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-199",
+   "check": "instantiatedType",
+   "element": "C21::Emit::summed",
+   "expect": "DataFunctions::'+'",
+   "accept": [
+    "DataFunctions::+"
+   ]
+  },
+  {
+   "id": "C21-200",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "DataFunctions::'+'",
+   "accept": [
+    "DataFunctions::+"
+   ]
+  },
+  {
+   "id": "C21-201",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "DataFunctions::'+'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "DataFunctions::+"
+   ]
+  },
+  {
+   "id": "C21-202",
+   "check": "instantiatedType",
+   "element": "C21::Emit::negated",
+   "expect": "DataFunctions::'-'",
+   "accept": [
+    "DataFunctions::-"
+   ]
+  },
+  {
+   "id": "C21-203",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "DataFunctions::'-'",
+   "accept": [
+    "DataFunctions::-"
+   ]
+  },
+  {
+   "id": "C21-204",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "DataFunctions::'-'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "DataFunctions::-"
+   ]
+  },
+  {
+   "id": "C21-205",
+   "check": "instantiatedType",
+   "element": "C21::Emit::above",
+   "expect": "DataFunctions::'>'",
+   "accept": [
+    "DataFunctions::>"
+   ]
+  },
+  {
+   "id": "C21-206",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::above",
+   "expect": "DataFunctions::'>'",
+   "accept": [
+    "DataFunctions::>"
+   ]
+  },
+  {
+   "id": "C21-207",
+   "check": "instantiatedType",
+   "element": "C21::Emitter::emit::above",
+   "expect": "DataFunctions::'>'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "DataFunctions::>"
+   ]
+  },
+  {
+   "id": "C21-208",
+   "check": "argumentCount",
+   "element": "C21::Emit::summed",
+   "expect": 2
+  },
+  {
+   "id": "C21-209",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::summed",
+   "expect": 2
+  },
+  {
+   "id": "C21-210",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::summed",
+   "expect": 2,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-211",
+   "check": "argumentCount",
+   "element": "C21::Emit::negated",
+   "expect": 1
+  },
+  {
+   "id": "C21-212",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::negated",
+   "expect": 1
+  },
+  {
+   "id": "C21-213",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::negated",
+   "expect": 1,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-214",
+   "check": "argumentCount",
+   "element": "C21::Emit::above",
+   "expect": 2
+  },
+  {
+   "id": "C21-215",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::above",
+   "expect": 2
+  },
+  {
+   "id": "C21-216",
+   "check": "argumentCount",
+   "element": "C21::Emitter::emit::above",
+   "expect": 2,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-217",
+   "check": "argumentReferences",
+   "element": "C21::Emit::summed",
+   "expect": [
+    [
+     "C21::Emit::src",
+     "C21::Src::v"
+    ],
+    [
+     "C21::Emit::gain"
+    ]
+   ]
+  },
+  {
+   "id": "C21-218",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::summed",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ],
+    [
+     "C21::Emitter::gain"
+    ]
+   ]
+  },
+  {
+   "id": "C21-219",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::summed",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ],
+    [
+     "C21::Emitter::gain"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-220",
+   "check": "argumentReferences",
+   "element": "C21::Emit::negated",
+   "expect": [
+    [
+     "C21::Emit::src",
+     "C21::Src::v"
+    ]
+   ]
+  },
+  {
+   "id": "C21-221",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::negated",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ]
+   ]
+  },
+  {
+   "id": "C21-222",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::negated",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-223",
+   "check": "argumentReferences",
+   "element": "C21::Emit::above",
+   "expect": [
+    [
+     "C21::Emit::src",
+     "C21::Src::v"
+    ],
+    [
+     "C21::Emit::gain"
+    ]
+   ]
+  },
+  {
+   "id": "C21-224",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::above",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ],
+    [
+     "C21::Emitter::gain"
+    ]
+   ]
+  },
+  {
+   "id": "C21-225",
+   "check": "argumentReferences",
+   "element": "C21::Emitter::emit::above",
+   "expect": [
+    [
+     "C21::Emitter::src",
+     "C21::Src::v"
+    ],
+    [
+     "C21::Emitter::gain"
+    ]
+   ],
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-226",
+   "check": "hasResult",
+   "element": "C21::Emit::summed",
+   "expect": true
+  },
+  {
+   "id": "C21-227",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::summed",
+   "expect": true
+  },
+  {
+   "id": "C21-228",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::summed",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-229",
+   "check": "hasResult",
+   "element": "C21::Emit::negated",
+   "expect": true
+  },
+  {
+   "id": "C21-230",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::negated",
+   "expect": true
+  },
+  {
+   "id": "C21-231",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::negated",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-232",
+   "check": "hasResult",
+   "element": "C21::Emit::above",
+   "expect": true
+  },
+  {
+   "id": "C21-233",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::above",
+   "expect": true
+  },
+  {
+   "id": "C21-234",
+   "check": "hasResult",
+   "element": "C21::Emitter::emit::above",
+   "expect": true,
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-235",
+   "check": "resultType",
+   "element": "C21::Emit::summed",
+   "expect": "Base::DataValue"
+  },
+  {
+   "id": "C21-236",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "Base::DataValue"
+  },
+  {
+   "id": "C21-237",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "Base::DataValue",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-238",
+   "check": "resultType",
+   "element": "C21::Emit::negated",
+   "expect": "Base::DataValue"
+  },
+  {
+   "id": "C21-239",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "Base::DataValue"
+  },
+  {
+   "id": "C21-240",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "Base::DataValue",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-241",
+   "check": "resultType",
+   "element": "C21::Emit::above",
+   "expect": "ScalarValues::Boolean"
+  },
+  {
+   "id": "C21-242",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::above",
+   "expect": "ScalarValues::Boolean"
+  },
+  {
+   "id": "C21-243",
+   "check": "resultType",
+   "element": "C21::Emitter::emit::above",
+   "expect": "ScalarValues::Boolean",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ]
+  },
+  {
+   "id": "C21-244",
+   "check": "exprFunction",
+   "element": "C21::Emit::summed",
+   "expect": "DataFunctions::'+'",
+   "accept": [
+    "DataFunctions::+"
+   ]
+  },
+  {
+   "id": "C21-245",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "DataFunctions::'+'",
+   "accept": [
+    "DataFunctions::+"
+   ]
+  },
+  {
+   "id": "C21-246",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::summed",
+   "expect": "DataFunctions::'+'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "DataFunctions::+"
+   ]
+  },
+  {
+   "id": "C21-247",
+   "check": "exprFunction",
+   "element": "C21::Emit::negated",
+   "expect": "DataFunctions::'-'",
+   "accept": [
+    "DataFunctions::-"
+   ]
+  },
+  {
+   "id": "C21-248",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "DataFunctions::'-'",
+   "accept": [
+    "DataFunctions::-"
+   ]
+  },
+  {
+   "id": "C21-249",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::negated",
+   "expect": "DataFunctions::'-'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "DataFunctions::-"
+   ]
+  },
+  {
+   "id": "C21-250",
+   "check": "exprFunction",
+   "element": "C21::Emit::above",
+   "expect": "DataFunctions::'>'",
+   "accept": [
+    "DataFunctions::>"
+   ]
+  },
+  {
+   "id": "C21-251",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::above",
+   "expect": "DataFunctions::'>'",
+   "accept": [
+    "DataFunctions::>"
+   ]
+  },
+  {
+   "id": "C21-252",
+   "check": "exprFunction",
+   "element": "C21::Emitter::emit::above",
+   "expect": "DataFunctions::'>'",
+   "through": [
+    "C21::emitter",
+    "C21::Emitter::emit"
+   ],
+   "accept": [
+    "DataFunctions::>"
    ]
   }
  ]

@@ -30,6 +30,13 @@ is the source expression (the target feature is not an argument), its function i
 ControlFunctions::'.' (the unquoted spelling is accepted), and its result is typed by the chain's target feature's type, ScalarValues::Real:
 by checkFeatureChainExpressionResultSpecialization (KerML semantics, Control Functions) the result subsets the
 expression's feature chain, so the result's Feature::type includes the types of that chain.
+Then plain operator expressions (for every read), as attribute feature values: `src.v + gain`
+(binary), `-src.v` (unary) and `src.v > gain` (comparison). Their instantiatedType and function
+are the operator's library function, DataFunctions::'+', '-' and '>' (OperatorExpression::
+instantiatedType() resolves the operator in BaseFunctions, DataFunctions or ControlFunctions; the
+unquoted spelling is accepted); their arguments are the operands; their result is not narrowed,
+so it is typed by the function's return: Base::DataValue for '+' and '-', ScalarValues::Boolean
+for '>'.
 """
 from genlib import Matrix
 
@@ -51,13 +58,22 @@ OPERATORS = {
     "istype": ("tested", [["X::original"]], "BaseFunctions::istype", "ScalarValues::Boolean"),
 }
 CHAIN_OP = ("chained", [["X::src"]], "ControlFunctions::'.'", "ScalarValues::Real")
+# plain operator -> (element name, referenced features of the arguments, function, result type)
+PLAIN_OPS = {
+    "plus": ("summed", [["X::src", "C21::Src::v"], ["X::gain"]], "DataFunctions::'+'", "Base::DataValue"),
+    "negate": ("negated", [["X::src", "C21::Src::v"]], "DataFunctions::'-'", "Base::DataValue"),
+    "greater": ("above", [["X::src", "C21::Src::v"], ["X::gain"]], "DataFunctions::'>'", "ScalarValues::Boolean"),
+}
 LIBRARY = ("shape", [["X::src", "C21Lib::Src::l"], ["X::src", "C21Lib::Src::w"], ["X::src", "C21Lib::Src::x"]])
 VARIANT_COL = {"none": "send payload, no argument", "ref": "send payload, reference argument",
                "chain": "send payload, chain argument", "value": "feature value, chain argument",
                "library": "library type, item feature value",
                "cast": "cast (as), item feature value", "all": "all instances (all), item feature value",
                "istype": "classification test (istype), attribute feature value",
-               "chainop": "feature chain (.), attribute feature value"}
+               "chainop": "feature chain (.), attribute feature value",
+               "plus": "binary operator (+), attribute feature value",
+               "negate": "unary operator (-), attribute feature value",
+               "greater": "comparison operator (>), attribute feature value"}
 LOC_COL = {"ADEF": "in action def", "AUSE": "nested in action usage in part def", "L3": "read through typing usage"}
 LOC = {  # location -> (owner of the element, owner of the referenced features, through)
     "ADEF": ("C21::Emit", "C21::Emit", None),
@@ -68,7 +84,8 @@ LOC = {  # location -> (owner of the element, owner of the referenced features, 
 m = Matrix("C21", "constructor expressions", "models/C21.sysml",
            list(READ_COL.values()) + list(VARIANT_COL.values()) + list(LOC_COL.values()),
            description="Constructor expressions (`new Sig(...)`) as send payloads and as a feature value, "
-                       "the type operators `as`, `all` and `istype` and the feature chain operator `.` as feature values, "
+                       "the type operators `as`, `all` and `istype`, the feature chain operator `.` and plain operators "
+                       "(`+`, unary `-`, `>`) as feature values, "
                        "read for their instantiated type, arguments and result.",
            notes={"reads": __doc__.split("Reads (")[1].strip(),
                   "model": "a case may name its own model; it overrides the matrix's model for that case",
@@ -105,4 +122,7 @@ for read in READS + ["exprFunction"]:
 name, refs, function, result = CHAIN_OP
 for read in READS + ["exprFunction"]:
     add(read, "chainop", name, refs, function, kind="FeatureChainExpression", function=function, result=result)
+for read in READS + ["exprFunction"]:
+    for variant, (name, refs, function, result) in PLAIN_OPS.items():
+        add(read, variant, name, refs, function, kind="OperatorExpression", function=function, result=result)
 m.write("gen_c21.py")
