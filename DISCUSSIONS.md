@@ -3030,6 +3030,38 @@ properties over them fill accordingly (`Usage::definition`, `Feature::type`,
 (48% -> 50% vs the Pilot's 75%) left the "fills less" list; no other verdict
 changed.
 
+## Step 58: OpenSysML #2701 fixes #2698 (feature chain result type and instantiatedType); props suites +6, no other case moved
+OpenSysML develop moved from `1a5ab88061` to `15f2dc088d` (105 commits):
+#2701 ("type a feature chain expression's result by its target feature",
+fixes #2698), #2619 (an api-json interchange form following the normative
+SysML.json), #2705 (imports in an if branch body), #2691 (swimlane layout),
+client and tool bounds (#2598, #2614, #2613, #2609), Emacs (#2687) and
+Dependabot Go updates (#2567). sysml-toolkit v0.13.0 and the Pilot
+`82d26f18a7` are unchanged.
+
+#2701 answers both points of #2698: `instantiatedType` of a chain read from the
+element graph is now `ControlFunctions::'.'`, and the result specializes the
+target feature, so its `type` is the target's types. It notes what it leaves:
+the chain-owned features of the three chain constraints are still not elements
+(`chain-target-feature` stays, #2415), so the result specializes the target
+feature directly; and a plain operator expression read from the graph
+(`machine.n + 1`) still answers the generic rule for `instantiatedType`, which
+no case reads. The study project's model now reads `result.type` =
+`[ScalarValues::String]`.
+
+#2567 raised OpenSysML's golang.org/x/net and x/sys, so the opensysml-go suite's
+module needed `go mod tidy` before the Go suites built (6cf4f82); the first run
+recorded no results for them and was discarded.
+
+Suites. The props suites pass C21-172..174 (`instantiatedType`) and
+C21-184..186 (`resultType`); no other case moved in any suite. sysml-toolkit
+still fails and refuses C21-184..186 (#44, #20). The props failures left are B13
+first-end references (15, #2068) and C20 `while` (3, the #2577 comment, no reply
+yet).
+
+Census. `InstantiationExpression::instantiatedType` on the Pilot examples
+answers 8 more elements (500/500, 627 unanswered); nothing else changed.
+
 ## Plan status
 All matrices of the Step 3 plan are written: 21 matrices, 1558 cases (A01,
 A02, A03, A10, A20, A30, A40, A50, A60, B10, B11, B12, B20, C01, C10, C20,
@@ -3095,3 +3127,4 @@ Step 54 took OpenSysML at 8b71b726c1 (client, LSP, sequence view, panic guards);
 Step 55 took OpenSysML at 59fd3b6c3e (error messages, REPL, Emacs, install); no case moved.
 Step 56 added the C21 feature chain operator, from a study project's finding: 24 matrices, 2065 cases; v1.4.0.
 Step 57 took OpenSysML #2617/#2618 (action node parameters): props +6 (C20 assign, for); `while` misses the inherited `untilTest`.
+Step 58 took OpenSysML #2701 (#2698 fixed): props +6 (C21 chain); opensysml-go module tidied for #2567.
